@@ -6,7 +6,7 @@ import globalGroups from './globalGroups';
 export default defineGkdSubscription({
   id: 1233,
   name: 'azad4ever 的订阅',
-  version: 0,
+  version: 1,
   author: 'azad4ever',
   checkUpdateUrl:
     'https://fastly.jsdelivr.net/gh/azad4ever2nd/subscription@main/dist/gkd.version.json5',
