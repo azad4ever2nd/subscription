@@ -8,8 +8,10 @@ export default defineGkdSubscription({
   name: 'azad4ever 的订阅',
   version: 0,
   author: 'azad4ever',
-  checkUpdateUrl: './gkd.version.json5',
-  supportUri: 'https://github.com/azad4ever2nd/subscription',
+  checkUpdateUrl:
+    'https://fastly.jsdelivr.net/gh/azad4ever2nd/subscription@main/dist/gkd.version.json5',
+  supportUri:
+    'https://fastly.jsdelivr.net/gh/azad4ever2nd/subscription@main/dist/gkd.json5',
   categories,
   globalGroups,
   apps: await batchImportApps(`${import.meta.dirname}/apps`),
