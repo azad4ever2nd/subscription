@@ -1,0 +1,91 @@
+import { defineGkdApp } from '@gkd-kit/define';
+
+export default defineGkdApp({
+  id: 'com.android.settings',
+  name: '设置',
+  groups: [
+    {
+      key: 1,
+      name: '启用百度输入法',
+      desc: '',
+      rules: [
+        {
+          matches: [
+            '[text="百度输入法"] <<n [vid="head"] + [vid="end"] > [vid="enable_mode"][text="未启用"]',
+          ],
+          fastQuery: true,
+          actionMaximum: 1,
+          resetMatch: 'app',
+          activityIds: ['com.android.settings.SubSettings'],
+        },
+      ],
+    },
+    {
+      key: 2,
+      name: '注意，必须将手机解锁才能运行此应用',
+      desc: '260227',
+      rules: [
+        {
+          matches: [
+            '[vid="message"][text="注意：重新启动后，您必须将手机解锁才能运行此应用"] <<n * + * > [id="android:id/button1"][text="确定"]',
+          ],
+          fastQuery: true,
+          resetMatch: 'match',
+          activityIds: ['com.android.settings.SubSettings'],
+        },
+      ],
+    },
+    {
+      key: 3,
+      name: '启用百度输入法，风险提示',
+      desc: '260227',
+      rules: [
+        {
+          matches: [
+            '[vid="alertTitle"][text="风险提示"] <<n * +n * > [id="android:id/button2"][text="确定"]',
+          ],
+          fastQuery: true,
+          resetMatch: 'match',
+          activityIds: ['com.android.settings.SubSettings'],
+        },
+      ],
+    },
+    {
+      key: 4,
+      name: '开启位置服务，打开',
+      desc: '260329，小米华为',
+      rules: [
+        {
+          matches: [
+            '[id="android:id/title"][text="开启位置服务" || text="访问我的位置信息"] <<n * +n * [id="android:id/switch_widget"][checked=false]',
+          ],
+          fastQuery: true,
+          resetMatch: 'match',
+          activityIds: [
+            'com.android.settings.Settings$LocationSettingsActivity',
+          ],
+        },
+      ],
+    },
+    {
+      key: 5,
+      name: '开启位置服务，打开后返回',
+      desc: '260329，小米华为',
+      rules: [
+        {
+          preKeys: [4],
+          action: 'back',
+          matches: [
+            '[id="android:id/title"][text="开启位置服务" || text="访问我的位置信息"] <<n * +n * [id="android:id/switch_widget"][checked=true]',
+          ],
+          actionCd: 0,
+          fastQuery: true,
+          resetMatch: 'match',
+          activityIds: [
+            'com.android.settings.Settings$LocationSettingsActivity',
+          ],
+        },
+      ],
+    },
+  ],
+});
