@@ -35,7 +35,7 @@ export default defineGkdApp({
     },
     {
       key: 3,
-      name: '周四盒马和猫超',
+      name: '周四猫超和盒马',
       desc: '260212，优先盒马，顺序可改',
       rules: [
         {
