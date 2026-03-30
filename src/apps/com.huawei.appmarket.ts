@@ -1,52 +1,43 @@
 import { defineGkdApp } from '@gkd-kit/define';
 
 export default defineGkdApp({
-  id: 'com.huawei.wallet',
-  name: '华为钱包',
+  id: 'com.huawei.appmarket',
+  name: '华为应用市场',
   groups: [
     {
       key: 1,
       name: '发现新版本',
-      desc: '',
-      resetMatch: 'match',
+      desc: '260319',
       rules: [
         {
-          matches: ['[text="发现新版本"] <<2 * +2 * >2 [text="以后再说"]'],
+          matches: [
+            '[id="android:id/alertTitle"][text="发现新版本"] <<n * +n * [id="android:id/button2"][text="以后再说"]',
+          ],
+          actionCd: 0,
           fastQuery: true,
+          resetMatch: 'match',
           activityIds: [
-            'com.huawei.updatesdk.service.otaupdate.AppUpdateActivity',
+            'com.huawei.appmarket.service.thirdupdate.ThirdUpdateActivity',
           ],
         },
       ],
     },
     {
       key: 2,
-      name: '开启通知',
-      desc: '',
-      matchTime: 5000,
-      resetMatch: 'app',
+      name: 'WLAN 闲时自动更新, WLAN 下自动更新应用，不用了',
+      desc: '260329',
       rules: [
         {
           matches: [
-            '@[vid="iv_notification_close"][desc="关闭"] + [vid="tv_notification_title"]',
+            '[vid="updatemanager_choose_state_card_desc" || vid="updatemanager_choose_state_card_title"] <n * + * > [vid="updatemanager_choose_state_btn_no"]',
           ],
+          actionCd: 0,
           fastQuery: true,
-          activityIds: ['com.huawei.wallet.view.MainActivity'],
-        },
-      ],
-    },
-    {
-      key: 3,
-      name: '定位权限',
-      desc: '',
-      resetMatch: 'match',
-      rules: [
-        {
-          matches: [
-            '[vid="location_tip_title"][text*="位置权限"] <<5 * + [vid="button_layout"] > [vid="cancel"]',
+          actionMaximum: 1,
+          resetMatch: 'app',
+          activityIds: [
+            'com.huawei.appmarket.service.appmgr.view.activity.AppUpdateActivity',
           ],
-          fastQuery: true,
-          activityIds: ['com.huawei.pay.ui.PermissionsActivity'],
         },
       ],
     },
