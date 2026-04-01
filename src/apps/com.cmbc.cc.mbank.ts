@@ -22,7 +22,7 @@ export default defineGkdApp({
     },
     {
       key: 2,
-      name: '弹窗',
+      name: '首页弹窗',
       desc: '260401，不限于身份证过期',
       rules: [
         {
