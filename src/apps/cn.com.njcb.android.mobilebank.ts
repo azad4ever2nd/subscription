@@ -176,5 +176,20 @@ export default defineGkdApp({
         },
       ],
     },
+    {
+      key: 13,
+      name: '签到完成，返回',
+      desc: '260401',
+      rules: [
+        {
+          resetMatch: 'app',
+          actionMaximum: 1,
+          action: 'back',
+          preKeys: [7],
+          activityIds: 'com.njcb.mobile.h5biz.H5ContainerActivity',
+          matches: '[text="任务中心"] <<n * +n * [text="规则"]',
+        },
+      ],
+    },
   ],
 });

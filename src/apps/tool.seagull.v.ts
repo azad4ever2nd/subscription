@@ -22,12 +22,12 @@ export default defineGkdApp({
     {
       key: 2,
       name: '广告1',
-      desc: '260324,添加新规则 ([text="奖励已发放"] <n * +n * > Button) || ([id="dismiss-button"] [text="关闭" || text="Close"]) || ',
+      desc: '260401,添加新规则 ([text="奖励已发放"] <n * +n * > Button) || ([id="dismiss-button"] [text="关闭" || text="Close"]) || ',
       rules: [
         {
           action: 'clickCenter',
           matches: [
-            '(@[id="close-button"] > [text="关闭广告并继续打开应用" || text="继续使用应用"] + View) || ([id="mys-content"] >n @View > [text="Close" || text="关闭"])',
+            '(@[id="close-button"] > [text="关闭广告并继续打开应用" || text="继续使用应用"] + View) || ([text="Close" || text="关闭"][clickable=true])',
           ],
           actionCd: 0,
           resetMatch: 'match',

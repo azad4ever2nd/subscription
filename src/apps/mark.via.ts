@@ -55,5 +55,18 @@ export default defineGkdApp({
         },
       ],
     },
+    {
+      key: 5,
+      name: '弹窗，使用Chrome浏览器，继续',
+      desc: '260401',
+      rules: [
+        {
+          resetMatch: 'match',
+          actionCd: 0,
+          activityIds: 'mark.via.Shell',
+          matches: '[text="Chrome浏览器"] + [desc="继续"][clickable=true]',
+        },
+      ],
+    },
   ],
 });

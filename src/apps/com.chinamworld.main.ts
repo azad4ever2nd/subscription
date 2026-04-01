@@ -7,11 +7,11 @@ export default defineGkdApp({
     {
       key: 1,
       name: '签到成功',
-      desc: '260209,签到改版',
+      desc: '260401,签到改版,冲突领取立减金，先暂时屏蔽一个',
       rules: [
         {
           matches: [
-            '([text="立即使用"] -n [text="获得 1 龙积分" || text$="龙积分"] <<n * + * > [text="JkaCmWVQ500S2oPJIJv3pK4lAM8omfwAibAgp2L0QtsAAAAASUVORK5CYII="]) || (@[text="确定"] -3 * > [text="AU8HaNGNFfbEAAAAAElFTkSuQmCC"]) || (@[text="关闭 按钮"] +n [text="立即使用"]) || (View + Image[text="关闭 按钮"])',
+            '([text="立即使用"] -n [text="获得 1 龙积分" || text$="龙积分"] <<n * + * > [text="JkaCmWVQ500S2oPJIJv3pK4lAM8omfwAibAgp2L0QtsAAAAASUVORK5CYII="]) || (@[text="确定"] -3 * > [text="AU8HaNGNFfbEAAAAAElFTkSuQmCC"]) || (@[text="关闭 按钮"] +n [text="立即使用"]) || (View + Image[text="关闭 按钮1"])',
           ],
           resetMatch: 'match',
           activityIds: [

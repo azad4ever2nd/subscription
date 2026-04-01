@@ -132,5 +132,17 @@ export default defineGkdApp({
         },
       ],
     },
+    {
+      key: 9,
+      name: '任务完成，返回',
+      desc: '260401',
+      rules: [
+        {
+          activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
+          resetMatch: 'match',
+          matches: '@*[clickable=true] [text="返回活动"]',
+        },
+      ],
+    },
   ],
 });

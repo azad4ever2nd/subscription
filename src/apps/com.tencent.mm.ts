@@ -1114,5 +1114,19 @@ export default defineGkdApp({
         },
       ],
     },
+    {
+      key: 55,
+      name: '菜单，识别图中的二维码',
+      desc: '260401',
+      rules: [
+        {
+          fastQuery: true,
+          resetMatch: 'match',
+          actionDelay: 3000,
+          activityIds: 'com.tencent.mm.plugin.webview.ui.tools.MMWebViewUI',
+          matches: '[text="识别图中的二维码"]',
+        },
+      ],
+    },
   ],
 });

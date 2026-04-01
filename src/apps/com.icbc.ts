@@ -148,11 +148,11 @@ export default defineGkdApp({
     {
       key: 11,
       name: '浇水',
-      desc: '260302，添加去微信浇水，text有变',
+      desc: '260401，添加去微信浇水，text有变',
       rules: [
         {
           matches: [
-            '([id="app"] [text="d78540e6a8194cbc93cd30f582c1d2fc7974213725" || text="aa18d744140f4765a9c948e6b866d9c65611138594" || text="fbebf39be63249139ce8df2e9f5e9cc26293897044" || text="d84b1ff2f6d74b1ba02132859880f4163743574625" || text="f28172fc08e74fb1b7c3b0b79d2790689604807634"]) || ([text="前往微信再浇一次,赢双重奖励！"] + Image)',
+            '([id="app"] [text="d78540e6a8194cbc93cd30f582c1d2fc7974213725" || text="aa18d744140f4765a9c948e6b866d9c65611138594" || text="fbebf39be63249139ce8df2e9f5e9cc26293897044" || text="d84b1ff2f6d74b1ba02132859880f4163743574625" || text="f28172fc08e74fb1b7c3b0b79d2790689604807634" || text="a47e521322884f2a9e43fe3967b8341f3457835618"]]) || ([text="前往微信再浇一次,赢双重奖励！"] + Image)',
           ],
           resetMatch: 'match',
           activityIds: ['com.icbc.activity.web.ICBCWebView'],

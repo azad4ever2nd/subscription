@@ -22,8 +22,8 @@ export default defineGkdApp({
     },
     {
       key: 2,
-      name: '证件有效期过期提醒',
-      desc: '251120',
+      name: '弹窗',
+      desc: '260401，不限于身份证过期',
       rules: [
         {
           matches: [
@@ -79,7 +79,7 @@ export default defineGkdApp({
     {
       key: 6,
       name: '弹窗',
-      desc: '260223',
+      desc: '260401，占位，与规则2重复',
       rules: [
         {
           matches: [

@@ -169,18 +169,14 @@ export default defineGkdApp({
     {
       key: 11,
       name: '基金财富月历兑换，自定义兑换多少金币的',
-      desc: '251208，D',
+      desc: '260401，只需把金币数量改成想兑换的就行。',
       rules: [
         {
-          matches: [
-            '([text="库存充足"] + [text$="88金币"] + [text="兑换"]) || ([text^="今日剩余"] <<n View[childCount=2] + [text$="88金币"] + [text="兑换"])',
-          ],
           actionMaximum: 1,
-          matchDelay: 10000,
-          resetMatch: 'match',
-          activityIds: [
+          resetMatch: 'app',
+          activityIds:
             'com.cebbank.mobile.cemb.ui.activity.mobilePayment.MobilePaymentWebActivity',
-          ],
+          matches: '[text="20金币"] + @[text="兑换"] + [text="(本月限兑:1次)"]',
         },
       ],
     },
