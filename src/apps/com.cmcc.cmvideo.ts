@@ -10,11 +10,11 @@ export default defineGkdApp({
       desc: '260308，添加升级提示',
       rules: [
         {
+          fastQuery: true,
+          resetMatch: 'match',
           matches: [
             '([vid="base_dialog_bg"] > [vid="base_dialog_left_btn"][text="以后再说" || text="稍后再说"]) || ([vid="base_dialog_title"][text="开启推送通知"] +n [vid="base_dialog_left_btn"][text="以后再说" || text="稍后再说"])',
           ],
-          fastQuery: true,
-          resetMatch: 'match',
           activityIds: [
             'com.cmcc.cmvideo.main.application.CompatibleMainActivity',
           ],
@@ -27,11 +27,12 @@ export default defineGkdApp({
       desc: '260302',
       rules: [
         {
+          fastQuery: true,
+          resetMatch: 'match',
           matches: [
             '([vid="sdv_big_pic"] - [vid="iv_big_close"]) || ([vid="iv_close_single"])',
           ],
-          fastQuery: true,
-          resetMatch: 'match',
+
           activityIds: [
             'com.cmcc.cmvideo.main.application.CompatibleMainActivity',
           ],
@@ -44,11 +45,11 @@ export default defineGkdApp({
       desc: '',
       rules: [
         {
+          fastQuery: true,
+          resetMatch: 'match',
           matches: [
             '[vid="sdv_right_bottom_pic"] + [vid="iv_right_bottom_close"]',
           ],
-          fastQuery: true,
-          resetMatch: 'match',
           activityIds: [
             'com.cmcc.cmvideo.main.application.CompatibleMainActivity',
           ],
@@ -61,11 +62,11 @@ export default defineGkdApp({
       desc: '251125,更新协议',
       rules: [
         {
+          fastQuery: true,
+          resetMatch: 'match',
           matches: [
             '[vid="tv_title"][text="更新提示"] +4 [vid="btn_ok"][text="同意并继续"]',
           ],
-          fastQuery: true,
-          resetMatch: 'match',
           activityIds: [
             'com.cmcc.cmvideo.main.application.CompatibleMainActivity',
           ],
@@ -78,10 +79,10 @@ export default defineGkdApp({
       desc: '260319',
       rules: [
         {
-          action: 'clickCenter',
-          matches: ['@View[clickable=true] [text="1O7F90FG42JLK"]'],
           actionMaximum: 1,
           resetMatch: 'app',
+          action: 'clickCenter',
+          matches: ['@View[clickable=true] [text="1O7F90FG42JLK"]'],
           activityIds: [
             'com.cmvideo.capability.remote_web.WebProcessActivity',
             'com.quickjs.android.example.RNFragmentActivity',
@@ -95,10 +96,10 @@ export default defineGkdApp({
       desc: '260319',
       rules: [
         {
-          preKeys: [12],
-          matches: ['@View[clickable=true] [text="1O7F90FG6NVJ7"]'],
           actionMaximum: 1,
           resetMatch: 'app',
+          preKeys: [12],
+          matches: ['@View[clickable=true] [text="1O7F90FG6NVJ7"]'],
           activityIds: [
             'com.cmvideo.capability.remote_web.WebProcessActivity',
             'com.quickjs.android.example.RNFragmentActivity',
@@ -112,10 +113,10 @@ export default defineGkdApp({
       desc: '260223 [id="verfyInput"] + * > [text="获取验证码"]',
       rules: [
         {
-          preKeys: [6],
-          matches: ['[id="verfyInput"] + [id="smsBtn"]'],
           actionMaximum: 1,
           resetMatch: 'app',
+          preKeys: [6],
+          matches: ['[id="verfyInput"] + [id="smsBtn"]'],
           activityIds: [
             'com.quickjs.android.example.RNFragmentActivity',
             'com.cmvideo.capability.remote_web.WebProcessActivity',
@@ -129,10 +130,10 @@ export default defineGkdApp({
       desc: '260324，添加 IDS',
       rules: [
         {
+          resetMatch: 'match',
           matches: [
             '@View[clickable=true] >n [text="1O6KI5PKEDG36" || text="1O6KI5PKO6N57"]',
           ],
-          resetMatch: 'match',
           activityIds: [
             'com.quickjs.android.example.RNFragmentActivity',
             'com.cmvideo.capability.remote_web.WebProcessActivity',
@@ -146,11 +147,11 @@ export default defineGkdApp({
       desc: '260306',
       rules: [
         {
+          resetMatch: 'match',
           action: 'clickCenter',
           matches: [
             '(@View[clickable=true] [id="cc54b71dca3545fb95c3de42954fa8e2" || text="1O6KI5PKO6N57" || text="1O6L4093C9DTM"]) || ([id="3fae2c0612c44bcba72669a0b4108f3d"] >3 View)',
           ],
-          resetMatch: 'match',
           activityIds: ['com.cmvideo.capability.remote_web.WebProcessActivity'],
         },
       ],
@@ -161,11 +162,11 @@ export default defineGkdApp({
       desc: '260308',
       rules: [
         {
+          actionMaximum: 1,
+          fastQuery: true,
+          resetMatch: 'app',
           preKeys: [5],
           matches: ['[vid="iv_share_iv"]'],
-          fastQuery: true,
-          actionMaximum: 1,
-          resetMatch: 'app',
           activityIds: ['com.cmvideo.capability.vod.VodActivity'],
         },
       ],
@@ -176,13 +177,13 @@ export default defineGkdApp({
       desc: '260308',
       rules: [
         {
+          actionMaximum: 1,
+          resetMatch: 'app',
+          fastQuery: true,
           preKeys: [10],
           matches: [
             '[vid="share_item_title"][text="微信好友"] - [vid="share_item_icon"]',
           ],
-          fastQuery: true,
-          actionMaximum: 1,
-          resetMatch: 'app',
           activityIds: ['com.cmvideo.capability.vod.VodActivity'],
         },
       ],
@@ -193,13 +194,13 @@ export default defineGkdApp({
       desc: '',
       rules: [
         {
+          actionMaximum: 1,
+          resetMatch: 'app',
+          fastQuery: true,
           preKeys: [11],
           matches: [
             '@[vid="sdv_static_pocket_pic"] + [vid="mgtask_warename_close"]',
           ],
-          fastQuery: true,
-          actionMaximum: 1,
-          resetMatch: 'match',
           activityIds: ['com.cmvideo.capability.vod.VodActivity'],
         },
       ],

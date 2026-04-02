@@ -152,5 +152,20 @@ export default defineGkdApp({
         },
       ],
     },
+    {
+      key: 10,
+      name: '开启精确位置信息 权限，取消',
+      desc: '260402',
+      rules: [
+        {
+          resetMatch: 'match',
+          fastQuery: true,
+          activityIds:
+            'com.huawei.module.commonwebview.ui.CommonWebviewActivity',
+          matches:
+            '[vid="textView"][text*="精确位置"] < * + * [id="android:id/button2"][text="取消"]',
+        },
+      ],
+    },
   ],
 });

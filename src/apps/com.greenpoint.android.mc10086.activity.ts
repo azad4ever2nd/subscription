@@ -10,9 +10,11 @@ export default defineGkdApp({
       desc: '',
       rules: [
         {
-          matches: ['@[vid="iv_top_close"] + [vid="rl_top_bg"]'],
-          fastQuery: true,
           resetMatch: 'app',
+          fastQuery: true,
+
+          matches: ['@[vid="iv_top_close"] + [vid="rl_top_bg"]'],
+
           activityIds: ['com.mc10086.cmcc.view.tabs.AppTabFragment'],
         },
       ],
@@ -36,9 +38,11 @@ export default defineGkdApp({
       desc: '',
       rules: [
         {
-          matches: ['[vid="close_btn"][desc="关闭"]'],
-          fastQuery: true,
           resetMatch: 'match',
+          fastQuery: true,
+
+          matches: ['[vid="close_btn"][desc="关闭"]'],
+
           activityIds: ['com.mc10086.cmcc.view.tabs.AppTabFragment'],
         },
       ],
@@ -49,8 +53,9 @@ export default defineGkdApp({
       desc: '',
       rules: [
         {
-          matches: ['[text="恭喜您获得"] +3 [text="开心收下"] + TextView'],
           resetMatch: 'match',
+          matches: ['[text="恭喜您获得"] +3 [text="开心收下"] + TextView'],
+
           activityIds: ['com.cmccit.webview.ac.CommonHtml5Activity'],
         },
       ],
@@ -61,9 +66,9 @@ export default defineGkdApp({
       desc: '',
       rules: [
         {
-          matches: ['[desc="获取验证码"]'],
           actionMaximum: 1,
           resetMatch: 'activity',
+          matches: ['[desc="获取验证码"]'],
           activityIds: ['com.cmccit.webview.ac.CommonHtml5Activity'],
         },
       ],
@@ -74,12 +79,26 @@ export default defineGkdApp({
       desc: '260304，添加兑换中，签到成功领奖',
       rules: [
         {
+          actionCd: 0,
+          resetMatch: 'match',
           matches: [
             '([text="兑换成功"] + Image) || (@* +2 * > [text="恭喜获得"]) || ([text="兑换中"] < * +n [text="我知道了"])',
           ],
-          actionCd: 0,
-          resetMatch: 'match',
           activityIds: ['com.cmccit.webview.ac.CommonHtml5Activity'],
+        },
+      ],
+    },
+    {
+      key: 7,
+      name: '签到奖励，X掉',
+      desc: '260402',
+      rules: [
+        {
+          resetMatch: 'match',
+          actionCd: 0,
+          activityIds: 'com.cmccit.webview.ac.CommonHtml5Activity',
+          matches:
+            '[text="累计签到奖励"] +n [text="去使用"] + *[clickable=true]',
         },
       ],
     },

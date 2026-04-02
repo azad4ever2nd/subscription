@@ -244,5 +244,17 @@ export default defineGkdApp({
         },
       ],
     },
+    {
+      key: 17,
+      name: '膨胀奖励，开心收下',
+      desc: '260402',
+      rules: [
+        {
+          resetMatch: 'match',
+          activityIds: 'com.sankuai.titans.adapter.mtapp.KNBWebViewActivity',
+          matches: '[text="恭喜获得膨胀奖励"] +n * > [text="开心收下"]',
+        },
+      ],
+    },
   ],
 });
