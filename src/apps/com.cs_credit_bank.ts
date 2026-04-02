@@ -49,7 +49,7 @@ export default defineGkdApp({
     {
       key: 4,
       name: '额度提升弹窗',
-      desc: '半价下单之后弹窗',
+      desc: 'D,半价下单之后弹窗',
       rules: [
         {
           matches: ['@* + [text="恭喜获得"]'],

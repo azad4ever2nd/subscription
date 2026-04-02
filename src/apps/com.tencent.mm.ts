@@ -183,7 +183,7 @@ export default defineGkdApp({
     {
       key: 9,
       name: '跳武汉SKP',
-      desc: '',
+      desc: 'D',
       rules: [
         {
           matches: ['[text="本地专属活动"] +2 [text="wuhan_1741916738193"]'],
@@ -195,7 +195,7 @@ export default defineGkdApp({
     {
       key: 10,
       name: '武汉SKP声明',
-      desc: '',
+      desc: 'D',
       rules: [
         {
           matches: ['[text="惠享中行日 畅购武汉SKP"] >5 TextView + Image'],
@@ -218,7 +218,7 @@ export default defineGkdApp({
     {
       key: 11,
       name: '武汉SKP抢购',
-      desc: '',
+      desc: 'D',
       rules: [
         {
           matches: ['View > [text^="今日剩余名额"] + Button'],
@@ -230,7 +230,7 @@ export default defineGkdApp({
     {
       key: 12,
       name: '武汉SKP异常返回重进',
-      desc: ' ',
+      desc: 'D',
       rules: [
         {
           action: 'back',
@@ -321,7 +321,7 @@ export default defineGkdApp({
     {
       key: 16,
       name: '阳光兑换外面',
-      desc: '251127，挑有库存的进',
+      desc: '251127，D，挑有库存的进',
       rules: [
         {
           matches: [
@@ -443,7 +443,7 @@ export default defineGkdApp({
     {
       key: 21,
       name: '光大小程序弹窗',
-      desc: '',
+      desc: 'D',
       rules: [
         {
           matches: ['[text="今日不再提醒"] + [text="前往领取"] + *'],
@@ -542,7 +542,7 @@ export default defineGkdApp({
     {
       key: 25,
       name: '验证手机号码，选上次提供的',
-      desc: '260101',
+      desc: '260101，D',
       rules: [
         {
           action: 'clickCenter',
@@ -570,7 +570,7 @@ export default defineGkdApp({
     {
       key: 26,
       name: '免费提现额度',
-      desc: '251127，免费提现，(@* + [text*="开启定位"] + [text="去开启"]) || ',
+      desc: '251127，D，免费提现，(@* + [text*="开启定位"] + [text="去开启"]) || ',
       rules: [
         {
           matches: ['[text="点此"] + [text="领取"]'],
@@ -634,7 +634,7 @@ export default defineGkdApp({
     {
       key: 29,
       name: '湘约工行1块钱',
-      desc: '占位29',
+      desc: 'D占位',
       rules: [
         {
           matches: [
@@ -691,7 +691,7 @@ export default defineGkdApp({
     {
       key: 32,
       name: '经开永旺',
-      desc: '251221',
+      desc: '251221，D，',
       rules: [
         {
           matches: [
@@ -979,7 +979,7 @@ export default defineGkdApp({
     {
       key: 47,
       name: '领完红包返回',
-      desc: '260130，占位',
+      desc: '260130，D，占位',
       rules: [
         {
           matches: [

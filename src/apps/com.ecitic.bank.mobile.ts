@@ -54,7 +54,7 @@ export default defineGkdApp({
     {
       key: 4,
       name: '浏览任务完成',
-      desc: '260218，返回',
+      desc: '260218，D,返回，容易导出退出软件',
       rules: [
         {
           action: 'back',
@@ -70,7 +70,7 @@ export default defineGkdApp({
     {
       key: 5,
       name: '抽奖，弹窗',
-      desc: '251208',
+      desc: '251208，D',
       rules: [
         {
           matches: ['Dialog [text="close"]'],

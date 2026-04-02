@@ -7,7 +7,7 @@ export default defineGkdApp({
     {
       key: 1,
       name: '火锅券',
-      desc: '251212',
+      desc: '251212，D',
       rules: [
         {
           matches: [
@@ -79,7 +79,7 @@ export default defineGkdApp({
     {
       key: 6,
       name: '弹窗',
-      desc: '260401，占位，与规则2重复',
+      desc: '260401，D,占位，与规则2重复',
       rules: [
         {
           matches: [

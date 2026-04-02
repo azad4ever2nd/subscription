@@ -57,7 +57,7 @@ export default defineGkdApp({
     {
       key: 4,
       name: '周三5折必胜客',
-      desc: '',
+      desc: 'D',
       rules: [
         {
           matches: [
@@ -73,7 +73,7 @@ export default defineGkdApp({
     {
       key: 5,
       name: '周三5折肯德基',
-      desc: '',
+      desc: 'D',
       rules: [
         {
           matches: [
@@ -89,7 +89,7 @@ export default defineGkdApp({
     {
       key: 6,
       name: '周三5折喜茶',
-      desc: '',
+      desc: 'D',
       rules: [
         {
           matches: [
@@ -105,7 +105,7 @@ export default defineGkdApp({
     {
       key: 7,
       name: '周三5折哈根达斯',
-      desc: '',
+      desc: 'D',
       rules: [
         {
           matches: [
@@ -138,7 +138,7 @@ export default defineGkdApp({
     {
       key: 9,
       name: '周三5折列表模式',
-      desc: '',
+      desc: 'D',
       rules: [
         {
           matches: [
@@ -154,7 +154,7 @@ export default defineGkdApp({
     {
       key: 10,
       name: '周三5折列表必胜客',
-      desc: '',
+      desc: 'D',
       rules: [
         {
           matches: [
@@ -170,7 +170,7 @@ export default defineGkdApp({
     {
       key: 11,
       name: '周三5折列表肯德基',
-      desc: '',
+      desc: 'D',
       rules: [
         {
           matches: [
@@ -186,7 +186,7 @@ export default defineGkdApp({
     {
       key: 12,
       name: '周三5折列表哈根达斯',
-      desc: '',
+      desc: 'D',
       rules: [
         {
           matches: [
@@ -202,7 +202,7 @@ export default defineGkdApp({
     {
       key: 13,
       name: '周三5折列表喜茶',
-      desc: '',
+      desc: 'D',
       rules: [
         {
           matches: ['[text="（周三5折）喜茶20元代金券"] +6 [text*="立即抢购"]'],
@@ -299,7 +299,7 @@ export default defineGkdApp({
     {
       key: 19,
       name: '恭喜中奖啦',
-      desc: '251202',
+      desc: '251202,D',
       rules: [
         {
           action: 'click',
@@ -316,7 +316,7 @@ export default defineGkdApp({
     {
       key: 20,
       name: '添加自选成功返回',
-      desc: '',
+      desc: 'D，占位',
       rules: [
         {
           action: 'back',
@@ -484,7 +484,7 @@ export default defineGkdApp({
     {
       key: 30,
       name: '月月领挑自己想要的奖品，误触弹窗',
-      desc: '260118',
+      desc: '260118，D',
       rules: [
         {
           matches: [

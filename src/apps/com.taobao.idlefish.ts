@@ -93,7 +93,7 @@ export default defineGkdApp({
     {
       key: 7,
       name: '直播间购物车去购买',
-      desc: '251202，相当于立即购买',
+      desc: '251202，D,相当于立即购买',
       rules: [
         {
           matches: [
@@ -228,7 +228,7 @@ export default defineGkdApp({
     {
       key: 17,
       name: '直播间列表进去',
-      desc: '251227，需要汉堡王可添加 text*="汉堡王代下单汉堡4选1" || ',
+      desc: '251227，D,需要汉堡王可添加 text*="汉堡王代下单汉堡4选1" || ',
       rules: [
         {
           matches: ['[text*="瑞幸-生椰拿铁"] < @* +n [text="去购买"]'],

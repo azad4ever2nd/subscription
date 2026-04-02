@@ -47,7 +47,7 @@ export default defineGkdApp({
     {
       key: 4,
       name: '理财节，返回',
-      desc: '260108，添加红包雨',
+      desc: '260108，D,添加红包雨',
       rules: [
         {
           matches: [

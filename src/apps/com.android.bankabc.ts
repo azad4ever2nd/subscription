@@ -99,7 +99,7 @@ export default defineGkdApp({
     {
       key: 8,
       name: '车主弹窗',
-      desc: '',
+      desc: 'D',
       rules: [
         {
           matches: ['* > [text="8BaplhYfHjrWAAAAAASUVORK5CYII="]'],
@@ -112,7 +112,7 @@ export default defineGkdApp({
     {
       key: 9,
       name: '游戏，我知道了',
-      desc: '251219，添加抽奖机会用完',
+      desc: '251219，D,添加抽奖机会用完',
       rules: [
         {
           action: 'back',

@@ -175,7 +175,7 @@ export default defineGkdApp({
     {
       key: 13,
       name: '中奖金豆',
-      desc: '',
+      desc: 'D',
       rules: [
         {
           matches: ['[id="giftModel"] > * +4 [text="确认"] + *'],
@@ -187,7 +187,7 @@ export default defineGkdApp({
     {
       key: 14,
       name: '浏览任务完成',
-      desc: '260101，占位',
+      desc: '260101，D,占位',
       rules: [
         {
           matches: ['@[vid="iv_task_center"] + [vid="iv_close_task_center"]'],

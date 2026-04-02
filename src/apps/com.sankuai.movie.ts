@@ -48,7 +48,7 @@ export default defineGkdApp({
     {
       key: 4,
       name: '上方定位横幅，关闭',
-      desc: '251218',
+      desc: '251218,D',
       rules: [
         {
           matches: ['[text="去开启"] + ImageView[vid="a25"]'],

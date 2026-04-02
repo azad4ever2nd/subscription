@@ -35,7 +35,7 @@ export default defineGkdApp({
     {
       key: 3,
       name: '确认到店自取门店',
-      desc: '',
+      desc: 'D',
       rules: [
         {
           matches: ['[text="更换门店"] < * +2 * > [text="确认门店并支付"]'],
@@ -65,7 +65,7 @@ export default defineGkdApp({
     {
       key: 5,
       name: '分享直播间抽奖',
-      desc: '关闭下方抽奖提示',
+      desc: 'D,关闭下方抽奖提示',
       rules: [
         {
           matches: ['[text="幸运抽奖"] +2 ImageView'],

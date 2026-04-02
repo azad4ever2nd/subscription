@@ -277,7 +277,7 @@ export default defineGkdApp({
     {
       key: 17,
       name: '碳星星级礼',
-      desc: '251227',
+      desc: '251227，D',
       rules: [
         {
           matches: [

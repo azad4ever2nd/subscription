@@ -36,7 +36,7 @@ export default defineGkdApp({
     {
       key: 3,
       name: '领淘金币',
-      desc: '251205,添加弹窗',
+      desc: '251205,D,添加弹窗',
       rules: [
         {
           matches: [

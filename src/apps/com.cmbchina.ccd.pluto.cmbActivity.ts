@@ -37,7 +37,7 @@ export default defineGkdApp({
     {
       key: 3,
       name: '周三必胜客',
-      desc: '',
+      desc: 'D',
       rules: [
         {
           matches: [
@@ -54,7 +54,7 @@ export default defineGkdApp({
     {
       key: 4,
       name: '周三5折哈根达斯',
-      desc: '',
+      desc: 'D',
       rules: [
         {
           matches: [
@@ -71,7 +71,7 @@ export default defineGkdApp({
     {
       key: 5,
       name: '周三5拍必胜客',
-      desc: '',
+      desc: 'D',
       rules: [
         {
           matches: [
@@ -88,7 +88,7 @@ export default defineGkdApp({
     {
       key: 6,
       name: '周三5拍肯德基',
-      desc: '',
+      desc: 'D',
       rules: [
         {
           matches: [
@@ -135,7 +135,7 @@ export default defineGkdApp({
     {
       key: 9,
       name: '周五红包雨结束',
-      desc: '中奖',
+      desc: '中奖,D',
       rules: [
         {
           matches: ['[text="红包雨"] @[id="close-btn"] + * >n [text="去查看"]'],

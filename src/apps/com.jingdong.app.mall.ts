@@ -82,7 +82,7 @@ export default defineGkdApp({
     {
       key: 6,
       name: '黑五预约',
-      desc: '',
+      desc: 'D',
       rules: [
         {
           matches: ['Image -2 * > [text="提醒我抢购"]'],
@@ -149,7 +149,7 @@ export default defineGkdApp({
     {
       key: 11,
       name: '黑五纸巾',
-      desc: '260306,页面变动，暂时不加sku，([text^="券后¥"] - [text*="纸巾"] <<n * + [text="领券抢"]) ||',
+      desc: '260306,D,页面变动，暂时不加sku，([text^="券后¥"] - [text*="纸巾"] <<n * + [text="领券抢"]) ||',
       rules: [
         {
           matches: [

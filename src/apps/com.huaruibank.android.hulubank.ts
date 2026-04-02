@@ -21,7 +21,7 @@ export default defineGkdApp({
     {
       key: 2,
       name: '签到成功',
-      desc: '',
+      desc: 'D',
       rules: [
         {
           matches: ['@View - View >2 [text="签到成功"]'],
@@ -49,7 +49,7 @@ export default defineGkdApp({
     {
       key: 4,
       name: '去签到',
-      desc: '',
+      desc: 'D',
       rules: [
         {
           matches: ['[text="20240711bb0ad1ae88fe4256b4d31f889471965a"]'],
@@ -62,7 +62,7 @@ export default defineGkdApp({
     {
       key: 5,
       name: '登陆',
-      desc: '',
+      desc: 'D',
       rules: [
         {
           matches: [

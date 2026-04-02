@@ -100,7 +100,7 @@ export default defineGkdApp({
     {
       key: 8,
       name: '云游上海75',
-      desc: '251219,[clickable=true] [text="75元"] + [text="游览券"] + [text="满150减75元"] + TextView',
+      desc: '251219,D,[clickable=true] [text="75元"] + [text="游览券"] + [text="满150减75元"] + TextView',
       rules: [
         {
           matches: ['[text="75元"] + [text="游览券"] +2 TextView'],
@@ -114,7 +114,7 @@ export default defineGkdApp({
     {
       key: 9,
       name: '云游上海50',
-      desc: '251219,[clickable=true] [text="50元"] + [text="游览券"] + [text="满100减50元"] + TextView',
+      desc: '251219,D,[clickable=true] [text="50元"] + [text="游览券"] + [text="满100减50元"] + TextView',
       rules: [
         {
           matches: ['[text="50元"] + [text="游览券"] +2 TextView'],
@@ -128,7 +128,7 @@ export default defineGkdApp({
     {
       key: 10,
       name: '乐游券，要120或60改规则， || text="60"',
-      desc: '251219',
+      desc: '251219,D',
       rules: [
         {
           matches: [
@@ -176,7 +176,7 @@ export default defineGkdApp({
     {
       key: 13,
       name: '还款优惠确认',
-      desc: '251209，自定义要的优惠金额，针对卡点的指定银行的固定还款优惠',
+      desc: '251209，D,自定义要的优惠金额，针对卡点的指定银行的固定还款优惠',
       rules: [
         {
           matches: [
@@ -191,7 +191,7 @@ export default defineGkdApp({
     {
       key: 14,
       name: '10点，18点旅享半价景点',
-      desc: '251215 ',
+      desc: '251215 ，D',
       rules: [
         {
           matches: [

@@ -70,7 +70,7 @@ export default defineGkdApp({
     {
       key: 6,
       name: '未中奖，弹窗',
-      desc: '',
+      desc: 'D',
       rules: [
         {
           matches: ['[text="cancel.ca07b919"]'],
@@ -94,7 +94,7 @@ export default defineGkdApp({
     {
       key: 8,
       name: '弹窗2',
-      desc: '251205,，匹配规则是图形按钮',
+      desc: '251205,D，匹配规则是图形按钮',
       rules: [
         {
           matches: [

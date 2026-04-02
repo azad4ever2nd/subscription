@@ -7,7 +7,7 @@ export default defineGkdApp({
     {
       key: 1,
       name: '弹窗1',
-      desc: '251205,添加活动结束了，未开始，若点击无反应，弹窗无反应，则拆分规则，一个默认，一个clickCenter，|| ([text="活动暂未开始"] +2 [text="确定"])',
+      desc: '251205,D,添加活动结束了，未开始，若点击无反应，弹窗无反应，则拆分规则，一个默认，一个clickCenter，|| ([text="活动暂未开始"] +2 [text="确定"])',
       rules: [
         {
           action: 'clickCenter',
@@ -36,7 +36,7 @@ export default defineGkdApp({
     {
       key: 3,
       name: '周四猫超和盒马',
-      desc: '260212，优先盒马，顺序可改',
+      desc: '260212，D,优先盒马，顺序可改',
       rules: [
         {
           matches: [
