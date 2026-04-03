@@ -449,5 +449,33 @@ export default defineGkdApp({
         },
       ],
     },
+    {
+      key: 28,
+      name: '达美乐50元代金券',
+      desc: '260403',
+      rules: [
+        {
+          resetMatch: 'match',
+          actionCd: 100,
+          activityIds: 'com.bankcomm.module.biz.webcontainer.BCMHtml5Activity',
+          matches: '@View [text="达美乐50元代金券"]',
+        },
+      ],
+    },
+    {
+      key: 29,
+      name: '达美乐售罄，返回',
+      desc: '260403，D,先占位',
+      rules: [
+        {
+          resetMatch: 'match',
+          actionCd: 100,
+          action: 'back',
+          activityIds: 'com.bankcomm.module.biz.webcontainer.BCMHtml5Activity',
+          matches:
+            '[text="达美乐50元代金券"] <<n * + * [id="copy"][text="已售罄"]',
+        },
+      ],
+    },
   ],
 });

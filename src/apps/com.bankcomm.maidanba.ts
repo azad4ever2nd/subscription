@@ -116,5 +116,33 @@ export default defineGkdApp({
         },
       ],
     },
+    {
+      key: 9,
+      name: '最红五折列表，达美乐50代金券',
+      desc: '260403',
+      rules: [
+        {
+          resetMatch: 'match',
+          actionCd: 100,
+          activityIds: 'com.bankcomm.maidanba.activity.WebViewActivity',
+          matches: '@View [text="达美乐50元代金券"] +n [text="¥ 25"]',
+        },
+      ],
+    },
+    {
+      key: 10,
+      name: '达美乐售罄，返回',
+      desc: '260403，只针对中午12点捡漏打开，平时要关闭',
+      rules: [
+        {
+          resetMatch: 'match',
+          actionCd: 100,
+          action: 'back',
+          activityIds: 'com.bankcomm.maidanba.activity.WebViewActivity',
+          matches:
+            '[text="达美乐50元代金券"] <<n * + * [id="copy"][text="已售罄"]',
+        },
+      ],
+    },
   ],
 });
