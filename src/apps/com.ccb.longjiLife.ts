@@ -14,7 +14,7 @@ export default defineGkdApp({
           resetMatch: 'match',
           activityIds: 'com.ccb.longjiLife.MainActivity',
           matches:
-            '(@[text="知道了"] <n * + TextView) || ([text="签到成功"] +4 [text="我知道了"]) || ([text="签到成功"] < * + *))',
+            '(@[text="知道了"] <n * + TextView) || ([text="签到成功"] +4 [text="我知道了"]) || ([text="签到成功"] < * + *)',
         },
       ],
     },
