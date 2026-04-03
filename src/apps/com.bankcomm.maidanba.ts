@@ -94,9 +94,10 @@ export default defineGkdApp({
       desc: '251220',
       rules: [
         {
-          matches: ['@* + [text="开启消息通知"] +n [text="去开启"]'],
+          actionCd: 0,
           fastQuery: true,
           resetMatch: 'match',
+          matches: ['@* + [text="开启消息通知"] +n [text="去开启"]'],
           activityIds: ['com.bankcomm.maidanba.activity.WebViewActivity'],
         },
       ],

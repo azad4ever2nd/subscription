@@ -194,17 +194,14 @@ export default defineGkdApp({
     {
       key: 12,
       name: '人数太多，关闭',
-      desc: '260314，增加 再试一试， 奖励已领完，上限',
+      desc: '260403，增加服务器在忙，上限',
       rules: [
         {
-          matches: [
-            '[id="dialogInnerDiv"][text^="人数太多" || text$="请稍后再试" || text*="次数上限" || text*="奖励已领完" || text*="再试一试" ] <<n * + * > [text="关闭"]',
-          ],
-          actionCd: 0,
+          actionCd: 500,
           resetMatch: 'match',
-          activityIds: [
-            'com.bankcomm.module.biz.webcontainer.BCMHtml5Activity',
-          ],
+          activityIds: 'com.bankcomm.module.biz.webcontainer.BCMHtml5Activity',
+          matches:
+            '[id="dialogInnerDiv"][text^="哎呀" || text^="人数太多" || text*="次数上限" || text^="服务器在忙" || text$="请稍后再试" ] <<n * + * > [text="关闭"]',
         },
       ],
     },

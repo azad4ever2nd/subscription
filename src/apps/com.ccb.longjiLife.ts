@@ -6,16 +6,15 @@ export default defineGkdApp({
   groups: [
     {
       key: 1,
-      name: '活粒签到',
-      desc: '260220,添加首页签到成功, ([text="签到成功"] < * + TextView) || ',
-      resetMatch: 'app',
+      name: '每日签到，成功了',
+      desc: '260403,添加首页签到成功, ([text="签到成功"] < * + TextView) || ',
       rules: [
         {
-          matches: [
-            '(@[text="知道了"] <n * + TextView) || ([text="签到成功"] +4 [text="我知道了"])',
-          ],
+          actionCd: 0,
           resetMatch: 'match',
-          activityIds: ['com.ccb.longjiLife.MainActivity'],
+          activityIds: 'com.ccb.longjiLife.MainActivity',
+          matches:
+            '(@[text="知道了"] <n * + TextView) || ([text="签到成功"] +4 [text="我知道了"]) || ([text="签到成功"] < * + *))',
         },
       ],
     },
@@ -24,9 +23,9 @@ export default defineGkdApp({
       name: '0元抢',
       rules: [
         {
-          matches: ['[text="0元抢"]'],
+          matches: '[text="0元抢"]',
           resetMatch: 'match',
-          activityIds: ['com.ccb.cloudmerchant.view.WebViewActivity'],
+          activityIds: 'com.ccb.cloudmerchant.view.WebViewActivity',
         },
       ],
     },
@@ -36,9 +35,9 @@ export default defineGkdApp({
       desc: '',
       rules: [
         {
-          matches: ['[text^="活动太火爆"] +3 * > [text="知道了"]'],
           resetMatch: 'match',
-          activityIds: ['com.ccb.cloudmerchant.view.WebViewActivity'],
+          matches: '[text^="活动太火爆"] +3 * > [text="知道了"]',
+          activityIds: 'com.ccb.cloudmerchant.view.WebViewActivity',
         },
       ],
     },
@@ -49,9 +48,9 @@ export default defineGkdApp({
       rules: [
         {
           action: 'back',
-          matches: ['[text^="优惠券已抢光"] +3 * > [text="知道了"]'],
           resetMatch: 'match',
-          activityIds: ['com.ccb.cloudmerchant.view.WebViewActivity'],
+          matches: '[text^="优惠券已抢光"] +3 * > [text="知道了"]',
+          activityIds: 'com.ccb.cloudmerchant.view.WebViewActivity',
         },
       ],
     },
@@ -61,9 +60,9 @@ export default defineGkdApp({
       desc: '251118',
       rules: [
         {
-          matches: ['[id="app"] >2 *[index=1][childCount=2] > Image[index=1]'],
           resetMatch: 'match',
-          activityIds: ['com.ccb.longjiLife.MainActivity'],
+          matches: '[id="app"] >2 *[index=1][childCount=2] > Image[index=1]',
+          activityIds: 'com.ccb.longjiLife.MainActivity',
         },
       ],
     },
@@ -73,8 +72,9 @@ export default defineGkdApp({
       desc: 'D',
       rules: [
         {
-          matches: ['[text="cancel.ca07b919"]'],
-          activityIds: ['com.ccb.cloudmerchant.view.WebViewActivity'],
+          resetMatch: 'match',
+          matches: '[text="cancel.ca07b919"]',
+          activityIds: 'com.ccb.cloudmerchant.view.WebViewActivity',
         },
       ],
     },
@@ -85,9 +85,9 @@ export default defineGkdApp({
       rules: [
         {
           action: 'back',
-          matches: ['[text="已抢光"]'],
           resetMatch: 'match',
-          activityIds: ['com.ccb.cloudmerchant.view.WebViewActivity'],
+          matches: '[text="已抢光"]',
+          activityIds: 'com.ccb.cloudmerchant.view.WebViewActivity',
         },
       ],
     },
@@ -97,11 +97,10 @@ export default defineGkdApp({
       desc: '251205,D，匹配规则是图形按钮',
       rules: [
         {
-          matches: [
-            '[text="NWJ6tc6mwaKQfgbADXAJPIxaVNUQJguwpoNgAy0x2ew8SgXab+AzNTubJfuAmp7HtQL5K8AARxBdk+5zMOgAAAAASUVORK5CYII="]',
-          ],
           resetMatch: 'match',
-          activityIds: ['com.ccb.cloudmerchant.view.WebViewActivity'],
+          matches:
+            '[text="NWJ6tc6mwaKQfgbADXAJPIxaVNUQJguwpoNgAy0x2ew8SgXab+AzNTubJfuAmp7HtQL5K8AARxBdk+5zMOgAAAAASUVORK5CYII="]',
+          activityIds: 'com.ccb.cloudmerchant.view.WebViewActivity',
         },
       ],
     },
@@ -111,12 +110,11 @@ export default defineGkdApp({
       desc: '260114',
       rules: [
         {
-          matches: [
-            '[text="身份信息验证"] +n CheckBox[checked=false] || ([text="身份信息验证"] +n [text="loginBtn.f302f730"]) || ([text="温馨提示"] + * > [text="好的"]) || ([text*="活动期间每周三15:00起开放报名领券入口"] <<n * + [text="NWJ6tc6mwaKQfgbADXAJPIxaVNUQJguwpoNgAy0x2ew8SgXab+AzNTubJfuAmp7HtQL5K8AARxBdk+5zMOgAAAAASUVORK5CYII="]) || ([text="温馨提示"] + [text*="报名人数已满" || text="今日报名人数已满，您可下个领券日再来~" || text^="活动期间每周三"] + * > [text="好的"])',
-          ],
           actionCd: 100,
           resetMatch: 'match',
-          activityIds: ['com.ccb.cloudmerchant.view.WebViewActivity'],
+          matches:
+            '[text="身份信息验证"] +n CheckBox[checked=false] || ([text="身份信息验证"] +n [text="loginBtn.f302f730"]) || ([text="温馨提示"] + * > [text="好的"]) || ([text*="活动期间每周三15:00起开放报名领券入口"] <<n * + [text="NWJ6tc6mwaKQfgbADXAJPIxaVNUQJguwpoNgAy0x2ew8SgXab+AzNTubJfuAmp7HtQL5K8AARxBdk+5zMOgAAAAASUVORK5CYII="]) || ([text="温馨提示"] + [text*="报名人数已满" || text="今日报名人数已满，您可下个领券日再来~" || text^="活动期间每周三"] + * > [text="好的"])',
+          activityIds: 'com.ccb.cloudmerchant.view.WebViewActivity',
         },
       ],
     },
@@ -126,10 +124,10 @@ export default defineGkdApp({
       desc: '260114',
       rules: [
         {
-          matches: ['[text="身份信息验证"] +n CheckBox[checked=false]'],
           actionCd: 0,
           resetMatch: 'match',
-          activityIds: ['com.ccb.cloudmerchant.view.WebViewActivity'],
+          matches: '[text="身份信息验证"] +n CheckBox[checked=false]',
+          activityIds: 'com.ccb.cloudmerchant.view.WebViewActivity',
         },
       ],
     },
@@ -139,11 +137,10 @@ export default defineGkdApp({
       desc: '260218',
       rules: [
         {
-          matches: [
-            '[text="签到成功"] + [text^="奖励8选1" || text$="领取"] +n [text="确定领取"] + TextView[index=parent.childCount.minus(1)]',
-          ],
           resetMatch: 'match',
-          activityIds: ['com.ccb.longjiLife.MainActivity'],
+          matches:
+            '[text="签到成功"] + [text^="奖励8选1" || text$="领取"] +n [text="确定领取"] + TextView[index=parent.childCount.minus(1)]',
+          activityIds: 'com.ccb.longjiLife.MainActivity',
         },
       ],
     },

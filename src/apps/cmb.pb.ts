@@ -299,31 +299,29 @@ export default defineGkdApp({
     {
       key: 19,
       name: '恭喜中奖啦',
-      desc: '251202,D',
+      desc: '260403,clickCenter不行',
       rules: [
         {
-          action: 'click',
-          matches: [
-            '[id="design-confirm-popup-wrap"] @Button + [text*="恭喜"] +n [text="立即查看"]',
-          ],
           resetMatch: 'match',
-          activityIds: [
+          activityIds:
             'cmb.pb.app.h5container.webviewcontainer.PBWebContainerActivity',
-          ],
+          matches:
+            '(@Button + [text*="恭喜"] +n [text="返回"]) || (@Button + [text="恭喜您，中奖啦！"] +n [text="返回"])',
         },
       ],
     },
     {
       key: 20,
-      name: '添加自选成功返回',
-      desc: 'D，占位',
+      name: '奖品已抢光，返回',
+      desc: '260403',
       rules: [
         {
+          order: -1,
           action: 'back',
-          matches: ['[id="app"] + * [text="添加自选成功"]'],
-          activityIds: [
+          resetMatch: 'match',
+          activityIds:
             'cmb.pb.app.h5container.webviewcontainer.PBWebContainerActivity',
-          ],
+          matches: '[text="奖品已抢光"]',
         },
       ],
     },

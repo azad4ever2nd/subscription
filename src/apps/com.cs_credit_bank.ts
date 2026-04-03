@@ -191,5 +191,18 @@ export default defineGkdApp({
         },
       ],
     },
+    {
+      key: 14,
+      name: '分期还账单，暂不办理',
+      desc: '260403',
+      rules: [
+        {
+          actionCd: 0,
+          resetMatch: 'match',
+          activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
+          matches: '[text="分期还账单"] + [text="暂不办理"]',
+        },
+      ],
+    },
   ],
 });
