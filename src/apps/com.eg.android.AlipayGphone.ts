@@ -39,9 +39,8 @@ export default defineGkdApp({
       rules: [
         {
           matches: [
-            '(@* + [text*="碰一下"] +n [text="去申请"]) || (@* - [text^="开启"] <n * +n * > [text="去订阅"]) || (@Button + * > [text=" 立即添加"]) || (@Image + [text*="收益可升级" || text="上架商品促成单" || text$="挑战活动"] +n [text="去升级" || text="去了解"]) || (@Image < * + * > [text*="红包奖励" || text="分期新户专享" || text^="开通"  || text="去看看1" || text*="同意协议" || text="同意协议并分期"]) || (@Image < * + * > [text*="红包奖励" || text="分期新户专享" || text^="开通"] +n [text="去看看1" || text*="同意协议" || text="同意协议并分期"]) || (@Image < [text*="红包奖励" || text="分期新户专享" || text^="开通"] +n [text="去看看1" || text*="同意协议"]) || (@Image[text=""] < * +n [text^="境外信用卡消费满"] +n * [text="提交"]) ||(@TextView + View >n [text="开启使用"]) || (@TextView + [text^="恭喜" || text="你新购的基金抗风险能力强"] +n [text="去看看"]) || (@TextView +n [text="去完成"] - * > [text^="搭配海外基金" || text^="搭配一笔" || text^="恭喜完成一笔国内" ]) || (@TextView - [text*="红包" || text^="学知识"] < * +n [text*="领取" || text*="福利"]) || (@TextView < View +2 [text="已学习，去使用"]) || (@[text="BE4E7D81-3958-4F2E-9956-E6071199885F@2x"] < * + [text^="添加"] ) || (@[text="关闭"] + * > [text="去看看" || text="去收礼"]) || (@[text="关闭"] +n [text="立即续卡"]) || ([text="关闭弹窗"] + * [text="立即更换"]) || ([text="去转换"] + [text="仍要卖出"]) || ([text="支付宝"] + [text="邀请你" || text="推荐你"] + [text="跳过"]) || ([text="暂不转出"] + [text="继续转出"]) || ([text="去看看"] - [text="淘宝闪购"] <<n * + [text="关闭"]) || (Dialog >n Button[text="关闭"]) || ([text^="无法获取定位信息"] + [text="我知道了"]) ',
+            '(@* + [text*="碰一下"] +n [text="去申请"]) || (@* - [text^="开启"] <n * +n * > [text="去订阅"]) || (@Button + * > [text=" 立即添加"]) || (@Image + [text*="收益可升级" || text="上架商品促成单" || text$="挑战活动"] +n [text="去升级" || text="去了解"]) || (@Image < * + * > [text*="红包奖励" || text="分期新户专享" || text^="开通"  || text="去看看1" || text*="同意协议" || text="同意协议并分期"]) || (@Image < * + * > [text*="红包奖励" || text="分期新户专享" || text^="开通"] +n [text="去看看1" || text*="同意协议" || text="同意协议并分期"]) || (@Image < [text*="红包奖励" || text="分期新户专享" || text^="开通"] +n [text="去看看1" || text*="同意协议"]) || (@Image[text=""] < * +n [text^="境外信用卡消费满"] +n * [text="提交"]) ||(@TextView + View >n [text="开启使用"]) || (@TextView + [text^="恭喜" || text="你新购的基金抗风险能力强"] +n [text="去看看"]) || (@TextView +n [text="去完成"] - * > [text^="搭配海外基金" || text^="搭配一笔" || text^="恭喜完成一笔国内" ]) || (@TextView - [text*="红包" || text^="学知识"] < * +n [text*="领取" || text*="福利"]) || (@TextView < View +2 [text="已学习，去使用"]) || (@[text="BE4E7D81-3958-4F2E-9956-E6071199885F@2x"] < * + [text^="添加"] ) || (@[text="关闭"] + * > [text="去看看" || text="去收礼"]) || (@[text="关闭"] +n [text="立即续卡"]) || ([text="关闭弹窗"] + * [text="立即更换"]) || ([text="去转换"] + [text="仍要卖出"]) || ([text="支付宝"] + [text="邀请你" || text="推荐你"] + [text="跳过"]) || ([text="暂不转出"] + [text="继续转出"]) || ([text="去看看"] - [text="淘宝闪购"] <<n * + [text="关闭"]) || (Dialog >n Button[text="关闭"]) || ([text^="无法获取定位信息"] + [text="我知道了"])',
           ],
-          actionCd: 0,
           resetMatch: 'match',
           activityIds: [
             'com.alipay.mobile.nebulax.xriver.activity.XRiverActivity',
@@ -93,6 +92,21 @@ export default defineGkdApp({
           fastQuery: true,
           activityIds: [
             'com.alipay.android.phone.msgboxapp.ui.activity.MBoxTabPageActivity',
+          ],
+        },
+      ],
+    },
+    {
+      key: 7,
+      name: '支付有礼，集卡，开心收下',
+      desc: '260324',
+      rules: [
+        {
+          matches: ['@View + ViewGroup *[desc="开心收下"]'],
+          actionCd: 0,
+          resetMatch: 'match',
+          activityIds: [
+            'com.alipay.android.phone.xriver.bundlex.CSGAPushActivity',
           ],
         },
       ],
@@ -165,7 +179,7 @@ export default defineGkdApp({
       rules: [
         {
           matches: [
-            '([text="支付宝"] + [text="邀请你" || text="推荐你"] + [text="跳过"])  || ([text="是否放弃本次付款？"] <<n * +n * [text="放弃"]) || ([text^="支付宝推荐" || text^="支付宝  推荐"] <<n * +n * > [text="关闭"]) || ([id="com.alipay.mobile.antui:id/message"][text="是否放弃本次付款？" || text*="是否放弃付款"] <<n * + * [id="com.alipay.mobile.antui:id/cancel"][text="放弃"])',
+            '([text="支付宝"] + [text="邀请你" || text="推荐你"] + [text="跳过"]) || ([text="是否放弃本次付款？"] <<n * +n * [text="放弃"]) || ([text^="支付宝推荐" || text^="支付宝  推荐"] <<n * +n * > [text="关闭"]) || ([id="com.alipay.mobile.antui:id/message"][text="是否放弃本次付款？" || text*="是否放弃付款"] <<n * + * [id="com.alipay.mobile.antui:id/cancel"][text="放弃"])',
           ],
           fastQuery: true,
           resetMatch: 'match',
@@ -275,7 +289,7 @@ export default defineGkdApp({
     {
       key: 19,
       name: '任务完成，返回领奖',
-      desc: '260325,添加返回，整合境外消费，转出提示，任务完成，各种弹窗，添加小组件，已学习去使用，会员小组件,卡到期续卡，还款后分期提示，资金规划',
+      desc: '260325,',
       rules: [
         {
           action: 'clickCenter',

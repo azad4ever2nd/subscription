@@ -129,5 +129,18 @@ export default defineGkdApp({
         },
       ],
     },
+    {
+      key: 10,
+      name: '开启消息通知弹窗 ，X掉',
+      desc: '260406',
+      rules: [
+        {
+          fastQuery: true,
+          resetMatch: 'match',
+          activityIds: 'com.citiccard.mobilebank.web.webpage.CommonWebPage',
+          matches: '[vid="btOpenNotification"] + [vid="ivClose"]',
+        },
+      ],
+    },
   ],
 });

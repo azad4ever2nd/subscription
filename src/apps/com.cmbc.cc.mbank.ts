@@ -78,16 +78,14 @@ export default defineGkdApp({
     },
     {
       key: 6,
-      name: '弹窗',
-      desc: '260401，D,占位，与规则2重复',
+      name: '周日10点30-15券',
+      desc: '260406',
       rules: [
         {
-          matches: [
-            '@[vid="views_close_main_alert_window_middle"] + [vid="views_image_main_alert_window"]',
-          ],
-          fastQuery: true,
           resetMatch: 'match',
-          activityIds: ['com.cmbc.cc.mbank.module.main.HomeActivity'],
+          activityIds: 'com.cmbc.cc.mbank.module.web.activity.WebViewActivity',
+          matches:
+            '@*[clickable=true] + [text="周日10:00开抢"] +n [text="民生借记卡专享"]',
         },
       ],
     },

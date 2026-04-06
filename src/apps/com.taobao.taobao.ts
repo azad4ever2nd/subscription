@@ -157,15 +157,14 @@ export default defineGkdApp({
     {
       key: 11,
       name: '闪购支付后的弹窗',
-      desc: '260218',
+      desc: '260406,支付后推荐弹窗',
       rules: [
         {
-          matches: [
-            '(@[text="关闭"] <<n * +n * [text="同意协议并开通"]) || (@* > [text="关闭"] <<n * +n * [text="同意协议并开通"])',
-          ],
-          fastQuery: true,
           resetMatch: 'match',
-          activityIds: ['com.alipay.android.msp.ui.views.MspContainerActivity'],
+          fastQuery: true,
+          activityIds: 'com.alipay.android.msp.ui.views.MspContainerActivity',
+          matches:
+            '([text="淘宝 推荐你"] <<n * +n @* > [text="关闭"]) || (@[text="关闭"] <<n * +n * [text="同意协议并开通"]) || (@* > [text="关闭"] <<n * +n * [text="同意协议并开通"])',
         },
       ],
     },

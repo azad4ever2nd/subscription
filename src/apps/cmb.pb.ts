@@ -299,10 +299,11 @@ export default defineGkdApp({
     {
       key: 19,
       name: '恭喜中奖啦',
-      desc: '260403,clickCenter不行',
+      desc: '260406,clickCenter不行',
       rules: [
         {
           resetMatch: 'match',
+          actionCd: 100,
           activityIds:
             'cmb.pb.app.h5container.webviewcontainer.PBWebContainerActivity',
           matches:

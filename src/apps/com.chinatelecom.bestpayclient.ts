@@ -46,5 +46,19 @@ export default defineGkdApp({
         },
       ],
     },
+    {
+      key: 4,
+      name: '弹窗2',
+      desc: '260406',
+      rules: [
+        {
+          fastQuery: true,
+          resetMatch: 'match',
+          actionCd: 100,
+          activityIds: 'com.mpaas.mriver.integration.MriverActivityBase$Main',
+          matches: '[vid="llLandscape"] [vid="ivLandscapeClose"]',
+        },
+      ],
+    },
   ],
 });

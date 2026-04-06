@@ -39,13 +39,14 @@ export default defineGkdApp({
     {
       key: 3,
       name: '新版本',
-      desc: '260319，添加IDS，[vid="fliggy_update_content_layout"] + ',
+      desc: '260406，添加IDS，[vid="fliggy_update_content_layout"] + ',
       rules: [
         {
           matches: ['[vid="fliggy_update_cancel_btn"]'],
           fastQuery: true,
           resetMatch: 'match',
           activityIds: [
+            'com.alipay.mobile.quinox.LauncherActivity',
             'com.taobao.trip.flutter.TripFlutterActivity',
             'com.unionpay.activity.react.UPActivityReactNative',
             'fliggyx.android.unicorn.ActWebviewActivity',

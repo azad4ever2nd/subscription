@@ -516,12 +516,12 @@ export default defineGkdApp({
     {
       key: 24,
       name: '金币抽提现券，立即收下',
-      desc: '251228,添加兑换后最小化，兑换提示',
+      desc: '260406,添加兑换后最小化，兑换提示',
       rules: [
         {
           action: 'clickCenter',
           matches: [
-            '([text="已收下"] + [text="7天后可再参与"] <<n * + * >n [desc="关闭"] ) || ([text="确认使用1金币兑换吗？"] <<n * + * >n [vid="mm_alert_ok_btn"][text="确认兑换"]) || ([text="立即收下"] + @[text="今日24点前可领"])',
+            '([text="已收下1"] + [text="7天后可再参与"] <<n * + * >n [desc="关闭"] ) || ([text="确认使用1金币兑换吗？"] <<n * + * >n [vid="mm_alert_ok_btn"][text="确认兑换"]) || ([text="立即收下"] + @[text="今日24点前可领"])',
           ],
           resetMatch: 'match',
           activityIds: [
@@ -804,14 +804,10 @@ export default defineGkdApp({
     },
     {
       key: 38,
-      name: '湖北SKP-1',
-      desc: '260102，中国银行信用卡湖北 公众号进去',
+      name: '湖北SKP',
+      desc: '260406，中国银行信用卡湖北 公众号进去，立即支付，不能限制1次',
       rules: [
         {
-          matches: ['@[text="file-WI7PoWjb8T"] + [text!="今日剩余名额：0名"]'],
-          actionCdKey: 6,
-          actionMaximum: 1,
-          resetMatch: 'match',
           activityIds: [
             'com.tencent.mm.plugin.appbrand.ui.AppBrandUI00',
             'com.tencent.mm.plugin.appbrand.ui.AppBrandUI01',
@@ -822,22 +818,19 @@ export default defineGkdApp({
             'com.tencent.mm.plugin.appbrand.ui.AppBrandUI1',
             'com.tencent.mm.plugin.appbrand.ui.AppBrandUI2',
             'com.tencent.mm.plugin.appbrand.ui.AppBrandUI3',
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI4',
           ],
+          matches: '@[text="file-WI7PoWjb8T"] + [text!="今日剩余名额：0名"]',
+          resetMatch: 'match',
         },
       ],
     },
     {
       key: 39,
-      name: '湖北SKP-2，确认支付',
-      desc: '260102',
+      name: '湖北SKP，确认支付',
+      desc: '260406，优先测试',
       rules: [
         {
-          matches: [
-            '[text="仅限中国银行信用卡支付"] + [text="dpyo8s1ulmfditgb8ejiv"] + [text="xmdaohehb7wx6hqcb8xft"]',
-          ],
-          actionCdKey: 6,
-          resetMatch: 'match',
+          order: -1,
           activityIds: [
             'com.tencent.mm.plugin.appbrand.ui.AppBrandUI00',
             'com.tencent.mm.plugin.appbrand.ui.AppBrandUI01',
@@ -848,8 +841,11 @@ export default defineGkdApp({
             'com.tencent.mm.plugin.appbrand.ui.AppBrandUI1',
             'com.tencent.mm.plugin.appbrand.ui.AppBrandUI2',
             'com.tencent.mm.plugin.appbrand.ui.AppBrandUI3',
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI4',
           ],
+          resetMatch: 'match',
+          actionCdKey: 6,
+          matches:
+            '[text="仅限中国银行信用卡支付"] + [text="dpyo8s1ulmfditgb8ejiv"] + [text="xmdaohehb7wx6hqcb8xft"]',
         },
       ],
     },
