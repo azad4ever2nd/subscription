@@ -132,5 +132,31 @@ export default defineGkdApp({
         },
       ],
     },
+    {
+      key: 9,
+      name: '口令复制分享，X掉',
+      desc: '260410',
+      rules: [
+        {
+          resetMatch: 'match',
+          actionCd: 0,
+          activityIds: 'cn.damai.h5container.DMH5Activity',
+          matches: '[text=" 去粘贴给好友"] + Image',
+        },
+      ],
+    },
+    {
+      key: 10,
+      name: '分享好友助力，X掉',
+      desc: '260410',
+      rules: [
+        {
+          resetMatch: 'match',
+          actionCd: 0,
+          activityIds: 'cn.damai.h5container.DMH5Activity',
+          matches: '[text=" 分享好友助力 再抽一次"] <<n View + Image',
+        },
+      ],
+    },
   ],
 });

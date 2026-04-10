@@ -147,14 +147,16 @@ export default defineGkdApp({
     {
       key: 11,
       name: '抽奖结果弹窗',
-      desc: '251226',
+      desc: '260410,action改为clickCenter测试',
       rules: [
         {
+          actionCd: 0,
+          action: 'clickCenter',
+          fastQuery: true,
+          resetMatch: 'match',
           matches: [
             '[text="查看奖品"] <n * + * > [text="popup_icon_close.15362f7"]',
           ],
-          fastQuery: true,
-          resetMatch: 'match',
           activityIds: ['com.alipay.mobile.nebulacore.ui.H5Activity'],
         },
       ],

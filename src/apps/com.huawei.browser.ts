@@ -57,5 +57,19 @@ export default defineGkdApp({
         },
       ],
     },
+    {
+      key: 5,
+      name: '确认下载弹窗，下载',
+      desc: '260410',
+      rules: [
+        {
+          resetMatch: 'match',
+          fastQuery: true,
+          activityIds: 'com.huawei.browser.download.DownloadRecordsActivity',
+          matches:
+            '[id="android:id/alertTitle"][text="下载"] <<n * +n * [id="android:id/button3"][text="取消"] + [id="android:id/button1"][text="下载"]',
+        },
+      ],
+    },
   ],
 });

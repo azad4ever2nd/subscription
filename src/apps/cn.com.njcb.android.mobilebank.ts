@@ -7,12 +7,12 @@ export default defineGkdApp({
     {
       key: 1,
       name: '弹窗1',
-      desc: '251205,D,添加活动结束了，未开始，若点击无反应，弹窗无反应，则拆分规则，一个默认，一个clickCenter，|| ([text="活动暂未开始"] +2 [text="确定"])',
+      desc: '260410,添加活动结束了，未开始，若点击无反应，弹窗无反应，则拆分规则，一个默认，一个clickCenter',
       rules: [
         {
           action: 'clickCenter',
           matches: [
-            '([text="活动已结束"] + * > [desc="知道了"]) || ([text="今日不再显示"] < * + *) || ([text="活动已结束"] + [text="确定" || text="知道了"])',
+            '([text="活动已结束"] + * > [desc="知道了"]) || ([text="活动已结束"] + [text="确定" || text="知道了"])',
           ],
           resetMatch: 'match',
           activityIds: ['com.njcb.mobile.h5biz.H5ContainerActivity'],
@@ -188,6 +188,19 @@ export default defineGkdApp({
           preKeys: [7],
           activityIds: 'com.njcb.mobile.h5biz.H5ContainerActivity',
           matches: '[text="任务中心"] <<n * +n * [text="规则"]',
+        },
+      ],
+    },
+    {
+      key: 14,
+      name: '鑫动好物，今日不再显示，X掉',
+      desc: '260410',
+      rules: [
+        {
+          resetMatch: 'match',
+          actionCd: 0,
+          activityIds: 'com.njcb.mobile.h5biz.H5ContainerActivity',
+          matches: '[text="今日不再显示"] < * + *[clickable=true]',
         },
       ],
     },

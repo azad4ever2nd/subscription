@@ -6,15 +6,15 @@ export default defineGkdApp({
   groups: [
     {
       key: 1,
-      name: '确认安装',
-      desc: '251207，',
+      name: '安装弹窗，确认',
+      desc: '260410',
       rules: [
         {
           resetMatch: 'match',
           fastQuery: true,
           activityIds: 'com.yxer.packageinstalles.InstallActivity',
           matches:
-            '[vid="confirm_checkbox2"] <<n [vid="linearLayout_id3"] +n [vid="linearLayout_actions"] > [vid="btn_confirm"][text="确认"]',
+            '[id="android:id/title"] <n * +n * > [vid="btn_cancel"] +n [vid="btn_confirm"][text="确认"]',
         },
       ],
     },
