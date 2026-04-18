@@ -135,12 +135,27 @@ export default defineGkdApp({
     {
       key: 9,
       name: '任务完成，返回',
-      desc: '260401',
+      desc: '2604017',
       rules: [
         {
           activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
           resetMatch: 'match',
-          matches: '@*[clickable=true] [text="返回活动"]',
+          matches:
+            '@*[clickable=true] [text="返回活动" || text="返回权益专区"]',
+        },
+      ],
+    },
+    {
+      key: 10,
+      name: '任务，分享到微信好友[ChangeMe]',
+      desc: '260417',
+      rules: [
+        {
+          resetMatch: 'activity',
+          fastQuery: true,
+          actionMaximum: 1,
+          activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
+          matches: '[text="分享到"] + * [vid="wx_btn"][text="微信好友"]',
         },
       ],
     },

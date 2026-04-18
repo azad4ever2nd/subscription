@@ -366,5 +366,34 @@ export default defineGkdApp({
         },
       ],
     },
+    {
+      key: 24,
+      name: '抽奖微信红包，复制',
+      desc: '260417',
+      rules: [
+        {
+          resetMatch: 'match',
+          actionMaximum: 1,
+          activityIds:
+            'com.cebbank.mobile.cemb.ui.activity.mobilePayment.MobilePaymentWebActivity',
+          matches:
+            '[text^="兑奖码"] + @*[clickable=true] + [text^="搜索并关注微信公众号"]',
+        },
+      ],
+    },
+    {
+      key: 25,
+      name: '抽奖微信红包，复制完后，开心收下 ',
+      desc: '260417',
+      rules: [
+        {
+          resetMatch: 'match',
+          preKeys: [24],
+          activityIds:
+            'com.cebbank.mobile.cemb.ui.activity.mobilePayment.MobilePaymentWebActivity',
+          matches: '[text^="搜索并关注微信公众号"] + *[clickable=true]',
+        },
+      ],
+    },
   ],
 });

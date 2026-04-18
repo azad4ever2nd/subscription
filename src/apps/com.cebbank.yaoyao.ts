@@ -7,13 +7,13 @@ export default defineGkdApp({
     {
       key: 1,
       name: '检测到新版本，暂不更新',
-      desc: '260312',
+      desc: '260416',
       rules: [
         {
           resetMatch: 'match',
           fastQuery: true,
           activityIds: 'com.cebbank.yaoyao.startup.GuideActivity',
-          matches: '[vid="tv_text"] < * +n * > [vid="btn_cancel_update"]',
+          matches: '[vid="btn_cancel_update"][text="暂不更新"]',
         },
       ],
     },

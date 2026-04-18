@@ -39,18 +39,15 @@ export default defineGkdApp({
     {
       key: 3,
       name: '基金收益到银行卡',
-      desc: '260304',
+      desc: '260417',
       rules: [
         {
-          preKeys: [15],
-          matches: [
-            '[text*="不想继续享受收益" || text$="可点击"] + [text="发放到银行卡"]',
-          ],
           actionMaximum: 1,
           resetMatch: 'match',
-          activityIds: [
+          preKeys: [15],
+          activityIds:
             'cmb.pb.app.h5container.webviewcontainer.PBWebContainerActivity',
-          ],
+          matches: '[text$="可点击"] + [text="发放到银行卡"]',
         },
       ],
     },
@@ -250,17 +247,17 @@ export default defineGkdApp({
     },
     {
       key: 16,
-      name: '收益奖励发放方式，提交',
-      desc: '260304',
+      name: '收益奖励将免费发放到您这张银行卡，提交',
+      desc: '260417，',
       rules: [
         {
           preKeys: [3],
-          matches: ['[text="收益奖励发放方式"] [text="提交"]'],
-          actionCdKey: 1,
           resetMatch: 'match',
-          activityIds: [
+          actionCdKey: 1,
+          activityIds:
             'cmb.pb.app.h5container.webviewcontainer.PBWebContainerActivity',
-          ],
+          matches:
+            '[text="收益奖励将免费发放到您这张银行卡："] +n * > [text="提交"]',
         },
       ],
     },
@@ -566,18 +563,16 @@ export default defineGkdApp({
     {
       key: 35,
       name: '添加自选',
-      desc: '260322',
+      desc: '260416',
       rules: [
         {
-          matches: [
-            '(@[text="自选"] + [text="定投"]) || (@[text="加自选"] + [text^="购买"])',
-          ],
-          actionCdKey: 1,
           actionMaximum: 1,
-          resetMatch: 'match',
-          activityIds: [
+          actionCdKey: 1,
+          resetMatch: 'activity',
+          activityIds:
             'cmb.pb.app.h5container.webviewcontainer.PBWebContainerActivity',
-          ],
+          matches:
+            '([text="自选"] + [text="购买"]) || (@[text="自选"] + [text="定投"]) || (@[text="加自选"] + [text^="购买"])',
         },
       ],
     },
@@ -594,6 +589,51 @@ export default defineGkdApp({
           activityIds: [
             'cmb.pb.app.h5container.webviewcontainer.PBWebContainerActivity',
           ],
+        },
+      ],
+    },
+    {
+      key: 37,
+      name: '资讯分享任务，微信好友',
+      desc: '260417',
+      rules: [
+        {
+          actionMaximum: 1,
+          resetMatch: 'activity',
+          actionCdKey: 1,
+          activityIds: 'com.pb.livestream.NewLiveStreamListActivity',
+          matches:
+            '(@[text="微信好友"] < * + [text="取消"]) || ([text="微信好友"] < @*[clickable=true] < * + [text="取消"])',
+        },
+      ],
+    },
+    {
+      key: 38,
+      name: '超风险及高风险产品定投确认，确认继续定投',
+      desc: '260417',
+      rules: [
+        {
+          resetMatch: 'match',
+          actionCdKey: 1,
+          activityIds:
+            'cmb.pb.app.h5container.webviewcontainer.PBWebContainerActivity',
+          matches:
+            '[text="超风险及高风险产品定投确认"] < * +n [text="确认继续定投"]',
+        },
+      ],
+    },
+    {
+      key: 39,
+      name: '定投，阅读并确认以下文件，确认',
+      desc: '260417',
+      rules: [
+        {
+          actionCdKey: 1,
+          resetMatch: 'match',
+          activityIds:
+            'cmb.pb.app.h5container.webviewcontainer.PBWebContainerActivity',
+          matches:
+            '[text="请阅读并确认以下文件"] < * +n * > [text="已阅读并确认"]',
         },
       ],
     },

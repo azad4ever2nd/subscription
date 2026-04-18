@@ -70,5 +70,18 @@ export default defineGkdApp({
         },
       ],
     },
+    {
+      key: 6,
+      name: '直播弹窗',
+      desc: '260416',
+      rules: [
+        {
+          resetMatch: 'match',
+          fastQuery: true,
+          activityIds: 'com.pingan.launcher.activity.LauncherActivity',
+          matches: '[vid="bottom_close_image"][desc="点击关闭按钮"]',
+        },
+      ],
+    },
   ],
 });

@@ -26,13 +26,15 @@ export default defineGkdApp({
       desc: '260325,添加打开定位服务，,添加IDS,消息通知 com.hellobike.business.hitch.common.home.HLPHHomeActivity',
       rules: [
         {
-          matches: [
-            '[text^="请打开定位服务" || text="开启消息通知" || text="系统定位服务已关闭"] < * +n * [text="取消"]',
-          ],
-          actionCd: 0,
           fastQuery: true,
           resetMatch: 'match',
-          activityIds: ['com.hellobike.atlas.business.portal.PortalActivity'],
+          actionCd: 0,
+          activityIds: [
+            'com.hellobike.atlas.business.portal.PortalActivity',
+            'com.hellobike.business.hitch.common.home.HLPHHomeActivity',
+          ],
+          matches:
+            '[text^="请打开定位服务" || text="开启消息通知" || text="系统定位服务已关闭"] <<n * +n * [text="取消"]',
         },
       ],
     },
@@ -327,6 +329,65 @@ export default defineGkdApp({
           actionMaximum: 1,
           resetMatch: 'app',
           activityIds: ['com.hellobike.atlas.business.portal.PortalActivity'],
+        },
+      ],
+    },
+    {
+      key: 22,
+      name: '碳积分，去领取',
+      desc: '260416',
+      rules: [
+        {
+          resetMatch: 'match',
+          actionMaximum: 1,
+          actionCd: 300,
+          activityIds:
+            'com.hellobike.moped.platform.offline.web.OhoRealmWebActivity',
+          matches: '@View > [text="碳积分"] + * + [text="去领取"]',
+        },
+      ],
+    },
+    {
+      key: 23,
+      name: '请打开系统定位开关后用车,X掉',
+      desc: '260416',
+      rules: [
+        {
+          resetMatch: 'match',
+          actionMaximum: 1,
+          actionCd: 0,
+          activityIds:
+            'com.hellobike.moped.platform.offline.web.OhoRealmWebActivity',
+          matches:
+            '[text="请打开系统定位开关后用车"] <n * + @*[clickable=true] +n [text="去开启"]',
+        },
+      ],
+    },
+    {
+      key: 24,
+      name: '奖励金页面，签到',
+      desc: '260416',
+      rules: [
+        {
+          resetMatch: 'match',
+          actionMaximum: 1,
+          actionCd: 300,
+          activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
+          matches: '[text="请点击下方按钮，立即签到"] + * [text="签到"]',
+        },
+      ],
+    },
+    {
+      key: 25,
+      name: '领奖页面，签到完成，明日再来，X掉',
+      desc: '260416',
+      rules: [
+        {
+          resetMatch: 'match',
+          actionMaximum: 1,
+          actionCd: 300,
+          activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
+          matches: '@TextView[clickable=true] +n [text="明日再来"]',
         },
       ],
     },

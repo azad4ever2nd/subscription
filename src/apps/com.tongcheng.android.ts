@@ -7,16 +7,16 @@ export default defineGkdApp({
     {
       key: 1,
       name: '下单后弹窗',
-      desc: '260323，添加浏览订单时的弹窗',
+      desc: '260417，添加浏览订单时的弹窗',
       rules: [
         {
-          matches: [
-            '([text="广告"] +n @* > [text="close_icon"]) || (Image < View + View > [text="close_icon"])',
-          ],
           actionCd: 0,
+          action: 'clickCenter',
           fastQuery: true,
           resetMatch: 'match',
-          activityIds: ['com.tongcheng.android.module.webapp.WebViewActivity'],
+          activityIds: 'com.tongcheng.android.module.webapp.WebViewActivity',
+          matches:
+            '([text="广告"] +n @* > [text="close_icon"]) || (Image < View + View > [text="close_icon"]) || (@View > [text="close_icon"])',
         },
       ],
     },
