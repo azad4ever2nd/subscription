@@ -10,7 +10,7 @@ export default defineGkdApp({
       desc: '260416',
       rules: [
         {
-		  resetMatch:'match',
+          resetMatch: 'match',
           fastQuery: true,
           activityIds: 'com.cebbank.yaoyao.startup.GuideActivity',
           matches: '[vid="btn_cancel_update"][text="暂不更新"]',

@@ -148,10 +148,11 @@ export default defineGkdApp({
       desc: '260417',
       rules: [
         {
-          resetMatch:'match',
+          resetMatch: 'match',
           fastQuery: true,
           activityIds: 'com.citiccard.mobilebank.web.webpage.CommonWebPage',
-          matches: '[vid="tv_title"][text="服务提示"] +n * [vid="btn_confirm"][text="我知道了"]',
+          matches:
+            '[vid="tv_title"][text="服务提示"] +n * [vid="btn_confirm"][text="我知道了"]',
         },
       ],
     },
@@ -161,7 +162,7 @@ export default defineGkdApp({
       desc: '260417',
       rules: [
         {
-          resetMatch:'match',
+          resetMatch: 'match',
           activityIds: 'com.citiccard.mobilebank.web.webpage.CommonWebPage',
           matches: '[text^="易百信息技术"] +n [text="授权并登录"]',
         },

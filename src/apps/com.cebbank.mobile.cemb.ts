@@ -373,9 +373,11 @@ export default defineGkdApp({
       rules: [
         {
           resetMatch: 'match',
-		  actionMaximum:1,
-          activityIds: 'com.cebbank.mobile.cemb.ui.activity.mobilePayment.MobilePaymentWebActivity',
-          matches: '[text^="兑奖码"] + @*[clickable=true] + [text^="搜索并关注微信公众号"]',
+          actionMaximum: 1,
+          activityIds:
+            'com.cebbank.mobile.cemb.ui.activity.mobilePayment.MobilePaymentWebActivity',
+          matches:
+            '[text^="兑奖码"] + @*[clickable=true] + [text^="搜索并关注微信公众号"]',
         },
       ],
     },
@@ -386,8 +388,9 @@ export default defineGkdApp({
       rules: [
         {
           resetMatch: 'match',
-		  preKeys:[24],
-          activityIds: 'com.cebbank.mobile.cemb.ui.activity.mobilePayment.MobilePaymentWebActivity',
+          preKeys: [24],
+          activityIds:
+            'com.cebbank.mobile.cemb.ui.activity.mobilePayment.MobilePaymentWebActivity',
           matches: '[text^="搜索并关注微信公众号"] + *[clickable=true]',
         },
       ],

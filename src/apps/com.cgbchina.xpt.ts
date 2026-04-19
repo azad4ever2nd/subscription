@@ -12,7 +12,10 @@ export default defineGkdApp({
         {
           resetMatch: 'match',
           fastQuery: true,
-          activityIds: ['com.cgb.mobilebank.sit.launcher.module.main.activity.IndexActivity','com.alipay.mobile.nebulacore.ui.H5Activity',],
+          activityIds: [
+            'com.cgb.mobilebank.sit.launcher.module.main.activity.IndexActivity',
+            'com.alipay.mobile.nebulacore.ui.H5Activity',
+          ],
           matches: '@[vid="ad_table_close"] + [vid="ad_table_view_base"]',
         },
       ],
@@ -26,7 +29,8 @@ export default defineGkdApp({
           resetMatch: 'match',
           fastQuery: true,
           activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
-          matches: '[vid="tv_title"] +n [vid="tip"][text^="广发银行不承担影娱充值产品"] + * > [vid="tv_right"][text="确定"]',
+          matches:
+            '[vid="tv_title"] +n [vid="tip"][text^="广发银行不承担影娱充值产品"] + * > [vid="tv_right"][text="确定"]',
         },
       ],
     },
