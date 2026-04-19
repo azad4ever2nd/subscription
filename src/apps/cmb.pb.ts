@@ -325,19 +325,16 @@ export default defineGkdApp({
     },
     {
       key: 21,
-      name: '恭喜中奖啦2',
-      desc: '占位',
+      name: '基金体验金，立即使用',
+      desc: '260419',
       rules: [
         {
-          action: 'clickCenter',
-          matches: [
-            '@Button + [text*="恭喜"] +n [text="返回"] + [text="立即查看"]',
-          ],
-          actionMaximum: 1,
-          resetMatch: 'activity',
-          activityIds: [
+          resetMatch: 'match',
+          actionCdKey: 6,
+          activityIds:
             'cmb.pb.app.h5container.webviewcontainer.PBWebContainerActivity',
-          ],
+          matches:
+            '[text$="基金体验金"] < * +n [id="useBtn"] > [text="立即使用"]',
         },
       ],
     },

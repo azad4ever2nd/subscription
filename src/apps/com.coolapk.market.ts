@@ -18,5 +18,20 @@ export default defineGkdApp({
         },
       ],
     },
+    {
+      key: 2,
+      name: '免广告弹窗，关闭',
+      desc: '260419',
+      rules: [
+        {
+          resetMatch: 'match',
+          fastQuery: true,
+          actionCd: 100,
+          activityIds: 'com.coolapk.market.view.feed.FeedDetailActivityV8',
+          matches:
+            '[id="android:id/button3"][text="【去广告】 今日免广告"] + [id="android:id/button1"][text="关闭"]',
+        },
+      ],
+    },
   ],
 });

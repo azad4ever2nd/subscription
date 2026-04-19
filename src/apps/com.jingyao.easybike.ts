@@ -23,18 +23,18 @@ export default defineGkdApp({
     {
       key: 2,
       name: '系统定位服务已关闭',
-      desc: '260325,添加打开定位服务，,添加IDS,消息通知 com.hellobike.business.hitch.common.home.HLPHHomeActivity',
+      desc: '260419,添加打开定位服务，,添加IDS,消息通知 com.hellobike.business.hitch.common.home.HLPHHomeActivity',
       rules: [
         {
           fastQuery: true,
           resetMatch: 'match',
           actionCd: 0,
           activityIds: [
-            'com.hellobike.atlas.business.portal.PortalActivity',
             'com.hellobike.business.hitch.common.home.HLPHHomeActivity',
+            'com.hellobike.atlas.business.portal.PortalActivity',
           ],
           matches:
-            '[text^="请打开定位服务" || text="开启消息通知" || text="系统定位服务已关闭"] <<n * +n * [text="取消"]',
+            '([text^="请打开定位服务"] <<n * +n * [text="取消"]) || ([text="开启消息通知"]  <<n * +n * [text="取消"])|| ([text="系统定位服务已关闭"] <<n * +n * [text="取消"])',
         },
       ],
     },

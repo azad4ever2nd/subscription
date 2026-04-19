@@ -270,26 +270,25 @@ export default defineGkdApp({
     {
       key: 14,
       name: '深工抢哈罗',
-      desc: '251128，整合确认页面',
+      desc: '260419，集中三步于一条，立即抢购>确认支付>人数过多，不局限于哈罗',
       rules: [
         {
-          matches: [
-            '([text*="哈啰"] +n * > [text="总计：¥0"] + [text="确认支付"]) || ([text="￥0"] +n [text^="哈啰"] +n * > [text="立即抢购"]) || ([text="抢购成功消耗500积分"] +n [text="立即抢购"]) || ([text="总计：¥0"] + [text="确认支付"])',
-          ],
-          actionCd: 100,
           resetMatch: 'match',
+          actionCdKey: 6,
           activityIds: [
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI00',
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI01',
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI02',
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI03',
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI04',
             'com.tencent.mm.plugin.appbrand.ui.AppBrandUI0',
             'com.tencent.mm.plugin.appbrand.ui.AppBrandUI1',
             'com.tencent.mm.plugin.appbrand.ui.AppBrandUI2',
             'com.tencent.mm.plugin.appbrand.ui.AppBrandUI3',
             'com.tencent.mm.plugin.appbrand.ui.AppBrandUI4',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI00',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI01',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI02',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI03',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI04',
           ],
+          matches:
+            '([text="抢购成功消耗500积分"] +n [text="立即抢购"]) || ([text="总计：¥0"] + [text="确认支付"]) || ([text="访问人数过多，请稍后再试"] + [text*="我知道了"])',
         },
       ],
     },
@@ -608,15 +607,9 @@ export default defineGkdApp({
     {
       key: 28,
       name: '工行浇水',
-      desc: '260323',
+      desc: '260419',
       rules: [
         {
-          matches: [
-            '([text="f28172fc08e74fb1b7c3b0b79d2790689604807634"]) || ([text^="奖励派送中"] <n * + * > *[clickable=true])',
-          ],
-          actionCd: 1000,
-          actionMaximum: 6,
-          resetMatch: 'match',
           activityIds: [
             'com.tencent.mm.plugin.appbrand.ui.AppBrandUI00',
             'com.tencent.mm.plugin.appbrand.ui.AppBrandUI01',
@@ -628,6 +621,11 @@ export default defineGkdApp({
             'com.tencent.mm.plugin.appbrand.ui.AppBrandUI2',
             'com.tencent.mm.plugin.appbrand.ui.AppBrandUI3',
           ],
+          actionCd: 500,
+          actionMaximum: 6,
+          resetMatch: 'match',
+          matches:
+            '([text="f28172fc08e74fb1b7c3b0b79d2790689604807634"]) || ([text="a47e521322884f2a9e43fe3967b8341f3457835618"]) || ([text="奖励派送中，稍后送达～"] <n * + * > *[clickable=true])',
         },
       ],
     },

@@ -72,14 +72,14 @@ export default defineGkdApp({
     {
       key: 5,
       name: '领券中心,信用卡专享好券，还款券',
-      desc: '260329，第一个index=0',
+      desc: '260419，第一个index=0',
       rules: [
         {
           matches: [
             '[text="ACIM_20250725000139_20250725155808212"] <<n * + * > *[index=0] [text="立即领取"]',
           ],
           actionCd: 100,
-          actionMaximum: 5,
+          actionMaximum: 2,
           resetMatch: 'match',
           activityIds: [
             'com.bankcomm.module.biz.webcontainer.BCMHtml5Activity',
@@ -434,14 +434,14 @@ export default defineGkdApp({
     {
       key: 27,
       name: '领券中心,信用卡专享好券，刷卡金',
-      desc: '260329，周五或周日再领，集齐2张再用，第二个index=1',
+      desc: '260419，周五或周日再领，集齐2张再用，第二个index=1',
       rules: [
         {
           matches: [
             '[text="ACIM_20250725000139_20250725155808212"] <<n * + * > *[index=1] [text="立即领取"]',
           ],
           actionCd: 100,
-          actionMaximum: 5,
+          actionMaximum: 2,
           resetMatch: 'match',
           activityIds: [
             'com.bankcomm.module.biz.webcontainer.BCMHtml5Activity',
