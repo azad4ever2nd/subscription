@@ -31,7 +31,9 @@ export default defineGkdApp({
           ],
           actionCd: 100,
           resetMatch: 'match',
-          activityIds: ['com.google.android.gms.ads.AdActivity'],
+          activityIds: [
+            'com.google.android.gms.ads.AdActivity',
+          ],
         },
       ],
     },

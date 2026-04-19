@@ -27,14 +27,10 @@ export default defineGkdApp({
       rules: [
         {
           fastQuery: true,
-          resetMatch: 'match',
-          actionCd: 0,
-          activityIds: [
-            'com.hellobike.atlas.business.portal.PortalActivity',
-            'com.hellobike.business.hitch.common.home.HLPHHomeActivity',
-          ],
-          matches:
-            '[text^="请打开定位服务" || text="开启消息通知" || text="系统定位服务已关闭"] <<n * +n * [text="取消"]',
+		  resetMatch:'match',
+		  actionCd:0,
+          activityIds: ['com.hellobike.atlas.business.portal.PortalActivity','com.hellobike.business.hitch.common.home.HLPHHomeActivity'],
+          matches: '[text^="请打开定位服务" || text="开启消息通知" || text="系统定位服务已关闭"] <<n * +n * [text="取消"]',
         },
       ],
     },
@@ -338,11 +334,10 @@ export default defineGkdApp({
       desc: '260416',
       rules: [
         {
-          resetMatch: 'match',
-          actionMaximum: 1,
-          actionCd: 300,
-          activityIds:
-            'com.hellobike.moped.platform.offline.web.OhoRealmWebActivity',
+		  resetMatch:'match',
+		  actionMaximum:1,
+		  actionCd:300,
+          activityIds: 'com.hellobike.moped.platform.offline.web.OhoRealmWebActivity',
           matches: '@View > [text="碳积分"] + * + [text="去领取"]',
         },
       ],
@@ -353,13 +348,11 @@ export default defineGkdApp({
       desc: '260416',
       rules: [
         {
-          resetMatch: 'match',
-          actionMaximum: 1,
-          actionCd: 0,
-          activityIds:
-            'com.hellobike.moped.platform.offline.web.OhoRealmWebActivity',
-          matches:
-            '[text="请打开系统定位开关后用车"] <n * + @*[clickable=true] +n [text="去开启"]',
+		  resetMatch:'match',
+		  actionMaximum:1,
+		  actionCd:0,
+          activityIds: 'com.hellobike.moped.platform.offline.web.OhoRealmWebActivity',
+          matches: '[text="请打开系统定位开关后用车"] <n * + @*[clickable=true] +n [text="去开启"]',
         },
       ],
     },
@@ -369,9 +362,9 @@ export default defineGkdApp({
       desc: '260416',
       rules: [
         {
-          resetMatch: 'match',
-          actionMaximum: 1,
-          actionCd: 300,
+		  resetMatch:'match',
+		  actionMaximum:1,
+		  actionCd:300,
           activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
           matches: '[text="请点击下方按钮，立即签到"] + * [text="签到"]',
         },
@@ -383,9 +376,9 @@ export default defineGkdApp({
       desc: '260416',
       rules: [
         {
-          resetMatch: 'match',
-          actionMaximum: 1,
-          actionCd: 300,
+		  resetMatch:'match',
+		  actionMaximum:1,
+		  actionCd:300,
           activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
           matches: '@TextView[clickable=true] +n [text="明日再来"]',
         },

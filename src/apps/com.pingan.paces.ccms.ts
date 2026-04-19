@@ -76,7 +76,7 @@ export default defineGkdApp({
       desc: '260416',
       rules: [
         {
-          resetMatch: 'match',
+          resetMatch:'match',
           fastQuery: true,
           activityIds: 'com.pingan.launcher.activity.LauncherActivity',
           matches: '[vid="bottom_close_image"][desc="点击关闭按钮"]',

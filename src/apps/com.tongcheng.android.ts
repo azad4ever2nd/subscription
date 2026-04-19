@@ -10,13 +10,12 @@ export default defineGkdApp({
       desc: '260417，添加浏览订单时的弹窗',
       rules: [
         {
-          actionCd: 0,
-          action: 'clickCenter',
+		  actionCd:0,
+		  action:'clickCenter',
           fastQuery: true,
           resetMatch: 'match',
           activityIds: 'com.tongcheng.android.module.webapp.WebViewActivity',
-          matches:
-            '([text="广告"] +n @* > [text="close_icon"]) || (Image < View + View > [text="close_icon"]) || (@View > [text="close_icon"])',
+          matches: '([text="广告"] +n @* > [text="close_icon"]) || (Image < View + View > [text="close_icon"]) || (@View > [text="close_icon"])',
         },
       ],
     },

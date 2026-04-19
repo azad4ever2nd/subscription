@@ -11,12 +11,11 @@ export default defineGkdApp({
       rules: [
         {
           fastQuery: true,
-          resetMatch: 'match',
+		  resetMatch:'match',
           activityIds: 'com.icbc.elife.MainActivity',
-          matches:
-            '[vid="hint_dialog_title"][text="发现新版本"] < * + * > [vid="gologinbutton"][text="取消"]',
+          matches: '[vid="hint_dialog_title"][text="发现新版本"] < * + * > [vid="gologinbutton"][text="取消"]',
         },
       ],
     },
   ],
-});
+})

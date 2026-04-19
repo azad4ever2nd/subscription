@@ -42,11 +42,10 @@ export default defineGkdApp({
       desc: '260417',
       rules: [
         {
-          actionMaximum: 1,
-          resetMatch: 'match',
-          preKeys: [15],
-          activityIds:
-            'cmb.pb.app.h5container.webviewcontainer.PBWebContainerActivity',
+		  actionMaximum:1,
+		  resetMatch:'match',
+		  preKeys:[15],
+          activityIds: 'cmb.pb.app.h5container.webviewcontainer.PBWebContainerActivity',
           matches: '[text$="可点击"] + [text="发放到银行卡"]',
         },
       ],
@@ -251,13 +250,11 @@ export default defineGkdApp({
       desc: '260417，',
       rules: [
         {
-          preKeys: [3],
-          resetMatch: 'match',
-          actionCdKey: 1,
-          activityIds:
-            'cmb.pb.app.h5container.webviewcontainer.PBWebContainerActivity',
-          matches:
-            '[text="收益奖励将免费发放到您这张银行卡："] +n * > [text="提交"]',
+		  preKeys:[3],
+		  resetMatch:'match',
+		  actionCdKey:1,
+          activityIds: 'cmb.pb.app.h5container.webviewcontainer.PBWebContainerActivity',
+          matches: '[text="收益奖励将免费发放到您这张银行卡："] +n * > [text="提交"]',
         },
       ],
     },
@@ -566,13 +563,11 @@ export default defineGkdApp({
       desc: '260416',
       rules: [
         {
-          actionMaximum: 1,
-          actionCdKey: 1,
-          resetMatch: 'activity',
-          activityIds:
-            'cmb.pb.app.h5container.webviewcontainer.PBWebContainerActivity',
-          matches:
-            '([text="自选"] + [text="购买"]) || (@[text="自选"] + [text="定投"]) || (@[text="加自选"] + [text^="购买"])',
+		  actionMaximum:1,
+		  actionCdKey:1,
+		  resetMatch:'activity',
+          activityIds: 'cmb.pb.app.h5container.webviewcontainer.PBWebContainerActivity',
+          matches: '([text="自选"] + [text="购买"]) || (@[text="自选"] + [text="定投"]) || (@[text="加自选"] + [text^="购买"])',
         },
       ],
     },
@@ -598,12 +593,11 @@ export default defineGkdApp({
       desc: '260417',
       rules: [
         {
-          actionMaximum: 1,
-          resetMatch: 'activity',
-          actionCdKey: 1,
+		  actionMaximum:1,
+		  resetMatch:'activity',
+		  actionCdKey:1,
           activityIds: 'com.pb.livestream.NewLiveStreamListActivity',
-          matches:
-            '(@[text="微信好友"] < * + [text="取消"]) || ([text="微信好友"] < @*[clickable=true] < * + [text="取消"])',
+          matches: '(@[text="微信好友"] < * + [text="取消"]) || ([text="微信好友"] < @*[clickable=true] < * + [text="取消"])',
         },
       ],
     },
@@ -613,12 +607,10 @@ export default defineGkdApp({
       desc: '260417',
       rules: [
         {
-          resetMatch: 'match',
-          actionCdKey: 1,
-          activityIds:
-            'cmb.pb.app.h5container.webviewcontainer.PBWebContainerActivity',
-          matches:
-            '[text="超风险及高风险产品定投确认"] < * +n [text="确认继续定投"]',
+		  resetMatch:'match',
+		  actionCdKey:1,
+          activityIds: 'cmb.pb.app.h5container.webviewcontainer.PBWebContainerActivity',
+          matches: '[text="超风险及高风险产品定投确认"] < * +n [text="确认继续定投"]',
         },
       ],
     },
@@ -628,12 +620,10 @@ export default defineGkdApp({
       desc: '260417',
       rules: [
         {
-          actionCdKey: 1,
-          resetMatch: 'match',
-          activityIds:
-            'cmb.pb.app.h5container.webviewcontainer.PBWebContainerActivity',
-          matches:
-            '[text="请阅读并确认以下文件"] < * +n * > [text="已阅读并确认"]',
+		  actionCdKey:1,
+		  resetMatch:'match',
+          activityIds: 'cmb.pb.app.h5container.webviewcontainer.PBWebContainerActivity',
+          matches: '[text="请阅读并确认以下文件"] < * +n * > [text="已阅读并确认"]',
         },
       ],
     },

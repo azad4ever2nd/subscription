@@ -139,9 +139,8 @@ export default defineGkdApp({
       rules: [
         {
           activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
-          resetMatch: 'match',
-          matches:
-            '@*[clickable=true] [text="返回活动" || text="返回权益专区"]',
+		  resetMatch: 'match',
+          matches: '@*[clickable=true] [text="返回活动" || text="返回权益专区"]',
         },
       ],
     },
@@ -151,9 +150,9 @@ export default defineGkdApp({
       desc: '260417',
       rules: [
         {
-          resetMatch: 'activity',
+		  resetMatch: 'activity',
           fastQuery: true,
-          actionMaximum: 1,
+		  actionMaximum:1,
           activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
           matches: '[text="分享到"] + * [vid="wx_btn"][text="微信好友"]',
         },

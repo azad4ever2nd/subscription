@@ -22,21 +22,23 @@ export default defineGkdApp({
         },
       ],
     },
-    {
-      key: 2,
-      name: '工行开盲盒，抽奖',
-      desc: '260417，|| ([text="拆盲盒剩余次数：1次"] < * - * >2 *)',
-      rules: [
-        {
-          matches: [
-            '(@* <<2 * + * > [text="拆盲盒剩余次数：1次"]) || (@[id="lotteryIconFile"] + * > [text^="剩余次数："][text!*="0次"])',
-          ],
-          actionCd: 100,
-          resetMatch: 'match',
-          activityIds: ['com.icbc.activity.web.ICBCWebView'],
-        },
-      ],
-    },
+	{
+	  key: 2,
+	  name: '工行开盲盒，抽奖',
+	  desc: '260417，|| ([text="拆盲盒剩余次数：1次"] < * - * >2 *)',
+	  rules: [
+		{
+		  matches: [
+			'(@* <<2 * + * > [text="拆盲盒剩余次数：1次"]) || (@[id="lotteryIconFile"] + * > [text^="剩余次数："][text!*="0次"])',
+		  ],
+		  actionCd:100,
+		  resetMatch: 'match',
+		  activityIds: [
+			'com.icbc.activity.web.ICBCWebView',
+		  ],
+		},
+	  ],
+	},
     {
       key: 3,
       name: '盲盒来早了',
