@@ -134,14 +134,13 @@ export default defineGkdApp({
     {
       key: 10,
       name: '各种中奖',
-      desc: '260308，添加未中奖，数字藏品中奖',
+      desc: '260420，添加未中奖，数字藏品中奖',
       rules: [
         {
-          matches: [
-            '([text="很遗憾，未中奖"] + [text="关闭"]) || ([text="藏品详情"] + [text="完成"]) || ([id="giftModel"] > * +n [text="确认"] + *) || ([text="微信立减金" || text="支付宝红包"] + [text="立即领取"] + [text="关闭"]) || ([text="去许愿"] < * + TextView) || ([text="恭喜中奖了"] <<n * + * > [text="关闭"]) || ([text="恭喜您中奖！"] + [text="关闭"]) || ([text="恭喜中奖了"] < * +2 * > Image) || (Image - [text="恭喜您中奖啦！"] <<n View +n [text="立即领取"])  || ([text^="请您于" && text$="过期未领将失效"] + [text="立即领取"])',
-          ],
           resetMatch: 'match',
-          activityIds: ['com.icbc.activity.web.ICBCWebView'],
+          activityIds: 'com.icbc.activity.web.ICBCWebView',
+          matches:
+            '([text="很遗憾，未中奖"] + [text="关闭"]) || ([text="藏品详情"] + [text="完成"]) || ([id="giftModel"] > * +n [text="确认"] + *) || ([text="微信立减金" || text="支付宝红包"] + [text="立即领取"] + [text="关闭"]) || ([text="去许愿"] < * + TextView) || ([text="恭喜中奖了"] <<n * + * > [text="关闭"]) || ([text="恭喜您中奖！"] + [text="关闭"]) || ([text="恭喜中奖了"] < * +2 * > Image) || (Image - [text="恭喜您中奖啦！"] <<n View +n [text="立即领取"])  || ([text^="请您于" && text$="过期未领将失效"] + [text="立即领取"]) || ([text^="奖品已发放至"] < * + [text="确认"])',
         },
       ],
     },

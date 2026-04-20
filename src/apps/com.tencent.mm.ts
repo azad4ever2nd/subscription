@@ -607,7 +607,7 @@ export default defineGkdApp({
     {
       key: 28,
       name: '工行浇水',
-      desc: '260419',
+      desc: '260420，延时要考虑弹窗',
       rules: [
         {
           activityIds: [
@@ -621,11 +621,11 @@ export default defineGkdApp({
             'com.tencent.mm.plugin.appbrand.ui.AppBrandUI2',
             'com.tencent.mm.plugin.appbrand.ui.AppBrandUI3',
           ],
-          actionCd: 500,
-          actionMaximum: 6,
+          actionCd: 1000,
+          actionMaximum: 5,
           resetMatch: 'match',
           matches:
-            '([text="f28172fc08e74fb1b7c3b0b79d2790689604807634"]) || ([text="a47e521322884f2a9e43fe3967b8341f3457835618"]) || ([text="奖励派送中，稍后送达～"] <n * + * > *[clickable=true])',
+            '([text="a47e521322884f2a9e43fe3967b8341f3457835618"]) || ([text="奖励派送中，稍后送达～"] <n * + * > *[clickable=true])',
         },
       ],
     },
