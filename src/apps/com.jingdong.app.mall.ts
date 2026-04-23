@@ -37,16 +37,16 @@ export default defineGkdApp({
     {
       key: 3,
       name: '下单后领京豆',
-      desc: '260227',
+      desc: '260423',
       rules: [
         {
-          matches: ['[text^="恭喜"] + * [text$="京豆"] +n [text="立即领取"]'],
+          resetMatch: 'match',
           fastQuery: true,
-          actionMaximum: 1,
-          resetMatch: 'activity',
-          activityIds: [
+          actionCd: 500,
+          actionMaximum: 2,
+          activityIds:
             'com.jingdong.app.mall.bundle.cashierfinish.view.CashierUserContentCompleteActivity',
-          ],
+          matches: '[text^="恭喜"] + * [text$="京豆"] +n [text="立即领取"]',
         },
       ],
     },

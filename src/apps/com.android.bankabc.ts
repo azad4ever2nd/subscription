@@ -127,28 +127,27 @@ export default defineGkdApp({
     {
       key: 10,
       name: '每日签到抽奖',
-      desc: '',
+      desc: '260423',
       rules: [
         {
-          matches: [
-            '[id="beanAnswer"] > [text="b7ee290527094f0e8348e372f7db9eaf9900032820250102"]',
-          ],
           actionMaximum: 1,
-          resetMatch: 'match',
-          activityIds: ['com.alipay.mobile.nebulacore.ui.H5Activity'],
+          resetMatch: 'app',
+          activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
+          matches:
+            '[id="beanAnswer"] > [text="a4613c7a03ec4aa1a32a00446de323ea9900032820260227"]',
         },
       ],
     },
     {
       key: 11,
       name: '小豆立即抽奖',
-      desc: '',
+      desc: '260423，抽奖按钮和结果是在同一个View中，区别在于有无child',
       rules: [
         {
-          matches: ['[text="每日签到抽小豆"] +2 View'],
           actionMaximum: 1,
           resetMatch: 'match',
-          activityIds: ['com.alipay.mobile.nebulacore.ui.H5Activity'],
+          activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
+          matches: '[text="每日抽小豆"] +2 View[childCount=0]',
         },
       ],
     },

@@ -631,14 +631,12 @@ export default defineGkdApp({
     },
     {
       key: 29,
-      name: '湘约工行1块钱',
-      desc: 'D占位',
+      name: '微信支付有优惠，服务升级公告，X掉',
+      desc: '260421，5/11金币功能下线，12/31小程序结束运营',
       rules: [
         {
-          matches: [
-            '([id="customPopup-global"] >3 * +1 @TextView + *) || ([text="湘约工行 开门见喜"] [id="luckydrawBtn_WoM8a071"])',
-          ],
-          matchTime: 50000,
+          actionMaximum: 1,
+          actioinCd: 100,
           resetMatch: 'match',
           activityIds: [
             'com.tencent.mm.plugin.appbrand.ui.AppBrandUI00',
@@ -650,8 +648,8 @@ export default defineGkdApp({
             'com.tencent.mm.plugin.appbrand.ui.AppBrandUI1',
             'com.tencent.mm.plugin.appbrand.ui.AppBrandUI2',
             'com.tencent.mm.plugin.appbrand.ui.AppBrandUI3',
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI4',
           ],
+          matches: '@* + [text="服务升级公告"] + [text^="由于业务调整"]',
         },
       ],
     },
