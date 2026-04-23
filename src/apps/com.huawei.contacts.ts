@@ -7,7 +7,7 @@ export default defineGkdApp({
     {
       key: 1,
       name: '删除通话记录',
-      desc: '251206',
+      desc: '260419',
       rules: [
         {
           fastQuery: true,
@@ -15,7 +15,7 @@ export default defineGkdApp({
           activityIds:
             'com.android.contacts.hap.calllog.CallLogMultiSelectionActivity',
           matches:
-            '[text^="是否删除"] <<4 [id="android:id/contentPanel"] + [id="android:id/buttonPanel"] [text="删除"]',
+            '[text^="是否删除"] <<n [id="android:id/contentPanel"] + [id="android:id/buttonPanel"] [text="删除"]',
         },
       ],
     },
