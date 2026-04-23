@@ -636,7 +636,7 @@ export default defineGkdApp({
       rules: [
         {
           actionMaximum: 1,
-          actioinCd: 100,
+          actionCd: 100,
           resetMatch: 'match',
           activityIds: [
             'com.tencent.mm.plugin.appbrand.ui.AppBrandUI00',
