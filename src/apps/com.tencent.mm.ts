@@ -1120,5 +1120,29 @@ export default defineGkdApp({
         },
       ],
     },
+    {
+      key: 56,
+      name: '提现笔笔省领取成功，X掉',
+      desc: '260424',
+      rules: [
+        {
+          resetMatch: 'match',
+          actionCd: 500,
+          activityIds: [
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI0',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI1',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI2',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI3',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI4',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI00',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI01',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI02',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI03',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI04',
+          ],
+          matches: '@TextView[text.length=1] <<n * + * [text="提现券领取成功"]',
+        },
+      ],
+    },
   ],
 });

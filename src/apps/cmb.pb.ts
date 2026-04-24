@@ -634,5 +634,64 @@ export default defineGkdApp({
         },
       ],
     },
+    {
+      key: 40,
+      name: '我的自选 ，全选',
+      desc: '260424',
+      rules: [
+        {
+          activityIds:
+            'cmb.pb.app.h5container.webviewcontainer.PBWebContainerActivity',
+          actionMaximum: 1,
+          resetMatch: 'match',
+          matches: '@*[clickable=true][checked=false] + [text="全选"]',
+        },
+      ],
+    },
+    {
+      key: 41,
+      name: '我的自选，全选 删除',
+      desc: '260424',
+      rules: [
+        {
+          resetMatch: 'match',
+          preKeys: [40],
+          actionMaximum: 1,
+          activityIds:
+            'cmb.pb.app.h5container.webviewcontainer.PBWebContainerActivity',
+          matches: '[text="全选"] + * > [text^="删除(" && text$=") "]',
+        },
+      ],
+    },
+    {
+      key: 42,
+      name: '我的自选，全选 删除，勾选同步解除分组',
+      desc: '260424',
+      rules: [
+        {
+          resetMatch: 'match',
+          actionMaximum: 1,
+          preKeys: [41],
+          activityIds:
+            'cmb.pb.app.h5container.webviewcontainer.PBWebContainerActivity',
+          matches: '[text="同步解除您的自选自建分组"]',
+        },
+      ],
+    },
+    {
+      key: 43,
+      name: '我的自选，全选 删除，勾选同步解除分组，确认',
+      desc: '260424',
+      rules: [
+        {
+          resetMatch: 'match',
+          actionMaximum: 1,
+          preKeys: [42],
+          activityIds:
+            'cmb.pb.app.h5container.webviewcontainer.PBWebContainerActivity',
+          matches: '[text="同步解除您的自选自建分组"] <n * + * > [text="确定"]',
+        },
+      ],
+    },
   ],
 });
