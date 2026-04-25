@@ -1144,5 +1144,30 @@ export default defineGkdApp({
         },
       ],
     },
+    {
+      key: 57,
+      name: '腾讯理财通，领取奖励，同意服务协议',
+      desc: '260425',
+      rules: [
+        {
+          resetMatch: 'match',
+          actionMaximum: 1,
+          activityIds: [
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI0',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI1',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI2',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI3',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI4',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI00',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI01',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI02',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI03',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI04',
+          ],
+          matches:
+            '@[text="已悉知风险提示并同意"] + [desc="服务协议"] <n * + [text="领取至“理财通活期+”账户"]',
+        },
+      ],
+    },
   ],
 });
