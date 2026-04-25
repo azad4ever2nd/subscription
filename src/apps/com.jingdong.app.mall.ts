@@ -244,5 +244,18 @@ export default defineGkdApp({
         },
       ],
     },
+    {
+      key: 18,
+      name: '外卖整点抢10-10',
+      desc: '260425，可提前测出ID',
+      rules: [
+        {
+          resetMatch: 'match',
+          actionCd: 100,
+          activityIds: 'com.jd.lib.babel.view.activity.BabelActivity',
+          matches: '@[desc="01532130f01b7d30"] > [text="01532130f01b7d30"]',
+        },
+      ],
+    },
   ],
 });
