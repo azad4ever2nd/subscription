@@ -139,5 +139,17 @@ export default defineGkdApp({
         },
       ],
     },
+    {
+      key: 10,
+      name: '限时免费福利弹窗，X掉',
+      desc: '260426',
+      rules: [
+        {
+          resetMatch: 'match',
+          activityIds: 'com.tongcheng.android.module.webapp.WebViewActivity',
+          matches: '[text="tc-ad"] + View[clickable=true]',
+        },
+      ],
+    },
   ],
 });

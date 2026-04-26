@@ -21,16 +21,16 @@ export default defineGkdApp({
     },
     {
       key: 2,
-      name: '隐私变更',
-      desc: '同意',
+      name: '隐私变更，同意',
+      desc: '260426',
       rules: [
         {
-          matches: [
-            '[text="隐私声明变更通知"] <<n [id="android:id/topPanel"] +2 [id="android:id/buttonPanel"] [text="同意"]',
-          ],
-          fastQuery: true,
+          actionMaximum: 1,
           resetMatch: 'app',
-          activityIds: ['com.huawei.myhw.ui.HwHomeActivity'],
+          fastQuery: true,
+          activityIds: 'com.huawei.myhw.ui.HwHomeActivity',
+          matches:
+            '[id="android:id/alertTitle"][text="隐私声明变更通知"] <<n * +n * [id="android:id/button1"][text="同意"]',
         },
       ],
     },

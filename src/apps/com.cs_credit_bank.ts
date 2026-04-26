@@ -34,28 +34,30 @@ export default defineGkdApp({
     {
       key: 3,
       name: '周五5折',
-      desc: '251227，增加跨年，布局有变，([text="5折"] +n * > [text="立即购买"])',
+      desc: '260426，增加跨年，布局有变，([text="5折"] +n * > [text="立即购买"])',
       rules: [
         {
-          matches: [
-            '([text="5折"] +n [text="立即购买"]) || ([text="5折"] +n @* > [text="立即购买"])',
-          ],
-          actionMaximum: 5,
+          actionMaximum: 8,
+          actionCd: 0,
           resetMatch: 'match',
-          activityIds: ['com.alipay.mobile.nebulacore.ui.H5Activity'],
+          activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
+          matches:
+            '([text="5折"] +n @* > [text="立即购买" || text="立即抢购"]) || ([text="5折"] +n [text="立即购买" || text="立即抢购"])',
         },
       ],
     },
     {
       key: 4,
-      name: '额度提升弹窗',
-      desc: 'D,半价下单之后弹窗',
+      name: '半价下单之后 提额弹窗，X掉',
+      desc: '260426',
       rules: [
         {
-          matches: ['@* + [text="恭喜获得"]'],
-          actionMaximum: 1,
           resetMatch: 'match',
-          activityIds: ['com.alipay.mobile.nebulacore.ui.H5Activity'],
+          actionCd: 100,
+          actionMaximum: 1,
+          activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
+          matches:
+            '@View[text.length=1] + [text="恭喜获得"] <n * +n [text="立即提升"]',
         },
       ],
     },
@@ -120,14 +122,15 @@ export default defineGkdApp({
     {
       key: 9,
       name: '分期账单提示',
-      desc: '251130,添加小额免密，额度提升弹窗',
+      desc: '260426,添加小额免密',
       rules: [
         {
-          matches: [
-            '(@* + [text="恭喜获得"]) || ([text="开通小额免密支付"] + [text="暂不开通"]) || ([text="分期还账单"] + [text="暂不办理"])',
-          ],
           resetMatch: 'match',
-          activityIds: ['com.alipay.mobile.nebulacore.ui.H5Activity'],
+          actionCd: 100,
+          actionMaximum: 1,
+          activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
+          matches:
+            '([text="开通小额免密支付"] + [text="暂不开通"]) || ([text="分期还账单"] + [text="暂不办理"])',
         },
       ],
     },

@@ -57,5 +57,18 @@ export default defineGkdApp({
         },
       ],
     },
+    {
+      key: 5,
+      name: '湖北签到金限量兑换公告',
+      desc: '260426',
+      rules: [
+        {
+          resetMatch: 'match',
+          actionCd: 0,
+          activityIds: 'com.sgcc.wsgw.mainbundle.ElectricTitleActivity',
+          matches: '[text="立即查看"] < View + View > *',
+        },
+      ],
+    },
   ],
 });
