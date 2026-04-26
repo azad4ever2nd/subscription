@@ -158,7 +158,7 @@ export default defineGkdApp({
     {
       key: 8,
       name: '广发运动签到打卡',
-      desc: '251224，添加关闭',
+      desc: 'D,251224，添加关闭',
       rules: [
         {
           matches: [
@@ -320,7 +320,7 @@ export default defineGkdApp({
     {
       key: 16,
       name: '阳光兑换外面',
-      desc: '251127，D，挑有库存的进',
+      desc: 'D，251127，挑有库存的进',
       rules: [
         {
           matches: [
@@ -569,7 +569,7 @@ export default defineGkdApp({
     {
       key: 26,
       name: '免费提现额度',
-      desc: '251127，D，免费提现，(@* + [text*="开启定位"] + [text="去开启"]) || ',
+      desc: '251127，D',
       rules: [
         {
           matches: ['[text="点此"] + [text="领取"]'],
@@ -714,7 +714,7 @@ export default defineGkdApp({
     {
       key: 33,
       name: '点太快了，知道了',
-      desc: '251222',
+      desc: '251222,D',
       rules: [
         {
           matches: [
@@ -1008,7 +1008,7 @@ export default defineGkdApp({
     {
       key: 49,
       name: '不再关注',
-      desc: '260220,[text="不再关注"]',
+      desc: 'D,260220,[text="不再关注"]',
       rules: [
         {
           matches: [
