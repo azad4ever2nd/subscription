@@ -61,7 +61,7 @@ export default defineGkdApp({
             '[text="ACIM_20250901000022_20250901111730286"] <<n * + * > *[index=2] >n [text="立即领取"]',
           ],
           actionCd: 0,
-          actionMaximum: 2,
+          actionMaximum: 1,
           resetMatch: 'match',
           activityIds: [
             'com.bankcomm.module.biz.webcontainer.BCMHtml5Activity',
@@ -79,7 +79,7 @@ export default defineGkdApp({
             '[text="ACIM_20250725000139_20250725155808212"] <<n * + * > *[index=0] [text="立即领取"]',
           ],
           actionCd: 100,
-          actionMaximum: 2,
+          actionMaximum: 1,
           resetMatch: 'match',
           activityIds: [
             'com.bankcomm.module.biz.webcontainer.BCMHtml5Activity',
@@ -114,6 +114,7 @@ export default defineGkdApp({
           matches: [
             '[text="ACIM_20251027000174_20251027163532007"] <<n * + * > *[index=1] [text="立即领取"]',
           ],
+          actionCd: 0,
           actionMaximum: 1,
           resetMatch: 'match',
           activityIds: [
@@ -197,7 +198,7 @@ export default defineGkdApp({
       desc: '260403，增加服务器在忙，上限',
       rules: [
         {
-          actionCd: 500,
+          actionCd: 100,
           resetMatch: 'match',
           activityIds: 'com.bankcomm.module.biz.webcontainer.BCMHtml5Activity',
           matches:
@@ -392,7 +393,7 @@ export default defineGkdApp({
           matches: [
             '@*[clickable=true] [text*="移动" || text*="联通"] +n * [text="0."] + [text="01"] + * > [text="立即抢购"]',
           ],
-          actionCd: 0,
+          actionCd: 100,
           actionMaximum: 1,
           resetMatch: 'app',
           activityIds: ['com.unionpay.cordova.UPActivityWeb'],
@@ -408,7 +409,7 @@ export default defineGkdApp({
           matches: [
             '[text="￥ 0.01"] + [text="预估到手价"] + [text*="抢购" || text="立即抢购"]',
           ],
-          actionCd: 0,
+          actionCd: 100,
           actionMaximum: 1,
           resetMatch: 'match',
           activityIds: ['com.unionpay.cordova.UPActivityWeb'],
@@ -441,7 +442,7 @@ export default defineGkdApp({
             '[text="ACIM_20250725000139_20250725155808212"] <<n * + * > *[index=1] [text="立即领取"]',
           ],
           actionCd: 100,
-          actionMaximum: 2,
+          actionMaximum: 1,
           resetMatch: 'match',
           activityIds: [
             'com.bankcomm.module.biz.webcontainer.BCMHtml5Activity',
