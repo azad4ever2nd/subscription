@@ -122,5 +122,19 @@ export default defineGkdApp({
         },
       ],
     },
+    {
+      key: 10,
+      name: '下载文件',
+      desc: '260427',
+      rules: [
+        {
+          resetMatch: 'match',
+          fastQuery: true,
+          activityIds: 'com.android.browser.BrowserActivity',
+          matches:
+            '[vid="tv_download_title"][text="保存文档文件"] < * +n [vid="download_normal_Btn"][text="立即下载"]',
+        },
+      ],
+    },
   ],
 });

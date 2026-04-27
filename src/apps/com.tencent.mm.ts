@@ -1176,5 +1176,19 @@ export default defineGkdApp({
         },
       ],
     },
+    {
+      key: 58,
+      name: '深工弹窗，X掉',
+      desc: '260427',
+      rules: [
+        {
+          resetMatch: 'match',
+          actionCd: 300,
+          activityIds: 'com.tencent.mm.plugin.appbrand.ui.AppBrandUI00',
+          matches:
+            '[text="更多精彩"] + @* +n [text="女职工服务"] +n [text="阵地服务"]',
+        },
+      ],
+    },
   ],
 });
