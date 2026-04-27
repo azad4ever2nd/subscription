@@ -71,17 +71,17 @@ export default defineGkdApp({
     {
       key: 5,
       name: '订阅通知，暂不开启',
-      desc: '260125',
+      desc: '260427，增加IDS',
       rules: [
         {
-          matches: [
-            '[vid="title"][text="订阅感兴趣的通知"] +n * > [vid="close"][text="暂不开启"]',
-          ],
-          fastQuery: true,
           resetMatch: 'match',
+          fastQuery: true,
           activityIds: [
             'com.bilibili.bplus.im.communication.HomeCommunicationActivity',
+            'com.bilibili.ship.theseus.detail.UnitedBizDetailsActivity',
           ],
+          matches:
+            '[vid="title"][text="订阅感兴趣的通知"] +n * > [vid="close"]',
         },
       ],
     },

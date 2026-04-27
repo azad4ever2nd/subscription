@@ -442,11 +442,12 @@ export default defineGkdApp({
     {
       key: 21,
       name: '光大小程序弹窗',
-      desc: 'D',
+      desc: '260427',
       rules: [
         {
           matches: ['[text="今日不再提醒"] + [text="前往领取"] + *'],
           resetMatch: 'match',
+          actionCd: 0,
           activityIds: [
             'com.tencent.mm.plugin.appbrand.ui.AppBrandUI0',
             'com.tencent.mm.plugin.appbrand.ui.AppBrandUI1',
