@@ -168,5 +168,35 @@ export default defineGkdApp({
         },
       ],
     },
+    {
+      key: 13,
+      name: '笔笔返开始，5元',
+      desc: '2605011， + [text!="100%"]',
+      rules: [
+        {
+          matches: [
+            '[text="当前剩余领取次数 1"] + * [text="5 元"] + [text="立即领取"]',
+          ],
+          actionCd: 0,
+          resetMatch: 'match',
+          activityIds: ['com.citiccard.mobilebank.web.webpage.CommonWebPage'],
+        },
+      ],
+    },
+    {
+      key: 14,
+      name: '笔笔返开始，2元',
+      desc: '260501， + [text!="100%"]',
+      rules: [
+        {
+          matches: [
+            '[text="当前剩余领取次数 1"] + * [text="2 元"] + [text="立即领取"]',
+          ],
+          actionCd: 0,
+          resetMatch: 'match',
+          activityIds: ['com.citiccard.mobilebank.web.webpage.CommonWebPage'],
+        },
+      ],
+    },
   ],
 });
