@@ -1224,7 +1224,7 @@ export default defineGkdApp({
         {
           resetMatch: 'match',
           actionCd: 600,
-          preKey: [59],
+          preKeys: [59],
           activityIds: [
             'com.tencent.mm.plugin.appbrand.ui.AppBrandUI0',
             'com.tencent.mm.plugin.appbrand.ui.AppBrandUI1',
