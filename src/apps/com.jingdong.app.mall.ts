@@ -257,5 +257,20 @@ export default defineGkdApp({
         },
       ],
     },
+    {
+      key: 19,
+      name: '支付完后提示开启积分当钱花，X掉',
+      desc: '260502',
+      rules: [
+        {
+          fastQuery: true,
+          resetMatch: 'match',
+          activityIds:
+            'com.wangyin.payment.jdpaysdk.counter.ui.pay.CounterActivity',
+          matches:
+            '[id="com.jd.lib.jdpaysdk.feature:id/a2w"][text="积分当钱花 支付更优惠"] +n [id="com.jd.lib.jdpaysdk.feature:id/afl"][desc="关闭"]',
+        },
+      ],
+    },
   ],
 });

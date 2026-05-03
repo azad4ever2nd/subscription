@@ -70,5 +70,18 @@ export default defineGkdApp({
         },
       ],
     },
+    {
+      key: 6,
+      name: '新版本，暂不升级',
+      desc: '260503',
+      rules: [
+        {
+          resetMatch: 'match',
+          actionCd: 500,
+          activityIds: 'com.sgcc.wsgw.rnbundle.activity.MyReactActivity',
+          matches: '[text^="本次升级" || text*="更新"] + * > *',
+        },
+      ],
+    },
   ],
 });

@@ -106,14 +106,11 @@ export default defineGkdApp({
     {
       key: 6,
       name: '广发小程序周五半价',
-      desc: '251226，增加跨年，布局有变',
+      desc: '260503，增加跨年，布局有变',
       rules: [
         {
-          matches: [
-            '(@[text="立即抢购" || text="抢购"] <<2 * - * > [text*="周五5折"]) || ([text="周五5折" || text^="（跨年大促）"] <<n * + * > [text="1立即抢购" || text="1抢购"])',
-          ],
-          actionCd: 0,
           resetMatch: 'match',
+          actionCd: 0,
           activityIds: [
             'com.tencent.mm.plugin.appbrand.ui.AppBrandUI0',
             'com.tencent.mm.plugin.appbrand.ui.AppBrandUI1',
@@ -126,6 +123,8 @@ export default defineGkdApp({
             'com.tencent.mm.plugin.appbrand.ui.AppBrandUI03',
             'com.tencent.mm.plugin.appbrand.ui.AppBrandUI04',
           ],
+          matches:
+            '([text^="周五5折" || text^="（跨年大促）"] <<n * + * > [text="立即抢购" || text="抢购"])',
         },
       ],
     },
@@ -270,7 +269,7 @@ export default defineGkdApp({
     {
       key: 14,
       name: '深工抢哈罗',
-      desc: '260419，集中三步于一条，立即抢购>确认支付>人数过多，不局限于哈罗',
+      desc: '260503，集中三步于一条，立即抢购>确认支付>人数过多，不局限于哈罗',
       rules: [
         {
           resetMatch: 'match',
@@ -288,7 +287,7 @@ export default defineGkdApp({
             'com.tencent.mm.plugin.appbrand.ui.AppBrandUI04',
           ],
           matches:
-            '([text="抢购成功消耗500积分"] +n [text="立即抢购"]) || ([text="总计：¥0"] + [text="确认支付"]) || ([text="访问人数过多，请稍后再试"] + [text*="我知道了"])',
+            '([text^="抢购成功消耗" && text$="积分"] +n [text="立即抢购"]) || ([text="总计：¥0"] + [text="确认支付"]) || ([text="访问人数过多，请稍后再试"] + [text*="我知道了"])',
         },
       ],
     },
@@ -608,7 +607,7 @@ export default defineGkdApp({
     {
       key: 28,
       name: '工行浇水',
-      desc: '260420，延时要考虑弹窗',
+      desc: '260503，延时要考虑弹窗',
       rules: [
         {
           activityIds: [
@@ -627,7 +626,7 @@ export default defineGkdApp({
           actionMaximum: 5,
           resetMatch: 'match',
           matches:
-            '([text="a47e521322884f2a9e43fe3967b8341f3457835618"]) || ([text="奖励派送中，稍后送达～"] <n * + * > *[clickable=true])',
+            '([text="893ee262597b45a3b884dcf6d027ea374161769077"]) || ([text="奖励派送中，稍后送达～"] <n * + * > *[clickable=true])',
         },
       ],
     },
@@ -1188,6 +1187,58 @@ export default defineGkdApp({
           activityIds: 'com.tencent.mm.plugin.appbrand.ui.AppBrandUI00',
           matches:
             '[text="更多精彩"] + @* +n [text="女职工服务"] +n [text="阵地服务"]',
+        },
+      ],
+    },
+    {
+      key: 59,
+      name: '沪上阿姨一分购，同意服务协议',
+      desc: '260503',
+      rules: [
+        {
+          resetMatch: 'match',
+          actionCd: 300,
+          actionMaximum: 1,
+          activityIds: [
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI0',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI1',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI2',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI3',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI4',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI00',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI01',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI02',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI03',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI04',
+          ],
+          matches:
+            '@[text="我已阅读并同意"] + [text="《沪上阿姨膨胀神券包协议》"]',
+        },
+      ],
+    },
+    {
+      key: 60,
+      name: '沪上阿姨一分购，同意服务协议后，立即购买',
+      desc: '260503',
+      rules: [
+        {
+          resetMatch: 'match',
+          actionCd: 600,
+          preKey: [59],
+          activityIds: [
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI0',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI1',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI2',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI3',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI4',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI00',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI01',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI02',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI03',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI04',
+          ],
+          matches:
+            '[text="《沪上阿姨膨胀神券包协议》"] + [text="立即购买 ￥0.01"]',
         },
       ],
     },

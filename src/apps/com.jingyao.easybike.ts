@@ -23,12 +23,13 @@ export default defineGkdApp({
     {
       key: 2,
       name: '系统定位服务已关闭',
-      desc: '260419,添加打开定位服务，,添加IDS,消息通知 com.hellobike.business.hitch.common.home.HLPHHomeActivity',
+      desc: '260503，添加matchroo测试，添加打开定位服务，,添加IDS,消息通知 com.hellobike.business.hitch.common.home.HLPHHomeActivity',
       rules: [
         {
           fastQuery: true,
           resetMatch: 'match',
           actionCd: 0,
+          matchRoot: true,
           activityIds: [
             'com.hellobike.business.hitch.common.home.HLPHHomeActivity',
             'com.hellobike.atlas.business.portal.PortalActivity',
@@ -366,11 +367,12 @@ export default defineGkdApp({
     {
       key: 24,
       name: '奖励金页面，签到',
-      desc: '260416',
+      desc: '260503，测试matchRoot',
       rules: [
         {
           resetMatch: 'match',
           actionMaximum: 1,
+          matchRoot: true,
           actionCd: 300,
           activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
           matches: '[text="请点击下方按钮，立即签到"] + * [text="签到"]',
@@ -388,6 +390,19 @@ export default defineGkdApp({
           actionCd: 300,
           activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
           matches: '@TextView[clickable=true] +n [text="明日再来"]',
+        },
+      ],
+    },
+    {
+      key: 26,
+      name: '奖励金页面，上方，今日签到',
+      desc: '260503',
+      rules: [
+        {
+          resetMatch: 'match',
+          actionMaximum: 1,
+          activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
+          matches: '@* > *[childCount=2] > [text="今日签到"]',
         },
       ],
     },

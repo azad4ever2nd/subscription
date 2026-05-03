@@ -87,5 +87,34 @@ export default defineGkdApp({
         },
       ],
     },
+    {
+      key: 6,
+      name: '连接与共享，自动打开NFC',
+      desc: '260503，小米',
+      rules: [
+        {
+          resetMatch: 'match',
+          fastQuery: true,
+          activityIds: 'com.android.settings.Settings$WirelessSettingsActivity',
+          matches:
+            '[vid="switch_text"][text="NFC"] + [vid="summary"][text="允许手机在接触其他设备时交换数据"] <n * + [id="android:id/switch_widget"][checked=false]',
+        },
+      ],
+    },
+    {
+      key: 7,
+      name: '连接与共享，自动打开NFC后，返回',
+      desc: '260503，小米',
+      rules: [
+        {
+          resetMatch: 'match',
+          fastQuery: true,
+          action: 'back',
+          activityIds: 'com.android.settings.Settings$WirelessSettingsActivity',
+          matches:
+            '[vid="switch_text"][text="NFC"] + [vid="summary"][text="允许手机在接触其他设备时交换数据"] <n * + [id="android:id/switch_widget"][checked=true]',
+        },
+      ],
+    },
   ],
 });

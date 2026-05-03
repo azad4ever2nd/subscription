@@ -7,21 +7,21 @@ export default defineGkdApp({
     {
       key: 1,
       name: '删除文件',
-      desc: '251218,规则精简，添加清除，删除，广告弹窗',
+      desc: '260502，增加IDS，规则精简，添加清除，删除，广告弹窗',
       rules: [
         {
-          matches: [
-            '([vid="iv_close"]) || ([vid="watch_ad"][text="免费试用"]) || ([vid="cl_operation"] + [vid="close"]) || ([vid="dlg_title"][text*="删除" || text*="清除"] +n * >n [vid="dlg_confirm_btn"][text="确认"])',
-          ],
-          fastQuery: true,
           resetMatch: 'match',
+          fastQuery: true,
           activityIds: [
+            'com.pikcloud.xpan.xpan.pan.activity.XPanFileBrowserActivity',
             'com.pikcloud.download.DownloadGroupSubTasksActivity',
             'com.pikcloud.xpan.xpan.pan.recyclebin.XPanRecycleBinActivity',
             'com.pikcloud.xpan.xpan.pan.activity.XPanHistoryActivity',
             'com.pikcloud.xpan.xpan.main.MainTabActivity',
             'com.pikcloud.download.DownloadTaskListActivity',
           ],
+          matches:
+            '([vid="iv_close"]) || ([vid="watch_ad"][text="免费试用"]) || ([vid="cl_operation"] + [vid="close"]) || ([vid="dlg_title"][text*="删除" || text*="清除"] +n * >n [vid="dlg_confirm_btn"][text="确认"])',
         },
       ],
     },

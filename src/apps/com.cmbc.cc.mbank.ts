@@ -51,28 +51,26 @@ export default defineGkdApp({
     {
       key: 4,
       name: '定位，我知道了',
-      desc: '251223',
+      desc: '260503，测试matchroot',
       rules: [
         {
-          matches: ['[text*="定位"] + [text="我知道了"]'],
+          matchRoot: true,
           resetMatch: 'match',
-          activityIds: [
-            'com.cmbc.cc.mbank.module.web.activity.WebViewActivity',
-          ],
+          activityIds: 'com.cmbc.cc.mbank.module.web.activity.WebViewActivity',
+          matches: '[text*="定位"] + [text="我知道了"]',
         },
       ],
     },
     {
       key: 5,
       name: '定位服务',
-      desc: '260129',
+      desc: '260503，测试matchroot',
       rules: [
         {
-          matches: ['[text="提示"] + [text*="定位服务"] +n * > [text="确认"]'],
+          matchRoot: true,
           resetMatch: 'match',
-          activityIds: [
-            'com.cmbc.cc.mbank.module.web.activity.WebViewActivity',
-          ],
+          activityIds: 'com.cmbc.cc.mbank.module.web.activity.WebViewActivity',
+          matches: '[text="提示"] + [text*="定位服务"] +n * > [text="确认"]',
         },
       ],
     },

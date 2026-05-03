@@ -133,5 +133,19 @@ export default defineGkdApp({
         },
       ],
     },
+    {
+      key: 10,
+      name: '新版本，暂不升级',
+      desc: '260503',
+      rules: [
+        {
+          resetMatch: 'match',
+          fastQuery: true,
+          activityIds: 'com.sinovatech.unicom.basic.ui.activity.MainActivity',
+          matches:
+            '[vid="custom_dialog_ok_button"] + [vid="custom_dialog_cancel_button"]',
+        },
+      ],
+    },
   ],
 });

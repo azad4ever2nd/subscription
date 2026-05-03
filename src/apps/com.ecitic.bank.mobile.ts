@@ -7,15 +7,15 @@ export default defineGkdApp({
     {
       key: 1,
       name: '签到',
-      desc: '[text="会员签到"] [text="立即签到"]',
+      desc: '260503,签到改版，[text="会员签到"] [text="立即签到"]',
       rules: [
         {
-          action: 'clickCenter',
-          matches: ['[text="立即签到"]'],
-          actionCd: 0,
-          actionMaximum: 5,
           resetMatch: 'match',
-          activityIds: ['com.ecitic.bank.mobile.ui.MainActivity'],
+          actionMaximum: 3,
+          action: 'clickCenter',
+          activityIds: 'com.ecitic.bank.mobile.ui.MainActivity',
+          matches:
+            '([text="会员签到"] >n [text="立即签到"]) || ([text="会员专属活动"] + Image[clickable=true])',
         },
       ],
     },
@@ -76,6 +76,20 @@ export default defineGkdApp({
           matches: ['Dialog [text="close"]'],
           resetMatch: 'match',
           activityIds: ['com.citic.jk.activity.H5ContainerAty'],
+        },
+      ],
+    },
+    {
+      key: 6,
+      name: '新版签到',
+      desc: '260503',
+      rules: [
+        {
+          resetMatch: 'match',
+          actionMaximum: 3,
+          activityIds:
+            'com.ecitic.bank.mobile.ui.webview.CordovaExternalWebViewActivity',
+          matches: '[text="立即签到"]',
         },
       ],
     },

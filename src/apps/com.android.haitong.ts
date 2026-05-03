@@ -89,5 +89,19 @@ export default defineGkdApp({
         },
       ],
     },
+    {
+      key: 7,
+      name: 'app评价，X掉',
+      desc: '260502',
+      rules: [
+        {
+          resetMatch: 'match',
+          fastQuery: true,
+          activityIds: 'cn.htsec.SecurityHome',
+          matches:
+            '[text="您的每一个评价对我们都很重要" || text$="好用吗？"] <n * + [vid="close_btn"]',
+        },
+      ],
+    },
   ],
 });
