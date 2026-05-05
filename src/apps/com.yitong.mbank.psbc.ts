@@ -147,7 +147,7 @@ export default defineGkdApp({
     },
     {
       key: 10,
-      name: '任务，分享到微信好友[ChangeMe]',
+      name: '任务，分享到微信好友',
       desc: '260417',
       rules: [
         {
@@ -156,6 +156,35 @@ export default defineGkdApp({
           actionMaximum: 1,
           activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
           matches: '[text="分享到"] + * [vid="wx_btn"][text="微信好友"]',
+        },
+      ],
+    },
+    {
+      key: 11,
+      name: '任务完成，返回 前往权益专区',
+      desc: '260505',
+      rules: [
+        {
+          resetMatch: 'match',
+          action: 'clickCenter',
+          fastQuery: true,
+          activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
+          matches: '[vid="tv_tip_content"][text="前往权益专区"]',
+        },
+      ],
+    },
+    {
+      key: 12,
+      name: '任务完成，返回2',
+      desc: '260505',
+      rules: [
+        {
+          resetMatch: 'match',
+          action: 'clickCenter',
+          fastQuery: true,
+          activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
+          matches:
+            '[vid="tv_tip_content"][text="返回权益专区"] < * + [vid="iv_btn_icon"]',
         },
       ],
     },

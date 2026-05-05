@@ -134,5 +134,32 @@ export default defineGkdApp({
         },
       ],
     },
+    {
+      key: 10,
+      name: 'app升级啦，暂不升级',
+      desc: '260606',
+      rules: [
+        {
+          resetMatch: 'match',
+          fastQuery: true,
+          activityIds: 'com.mcdonalds.gma.cn.activity.MainActivity',
+          matches: '[vid="tv_confirm"] + [vid="tv_cancel"][text="暂不升级"]',
+        },
+      ],
+    },
+    {
+      key: 11,
+      name: '条款更新，同意',
+      desc: '260505',
+      rules: [
+        {
+          resetMatch: 'match',
+          fastQuery: true,
+          activityIds: 'com.mcdonalds.gma.cn.activity.LaunchActivity',
+          matches:
+            '[vid="tv_title"][text="麦当劳条款更新提示"] +n [vid="tv_agree"]',
+        },
+      ],
+    },
   ],
 });

@@ -42,18 +42,17 @@ export default defineGkdApp({
     {
       key: 3,
       name: '请授权以下权限',
-      desc: '251121',
+      desc: '260505',
       rules: [
         {
-          matches: [
-            '[vid="alertTitle"][text*="权限"] <<2 * +2 * [text="稍后再说"]',
-          ],
+          resetMatch: 'match',
           fastQuery: true,
-          resetMatch: 'app',
           activityIds: [
             'com.hellobike.atlas.business.portal.PortalActivity',
             'com.hellobike.flutter.platform.android.flutterboost.FlutterHostFragmentActivity',
           ],
+          matches:
+            '[vid="alertTitle"][text*="权限"] <<n * +n * [id="android:id/button2"][text="稍后再说"]',
         },
       ],
     },
@@ -336,11 +335,11 @@ export default defineGkdApp({
     {
       key: 22,
       name: '碳积分，去领取',
-      desc: '260416',
+      desc: '260505',
       rules: [
         {
           resetMatch: 'match',
-          actionMaximum: 1,
+          actionMaximum: 10,
           actionCd: 300,
           activityIds:
             'com.hellobike.moped.platform.offline.web.OhoRealmWebActivity',
@@ -403,6 +402,20 @@ export default defineGkdApp({
           actionMaximum: 1,
           activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
           matches: '@* > *[childCount=2] > [text="今日签到"]',
+        },
+      ],
+    },
+    {
+      key: 27,
+      name: '骑行任务弹窗，关闭',
+      desc: '260505',
+      rules: [
+        {
+          resetMatch: 'match',
+          fastQuery: true,
+          activityIds:
+            'com.hellobike.ride.components.taskactivty.RideTaskDialogActivity',
+          matches: '[vid="iv_close"]',
         },
       ],
     },

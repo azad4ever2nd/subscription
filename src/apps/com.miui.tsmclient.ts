@@ -46,5 +46,18 @@ export default defineGkdApp({
         },
       ],
     },
+    {
+      key: 4,
+      name: '去开启NFC',
+      desc: '260505',
+      rules: [
+        {
+          resetMatch: 'match',
+          fastQuery: true,
+          activityIds: 'com.miui.tsmclient.ui.quick.DoubleClickActivity',
+          matches: '[vid="button_retry"][text="去开启NFC"]',
+        },
+      ],
+    },
   ],
 });

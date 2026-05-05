@@ -70,20 +70,16 @@ export default defineGkdApp({
     {
       key: 5,
       name: '开启位置服务，打开后返回',
-      desc: '260329，小米华为',
+      desc: '260505，测试的小米',
       rules: [
         {
-          preKeys: [4],
-          action: 'back',
-          matches: [
-            '[id="android:id/title"][text="开启位置服务" || text="访问我的位置信息"] <<n * +n * [id="android:id/switch_widget"][checked=true]',
-          ],
-          actionCd: 0,
           fastQuery: true,
           resetMatch: 'match',
-          activityIds: [
-            'com.android.settings.Settings$LocationSettingsActivity',
-          ],
+          actionCd: 0,
+          preKeys: [4],
+          activityIds: 'com.android.settings.Settings$LocationSettingsActivity',
+          matches:
+            '@[vid="up"][desc="返回"] <<n * + * [id="android:id/title"][text="开启位置服务" || text="访问我的位置信息"] < * +n * > [id="android:id/switch_widget"][checked=true]',
         },
       ],
     },
@@ -104,15 +100,14 @@ export default defineGkdApp({
     {
       key: 7,
       name: '连接与共享，自动打开NFC后，返回',
-      desc: '260503，小米',
+      desc: '260505，小米',
       rules: [
         {
           resetMatch: 'match',
           fastQuery: true,
-          action: 'back',
           activityIds: 'com.android.settings.Settings$WirelessSettingsActivity',
           matches:
-            '[vid="switch_text"][text="NFC"] + [vid="summary"][text="允许手机在接触其他设备时交换数据"] <n * + [id="android:id/switch_widget"][checked=true]',
+            '@[vid="up"][desc="返回"] <<n * + * [id="android:id/switch_widget"][checked=true] - * > [vid="switch_text"][text="NFC"]',
         },
       ],
     },

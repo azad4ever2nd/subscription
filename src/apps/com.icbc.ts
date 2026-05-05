@@ -105,42 +105,42 @@ export default defineGkdApp({
     },
     {
       key: 8,
-      name: '周一，4选1',
-      desc: '',
+      name: '周一，江城礼遇四选一',
+      desc: '260505',
       rules: [
         {
-          matches: ['[id="app"] > [id="viewWrapper"] >2 [text=" 立即领取"]'],
-          actionCd: 0,
           resetMatch: 'match',
-          activityIds: ['com.icbc.activity.web.ICBCWebView'],
+          actionCd: 0,
+          actionMaximum: 5,
+          activityIds: 'com.icbc.activity.web.ICBCWebView',
+          matches: '[id="app"] > [id="viewWrapper"] >n [text=" 立即领取"]',
         },
       ],
     },
     {
       key: 9,
-      name: '周一10点江城，刷新重试',
-      desc: '260216，刷新重试 || ([text="刷新重试"])',
+      name: '周一，江城礼遇四选一，刷新重试',
+      desc: '260505，刷新重试',
       rules: [
         {
-          matches: [
-            '([text="活动太火爆，请稍后再试"] + [text="我知道了" || text="刷新重试"])',
-          ],
-          actionCdKey: 8,
           resetMatch: 'match',
-          activityIds: ['com.icbc.activity.web.ICBCWebView'],
+          actionCdKey: 8,
+          activityIds: 'com.icbc.activity.web.ICBCWebView',
+          matches:
+            '([text="活动太火爆，请稍后再试"] + [text="我知道了"]) || ([text="刷新重试"])',
         },
       ],
     },
     {
       key: 10,
       name: '各种中奖',
-      desc: '260420，添加未中奖，数字藏品中奖',
+      desc: '260505，添加未中奖，数字藏品中奖',
       rules: [
         {
           resetMatch: 'match',
           activityIds: 'com.icbc.activity.web.ICBCWebView',
           matches:
-            '([text="很遗憾，未中奖"] + [text="关闭"]) || ([text="藏品详情"] + [text="完成"]) || ([id="giftModel"] > * +n [text="确认"] + *) || ([text="微信立减金" || text="支付宝红包"] + [text="立即领取"] + [text="关闭"]) || ([text="去许愿"] < * + TextView) || ([text="恭喜中奖了"] <<n * + * > [text="关闭"]) || ([text="恭喜您中奖！"] + [text="关闭"]) || ([text="恭喜中奖了"] < * +2 * > Image) || (Image - [text="恭喜您中奖啦！"] <<n View +n [text="立即领取"])  || ([text^="请您于" && text$="过期未领将失效"] + [text="立即领取"]) || ([text^="奖品已发放至"] < * + [text="确认"])',
+            '([text="很遗憾，未中奖"] + [text="关闭"]) || ([text="藏品详情"] + [text="完成"]) || ([id="giftModel"] > * +n [text="确认"] + *) || ([text="微信立减金" || text="支付宝红包"] + [text="立即领取"] + [text="关闭"]) || ([text="去许愿"] < * + TextView) || ([text="恭喜中奖了"] <<n * + * > [text="关闭"]) || ([text="恭喜您中奖！"] + [text="关闭"]) || ([text="恭喜中奖了"] < * +2 * > Image) || (Image - [text="恭喜您中奖啦！"] <<n View +n [text="立即领取"])  || ([text^="请您于" && text$="过期未领将失效"] + [text="立即领取"]) || ([text^="奖品已发放至"] < * + [text="确认"]) || ([text="去兑好物"] + [text="开心收下"])',
         },
       ],
     },
