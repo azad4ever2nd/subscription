@@ -161,5 +161,19 @@ export default defineGkdApp({
         },
       ],
     },
+    {
+      key: 12,
+      name: '网络不给力，请稍后重试，重新加载',
+      desc: '260506，添加活动太火爆了，请稍后重试',
+      rules: [
+        {
+          activityIds: 'com.mcd.web.activity.BaseWebActivity',
+          resetMatch: 'match',
+          actionCd: 0,
+          matches:
+            '[text*="网络不给力，请稍后重试"] + [id="reLoad"][text="重新加载"]',
+        },
+      ],
+    },
   ],
 });

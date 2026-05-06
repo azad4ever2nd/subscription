@@ -24,7 +24,7 @@ export default defineGkdApp({
     {
       key: 2,
       name: '节日版金币',
-      desc: '[ChangeMe]本规则由GKD网页端审查工具生成',
+      desc: '',
       resetMatch: 'app',
       rules: [
         {
@@ -51,7 +51,7 @@ export default defineGkdApp({
     {
       key: 4,
       name: '商品页面直播提示',
-      desc: '[ChangeMe]本规则由GKD网页端审查工具生成',
+      desc: '',
       resetMatch: 'match',
       rules: [
         {

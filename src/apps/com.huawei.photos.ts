@@ -7,7 +7,7 @@ export default defineGkdApp({
     {
       key: 1,
       name: '是否删除，确认',
-      desc: '260319',
+      desc: '260506，添加是否清空',
       rules: [
         {
           resetMatch: 'match',
@@ -19,7 +19,7 @@ export default defineGkdApp({
             'com.huawei.gallery.app.SlotAlbumActivity',
           ],
           matches:
-            '[id="android:id/message"][text*="是否删除"] <<n * + * [id="android:id/button1"][text="永久删除" || text="删除"]',
+            '([id="android:id/message"][text*="是否清空"] <<n * + * [id="android:id/button1"][text="清空"]) || ([id="android:id/message"][text*="是否删除"] <<n * + * [id="android:id/button1"][text="永久删除" || text="删除"])',
         },
       ],
     },

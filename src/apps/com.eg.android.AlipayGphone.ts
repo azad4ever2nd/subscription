@@ -189,16 +189,17 @@ export default defineGkdApp({
     },
     {
       key: 13,
-      name: '还款优惠确认',
-      desc: '251209，D,自定义要的优惠金额，针对卡点的指定银行的固定还款优惠',
+      name: '指定银行还款优惠，确认付款',
+      desc: '260506，针对卡点的指定银行的固定还款优惠，根据需要添加银行和金额',
       rules: [
         {
-          matches: [
-            '[desc="农业银行立减金,-¥ 5.00"] - [desc^="服务费"] <<n * + * >n [text="确认付款"]',
-          ],
-          fastQuery: true,
           resetMatch: 'match',
-          activityIds: ['com.alipay.android.msp.ui.views.MspContainerActivity'],
+          fastQuery: true,
+          actionCd: 0,
+          actionMaximium: 1,
+          activityIds: 'com.alipay.android.msp.ui.views.MspContainerActivity',
+          matches:
+            '[text="邮储银行立减金"] + [text="-¥ 5.00"] <<n * + * @Button[desc^="确认付款"] > [text="确认付款"]',
         },
       ],
     },
@@ -301,6 +302,21 @@ export default defineGkdApp({
           activityIds: [
             'com.alipay.mobile.nebulax.xriver.activity.XRiverActivity',
           ],
+        },
+      ],
+    },
+    {
+      key: 20,
+      name: '话费光大100-10',
+      desc: '260506，针对卡点的指定银行的优惠，根据需要添加银行和金额',
+      rules: [
+        {
+          fastQuery: true,
+          actionCD: 0,
+          actionMaximium: 1,
+          activityIds: 'com.alipay.android.msp.ui.views.MspContainerActivity',
+          matches:
+            '([desc="支付金额90.00元"] <<n * + * >n @Button[desc^="确认付款"] > [text="确认付款"]) || ([text="光大银行立减金"] + [text="-¥ 10.00"] <<n * + * @Button[desc^="确认付款"] > [text="确认付款"])',
         },
       ],
     },
