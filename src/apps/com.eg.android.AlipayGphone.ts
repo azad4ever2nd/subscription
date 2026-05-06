@@ -196,7 +196,7 @@ export default defineGkdApp({
           resetMatch: 'match',
           fastQuery: true,
           actionCd: 0,
-          actionMaximium: 1,
+          actionMaximum: 1,
           activityIds: 'com.alipay.android.msp.ui.views.MspContainerActivity',
           matches:
             '[text="邮储银行立减金"] + [text="-¥ 5.00"] <<n * + * @Button[desc^="确认付款"] > [text="确认付款"]',
@@ -312,8 +312,8 @@ export default defineGkdApp({
       rules: [
         {
           fastQuery: true,
-          actionCD: 0,
-          actionMaximium: 1,
+          actionCd: 0,
+          actionMaximum: 1,
           activityIds: 'com.alipay.android.msp.ui.views.MspContainerActivity',
           matches:
             '([desc="支付金额90.00元"] <<n * + * >n @Button[desc^="确认付款"] > [text="确认付款"]) || ([text="光大银行立减金"] + [text="-¥ 10.00"] <<n * + * @Button[desc^="确认付款"] > [text="确认付款"])',
