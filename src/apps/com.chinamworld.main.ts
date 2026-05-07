@@ -101,5 +101,18 @@ export default defineGkdApp({
         },
       ],
     },
+    {
+      key: 7,
+      name: '社保卡领60-20券',
+      desc: '260506',
+      rules: [
+        {
+          resetMatch: 'match',
+          actionCd: 0,
+          activityIds: 'com.ccb.framework.ui.widget.webview.CcbWebViewActivity',
+          matches: '[text="银联满60减20元券"] +n [text="立即领取"]',
+        },
+      ],
+    },
   ],
 });

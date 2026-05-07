@@ -42,9 +42,12 @@ export default defineGkdApp({
         {
           resetMatch: 'match',
           fastQuery: true,
+          action: 'clickCenter',
+          matchRoot: true,
           activityIds:
             'com.jingdong.app.mall.bundle.cashierfinish.view.CashierUserContentCompleteActivity',
-          matches: '[text^="恭喜你"] + * [text$="京豆"] +n [text="立即领取"]',
+          matches:
+            '[text^="恭喜你"] + * [text$="京豆"] +n @[text="立即领取"][clickable=true] > [text="立即领取"]',
         },
       ],
     },

@@ -18,5 +18,45 @@ export default defineGkdApp({
         },
       ],
     },
+    {
+      key: 2,
+      name: '签到点击广告后，X掉',
+      desc: '260507',
+      rules: [
+        {
+          resetMatch: 'match',
+          activityIds: 'com.qq.e.ads.PortraitADActivity',
+          matches: '[text="恭喜获得奖励"] < * +n *[childCount=1] > *',
+        },
+      ],
+    },
+    {
+      key: 3,
+      name: '签到弹窗，确认',
+      desc: '260507',
+      rules: [
+        {
+          resetMatch: 'match',
+          fastQuery: true,
+          activityIds: 'tool.seagull.v.ui.MainActivity',
+          matches:
+            '[text*="广告签到"] <<n * + * [id="android:id/button2"] + [id="android:id/button1"]',
+        },
+      ],
+    },
+    {
+      key: 4,
+      name: '请关闭 获取运动方向权限 和 快应用权限，确定',
+      desc: '260507',
+      rules: [
+        {
+          resetMatch: 'match',
+          fastQuery: true,
+          activityIds: 'tool.seagull.v.ui.MainActivity',
+          matches:
+            '[text^="请关闭 获取运动方向权限 和 快应用权限"] <<n * + * [id="android:id/button1"][text="确定"]',
+        },
+      ],
+    },
   ],
 });
