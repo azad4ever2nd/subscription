@@ -119,7 +119,7 @@ export default defineGkdApp({
         {
           resetMatch: 'match',
           actionCd: 0,
-          actionMaximium: 2,
+          actionMaximum: 2,
           activityIds:
             'com.alipay.mobile.nebulax.xriver.activity.XRiverActivity',
           matches:
@@ -135,7 +135,7 @@ export default defineGkdApp({
         {
           resetMatch: 'match',
           actionCd: 0,
-          actionMaximium: 2,
+          actionMaximum: 2,
           activityIds:
             'com.alipay.mobile.nebulax.xriver.activity.XRiverActivity',
           matches:
@@ -151,7 +151,7 @@ export default defineGkdApp({
         {
           resetMatch: 'match',
           actionCd: 0,
-          actionMaximium: 2,
+          actionMaximum: 2,
           activityIds:
             'com.alipay.mobile.nebulax.xriver.activity.XRiverActivity',
           matches:
