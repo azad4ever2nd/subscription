@@ -386,33 +386,30 @@ export default defineGkdApp({
     },
     {
       key: 24,
-      name: '领券中心，1分购',
-      desc: '260327，可以指定抢什么券，朴朴，移动，联通，美团，闪购，',
+      name: '领券中心，1分购，外面等',
+      desc: '2600508，可以指定抢什么券，朴朴，移动，联通，美团，闪购，',
       rules: [
         {
-          matches: [
-            '@*[clickable=true] [text*="移动" || text*="联通"] +n * [text="0."] + [text="01"] + * > [text="立即抢购"]',
-          ],
-          actionCd: 100,
-          actionMaximum: 1,
           resetMatch: 'app',
-          activityIds: ['com.unionpay.cordova.UPActivityWeb'],
+          actionCd: 0,
+          actionMaximum: 1,
+          activityIds: 'com.unionpay.cordova.UPActivityWeb',
+          matches:
+            '@*[clickable=true] [text*="移动"] +n * [text="0."] + [text="01"] + * > [text="立即抢购"]',
         },
       ],
     },
     {
       key: 25,
-      name: '领券中心，1分购，立即抢购',
-      desc: '260327',
+      name: '领券中心，1分购，里面等，立即抢购',
+      desc: '260508',
       rules: [
         {
-          matches: [
-            '[text="￥ 0.01"] + [text="预估到手价"] + [text*="抢购" || text="立即抢购"]',
-          ],
-          actionCd: 100,
-          actionMaximum: 1,
           resetMatch: 'match',
-          activityIds: ['com.unionpay.cordova.UPActivityWeb'],
+          actionCd: 0,
+          actionMaximum: 1,
+          activityIds: 'com.unionpay.cordova.UPActivityWeb',
+          matches: '[text="￥ 0.01"] + [text="预估到手价"] + [text="立即抢购"]',
         },
       ],
     },
@@ -475,6 +472,19 @@ export default defineGkdApp({
           activityIds: 'com.bankcomm.module.biz.webcontainer.BCMHtml5Activity',
           matches:
             '[text="达美乐50元代金券"] <<n * + * [id="copy"][text="已售罄"]',
+        },
+      ],
+    },
+    {
+      key: 30,
+      name: '领券中心，1分购，里面等',
+      desc: '260508，不分品种，无actionMaximum限制',
+      rules: [
+        {
+          resetMatch: 'match',
+          actionCd: 200,
+          activityIds: 'com.unionpay.cordova.UPActivityWeb',
+          matches: '[text="￥ 0.01"] + [text="预估到手价"] + [text="立即抢购"]',
         },
       ],
     },

@@ -113,45 +113,49 @@ export default defineGkdApp({
     },
     {
       key: 8,
-      name: '云游上海75',
-      desc: '251219,D,[clickable=true] [text="75元"] + [text="游览券"] + [text="满150减75元"] + TextView',
+      name: '迪士尼梦享券，500-60',
+      desc: '260508，区别在于可抢时childCount=4',
       rules: [
         {
-          matches: ['[text="75元"] + [text="游览券"] +2 TextView'],
           resetMatch: 'match',
-          activityIds: [
-            'com.alipay.mobile.nebulax.xriver.activity.XRiverActivity$App01',
-          ],
+          actionCd: 0,
+          actionMaximium: 2,
+          activityIds:
+            'com.alipay.mobile.nebulax.xriver.activity.XRiverActivity',
+          matches:
+            'View[childCount=4] > [text="60元"] + [text="乐园门票消费券"] + [text="满500可用"] + *',
         },
       ],
     },
     {
       key: 9,
-      name: '云游上海50',
-      desc: '251219,D,[clickable=true] [text="50元"] + [text="游览券"] + [text="满100减50元"] + TextView',
+      name: '迪士尼梦享券，1000-120',
+      desc: '260508，区别在于可抢时childCount=4',
       rules: [
         {
-          matches: ['[text="50元"] + [text="游览券"] +2 TextView'],
           resetMatch: 'match',
-          activityIds: [
-            'com.alipay.mobile.nebulax.xriver.activity.XRiverActivity$App01',
-          ],
+          actionCd: 0,
+          actionMaximium: 2,
+          activityIds:
+            'com.alipay.mobile.nebulax.xriver.activity.XRiverActivity',
+          matches:
+            'View[childCount=4] > [text="120元"] + [text="乐园门票消费券"] + [text="满1000可用"] + *',
         },
       ],
     },
     {
       key: 10,
-      name: '乐游券，要120或60改规则， || text="60"',
-      desc: '251219,D',
+      name: '迪士尼梦享券，2000-200',
+      desc: '260508，区别在于可抢时childCount=4',
       rules: [
         {
-          matches: [
-            '([text="乐园券"] +n [text="120" || text="120"] +n * > [text="领取"][clickable=true]) || ([text="乐园券"] +n [text="120" || text="120"] +4 [text="领取"][clickable=true])',
-          ],
           resetMatch: 'match',
-          activityIds: [
+          actionCd: 0,
+          actionMaximium: 2,
+          activityIds:
             'com.alipay.mobile.nebulax.xriver.activity.XRiverActivity',
-          ],
+          matches:
+            'View[childCount=4] > [text="200元"] + [text="乐园门票消费券"] + [text="满2000可用"] + *',
         },
       ],
     },
@@ -317,6 +321,36 @@ export default defineGkdApp({
           activityIds: 'com.alipay.android.msp.ui.views.MspContainerActivity',
           matches:
             '([desc="支付金额90.00元"] <<n * + * >n @Button[desc^="确认付款"] > [text="确认付款"]) || ([text="光大银行立减金"] + [text="-¥ 10.00"] <<n * + * @Button[desc^="确认付款"] > [text="确认付款"])',
+        },
+      ],
+    },
+    {
+      key: 21,
+      name: '还款优惠，下一步去还款',
+      desc: '260508',
+      rules: [
+        {
+          resetMatch: 'match',
+          activityIds:
+            'com.alipay.mobile.nebulax.xriver.activity.XRiverActivity',
+          matches:
+            '[text="本卡满¥1500.00"] + [text="-¥5.00"] +n * Button[text="下一步去还款"]',
+        },
+      ],
+    },
+    {
+      key: 22,
+      name: '指定银行还款优惠，确认付款2',
+      desc: '260508，对比测试13,添加了matchroot，actionCd:1000',
+      rules: [
+        {
+          resetMatch: 'match',
+          fastQuery: true,
+          matchRoot: true,
+          actionCd: 1000,
+          activityIds: 'com.alipay.android.msp.ui.views.MspContainerActivity',
+          matches:
+            '[text="邮储银行立减金"] + [text="-¥ 5.00"] <<n * + * Button[desc^="确认付款"] > [text="确认付款"]',
         },
       ],
     },

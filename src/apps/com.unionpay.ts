@@ -258,5 +258,50 @@ export default defineGkdApp({
         },
       ],
     },
+    {
+      key: 17,
+      name: '迪士尼梦享券500-60，立即领取',
+      desc: '260508',
+      rules: [
+        {
+          resetMatch: 'match',
+          actionCd: 0,
+          actionMaximum: 1,
+          fastQuery: true,
+          activityIds: 'com.unionpay.activity.react.UPActivityReactNative',
+          matches: '[text="60元梦享券-乐园门票"] <<n * +n * [text="立即领取"]',
+        },
+      ],
+    },
+    {
+      key: 18,
+      name: '迪士尼梦享券1000-120，立即领取',
+      desc: '260508',
+      rules: [
+        {
+          resetMatch: 'match',
+          actionCd: 0,
+          actionMaximum: 1,
+          fastQuery: true,
+          activityIds: 'com.unionpay.activity.react.UPActivityReactNative',
+          matches: '[text="120元梦享券-乐园门票"] <<n * +n * [text="未开始"]',
+        },
+      ],
+    },
+    {
+      key: 19,
+      name: '迪士尼梦享券2000-200，立即领取',
+      desc: '260508',
+      rules: [
+        {
+          resetMatch: 'match',
+          actionCd: 0,
+          actionMaximum: 1,
+          fastQuery: true,
+          activityIds: 'com.unionpay.activity.react.UPActivityReactNative',
+          matches: '[text="200元梦享券-乐园门票"] <<n * +n * [text="未开始"]',
+        },
+      ],
+    },
   ],
 });
