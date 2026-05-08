@@ -17,5 +17,17 @@ export default defineGkdApp({
         },
       ],
     },
+    {
+      key: 2,
+      name: 'RUN WORKFLOW,自动点击脚本执行',
+      desc: '260508',
+      rules: [
+        {
+          resetMatch: 'match',
+          activityIds: 'com.github.android.main.MainActivity',
+          matches: '[text="RUN WORKFLOW"] + @Button <<n * + * [text="CHANGE"]',
+        },
+      ],
+    },
   ],
 });

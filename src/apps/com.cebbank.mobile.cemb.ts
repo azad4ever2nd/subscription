@@ -39,11 +39,11 @@ export default defineGkdApp({
     {
       key: 3,
       name: '基金财富月历，签到',
-      desc: '260325，([text*="关注一只产品" && text$="翻倍金币～"] + TextView[clickable=true]) || ([text="恭喜获得"] <n * + TextView[clickable=true])',
+      desc: '260508，[text^="天天领金币"] +3 View ',
       rules: [
         {
           matches: [
-            '([id="mainContainer"] [text^="天天领金币"] +n View[childCount=1] > TextView[clickable=true]) || ([id="mainContainer"] [text^="天天领金币"] +3 View > TextView[clickable=true])',
+            '([id="mainContainer"] [text^="天天领金币"] +n View[childCount=1] > TextView[clickable=true]) || ([id="mainContainer"] [text^="天天领金币"] +2 View > TextView[clickable=true])',
           ],
           actionMaximum: 1,
           resetMatch: 'match',
@@ -187,7 +187,7 @@ export default defineGkdApp({
       rules: [
         {
           matches: [
-            '([text="可在首页-[奖品]查看" || text="可在首页-[财气值明细]查看"] + TextView) || ([text="兑奖码:"] + * + TextView)',
+            '([text^="兑奖码:"] + * + TextView) ||([text="可在首页-[奖品]查看" || text="可在首页-[财气值明细]查看"] + TextView) || ([text="兑奖码:"] + * + TextView)',
           ],
           resetMatch: 'match',
           activityIds: [
@@ -369,7 +369,7 @@ export default defineGkdApp({
     {
       key: 24,
       name: '抽奖微信红包，复制',
-      desc: '260417',
+      desc: '260508',
       rules: [
         {
           resetMatch: 'match',
@@ -377,7 +377,7 @@ export default defineGkdApp({
           activityIds:
             'com.cebbank.mobile.cemb.ui.activity.mobilePayment.MobilePaymentWebActivity',
           matches:
-            '[text^="兑奖码"] + @*[clickable=true] + [text^="搜索并关注微信公众号"]',
+            '([text^="兑奖码"] +n @*[clickable=true] + [text^="搜索并关注微信公众号"]) || ([text^="兑奖码"] + @*[clickable=true] + [text^="搜索并关注微信公众号"])',
         },
       ],
     },
