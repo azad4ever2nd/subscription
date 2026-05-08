@@ -477,7 +477,7 @@ export default defineGkdApp({
     },
     {
       key: 30,
-      name: '领券中心，1分购，里面等',
+      name: '领券中心，1分购，里面等2',
       desc: '260508，不分品种，无actionMaximum限制',
       rules: [
         {

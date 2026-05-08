@@ -34,5 +34,35 @@ export default defineGkdApp({
         },
       ],
     },
+    {
+      key: 3,
+      name: '关闭随用随充弹窗，仍要关闭',
+      desc: '260508',
+      rules: [
+        {
+          resetMatch: 'match',
+          fastQuery: true,
+          activityIds:
+            'cn.gov.pbc.dcep.bankcard.activity.BankCardChargebackActivity',
+          matches:
+            '[vid="commonview_notice_title_question"][text^="关闭随用随充"] +n * > [vid="commonview_notice_ensure_btn"][text="仍要关闭"]',
+        },
+      ],
+    },
+    {
+      key: 4,
+      name: '关闭随用随充弹窗2，仍要关闭',
+      desc: '260508',
+      rules: [
+        {
+          resetMatch: 'match',
+          fastQuery: true,
+          activityIds:
+            'cn.gov.pbc.dcep.bankcard.activity.BankCardChargebackActivity',
+          matches:
+            '[vid="commonview_notice_content_no_title_confirm_cancel_lines"][text^="关闭随用随充"] <n * +n * > [vid="commonview_notice_ensure_lines"][text="仍要关闭"]',
+        },
+      ],
+    },
   ],
 });
