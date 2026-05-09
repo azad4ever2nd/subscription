@@ -7,7 +7,7 @@ export default defineGkdApp({
     {
       key: 1,
       name: '签到',
-      desc: '260503,签到改版，[text="会员签到"] [text="立即签到"]',
+      desc: '260509,签到改版，[text="会员签到"] [text="立即签到"]',
       rules: [
         {
           resetMatch: 'match',
@@ -15,7 +15,7 @@ export default defineGkdApp({
           action: 'clickCenter',
           activityIds: 'com.ecitic.bank.mobile.ui.MainActivity',
           matches:
-            '([text="会员签到"] >n [text="立即签到"]) || ([text="会员专属活动"] + Image[clickable=true])',
+            '([text="去签到，按钮"]) || ([text="会员签到"] >n [text="立即签到"]) || ([text="会员专属活动"] + Image[clickable=true])',
         },
       ],
     },

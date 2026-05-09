@@ -419,5 +419,19 @@ export default defineGkdApp({
         },
       ],
     },
+    {
+      key: 28,
+      name: '低碳会员页面，碳积分奖励，',
+      desc: '260509',
+      rules: [
+        {
+          resetMatch: 'match',
+          actionCd: 500,
+          activityIds:
+            'com.hellobike.moped.platform.offline.web.OhoRealmWebActivity',
+          matches: '@View Image[text="aab668b57491499e89ee4a5b766bcf77_35"]',
+        },
+      ],
+    },
   ],
 });
