@@ -42,15 +42,17 @@ export default defineGkdApp({
     {
       key: 3,
       name: '允许使用通知栏，以后再说',
-      desc: '251219',
+      desc: '260510，添加IDS',
       rules: [
         {
-          matches: [
-            '[vid="top_title"][text*="允许使用通知栏"] +n * > [vid="cancel_button"][text="以后再说"]',
-          ],
-          fastQuery: true,
           resetMatch: 'match',
-          activityIds: ['com.pikcloud.xpan.xpan.main.MainTabActivity'],
+          fastQuery: true,
+          activityIds: [
+            'com.pikcloud.vodplayer.vodmix.MixPlayerActivity',
+            'com.pikcloud.xpan.xpan.main.MainTabActivity',
+          ],
+          matches:
+            '[vid="top_title"][text*="允许使用通知栏"] +n * > [vid="cancel_button"][text="以后再说"]',
         },
       ],
     },

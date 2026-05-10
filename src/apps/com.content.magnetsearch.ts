@@ -19,5 +19,20 @@ export default defineGkdApp({
         },
       ],
     },
+    {
+      key: 2,
+      name: '评分',
+      desc: '260510',
+      rules: [
+        {
+          resetMatch: 'match',
+          actionCd: 100,
+          fastQuery: true,
+          activityIds: 'com.content.magnetsearch.ui.MainActivity',
+          matches:
+            '[vid="md_title"] <n * +n [vid="md_buttonDefaultNegative"][text="取消"]',
+        },
+      ],
+    },
   ],
 });

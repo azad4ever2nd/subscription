@@ -58,5 +58,30 @@ export default defineGkdApp({
         },
       ],
     },
+    {
+      key: 5,
+      name: '奖励已下发，跳过',
+      desc: '260510',
+      rules: [
+        {
+          resetMatch: 'match',
+          activityIds: 'com.sigmob.sdk.base.common.PortraitAdActivity',
+          matches: '[text="奖励已下发"] + [text="跳过"]',
+        },
+      ],
+    },
+    {
+      key: 6,
+      name: '反馈，close_btn',
+      desc: '260510',
+      rules: [
+        {
+          resetMatch: 'match',
+          activityIds:
+            'com.sigmob.sdk.base.common.PortraitTransparentAdActivity',
+          matches: '[text="反馈"] + [id="close_btn"]',
+        },
+      ],
+    },
   ],
 });

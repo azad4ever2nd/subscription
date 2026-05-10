@@ -60,5 +60,32 @@ export default defineGkdApp({
         },
       ],
     },
+    {
+      key: 5,
+      name: '话费充值后弹窗',
+      desc: '260510',
+      rules: [
+        {
+          resetMatch: 'match',
+          actionCd: 100,
+          fastQuery: true,
+          activityIds: 'com.mpaas.mriver.integration.MriverActivityBase$Main',
+          matches: '* + [vid="ivVerticalClose"]',
+        },
+      ],
+    },
+    {
+      key: 6,
+      name: '绿色能量，立即领取',
+      desc: '260510',
+      rules: [
+        {
+          resetMatch: 'match',
+          actionCd: 100,
+          activityIds: 'com.mpaas.mriver.integration.MriverActivityBase$Main',
+          matches: '[text="可在能量商城兑换好礼"] + [text="立即领取"]',
+        },
+      ],
+    },
   ],
 });

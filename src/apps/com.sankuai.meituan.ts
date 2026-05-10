@@ -256,5 +256,35 @@ export default defineGkdApp({
         },
       ],
     },
+    {
+      key: 18,
+      name: '直播间小屋子领券，金额可自定义',
+      desc: '260510',
+      rules: [
+        {
+          resetMatch: 'match',
+          fastQuery: true,
+          actionMaximum: 5,
+          activityIds: 'com.dianping.live.live.mrn.MLiveMRNActivity',
+          matches:
+            '[text="50" || text="60"] + [text="元"] +n *[clickable=true] > [text="领券"][visibleToUser=true]',
+        },
+      ],
+    },
+    {
+      key: 19,
+      name: '直播间右上角待领取',
+      desc: '260510',
+      rules: [
+        {
+          resetMatch: 'match',
+          fastQuery: true,
+          actionMaximum: 5,
+          activityIds: 'com.dianping.live.live.mrn.MLiveMRNActivity',
+          matches:
+            '[text="50" || text="60"] + [text="元"] +n *[clickable=true] > [text="立即领取"][visibleToUser=true]',
+        },
+      ],
+    },
   ],
 });
