@@ -1193,11 +1193,11 @@ export default defineGkdApp({
     {
       key: 59,
       name: '沪上阿姨一分购，同意服务协议',
-      desc: '260503',
+      desc: '260511',
       rules: [
         {
           resetMatch: 'match',
-          actionCd: 300,
+          actionCd: 100,
           actionMaximum: 1,
           activityIds: [
             'com.tencent.mm.plugin.appbrand.ui.AppBrandUI0',
@@ -1212,19 +1212,43 @@ export default defineGkdApp({
             'com.tencent.mm.plugin.appbrand.ui.AppBrandUI04',
           ],
           matches:
-            '@[text="我已阅读并同意"] + [text="《沪上阿姨膨胀神券包协议》"]',
+            '(*[childCount=8] >n @[text="我已阅读并同意"] + [text^="《沪上阿姨"]) || (*[childCount=9] >n @[text.length=1] + [text="我已阅读并同意"] + [text^="《沪上阿姨"])',
         },
       ],
     },
     {
       key: 60,
       name: '沪上阿姨一分购，同意服务协议后，立即购买',
-      desc: '260503',
+      desc: '260511',
       rules: [
         {
           resetMatch: 'match',
-          actionCd: 600,
-          preKeys: [59],
+          actionCd: 100,
+          preKeys: [59, 61],
+          activityIds: [
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI0',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI1',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI2',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI3',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI4',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI00',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI01',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI02',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI03',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI04',
+          ],
+          matches: 'Button[text="立即购买 ￥0.01"]',
+        },
+      ],
+    },
+    {
+      key: 61,
+      name: '沪上阿姨一分购，同意服务协议弹窗',
+      desc: '260511',
+      rules: [
+        {
+          resetMatch: 'match',
+          actionCd: 0,
           activityIds: [
             'com.tencent.mm.plugin.appbrand.ui.AppBrandUI0',
             'com.tencent.mm.plugin.appbrand.ui.AppBrandUI1',
@@ -1238,7 +1262,7 @@ export default defineGkdApp({
             'com.tencent.mm.plugin.appbrand.ui.AppBrandUI04',
           ],
           matches:
-            '[text="《沪上阿姨膨胀神券包协议》"] + [text="立即购买 ￥0.01"]',
+            '[vid="mm_alert_cancel_btn"][text="不同意"] +n [vid="mm_alert_ok_btn"][text="同意协议"]',
         },
       ],
     },

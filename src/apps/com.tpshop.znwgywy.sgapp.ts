@@ -83,5 +83,18 @@ export default defineGkdApp({
         },
       ],
     },
+    {
+      key: 7,
+      name: '签到完广告弹窗，跳过',
+      desc: '260511',
+      rules: [
+        {
+          resetMatch: 'match',
+          activityIds:
+            'com.sigmob.sdk.base.common.PortraitTransparentAdActivity',
+          matches: '[id="close_btn"][text="跳过"]',
+        },
+      ],
+    },
   ],
 });

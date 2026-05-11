@@ -19,13 +19,14 @@ export default defineGkdApp({
     {
       key: 2,
       name: '加载失败点击重试',
-      desc: '260108',
+      desc: '260511',
       rules: [
         {
-          matches: ['@[text="加载失败, 点击重试"] + View'],
-          actionCd: 0,
           resetMatch: 'match',
-          activityIds: ['li.songe.gkd.MainActivity'],
+          action: 'clickCenter',
+          actionCd: 100,
+          activityIds: 'li.songe.gkd.MainActivity',
+          matches: '@[text="加载失败, 点击重试"] + View',
         },
       ],
     },

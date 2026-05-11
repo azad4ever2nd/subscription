@@ -24,18 +24,15 @@ export default defineGkdApp({
     {
       key: 2,
       name: '弹窗',
-      desc: '260302',
+      desc: '260511',
       rules: [
         {
-          fastQuery: true,
           resetMatch: 'match',
-          matches: [
-            '([vid="sdv_big_pic"] - [vid="iv_big_close"]) || ([vid="iv_close_single"])',
-          ],
-
-          activityIds: [
+          fastQuery: true,
+          activityIds:
             'com.cmcc.cmvideo.main.application.CompatibleMainActivity',
-          ],
+          matches:
+            '(@[vid="iv_big_close"] + [vid="sdv_big_pic"]) || ([vid="iv_close_single"]) || ([vid="close_bg_single"] > [vid="iv_close_single"])',
         },
       ],
     },
@@ -174,17 +171,15 @@ export default defineGkdApp({
     {
       key: 11,
       name: '分享到微信',
-      desc: '260308',
+      desc: '260511',
       rules: [
         {
-          actionMaximum: 1,
           resetMatch: 'app',
-          fastQuery: true,
           preKeys: [10],
-          matches: [
-            '[vid="share_item_title"][text="微信好友"] - [vid="share_item_icon"]',
-          ],
-          activityIds: ['com.cmvideo.capability.vod.VodActivity'],
+          fastQuery: true,
+          actionMaximum: 1,
+          activityIds: 'com.cmvideo.capability.vod.VodActivity',
+          matches: '@[vid="share_item_contain"] [text="微信好友"]',
         },
       ],
     },
