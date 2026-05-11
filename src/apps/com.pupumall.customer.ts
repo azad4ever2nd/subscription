@@ -59,5 +59,30 @@ export default defineGkdApp({
         },
       ],
     },
+    {
+      key: 5,
+      name: '订单列表，删除未付款的订单',
+      desc: '260511',
+      rules: [
+        {
+          resetMatch: 'match',
+          activityIds: 'com.pupumall.webview.page.PuPuWebViewActivity',
+          matches: 'View[childCount=2] > [text="删除订单"][visibleToUser=true]',
+        },
+      ],
+    },
+    {
+      key: 6,
+      name: '删除订单弹窗，确认',
+      desc: '260511',
+      rules: [
+        {
+          resetMatch: 'match',
+          activityIds: 'com.pupumall.webview.page.PuPuWebViewActivity',
+          matches:
+            '[text="确认删除这个订单？"] + [text="取消"] + [text="确认"]',
+        },
+      ],
+    },
   ],
 });
