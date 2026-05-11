@@ -557,15 +557,16 @@ export default defineGkdApp({
     {
       key: 35,
       name: '页面下方，添加自选',
-      desc: '260510，简化改为Button',
+      desc: '260511，精简button，|| (Button[text="加自选"]) 这条规则与抽奖任务重合',
       rules: [
         {
           actionMaximum: 1,
-          resetMatch: 'activity',
+          resetMatch: 'match',
+          actionCd: 0,
           activityIds:
             'cmb.pb.app.h5container.webviewcontainer.PBWebContainerActivity',
           matches:
-            '([text="加自选"]) || (Button[text="加自选"]) || (Button[text="自选"])',
+            '(@View[clickable=true] TextView[text="加自选"]) || (Button[text="自选"])',
         },
       ],
     },

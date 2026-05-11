@@ -52,7 +52,7 @@ export default defineGkdApp({
     {
       key: 4,
       name: '弹窗',
-      desc: '260323',
+      desc: '260511，添加添加弹窗下载君弘app',
       rules: [
         {
           matches: [
@@ -80,7 +80,7 @@ export default defineGkdApp({
     {
       key: 6,
       name: '弹窗下载君弘app',
-      desc: '260309',
+      desc: 'D,260309，占位',
       rules: [
         {
           matches: ['[vid="pushinfodlg_msgarea"] > *[index=1]'],
