@@ -243,12 +243,13 @@ export default defineGkdApp({
     {
       key: 16,
       name: '签到',
-      desc: '251216',
+      desc: '260513',
       rules: [
         {
-          matches: ['[text="会员日日有惊喜"] +n * > Button[text="签到"]'],
           resetMatch: 'match',
-          activityIds: ['com.alipay.mobile.nebulacore.ui.H5Activity'],
+          activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
+          matches:
+            '([text="会员日日有惊喜"] +n * > Button[text="签到"]) || ([text="签到"])',
         },
       ],
     },
@@ -364,7 +365,7 @@ export default defineGkdApp({
     {
       key: 24,
       name: '奖励金页面，签到',
-      desc: '260503，测试matchRoot',
+      desc: '260513，测试matchRoot',
       rules: [
         {
           resetMatch: 'match',
@@ -372,7 +373,8 @@ export default defineGkdApp({
           matchRoot: true,
           actionCd: 300,
           activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
-          matches: '[text="请点击下方按钮，立即签到"] + * [text="签到"]',
+          matches:
+            '([text="请点击下方按钮，立即签到"] + * [text="签到"]) || ([text="签到"])',
         },
       ],
     },
@@ -393,13 +395,13 @@ export default defineGkdApp({
     {
       key: 26,
       name: '奖励金页面，上方，今日签到',
-      desc: '260503',
+      desc: '260513',
       rules: [
         {
           resetMatch: 'match',
           actionMaximum: 1,
           activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
-          matches: '@* > *[childCount=2] > [text="今日签到"]',
+          matches: '@*[clickable=true] > *[childCount=2] > [text="今日签到"]',
         },
       ],
     },

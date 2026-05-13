@@ -35,5 +35,20 @@ export default defineGkdApp({
         },
       ],
     },
+    {
+      key: 3,
+      name: '极速版弹窗，确定',
+      desc: '260513',
+      rules: [
+        {
+          resetMatch: 'match',
+          actionCd: 100,
+          fastQuery: true,
+          activityIds: 'tool.seagull.v.ui.MainActivity',
+          matches:
+            '[text^="海鸥极速版"] <<n * + * [id="android:id/button1"][text="确定"]',
+        },
+      ],
+    },
   ],
 });

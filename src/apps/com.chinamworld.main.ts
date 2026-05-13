@@ -114,5 +114,46 @@ export default defineGkdApp({
         },
       ],
     },
+    {
+      key: 8,
+      name: '建行社保卡',
+      desc: '260513，1确认身份信息打勾，2.立即参与，3.弹窗好的',
+      rules: [
+        {
+          resetMatch: 'match',
+          actionCd: 0,
+          activityIds: 'com.ccb.framework.ui.widget.webview.CcbWebViewActivity',
+          matches:
+            '([text="身份信息验证"] +n CheckBox[checked=false]) || (CheckBox[checked=true] + CheckBox[checked=true] + [text="loginBtn.f302f730"]) || ([text="温馨提示"] +n * > Button[text="好的"])',
+        },
+      ],
+    },
+    {
+      key: 9,
+      name: '建行社保卡,立即参与',
+      desc: '260513',
+      rules: [
+        {
+          resetMatch: 'match',
+          actionCd: 0,
+          activityIds: 'com.ccb.framework.ui.widget.webview.CcbWebViewActivity',
+          matches:
+            'CheckBox[checked=true] + CheckBox[checked=true] + [text="loginBtn.f302f730"]',
+        },
+      ],
+    },
+    {
+      key: 10,
+      name: '建行社保卡，弹窗好的',
+      desc: '260513',
+      rules: [
+        {
+          resetMatch: 'match',
+          actionCd: 0,
+          activityIds: 'com.ccb.framework.ui.widget.webview.CcbWebViewActivity',
+          matches: '[text="温馨提示"] +n * > Button[text="好的"]',
+        },
+      ],
+    },
   ],
 });

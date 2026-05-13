@@ -7,14 +7,15 @@ export default defineGkdApp({
     {
       key: 1,
       name: '广告1，关闭',
-      desc: '260505',
+      desc: '260513',
       rules: [
         {
           fastQuery: true,
           resetMatch: 'match',
+          actionCd: 100,
           activityIds: 'com.windmill.sdk.widget.InterstitialView_4012003',
           matches:
-            '(@*[clickable=true] > [text="关闭"]) || (@*[clickable=true] > [vid="tobid_interstitial_skip_text"][text="关闭"]) ',
+            '(@*[clickable=true] > [text="关闭"]) || (@*[clickable=true] > [vid="tobid_interstitial_skip_text"][text="关闭"]) || (@[vid="tobid_interstitial_skip_ll"][clickable=true] > [text="关闭"])',
         },
       ],
     },

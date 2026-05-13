@@ -81,12 +81,9 @@ export default defineGkdApp({
     {
       key: 5,
       name: '腾讯理财通，领取奖励',
-      desc: '260303,添加抢理财金，整合领取与返回，体验完成，',
+      desc: '260513,添加抢理财金，整合领取与返回，体验完成，',
       rules: [
         {
-          matches: [
-            '(View[childCount=2] > [text="1,000元理财金"] + *) || (WebView [text="领取奖励"]) || ([text^="成功领取奖励" || text="成功开始模拟"] <<n FrameLayout + * >n [desc="关闭"][childCount=1]) || ([text^="成功领取奖励"] <<n FrameLayout + * >n [desc="关闭"])',
-          ],
           resetMatch: 'match',
           activityIds: [
             'com.tencent.mm.plugin.appbrand.ui.AppBrandUI0',
@@ -100,6 +97,8 @@ export default defineGkdApp({
             'com.tencent.mm.plugin.appbrand.ui.AppBrandUI03',
             'com.tencent.mm.plugin.appbrand.ui.AppBrandUI04',
           ],
+          matches:
+            '(View[childCount=2] > [text="1,000元理财金"] + *) || (View[childCount=3][clickable=true] > [text="最高1000元理财金"] + *) || (WebView [text="领取奖励"]) || ([text^="成功领取奖励" || text="成功开始模拟"] <<n FrameLayout + * >n [desc="关闭"][childCount=1]) || ([text^="成功领取奖励"] <<n FrameLayout + * >n [desc="关闭"])',
         },
       ],
     },
