@@ -70,7 +70,7 @@ export default defineGkdApp({
     {
       key: 5,
       name: '开启位置服务，打开后返回',
-      desc: '260505，测试的小米',
+      desc: '260515，华为小米，华为没有@[vid="up"]',
       rules: [
         {
           fastQuery: true,
@@ -79,7 +79,7 @@ export default defineGkdApp({
           preKeys: [4],
           activityIds: 'com.android.settings.Settings$LocationSettingsActivity',
           matches:
-            '@[vid="up"][desc="返回"] <<n * + * [id="android:id/title"][text="开启位置服务" || text="访问我的位置信息"] < * +n * > [id="android:id/switch_widget"][checked=true]',
+            '@[desc="返回" || desc="向上导航"] <<n * + * [id="android:id/title"][text="开启位置服务" || text="访问我的位置信息"] < * +n * > [id="android:id/switch_widget"][checked=true]',
         },
       ],
     },

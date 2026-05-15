@@ -286,5 +286,19 @@ export default defineGkdApp({
         },
       ],
     },
+    {
+      key: 20,
+      name: '定位服务未开启，去设置',
+      desc: '260514',
+      rules: [
+        {
+          resetMatch: 'match',
+          fastQuery: true,
+          activityIds:
+            'com.meituan.android.bike.component.feature.main.view.MobikeMainActivity',
+          matches: '[text="定位服务未开启"] +n * > [text="去设置"]',
+        },
+      ],
+    },
   ],
 });
