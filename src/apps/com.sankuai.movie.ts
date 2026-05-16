@@ -91,5 +91,18 @@ export default defineGkdApp({
         },
       ],
     },
+    {
+      key: 7,
+      name: '广州，乐享品质旅游 ，共赴美好山河',
+      desc: '260516，五折演出券',
+      rules: [
+        {
+          resetMatch: 'match',
+          actionCd: 0,
+          activityIds: 'com.sankuai.movie.knb2.container.MovieWebActivity',
+          matches: '[text="80"] <<n *[childCount=3] +2 *',
+        },
+      ],
+    },
   ],
 });

@@ -1265,5 +1265,29 @@ export default defineGkdApp({
         },
       ],
     },
+    {
+      key: 62,
+      name: '广州，乐享品质旅游 ，共赴美好山河',
+      desc: '260516，五折演出券',
+      rules: [
+        {
+          resetMatch: 'match',
+          actionCd: 0,
+          activityIds: [
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI0',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI1',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI2',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI3',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI4',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI00',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI01',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI02',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI03',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI04',
+          ],
+          matches: '[text="80"] <<n *[childCount=3] +2 *[visibleToUser=true]',
+        },
+      ],
+    },
   ],
 });
