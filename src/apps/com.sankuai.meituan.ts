@@ -300,5 +300,19 @@ export default defineGkdApp({
         },
       ],
     },
+    {
+      key: 21,
+      name: '美团骑行需要获取地理位置，去设置',
+      desc: '260518',
+      rules: [
+        {
+          resetMatch: 'match',
+          fastQuery: true,
+          activityIds: 'com.meituan.msc.modules.container.MSCActivity',
+          matches:
+            '[vid="dlg_title"][text*="地理位置"] < * +n * > [vid="dlg_right_btn"][text="去设置"]',
+        },
+      ],
+    },
   ],
 });

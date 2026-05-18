@@ -104,5 +104,17 @@ export default defineGkdApp({
         },
       ],
     },
+    {
+      key: 8,
+      name: '开启通知弹窗，X掉',
+      desc: '260518',
+      rules: [
+        {
+          resetMatch: 'match',
+          activityIds: 'com.sankuai.movie.MovieMainActivity',
+          matches: '[text="开启通知"] <n * + ImageView',
+        },
+      ],
+    },
   ],
 });

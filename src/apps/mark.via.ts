@@ -81,5 +81,32 @@ export default defineGkdApp({
         },
       ],
     },
+    {
+      key: 7,
+      name: '是否在app内阅读全文，取消',
+      desc: '260518',
+      rules: [
+        {
+          resetMatch: 'match',
+          actionCd: 0,
+          activityIds: 'mark.via.Shell',
+          matches: '[text^="是否在" && text$="内阅读全文"] + [text="取消"]',
+        },
+      ],
+    },
+    {
+      key: 8,
+      name: '跳登陆弹窗，X掉',
+      desc: '260518',
+      rules: [
+        {
+          resetMatch: 'match',
+          actionCd: 0,
+          activityIds: 'mark.via.Shell',
+          matches:
+            '[id="passportbox"] > [text="kSihFDy2c7KQEqcV0vSv1iGQ+L8m86x4W2K+8EMSAJLbEOIXoCSgCU+SYCSQLwqqW8HQBqAhcNeEiNRhmbxnW87QOhw2nlcotaaZQiK5w4A3V7JjEuNT3vsPDROQfiL6WXsk7gVH1e4vf7EtRwQfjt8JuharvVsHQNM4ykDX94FYhBKOJraAAAAAElFTkSuQmCC"]',
+        },
+      ],
+    },
   ],
 });

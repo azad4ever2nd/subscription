@@ -292,18 +292,17 @@ export default defineGkdApp({
     {
       key: 18,
       name: '浏览任务完成',
-      desc: '251127,添加权限弹窗，直播间ids',
+      desc: '260518，添加新布局，添加权限弹窗，直播间ids',
       rules: [
         {
           action: 'back',
-          matches: [
-            '([id="android:id/message"][text*="权限"] <<n * + [id="android:id/buttonPanel"] [id="android:id/button2"][text="否"] + [id="android:id/button1"][text="是"]) || ([text="Pyi3KQBzgJA1F+Xm7MrWYA0HQqTcq4GrAAAAAASUVORK5CYII="])',
-          ],
           resetMatch: 'match',
           activityIds: [
             'com.bankcomm.module.biz.bcmvideo.BCMVerticalVideoActivity',
             'com.bankcomm.module.biz.webcontainer.BCMHtml5Activity',
           ],
+          matches:
+            '([id="android:id/message"][text*="权限"] <<n * + [id="android:id/buttonPanel"] [id="android:id/button2"][text="否"] + [id="android:id/button1"][text="是"]) || ([text="Pyi3KQBzgJA1F+Xm7MrWYA0HQqTcq4GrAAAAAASUVORK5CYII="]) || ([text="gthEFTB6uRQ36UPWtwD"])',
         },
       ],
     },

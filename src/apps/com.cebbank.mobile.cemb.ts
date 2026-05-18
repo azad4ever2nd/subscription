@@ -39,12 +39,11 @@ export default defineGkdApp({
     {
       key: 3,
       name: '基金财富月历，签到',
-      desc: '260508，[text^="天天领金币"] +3 View ',
+      desc: '260518，签到按钮布局有变动',
       rules: [
         {
-          matches: [
-            '([id="mainContainer"] [text^="天天领金币"] +n View[childCount=1] > TextView[clickable=true]) || ([id="mainContainer"] [text^="天天领金币"] +2 View > TextView[clickable=true])',
-          ],
+          matches:
+            '([id="mainContainer"] [text^="天天领金币"] +2 View > TextView[clickable=true]) || ([id="mainContainer"] [text^="天天领金币"] +n View[childCount=1] > TextView[clickable=true])',
           actionMaximum: 1,
           resetMatch: 'match',
           activityIds: [

@@ -81,7 +81,7 @@ export default defineGkdApp({
     {
       key: 5,
       name: '腾讯理财通，领取奖励',
-      desc: '260513,添加抢理财金，整合领取与返回，体验完成，',
+      desc: '260518,添加抢理财金，整合领取与返回，体验完成，',
       rules: [
         {
           resetMatch: 'match',
@@ -98,7 +98,7 @@ export default defineGkdApp({
             'com.tencent.mm.plugin.appbrand.ui.AppBrandUI04',
           ],
           matches:
-            '(View[childCount=2] > [text="1,000元理财金"] + *) || (View[childCount=3][clickable=true] > [text="最高1000元理财金"] + *) || (WebView [text="领取奖励"]) || ([text^="成功领取奖励" || text="成功开始模拟"] <<n FrameLayout + * >n [desc="关闭"][childCount=1]) || ([text^="成功领取奖励"] <<n FrameLayout + * >n [desc="关闭"])',
+            '(View[childCount=3] > * + [text="1,000元理财金"] + *) || (View[childCount=2] > [text="1,000元理财金"] + *) || (View[childCount=3][clickable=true] > [text="最高1000元理财金"] + *) || (WebView [text="领取奖励"]) || ([text^="成功领取奖励" || text="成功开始模拟"] <<n FrameLayout + * >n [desc="关闭"][childCount=1]) || ([text^="成功领取奖励"] <<n FrameLayout + * >n [desc="关闭"])',
         },
       ],
     },
@@ -1286,6 +1286,20 @@ export default defineGkdApp({
             'com.tencent.mm.plugin.appbrand.ui.AppBrandUI04',
           ],
           matches: '[text="80"] <<n *[childCount=3] +2 *[visibleToUser=true]',
+        },
+      ],
+    },
+    {
+      key: 63,
+      name: '湖北邮政e权益，抽奖弹窗，返回',
+      desc: '260518',
+      rules: [
+        {
+          resetMatch: 'match',
+          action: 'back',
+          activityIds: 'com.tencent.mm.plugin.webview.ui.tools.MMWebViewUI',
+          matches:
+            '([text="未兑换"] + [text="已兑换"] + [text="已失效"] + [text="兑换失败"] ) || ([text="绑卡有礼"] [text^="X" && text$="我的碎片"] + [text="碎片 + 0.1"] + [text*="-" && text*=":"])',
         },
       ],
     },
