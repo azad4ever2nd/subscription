@@ -1291,15 +1291,29 @@ export default defineGkdApp({
     },
     {
       key: 63,
-      name: '湖北邮政e权益，抽奖弹窗，返回',
-      desc: '260518',
+      name: '湖北邮政e权益，抽奖弹窗，碎片，返回',
+      desc: '260519',
       rules: [
         {
           resetMatch: 'match',
           action: 'back',
           activityIds: 'com.tencent.mm.plugin.webview.ui.tools.MMWebViewUI',
           matches:
-            '([text="未兑换"] + [text="已兑换"] + [text="已失效"] + [text="兑换失败"] ) || ([text="绑卡有礼"] [text^="X" && text$="我的碎片"] + [text="碎片 + 0.1"] + [text*="-" && text*=":"])',
+            '([text="绑卡有礼"] [text^="X" && text$="我的碎片"] + [text="碎片 + 0.1"] + [text*="-" && text*=":"])',
+        },
+      ],
+    },
+    {
+      key: 64,
+      name: '湖北邮政e权益，抽奖弹窗，立减金，返回',
+      desc: '260519',
+      rules: [
+        {
+          resetMatch: 'match',
+          action: 'back',
+          activityIds: 'com.tencent.mm.plugin.webview.ui.tools.MMWebViewUI',
+          matches:
+            '([text="未兑换"] + [text="已兑换"] + [text="已失效"] + [text="兑换失败"])',
         },
       ],
     },
