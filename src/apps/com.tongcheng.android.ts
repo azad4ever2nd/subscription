@@ -83,16 +83,19 @@ export default defineGkdApp({
     {
       key: 6,
       name: '给评价',
-      desc: '260315，添加弹窗',
+      desc: '260520，添加 IDS，添加弹窗',
       rules: [
         {
           matches: [
             '([vid="top_iv" || vid="flADLayout" || vid="flContainer"] + [vid="iv_close" ])|| ([vid="top_iv" || vid="flADLayout" || vid="flContainer"] + [vid="ivClose"])',
           ],
-          actionCdKey: 1,
+          actionCd: 10,
           fastQuery: true,
           resetMatch: 'match',
-          activityIds: ['com.tongcheng.android.TongchengMainActivity'],
+          activityIds: [
+            'com.tongcheng.android.TongchengMainActivity',
+            'com.tongcheng.android.LoadingActivity',
+          ],
         },
       ],
     },
