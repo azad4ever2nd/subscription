@@ -317,7 +317,7 @@ export default defineGkdApp({
         {
           fastQuery: true,
           actionCd: 0,
-          actionMaximium: 1,
+          actionMaximum: 1,
           activityIds: 'com.alipay.android.msp.ui.views.MspContainerActivity',
           matches:
             '([desc="支付金额90.00元"] <<n * + * >n @Button[desc^="确认付款"] > [text="确认付款"]) || ([text="光大银行立减金"] + [text="-¥ 10.00"] <<n * + * @Button[desc^="确认付款"] > [text="确认付款"]) || ([desc="支付金额90.00元"] <<n * + * >n Button[desc^="付款"] > *[clickable=true]) || ([text="光大银行立减金"] + [text="-¥ 10.00"] <<n * + * Button[desc^="付款"] > *[clickable=true])',
