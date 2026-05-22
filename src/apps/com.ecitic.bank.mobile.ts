@@ -53,17 +53,16 @@ export default defineGkdApp({
     },
     {
       key: 4,
-      name: '浏览任务完成',
-      desc: '260218，D,返回，容易导出退出软件',
+      name: '浏览任务完成，点击返回',
+      desc: '260522',
       rules: [
         {
-          action: 'back',
-          matches: ['[text="任务已完成点击查看奖励"]'],
           resetMatch: 'match',
           activityIds: [
             'com.ecitic.bank.mobile.ui.webview.CordovaWebViewActivity',
             'com.ecitic.bank.mobile.ui.MainActivity',
           ],
+          matches: '[text="任务已完成点击查看奖励"]',
         },
       ],
     },

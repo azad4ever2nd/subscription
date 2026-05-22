@@ -120,15 +120,14 @@ export default defineGkdApp({
     },
     {
       key: 9,
-      name: '无明显特征弹窗',
-      desc: '占位',
+      name: '确认收货成功，返回',
+      desc: '260522',
       rules: [
         {
-          matches: [
-            '[vid="pdd"] ViewGroup[childCount=1] > ImageView[childCount=0]',
-          ],
           resetMatch: 'match',
-          activityIds: ['com.xunmeng.pinduoduo.ui.activity.MainFrameActivity'],
+          activityIds: 'com.xunmeng.pinduoduo.activity.NewPageActivity',
+          matches:
+            '[text="确认收货成功"] <<n * + * @[vid="pdd"] > [desc="返回"]',
         },
       ],
     },
@@ -171,6 +170,18 @@ export default defineGkdApp({
           fastQuery: true,
           resetMatch: 'match',
           activityIds: ['com.xunmeng.pinduoduo.activity.NewPageActivity'],
+        },
+      ],
+    },
+    {
+      key: 13,
+      name: '邀请好友抽福袋',
+      desc: '260223',
+      rules: [
+        {
+          resetMatch: 'match',
+          activityIds: 'com.xunmeng.pinduoduo.activity.NewPageActivity',
+          matches: '[text="邀请好友抽福袋"] <n * + TextView[childCount=0]',
         },
       ],
     },
