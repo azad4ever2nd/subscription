@@ -49,15 +49,14 @@ export default defineGkdApp({
     {
       key: 4,
       name: '半价下单之后 提额弹窗，X掉',
-      desc: '260426',
+      desc: '260522',
       rules: [
         {
           resetMatch: 'match',
           actionCd: 100,
-          actionMaximum: 1,
           activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
           matches:
-            '@View[text.length=1] + [text="恭喜获得"] <n * +n [text="立即提升"]',
+            '@*[clickable=true][text.length=1] + [text="恭喜获得"] <n * +n [text="立即提升"]',
         },
       ],
     },
