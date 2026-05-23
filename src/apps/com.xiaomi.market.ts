@@ -60,5 +60,17 @@ export default defineGkdApp({
         },
       ],
     },
+    {
+      key: 5,
+      name: '弹窗',
+      desc: '260523',
+      rules: [
+        {
+          resetMatch: 'match',
+          activityIds: 'com.xiaomi.market.ui.FloatWebActivity',
+          matches: '[text="图片"] < * + Button[text="关闭"]',
+        },
+      ],
+    },
   ],
 });

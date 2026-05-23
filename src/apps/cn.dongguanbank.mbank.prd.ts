@@ -29,5 +29,33 @@ export default defineGkdApp({
         },
       ],
     },
+    {
+      key: 3,
+      name: '立即签到',
+      desc: '260523',
+      rules: [
+        {
+          resetMatch: 'match',
+          actionMaximum: 1,
+          activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
+          matches: '@*[clickable=true] > [text="立即签到"][visibleToUser=true]',
+        },
+      ],
+    },
+    {
+      key: 4,
+      name: '今日已签到，返回',
+      desc: '260523',
+      rules: [
+        {
+          resetMatch: 'match',
+          actionMaximum: 1,
+          action: 'back',
+          activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
+          matches:
+            '*[clickable=false] > [text="今日已签到"][visibleToUser=true]',
+        },
+      ],
+    },
   ],
 });

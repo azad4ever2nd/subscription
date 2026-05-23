@@ -41,5 +41,53 @@ export default defineGkdApp({
         },
       ],
     },
+    {
+      key: 3,
+      name: '忽略更新',
+      desc: '260523',
+      rules: [
+        {
+          resetMatch: 'match',
+          actionCd: 500,
+          fastQuery: true,
+          activityIds:
+            'com.huawei.appmarket.service.appmgr.view.activity.AppUpdateActivity',
+          matches:
+            '* > [vid="item_delete_button"][text="卸载"] + [vid="app_update_ignore_button"][text="忽略更新"][visibleToUser=true]',
+        },
+      ],
+    },
+    {
+      key: 4,
+      name: '安装提醒，继续安装',
+      desc: '260523',
+      rules: [
+        {
+          resetMatch: 'match',
+          fastQuery: true,
+          actionMaximum: 1,
+          activityIds:
+            'com.huawei.appgallery.systeminstalldistservice.riskcheck.ui.activity.InstallDistActivity',
+          matches:
+            '[vid="hidden_card_hw_appmarket_install"][text="查找类似应用"] <n * + * [vid="hidden_card_install_button_continue"][text="继续安装"]',
+        },
+      ],
+    },
+    {
+      key: 5,
+      name: '安装成功',
+      desc: '260523',
+      rules: [
+        {
+          resetMatch: 'match',
+          actionMaximum: 1,
+          fastQuery: true,
+          activityIds:
+            'com.huawei.appgallery.systeminstalldistservice.riskcheck.ui.activity.InstallDistActivity',
+          matches:
+            '[name="android.widget.TextView"][text="安装成功"] <<n * + * [vid="hidden_card_install_completed_button_completed"][text="完成"][visibleToUser=true]',
+        },
+      ],
+    },
   ],
 });

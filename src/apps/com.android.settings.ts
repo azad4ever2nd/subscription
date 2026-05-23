@@ -111,5 +111,20 @@ export default defineGkdApp({
         },
       ],
     },
+    {
+      key: 8,
+      name: '设置网络，完成',
+      desc: '260523',
+      rules: [
+        {
+          resetMatch: 'match',
+          fastQuery: true,
+          activityIds:
+            'com.android.settings.wifi.dialog.WifiSettingsDialogActivity',
+          matches:
+            '[id="android:id/title"][text="设置网络"] + * [id="android:id/back_button"][text="完成"]',
+        },
+      ],
+    },
   ],
 });

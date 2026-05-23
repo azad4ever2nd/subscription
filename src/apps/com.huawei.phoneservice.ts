@@ -170,5 +170,19 @@ export default defineGkdApp({
         },
       ],
     },
+    {
+      key: 11,
+      name: '开启活动通知，否',
+      desc: '260523',
+      rules: [
+        {
+          resetMatch: 'match',
+          fastQuery: true,
+          activityIds: 'com.huawei.myhw.ui.HwHomeActivity',
+          matches:
+            '[vid="recommend_pushwindow_title"][text="开启活动通知"] +n * > [vid="recommend_pushwindow_left_button"][text="否"]',
+        },
+      ],
+    },
   ],
 });
