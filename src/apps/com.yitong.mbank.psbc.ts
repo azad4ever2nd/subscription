@@ -188,5 +188,36 @@ export default defineGkdApp({
         },
       ],
     },
+    {
+      key: 13,
+      name: '三方页面，勾选30天内不再提示',
+      desc: '260525',
+      rules: [
+        {
+          resetMatch: 'match',
+          actionCd: 100,
+          fastQuery: true,
+          activityIds:
+            'com.yitong.mbank.psbc.module.app.view.activity.ThirdPartRedirectActivity',
+          matches: '@[vid="cb_not_tip"][checked=false] + [vid="tv_not_tip"]',
+        },
+      ],
+    },
+    {
+      key: 14,
+      name: '三方页面，勾选30天内不再提示，点击进入',
+      desc: '260525',
+      rules: [
+        {
+          resetMatch: 'match',
+          actionCd: 100,
+          fastQuery: true,
+          activityIds:
+            'com.yitong.mbank.psbc.module.app.view.activity.ThirdPartRedirectActivity',
+          matches:
+            '[vid="cb_not_tip"][checked=true] <<n * + * > [vid="btn_confirm"]',
+        },
+      ],
+    },
   ],
 });

@@ -48,5 +48,17 @@ export default defineGkdApp({
         },
       ],
     },
+    {
+      key: 4,
+      name: '发现一波红包，一键领取，X掉',
+      desc: '260525',
+      rules: [
+        {
+          resetMatch: 'match',
+          activityIds: 'ctrip.android.reactnative.preloadv2.CRNBaseActivityV2',
+          matches: '[desc="一键领取"] <n * + @*[clickable=true] > ImageView',
+        },
+      ],
+    },
   ],
 });

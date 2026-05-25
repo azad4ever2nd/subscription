@@ -296,7 +296,7 @@ export default defineGkdApp({
     {
       key: 19,
       name: '恭喜中奖啦',
-      desc: '260406,clickCenter不行',
+      desc: '260525,clickCenter不行',
       rules: [
         {
           resetMatch: 'match',
@@ -304,7 +304,7 @@ export default defineGkdApp({
           activityIds:
             'cmb.pb.app.h5container.webviewcontainer.PBWebContainerActivity',
           matches:
-            '(@Button + [text*="恭喜"] +n [text="返回"]) || (@Button + [text="恭喜您，中奖啦！"] +n [text="返回"])',
+            '(@Button + [text*="恭喜"] +n [text="返回"]) || (@Button + [text^="恭喜"] +n [text="立即查看"])',
         },
       ],
     },

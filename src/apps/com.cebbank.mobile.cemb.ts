@@ -39,11 +39,11 @@ export default defineGkdApp({
     {
       key: 3,
       name: '基金财富月历，签到',
-      desc: '260519，签到按钮布局有变动',
+      desc: '260525，签到按钮布局有变动，改规则',
       rules: [
         {
           matches:
-            '([id="mainContainer"] [text^="天天领金币"] +2 View > TextView[clickable=true]) || ([id="mainContainer"] [text^="天天领金币"] +n View[childCount=1] > TextView[clickable=true]) || ([text^="天天领金币"] +n *[childCount=2] > *[text.length=0][clickable=true])',
+            '([id="mainContainer"] [text^="天天领金币"] +2 View > TextView[clickable=true]) || ([id="mainContainer"] [text^="天天领金币"] +n View[childCount=1] > TextView[clickable=true]) || ([text^="天天领金币"] +n *[childCount=2] > *[text.length=0][clickable=true]) || ([text="今天"] <<n *[childCount=3] + * > TextView[clickable=true][visibleToUser=true])',
           actionMaximum: 1,
           resetMatch: 'match',
           activityIds: [
@@ -110,7 +110,7 @@ export default defineGkdApp({
           matches: ['([text="参与话题讨论"] +3 TextView)'],
           actionMaximum: 1,
           matchDelay: 3000,
-          resetMatch: 'match',
+          resetMatch: 'app',
           activityIds: [
             'com.cebbank.mobile.cemb.ui.activity.mobilePayment.MobilePaymentWebActivity',
           ],

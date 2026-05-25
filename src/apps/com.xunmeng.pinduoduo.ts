@@ -185,5 +185,18 @@ export default defineGkdApp({
         },
       ],
     },
+    {
+      key: 14,
+      name: '确认要放弃付款吗，暂时放弃',
+      desc: '260525',
+      rules: [
+        {
+          resetMatch: 'match',
+          activityIds: 'com.xunmeng.pinduoduo.activity.NewPageMaskActivity',
+          matches:
+            '[text="暂时放弃"] <<n @*[clickable=true] + [text="继续支付"]',
+        },
+      ],
+    },
   ],
 });
