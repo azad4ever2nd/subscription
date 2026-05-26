@@ -1317,5 +1317,19 @@ export default defineGkdApp({
         },
       ],
     },
+    {
+      key: 65,
+      name: '工行武汉云网点打卡1.08元，',
+      desc: '260525',
+      rules: [
+        {
+          resetMatch: 'match',
+          actionMaximum: 5,
+          activityIds: 'com.tencent.mm.plugin.appbrand.ui.AppBrandUI00',
+          matches:
+            '[text="1.08元"] + [text="云网点打卡"] <<n * + * > Button[text*="立即领取"]',
+        },
+      ],
+    },
   ],
 });

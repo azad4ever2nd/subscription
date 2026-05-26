@@ -198,5 +198,18 @@ export default defineGkdApp({
         },
       ],
     },
+    {
+      key: 15,
+      name: '邀请你加入队伍，立即加入抽福袋',
+      desc: '260526',
+      rules: [
+        {
+          resetMatch: 'match',
+          activityIds: 'com.xunmeng.pinduoduo.activity.NewPageActivity',
+          matches:
+            '[text^="邀请你加入队伍，抽现金或5折券"] +n @*[clickable=true][visibleToUser=true] > [text="立即加入抽福袋"]',
+        },
+      ],
+    },
   ],
 });

@@ -106,7 +106,7 @@ export default defineGkdApp({
     {
       key: 8,
       name: '周一，江城礼遇四选一',
-      desc: '260518，新布局',
+      desc: '260525，新布局',
       rules: [
         {
           resetMatch: 'match',
@@ -114,7 +114,7 @@ export default defineGkdApp({
           actionMaximum: 5,
           activityIds: 'com.icbc.activity.web.ICBCWebView',
           matches:
-            '([id="app"] > [id="viewWrapper"] >n [text=" 立即领取"]) || ([text="详情"] + * + [text$="元优惠券"] + Button[text!="未开始" && text!="已领完"])',
+            '([id="app"] > [id="viewWrapper"] >n [text=" 立即领取"]) || ([text="详情"] + * + [text$="元优惠券"] + Button[text!="未开始" && text!="已领完"]) || ([text="详情"] + * + [text$="元优惠券"] + Button[text*="立即领取"])',
         },
       ],
     },

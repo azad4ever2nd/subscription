@@ -23,16 +23,16 @@ export default defineGkdApp({
     {
       key: 2,
       name: '签到成功',
-      desc: '260329，漏签，动态，只能通过关键信息',
+      desc: '260526，改布局，漏签，动态，只能通过关键信息',
       rules: [
         {
-          action: 'clickCenter',
-          matches: [
-            '([text*="天"] - [text="已连签"] - *) || (@* + [text="连签"] +n [text*="里程"]) || (@* + [text="已连签"] + [text$="里程"]) || (@*[clickable=true] + [text="连签"] +n [text="日可领"] +n [text="里程"]) || (@* + [text="连签"] +n [text="里程"])',
-          ],
           actionMaximum: 1,
           resetMatch: 'match',
-          activityIds: ['fliggyx.android.unicorn.ActWebviewActivity'],
+          action: 'clickCenter',
+          actioinCd: 0,
+          activityIds: 'fliggyx.android.unicorn.ActWebviewActivity',
+          matches:
+            '@*[clickable=true][visibleToUser=true] + [text^="已连签" && text$="累计获得"] +n [text="里程"]',
         },
       ],
     },

@@ -97,5 +97,17 @@ export default defineGkdApp({
         },
       ],
     },
+    {
+      key: 8,
+      name: '恭喜获得奖励2',
+      desc: '260526',
+      rules: [
+        {
+          resetMatch: 'match',
+          activityIds: 'com.qq.e.ads.PortraitADActivity',
+          matches: '[text="恭喜获得奖励！"] < * + *[clickable=true]',
+        },
+      ],
+    },
   ],
 });
