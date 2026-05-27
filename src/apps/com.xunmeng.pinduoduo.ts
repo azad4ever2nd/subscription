@@ -201,13 +201,13 @@ export default defineGkdApp({
     {
       key: 15,
       name: '邀请你加入队伍，立即加入抽福袋',
-      desc: '260526',
+      desc: '260527，2台手机布局不一样',
       rules: [
         {
           resetMatch: 'match',
           activityIds: 'com.xunmeng.pinduoduo.activity.NewPageActivity',
           matches:
-            '[text^="邀请你加入队伍，抽现金或5折券"] +n @*[clickable=true][visibleToUser=true] > [text="立即加入抽福袋"]',
+            '([text^="邀请你加入队伍，抽现金或5折券"] +n @*[clickable=true][visibleToUser=true] > [text="立即加入抽福袋"]) || ([text^="邀请你加入队伍"] < *  +n @*[clickable=true][visibleToUser=true] > [text="立即加入抽福袋"])',
         },
       ],
     },

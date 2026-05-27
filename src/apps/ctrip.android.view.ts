@@ -60,5 +60,20 @@ export default defineGkdApp({
         },
       ],
     },
+    {
+      key: 5,
+      name: '618弹窗',
+      desc: '260527',
+      rules: [
+        {
+          resetMatch: 'match',
+          fastQuery: true,
+          activityIds:
+            'ctrip.android.publicproduct.home.business.activity.CtripHomeActivity',
+          matches:
+            '@[vid="a"][clickable=true] < * + *[vid="a"] [text="立刻领取"]',
+        },
+      ],
+    },
   ],
 });

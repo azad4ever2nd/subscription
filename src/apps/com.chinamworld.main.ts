@@ -155,5 +155,21 @@ export default defineGkdApp({
         },
       ],
     },
+    {
+      key: 11,
+      name: '基金，关注',
+      desc: '260527',
+      rules: [
+        {
+          resetMatch: 'match',
+          actionCd: 0,
+          actionMaximum: 1,
+          activityIds:
+            'com.nantian.iBank.ui.activity.container.ProgramSingleWindowActivity',
+          matches:
+            '* > TextView[text="关注"][clickable=true][visibleToUser=true]',
+        },
+      ],
+    },
   ],
 });
