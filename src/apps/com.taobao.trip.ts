@@ -29,7 +29,7 @@ export default defineGkdApp({
           actionMaximum: 1,
           resetMatch: 'match',
           action: 'clickCenter',
-          actioinCd: 0,
+          actionCd: 0,
           activityIds: 'fliggyx.android.unicorn.ActWebviewActivity',
           matches:
             '(@*[clickable=true][visibleToUser=true] + [text^="已连签" && text$="累计获得"] +n [text="里程"]) || (@*[clickable=true] + [text="连签"] +2 [text="日可领"] +2 [text="里程"])',
