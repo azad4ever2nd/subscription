@@ -20,13 +20,17 @@ export default defineGkdApp({
     {
       key: 2,
       name: '彻底删除，确定删除',
-      desc: '260511',
+      desc: '260528，增加IDS',
       rules: [
         {
           resetMatch: 'match',
           fastQuery: true,
-          activityIds: 'com.tencent.qqmail.activity.readmail.ReadMailActivity',
-          matches: '[text="彻底删除​"] +n * [text="取消"] + [text="确定删除"]',
+          activityIds: [
+            'com.tencent.qqmail.fragment.base.MailFragmentActivity',
+            'com.tencent.qqmail.activity.readmail.ReadMailActivity',
+          ],
+          matches:
+            '([text="彻底删除​"] +n * [text="取消"] + [text="确定删除"]) || ([text="彻底删除​"] +n * > [text="确定删除"])',
         },
       ],
     },

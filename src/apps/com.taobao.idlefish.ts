@@ -35,14 +35,14 @@ export default defineGkdApp({
     {
       key: 3,
       name: '开启系统通知',
-      desc: '',
+      desc: '260528',
       rules: [
         {
-          matches: ['[desc^="开启系统通知"] > *'],
           resetMatch: 'match',
-          activityIds: [
+          activityIds:
             'com.idlefish.flutterbridge.flutterboost.boost.FishFlutterBoostTransparencyActivity',
-          ],
+          matches:
+            '[desc^="开启系统通知"] > ImageView[clickable=true][index=0]',
         },
       ],
     },

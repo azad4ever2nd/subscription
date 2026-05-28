@@ -314,5 +314,19 @@ export default defineGkdApp({
         },
       ],
     },
+    {
+      key: 22,
+      name: '钱包笔笔返，领取骑行返利，美团支付',
+      desc: '260528',
+      rules: [
+        {
+          resetMatch: 'match',
+          actionCd: 500,
+          activityIds: 'com.sankuai.eh.framework.EHContainerActivity',
+          matches:
+            'View[clickable=true][visibleToUser=true] [text="骑行返利" || text="美团支付"]',
+        },
+      ],
+    },
   ],
 });

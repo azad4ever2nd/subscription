@@ -16,5 +16,20 @@ export default defineGkdApp({
         },
       ],
     },
+    {
+      key: 2,
+      name: 'QQ邮箱 申请使用，同意或确认',
+      desc: '260528',
+      rules: [
+        {
+          resetMatch: 'match',
+          fastQuery: true,
+          activityIds:
+            'com.tencent.open.agent.PublicFragmentActivityForOpenSDK',
+          matches:
+            '[text="QQ邮箱 申请使用"] <<n * +n * > Button[text="确认" || text="同意"]',
+        },
+      ],
+    },
   ],
 });

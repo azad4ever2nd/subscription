@@ -101,5 +101,19 @@ export default defineGkdApp({
         },
       ],
     },
+    {
+      key: 8,
+      name: '个人信息保护政策 更新，同意',
+      desc: '260528',
+      rules: [
+        {
+          resetMatch: 'match',
+          fastQuery: true,
+          activityIds: 'com.wacai365.LicenseActivity',
+          matches:
+            '[vid="agreement_tips"][text*="个人信息保护政策"] <<n * + * [vid="txt_right"][text="已阅读同意"]',
+        },
+      ],
+    },
   ],
 });
