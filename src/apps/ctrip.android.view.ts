@@ -75,5 +75,18 @@ export default defineGkdApp({
         },
       ],
     },
+    {
+      key: 6,
+      name: '签到后弹窗',
+      desc: '260528',
+      rules: [
+        {
+          resetMatch: 'match',
+          activityIds: 'ctrip.android.view.h5v2.view.H5Container',
+          matches:
+            '[id="popup_bg-id"] <n * +2 TextView[text=""][childCount=0][clickable=true][visibleToUser=true]',
+        },
+      ],
+    },
   ],
 });
