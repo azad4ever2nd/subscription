@@ -85,5 +85,34 @@ export default defineGkdApp({
         },
       ],
     },
+    {
+      key: 6,
+      name: '请选择适合的登录选项',
+      desc: '260528',
+      rules: [
+        {
+          resetMatch: 'match',
+          actionMaximum: 1,
+          order: -1,
+          activityIds: 'tv.danmaku.bili.ui.webview.MWebActivity',
+          matches:
+            '[text="请选择适合的登录选项"] +n [text="在安全的环境登录，如办公室，家里"][clickable=true][visibleToUser=true]',
+        },
+      ],
+    },
+    {
+      key: 7,
+      name: '哔哩哔哩扫码登录，确认',
+      desc: '260528',
+      rules: [
+        {
+          resetMatch: 'match',
+          preKeys: [6],
+          activityIds: 'tv.danmaku.bili.ui.webview.MWebActivity',
+          matches:
+            '[text="哔哩哔哩扫码登录"] <<n * +n [text="确认"][clickable=true][visibleToUser=true]',
+        },
+      ],
+    },
   ],
 });
