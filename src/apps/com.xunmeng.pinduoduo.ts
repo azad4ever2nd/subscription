@@ -211,5 +211,18 @@ export default defineGkdApp({
         },
       ],
     },
+    {
+      key: 16,
+      name: '添加物流助手到桌面，X掉',
+      desc: '260529',
+      rules: [
+        {
+          resetMatch: 'match',
+          activityIds: 'com.xunmeng.pinduoduo.activity.NewPageActivity',
+          matches:
+            '[text="添加物流助手到桌面"] <<n * + @ViewGroup[clickable=true][visibleToUser=true] ImageView',
+        },
+      ],
+    },
   ],
 });
