@@ -606,7 +606,7 @@ export default defineGkdApp({
     {
       key: 28,
       name: '工行浇水',
-      desc: '260503，延时要考虑弹窗',
+      desc: '260601，延时要考虑弹窗',
       rules: [
         {
           activityIds: [
@@ -625,7 +625,7 @@ export default defineGkdApp({
           actionMaximum: 5,
           resetMatch: 'match',
           matches:
-            '([text="893ee262597b45a3b884dcf6d027ea374161769077"]) || ([text="奖励派送中，稍后送达～"] <n * + * > *[clickable=true])',
+            '([text="eaae316f2e764aaab66e4bb0ad2c57890822507158"]) || ([text="奖励派送中，稍后送达～"] <n * + * > *[clickable=true])',
         },
       ],
     },

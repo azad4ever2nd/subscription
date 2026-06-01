@@ -122,5 +122,20 @@ export default defineGkdApp({
         },
       ],
     },
+    {
+      key: 10,
+      name: '点击广告拿奖励',
+      desc: '260531',
+      rules: [
+        {
+          fastQuery: true,
+          resetMatch: 'match',
+          actionMaximum: 1,
+          activityIds: 'com.qq.e.ads.PortraitADActivity',
+          matches:
+            '[text="点击广告，即可获得奖励"] <<n * + * [text="点击广告拿奖励"]',
+        },
+      ],
+    },
   ],
 });

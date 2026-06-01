@@ -118,5 +118,19 @@ export default defineGkdApp({
         },
       ],
     },
+    {
+      key: 9,
+      name: '删除自选股，确认删除',
+      desc: '260601',
+      rules: [
+        {
+          resetMatch: 'match',
+          fastQuery: true,
+          activityIds: 'cn.htsec.SecurityHome',
+          matches:
+            '[vid="dlg_tv_title"][text="删除自选股"] +n * > [vid="dlg_tv_ok"][text="确认删除"]',
+        },
+      ],
+    },
   ],
 });

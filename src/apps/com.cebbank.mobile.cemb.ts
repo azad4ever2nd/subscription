@@ -39,11 +39,11 @@ export default defineGkdApp({
     {
       key: 3,
       name: '基金财富月历，签到',
-      desc: '260527，+3 childCount=2，签到按钮布局有变动，改规则',
+      desc: '260531，+3 childCount=2，签到按钮布局有变动，改规则',
       rules: [
         {
           matches:
-            '([id="mainContainer"] [text^="天天领金币" && text$="关注产品收益上涨可领翻倍金币"] +3 * > *[text=""][clickable=true][visibleToUser=true][index=parent.childCount.minus(1)])',
+            '([id="mainContainer"] [text^="天天领金币" && text$="关注产品收益上涨可领翻倍金币"] +3 * > *[text=""][visibleToUser=true][index=parent.childCount.minus(1)]) || ([text^="天天领金币"] +n *[text=""][clickable=true][visibleToUser=true][index=parent.childCount.minus(1)] + View[childCount=2] )',
           actionMaximum: 1,
           resetMatch: 'match',
           activityIds: [

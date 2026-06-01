@@ -188,39 +188,39 @@ export default defineGkdApp({
     {
       key: 14,
       name: '确认要放弃付款吗，暂时放弃',
-      desc: '260525',
+      desc: '260531',
       rules: [
         {
           resetMatch: 'match',
           activityIds: 'com.xunmeng.pinduoduo.activity.NewPageMaskActivity',
           matches:
-            '[text="暂时放弃"] <<n @*[clickable=true] + [text="继续支付"]',
+            '([text="暂时放弃"] <<n @* + [text="继续支付"]) || ([text="暂时放弃"] <<n @*[clickable=true] + [text="继续支付"])',
         },
       ],
     },
     {
       key: 15,
       name: '邀请你加入队伍，立即加入抽福袋',
-      desc: '260527，2台手机布局不一样',
+      desc: '260531，2台手机布局不一样',
       rules: [
         {
           resetMatch: 'match',
           activityIds: 'com.xunmeng.pinduoduo.activity.NewPageActivity',
           matches:
-            '([text^="邀请你加入队伍，抽现金或5折券"] +n @*[clickable=true][visibleToUser=true] > [text="立即加入抽福袋"]) || ([text^="邀请你加入队伍"] < *  +n @*[clickable=true][visibleToUser=true] > [text="立即加入抽福袋"])',
+            '([text^="邀请你加入队伍"] < *  +n @*[visibleToUser=true] > [text="立即加入抽福袋"]) || ([text^="邀请你加入队伍"] +n @*[clickable=true][visibleToUser=true] > [text="立即加入抽福袋"])',
         },
       ],
     },
     {
       key: 16,
       name: '添加物流助手到桌面，X掉',
-      desc: '260529',
+      desc: '260531',
       rules: [
         {
           resetMatch: 'match',
           activityIds: 'com.xunmeng.pinduoduo.activity.NewPageActivity',
           matches:
-            '[text="添加物流助手到桌面"] <<n * + @ViewGroup[clickable=true][visibleToUser=true] ImageView',
+            '([text="添加物流助手到桌面"] <<n * + @ViewGroup[visibleToUser=true] ImageView) || ([text="添加物流助手到桌面"] <<n * + @ViewGroup[clickable=true][visibleToUser=true] ImageView)',
         },
       ],
     },

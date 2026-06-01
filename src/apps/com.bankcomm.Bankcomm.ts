@@ -487,5 +487,30 @@ export default defineGkdApp({
         },
       ],
     },
+    {
+      key: 31,
+      name: '感谢订阅，知道了',
+      desc: '260601',
+      rules: [
+        {
+          resetMatch: 'match',
+          activityIds: 'com.bankcomm.module.biz.webcontainer.BCMHtml5Activity',
+          matches: '[text="感谢您的订阅"] <<n * + * > [text="知道了"]',
+        },
+      ],
+    },
+    {
+      key: 32,
+      name: '分享到微信好友',
+      desc: '260601',
+      rules: [
+        {
+          resetMatch: 'match',
+          actionMaximum: 1,
+          activityIds: 'com.bankcomm.module.biz.webcontainer.BCMHtml5Activity',
+          matches: '@[text="微信好友"] + [text="朋友圈"]',
+        },
+      ],
+    },
   ],
 });

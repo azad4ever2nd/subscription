@@ -51,7 +51,7 @@ export default defineGkdApp({
     {
       key: 4,
       name: '笔笔返开始，1.5元',
-      desc: '260504， + [text!="100%"]',
+      desc: '260601，clickable=false， + [text!="100%"]',
       rules: [
         {
           matches: [
@@ -172,7 +172,7 @@ export default defineGkdApp({
     {
       key: 13,
       name: '笔笔返开始，5元',
-      desc: '260501， + [text!="100%"]',
+      desc: '260601，clickable=false，+ [text!="100%"]',
       rules: [
         {
           matches: [
@@ -188,7 +188,7 @@ export default defineGkdApp({
     {
       key: 14,
       name: '笔笔返开始，2元',
-      desc: '260501， + [text!="100%"]',
+      desc: '260601， clickable=false，+ [text!="100%"]',
       rules: [
         {
           matches: [

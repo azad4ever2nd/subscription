@@ -73,34 +73,35 @@ export default defineGkdApp({
     {
       key: 5,
       name: '点击分享',
-      desc: '260319',
+      desc: '260531，因为clickable失灵',
       rules: [
         {
-          actionMaximum: 1,
           resetMatch: 'app',
-          action: 'clickCenter',
-          matches: ['@View[clickable=true] [text="1O7F90FG42JLK"]'],
+          actionMaximum: 1,
           activityIds: [
             'com.cmvideo.capability.remote_web.WebProcessActivity',
             'com.quickjs.android.example.RNFragmentActivity',
           ],
+          matches:
+            '(@View >3 [text="1O7F90FG42JLK"]) || (@View[clickable=true] [text="1O7F90FG42JLK"])',
         },
       ],
     },
     {
       key: 6,
       name: '马上领取2G流量',
-      desc: '260319',
+      desc: '260531',
       rules: [
         {
-          actionMaximum: 1,
           resetMatch: 'app',
           preKeys: [12],
-          matches: ['@View[clickable=true] [text="1O7F90FG6NVJ7"]'],
+          actionMaximum: 1,
           activityIds: [
             'com.cmvideo.capability.remote_web.WebProcessActivity',
             'com.quickjs.android.example.RNFragmentActivity',
           ],
+          matches:
+            '(@View >3 [text="1O7F90FG6NVJ7"]) || (@View[clickable=true] [text="1O7F90FG6NVJ7"])',
         },
       ],
     },
@@ -124,17 +125,16 @@ export default defineGkdApp({
     {
       key: 8,
       name: '好的',
-      desc: '260324，添加 IDS',
+      desc: '260531，添加 IDS',
       rules: [
         {
           resetMatch: 'match',
-          matches: [
-            '@View[clickable=true] >n [text="1O6KI5PKEDG36" || text="1O6KI5PKO6N57"]',
-          ],
           activityIds: [
             'com.quickjs.android.example.RNFragmentActivity',
             'com.cmvideo.capability.remote_web.WebProcessActivity',
           ],
+          matches:
+            '(@View >3 [text="1O6KI5PKEDG36" || text="1O6KI5PKO6N57"]) || (@View[clickable=true] >n [text="1O6KI5PKEDG36" || text="1O6KI5PKO6N57"])',
         },
       ],
     },

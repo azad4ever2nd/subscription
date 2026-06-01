@@ -494,14 +494,14 @@ export default defineGkdApp({
     {
       key: 31,
       name: '抽奖任务页面，加自选任务',
-      desc: '260510，简化， TextView[text*="加自选" || text*="至自选" || text$="入自选" || text$="入自选基金"] + * +',
+      desc: '260601，简化',
       rules: [
         {
           resetMatch: 'match',
           actionCd: 0,
           activityIds:
             'cmb.pb.app.h5container.webviewcontainer.PBWebContainerActivity',
-          matches: '(Button[text="加自选"]) ',
+          matches: '(Button[text="加自选"][visibleToUser=true])',
         },
       ],
     },
@@ -557,7 +557,7 @@ export default defineGkdApp({
     {
       key: 35,
       name: '页面下方，添加自选',
-      desc: '260511，精简button，|| (Button[text="加自选"]) 这条规则与抽奖任务重合',
+      desc: '260601，精简button',
       rules: [
         {
           actionMaximum: 1,
@@ -566,23 +566,22 @@ export default defineGkdApp({
           activityIds:
             'cmb.pb.app.h5container.webviewcontainer.PBWebContainerActivity',
           matches:
-            '(@View[clickable=true] TextView[text="加自选"]) || (Button[text="自选"])',
+            '(@View[clickable=true] TextView[text="加自选"][visibleToUser=true]) || (Button[text="自选"][visibleToUser=true])',
         },
       ],
     },
     {
       key: 36,
       name: '添加自选成功，返回',
-      desc: '260224',
+      desc: '260601',
       rules: [
         {
-          action: 'back',
-          matches: ['* + [text="添加自选成功"]'],
-          actionCdKey: 1,
+          actionCd: 0,
           resetMatch: 'match',
-          activityIds: [
+          activityIds:
             'cmb.pb.app.h5container.webviewcontainer.PBWebContainerActivity',
-          ],
+          matches: 'TextView[text="添加自选成功"][visibleToUser=true]',
+          action: 'back',
         },
       ],
     },

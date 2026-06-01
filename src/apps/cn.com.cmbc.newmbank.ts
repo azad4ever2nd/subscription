@@ -87,5 +87,19 @@ export default defineGkdApp({
         },
       ],
     },
+    {
+      key: 7,
+      name: '隐私政策，同意并继续',
+      desc: '260601',
+      rules: [
+        {
+          resetMatch: 'match',
+          fastQuery: true,
+          activityIds: 'cn.com.cmbc.newmbank.privacy.PrivacyPolicyActivity',
+          matches:
+            '[text="隐私政策"] +n * > [vid="btn_privacy_policy_agree"][text="同意并继续"]',
+        },
+      ],
+    },
   ],
 });

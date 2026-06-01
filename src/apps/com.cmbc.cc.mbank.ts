@@ -77,13 +77,13 @@ export default defineGkdApp({
     {
       key: 6,
       name: '周日10点30-15券',
-      desc: '260406',
+      desc: '260531，(@*[clickable=true] + [text="周日10:00开抢"] +n [text="民生借记卡专享"]) || ',
       rules: [
         {
           resetMatch: 'match',
           activityIds: 'com.cmbc.cc.mbank.module.web.activity.WebViewActivity',
           matches:
-            '@*[clickable=true] + [text="周日10:00开抢"] +n [text="民生借记卡专享"]',
+            '([text*="15元代金券"] + @[text="立即抢"] +3 [text="民生借记卡专享"])',
         },
       ],
     },

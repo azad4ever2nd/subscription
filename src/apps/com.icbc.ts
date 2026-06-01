@@ -148,13 +148,14 @@ export default defineGkdApp({
     {
       key: 11,
       name: '浇水',
-      desc: '260528，添加去微信浇水，text有变',
+      desc: '260601，每月要变更id',
       rules: [
         {
-          matches: [
-            '([id="app"] [text="893ee262597b45a3b884dcf6d027ea374161769077"]) || ([text^="前往微信再浇一次"] + Image)',
-          ],
+          actionMaximum: 1,
           resetMatch: 'match',
+          matches: [
+            '([id="app"] [text="eaae316f2e764aaab66e4bb0ad2c57890822507158"])',
+          ],
           activityIds: ['com.icbc.activity.web.ICBCWebView'],
         },
       ],
@@ -174,26 +175,31 @@ export default defineGkdApp({
     },
     {
       key: 13,
-      name: '中奖金豆',
-      desc: 'D',
+      name: '前往微信浇水',
+      desc: '260601',
       rules: [
         {
-          matches: ['[id="giftModel"] > * +4 [text="确认"] + *'],
+          actionMaximum: 1,
           resetMatch: 'match',
-          activityIds: ['com.icbc.activity.web.ICBCWebView'],
+          matches: '([text^="前往微信再浇一次"] + Image)',
+          activityIds: [
+            'com.icbc.activity.web.ICBCWebView',
+            'com.tencent.mm.plugin.base.stub.WXBizEntryActivity',
+          ],
         },
       ],
     },
     {
       key: 14,
-      name: '浏览任务完成',
-      desc: '260101，D,占位',
+      name: '前往微信再浇一次后，关闭',
+      desc: '260601',
       rules: [
         {
-          matches: ['@[vid="iv_task_center"] + [vid="iv_close_task_center"]'],
-          fastQuery: true,
+          actionMaximum: 1,
           resetMatch: 'match',
-          activityIds: ['com.scene.ui.WebViewActivity'],
+          preKeys: [13],
+          activityIds: 'com.tencent.mm.plugin.base.stub.WXBizEntryActivity',
+          matches: '[text^="前往微信再浇一次"] <n * + * > Image',
         },
       ],
     },

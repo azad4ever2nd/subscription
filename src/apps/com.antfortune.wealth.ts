@@ -6,14 +6,28 @@ export default defineGkdApp({
   groups: [
     {
       key: 1,
-      name: '转出提示，继续转出',
-      desc: '260204',
+      name: '本月不再提示',
+      desc: '260601',
       rules: [
         {
           resetMatch: 'match',
           activityIds:
             'com.alipay.mobile.nebulax.xriver.activity.XRiverActivity',
-          matches: '[text="转出规则"] +n [text="暂不转出"] + [text="继续转出"]',
+          matches: '@CheckBox[checked=false] + [text="本月不再提示"]',
+        },
+      ],
+    },
+    {
+      key: 2,
+      name: '转出提示，继续转出',
+      desc: '260601',
+      rules: [
+        {
+          resetMatch: 'match',
+          activityIds:
+            'com.alipay.mobile.nebulax.xriver.activity.XRiverActivity',
+          matches:
+            'CheckBox[checked=true] + [text="本月不再提示"] +n [text="继续转出"]',
         },
       ],
     },
