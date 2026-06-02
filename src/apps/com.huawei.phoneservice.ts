@@ -122,18 +122,17 @@ export default defineGkdApp({
     {
       key: 8,
       name: '我的任务，去完成',
-      desc: '260526，增加IDS[text="参与精彩活动" || text="了解玩机攻略" || text="浏览爱车频道15秒" || text="逛同城看精彩" || text="逛花粉看热门" || text="到店体验华为鸿蒙智家"] ',
+      desc: '260602，增加IDS[text="参与精彩活动" || text="了解玩机攻略" || text="浏览爱车频道15秒" || text="逛同城看精彩" || text="逛花粉看热门" || text="到店体验华为鸿蒙智家"] ',
       rules: [
         {
           resetMatch: 'match',
           actionDelay: 5000,
-          matchDelay: 3000,
           activityIds: [
             'com.huawei.myhw.ui.HwHomeActivity',
             'com.huawei.module.commonwebview.ui.CommonWebviewActivity',
           ],
           matches:
-            '([text^="精选好物" || text="参与精彩活动" || text$="玩机攻略" || text^="浏览爱车" || text^="逛同城" || text$="看热门" || text^="到店体验华为"] < * + [text="去完成"]) || ([text^="精选好物" || text="参与精彩活动" || text$="玩机攻略" || text^="浏览爱车" || text^="逛同城" || text$="看热门" || text^="到店体验华为"] +2 [text="去完成"])',
+            '([text^="浏览服务频道" || text^="新品发布会" || text^="浏览新品商" ||  text^="精选好物" || text="参与精彩活动" || text$="玩机攻略" || text^="浏览爱车" || text^="逛同城" || text$="看热门" || text^="到店体验华为"] < * + [text="去完成"]) || ([text^="浏览服务频道" || text^="新品发布会" || text^="浏览新品商" || text^="精选好物" || text="参与精彩活动" || text$="玩机攻略" || text^="浏览爱车" || text^="逛同城" || text$="看热门" || text^="到店体验华为"] +2 [text="去完成"])',
         },
       ],
     },

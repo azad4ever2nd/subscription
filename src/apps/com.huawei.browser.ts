@@ -7,53 +7,63 @@ export default defineGkdApp({
     {
       key: 1,
       name: '掌上周五红包雨1，立即领取',
-      desc: '251220',
+      desc: '260602',
       rules: [
         {
-          matches: ['[id="app"] > [desc="picture"][index=1]'],
+          actionMaximum: 1,
           resetMatch: 'match',
-          activityIds: ['com.huawei.browser.BrowserMainActivity'],
+          activityIds: 'com.huawei.browser.BrowserMainActivity',
+          matches:
+            '[text*="红包雨"] [id="app"] > [desc="picture"][clickable=true][visibleToUser=true]',
         },
       ],
     },
     {
       key: 2,
       name: '掌上周五红包雨2，有的打开',
-      desc: '251220',
+      desc: '260602',
       rules: [
         {
-          preKeys: [1],
-          matches: ['[text^="手机安装"] + * > [text="有的，打开"]'],
+          order: -1,
+          actionMaximum: 1,
+          actionCd: 0,
           resetMatch: 'match',
-          activityIds: ['com.huawei.browser.BrowserMainActivity'],
+          activityIds: 'com.huawei.browser.BrowserMainActivity',
+          matches:
+            '[text="提示"] +n * > @[text="有的，打开"] + [text="我要下载"]',
         },
       ],
     },
     {
       key: 3,
-      name: '此网站请求打开app，打开',
-      desc: '251220',
+      name: '掌上周五红包雨3，此网站请求打开 App，打开',
+      desc: '260602',
       rules: [
         {
-          preKeys: [2],
-          matches: ['[vid="ll_snack_bar_text_open"] > [text="打开"]'],
-          fastQuery: true,
-          order: -1,
+          order: -2,
+          actionCd: 0,
+          actionMaximum: 1,
           resetMatch: 'match',
-          activityIds: ['com.huawei.browser.BrowserMainActivity'],
+          fastQuery: true,
+          activityIds: 'com.huawei.browser.BrowserMainActivity',
+          matches:
+            '[vid="tv_snack_bar_main_title"][text^="此网站请求打开"] < * + * > @*[clickable=true] > [text="打开"]',
         },
       ],
     },
     {
       key: 4,
       name: '掌上周五红包雨2，立 即 打 开',
-      desc: '251220',
+      desc: '260602',
       rules: [
         {
-          preKeys: [2],
-          matches: ['[id="invokeButton"][text="立 即 打 开"]'],
+          actionMaximum: 1,
+          actionCd: 0,
+          order: -1,
           resetMatch: 'match',
-          activityIds: ['com.huawei.browser.BrowserMainActivity'],
+          activityIds: 'com.huawei.browser.BrowserMainActivity',
+          matches:
+            '[text="掌上生活"] + * [id="invokeButton"][text="立 即 打 开"]',
         },
       ],
     },

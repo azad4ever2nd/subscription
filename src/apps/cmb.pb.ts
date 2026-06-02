@@ -540,17 +540,15 @@ export default defineGkdApp({
     {
       key: 34,
       name: '删除定制计划',
-      desc: '260221',
+      desc: '260602',
       rules: [
         {
-          matches: [
-            '([text="修改"] + [text="暂停"] + [text="终止"]) || ([text="确定终止该定投计划吗？"] +n * > [text="确定"])',
-          ],
-          actionCdKey: 1,
+          actionCd: 0,
           resetMatch: 'match',
-          activityIds: [
+          activityIds:
             'cmb.pb.app.h5container.webviewcontainer.PBWebContainerActivity',
-          ],
+          matches:
+            '(Button[text="管理"]) || ([text="修改"] + [text="暂停"] + [text="终止"]) || ([text="确定终止该定投计划吗？"] +n * > [text="确定"])',
         },
       ],
     },
@@ -603,22 +601,21 @@ export default defineGkdApp({
     {
       key: 38,
       name: '超风险及高风险产品定投确认，确认继续定投',
-      desc: '260417',
+      desc: '260602',
       rules: [
         {
           resetMatch: 'match',
           actionCdKey: 1,
           activityIds:
             'cmb.pb.app.h5container.webviewcontainer.PBWebContainerActivity',
-          matches:
-            '[text="超风险及高风险产品定投确认"] < * +n [text="确认继续定投"]',
+          matches: '([text$="定投确认"] < * +n [text="确认继续定投"])',
         },
       ],
     },
     {
       key: 39,
       name: '定投，阅读并确认以下文件，确认',
-      desc: '260417',
+      desc: '260602，增加风险确认',
       rules: [
         {
           actionCdKey: 1,
@@ -626,7 +623,7 @@ export default defineGkdApp({
           activityIds:
             'cmb.pb.app.h5container.webviewcontainer.PBWebContainerActivity',
           matches:
-            '[text="请阅读并确认以下文件"] < * +n * > [text="已阅读并确认"]',
+            '([text="请阅读并确认以下文件"] < * +n * > [text="已阅读并确认"])',
         },
       ],
     },

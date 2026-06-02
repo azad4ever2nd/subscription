@@ -36,16 +36,16 @@ export default defineGkdApp({
     },
     {
       key: 3,
-      name: '预约打新，确认',
-      desc: '251225，* > [desc="确认"]',
+      name: '预约打新，确认后二次确认',
+      desc: '260602，* > [desc="确认"]',
       rules: [
         {
-          matches: [
-            '[text="申购数量"] + [text="10000"] <n * + * [text="取消"] + *',
-          ],
-          matchDelay: 5000,
           resetMatch: 'match',
-          activityIds: ['com.gtja.trade.newstock.view.NewAppointMainActivity'],
+          preKeys: [12],
+          actionCd: 1500,
+          activityIds: 'com.gtja.trade.newstock.view.NewAppointMainActivity',
+          matches:
+            '[text="申购数量"] + [text="10000"] <n * + * [text="取消"] + *',
         },
       ],
     },
@@ -129,6 +129,35 @@ export default defineGkdApp({
           activityIds: 'cn.htsec.SecurityHome',
           matches:
             '[vid="dlg_tv_title"][text="删除自选股"] +n * > [vid="dlg_tv_ok"][text="确认删除"]',
+        },
+      ],
+    },
+    {
+      key: 10,
+      name: '预约打新，全选',
+      desc: '260602，clickable=true',
+      rules: [
+        {
+          resetMatch: 'match',
+          action: 'clickCenter',
+          actionMaximum: 1,
+          actionCd: 0,
+          activityIds: 'com.gtja.trade.newstock.view.NewAppointMainActivity',
+          matches: '[text="全选"]',
+        },
+      ],
+    },
+    {
+      key: 11,
+      name: '预约打新，全选后，确认',
+      desc: '260602，clickable=false',
+      rules: [
+        {
+          resetMatch: 'match',
+          actionMaximum: 1,
+          preKeys: [10],
+          activityIds: 'com.gtja.trade.newstock.view.NewAppointMainActivity',
+          matches: '[text="已选中 "] + [text!="0"] <n * + [text="确认"]',
         },
       ],
     },

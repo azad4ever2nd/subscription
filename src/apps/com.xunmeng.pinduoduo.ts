@@ -161,11 +161,11 @@ export default defineGkdApp({
     {
       key: 12,
       name: '弹窗2',
-      desc: '260304，添加发真实评价选择返回，|| ([text="放弃打款"] <<n *[depth=9] + * >n TextView[text=""]) ',
+      desc: '260602，添加发真实评价选择返回，',
       rules: [
         {
           matches: [
-            '(@Button[text="关闭按钮"] +n [text^="还差1人" || text^="拼单已发起"]) || ([text="邀请好友拼单"] + [text="去首页逛逛"])',
+            '(@Button[text="关闭按钮"] +n [text^="还差1人" || text^="拼单已发起"]) || ([text="邀请好友拼单"] + [text="去首页逛逛"]) || ([text="继续编辑"] <<n *[clickable=true] + @*[clickable=true] >n [text="放弃领券"])',
           ],
           fastQuery: true,
           resetMatch: 'match',
