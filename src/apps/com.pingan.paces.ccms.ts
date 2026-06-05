@@ -39,6 +39,7 @@ export default defineGkdApp({
       desc: '260211',
       rules: [
         {
+          action: 'clickCenter',
           matches: ['[text="支付会员周周领好礼"] @View > [text="立即领取"]'],
           actionMaximum: 1,
           resetMatch: 'match',
@@ -80,6 +81,20 @@ export default defineGkdApp({
           fastQuery: true,
           activityIds: 'com.pingan.launcher.activity.LauncherActivity',
           matches: '[vid="bottom_close_image"][desc="点击关闭按钮"]',
+        },
+      ],
+    },
+    {
+      key: 7,
+      name: '周三抽奖弹窗',
+      desc: '260603',
+      rules: [
+        {
+          resetMatch: 'match',
+          action: 'clickCenter',
+          actionCd: 0,
+          activityIds: 'com.pingan.componet.hybrid.webUrl.WebUrlActivity',
+          matches: '@Button[text="关闭弹窗按钮"] + * [text="您本周已参与"]',
         },
       ],
     },

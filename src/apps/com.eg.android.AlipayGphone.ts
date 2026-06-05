@@ -293,17 +293,17 @@ export default defineGkdApp({
     {
       key: 19,
       name: '任务完成，返回领奖',
-      desc: '260325,',
+      desc: '260605，没有clickable=true定位，添加返回，',
       rules: [
         {
           action: 'clickCenter',
-          matches: [
-            ' (@View[clickable=true] >n [text="任务完成"] + [text="返回会场" || text="返回领奖>"])',
-          ],
-          actionCd: 0,
+          matches:
+            '(@View > [text="任务完成"] + [text="返回会场" || text="返回领奖>"]) || (@View[clickable=true] >n [text="任务完成"] + [text="返回会场" || text="返回领奖>"])',
           resetMatch: 'match',
           activityIds: [
             'com.alipay.mobile.nebulax.xriver.activity.XRiverActivity',
+            'com.alipay.mobile.nebulax.xriver.activity.XRiverActivity$App01',
+            'com.alipay.mobile.nebulax.xriver.activity.XRiverActivity$App02',
           ],
         },
       ],

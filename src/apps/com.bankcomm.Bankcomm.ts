@@ -162,11 +162,11 @@ export default defineGkdApp({
     {
       key: 10,
       name: '领券中心，周五12点云网券',
-      desc: '260313',
+      desc: '260605',
       rules: [
         {
           matches: [
-            '[text="ACIM_20260311000149_20260311171809982"] <<n * + * [text="立即领取"]',
+            'Image[text="ACIM_20260602000124_20260602112439861"] <<n View + View >4 Image[text="立即领取"]',
           ],
           actionCd: 0,
           actionMaximum: 1,

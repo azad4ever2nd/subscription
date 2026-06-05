@@ -38,16 +38,16 @@ export default defineGkdApp({
     {
       key: 3,
       name: '百亿补贴无门槛抽奖',
-      desc: '251204，[text="限时抽神券"] +2 [text="无门槛券"]',
+      desc: '260605',
       rules: [
         {
-          action: 'clickCenter',
-          matches: [
-            '[text="限时抽神券"] +n [text="无门槛券"] + * [text="立即抽奖"]',
-          ],
-          actionMaximum: 2,
+          actionMaximum: 15,
+          actionCd: 0,
           resetMatch: 'match',
-          activityIds: ['com.xunmeng.pinduoduo.activity.NewPageActivity'],
+          action: 'clickCenter',
+          activityIds: 'com.xunmeng.pinduoduo.activity.NewPageActivity',
+          matches:
+            '([text="限时抽神券"] +n [text="无门槛券"] + * [text="立即抽奖"]) || (TextView[text="限时抽神券"] -2 TextView[text="无门槛券"] + View >3 TextView[text="立即抽奖"])',
         },
       ],
     },

@@ -55,11 +55,13 @@ export default defineGkdApp({
     {
       key: 4,
       name: '基金财富月历，签到成功',
-      desc: '260324',
+      desc: '260605',
       rules: [
         {
           action: 'clickCenter',
-          matches: ['[text="恭喜获得"] <n * + TextView[clickable=true]'],
+          matches: [
+            '([text="恭喜获得"] <n * + TextView[clickable=true]) || (View > TextView[text="恭喜获得"] +n TextView[index=parent.childCount.minus(1)])',
+          ],
           resetMatch: 'match',
           activityIds: [
             'com.cebbank.mobile.cemb.ui.activity.mobilePayment.MobilePaymentWebActivity',
@@ -120,11 +122,12 @@ export default defineGkdApp({
     {
       key: 8,
       name: '基金财富月历，任务完成开心收下',
-      desc: '260324 原([text^="您已完成"] <<3 * + TextView) || ([text^="您已完成"] < * - [text^="+"] <<n View + TextView) || ([text^="微信立减金将在5个工作日内发放"] + TextView) || ([text="恭喜获得"] +n [text="产品涨跌情况将在财富日历中展示~"] +n TextView[clickable=true][index=parent.childCount.minus(1)])',
+      desc: '260605 原([text^="您已完成"] <<3 * + TextView) || ([text^="您已完成"] < * - [text^="+"] <<n View + TextView) || ([text^="微信立减金将在5个工作日内发放"] + TextView) || ([text="恭喜获得"] +n [text="产品涨跌情况将在财富日历中展示~"] +n TextView[clickable=true][index=parent.childCount.minus(1)])',
       rules: [
         {
+          action: 'clickCenter',
           matches: [
-            '([text$="金币"] < View +2 TextView[clickable=true]) || ([text^="您已完成" && text$="任务"] < * + TextView[clickable=true])',
+            '([text$="金币"] < View +2 TextView[clickable=true]) || ([text^="您已完成" && text$="任务"] < * + TextView[clickable=true]) || (View > @TextView - View > TextView[text^="您已完成" && text$="任务"])',
           ],
           actionCd: 0,
           resetMatch: 'match',
