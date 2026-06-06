@@ -102,18 +102,17 @@ export default defineGkdApp({
     {
       key: 7,
       name: '修改密码弹窗',
-      desc: '260304',
+      desc: '260606，([vid="ll_dialog_common"][desc*="修改登录密码"] +n * > [vid="mLeftBtn"][text="下次再说"]) ||',
       rules: [
         {
-          matches: [
-            '[vid="ll_dialog_common"][desc*="修改登录密码"] +n * > [vid="mLeftBtn"][text="下次再说"]',
-          ],
-          actionCdKey: 1,
-          fastQuery: true,
           resetMatch: 'match',
-          activityIds: [
+          action: 'clickCenter',
+          fastQuery: true,
+          actionCdKey: 1,
+          activityIds:
             'com.yitong.mbank.psbc.module.home.view.activity.MainActivity',
-          ],
+          matches:
+            'TextView[vid="mContent"][text*="登录密码"] <2 LinearLayout +2 LinearLayout > TextView[vid="mLeftBtn"][clickable=true][text="下次再说"] ',
         },
       ],
     },

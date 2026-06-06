@@ -83,5 +83,19 @@ export default defineGkdApp({
         },
       ],
     },
+    {
+      key: 7,
+      name: '评价，关闭',
+      desc: '260606',
+      rules: [
+        {
+          resetMatch: 'match',
+          fastQuery: true,
+          activityIds: 'com.sgcc.wsgw.rnbundle.activity.MyReactActivity',
+          matches:
+            'TextView[text*="进行评价"] <2 ViewGroup + ViewGroup > ViewGroup > TextView[text="关闭"]',
+        },
+      ],
+    },
   ],
 });

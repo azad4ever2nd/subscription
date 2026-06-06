@@ -328,5 +328,20 @@ export default defineGkdApp({
         },
       ],
     },
+    {
+      key: 23,
+      name: '美团单车，定位服务未开启，去设置',
+      desc: '260606',
+      rules: [
+        {
+          resetMatch: 'match',
+          fastQuery: true,
+          activityIds:
+            'com.meituan.android.bike.component.feature.main.view.MobikeMainActivity',
+          matches:
+            'FrameLayout[vid="custom"] > LinearLayout > TextView[text="定位服务未开启"] +2 LinearLayout > Button[text="去设置"]',
+        },
+      ],
+    },
   ],
 });

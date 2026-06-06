@@ -37,16 +37,14 @@ export default defineGkdApp({
     {
       key: 3,
       name: '领奖完成',
-      desc: '260224,添加转存提示, 原@[text="+SOMf8vIwWVqABk0AAAAASUVORK5CYII="] - * > [text="订购结果"]',
+      desc: '260606,添加转存提示 (TextView[text="好的"] <<n View + Image[text="+SOMf8vIwWVqABk0AAAAASUVORK5CYII="]) || ',
       rules: [
         {
-          matches: [
-            '([text="订购结果"] <<n * + [text="+SOMf8vIwWVqABk0AAAAASUVORK5CYII="]) || ([text="好的"] <<n * + [text="+SOMf8vIwWVqABk0AAAAASUVORK5CYII="]) || ([text="立即前往"] <n * + [text="+SOMf8vIwWVqABk0AAAAASUVORK5CYII="])',
-          ],
           resetMatch: 'match',
-          activityIds: [
+          activityIds:
             'com.chinamobile.mcloud.client.component.web.H5WebViewMainActivity',
-          ],
+          matches:
+            '([text="立即前往"] <3 View + Image[text="+SOMf8vIwWVqABk0AAAAASUVORK5CYII="]) || (TextView[text="订购结果"] < View + Image[text="+SOMf8vIwWVqABk0AAAAASUVORK5CYII="])',
         },
       ],
     },

@@ -136,5 +136,18 @@ export default defineGkdApp({
         },
       ],
     },
+    {
+      key: 11,
+      name: '保存安装包文件，继续下载',
+      desc: '260606',
+      rules: [
+        {
+          resetMatch: 'match',
+          activityIds: 'com.android.browser.BrowserActivity',
+          matches:
+            'View > TextView[text="保存安装包文件"] +3 TextView[text="继续下载"]',
+        },
+      ],
+    },
   ],
 });
