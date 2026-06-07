@@ -23,7 +23,7 @@ export default defineGkdApp({
     {
       key: 2,
       name: '签到成功',
-      desc: '260528，两台手机而成不同，改布局，漏签，动态，只能通过关键信息',
+      desc: '260607，两台手机而成不同，改布局，漏签，动态，只能通过关键信息',
       rules: [
         {
           actionMaximum: 1,
@@ -32,7 +32,7 @@ export default defineGkdApp({
           actionCd: 0,
           activityIds: 'fliggyx.android.unicorn.ActWebviewActivity',
           matches:
-            '(@*[clickable=true][visibleToUser=true] + [text^="已连签" && text$="累计获得"] +n [text="里程"]) || (@*[clickable=true] + [text="连签"] +2 [text="日可领"] +2 [text="里程"]) || (*[childCount=3] > @*[clickable=true][visibleToUser=true] + [text="已连签"] + [text*="保持连签"]) ',
+            '(View > @TextView + TextView[text="连签"] + TextView + TextView[text="日可领"]) || (*[childCount=3] > @*[clickable=true][visibleToUser=true] + [text="已连签"] + [text*="保持连签"]) || (@*[clickable=true][visibleToUser=true] + [text^="已连签" && text$="累计获得"] +n [text="里程"]) || (@*[clickable=true][visibleToUser=true] + [text="连签"] +2 [text="日可领"] +2 [text="里程"])',
         },
       ],
     },

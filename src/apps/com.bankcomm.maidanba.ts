@@ -91,14 +91,15 @@ export default defineGkdApp({
     {
       key: 7,
       name: '开启消息通知，关闭',
-      desc: '251220',
+      desc: '260607',
       rules: [
         {
           actionCd: 0,
           fastQuery: true,
           resetMatch: 'match',
-          matches: ['@* + [text="开启消息通知"] +n [text="去开启"]'],
-          activityIds: ['com.bankcomm.maidanba.activity.WebViewActivity'],
+          activityIds: 'com.bankcomm.maidanba.activity.WebViewActivity',
+          matches:
+            '(@* + [text="开启消息通知"] +n [text="去开启"]) || (View > @TextView + TextView[text="开启消息通知"])',
         },
       ],
     },

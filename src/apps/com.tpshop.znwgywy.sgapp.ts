@@ -112,13 +112,15 @@ export default defineGkdApp({
     {
       key: 9,
       name: '恭喜获得奖励3',
-      desc: '260529',
+      desc: '260607',
       rules: [
         {
           resetMatch: 'match',
+          actionCd: 0,
+          action: 'clickCenter',
           activityIds: 'com.qq.e.ads.PortraitADActivity',
           matches:
-            '[text="恭喜获得奖励"] <<n * + FrameLayout > FrameLayout[index=parent.childCount.minus(1)]',
+            '([text="恭喜获得奖励"] < FrameLayout < FrameLayout < FrameLayout + FrameLayout > FrameLayout > FrameLayout ImageView)',
         },
       ],
     },

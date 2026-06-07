@@ -88,5 +88,18 @@ export default defineGkdApp({
         },
       ],
     },
+    {
+      key: 7,
+      name: '确定退出吗，x掉',
+      desc: '26/6/7',
+      rules: [
+        {
+          resetMatch: 'match',
+          activityIds: 'ctrip.android.view.h5v2.view.H5Container',
+          matches:
+            'View > @Image + View + View > [text="继续退出"] + [text="去淘宝闪购"]',
+        },
+      ],
+    },
   ],
 });
