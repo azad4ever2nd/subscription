@@ -193,16 +193,15 @@ export default defineGkdApp({
     {
       key: 13,
       name: '指定银行还款优惠，确认付款',
-      desc: '260520，增加新布局，针对卡点的指定银行的固定还款优惠，根据需要添加银行和金额',
+      desc: '260608，增加新布局，针对卡点的指定银行的固定还款优惠，根据需要添加银行和金额',
       rules: [
         {
-          resetMatch: 'match',
+		  resetMatch:'match',	
           fastQuery: true,
-          actionCd: 0,
-          actionMaximum: 1,
+		  actionCd:0,
+		  actionMaximum:1,
           activityIds: 'com.alipay.android.msp.ui.views.MspContainerActivity',
-          matches:
-            '([text="邮储银行立减金"] + [text="-¥ 5.00"] <<n * + * @Button[desc^="确认付款"] > [text="确认付款"]) || ([text="邮储银行立减金"] + [text="-¥ 5.00"] <<n * + * Button[desc^="付款"] > *[clickable=true])',
+          matches: '([text="邮储银行立减金"] + [text="-¥ 5.00"] <<n * + * @Button[desc*="确认付款"] > [text="确认付款"]) || (TextView[text="邮储银行立减金"] + TextView[text="-¥ 5.00"] <<n FrameLayout + FrameLayout Button[desc^="付款" || desc*="确认付款"] > FrameLayout[clickable=true])',
         },
       ],
     },
@@ -311,15 +310,14 @@ export default defineGkdApp({
     {
       key: 20,
       name: '话费光大100-10',
-      desc: '260520，布局有变，针对卡点的指定银行的优惠，根据需要添加银行和金额',
+      desc: '260608，布局有变，针对卡点的指定银行的优惠，根据需要添加银行和金额',
       rules: [
         {
           fastQuery: true,
-          actionCd: 0,
-          actionMaximum: 1,
+		  actionCd:0,
+		  actionMaximum:1,
           activityIds: 'com.alipay.android.msp.ui.views.MspContainerActivity',
-          matches:
-            '([desc="支付金额90.00元"] <<n * + * >n @Button[desc^="确认付款"] > [text="确认付款"]) || ([text="光大银行立减金"] + [text="-¥ 10.00"] <<n * + * @Button[desc^="确认付款"] > [text="确认付款"]) || ([desc="支付金额90.00元"] <<n * + * >n Button[desc^="付款"] > *[clickable=true]) || ([text="光大银行立减金"] + [text="-¥ 10.00"] <<n * + * Button[desc^="付款"] > *[clickable=true])',
+          matches: '([desc="支付金额90.00元"] <<n * + * >n @Button[desc^="确认付款"]) || ([desc="支付金额90.00元"] <<n * + * >n Button[desc^="付款"] > *[clickable=true]) || ([text="光大银行立减金"] + [text="-¥ 10.00"] <<n * + * @Button[desc^="确认付款"]) || (TextView[text="光大银行立减金"] + TextView[text="-¥ 10.00"] <<n FrameLayout + FrameLayout Button[desc^="付款" || desc*="确认付款"] > FrameLayout[clickable=true])',
         },
       ],
     },

@@ -87,34 +87,32 @@ export default defineGkdApp({
     },
     {
       key: 6,
-      name: '基金财富月历，每周任务，目前2个',
-      desc: '260212',
+      name: '基金财富月历，每周任务',
+      desc: '260608，([text="每周"] + [text="指定产品加自选" || text="浏览指定专区"] + [text="(0/1)"] +3 TextView)',
       rules: [
         {
-          matches: [
-            '([text="每周"] + [text="指定产品加自选" || text="浏览指定专区"] + [text="(0/1)"] +3 TextView)',
-          ],
-          actionMaximum: 2,
-          matchDelay: 3000,
-          resetMatch: 'app',
-          activityIds: [
-            'com.cebbank.mobile.cemb.ui.activity.mobilePayment.MobilePaymentWebActivity',
-          ],
+		  actionCd:2000,
+		  action:'clickCenter',
+          activityIds: 'com.cebbank.mobile.cemb.ui.activity.mobilePayment.MobilePaymentWebActivity',
+		  matches: '[text="每周"] +2 TextView[text="(0/1)"] +3 TextView',
         },
       ],
     },
     {
       key: 7,
       name: '基金财富月历，每周任务，参与话题讨论',
-      desc: '260324',
+      desc: '260608',
       rules: [
         {
-          matches: ['([text="参与话题讨论"] +3 TextView)'],
           actionMaximum: 1,
-          matchDelay: 3000,
+          matchDelay: 1000,
           resetMatch: 'app',
+		  action:'clickCenter',
           activityIds: [
             'com.cebbank.mobile.cemb.ui.activity.mobilePayment.MobilePaymentWebActivity',
+          ],
+          matches: [
+            '([text="参与话题讨论"] +3 TextView)',
           ],
         },
       ],

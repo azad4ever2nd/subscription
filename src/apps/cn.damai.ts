@@ -122,13 +122,14 @@ export default defineGkdApp({
     {
       key: 8,
       name: '抽奖动画，跳过',
-      desc: '260210',
+      desc: '260608',
       rules: [
         {
-          matches: ['Image + [text="点击跳过动画"]'],
-          actionCdKey: 1,
           resetMatch: 'match',
-          activityIds: ['cn.damai.h5container.DMH5Activity'],
+          action: 'clickCenter',
+          actionCdKey: 1,
+          activityIds: 'cn.damai.h5container.DMH5Activity',
+          matches: 'WebView > View > Button[text="点击跳过动画"]',
         },
       ],
     },

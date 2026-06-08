@@ -477,13 +477,13 @@ export default defineGkdApp({
     {
       key: 30,
       name: '领券中心，1分购，里面等2',
-      desc: '260508，不分品种，无actionMaximum限制',
+      desc: '260608，不分品种，无actionMaximum限制',
       rules: [
         {
-          resetMatch: 'match',
-          actionCd: 200,
+		  resetMatch:'match',
+		  actionCd:0,
           activityIds: 'com.unionpay.cordova.UPActivityWeb',
-          matches: '[text="￥ 0.01"] + [text="预估到手价"] + [text="立即抢购"]',
+          matches: 'View > TextView[text="￥ 0.01"] + TextView[text="预估到手价"] + TextView[text="立即抢购"]',
         },
       ],
     },
