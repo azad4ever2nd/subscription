@@ -83,7 +83,7 @@ export default defineGkdApp({
       desc: '260608,添加抢理财金，整合领取与返回，体验完成，',
       rules: [
         {
-          resetMatch:'match',
+          resetMatch: 'match',
           activityIds: [
             'com.tencent.mm.plugin.appbrand.ui.AppBrandUI0',
             'com.tencent.mm.plugin.appbrand.ui.AppBrandUI1',
@@ -96,7 +96,8 @@ export default defineGkdApp({
             'com.tencent.mm.plugin.appbrand.ui.AppBrandUI03',
             'com.tencent.mm.plugin.appbrand.ui.AppBrandUI04',
           ],
-          matches: '(View[childCount=2] > [text$="元理财金"] + *) || (View[childCount=3] > * + [text$="元理财金"] + *) || (View[childCount=3][clickable=true] > [text$="元理财金"] + *) || (View > @View > TextView + TextView[text$="元理财金"] + TextView[clickable=true]) || (WebView [text="领取奖励"]) || ([text^="成功领取奖励" || text="成功开始模拟"] <<n FrameLayout + * >n [desc="关闭"][childCount=1]) || ([text^="成功领取奖励"] <<n FrameLayout + * >n [desc="关闭"])',
+          matches:
+            '(View[childCount=2] > [text$="元理财金"] + *) || (View[childCount=3] > * + [text$="元理财金"] + *) || (View[childCount=3][clickable=true] > [text$="元理财金"] + *) || (View > @View > TextView + TextView[text$="元理财金"] + TextView[clickable=true]) || (WebView [text="领取奖励"]) || ([text^="成功领取奖励" || text="成功开始模拟"] <<n FrameLayout + * >n [desc="关闭"][childCount=1]) || ([text^="成功领取奖励"] <<n FrameLayout + * >n [desc="关闭"])',
         },
       ],
     },
@@ -178,48 +179,43 @@ export default defineGkdApp({
     },
     {
       key: 9,
-      name: '跳武汉SKP',
-      desc: 'D',
+      name: '建行社保卡，勾选同意',
+      desc: '260610',
       rules: [
         {
-          matches: ['[text="本地专属活动"] +2 [text="wuhan_1741916738193"]'],
           resetMatch: 'match',
-          activityIds: ['com.tencent.mm.plugin.webview.ui.tools.MMWebViewUI'],
+          actionCdKey: 6,
+          activityIds: 'com.tencent.mm.plugin.webview.ui.tools.MMWebViewUI',
+          matches:
+            '(WebView[text*="建行社保卡"] > View > View > View > CheckBox[checked=false])',
         },
       ],
     },
     {
       key: 10,
-      name: '武汉SKP声明',
-      desc: 'D',
+      name: '建行社保卡，勾选同意后，立即参与',
+      desc: '260610',
       rules: [
         {
-          matches: ['[text="惠享中行日 畅购武汉SKP"] >5 TextView + Image'],
           resetMatch: 'match',
-          activityIds: [
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI0',
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI1',
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI2',
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI3',
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI4',
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI00',
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI01',
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI02',
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI03',
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI04',
-          ],
+          actionCdKey: 6,
+          activityIds: 'com.tencent.mm.plugin.webview.ui.tools.MMWebViewUI',
+          matches:
+            '(WebView[text*="建行社保卡"] > View > View > View > CheckBox[checked=true] +2 CheckBox[checked=true] +2 Image[text="loginBtn.f302f730"])',
         },
       ],
     },
     {
       key: 11,
-      name: '武汉SKP抢购',
-      desc: 'D',
+      name: '建行社保卡，火暴',
+      desc: '260610',
       rules: [
         {
-          matches: ['View > [text^="今日剩余名额"] + Button'],
           resetMatch: 'match',
-          activityIds: ['com.tencent.mm.plugin.webview.ui.tools.MMWebViewUI'],
+          actionCdKey: 6,
+          activityIds: 'com.tencent.mm.plugin.webview.ui.tools.MMWebViewUI',
+          matches:
+            '(WebView[text*="建行社保卡"] > View > Dialog > View > Button[text="好的"])',
         },
       ],
     },
