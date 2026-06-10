@@ -141,15 +141,14 @@ export default defineGkdApp({
     {
       key: 9,
       name: '打卡成功',
-      desc: '260306',
+      desc: '260610',
       rules: [
         {
           resetMatch: 'match',
           action: 'clickCenter',
-          matches: [
-            '(@View[clickable=true] [id="cc54b71dca3545fb95c3de42954fa8e2" || text="1O6KI5PKO6N57" || text="1O6L4093C9DTM"]) || ([id="3fae2c0612c44bcba72669a0b4108f3d"] >3 View)',
-          ],
-          activityIds: ['com.cmvideo.capability.remote_web.WebProcessActivity'],
+          activityIds: 'com.cmvideo.capability.remote_web.WebProcessActivity',
+          matches:
+            '(View > View > View > View > View > [id="cc54b71dca3545fb95c3de42954fa8e2"]) || (@View[clickable=true] [id="cc54b71dca3545fb95c3de42954fa8e2" || text="1O6KI5PKO6N57" || text="1O6L4093C9DTM"]) || ([id="3fae2c0612c44bcba72669a0b4108f3d"] >3 View)',
         },
       ],
     },

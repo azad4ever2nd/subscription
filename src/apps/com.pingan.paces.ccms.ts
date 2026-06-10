@@ -50,12 +50,13 @@ export default defineGkdApp({
     {
       key: 4,
       name: '抽奖弹窗',
-      desc: '260211',
+      desc: '260610',
       rules: [
         {
-          matches: ['[text="恭喜您获得"] +n TextView[clickable=true]'],
           resetMatch: 'match',
-          activityIds: ['com.pingan.componet.hybrid.webUrl.WebUrlActivity'],
+          activityIds: 'com.pingan.componet.hybrid.webUrl.WebUrlActivity',
+          matches:
+            '(View > [text="恭喜您获得"] + [text$="橙长值"] + View > TextView[text="开心收下"]) || ([text="恭喜您获得"] +n TextView[clickable=true])',
         },
       ],
     },

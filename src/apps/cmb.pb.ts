@@ -563,10 +563,11 @@ export default defineGkdApp({
           action: 'clickCenter',
           resetMatch: 'match',
           actionCd: 0,
+          actionMaximum: 1,
           activityIds:
             'cmb.pb.app.h5container.webviewcontainer.PBWebContainerActivity',
           matches:
-            '(View > Button[text="自选"][visibleToUser=true]) || (@View[clickable=true] TextView[text="加自选"][visibleToUser=true]) || (View > Button[text="自选"][clickable=true][visibleToUser=true])',
+            '(@View[clickable=true] TextView[text="加自选"][visibleToUser=true]) || (View > Button[text="自选"][visibleToUser=true]) || (View > Button[text="自选"][clickable=true][visibleToUser=true])',
         },
       ],
     },

@@ -224,5 +224,19 @@ export default defineGkdApp({
         },
       ],
     },
+    {
+      key: 17,
+      name: '通知关闭，拒绝接收',
+      desc: '260609',
+      rules: [
+        {
+          resetMatch: 'match',
+          fastQuery: true,
+          activityIds: 'com.xunmeng.pinduoduo.ui.activity.MainFrameActivity',
+          matches:
+            'TextView[text="因通知关闭，无法接收物流消息"] < FrameLayout +2 ViewGroup > @ViewGroup > FrameLayout > TextView[text="拒绝接收"]',
+        },
+      ],
+    },
   ],
 });

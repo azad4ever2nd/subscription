@@ -91,10 +91,11 @@ export default defineGkdApp({
       desc: '260608，([text="每周"] + [text="指定产品加自选" || text="浏览指定专区"] + [text="(0/1)"] +3 TextView)',
       rules: [
         {
-		  actionCd:2000,
-		  action:'clickCenter',
-          activityIds: 'com.cebbank.mobile.cemb.ui.activity.mobilePayment.MobilePaymentWebActivity',
-		  matches: '[text="每周"] +2 TextView[text="(0/1)"] +3 TextView',
+          actionCd: 2000,
+          action: 'clickCenter',
+          activityIds:
+            'com.cebbank.mobile.cemb.ui.activity.mobilePayment.MobilePaymentWebActivity',
+          matches: '[text="每周"] +2 TextView[text="(0/1)"] +3 TextView',
         },
       ],
     },
@@ -107,13 +108,11 @@ export default defineGkdApp({
           actionMaximum: 1,
           matchDelay: 1000,
           resetMatch: 'app',
-		  action:'clickCenter',
+          action: 'clickCenter',
           activityIds: [
             'com.cebbank.mobile.cemb.ui.activity.mobilePayment.MobilePaymentWebActivity',
           ],
-          matches: [
-            '([text="参与话题讨论"] +3 TextView)',
-          ],
+          matches: ['([text="参与话题讨论"] +3 TextView)'],
         },
       ],
     },
@@ -392,6 +391,60 @@ export default defineGkdApp({
           activityIds:
             'com.cebbank.mobile.cemb.ui.activity.mobilePayment.MobilePaymentWebActivity',
           matches: '[text^="搜索并关注微信公众号"] + *[clickable=true]',
+        },
+      ],
+    },
+    {
+      key: 26,
+      name: '基金财富月历，抽奖，谢谢参与',
+      desc: '260423',
+      rules: [
+        {
+          resetMatch: 'match',
+          actionCd: 500,
+          activityIds:
+            'com.cebbank.mobile.cemb.ui.activity.mobilePayment.MobilePaymentWebActivity',
+          matches: '[text="很遗憾，差一点就中奖了"] <n * + *',
+        },
+      ],
+    },
+    {
+      key: 27,
+      name: '权益，立即领取',
+      desc: '260610',
+      rules: [
+        {
+          resetMatch: 'match',
+          activityIds:
+            'com.cebbank.mobile.cemb.ui.activity.mobilePayment.MobilePaymentWebActivity',
+          matches:
+            '(View > View > TextView[text="立即领取"][index=parent.childCount.minus(1)]) || (View TextView[text^="剩余"] + TextView[text="立即领取"])',
+        },
+      ],
+    },
+    {
+      key: 28,
+      name: '权益，确认领取',
+      desc: '260610',
+      rules: [
+        {
+          resetMatch: 'match',
+          activityIds:
+            'com.cebbank.mobile.cemb.ui.activity.mobilePayment.MobilePaymentWebActivity',
+          matches: 'View > View > Button[text=" 确认领取"]',
+        },
+      ],
+    },
+    {
+      key: 29,
+      name: '权益，去兑换，X掉',
+      desc: '260610',
+      rules: [
+        {
+          resetMatch: 'match',
+          activityIds:
+            'com.cebbank.mobile.cemb.ui.activity.mobilePayment.MobilePaymentWebActivity',
+          matches: 'View > TextView[text="去兑换"] + View',
         },
       ],
     },

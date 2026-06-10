@@ -63,7 +63,7 @@ export default defineGkdApp({
     {
       key: 5,
       name: '618弹窗',
-      desc: '260527',
+      desc: '260609',
       rules: [
         {
           resetMatch: 'match',
@@ -71,7 +71,7 @@ export default defineGkdApp({
           activityIds:
             'ctrip.android.publicproduct.home.business.activity.CtripHomeActivity',
           matches:
-            '@[vid="a"][clickable=true] < * + *[vid="a"] [text="立刻领取"]',
+            '(@[vid="a"][clickable=true] < * + *[vid="a"] [text="立刻领取"]) || (RelativeLayout > RelativeLayout[vid="a"] - RelativeLayout > ImageView[vid="a"])',
         },
       ],
     },
@@ -98,6 +98,18 @@ export default defineGkdApp({
           activityIds: 'ctrip.android.view.h5v2.view.H5Container',
           matches:
             'View > @Image + View + View > [text="继续退出"] + [text="去淘宝闪购"]',
+        },
+      ],
+    },
+    {
+      key: 8,
+      name: '升级，开心收下',
+      desc: '260610',
+      rules: [
+        {
+          resetMatch: 'match',
+          activityIds: 'ctrip.android.view.h5v2.view.H5Container',
+          matches: 'View > View > View > View > TextView[text="开心收下"]',
         },
       ],
     },
