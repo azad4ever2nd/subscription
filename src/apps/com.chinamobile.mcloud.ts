@@ -10,12 +10,11 @@ export default defineGkdApp({
       desc: '',
       rules: [
         {
-          matches: ['[text="去领取"] -2 [text="今日签到"]'],
           actionMaximum: 1,
           resetMatch: 'match',
-          activityIds: [
+          activityIds:
             'com.chinamobile.mcloud.client.component.web.H5WebViewMainActivity',
-          ],
+          matches: '[text="去领取"] -2 [text="今日签到"]',
         },
       ],
     },
@@ -37,14 +36,14 @@ export default defineGkdApp({
     {
       key: 3,
       name: '领奖完成',
-      desc: '260606,添加转存提示 (TextView[text="好的"] <<n View + Image[text="+SOMf8vIwWVqABk0AAAAASUVORK5CYII="]) || ',
+      desc: '260611',
       rules: [
         {
           resetMatch: 'match',
           activityIds:
             'com.chinamobile.mcloud.client.component.web.H5WebViewMainActivity',
           matches:
-            '([text="立即前往"] <3 View + Image[text="+SOMf8vIwWVqABk0AAAAASUVORK5CYII="]) || (TextView[text="订购结果"] < View + Image[text="+SOMf8vIwWVqABk0AAAAASUVORK5CYII="])',
+            '(View > Image[text="+SOMf8vIwWVqABk0AAAAASUVORK5CYII="]) || ([text="立即前往"] <3 View + Image[text="+SOMf8vIwWVqABk0AAAAASUVORK5CYII="]) || (TextView[text="订购结果"] < View + Image[text="+SOMf8vIwWVqABk0AAAAASUVORK5CYII="]) || (TextView[text*="转存成功"] < View + Image[text="+SOMf8vIwWVqABk0AAAAASUVORK5CYII="])',
         },
       ],
     },
