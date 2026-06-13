@@ -33,5 +33,33 @@ export default defineGkdApp({
         },
       ],
     },
+    {
+      key: 3,
+      name: '允许 USB 调试吗，一律允许使用这台计算机进行调试，勾选2',
+      desc: '260611',
+      rules: [
+        {
+          resetMatch: 'match',
+          fastQuery: true,
+          activityIds: null,
+          matches:
+            'LinearLayout > LinearLayout > [text="一律允许使用这台计算机进行调试"][checked=false]',
+        },
+      ],
+    },
+    {
+      key: 4,
+      name: '允许 USB 调试吗，勾选后，确定2',
+      desc: '260611',
+      rules: [
+        {
+          resetMatch: 'match',
+          fastQuery: true,
+          activityIds: null,
+          matches:
+            '[text="一律允许使用这台计算机进行调试"][checked=true] <2 LinearLayout < LinearLayout[vid="contentPanel"] + LinearLayout[vid="buttonPanel"] > LinearLayout > Button[id="android:id/button1"][text="确定"]',
+        },
+      ],
+    },
   ],
 });

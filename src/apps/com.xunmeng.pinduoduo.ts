@@ -238,5 +238,33 @@ export default defineGkdApp({
         },
       ],
     },
+    {
+      key: 18,
+      name: '福袋奖励，X掉',
+      desc: '260613',
+      rules: [
+        {
+          resetMatch: 'match',
+          action: 'clickCenter',
+          activityIds: 'com.xunmeng.pinduoduo.activity.NewPageActivity',
+          matches:
+            'View > Image + @Image[clickable=true] + View > TextView[text="消费券福袋奖励"] - View > TextView[text$="折"] + TextView[text^="最高减"]',
+        },
+      ],
+    },
+    {
+      key: 19,
+      name: '拼单完成，返回首页',
+      desc: '260613',
+      rules: [
+        {
+          resetMatch: 'match',
+          action: 'clickCenter',
+          activityIds: 'com.xunmeng.pinduoduo.activity.NewPageActivity',
+          matches:
+            'TextView[text^="剩余"] + View > View > TextView[text^="还差"] + ListView + TextView[text="去首页逛逛"]',
+        },
+      ],
+    },
   ],
 });
