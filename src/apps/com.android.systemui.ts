@@ -41,7 +41,6 @@ export default defineGkdApp({
         {
           resetMatch: 'match',
           fastQuery: true,
-          activityIds: null,
           matches:
             'LinearLayout > LinearLayout > [text="一律允许使用这台计算机进行调试"][checked=false]',
         },
@@ -55,7 +54,6 @@ export default defineGkdApp({
         {
           resetMatch: 'match',
           fastQuery: true,
-          activityIds: null,
           matches:
             '[text="一律允许使用这台计算机进行调试"][checked=true] <2 LinearLayout < LinearLayout[vid="contentPanel"] + LinearLayout[vid="buttonPanel"] > LinearLayout > Button[id="android:id/button1"][text="确定"]',
         },
