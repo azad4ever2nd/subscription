@@ -12,11 +12,10 @@ export default defineGkdApp({
         {
           actionCd: 0,
           action: 'clickCenter',
-          fastQuery: true,
           resetMatch: 'match',
           activityIds: 'com.tongcheng.android.module.webapp.WebViewActivity',
           matches:
-            '(@View[clickable=true] > Image[text="close_icon"]) ||(Image < View + @View > [text="close_icon"]) || (TextView[text="广告"] +n @View[clickable=true] > Image[text="close_icon"])',
+            '(@View[clickable=true] > Image[text="close_icon"]) ||(Image < View + @View[clickable=true] > [text="close_icon"]) || (TextView[text="广告"] +n @View[clickable=true] > Image[text="close_icon"])',
         },
       ],
     },

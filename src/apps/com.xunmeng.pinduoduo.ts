@@ -266,5 +266,19 @@ export default defineGkdApp({
         },
       ],
     },
+    {
+      key: 20,
+      name: '抽到限时神券，X掉',
+      desc: '260614',
+      rules: [
+        {
+          resetMatch: 'match',
+          action: 'clickCenter',
+          activityIds: 'com.xunmeng.pinduoduo.activity.NewPageActivity',
+          matches:
+            '(@Image[text="webp"][clickable=true] - View > View > TextView[text$="折"] + TextView[text^="最高减"] + TextView[text="专场可用"]) || (TextView[text="专场可用"] - TextView[text^="最高减"] - TextView[text$="折"] < View < View + Image[text="webp"][clickable=true])',
+        },
+      ],
+    },
   ],
 });
