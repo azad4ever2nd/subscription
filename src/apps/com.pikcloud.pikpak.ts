@@ -7,7 +7,7 @@ export default defineGkdApp({
     {
       key: 1,
       name: '删除文件',
-      desc: '260502，增加IDS，规则精简，添加清除，删除，广告弹窗',
+      desc: '260614，增加IDS，规则精简，添加清除，删除，广告弹窗',
       rules: [
         {
           resetMatch: 'match',
@@ -21,7 +21,7 @@ export default defineGkdApp({
             'com.pikcloud.download.DownloadTaskListActivity',
           ],
           matches:
-            '([vid="iv_close"]) || ([vid="watch_ad"][text="免费试用"]) || ([vid="cl_operation"] + [vid="close"]) || ([vid="dlg_title"][text*="删除" || text*="清除"] +n * >n [vid="dlg_confirm_btn"][text="确认"])',
+            '([vid="iv_close"]) || ([vid="watch_ad"][text="免费试用"]) || ([vid="cl_operation"] + [vid="close"]) ||(ViewGroup > TextView[vid="dlg_title"][text*="删除" || text*="清除"] +n ViewGroup > LinearLayout > TextView[vid="dlg_confirm_btn"][text="确认"])',
         },
       ],
     },

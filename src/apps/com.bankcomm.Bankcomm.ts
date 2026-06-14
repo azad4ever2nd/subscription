@@ -125,19 +125,16 @@ export default defineGkdApp({
     },
     {
       key: 8,
-      name: '领券中心，郊游通勤 低碳出行，暂时指定领第3张index=2',
-      desc: '260312，规则先暂时定好定位',
+      name: '领券中心，郊游通勤 低碳出行，火车票-3，index=1',
+      desc: '260614，',
       rules: [
         {
-          matches: [
-            '[text="ACIM_20260302000116_20260302113642643"] <<n * + * > *[index=2] [text="立即领取"]',
-          ],
-          actionCd: 0,
           actionMaximum: 1,
           resetMatch: 'match',
-          activityIds: [
-            'com.bankcomm.module.biz.webcontainer.BCMHtml5Activity',
-          ],
+          actionCd: 0,
+          activityIds: 'com.bankcomm.module.biz.webcontainer.BCMHtml5Activity',
+          matches:
+            'Image[text="ACIM_20260302000116_20260302113642643"] <<3 View + View > View[index=1] > View > Image[text="立即领取"][clickable=false]',
         },
       ],
     },
@@ -480,10 +477,11 @@ export default defineGkdApp({
       desc: '260608，不分品种，无actionMaximum限制',
       rules: [
         {
-		  resetMatch:'match',
-		  actionCd:0,
+          resetMatch: 'match',
+          actionCd: 0,
           activityIds: 'com.unionpay.cordova.UPActivityWeb',
-          matches: 'View > TextView[text="￥ 0.01"] + TextView[text="预估到手价"] + TextView[text="立即抢购"]',
+          matches:
+            'View > TextView[text="￥ 0.01"] + TextView[text="预估到手价"] + TextView[text="立即抢购"]',
         },
       ],
     },

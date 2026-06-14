@@ -424,14 +424,15 @@ export default defineGkdApp({
     },
     {
       key: 28,
-      name: '权益，确认领取',
-      desc: '260610',
+      name: '权益详情，立减金，确认领取',
+      desc: '260614',
       rules: [
         {
           resetMatch: 'match',
           activityIds:
             'com.cebbank.mobile.cemb.ui.activity.mobilePayment.MobilePaymentWebActivity',
-          matches: 'View > View > Button[text=" 确认领取"]',
+          matches:
+            'View > TextView[text*="立减金"] +(2,4) View > View > Button[text=" 确认领取"][clickable=true]',
         },
       ],
     },
@@ -445,6 +446,48 @@ export default defineGkdApp({
           activityIds:
             'com.cebbank.mobile.cemb.ui.activity.mobilePayment.MobilePaymentWebActivity',
           matches: 'View > TextView[text="去兑换"] + View',
+        },
+      ],
+    },
+    {
+      key: 30,
+      name: '待领取权益，立减金，立即领取',
+      desc: '260614',
+      rules: [
+        {
+          resetMatch: 'match',
+          activityIds:
+            'com.cebbank.mobile.cemb.ui.activity.mobilePayment.MobilePaymentWebActivity',
+          matches:
+            'View[id="center"] > TextView[text*="立减金"] + TextView[text="立即领取"][clickable=false]',
+        },
+      ],
+    },
+    {
+      key: 31,
+      name: '权益列表 ，立减金，立即领取',
+      desc: '260614',
+      rules: [
+        {
+          resetMatch: 'match',
+          activityIds:
+            'com.cebbank.mobile.cemb.ui.activity.mobilePayment.MobilePaymentWebActivity',
+          matches:
+            'View > View > TextView[text*="立减金"] +3 TextView[text="立即领取"][clickable=false]',
+        },
+      ],
+    },
+    {
+      key: 32,
+      name: '我的权益，待使用，去使用',
+      desc: '260614',
+      rules: [
+        {
+          resetMatch: 'match',
+          activityIds:
+            'com.cebbank.mobile.cemb.ui.activity.mobilePayment.MobilePaymentWebActivity',
+          matches:
+            'View > View > TextView[text*="立减金"] + View + TextView[text="去使用"][clickable=false]',
         },
       ],
     },

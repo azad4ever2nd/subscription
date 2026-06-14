@@ -23,11 +23,12 @@ export default defineGkdApp({
     {
       key: 2,
       name: '系统定位服务已关闭',
-      desc: '260503，添加matchroo测试，添加打开定位服务，,添加IDS,消息通知 com.hellobike.business.hitch.common.home.HLPHHomeActivity',
+      desc: '260614，添加matchroo测试，添加打开定位服务，,添加IDS,消息通知 com.hellobike.business.hitch.common.home.HLPHHomeActivity',
       rules: [
         {
           fastQuery: true,
           resetMatch: 'match',
+          action: 'clickCenter',
           actionCd: 0,
           matchRoot: true,
           activityIds: [
@@ -35,7 +36,7 @@ export default defineGkdApp({
             'com.hellobike.atlas.business.portal.PortalActivity',
           ],
           matches:
-            '([text^="请打开定位服务"] <<n * +n * [text="取消"]) || ([text="开启消息通知"]  <<n * +n * [text="取消"])|| ([text="系统定位服务已关闭"] <<n * +n * [text="取消"])',
+            '([text^="请打开定位服务"] <<n * +n * [text="取消"]) || ([text="开启消息通知"]  <<n * +n * [text="取消"]) || (TextView[text="系统定位服务已关闭"] < FrameLayout +2 FrameLayout > LinearLayout > Button[text="取消"])',
         },
       ],
     },
@@ -211,16 +212,15 @@ export default defineGkdApp({
     {
       key: 14,
       name: '领奖励',
-      desc: '251216，添加知道了，clik无反应就clickCenter',
+      desc: '260614， ([text="在App任意完成以下订单，回来领奖励金"] +n [text="知道了"]) || clik无反应就clickCenter',
       rules: [
         {
-          action: 'clickCenter',
-          matches: [
-            '([text="会员单单返"] + [text="领奖励"]) ||  ([text="在App任意完成以下订单，回来领奖励金"] +n [text="知道了"])',
-          ],
-          actionCd: 0,
           resetMatch: 'match',
-          activityIds: ['com.alipay.mobile.nebulacore.ui.H5Activity'],
+          action: 'clickCenter',
+          actionCd: 0,
+          activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
+          matches:
+            '([text="会员单单返"] + [text="领奖励"]) || (View > View > View > TextView[text*="奖励金"] + View + TextView[text="知道了"][clickable=true])',
         },
       ],
     },
