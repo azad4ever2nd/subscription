@@ -21,15 +21,15 @@ export default defineGkdApp({
     {
       key: 2,
       name: '领奖',
-      desc: '251119',
+      desc: '260615',
       rules: [
         {
-          matches: ['[text="去领取"] -2 [text="立即领奖"]'],
           actionMaximum: 1,
           resetMatch: 'match',
-          activityIds: [
+          activityIds:
             'com.chinamobile.mcloud.client.component.web.H5WebViewMainActivity',
-          ],
+          matches:
+            '([text="去领取"] -2 [text="立即领奖"]) || (WebView > View > View > View > TextView[text="立即领奖"])',
         },
       ],
     },

@@ -177,12 +177,13 @@ export default defineGkdApp({
     {
       key: 13,
       name: '前往微信浇水',
-      desc: '260601',
+      desc: '260615',
       rules: [
         {
           actionMaximum: 1,
           resetMatch: 'match',
-          matches: '([text^="前往微信再浇一次"] + Image)',
+          matches:
+            '([text^="前往微信再浇一次"] + Image) || ((View > TextView[text^="前往微信再浇一次"] + Image))',
           activityIds: [
             'com.icbc.activity.web.ICBCWebView',
             'com.tencent.mm.plugin.base.stub.WXBizEntryActivity',

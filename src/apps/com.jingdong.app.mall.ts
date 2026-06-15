@@ -7,15 +7,15 @@ export default defineGkdApp({
     {
       key: 1,
       name: '签到领豆',
-      desc: '260611',
+      desc: '260615',
       rules: [
         {
-          matchDelay: 2000,
+          matchDelay: 1500,
           actionMaximum: 2,
           resetMatch: 'match',
           activityIds: 'com.jd.lib.ttt.page.TTTMultiPageActivity',
           matches:
-            '([id="SignButton"][childCount=1]) || ([id="homeSignButton"] > [text="签到领豆"]) || (View > View[id="signView_main_portal"] > View[text*="京豆"])',
+            '([id="SignButton"][childCount=1]) || ([id="homeSignButton"] > [text="签到领豆"]) || (View > View[id="signView_main_portal"] > View[text*="京豆"]) || (View > [id="homeSignButton"] > TextView[text="签到领京豆"])',
         },
       ],
     },

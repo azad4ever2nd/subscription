@@ -139,5 +139,31 @@ export default defineGkdApp({
         },
       ],
     },
+    {
+      key: 11,
+      name: '服务器列表广告',
+      desc: '260615',
+      rules: [
+        {
+          resetMatch: 'match',
+          activityIds: 'tool.seagull.v.ui.MainActivity',
+          matches:
+            '[vid="server_list_banner_ad"] >7 LinearLayout + ImageView + FrameLayout > View[parent.childCount=1]',
+        },
+      ],
+    },
+    {
+      key: 12,
+      name: '连接后广告窗',
+      desc: '260615',
+      rules: [
+        {
+          resetMatch: 'match',
+          activityIds: 'tool.seagull.v.ui.MainActivity',
+          matches:
+            'ScrollView[vid="banner_scroll"] > FrameLayout >5 ImageView - FrameLayout > View',
+        },
+      ],
+    },
   ],
 });

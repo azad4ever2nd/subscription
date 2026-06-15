@@ -221,14 +221,26 @@ export default defineGkdApp({
     },
     {
       key: 12,
-      name: '武汉SKP异常返回重进',
-      desc: 'D',
+      name: '联通充值，立即充值，立即支付',
+      desc: '260615',
       rules: [
         {
-          action: 'back',
-          matches: ['[text="惠享中行日 畅购武汉SKP"] [text="获取验证码"]'],
           resetMatch: 'match',
-          activityIds: ['com.tencent.mm.plugin.webview.ui.tools.MMWebViewUI'],
+          actionCd: 300,
+          activityIds: [
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI0',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI1',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI2',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI3',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI4',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI00',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI01',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI02',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI03',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI04',
+          ],
+          matches:
+            '(FrameLayout > WebView > TextView[text="立即充值"]) || (FrameLayout > WebView > Button[text="立即支付"][clickable=true][visibleToUser=true])',
         },
       ],
     },
@@ -600,7 +612,7 @@ export default defineGkdApp({
     {
       key: 28,
       name: '工行浇水',
-      desc: '260601，延时要考虑弹窗',
+      desc: '260615，延时要考虑弹窗',
       rules: [
         {
           activityIds: [
@@ -619,7 +631,7 @@ export default defineGkdApp({
           actionMaximum: 5,
           resetMatch: 'match',
           matches:
-            '([text="eaae316f2e764aaab66e4bb0ad2c57890822507158"]) || ([text="奖励派送中，稍后送达～"] <n * + * > *[clickable=true])',
+            '([text="eaae316f2e764aaab66e4bb0ad2c57890822507158"]) || (WebView > View > View > View > View > Image[text="eaae316f2e764aaab66e4bb0ad2c57890822507158"]) || ([text="奖励派送中，稍后送达～"] <n * + * > *[clickable=true])',
         },
       ],
     },

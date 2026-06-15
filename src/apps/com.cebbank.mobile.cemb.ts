@@ -491,5 +491,33 @@ export default defineGkdApp({
         },
       ],
     },
+    {
+      key: 33,
+      name: '竞猜指数，做任务1',
+      desc: '260615',
+      rules: [
+        {
+          resetMatch: 'app',
+          actionMaximum: 1,
+          activityIds:
+            'com.cebbank.mobile.cemb.ui.activity.mobilePayment.MobilePaymentWebActivity',
+          matches: 'View > [text="指定产品加自选"] + TextView[text.length=0]',
+        },
+      ],
+    },
+    {
+      key: 34,
+      name: '竞猜指数，做任务2',
+      desc: '260615',
+      rules: [
+        {
+          resetMatch: 'app',
+          actionMaximum: 1,
+          activityIds:
+            'com.cebbank.mobile.cemb.ui.activity.mobilePayment.MobilePaymentWebActivity',
+          matches: 'View > [text="阅读指定产品文章"] + TextView[text.length=0]',
+        },
+      ],
+    },
   ],
 });

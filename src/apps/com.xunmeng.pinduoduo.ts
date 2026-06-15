@@ -280,5 +280,19 @@ export default defineGkdApp({
         },
       ],
     },
+    {
+      key: 21,
+      name: '下单成功，X掉',
+      desc: '260615',
+      rules: [
+        {
+          resetMatch: 'match',
+          action: 'clickCenter',
+          activityIds: 'com.xunmeng.pinduoduo.activity.NewPageMaskActivity',
+          matches:
+            'WebView > View > View > View > @Button[text="关闭弹窗"] +n Button[text^="继续逛逛"]',
+        },
+      ],
+    },
   ],
 });

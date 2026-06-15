@@ -319,30 +319,32 @@ export default defineGkdApp({
     {
       key: 21,
       name: '奖励金入口',
-      desc: '260327',
+      desc: '260615',
       rules: [
         {
-          matches: ['@ViewGroup[clickable=true] [text="奖励金"]'],
-          actionCd: 0,
           fastQuery: true,
-          actionMaximum: 1,
+          actionCd: 500,
           resetMatch: 'app',
-          activityIds: ['com.hellobike.atlas.business.portal.PortalActivity'],
+          actionMaximum: 1,
+          activityIds: 'com.hellobike.atlas.business.portal.PortalActivity',
+          matches:
+            '(@ViewGroup[clickable=true] [text="奖励金"]) || (ViewGroup > ViewGroup > @ViewGroup[clickable=true] > ViewGroup > TextView[text="奖励金"])',
         },
       ],
     },
     {
       key: 22,
       name: '碳积分，去领取',
-      desc: '260505',
+      desc: '260615',
       rules: [
         {
           resetMatch: 'match',
           actionMaximum: 10,
-          actionCd: 300,
+          actionCd: 500,
           activityIds:
             'com.hellobike.moped.platform.offline.web.OhoRealmWebActivity',
-          matches: '@View > [text="碳积分"] + * + [text="去领取"]',
+          matches:
+            '(@View > [text="碳积分"] + * + [text="去领取"]) || (Image[text="ea6cf0c3c8f6483c9dbbe484a2ea60e3_icon_green_c"] < View + TextView + View > TextView[text="去领取"])',
         },
       ],
     },
