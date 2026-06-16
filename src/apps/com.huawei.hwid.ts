@@ -6,18 +6,16 @@ export default defineGkdApp({
   groups: [
     {
       key: 1,
-      name: '发送通知',
-      desc: '禁止',
-      resetMatch: 'match',
+      name: '发送通知，禁止',
+      desc: '260616',
       rules: [
         {
-          matches: [
-            '[text*="发送通知"] <<n [id="android:id/topPanel"] +2 [id="android:id/buttonPanel"] [text="禁止"]',
-          ],
+          resetMatch: 'match',
           fastQuery: true,
-          activityIds: [
+          activityIds:
             'com.huawei.hms.runtimekit.stub.HMSKitSingleInstanceCoreTransparentActivity4',
-          ],
+          matches:
+            'TextView[id="android:id/alertTitle"][text*="发送通知"] < LinearLayout < LinearLayout +2 LinearLayout[id="android:id/buttonPanel"] > LinearLayout > Button[id="android:id/button2"][text="禁止"]',
         },
       ],
     },

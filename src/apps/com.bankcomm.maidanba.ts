@@ -145,5 +145,20 @@ export default defineGkdApp({
         },
       ],
     },
+    {
+      key: 11,
+      name: '首页弹窗，开启消息通知，X掉',
+      desc: '260616',
+      rules: [
+        {
+          resetMatch: 'match',
+          actionCd: 100,
+          fastQuery: true,
+          activityIds: 'com.bankcomm.maidanba.activity.MainActivity',
+          matches:
+            'TextView[vid="tv_title"][text="开启消息通知"] + ImageView[vid="im_close"][clickable=true]',
+        },
+      ],
+    },
   ],
 });

@@ -7,16 +7,15 @@ export default defineGkdApp({
     {
       key: 1,
       name: '请打开定位服务',
-      desc: '',
+      desc: '260616',
       rules: [
         {
-          matches: [
-            '[desc^="请打开定位服务"] +2 @[desc="取消"] + [desc="去设置"]',
-          ],
-          resetMatch: 'app',
-          activityIds: [
+          activityIds:
             'com.hellobike.flutter.platform.android.flutterboost.FlutterHostFragmentActivity',
-          ],
+          matches:
+            'View > View[desc^="请打开定位服务"] +2 View[desc="取消"][clickable=true]',
+          resetMatch: 'match',
+          actionCd: 0,
         },
       ],
     },
@@ -212,12 +211,12 @@ export default defineGkdApp({
     {
       key: 14,
       name: '领奖励',
-      desc: '260614， ([text="在App任意完成以下订单，回来领奖励金"] +n [text="知道了"]) || clik无反应就clickCenter',
+      desc: '260616， ([text="在App任意完成以下订单，回来领奖励金"] +n [text="知道了"]) || clik无反应就clickCenter',
       rules: [
         {
           resetMatch: 'match',
           action: 'clickCenter',
-          actionCd: 0,
+          actionCd: 900,
           activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
           matches:
             '([text="会员单单返"] + [text="领奖励"]) || (View > View > View > TextView[text*="奖励金"] + View + TextView[text="知道了"][clickable=true])',

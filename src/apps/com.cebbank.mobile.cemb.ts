@@ -519,5 +519,87 @@ export default defineGkdApp({
         },
       ],
     },
+    {
+      key: 35,
+      name: '抽福袋，收下',
+      desc: '260616',
+      rules: [
+        {
+          resetMatch: 'match',
+          activityIds:
+            'com.cebbank.mobile.cemb.ui.activity.mobilePayment.MobilePaymentWebActivity',
+          matches:
+            'View > TextView[text="抽福袋攒财气，有机会赢好礼"] + TextView',
+        },
+      ],
+    },
+    {
+      key: 36,
+      name: '我已认真阅读并同意以上全部内容',
+      desc: '260616',
+      rules: [
+        {
+          resetMatch: 'match',
+          actionMaximum: 1,
+          activityIds: 'com.cebbank.mobile.cemb.ui.activity.WebActivity',
+          matches:
+            'View > @Image[text="noCheckNew"] + [text="我已认真阅读并同意以上全部内容"]',
+        },
+      ],
+    },
+    {
+      key: 37,
+      name: '我已认真阅读并同意以上全部内容，自主购买',
+      desc: '260616',
+      rules: [
+        {
+          resetMatch: 'match',
+          prekeys: [36],
+          activityIds: 'com.cebbank.mobile.cemb.ui.activity.WebActivity',
+          matches:
+            'View > Image[text="checkNew"] + TextView[text="我已认真阅读并同意以上全部内容"] +2 Button[text="自主购买"]',
+        },
+      ],
+    },
+    {
+      key: 38,
+      name: '一键输入',
+      desc: '260616',
+      rules: [
+        {
+          resetMatch: 'match',
+          actionMaximum: 1,
+          activityIds: 'com.cebbank.mobile.cemb.ui.activity.WebActivity',
+          matches: 'EditText < View + View > Button[text="一键输入"]',
+        },
+      ],
+    },
+    {
+      key: 39,
+      name: '一键输入，已阅读并确认继续购买',
+      desc: '260616',
+      rules: [
+        {
+          resetMatch: 'match',
+          preKeys: [38],
+          activityIds: 'com.cebbank.mobile.cemb.ui.activity.WebActivity',
+          matches:
+            'EditText[text.length>0] < View <n View + View > Button[text="已阅读并确认继续购买"]',
+        },
+      ],
+    },
+    {
+      key: 40,
+      name: '基金定投设置，提交',
+      desc: '260616',
+      rules: [
+        {
+          resetMatch: 'match',
+          activityIds: 'com.cebbank.mobile.cemb.ui.activity.WebActivity',
+          matches:
+            'View[text*="定投"] < ListView +n View > Button[text="提交"]',
+        },
+      ],
+    },
   ],
 });
