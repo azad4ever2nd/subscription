@@ -216,15 +216,14 @@ export default defineGkdApp({
     {
       key: 16,
       name: '黑五秒杀鸡蛋，误点弹窗，X掉',
-      desc: '260125',
+      desc: '260616',
       rules: [
         {
-          matches: [
-            '@TextView - View > [text="¥"] + [text="5.90" || text="4.90"] + [text="黑五价"]',
-          ],
-          actionCd: 0,
           resetMatch: 'match',
-          activityIds: ['com.jd.lib.ttt.page.TTTMultiPageActivity'],
+          actionCd: 0,
+          activityIds: 'com.jd.lib.ttt.page.TTTMultiPageActivity',
+          matches:
+            '(@TextView - View > [text="¥"] + [text="4.90"] + [text="黑五价"]) || (View[childCount=2] > View[childCount=3] > View[childCount=7] + @TextView[clickable=true] + TextView)',
         },
       ],
     },

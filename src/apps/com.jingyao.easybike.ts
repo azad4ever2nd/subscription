@@ -22,20 +22,20 @@ export default defineGkdApp({
     {
       key: 2,
       name: '系统定位服务已关闭',
-      desc: '260614，添加matchroo测试，添加打开定位服务，,添加IDS,消息通知 com.hellobike.business.hitch.common.home.HLPHHomeActivity',
+      desc: '260616，添加matchroo测试，添加打开定位服务，,添加IDS,消息通知 com.hellobike.business.hitch.common.home.HLPHHomeActivity',
       rules: [
         {
           fastQuery: true,
           resetMatch: 'match',
           action: 'clickCenter',
           actionCd: 0,
-          matchRoot: true,
+          matchRoot: false,
           activityIds: [
             'com.hellobike.business.hitch.common.home.HLPHHomeActivity',
             'com.hellobike.atlas.business.portal.PortalActivity',
           ],
           matches:
-            '([text^="请打开定位服务"] <<n * +n * [text="取消"]) || ([text="开启消息通知"]  <<n * +n * [text="取消"]) || (TextView[text="系统定位服务已关闭"] < FrameLayout +2 FrameLayout > LinearLayout > Button[text="取消"])',
+            '([text^="请打开定位服务"] <<n * +n * [text="取消"]) || ([text="开启消息通知"]  <<n * +n * [text="取消"]) || (TextView[text="系统定位服务已关闭"] < FrameLayout +2 FrameLayout > LinearLayout > Button[text="取消"]) || (TextView[text*="定位服务"] < FrameLayout + FrameLayout[id="com.jingyao.easybike:id/bottomContainer"] > LinearLayout > Button[text="取消"][clickable=true])',
         },
       ],
     },

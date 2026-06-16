@@ -540,7 +540,7 @@ export default defineGkdApp({
       rules: [
         {
           resetMatch: 'match',
-          actionMaximum: 1,
+          action: 'clickCenter',
           activityIds: 'com.cebbank.mobile.cemb.ui.activity.WebActivity',
           matches:
             'View > @Image[text="noCheckNew"] + [text="我已认真阅读并同意以上全部内容"]',
@@ -554,7 +554,7 @@ export default defineGkdApp({
       rules: [
         {
           resetMatch: 'match',
-          preKeys: [36],
+          action: 'clickCenter',
           activityIds: 'com.cebbank.mobile.cemb.ui.activity.WebActivity',
           matches:
             'View > Image[text="checkNew"] + TextView[text="我已认真阅读并同意以上全部内容"] +2 Button[text="自主购买"]',
@@ -568,9 +568,10 @@ export default defineGkdApp({
       rules: [
         {
           resetMatch: 'match',
-          actionMaximum: 1,
+          action: 'clickCenter',
           activityIds: 'com.cebbank.mobile.cemb.ui.activity.WebActivity',
-          matches: 'EditText < View + View > Button[text="一键输入"]',
+          matches:
+            'EditText[text.length=0] < View + View > Button[text="一键输入"][clickable=true]',
         },
       ],
     },
@@ -582,6 +583,7 @@ export default defineGkdApp({
         {
           resetMatch: 'match',
           preKeys: [38],
+          action: 'clickCenter',
           activityIds: 'com.cebbank.mobile.cemb.ui.activity.WebActivity',
           matches:
             'EditText[text.length>0] < View <n View + View > Button[text="已阅读并确认继续购买"]',
@@ -595,9 +597,26 @@ export default defineGkdApp({
       rules: [
         {
           resetMatch: 'match',
+          action: 'clickCenter',
           activityIds: 'com.cebbank.mobile.cemb.ui.activity.WebActivity',
           matches:
             'View[text*="定投"] < ListView +n View > Button[text="提交"]',
+        },
+      ],
+    },
+    {
+      key: 41,
+      name: '我已阅读并确认继续购买',
+      desc: '260616',
+      rules: [
+        {
+          fastQuery: true,
+          action: 'click',
+          resetMatch: 'match',
+          activityIds:
+            'com.cebbank.mobile.cemb.ui.activity.pdf.PdfRenderHalfActivity',
+          matches:
+            'FrameLayout > FrameLayout > TextView[id="com.cebbank.mobile.cemb:id/tv_button"][text="我已阅读并确认继续购买"][clickable=true]',
         },
       ],
     },
