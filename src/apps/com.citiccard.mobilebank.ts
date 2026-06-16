@@ -201,5 +201,19 @@ export default defineGkdApp({
         },
       ],
     },
+    {
+      key: 15,
+      name: '幸运草清零提醒',
+      desc: '260616',
+      rules: [
+        {
+          actionCd: 0,
+          resetMatch: 'match',
+          activityIds: 'com.citiccard.mobilebank.web.webpage.CommonWebPage',
+          matches:
+            'View > @TextView - View > Image[text="4656869f9eb3431d87476a3e387ca50b"]',
+        },
+      ],
+    },
   ],
 });

@@ -165,5 +165,18 @@ export default defineGkdApp({
         },
       ],
     },
+    {
+      key: 13,
+      name: '连接后广告窗2',
+      desc: '260616',
+      rules: [
+        {
+          resetMatch: 'match',
+          activityIds:
+            'com.sigmob.sdk.base.common.PortraitTransparentAdActivity',
+          matches: 'View > View > View > TextView[id="close_btn"]',
+        },
+      ],
+    },
   ],
 });

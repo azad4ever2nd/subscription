@@ -343,5 +343,19 @@ export default defineGkdApp({
         },
       ],
     },
+    {
+      key: 24,
+      name: '请到广东过端午',
+      desc: '260616',
+      rules: [
+        {
+          resetMatch: 'match',
+          actionCd: 0,
+          activityIds: 'com.sankuai.titans.adapter.mtapp.KNBWebViewActivity',
+          matches:
+            '(View > Image[text="f905330e6eb51af9eb75b55a4370b7c070746"] + View >n Image) || (Image[text="f905330e6eb51af9eb75b55a4370b7c070746"] < View + View > View > View > Image)',
+        },
+      ],
+    },
   ],
 });
