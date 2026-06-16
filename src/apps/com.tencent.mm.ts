@@ -545,17 +545,10 @@ export default defineGkdApp({
     },
     {
       key: 25,
-      name: '验证手机号码，选上次提供的',
-      desc: '260101，D',
+      name: '请到广东过端午',
+      desc: '260616',
       rules: [
         {
-          action: 'clickCenter',
-          matches: [
-            '[text="申请获取并验证你的手机号"] +2 * > @* + [text="上次提供" || text="微信绑定号码"]',
-          ],
-          actionCdKey: 6,
-          actionMaximum: 1,
-          resetMatch: 'match',
           activityIds: [
             'com.tencent.mm.plugin.appbrand.ui.AppBrandUI0',
             'com.tencent.mm.plugin.appbrand.ui.AppBrandUI1',
@@ -568,6 +561,10 @@ export default defineGkdApp({
             'com.tencent.mm.plugin.appbrand.ui.AppBrandUI03',
             'com.tencent.mm.plugin.appbrand.ui.AppBrandUI04',
           ],
+          actionCd: 0,
+          resetMatch: 'match',
+          matches:
+            'View > Image[text="1NZmP5zb7wI"] + @View[clickable=true] > Image[text="1LBYVwKptxS"]',
         },
       ],
     },

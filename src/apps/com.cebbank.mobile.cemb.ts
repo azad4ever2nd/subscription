@@ -554,7 +554,7 @@ export default defineGkdApp({
       rules: [
         {
           resetMatch: 'match',
-          prekeys: [36],
+          preKeys: [36],
           activityIds: 'com.cebbank.mobile.cemb.ui.activity.WebActivity',
           matches:
             'View > Image[text="checkNew"] + TextView[text="我已认真阅读并同意以上全部内容"] +2 Button[text="自主购买"]',
