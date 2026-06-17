@@ -527,15 +527,16 @@ export default defineGkdApp({
     {
       key: 33,
       name: '去分享，微信好友',
-      desc: '260212',
+      desc: '260617',
       rules: [
         {
-          matches: ['[text="分享海报"] + [text="微信好友"]'],
-          actionCdKey: 1,
+          actionCd: 0,
           resetMatch: 'match',
-          activityIds: [
+          action: 'clickCenter',
+          activityIds:
             'cmb.pb.app.h5container.webviewcontainer.PBWebContainerActivity',
-          ],
+          matches:
+            '([text="分享海报"] + [text="微信好友"]) || (View > View > Button[text="分享海报"] + Button[text="微信好友"][clickable=true])',
         },
       ],
     },

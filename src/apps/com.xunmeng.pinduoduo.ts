@@ -295,5 +295,33 @@ export default defineGkdApp({
         },
       ],
     },
+    {
+      key: 22,
+      name: '邀请好友抽福袋，X掉',
+      desc: '260617',
+      rules: [
+        {
+          resetMatch: 'match',
+          action: 'click',
+          activityIds: 'com.xunmeng.pinduoduo.activity.NewPageActivity',
+          matches:
+            'View > @TextView[index=parent.childCount.minus(1)] - View > TextView[text="邀请好友抽福袋"]',
+        },
+      ],
+    },
+    {
+      key: 23,
+      name: '抽到消费福袋奖励，X掉',
+      desc: '260617',
+      rules: [
+        {
+          resetMatch: 'match',
+          action: 'click',
+          activityIds: 'com.xunmeng.pinduoduo.activity.NewPageActivity',
+          matches:
+            '(View > @Image[text="webp"] + View > TextView[text="消费券福袋奖励"]) || (View > @Image[text="webp"] + Image + TextView[text$="后过期"])',
+        },
+      ],
+    },
   ],
 });
