@@ -33,5 +33,19 @@ export default defineGkdApp({
         },
       ],
     },
+    {
+      key: 3,
+      name: '应用内更新权限2，取消',
+      desc: '260621',
+      rules: [
+        {
+          resetMatch: 'match',
+          fastQuery: true,
+          activityIds: 'me.ele.search.XSearchActivity',
+          matches:
+            'ViewGroup > @TextView[vid="buttonDefaultNegative"][clickable=true][text="取消"] + TextView[vid="buttonDefaultPositive"][text="立即设置"] -3 LinearLayout > TextView[vid="title"][text="应用内更新权限"]',
+        },
+      ],
+    },
   ],
 });

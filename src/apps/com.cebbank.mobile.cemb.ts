@@ -600,7 +600,7 @@ export default defineGkdApp({
           action: 'clickCenter',
           activityIds: 'com.cebbank.mobile.cemb.ui.activity.WebActivity',
           matches:
-            'View[text*="定投"] < ListView +n View > Button[text="提交"]',
+            'View[text^="基金定投设置"] < ListView +n View > Button[text="提交"]',
         },
       ],
     },
@@ -617,6 +617,77 @@ export default defineGkdApp({
             'com.cebbank.mobile.cemb.ui.activity.pdf.PdfRenderHalfActivity',
           matches:
             'FrameLayout > FrameLayout > TextView[id="com.cebbank.mobile.cemb:id/tv_button"][text="我已阅读并确认继续购买"][clickable=true]',
+        },
+      ],
+    },
+    {
+      key: 42,
+      name: '终止定投1',
+      desc: '260621',
+      rules: [
+        {
+          action: 'clickCenter',
+          resetMatch: 'match',
+          activityIds: 'com.cebbank.mobile.cemb.ui.activity.WebActivity',
+          matches:
+            'View > View > View > @Button[text="终止定投"] + Button[text="修改"]',
+        },
+      ],
+    },
+    {
+      key: 43,
+      name: '终止定投2',
+      desc: '260621',
+      rules: [
+        {
+          action: 'clickCenter',
+          resetMatch: 'match',
+          activityIds: 'com.cebbank.mobile.cemb.ui.activity.WebActivity',
+          matches:
+            'View > View > View > TextView[text="确定终止该定投计划吗？"] + Button[text="取消"] + Button[text="确定"]',
+        },
+      ],
+    },
+    {
+      key: 44,
+      name: '终止定投3',
+      desc: '260621',
+      rules: [
+        {
+          action: 'clickCenter',
+          resetMatch: 'match',
+          activityIds: 'com.cebbank.mobile.cemb.ui.activity.WebActivity',
+          matches:
+            'TextView[text="定投关闭"] <2 View + View > View > View > Button[text="下一步"]',
+        },
+      ],
+    },
+    {
+      key: 45,
+      name: '终止定投4',
+      desc: '260621',
+      rules: [
+        {
+          action: 'clickCenter',
+          resetMatch: 'match',
+          activityIds: 'com.cebbank.mobile.cemb.ui.activity.WebActivity',
+          matches:
+            'TextView[text="定投关闭"] <2 View + View > View > View > Button[text="提交"]',
+        },
+      ],
+    },
+    {
+      key: 46,
+      name: '终止定投5,返回 ',
+      desc: '260621',
+      rules: [
+        {
+          resetMatch: 'reset',
+          action: 'back',
+          actionMaximum: 1,
+          activityIds: 'com.cebbank.mobile.cemb.ui.activity.WebActivity',
+          matches:
+            'View > View > View + TextView[text="关闭成功"] +3 View > Button[text="查看我的持仓"] + Button[text="看看其他产品"]',
         },
       ],
     },

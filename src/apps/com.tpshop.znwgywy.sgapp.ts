@@ -178,5 +178,32 @@ export default defineGkdApp({
         },
       ],
     },
+    {
+      key: 14,
+      name: '连接弹窗1',
+      desc: '260621',
+      rules: [
+        {
+          resetMatch: 'match',
+          activityIds: 'tool.seagull.v.ui.MainActivity',
+          matches:
+            'FrameLayout > TextView[id="com.zj.zk.allmodules:id/wm_pop_pic_close"][clickable=true][visibleToUser=true]',
+        },
+      ],
+    },
+    {
+      key: 15,
+      name: '连接后广告窗3',
+      desc: '260621',
+      rules: [
+        {
+          resetMatch: 'match',
+          fastQuery: true,
+          activityIds: 'tool.seagull.v.ui.MainActivity',
+          matches:
+            'RelativeLayout > RelativeLayout > TextView[text="X"][clickable=true]',
+        },
+      ],
+    },
   ],
 });

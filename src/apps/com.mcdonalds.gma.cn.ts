@@ -137,13 +137,16 @@ export default defineGkdApp({
     {
       key: 10,
       name: 'app升级啦，暂不升级',
-      desc: '260606',
+      desc: '260621',
       rules: [
         {
           resetMatch: 'match',
           fastQuery: true,
+          action: 'clickCenter',
+          actionCd: 0,
           activityIds: 'com.mcdonalds.gma.cn.activity.MainActivity',
-          matches: '[vid="tv_confirm"] + [vid="tv_cancel"][text="暂不升级"]',
+          matches:
+            'RelativeLayout > TextView[vid="tv_confirm"][text="立即升级"] + TextView[vid="tv_cancel"][text="暂不升级"][clickable=true]',
         },
       ],
     },

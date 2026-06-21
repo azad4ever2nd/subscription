@@ -1328,7 +1328,18 @@ export default defineGkdApp({
         {
           resetMatch: 'match',
           actionMaximum: 5,
-          activityIds: 'com.tencent.mm.plugin.appbrand.ui.AppBrandUI00',
+          activityIds: [
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI0',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI1',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI2',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI3',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI4',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI00',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI01',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI02',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI03',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI04',
+          ],
           matches:
             '[text="1.08元"] + [text="云网点打卡"] <<n * + * > Button[text*="立即领取"]',
         },

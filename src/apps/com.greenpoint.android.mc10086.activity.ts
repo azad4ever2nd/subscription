@@ -104,14 +104,15 @@ export default defineGkdApp({
     },
     {
       key: 8,
-      name: '周三充值弹窗，X掉',
-      desc: '260410',
+      name: '周三活动，弹窗',
+      desc: '260621',
       rules: [
         {
-          fastQuery: true,
           resetMatch: 'match',
+          fastQuery: true,
           activityIds: 'com.mc10086.cmcc.view.tabs.AppTabFragment',
-          matches: '[vid="ad_image"] < * + [vid="close_btn"][desc="关闭"]',
+          matches:
+            'ImageView[vid="ad_image"][desc="广告"] < RelativeLayout + ImageView[vid="close_btn"][desc="关闭"][clickable=true]',
         },
       ],
     },

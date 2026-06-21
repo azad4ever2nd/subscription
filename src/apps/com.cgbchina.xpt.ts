@@ -34,5 +34,19 @@ export default defineGkdApp({
         },
       ],
     },
+    {
+      key: 3,
+      name: '带不再提示的弹窗，X掉',
+      desc: '260621',
+      rules: [
+        {
+          resetMatch: 'match',
+          activityIds:
+            'com.cgb.mobilebank.sit.launcher.module.main.activity.IndexActivity',
+          matches:
+            '@ImageView[clickable=true] + ImageView + ImageView[desc=" 不再提示"]',
+        },
+      ],
+    },
   ],
 });

@@ -7,16 +7,18 @@ export default defineGkdApp({
     {
       key: 1,
       name: '弹窗广告',
-      desc: '260520，添加分期弹窗',
+      desc: '260621，添加分期弹窗',
       rules: [
         {
           resetMatch: 'match',
           fastQuery: true,
+          actionCd: 0,
           activityIds: [
             'com.citiccard.mobilebank.newconfig.appconstruct.TabsAppHomeActivity',
             'com.citiccard.mobilebank..newconfig.appconstruct.TabsAppHomeActivity',
           ],
-          matches: '[vid="dialog"] + [vid="cancelArea"]',
+          matches:
+            '([vid="dialog"] + [vid="cancelArea"]) || (FrameLayout > RelativeLayout > ImageView[vid="dialog"] + ImageView[vid="cancelArea"][clickable=true])',
         },
       ],
     },

@@ -42,47 +42,61 @@ export default defineGkdApp({
     },
     {
       key: 3,
-      name: '0元购',
-      desc: 'D',
+      name: '0元购，立即抢购',
+      desc: '260621',
       rules: [
         {
-          matches: ['[text="￥ 0"] + [text="预估到手价"] + [text="立即抢购"]'],
           resetMatch: 'match',
+          actionCd: 0,
           activityIds: [
+            'com.unionpay.activity.react.UPActivityReactNative',
             'com.unionpay.liteapp.app.UPLiteAppActivity1',
             'com.unionpay.liteapp.app.UPLiteAppActivity2',
+            'com.unionpay.liteapp.app.UPLiteAppActivity3',
+            'com.unionpay.liteapp.app.UPLiteAppActivity4',
           ],
+          matches:
+            'View > TextView[text="￥ 0"] + TextView[text="预估到手价"] + TextView[text="立即抢购"]',
         },
       ],
     },
     {
       key: 4,
       name: '0元购上限',
-      desc: 'D',
+      desc: '260621',
       rules: [
         {
-          action: 'back',
-          matches: [
-            '[text="￥ 0"] + [text="预估到手价"] + [text*="达到限购次数"]',
-          ],
           resetMatch: 'match',
-          activityIds: ['com.unionpay.liteapp.app.UPLiteAppActivity1'],
+          actionCd: 0,
+          activityIds: [
+            'com.unionpay.liteapp.app.UPLiteAppActivity1',
+            'com.unionpay.liteapp.app.UPLiteAppActivity2',
+            'com.unionpay.liteapp.app.UPLiteAppActivity3',
+            'com.unionpay.liteapp.app.UPLiteAppActivity4',
+          ],
+          matches:
+            '(View > TextView[text="￥ 0"] + TextView[text="预估到手价"] + TextView[text^="达到限购次数"])',
+          action: 'back',
         },
       ],
     },
     {
       key: 5,
       name: '0元购已抢光',
-      desc: 'D',
+      desc: '260621',
       rules: [
         {
-          action: 'back',
-          matches: ['[text="￥ 0"] + [text="预估到手价"] + [text="已抢光"]'],
           resetMatch: 'match',
+          actionCd: 0,
           activityIds: [
             'com.unionpay.liteapp.app.UPLiteAppActivity1',
             'com.unionpay.liteapp.app.UPLiteAppActivity2',
+            'com.unionpay.liteapp.app.UPLiteAppActivity3',
+            'com.unionpay.liteapp.app.UPLiteAppActivity4',
           ],
+          matches:
+            '(View > TextView[text="￥ 0"] + TextView[text="预估到手价"] + TextView[text^="已抢光"])',
+          action: 'back',
         },
       ],
     },
@@ -105,17 +119,19 @@ export default defineGkdApp({
     {
       key: 7,
       name: '幸运扭蛋机 开心收下',
-      desc: '260220，修复积点BUG，text$="到账后7*24小时内使用有效"',
+      desc: '260621，修复积点BUG，text$="到账后7*24小时内使用有效"',
       rules: [
         {
-          matches: [
-            '([text="请前往“会员中心”查看"] -n [text="查看积点攻略"] - [text*="立减券" || text="积点"] <n * + *) || (@* - * > [text="立减券"] + [text="去查看"] +n [text$="使用有效"]) || (@TextView - * > [text="积点"] + [text="去查看"] + [text="请前往“会员中心”查看"]) || ([text*="立减券" || text="积点"] +n [text="请前往“会员中心”查看"] + *) || ([text*="立减券" || text="积点"] + [text="查看积点攻略"] +n [text="请前往“会员中心”查看"] <n * + *) || ([text="去查看"] +n [text$="使用有效"] + *) || ([text*="立减券" || text="积点"] + [text="开心收下"]) || ([text="浦发立减券"] + [text="去查看"] <n * + TextView) || ([text="去查看"] + [text="票券有效期7*24小时"] + View)',
-          ],
           resetMatch: 'match',
           activityIds: [
-            'com.unionpay.liteapp.app.UPLiteAppActivity2',
+            'com.unionpay.activity.react.UPActivityReactNative',
             'com.unionpay.liteapp.app.UPLiteAppActivity1',
+            'com.unionpay.liteapp.app.UPLiteAppActivity2',
+            'com.unionpay.liteapp.app.UPLiteAppActivity3',
+            'com.unionpay.liteapp.app.UPLiteAppActivity4',
           ],
+          matches:
+            '([text="请前往“会员中心”查看"] -n [text="查看积点攻略"] - [text*="立减券" || text="积点"] <n * + *) || (@* - * > [text="立减券"] + [text="去查看"] +n [text$="使用有效"]) || (@TextView - * > [text="积点"] + [text="去查看"] + [text="请前往“会员中心”查看"]) || ([text*="立减券" || text="积点"] +n [text="请前往“会员中心”查看"] + *) || ([text*="立减券" || text="积点"] + [text="查看积点攻略"] +n [text="请前往“会员中心”查看"] <n * + *) || (TextView[text="去查看"] +n TextView[text$="使用有效"] + View) || ([text*="立减券" || text="积点"] + [text="开心收下"]) || ([text="浦发立减券"] + [text="去查看"] <n * + TextView) || ([text="去查看"] + [text="票券有效期7*24小时"] + View)',
         },
       ],
     },
@@ -125,46 +141,52 @@ export default defineGkdApp({
       desc: '',
       rules: [
         {
-          matches: ['[text="签到成功"] + TextView'],
           resetMatch: 'match',
           activityIds: [
             'com.unionpay.liteapp.app.UPLiteAppActivity1',
             'com.unionpay.liteapp.app.UPLiteAppActivity2',
+            'com.unionpay.liteapp.app.UPLiteAppActivity3',
+            'com.unionpay.liteapp.app.UPLiteAppActivity4',
           ],
+          matches: '[text="签到成功"] + TextView',
         },
       ],
     },
     {
       key: 9,
       name: '暂不领取权益',
-      desc: '双标卡权益,D',
+      desc: '双标卡权益',
       rules: [
         {
-          matches: ['@View - View [text="立即兑换"]'],
           actionMaximum: 2,
           resetMatch: 'match',
           activityIds: [
             'com.unionpay.liteapp.app.UPLiteAppActivity1',
             'com.unionpay.liteapp.app.UPLiteAppActivity2',
+            'com.unionpay.liteapp.app.UPLiteAppActivity3',
+            'com.unionpay.liteapp.app.UPLiteAppActivity4',
           ],
+          matches: '@View - View [text="立即兑换"]',
         },
       ],
     },
     {
       key: 10,
       name: '0元购上限+抢光',
-      desc: 'D',
+      desc: '260621',
       rules: [
         {
-          action: 'back',
-          matches: [
-            '([text="￥ 0"] + [text="预估到手价"] + [text*="达到限购次数"]) || ([text="￥ 0"] + [text="预估到手价"] + [text="已抢光"])',
-          ],
           resetMatch: 'match',
+          actionCd: 0,
           activityIds: [
             'com.unionpay.liteapp.app.UPLiteAppActivity1',
             'com.unionpay.liteapp.app.UPLiteAppActivity2',
+            'com.unionpay.liteapp.app.UPLiteAppActivity3',
+            'com.unionpay.liteapp.app.UPLiteAppActivity4',
           ],
+          matches:
+            '(View > TextView[text="￥ 0"] + TextView[text="预估到手价"] + TextView[text^="达到限购次数"]) || (View > TextView[text="￥ 0"] + TextView[text="预估到手价"] + TextView[text^="已抢光"])',
+          action: 'back',
         },
       ],
     },

@@ -97,7 +97,7 @@ export default defineGkdApp({
           resetMatch: 'match',
           activityIds: 'ctrip.android.view.h5v2.view.H5Container',
           matches:
-            'View > @Image + View + View > [text="继续退出"] + [text="去淘宝闪购"]',
+            'View > Image + View + View > @[text="继续退出"] + [text="去淘宝闪购"]',
         },
       ],
     },
