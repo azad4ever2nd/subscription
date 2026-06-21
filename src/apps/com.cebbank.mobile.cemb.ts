@@ -682,7 +682,7 @@ export default defineGkdApp({
       desc: '260621',
       rules: [
         {
-          resetMatch: 'reset',
+          resetMatch: 'activity',
           action: 'back',
           actionMaximum: 1,
           activityIds: 'com.cebbank.mobile.cemb.ui.activity.WebActivity',
