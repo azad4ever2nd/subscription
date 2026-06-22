@@ -6,25 +6,132 @@ export default defineGkdApp({
   groups: [
     {
       key: 1,
-      name: '开启推送通知',
-      desc: '260308，添加升级提示',
+      name: '每日分享指定视频至微信，立即分享',
+      desc: '260621',
       rules: [
         {
-          fastQuery: true,
-          resetMatch: 'match',
-          matches: [
-            '([vid="base_dialog_bg"] > [vid="base_dialog_left_btn"][text="以后再说" || text="稍后再说"]) || ([vid="base_dialog_title"][text="开启推送通知"] +n [vid="base_dialog_left_btn"][text="以后再说" || text="稍后再说"])',
-          ],
-          activityIds: [
-            'com.cmcc.cmvideo.main.application.CompatibleMainActivity',
-          ],
+          resetMatch: 'app',
+          actionMaximum: 1,
+          activityIds: 'com.quickjs.android.example.RNFragmentActivity',
+          matches: 'View > View > View > Image[text="1O7F90FG42JLK"]',
         },
       ],
     },
     {
       key: 2,
-      name: '弹窗',
-      desc: '260511',
+      name: '播放界面，右下角分享按钮',
+      desc: '260621',
+      rules: [
+        {
+          resetMatch: 'app',
+          fastQuery: true,
+          actionMaximum: 1,
+          preKeys: [1],
+          activityIds: 'com.cmvideo.capability.vod.VodActivity',
+          matches:
+            'FrameLayout > ViewGroup > ImageView[vid="iv_share_iv"][clickable=true]',
+        },
+      ],
+    },
+    {
+      key: 3,
+      name: '分享界面，分享到 微信好友',
+      desc: '260621',
+      rules: [
+        {
+          resetMatch: 'app',
+          fastQuery: true,
+          actionMaximum: 1,
+          preKeys: [2],
+          activityIds: 'com.cmvideo.capability.vod.VodActivity',
+          matches:
+            'ViewGroup > GridView > @LinearLayout[clickable=true][visibleToUser=true] > TextView[text="微信好友"]',
+        },
+      ],
+    },
+    {
+      key: 4,
+      name: '分享完成，返回到福利中心',
+      desc: '260621',
+      rules: [
+        {
+          resetMatch: 'app',
+          actionMaximum: 1,
+          actionCd: 0,
+          fastQuery: true,
+          preKeys: [3],
+          activityIds: 'com.cmvideo.capability.vod.VodActivity',
+          matches:
+            'LinearLayout > ViewGroup > ImageView[vid="sdv_static_pocket_pic"][clickable=true]',
+        },
+      ],
+    },
+    {
+      key: 5,
+      name: '领2GB日流量，马上领取',
+      desc: '260621',
+      rules: [
+        {
+          resetMatch: 'app',
+          actionMaximum: 1,
+          preKeys: [4],
+          activityIds: 'com.quickjs.android.example.RNFragmentActivity',
+          matches: 'View > View > View > Image[text="1O7F90FG6NVJ7"]',
+        },
+      ],
+    },
+    {
+      key: 6,
+      name: '获取验证码',
+      desc: '260622',
+      rules: [
+        {
+          actionMaximum: 1,
+          resetMatch: 'match',
+          preKeys: [5],
+          activityIds: [
+            'com.quickjs.android.example.RNFragmentActivity',
+            'com.cmvideo.capability.remote_web.WebProcessActivity',
+          ],
+          matches:
+            'View[id="verfyDiv"] > @View[id="smsBtn"][clickable=true][desc="获取验证码"] > TextView[text="获取验证码"]',
+        },
+      ],
+    },
+    {
+      key: 7,
+      name: '恭喜获得2GB通用流量，好的',
+      desc: '260622，添加 IDS',
+      rules: [
+        {
+          resetMatch: 'match',
+          activityIds: [
+            'com.quickjs.android.example.RNFragmentActivity',
+            'com.cmvideo.capability.remote_web.WebProcessActivity',
+          ],
+          matches:
+            '(@View > View > View > Image[text="1O6KI5PKEDG36" || text="1O6KI5PKO6N57"])',
+        },
+      ],
+    },
+    {
+      key: 8,
+      name: '恭喜打卡成功',
+      desc: '260622',
+      rules: [
+        {
+          resetMatch: 'match',
+          action: 'clickCenter',
+          activityIds: 'com.cmvideo.capability.remote_web.WebProcessActivity',
+          matches:
+            '(View > View > View > View > View > View[id="cc54b71dca3545fb95c3de42954fa8e2"])',
+        },
+      ],
+    },
+    {
+      key: 9,
+      name: '开启推送通知，以后再说',
+      desc: '260622',
       rules: [
         {
           resetMatch: 'match',
@@ -32,170 +139,22 @@ export default defineGkdApp({
           activityIds:
             'com.cmcc.cmvideo.main.application.CompatibleMainActivity',
           matches:
-            '(@[vid="iv_big_close"] + [vid="sdv_big_pic"]) || ([vid="iv_close_single"]) || ([vid="close_bg_single"] > [vid="iv_close_single"])',
-        },
-      ],
-    },
-    {
-      key: 3,
-      name: '右下角浮窗',
-      desc: '',
-      rules: [
-        {
-          fastQuery: true,
-          resetMatch: 'match',
-          matches: [
-            '[vid="sdv_right_bottom_pic"] + [vid="iv_right_bottom_close"]',
-          ],
-          activityIds: [
-            'com.cmcc.cmvideo.main.application.CompatibleMainActivity',
-          ],
-        },
-      ],
-    },
-    {
-      key: 4,
-      name: '更新协议提示',
-      desc: '251125,更新协议',
-      rules: [
-        {
-          fastQuery: true,
-          resetMatch: 'match',
-          matches: [
-            '[vid="tv_title"][text="更新提示"] +4 [vid="btn_ok"][text="同意并继续"]',
-          ],
-          activityIds: [
-            'com.cmcc.cmvideo.main.application.CompatibleMainActivity',
-          ],
-        },
-      ],
-    },
-    {
-      key: 5,
-      name: '点击分享',
-      desc: '260531，因为clickable失灵',
-      rules: [
-        {
-          resetMatch: 'app',
-          actionMaximum: 1,
-          activityIds: [
-            'com.cmvideo.capability.remote_web.WebProcessActivity',
-            'com.quickjs.android.example.RNFragmentActivity',
-          ],
-          matches:
-            '(@View >3 [text="1O7F90FG42JLK"]) || (@View[clickable=true] [text="1O7F90FG42JLK"])',
-        },
-      ],
-    },
-    {
-      key: 6,
-      name: '马上领取2G流量',
-      desc: '260531',
-      rules: [
-        {
-          resetMatch: 'app',
-          preKeys: [12],
-          actionMaximum: 1,
-          activityIds: [
-            'com.cmvideo.capability.remote_web.WebProcessActivity',
-            'com.quickjs.android.example.RNFragmentActivity',
-          ],
-          matches:
-            '(@View >3 [text="1O7F90FG6NVJ7"]) || (@View[clickable=true] [text="1O7F90FG6NVJ7"])',
-        },
-      ],
-    },
-    {
-      key: 7,
-      name: '获取验证码',
-      desc: '260223 [id="verfyInput"] + * > [text="获取验证码"]',
-      rules: [
-        {
-          actionMaximum: 1,
-          resetMatch: 'app',
-          preKeys: [6],
-          matches: ['[id="verfyInput"] + [id="smsBtn"]'],
-          activityIds: [
-            'com.quickjs.android.example.RNFragmentActivity',
-            'com.cmvideo.capability.remote_web.WebProcessActivity',
-          ],
-        },
-      ],
-    },
-    {
-      key: 8,
-      name: '好的',
-      desc: '260531，添加 IDS',
-      rules: [
-        {
-          resetMatch: 'match',
-          activityIds: [
-            'com.quickjs.android.example.RNFragmentActivity',
-            'com.cmvideo.capability.remote_web.WebProcessActivity',
-          ],
-          matches:
-            '(@View >3 [text="1O6KI5PKEDG36" || text="1O6KI5PKO6N57"]) || (@View[clickable=true] >n [text="1O6KI5PKEDG36" || text="1O6KI5PKO6N57"])',
-        },
-      ],
-    },
-    {
-      key: 9,
-      name: '打卡成功',
-      desc: '260610',
-      rules: [
-        {
-          resetMatch: 'match',
-          action: 'clickCenter',
-          activityIds: 'com.cmvideo.capability.remote_web.WebProcessActivity',
-          matches:
-            '(View > View > View > View > View > [id="cc54b71dca3545fb95c3de42954fa8e2"]) || (@View[clickable=true] [id="cc54b71dca3545fb95c3de42954fa8e2" || text="1O6KI5PKO6N57" || text="1O6L4093C9DTM"]) || ([id="3fae2c0612c44bcba72669a0b4108f3d"] >3 View)',
+            'ViewGroup[vid="base_dialog_bg"] > @TextView[vid="base_dialog_left_btn"][text="以后再说"] + TextView[vid="base_dialog_right_btn"][text="好的"]',
         },
       ],
     },
     {
       key: 10,
-      name: '在视频界面中，右下角分享按钮',
-      desc: '260308',
+      name: '广告弹窗',
+      desc: '260622',
       rules: [
         {
-          actionMaximum: 1,
+          resetMatch: 'match',
           fastQuery: true,
-          resetMatch: 'app',
-          preKeys: [5],
-          matches: ['[vid="iv_share_iv"]'],
-          activityIds: ['com.cmvideo.capability.vod.VodActivity'],
-        },
-      ],
-    },
-    {
-      key: 11,
-      name: '分享到微信',
-      desc: '260511',
-      rules: [
-        {
-          resetMatch: 'app',
-          preKeys: [10],
-          fastQuery: true,
-          actionMaximum: 1,
-          activityIds: 'com.cmvideo.capability.vod.VodActivity',
-          matches: '@[vid="share_item_contain"] [text="微信好友"]',
-        },
-      ],
-    },
-    {
-      key: 12,
-      name: '福利中心',
-      desc: '',
-      rules: [
-        {
-          actionMaximum: 1,
-          resetMatch: 'app',
-          fastQuery: true,
-          preKeys: [11],
-          matches: [
-            '@[vid="sdv_static_pocket_pic"] + [vid="mgtask_warename_close"]',
-          ],
-          activityIds: ['com.cmvideo.capability.vod.VodActivity'],
+          activityIds:
+            'com.cmcc.cmvideo.main.application.CompatibleMainActivity',
+          matches:
+            'FrameLayout > ViewGroup > FrameLayout[vid="close_bg_single"] > ImageView[vid="iv_close_single"][clickable=true][visibleToUser=true]',
         },
       ],
     },

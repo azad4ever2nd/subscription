@@ -100,6 +100,7 @@ export default defineGkdApp({
         },
       ],
     },
+
     {
       key: 6,
       name: '幸运扭蛋机，点击抽奖',
@@ -112,6 +113,8 @@ export default defineGkdApp({
           activityIds: [
             'com.unionpay.liteapp.app.UPLiteAppActivity1',
             'com.unionpay.liteapp.app.UPLiteAppActivity2',
+            'com.unionpay.liteapp.app.UPLiteAppActivity3',
+            'com.unionpay.liteapp.app.UPLiteAppActivity4',
           ],
         },
       ],

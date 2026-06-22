@@ -691,5 +691,19 @@ export default defineGkdApp({
         },
       ],
     },
+    {
+      key: 47,
+      name: '恭喜获得微信红包，先复制',
+      desc: '260622',
+      rules: [
+        {
+          resetMatch: 'match',
+          activityIds:
+            'com.cebbank.mobile.cemb.ui.activity.mobilePayment.MobilePaymentWebActivity',
+          matches:
+            'TextView[text*="光彩礼遇社" || text^="兑换路径"] - View > TextView[text="兑奖码:"] + TextView[text.length>0] + TextView[text.length=0]',
+        },
+      ],
+    },
   ],
 });
