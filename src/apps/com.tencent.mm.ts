@@ -446,10 +446,9 @@ export default defineGkdApp({
     {
       key: 21,
       name: '光大小程序弹窗',
-      desc: '260427',
+      desc: '260624',
       rules: [
         {
-          matches: ['[text="今日不再提醒"] + [text="前往领取"] + *'],
           resetMatch: 'match',
           actionCd: 0,
           activityIds: [
@@ -464,6 +463,8 @@ export default defineGkdApp({
             'com.tencent.mm.plugin.appbrand.ui.AppBrandUI03',
             'com.tencent.mm.plugin.appbrand.ui.AppBrandUI04',
           ],
+          matches:
+            'View > View > View >  Image + TextView[text="今日不再提醒"] + TextView[text="前往领取"] + Image',
         },
       ],
     },

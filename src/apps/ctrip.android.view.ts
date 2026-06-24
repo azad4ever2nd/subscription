@@ -104,12 +104,12 @@ export default defineGkdApp({
     {
       key: 8,
       name: '升级，开心收下',
-      desc: '260610',
+      desc: '260624',
       rules: [
         {
           resetMatch: 'match',
           activityIds: 'ctrip.android.view.h5v2.view.H5Container',
-          matches: 'View > View > View > View > TextView[text="开心收下"]',
+          matches: 'View > View > View > TextView[text="开心收下"]',
         },
       ],
     },

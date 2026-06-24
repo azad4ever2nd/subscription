@@ -146,11 +146,12 @@ export default defineGkdApp({
     {
       key: 10,
       name: '广告弹窗',
-      desc: '260622',
+      desc: '260624',
       rules: [
         {
           resetMatch: 'match',
           fastQuery: true,
+          action: 'clickCenter',
           activityIds:
             'com.cmcc.cmvideo.main.application.CompatibleMainActivity',
           matches:

@@ -494,7 +494,7 @@ export default defineGkdApp({
     {
       key: 31,
       name: '抽奖任务页面，加自选任务',
-      desc: '260606，简化',
+      desc: '260624，简化',
       rules: [
         {
           resetMatch: 'match',
@@ -503,7 +503,7 @@ export default defineGkdApp({
           activityIds:
             'cmb.pb.app.h5container.webviewcontainer.PBWebContainerActivity',
           matches:
-            '(View > Button[text="加自选"][visibleToUser=true]) || (View > Button[text="加自选"][clickable=true][visibleToUser=true])',
+            '(View > Button[text="加自选"][visibleToUser=true]) || (View > View > View > Button[text="加自选"][clickable=true][visibleToUser=true]) || (WebView > View > View > View > Button[text="加自选"][clickable=true][visibleToUser=true])',
         },
       ],
     },

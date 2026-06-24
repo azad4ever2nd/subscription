@@ -205,5 +205,18 @@ export default defineGkdApp({
         },
       ],
     },
+    {
+      key: 16,
+      name: '签到页面广告弹窗，X掉',
+      desc: '260624',
+      rules: [
+        {
+          resetMatch: 'match',
+          activityIds: 'tool.seagull.v.ui.MainActivity',
+          matches:
+            'TextView[text="签到"] + FrameLayout > FrameLayout > FrameLayout > FrameLayout > FrameLayout > LinearLayout +2 ImageView - FrameLayout[childCount=1] > View',
+        },
+      ],
+    },
   ],
 });

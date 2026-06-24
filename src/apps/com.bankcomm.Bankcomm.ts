@@ -510,5 +510,46 @@ export default defineGkdApp({
         },
       ],
     },
+    {
+      key: 33,
+      name: '直播间任务，去完成',
+      desc: '260624',
+      rules: [
+        {
+          resetMatch: 'match',
+          actionMaximum: 1,
+          activityIds: 'com.bankcomm.module.biz.webcontainer.BCMHtml5Activity',
+          matches:
+            'WebView > View > View > View > View > TextView[text="1次抽奖机会"] + View > Image[text="去完成"]',
+        },
+      ],
+    },
+    {
+      key: 34,
+      name: '直播间任务完成，立即领取',
+      desc: '260624',
+      rules: [
+        {
+          resetMatch: 'match',
+          actionMaximum: 1,
+          activityIds: 'com.bankcomm.module.biz.webcontainer.BCMHtml5Activity',
+          matches:
+            'WebView > View > View > View > View > TextView[text="1次抽奖机会"] + View > Image[text="去领奖"]',
+        },
+      ],
+    },
+    {
+      key: 35,
+      name: '直播间任务完成，抽奖弹窗',
+      desc: '260624',
+      rules: [
+        {
+          resetMatch: 'match',
+          activityIds: 'com.bankcomm.module.biz.webcontainer.BCMHtml5Activity',
+          matches:
+            'View > View > View > View[childCount=4] > TextView[text="恭喜获得"] + TextView[text="1次抽奖机会"] + Image + Image',
+        },
+      ],
+    },
   ],
 });

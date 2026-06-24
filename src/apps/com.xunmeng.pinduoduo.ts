@@ -312,14 +312,14 @@ export default defineGkdApp({
     {
       key: 23,
       name: '抽到消费福袋奖励，X掉',
-      desc: '260617',
+      desc: '260624',
       rules: [
         {
           resetMatch: 'match',
           action: 'click',
           activityIds: 'com.xunmeng.pinduoduo.activity.NewPageActivity',
           matches:
-            '(View > @Image[text="webp"] + View > TextView[text="消费券福袋奖励"]) || (View > @Image[text="webp"] + Image + TextView[text$="后过期"])',
+            '(View > View > View > @Image[text="webp"] + View > View > View > View > TextView[text*="折最高减"]) || (View > @Image[text="webp"] + View > TextView[text="消费券福袋奖励"]) || (View > @Image[text="webp"] + Image + TextView[text$="后过期"])',
         },
       ],
     },
