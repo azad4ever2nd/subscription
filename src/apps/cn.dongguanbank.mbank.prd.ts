@@ -57,5 +57,33 @@ export default defineGkdApp({
         },
       ],
     },
+    {
+      key: 5,
+      name: '周四秒杀活动，立即兑换',
+      desc: '260625',
+      rules: [
+        {
+          resetMatch: 'match',
+          action: 'clickCenter',
+          activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
+          matches:
+            'WebView > View > View > View > View > View > Button[text="立即兑换"][clickable=true]',
+        },
+      ],
+    },
+    {
+      key: 6,
+      name: '周四秒杀活动尚未开始，确认',
+      desc: '260625',
+      rules: [
+        {
+          resetMatch: 'match',
+          action: 'clickCenter',
+          activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
+          matches:
+            'View > TextView[text="活动尚未开始\\n"] + View > Button[text=" 确认"][clickable=true]',
+        },
+      ],
+    },
   ],
 });

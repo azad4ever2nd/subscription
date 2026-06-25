@@ -141,8 +141,8 @@ export default defineGkdApp({
     },
     {
       key: 11,
-      name: '服务器列表广告',
-      desc: '260615',
+      name: '服务器列表广告1',
+      desc: '260625',
       rules: [
         {
           resetMatch: 'match',
@@ -215,6 +215,32 @@ export default defineGkdApp({
           activityIds: 'tool.seagull.v.ui.MainActivity',
           matches:
             'TextView[text="签到"] + FrameLayout > FrameLayout > FrameLayout > FrameLayout > FrameLayout > LinearLayout +2 ImageView - FrameLayout[childCount=1] > View',
+        },
+      ],
+    },
+    {
+      key: 17,
+      name: '连接页面广告弹窗',
+      desc: '260625',
+      rules: [
+        {
+          resetMatch: 'match',
+          activityIds: 'tool.seagull.v.ui.MainActivity',
+          matches:
+            'ImageView[vid="vpnSwitchButton"][desc="连接"] + FrameLayout + ScrollView > FrameLayout > FrameLayout > FrameLayout > FrameLayout > FrameLayout > FrameLayout[childCount=1] > View',
+        },
+      ],
+    },
+    {
+      key: 18,
+      name: '服务器列表广告2',
+      desc: '260625',
+      rules: [
+        {
+          resetMatch: 'match',
+          activityIds: 'tool.seagull.v.ui.MainActivity',
+          matches:
+            'FrameLayout[vid="server_list_banner_ad"] > RelativeLayout > FrameLayout > RelativeLayout > RelativeLayout > ImageView[clickable=true]',
         },
       ],
     },
