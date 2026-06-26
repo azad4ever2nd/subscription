@@ -159,18 +159,15 @@ export default defineGkdApp({
     {
       key: 10,
       name: '领券中心，周五12点云网券',
-      desc: '260605',
+      desc: '260626',
       rules: [
         {
-          matches: [
-            'Image[text="ACIM_20260602000124_20260602112439861"] <<n View + View >4 Image[text="立即领取"]',
-          ],
+          resetMatch: 'match',
           actionCd: 0,
           actionMaximum: 1,
-          resetMatch: 'match',
-          activityIds: [
-            'com.bankcomm.module.biz.webcontainer.BCMHtml5Activity',
-          ],
+          activityIds: 'com.bankcomm.module.biz.webcontainer.BCMHtml5Activity',
+          matches:
+            'Image[text="ACIM_20260611000178_20260611152611360"] < View < View < View + View > View > View > View > Image[text="立即领取"]',
         },
       ],
     },

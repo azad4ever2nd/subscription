@@ -136,7 +136,7 @@ export default defineGkdApp({
     {
       key: 10,
       name: '关闭弹窗',
-      desc: '251130',
+      desc: '251130，D',
       rules: [
         {
           matches: ['[text="关闭弹窗"]'],
@@ -283,15 +283,15 @@ export default defineGkdApp({
     },
     {
       key: 21,
-      name: '下单成功，X掉',
-      desc: '260615',
+      name: '下单成功弹窗，X掉',
+      desc: '260626',
       rules: [
         {
           resetMatch: 'match',
           action: 'clickCenter',
           activityIds: 'com.xunmeng.pinduoduo.activity.NewPageMaskActivity',
           matches:
-            'WebView > View > View > View > @Button[text="关闭弹窗"] +n Button[text^="继续逛逛"]',
+            '(WebView > WebView > View > View > View > Button[text="关闭弹窗"]) || (WebView > WebView > View > View > View > Button[text="关闭弹窗"][clickable=true])',
         },
       ],
     },

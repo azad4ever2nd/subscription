@@ -22,15 +22,14 @@ export default defineGkdApp({
     {
       key: 2,
       name: '黑五鸡蛋',
-      desc: '260116,页面变动，暂时不加sku',
+      desc: '260626，需要注意每期标题和价格',
       rules: [
         {
-          matches: [
-            '([text^="券后¥4.90"] <<n * -n [text*="15枚" && text*="蛋"] +n [text*="领券抢"]) || ([text*="15枚" && text*="蛋"] +n [text^="券后¥4.90"] +n [text*="领券抢"]) || ([text*="15枚" && text*="蛋"] +n [text^="券后¥4.90"] +n * > [text*="领券抢"]) || ([text*="15枚" && text*="蛋"] + [text^="券后¥4.90"] <n * + [text*="领券抢"]) || ([text*="15枚" && text*="蛋"] +n @[text*="领券抢"] + * > [text^="券后¥4.90"])',
-          ],
-          actionCd: 0,
           resetMatch: 'match',
-          activityIds: ['com.jd.lib.ttt.page.TTTMultiPageActivity'],
+          actionCd: 0,
+          activityIds: 'com.jd.lib.ttt.page.TTTMultiPageActivity',
+          matches:
+            'TextView[text^="券后¥4.90"] - TextView[text="15枚鲜蛋"] - TextView < View + TextView[text="领券抢"][clickable=true]',
         },
       ],
     },
@@ -150,15 +149,14 @@ export default defineGkdApp({
     {
       key: 11,
       name: '黑五纸巾',
-      desc: '260306,D,页面变动，暂时不加sku，([text^="券后¥"] - [text*="纸巾"] <<n * + [text="领券抢"]) ||',
+      desc: '260626，需要注意每期标题和价格，D',
       rules: [
         {
-          matches: [
-            '([text^="券后¥5.90"] <<n * -n [text*="12卷" && text*="纸"] +n [text*="领券抢"]) || ([text*="12卷" && text*="纸"] +n [text^="券后¥5.90"] +n [text*="领券抢"]) || ([text*="12卷" && text*="纸"] +n [text^="券后¥5.90"] +n * > [text*="领券抢"]) || ([text*="12卷" && text*="纸"] + [text^="券后¥5.90"] <n * + [text*="领券抢"]) || ([text*="12卷" && text*="纸"] +n @[text*="领券抢"] + * > [text^="券后¥5.90"])',
-          ],
-          actionCd: 0,
           resetMatch: 'match',
-          activityIds: ['com.jd.lib.ttt.page.TTTMultiPageActivity'],
+          actionCd: 0,
+          activityIds: 'com.jd.lib.ttt.page.TTTMultiPageActivity',
+          matches:
+            'TextView[text^="券后¥3.90"] - TextView[text="12卷纸"] - TextView < View + TextView[text="领券抢"][clickable=true]',
         },
       ],
     },

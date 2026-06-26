@@ -246,35 +246,8 @@ export default defineGkdApp({
     },
     {
       key: 13,
-      name: '深工',
-      desc: '251117,添加活动抽奖',
-      rules: [
-        {
-          matches: [
-            '(@* +2 [text^="恭喜你完成每日登录"] +2 [text="查看积分"]) || ([text="恭喜你"] + [text="抽中了"] +3 [text="去查看"] + * > *)',
-          ],
-          actionCd: 0,
-          actionMaximum: 3,
-          resetMatch: 'match',
-          activityIds: [
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI0',
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI1',
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI2',
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI3',
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI4',
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI00',
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI01',
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI02',
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI03',
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI04',
-          ],
-        },
-      ],
-    },
-    {
-      key: 14,
-      name: '深工抢哈罗',
-      desc: '260503，集中三步于一条，立即抢购>确认支付>人数过多，不局限于哈罗',
+      name: '深工积分兑换，立即抢购',
+      desc: '260626',
       rules: [
         {
           resetMatch: 'match',
@@ -292,20 +265,19 @@ export default defineGkdApp({
             'com.tencent.mm.plugin.appbrand.ui.AppBrandUI04',
           ],
           matches:
-            '([text^="抢购成功消耗" && text$="积分"] +n [text="立即抢购"]) || ([text="总计：¥0"] + [text="确认支付"]) || ([text="访问人数过多，请稍后再试"] + [text*="我知道了"])',
+            'WebView > View > View > TextView[text="抢购成功消耗1000积分"] + TextView[text="抢购不成功不消耗积分"] + TextView[text="立即抢购"]',
         },
       ],
     },
     {
-      key: 15,
-      name: '深工，访问人数过多,我知道了',
-      desc: '251212',
+      key: 14,
+      name: '深工积分兑换，确认支付',
+      desc: '260626',
       rules: [
         {
-          preKeys: [14],
-          matches: ['([text="访问人数过多，请稍后再试"] + [text*="我知道了"])'],
-          actionCdKey: 6,
           resetMatch: 'match',
+          actionCdKey: 6,
+          order: -1,
           activityIds: [
             'com.tencent.mm.plugin.appbrand.ui.AppBrandUI0',
             'com.tencent.mm.plugin.appbrand.ui.AppBrandUI1',
@@ -318,6 +290,34 @@ export default defineGkdApp({
             'com.tencent.mm.plugin.appbrand.ui.AppBrandUI03',
             'com.tencent.mm.plugin.appbrand.ui.AppBrandUI04',
           ],
+          matches:
+            'WebView > View > TextView[text="总计：¥0"] + TextView[text="确认支付"]',
+        },
+      ],
+    },
+    {
+      key: 15,
+      name: '深工积分兑换，人数过多，我知道了',
+      desc: '260626',
+      rules: [
+        {
+          resetMatch: 'match',
+          actionCdKey: 6,
+          order: -2,
+          activityIds: [
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI0',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI1',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI2',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI3',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI4',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI00',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI01',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI02',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI03',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI04',
+          ],
+          matches:
+            'WebView > View > View > TextView[text="访问人数过多，请稍后再试"] + TextView[text="我知道了"]',
         },
       ],
     },
