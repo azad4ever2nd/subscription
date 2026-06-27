@@ -104,19 +104,15 @@ export default defineGkdApp({
     {
       key: 7,
       name: '月卡弹窗',
-      desc: '260323，添加IDS，哈罗快送跑腿弹窗',
+      desc: '260627，添加车主福利弹窗，IDS，哈罗快送跑腿弹窗',
       rules: [
         {
-          matches: [
-            '([vid="hbDialogLayout"] +n [vid="actionDialogClose"]) || ([vid="creativeContainer"] + [vid="actionDialogClose"])',
-          ],
-          actionCd: 0,
-          fastQuery: true,
           resetMatch: 'match',
-          activityIds: [
-            'com.hellobike.atlas.business.portal.PortalActivity',
-            'com.hellobike.flutter.platform.android.flutterboost.FlutterHostFragmentActivity',
-          ],
+          fastQuery: true,
+          actionCd: 0,
+          activityIds: 'com.hellobike.atlas.business.portal.PortalActivity',
+          matches:
+            '([vid="hbDialogLayout"] +n [vid="actionDialogClose"]) || ([vid="creativeContainer"] + [vid="actionDialogClose"]) || (FrameLayout > LinearLayout > LinearLayout[vid="hbDialogLayout"] + View + ImageView[vid="actionDialogClose"])',
         },
       ],
     },

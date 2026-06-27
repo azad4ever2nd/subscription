@@ -1181,15 +1181,26 @@ export default defineGkdApp({
     },
     {
       key: 58,
-      name: '深工弹窗，X掉',
-      desc: '260427',
+      name: '深工登陆弹窗，X掉',
+      desc: '260627',
       rules: [
         {
           resetMatch: 'match',
-          actionCd: 300,
-          activityIds: 'com.tencent.mm.plugin.appbrand.ui.AppBrandUI00',
+          actionCd: 100,
+          activityIds: [
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI0',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI1',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI2',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI3',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI4',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI00',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI01',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI02',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI03',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI04',
+          ],
           matches:
-            '[text="更多精彩"] + @* +n [text="女职工服务"] +n [text="阵地服务"]',
+            '([text="更多精彩"] + @* +n [text="女职工服务"] +n [text="阵地服务"]) || (@Image < View + Image + TextView[text^="恭喜你完成"] + TextView[text="取消"] + TextView[text="查看积分"])',
         },
       ],
     },

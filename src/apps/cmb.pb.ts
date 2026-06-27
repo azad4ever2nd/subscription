@@ -39,15 +39,16 @@ export default defineGkdApp({
     {
       key: 3,
       name: '基金收益到银行卡',
-      desc: '260417',
+      desc: '260627',
       rules: [
         {
-          actionMaximum: 1,
           resetMatch: 'match',
+          action: 'clickCenter',
           preKeys: [15],
           activityIds:
             'cmb.pb.app.h5container.webviewcontainer.PBWebContainerActivity',
-          matches: '[text$="可点击"] + [text="发放到银行卡"]',
+          matches:
+            '([text$="可点击"] + [text="发放到银行卡"]) || (WebView[text="收益奖励发放方式"] > View > View > TextView + TextView[text="发放到银行卡"][clickable=false])',
         },
       ],
     },
@@ -231,33 +232,32 @@ export default defineGkdApp({
     {
       key: 15,
       name: '收益奖励发放方式，我已阅读',
-      desc: '260304',
+      desc: '260627',
       rules: [
         {
-          matches: [
-            '([text="收益奖励发放方式"] >n [text="我已阅读"]) || ([text="recommend.f43217f6"] < View + [text="我已阅读"])',
-          ],
-          actionCdKey: 1,
           resetMatch: 'match',
-          activityIds: [
+          action: 'clickCenter',
+          activityIds:
             'cmb.pb.app.h5container.webviewcontainer.PBWebContainerActivity',
-          ],
+          matches:
+            '([text="收益奖励发放方式"] >n [text="我已阅读"]) || ([text="recommend.f43217f6"] < View + [text="我已阅读"]) || (WebView[text="收益奖励发放方式"] > View > View > @TextView[clickable=false] + TextView[text^="已阅读并同意"] + View + Button[text="提交"][clickable=true][visibleToUser=true])',
         },
       ],
     },
     {
       key: 16,
       name: '收益奖励将免费发放到您这张银行卡，提交',
-      desc: '260417，',
+      desc: '260627，D，([text="收益奖励将免费发放到您这张银行卡："] +n * > [text="提交"]) || 容易和输入密码冲突',
       rules: [
         {
           preKeys: [3],
+          action: 'clickCenter',
           resetMatch: 'match',
-          actionCdKey: 1,
+          actionCd: 0,
           activityIds:
             'cmb.pb.app.h5container.webviewcontainer.PBWebContainerActivity',
           matches:
-            '[text="收益奖励将免费发放到您这张银行卡："] +n * > [text="提交"]',
+            '(TextView[text="收益奖励将免费发放到您这张银行卡："] < View <2 WebView[text="收益奖励发放方式"] > View > View > [text="提交"][clickable=true][visibleToUser=true])',
         },
       ],
     },
@@ -326,15 +326,16 @@ export default defineGkdApp({
     {
       key: 21,
       name: '基金体验金，立即使用',
-      desc: '260419',
+      desc: '260627',
       rules: [
         {
           resetMatch: 'match',
-          actionCdKey: 6,
+          actionCd: 0,
+          action: 'clickCenter',
           activityIds:
             'cmb.pb.app.h5container.webviewcontainer.PBWebContainerActivity',
           matches:
-            '[text$="基金体验金"] < * +n [id="useBtn"] > [text="立即使用"]',
+            '(TextView[text$="基金体验金"] < View +(1,3) View[id="useBtn"] > Button[text="立即使用"][clickable=true]) || (WebView[text="券详情"] > View > View > View > View > Button[text="立即使用"][clickable=true][visibleToUser=true])',
         },
       ],
     },
@@ -494,7 +495,7 @@ export default defineGkdApp({
     {
       key: 31,
       name: '抽奖任务页面，加自选任务',
-      desc: '260624，简化',
+      desc: '260627，简化',
       rules: [
         {
           resetMatch: 'match',
@@ -503,7 +504,7 @@ export default defineGkdApp({
           activityIds:
             'cmb.pb.app.h5container.webviewcontainer.PBWebContainerActivity',
           matches:
-            '(View > Button[text="加自选"][visibleToUser=true]) || (View > View > View > Button[text="加自选"][clickable=true][visibleToUser=true]) || (WebView > View > View > View > Button[text="加自选"][clickable=true][visibleToUser=true])',
+            '(View > View > View > Button[text="加自选"][clickable=true][visibleToUser=true]) || (WebView > View > View > View > Button[text="加自选"][clickable=true][visibleToUser=true]) || (WebView > View > View > View > View > Button[text="加自选"][clickable=true][visibleToUser=true])',
         },
       ],
     },
