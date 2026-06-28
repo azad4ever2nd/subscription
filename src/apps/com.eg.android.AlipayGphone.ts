@@ -196,12 +196,13 @@ export default defineGkdApp({
       desc: '260608，增加新布局，针对卡点的指定银行的固定还款优惠，根据需要添加银行和金额',
       rules: [
         {
-		  resetMatch:'match',	
+          resetMatch: 'match',
           fastQuery: true,
-		  actionCd:0,
-		  actionMaximum:1,
+          actionCd: 0,
+          actionMaximum: 1,
           activityIds: 'com.alipay.android.msp.ui.views.MspContainerActivity',
-          matches: '([text="邮储银行立减金"] + [text="-¥ 5.00"] <<n * + * @Button[desc*="确认付款"] > [text="确认付款"]) || (TextView[text="邮储银行立减金"] + TextView[text="-¥ 5.00"] <<n FrameLayout + FrameLayout Button[desc^="付款" || desc*="确认付款"] > FrameLayout[clickable=true])',
+          matches:
+            '([text="邮储银行立减金"] + [text="-¥ 5.00"] <<n * + * @Button[desc*="确认付款"] > [text="确认付款"]) || (TextView[text="邮储银行立减金"] + TextView[text="-¥ 5.00"] <<n FrameLayout + FrameLayout Button[desc^="付款" || desc*="确认付款"] > FrameLayout[clickable=true])',
         },
       ],
     },
@@ -314,10 +315,11 @@ export default defineGkdApp({
       rules: [
         {
           fastQuery: true,
-		  actionCd:0,
-		  actionMaximum:1,
+          actionCd: 0,
+          actionMaximum: 1,
           activityIds: 'com.alipay.android.msp.ui.views.MspContainerActivity',
-          matches: '([desc="支付金额90.00元"] <<n * + * >n @Button[desc^="确认付款"]) || ([desc="支付金额90.00元"] <<n * + * >n Button[desc^="付款"] > *[clickable=true]) || ([text="光大银行立减金"] + [text="-¥ 10.00"] <<n * + * @Button[desc^="确认付款"]) || (TextView[text="光大银行立减金"] + TextView[text="-¥ 10.00"] <<n FrameLayout + FrameLayout Button[desc^="付款" || desc*="确认付款"] > FrameLayout[clickable=true])',
+          matches:
+            '([desc="支付金额90.00元"] <<n * + * >n @Button[desc^="确认付款"]) || ([desc="支付金额90.00元"] <<n * + * >n Button[desc^="付款"] > *[clickable=true]) || ([text="光大银行立减金"] + [text="-¥ 10.00"] <<n * + * @Button[desc^="确认付款"]) || (TextView[text="光大银行立减金"] + TextView[text="-¥ 10.00"] <<n FrameLayout + FrameLayout Button[desc^="付款" || desc*="确认付款"] > FrameLayout[clickable=true])',
         },
       ],
     },
@@ -348,6 +350,38 @@ export default defineGkdApp({
           activityIds: 'com.alipay.android.msp.ui.views.MspContainerActivity',
           matches:
             '[text="邮储银行立减金"] + [text="-¥ 5.00"] <<n * + * Button[desc^="确认付款"] > [text="确认付款"]',
+        },
+      ],
+    },
+    {
+      key: 23,
+      name: '获取你的位置信息，拒绝',
+      desc: '260628',
+      rules: [
+        {
+          fastQuery: true,
+          resetMatch: 'match',
+          activityIds: [
+            'com.alipay.mobile.nebulax.xriver.activity.XRiverActivity$App01',
+            'com.alipay.mobile.nebulax.xriver.activity.XRiverActivity$App02',
+            'com.alipay.mobile.nebulax.xriver.activity.XRiverActivity$App03',
+            'com.alipay.mobile.nebulax.xriver.activity.XRiverActivity$App04',
+          ],
+          matches:
+            'TextView[id="com.alipay.mobile.antui:id/permission_description"][text*="位置信息"] <2 LinearLayout < FrameLayout < FrameLayout + LinearLayout > Button[id="com.alipay.mobile.antui:id/btn_cancel"][clickable=true][visibleToUser=true]',
+        },
+      ],
+    },
+    {
+      key: 24,
+      name: '弹窗2，与分期有关，X掉',
+      desc: '260606',
+      rules: [
+        {
+          resetMatch: 'match',
+          activityIds:
+            'com.alipay.mobile.nebulax.xriver.activity.XRiverActivity',
+          matches: '@Image < View + View Button[text="同意协议并分期"]',
         },
       ],
     },

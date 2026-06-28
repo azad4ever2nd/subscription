@@ -32,14 +32,14 @@ export default defineGkdApp({
     {
       key: 3,
       name: 'build_release 界面，RUN WORKFLOW',
-      desc: '260528',
+      desc: '260628',
       rules: [
         {
           resetMatch: 'app',
           actionMaximum: 1,
           activityIds: 'com.github.android.main.MainActivity',
           matches:
-            '[text="RUN WORKFLOW"] <n @* <n View +n View View [desc="Share"]',
+            '([text="RUN WORKFLOW"] <n @* <n View +n View View [desc="Share"]) || (ComposeView > View > View > View > TextView[text="This workflow has a workflow_dispatch event trigger."] + @View[clickable=true][visibleToUser=true] > TextView[text="RUN WORKFLOW"] + Button)',
         },
       ],
     },
