@@ -244,5 +244,18 @@ export default defineGkdApp({
         },
       ],
     },
+    {
+      key: 19,
+      name: '连接后广告弹窗4',
+      desc: '20260628',
+      rules: [
+        {
+          resetMatch: 'match',
+          activityIds: 'tool.seagull.v.ui.MainActivity',
+          matches:
+            'ImageView[vid="vpnSwitchButton"][desc="停止"] +2 ScrollView > FrameLayout > FrameLayout > FrameLayout > FrameLayout > LinearLayout > FrameLayout[childCount=3] > FrameLayout[index=2] > ImageView',
+        },
+      ],
+    },
   ],
 });
