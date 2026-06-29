@@ -126,7 +126,7 @@ export default defineGkdApp({
       rules: [
         {
           resetMatch: 'match',
-          actionDelay: 3000,
+          actionDelay: 2000,
           activityIds: [
             'com.huawei.myhw.ui.HwHomeActivity',
             'com.huawei.module.commonwebview.ui.CommonWebviewActivity',

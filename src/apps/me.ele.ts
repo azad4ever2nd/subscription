@@ -47,5 +47,18 @@ export default defineGkdApp({
         },
       ],
     },
+    {
+      key: 4,
+      name: '下单后弹出开启订单通知，X掉',
+      desc: '260629',
+      rules: [
+        {
+          resetMatch: 'match',
+          activityIds: 'me.ele.message.ui.PushMessageGuideActivity',
+          matches:
+            'TextView[text*="通知"] - TextView < LinearLayout + @FrameLayout[vid="view_close"][clickable=true] > View',
+        },
+      ],
+    },
   ],
 });

@@ -64,5 +64,20 @@ export default defineGkdApp({
         },
       ],
     },
+    {
+      key: 5,
+      name: '发送通知，拒绝',
+      desc: '260629',
+      rules: [
+        {
+          resetMatch: 'match',
+          fastQuery: true,
+          activityIds:
+            'com.xingin.authorization.NotificationAuthorizationTranslucentActivity',
+          matches:
+            'TextView[vid="tv_title"][text*="发送通知"] < LinearLayout + LinearLayout > TextView[vid="btn_deny"][clickable=true]',
+        },
+      ],
+    },
   ],
 });
