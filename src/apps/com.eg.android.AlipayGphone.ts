@@ -385,5 +385,61 @@ export default defineGkdApp({
         },
       ],
     },
+    {
+      key: 25,
+      name: '浏览任务完成，返回会场',
+      desc: '260701',
+      rules: [
+        {
+          resetMatch: 'match',
+          activityIds:
+            'com.alipay.mobile.nebulax.xriver.activity.XRiverActivity',
+          matches:
+            '@View > View > TextView[text="任务完成"] + TextView[text="返回会场"]',
+        },
+      ],
+    },
+    {
+      key: 26,
+      name: '本次没有中奖，知道了，关闭',
+      desc: '260701，添加 下单 ，去看看',
+      rules: [
+        {
+          resetMatch: 'match',
+          activityIds:
+            'com.alipay.mobile.nebulax.xriver.activity.XRiverActivity',
+          matches:
+            '(Button[clickable=true][text="知道了"] < View <n View < View + Button[clickable=true][visibleToUser=true][text="关闭"]) || (Button[text="去完成"] <n View -n TextView[text*="下单"] <n View <n View + Button[clickable=true][visibleToUser=true][text="关闭"]) || (Button[clickable=true][text="去看看"] <n View <n View <n View + Button[clickable=true][visibleToUser=true][text="关闭"])',
+        },
+      ],
+    },
+    {
+      key: 27,
+      name: '中奖了，开心收下',
+      desc: '260701',
+      rules: [
+        {
+          resetMatch: 'match',
+          activityIds:
+            'com.alipay.mobile.nebulax.xriver.activity.XRiverActivity',
+          matches:
+            '@Button[clickable=true][text="开心收下"] <n View < View + Button[clickable=true][visibleToUser=true][text="关闭"]',
+        },
+      ],
+    },
+    {
+      key: 28,
+      name: '逛一逛遂骰子次数，去完成',
+      desc: '260701',
+      rules: [
+        {
+          resetMatch: 'match',
+          activityIds:
+            'com.alipay.mobile.nebulax.xriver.activity.XRiverActivity',
+          matches:
+            'TextView[text^="逛一逛"] +(2,3) View > Button[text="去完成"]',
+        },
+      ],
+    },
   ],
 });

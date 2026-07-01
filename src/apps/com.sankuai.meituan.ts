@@ -259,30 +259,36 @@ export default defineGkdApp({
     {
       key: 18,
       name: '直播间小屋子领券，金额可自定义',
-      desc: '260611',
+      desc: '260701',
       rules: [
         {
           resetMatch: 'match',
           fastQuery: true,
           actionMaximum: 10,
-          activityIds: 'com.dianping.live.live.mrn.MLiveMRNActivity',
+          activityIds: [
+            'com.dianping.live.live.mrn.MLiveMRNActivity',
+            'com.dianping.live.live.mrn.square.MLiveSquareV2Activity',
+          ],
           matches:
-            '([text="80" || text="50" || text="60"] + [text="元"] +n *[clickable=true] > [text="领券"][visibleToUser=true]) || (HorizontalScrollView > ViewGroup > ViewGroup > ViewGroup > ViewGroup > TextView[text="80" || text="50" || text="60"] + TextView[text="元"] +2 @ViewGroup[clickable=true] > TextView[text="领券"][visibleToUser=true])',
+            '([text="80" || text="50" || text="60"] + [text="元"] +n *[clickable=true] > [text="领券"][visibleToUser=true]) || (TextView[text="80" || text="50" || text="60"] + TextView[text="元"] +n ViewGroup[clickable=true] > TextView[text="领券"][visibleToUser=true]) || (HorizontalScrollView > ViewGroup > ViewGroup > ViewGroup > ViewGroup > TextView[text="80" || text="50" || text="60"] + TextView[text="元"] +2 @ViewGroup[clickable=true] > TextView[text="领券"][visibleToUser=true])',
         },
       ],
     },
     {
       key: 19,
       name: '直播间右上角待领取',
-      desc: '260611',
+      desc: '260701',
       rules: [
         {
           resetMatch: 'match',
           fastQuery: true,
           actionMaximum: 10,
-          activityIds: 'com.dianping.live.live.mrn.MLiveMRNActivity',
+          activityIds: [
+            'com.dianping.live.live.mrn.MLiveMRNActivity',
+            'com.dianping.live.live.mrn.square.MLiveSquareV2Activity',
+          ],
           matches:
-            '([text="80" || text="50" || text="60"] + [text="元"] +n *[clickable=true] > [text="立即领取"][visibleToUser=true]) || (HorizontalScrollView > ViewGroup > ViewGroup > ViewGroup > TextView[text="80" || text="50" || text="60"] + TextView[text="元"] +2 @ViewGroup[clickable=true] > TextView[text="立即领取"][visibleToUser=true])',
+            '([text="80" || text="50" || text="60"] + [text="元"] +n *[clickable=true] > [text="立即领取"][visibleToUser=true]) || (TextView[text="80" || text="50" || text="60"] + TextView[text="元"] +n ViewGroup[clickable=true] > TextView[text="立即领取"][visibleToUser=true]) || (HorizontalScrollView > ViewGroup > ViewGroup > ViewGroup > TextView[text="80" || text="50" || text="60"] + TextView[text="元"] +2 @ViewGroup[clickable=true] > TextView[text="立即领取"][visibleToUser=true])',
         },
       ],
     },

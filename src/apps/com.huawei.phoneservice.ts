@@ -40,33 +40,31 @@ export default defineGkdApp({
     {
       key: 3,
       name: '领奖励',
-      desc: '260101,添加更多',
+      desc: '260701,添加更多',
       rules: [
         {
-          matches: [
-            '([text="领奖励"]) || ([vid="tv_tasks_title"][text="我的任务"] + [vid="tv_tasks_more"][text="更多1"])',
-          ],
-          fastQuery: true,
           resetMatch: 'match',
+          fastQuery: true,
           activityIds: [
             'com.huawei.myhw.ui.HwHomeActivity',
             'com.huawei.module.commonwebview.ui.CommonWebviewActivity',
           ],
+          matches:
+            '([text="领奖励"]) || ([vid="tv_tasks_title"][text="我的任务"] + [vid="tv_tasks_more"][text="更多"]) || (ViewGroup > TextView[vid="tv_tasks_type"][text="领奖励"])',
         },
       ],
     },
     {
       key: 4,
       name: '知道了',
-      desc: '领奖后弹窗',
+      desc: '260701，领奖后弹窗',
       rules: [
         {
-          matches: [
-            '[text^="恭喜您获得"] +2 * > [vid="bt_negative"][text*="知道了"]',
-          ],
-          fastQuery: true,
           resetMatch: 'match',
-          activityIds: ['com.huawei.myhw.ui.HwHomeActivity'],
+          fastQuery: true,
+          activityIds: 'com.huawei.myhw.ui.HwHomeActivity',
+          matches:
+            '([text="恭喜您获得经验值"] +2 * > [vid="bt_negative"][text="知道了"]) || (ViewGroup > TextView[vid="tv_title"][text="恭喜您获得经验值"] +2 LinearLayout > Button[vid="bt_negative"][clickable=true][visibleToUser=true][text="知道了"])',
         },
       ],
     },
@@ -88,19 +86,18 @@ export default defineGkdApp({
     },
     {
       key: 6,
-      name: '精确位置信息权限',
-      desc: '',
+      name: '精确位置信息，取消',
+      desc: '260701',
       rules: [
         {
-          matches: [
-            '@[text="取消"] <<n [id="android:id/buttonPanel"] - [id="android:id/topPanel"]',
-          ],
           fastQuery: true,
-          actionMaximum: 1,
-          resetMatch: 'app',
+          resetMatch: 'match',
           activityIds: [
             'com.huawei.module.commonwebview.ui.CommonWebviewActivity',
+            'com.huawei.arkui.impl.ui.ArkShopActivity',
           ],
+          matches:
+            'TextView[vid="textView"][text*="精确位置信息"] < LinearLayout + LinearLayout > LinearLayout > Button[id="android:id/button2"][text="取消"]',
         },
       ],
     },
@@ -122,7 +119,7 @@ export default defineGkdApp({
     {
       key: 8,
       name: '我的任务，去完成',
-      desc: '260602，增加IDS[text="参与精彩活动" || text="了解玩机攻略" || text="浏览爱车频道15秒" || text="逛同城看精彩" || text="逛花粉看热门" || text="到店体验华为鸿蒙智家"] ',
+      desc: '260701，增加IDS ',
       rules: [
         {
           resetMatch: 'match',
@@ -132,7 +129,7 @@ export default defineGkdApp({
             'com.huawei.module.commonwebview.ui.CommonWebviewActivity',
           ],
           matches:
-            '([text^="浏览服务频道" || text^="新品发布会" || text^="浏览新品商" ||  text^="精选好物" || text="参与精彩活动" || text$="玩机攻略" || text^="浏览爱车" || text^="逛同城" || text$="看热门" || text^="到店体验华为"] < * + [text="去完成"]) || ([text^="浏览服务频道" || text^="新品发布会" || text^="浏览新品商" || text^="精选好物" || text="参与精彩活动" || text$="玩机攻略" || text^="浏览爱车" || text^="逛同城" || text$="看热门" || text^="到店体验华为"] +2 [text="去完成"])',
+            '([text^="浏览服务频道" || text^="新品发布会" || text^="浏览新品商" ||  text^="精选好物" || text="参与精彩活动" || text$="玩机攻略" || text^="浏览爱车" || text^="逛同城" || text$="看热门" || text^="到店体验华为"] < * + [text="去完成"]) || (ViewGroup > TextView[text*="会员日福利" || text^="发帖赢" || text^="到店瓜分" || text^="浏览服务频道" || text^="新品发布会" || text^="浏览新品商" || text^="精选好物" || text="参与精彩活动" || text$="玩机攻略" || text^="浏览爱车" || text^="逛同城" || text$="看热门" || text^="到店体验华为"] +2 TextView[text="去完成"])',
         },
       ],
     },
