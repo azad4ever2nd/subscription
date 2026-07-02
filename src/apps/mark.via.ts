@@ -108,5 +108,19 @@ export default defineGkdApp({
         },
       ],
     },
+    {
+      key: 9,
+      name: 'PDD半价助力，无可用码，弹窗',
+      desc: '260702',
+      rules: [
+        {
+          resetMatch: 'match',
+          actionCd: 0,
+          activityIds: 'mark.via.Shell',
+          matches:
+            'Dialog[text="暂无可用码"] > View > Button[clickable=true][visibleToUser=true][text="好的"]',
+        },
+      ],
+    },
   ],
 });

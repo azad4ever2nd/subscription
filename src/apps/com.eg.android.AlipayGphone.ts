@@ -402,14 +402,14 @@ export default defineGkdApp({
     {
       key: 26,
       name: '本次没有中奖，知道了，关闭',
-      desc: '260701，添加 下单 ，去看看',
+      desc: '260702，添加 入会领，下单 ，去看看',
       rules: [
         {
           resetMatch: 'match',
           activityIds:
             'com.alipay.mobile.nebulax.xriver.activity.XRiverActivity',
           matches:
-            '(Button[clickable=true][text="知道了"] < View <n View < View + Button[clickable=true][visibleToUser=true][text="关闭"]) || (Button[text="去完成"] <n View -n TextView[text*="下单"] <n View <n View + Button[clickable=true][visibleToUser=true][text="关闭"]) || (Button[clickable=true][text="去看看"] <n View <n View <n View + Button[clickable=true][visibleToUser=true][text="关闭"])',
+            '(Button[clickable=true][text="知道了"] < View <n View < View + Button[clickable=true][visibleToUser=true][text="关闭"]) || (Button[clickable=true][text="知道了"] <n View <n View < View + Button[clickable=true][visibleToUser=true][text="关闭"])  || (Button[text="去完成"] <n View -n TextView[text*="下单"] <n View <n View + Button[clickable=true][visibleToUser=true][text="关闭"]) || (Button[clickable=true][text="入会领"] < View <n View <n View + Button[clickable=true][visibleToUser=true][text="关闭"])',
         },
       ],
     },
@@ -438,6 +438,62 @@ export default defineGkdApp({
             'com.alipay.mobile.nebulax.xriver.activity.XRiverActivity',
           matches:
             'TextView[text^="逛一逛"] +(2,3) View > Button[text="去完成"]',
+        },
+      ],
+    },
+    {
+      key: 29,
+      name: '点我领取',
+      desc: '260702',
+      rules: [
+        {
+          resetMatch: 'match',
+          activityIds:
+            'com.alipay.mobile.nebulax.xriver.activity.XRiverActivity',
+          matches:
+            '(@Button[text="点我领取"][clickable=true] <n View <n View <n View + Button[clickable=true][visibleToUser=true][text="关闭"]) || (@Button[text="点我领取"][clickable=true] <n View <n View + Button[clickable=true][visibleToUser=true][text="关闭"])',
+        },
+      ],
+    },
+    {
+      key: 30,
+      name: '转账提示，不再提示',
+      desc: '260702',
+      rules: [
+        {
+          resetMatch: 'match',
+          activityIds:
+            'com.alipay.mobile.nebulax.xriver.activity.XRiverActivity',
+          matches:
+            '(View > @CheckBox[checked=false] + TextView + Button + Button[clickable=true][visibleToUser=true][text="继续转出"]) || (View > CheckBox[checked=true] + TextView + Button + @Button[clickable=true][visibleToUser=true][text="继续转出"])',
+        },
+      ],
+    },
+    {
+      key: 31,
+      name: '任务列表，去领取 去浏览',
+      desc: '260702',
+      rules: [
+        {
+          resetMatch: 'match',
+          activityIds:
+            'com.alipay.mobile.nebulax.xriver.activity.XRiverActivity',
+          matches:
+            'View > Button[text="关闭"] +n View > View > View Button[clickable=true][visibleToUser=true][text="去领取" || text="去浏览"]',
+        },
+      ],
+    },
+    {
+      key: 32,
+      name: '神券抽奖，立即领取',
+      desc: '260702，添加 关闭',
+      rules: [
+        {
+          resetMatch: 'match',
+          activityIds:
+            'com.alipay.mobile.nebulax.xriver.activity.XRiverTransActivity$Main',
+          matches:
+            '(@TextView[clickable=false][text="立即领取"] <n View + Button[clickable=true][visibleToUser=true][text="关闭"]) || (TextView[text="去下单"] <n View + Button[clickable=true][visibleToUser=true][text="关闭"])',
         },
       ],
     },

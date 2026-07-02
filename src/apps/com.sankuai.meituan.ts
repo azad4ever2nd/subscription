@@ -171,15 +171,15 @@ export default defineGkdApp({
     },
     {
       key: 12,
-      name: '直播间任务领亲密度',
-      desc: '251203',
+      name: '直播间任务，领亲密度，去逛逛',
+      desc: '260702',
       rules: [
         {
-          matches: ['ViewGroup > [text="领亲密度" || text="去逛逛"]'],
-          fastQuery: true,
-          matchDelay: 10000,
           resetMatch: 'match',
-          activityIds: ['com.dianping.live.live.mrn.MLiveMRNActivity'],
+          matchDelay: 10000,
+          fastQuery: true,
+          activityIds: 'com.dianping.live.live.mrn.MLiveMRNActivity',
+          matches: 'ViewGroup > TextView[text="领亲密度" || text="去逛逛"]',
         },
       ],
     },

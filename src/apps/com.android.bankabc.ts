@@ -10,77 +10,81 @@ export default defineGkdApp({
       desc: '',
       rules: [
         {
-          matches: [
-            '[vid="iv_notification_reminder_dialog"] + [vid="iv_notification_reminder_dialog_close"][desc="进入掌银首页"]',
-          ],
-          fastQuery: true,
           resetMatch: 'app',
-          activityIds: ['com.android.bankabc.MainActivity'],
+          fastQuery: true,
+          activityIds: 'com.android.bankabc.MainActivity',
+          matches:
+            '[vid="iv_notification_reminder_dialog"] + [vid="iv_notification_reminder_dialog_close"][desc="进入掌银首页"]',
         },
       ],
     },
     {
       key: 2,
-      name: '获取位置',
-      desc: '',
+      name: '允许获取位置信息，取消',
+      desc: '260702',
       rules: [
         {
-          matches: [
-            '[vid="tv_title"][text*="位置"] +3 * [vid="tv_cancel"][text="取消"]',
-          ],
+          resetMatch: 'match',
           fastQuery: true,
-          resetMatch: 'app',
-          activityIds: ['com.android.bankabc.MainActivity'],
+          actionCd: 0,
+          activityIds: 'com.android.bankabc.MainActivity',
+          matches:
+            '([vid="tv_title"][text*="位置"] +3 * [vid="tv_cancel"][text="取消"]) || (LinearLayout > TextView[vid="tv_title"][text="允许获取位置信息"] +n LinearLayout > TextView[vid="tv_cancel"][clickable=true][visibleToUser=true][text="取消"])',
         },
       ],
     },
     {
       key: 3,
-      name: '确认退出',
-      desc: '',
+      name: '确认退出应用',
+      desc: '260702',
       rules: [
         {
-          matches: ['[text*="退出应用"] +n [vid="tv_sure"][text="确认"]'],
-          fastQuery: true,
           resetMatch: 'app',
-          activityIds: ['com.android.bankabc.MainActivity'],
+          fastQuery: true,
+          activityIds: 'com.android.bankabc.MainActivity',
+          matches:
+            '(TextView[text*="退出应用"] +n TextView[vid="tv_sure"][text="确认"]) || (ViewGroup > TextView[vid="tv_content"][text*="退出应用"] +n TextView[vid="tv_sure"][clickable=true][visibleToUser=true][text="确认"])',
         },
       ],
     },
     {
       key: 4,
-      name: '茶饮优惠享-购买',
-      desc: '',
+      name: '茶饮优惠享-立即购买',
+      desc: '260702',
       rules: [
         {
-          matches: ['[text="茶影优惠享"] [text="立即购买"][clickable=true]'],
           resetMatch: 'match',
-          activityIds: ['com.alipay.mobile.nebulacore.ui.H5Activity'],
+          actionCd: 250,
+          activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
+          matches:
+            '(WebView[text="茶影优惠享"] View[text="立即购买"][clickable=true]) || (WebView[text="茶影优惠享"] > View > View > View > View > View[clickable=true][visibleToUser=true][text="立即购买"])',
         },
       ],
     },
     {
       key: 5,
-      name: '商品已抢完',
-      desc: '',
+      name: '茶饮优惠享-提交',
+      desc: '260702',
       rules: [
         {
-          action: 'back',
-          matches: ['[text^="本期活动商品已抢完"]'],
           resetMatch: 'match',
-          activityIds: ['com.alipay.mobile.nebulacore.ui.H5Activity'],
+          actionCd: 0,
+          activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
+          matches:
+            '([text="茶影优惠享"] [text="提交订单"][clickable=true]) || (WebView > View > View > View > View > Button[clickable=true][visibleToUser=true][text="提交订单"])',
         },
       ],
     },
     {
       key: 6,
-      name: '茶饮优惠享-提交',
+      name: '商品已抢完',
       desc: '',
       rules: [
         {
-          matches: ['[text="茶影优惠享"] [text="提交订单"][clickable=true]'],
           resetMatch: 'match',
-          activityIds: ['com.alipay.mobile.nebulacore.ui.H5Activity'],
+          activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
+          matches: '[text^="本期活动商品已抢完"]',
+          action: 'back',
         },
       ],
     },

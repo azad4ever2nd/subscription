@@ -148,14 +148,14 @@ export default defineGkdApp({
     {
       key: 11,
       name: '放弃发真实带图评价',
-      desc: '260616',
+      desc: '260702',
       rules: [
         {
           fastQuery: true,
           resetMatch: 'match',
           activityIds: 'com.xunmeng.pinduoduo.activity.NewPageActivity',
           matches:
-            '(@Button[text="关闭按钮"] +n [text^="还差1人" || text^="拼单已发起"]) || ([vid="pdd"] < @[vid="pdd"] + [vid="pdd"] > [text="评价拍摄"]) || (@[vid="pdd"][desc="返回"] < * +n * > [vid="tv_title"][text="发表评价" || text="发表真实评价"]) || (TextView[text="继续编辑"] < FrameLayout < ViewGroup + @ViewGroup[clickable=true] > FrameLayout > TextView[text="退出"])',
+            '(@Button[text="关闭按钮"] +n [text^="还差1人" || text^="拼单已发起"]) || ([vid="pdd"] < @[vid="pdd"] + [vid="pdd"] > [text="评价拍摄"]) || (@[vid="pdd"][desc="返回"] < * +n * > [vid="tv_title"][text="发表评价" || text="发表真实评价"]) || (TextView[text="继续编辑"] < FrameLayout < ViewGroup + @ViewGroup[clickable=true] > FrameLayout > TextView[text="退出"]) || (TextView[text="继续编辑" || text="放弃打款"] < FrameLayout  <n ViewGroup + ViewGroup[clickable=true])',
         },
       ],
     },
@@ -215,13 +215,14 @@ export default defineGkdApp({
     {
       key: 16,
       name: '添加物流助手到桌面，X掉',
-      desc: '260531',
+      desc: '260702',
       rules: [
         {
+          action: 'clickCenter',
           resetMatch: 'match',
           activityIds: 'com.xunmeng.pinduoduo.activity.NewPageActivity',
           matches:
-            '([text="添加物流助手到桌面"] <<n * + @ViewGroup[visibleToUser=true] ImageView) || ([text="添加物流助手到桌面"] <<n * + @ViewGroup[clickable=true][visibleToUser=true] ImageView)',
+            '([text="添加物流助手到桌面"] <<n * + @ViewGroup[visibleToUser=true] ImageView) || ([text="添加物流助手到桌面"] <<n * + @ViewGroup[clickable=true][visibleToUser=true] ImageView) || (TextView[text="添加物流助手到桌面"] < FrameLayout < ViewGroup < ViewGroup < ViewGroup < ViewGroup + ViewGroup[clickable=true][visibleToUser=true] > ViewGroup > ImageView)',
         },
       ],
     },
