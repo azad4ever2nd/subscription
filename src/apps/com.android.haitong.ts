@@ -106,7 +106,7 @@ export default defineGkdApp({
     {
       key: 8,
       name: '关于国泰海通君弘APP版本升级的通知，关闭"',
-      desc: '260508',
+      desc: '260702',
       rules: [
         {
           resetMatch: 'match',
@@ -114,7 +114,7 @@ export default defineGkdApp({
           actionCd: 0,
           activityIds: 'cn.htsec.SecurityHome',
           matches:
-            '[vid="pushinfodlg_btn1"] +n [vid="pushinfodlg_btn2"][text="关闭"]',
+            '([vid="pushinfodlg_btn1"] +n [vid="pushinfodlg_btn2"][text="关闭"]) || (LinearLayout > TextView[vid="pushinfodlg_btn1"] +n TextView[vid="pushinfodlg_btn2"][clickable=true][visibleToUser=true][text="关闭"])',
         },
       ],
     },

@@ -48,5 +48,31 @@ export default defineGkdApp({
         },
       ],
     },
+    {
+      key: 4,
+      name: '手机银行天天领福利，抽奖弹窗',
+      desc: '260627',
+      rules: [
+        {
+          resetMatch: 'match',
+          activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
+          matches:
+            'WebView[text="手机银行天天领福利"] > View > View > Image + View + @Image[clickable=true][visibleToUser=true] + Image[text="prizeDialogBtn.13fe7a56"] + View',
+        },
+      ],
+    },
+    {
+      key: 5,
+      name: '恭喜您完成任务，去领奖',
+      desc: '260702',
+      rules: [
+        {
+          resetMatch: 'match',
+          activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
+          matches:
+            'View > View > View[text="恭喜您完成任务"] + Button[clickable=true][visibleToUser=true][text="去领奖"]',
+        },
+      ],
+    },
   ],
 });

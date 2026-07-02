@@ -155,5 +155,19 @@ export default defineGkdApp({
         },
       ],
     },
+    {
+      key: 11,
+      name: '服务通知，X掉',
+      desc: '260702',
+      rules: [
+        {
+          resetMatch: 'match',
+          fastQuery: true,
+          activityIds: 'com.mcloud.circle.ui.main.CircleMainActivity',
+          matches:
+            'LinearLayout > ImageView[vid="ad_iv"] + ImageView[vid="close_iv"][clickable=true][visibleToUser=true]',
+        },
+      ],
+    },
   ],
 });

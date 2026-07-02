@@ -149,14 +149,13 @@ export default defineGkdApp({
     {
       key: 11,
       name: '浇水',
-      desc: '260601，每月要变更id',
+      desc: '260702，每月要变更id',
       rules: [
         {
           actionMaximum: 1,
           resetMatch: 'match',
-          matches: [
-            '([id="app"] [text="eaae316f2e764aaab66e4bb0ad2c57890822507158"])',
-          ],
+          matches:
+            'WebView > View > View > View > View > Image[text="56216925f8a94308847f3bee873cf4282485282187"][visibleToUser=true]',
           activityIds: ['com.icbc.activity.web.ICBCWebView'],
         },
       ],
@@ -279,6 +278,18 @@ export default defineGkdApp({
           fastQuery: true,
           resetMatch: 'match',
           activityIds: ['com.ebdp.share.ui.ShareActivity'],
+        },
+      ],
+    },
+    {
+      key: 20,
+      name: '弹窗，X掉',
+      desc: '260702',
+      rules: [
+        {
+          resetMatch: 'match',
+          activityIds: 'com.icbc.activity.web.ICBCWebView',
+          matches: 'View > Image +n @TextView - View > TextView[text="去许愿"]',
         },
       ],
     },

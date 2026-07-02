@@ -90,14 +90,15 @@ export default defineGkdApp({
     {
       key: 6,
       name: '一键收碳',
-      desc: '',
+      desc: '260702',
       rules: [
         {
-          matches: ['[text^="骑行领碳积分"] + * > [text="一键收碳"]'],
           resetMatch: 'match',
-          activityIds: [
+          actionCd: 0,
+          activityIds:
             'com.hellobike.moped.platform.offline.web.OhoRealmWebActivity',
-          ],
+          matches:
+            '([text^="骑行领碳积分"] + * > [text="一键收碳"]) || (View > View > View > TextView[text="一键收碳"])',
         },
       ],
     },

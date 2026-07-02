@@ -76,13 +76,15 @@ export default defineGkdApp({
     {
       key: 6,
       name: '绿色能量，立即领取',
-      desc: '260510',
+      desc: '260702',
       rules: [
         {
           resetMatch: 'match',
           actionCd: 100,
+          actionMaximum: 1,
           activityIds: 'com.mpaas.mriver.integration.MriverActivityBase$Main',
-          matches: '[text="可在能量商城兑换好礼"] + [text="立即领取"]',
+          matches:
+            '([text="可在能量商城兑换好礼"] + [text="立即领取"]) || (TextView[text="绿色能量"] <n View < View <n View + View > TextView[clickable=true][visibleToUser=true][text="立即领取"])',
         },
       ],
     },

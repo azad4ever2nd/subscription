@@ -60,11 +60,12 @@ export default defineGkdApp({
     {
       key: 5,
       name: '周四秒杀活动，立即兑换',
-      desc: '260625',
+      desc: '260702',
       rules: [
         {
           resetMatch: 'match',
           action: 'clickCenter',
+          actionCd: 0,
           activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
           matches:
             'WebView > View > View > View > View > View > Button[text="立即兑换"][clickable=true]',
@@ -74,14 +75,45 @@ export default defineGkdApp({
     {
       key: 6,
       name: '周四秒杀活动尚未开始，确认',
-      desc: '260625',
+      desc: '260702',
       rules: [
         {
           resetMatch: 'match',
           action: 'clickCenter',
+          actionCd: 0,
           activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
           matches:
             'View > TextView[text="活动尚未开始\\n"] + View > Button[text=" 确认"][clickable=true]',
+        },
+      ],
+    },
+    {
+      key: 7,
+      name: '周四秒杀活动，提交订单',
+      desc: '260702',
+      rules: [
+        {
+          resetMatch: 'match',
+          action: 'clickCenter',
+          actionCd: 0,
+          activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
+          matches:
+            'WebView[text="提交订单"] > View > View > Button[clickable=true][visibleToUser=true][text="提交订单"]',
+        },
+      ],
+    },
+    {
+      key: 8,
+      name: '周四秒杀活动，提交订单，确认支付',
+      desc: '260702',
+      rules: [
+        {
+          resetMatch: 'match',
+          action: 'clickCenter',
+          actionCd: 0,
+          activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
+          matches:
+            'Dialog > TextView[text="去支付？"] + View > Button[clickable=true][visibleToUser=true][text="确认"]',
         },
       ],
     },
