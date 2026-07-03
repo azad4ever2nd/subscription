@@ -111,14 +111,14 @@ export default defineGkdApp({
     {
       key: 9,
       name: 'PDD半价助力，无可用码，弹窗',
-      desc: '260702',
+      desc: '260703，2台手机布局不同',
       rules: [
         {
           resetMatch: 'match',
           actionCd: 0,
           activityIds: 'mark.via.Shell',
           matches:
-            'Dialog[text="暂无可用码"] > View > Button[clickable=true][visibleToUser=true][text="好的"]',
+            '(Dialog[text="暂无可用码"] > View > Button[clickable=true][visibleToUser=true][text="好的"]) || (Dialog[text="暂无可用码"] > Button[clickable=true][visibleToUser=true][text="好的"])',
         },
       ],
     },

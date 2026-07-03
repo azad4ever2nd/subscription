@@ -39,11 +39,11 @@ export default defineGkdApp({
     {
       key: 3,
       name: '基金财富月历，签到',
-      desc: '260531，+3 childCount=2，签到按钮布局有变动，改规则',
+      desc: '260703，+3 childCount=2，签到按钮布局有变动，改规则',
       rules: [
         {
           matches:
-            '([id="mainContainer"] [text^="天天领金币" && text$="关注产品收益上涨可领翻倍金币"] +3 * > *[text=""][visibleToUser=true][index=parent.childCount.minus(1)]) || ([text^="天天领金币"] +n *[text=""][clickable=true][visibleToUser=true][index=parent.childCount.minus(1)] + View[childCount=2] )',
+            '([id="mainContainer"] [text^="天天领金币" && text$="关注产品收益上涨可领翻倍金币"] +3 * > *[text=""][visibleToUser=true][index=parent.childCount.minus(1)]) || ([text^="天天领金币"] +n *[text=""][clickable=true][visibleToUser=true][index=parent.childCount.minus(1)] + View[childCount=2]) || (View > TextView[text^="天天领金币"] +n View[childCount=2] > TextView[index=parent.childCount.minus(1)][text.length=0])',
           actionMaximum: 1,
           resetMatch: 'match',
           activityIds: [
@@ -55,13 +55,12 @@ export default defineGkdApp({
     {
       key: 4,
       name: '基金财富月历，签到成功',
-      desc: '260605',
+      desc: '260703',
       rules: [
         {
           action: 'clickCenter',
-          matches: [
-            '([text="恭喜获得"] <n * + TextView[clickable=true]) || (View > TextView[text="恭喜获得"] +n TextView[index=parent.childCount.minus(1)])',
-          ],
+          matches:
+            '([text="恭喜获得"] <n * + TextView[clickable=true]) || (View > TextView[text="恭喜获得"] +n TextView[index=parent.childCount.minus(1)]) || (View > TextView[text="恭喜获得"] +n TextView[text^="关注一只产品"] + TextView[index=parent.childCount.minus(1)])',
           resetMatch: 'match',
           activityIds: [
             'com.cebbank.mobile.cemb.ui.activity.mobilePayment.MobilePaymentWebActivity',

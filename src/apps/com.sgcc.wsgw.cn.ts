@@ -97,5 +97,17 @@ export default defineGkdApp({
         },
       ],
     },
+    {
+      key: 8,
+      name: '弹窗',
+      desc: '260703',
+      rules: [
+        {
+          resetMatch: 'match',
+          activityIds: 'com.sgcc.wsgw.rnbundle.activity.HomeReactActivity',
+          matches: 'ViewGroup > ViewGroup[desc="关闭"] > ImageView',
+        },
+      ],
+    },
   ],
 });

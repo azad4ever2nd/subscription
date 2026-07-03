@@ -22,14 +22,14 @@ export default defineGkdApp({
     {
       key: 2,
       name: '黑五鸡蛋',
-      desc: '260626，需要注意每期标题和价格',
+      desc: '260703，需要注意每期标题和价格',
       rules: [
         {
           resetMatch: 'match',
           actionCd: 0,
           activityIds: 'com.jd.lib.ttt.page.TTTMultiPageActivity',
           matches:
-            'TextView[text^="券后¥4.90"] - TextView[text="15枚鲜蛋"] - TextView < View + TextView[text="领券抢"][clickable=true]',
+            '(View > TextView[text*="蛋" && text*="15"] +3  TextView[clickable=true][text="领券抢"]) || (TextView[text^="券后¥"] - TextView[text*="蛋"] - TextView < View + TextView[text="领券抢"][clickable=true])',
         },
       ],
     },
@@ -149,14 +149,14 @@ export default defineGkdApp({
     {
       key: 11,
       name: '黑五纸巾',
-      desc: '260626，需要注意每期标题和价格，D',
+      desc: '260703，需要注意每期标题和价格，D',
       rules: [
         {
           resetMatch: 'match',
           actionCd: 0,
           activityIds: 'com.jd.lib.ttt.page.TTTMultiPageActivity',
           matches:
-            'TextView[text^="券后¥3.90"] - TextView[text="12卷纸"] - TextView < View + TextView[text="领券抢"][clickable=true]',
+            '(View > TextView[text*="纸" && text*="12"] +3  TextView[clickable=true][text="领券抢"]) || (TextView[text^="券后¥"] - TextView[text*="卷纸"] - TextView < View + TextView[text="领券抢"][clickable=true])',
         },
       ],
     },

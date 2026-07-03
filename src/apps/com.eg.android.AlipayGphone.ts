@@ -179,14 +179,14 @@ export default defineGkdApp({
     {
       key: 12,
       name: '推荐开通花呗',
-      desc: '260523，添加放弃还款，推荐习惯，([text^="支付宝推荐" || text^="支付宝  推荐"] < * +n * > [text="关闭"]) ||',
+      desc: '260703，添加放弃还款，推荐习惯，([text^="支付宝推荐" || text^="支付宝  推荐"] < * +n * > [text="关闭"]) ||',
       rules: [
         {
           resetMatch: 'match',
           fastQuery: true,
           activityIds: 'com.alipay.android.msp.ui.views.MspContainerActivity',
           matches:
-            '([text="支付宝"] + [text="邀请你" || text="推荐你"] + [text="跳过"]) || ([text="是否放弃本次付款？"] <<n * +n * [text="放弃"]) || ([text^="支付宝推荐" || text^="支付宝  推荐"] <<n * +n * > [text="关闭"]) || ([id="com.alipay.mobile.antui:id/message"][text="是否放弃本次付款？" || text*="是否放弃付款"] <<n * + * [id="com.alipay.mobile.antui:id/cancel"][text="放弃"]) || ([text="支付宝推荐你"] < * +n @*[clickable=true] > [text="关闭"])',
+            '([text="支付宝"] + [text="邀请你" || text="推荐你"] + [text="跳过"]) || ([text="是否放弃本次付款？"] <<n * +n * [text="放弃"]) || ([text^="支付宝推荐" || text^="支付宝  推荐"] <<n * +n * > [text="关闭"]) || ([id="com.alipay.mobile.antui:id/message"][text="是否放弃本次付款？" || text*="是否放弃付款"] <<n * + * [id="com.alipay.mobile.antui:id/cancel"][text="放弃"]) || (TextView[text="支付宝推荐你"] < FrameLayout +n FrameLayout[clickable=true] > TextView[text="关闭"])',
         },
       ],
     },
@@ -375,13 +375,14 @@ export default defineGkdApp({
     {
       key: 24,
       name: '弹窗2，与分期有关，X掉',
-      desc: '260606',
+      desc: '260703，添加',
       rules: [
         {
           resetMatch: 'match',
           activityIds:
             'com.alipay.mobile.nebulax.xriver.activity.XRiverActivity',
-          matches: '@Image < View + View Button[text="同意协议并分期"]',
+          matches:
+            '(@Image < View + View Button[text="同意协议并分期"]) || (View > @Image[text="关闭弹窗"] + View > View > TextView[text="立即更换"]) || (@Image < View + View > TextView[text="开通信用卡借款享一站式服务"])',
         },
       ],
     },
@@ -494,6 +495,20 @@ export default defineGkdApp({
             'com.alipay.mobile.nebulax.xriver.activity.XRiverTransActivity$Main',
           matches:
             '(@TextView[clickable=false][text="立即领取"] <n View + Button[clickable=true][visibleToUser=true][text="关闭"]) || (TextView[text="去下单"] <n View + Button[clickable=true][visibleToUser=true][text="关闭"])',
+        },
+      ],
+    },
+    {
+      key: 33,
+      name: '红包雨，我知道了，X掉',
+      desc: '260703',
+      rules: [
+        {
+          resetMatch: 'match',
+          activityIds:
+            'com.alipay.mobile.nebulax.xriver.activity.XRiverTransActivity$Main',
+          matches:
+            'Button[clickable=true][text="我知道了"] <n View + Button[clickable=true][visibleToUser=true][text="关闭"]',
         },
       ],
     },

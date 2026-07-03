@@ -298,7 +298,7 @@ export default defineGkdApp({
     {
       key: 15,
       name: '深工积分兑换，人数过多，我知道了',
-      desc: '260626',
+      desc: '260703',
       rules: [
         {
           resetMatch: 'match',
@@ -317,7 +317,7 @@ export default defineGkdApp({
             'com.tencent.mm.plugin.appbrand.ui.AppBrandUI04',
           ],
           matches:
-            'WebView > View > View > TextView[text="访问人数过多，请稍后再试"] + TextView[text="我知道了"]',
+            'WebView > View > View > TextView[text^="服务异常" || text="访问人数过多，请稍后再试"] + TextView[text="我知道了"]',
         },
       ],
     },
@@ -610,7 +610,7 @@ export default defineGkdApp({
     {
       key: 28,
       name: '工行浇水',
-      desc: '260615，延时要考虑弹窗',
+      desc: '260703，延时要考虑弹窗',
       rules: [
         {
           activityIds: [
@@ -629,7 +629,7 @@ export default defineGkdApp({
           actionMaximum: 5,
           resetMatch: 'match',
           matches:
-            '([text="eaae316f2e764aaab66e4bb0ad2c57890822507158"]) || (WebView > View > View > View > View > Image[text="eaae316f2e764aaab66e4bb0ad2c57890822507158"]) || ([text="奖励派送中，稍后送达～"] <n * + * > *[clickable=true])',
+            '([text="56216925f8a94308847f3bee873cf4282485282187"]) || (WebView > View > View > View > View > Image[text="56216925f8a94308847f3bee873cf4282485282187"]) || ([text="奖励派送中，稍后送达～"] <n * + * > *[clickable=true])',
         },
       ],
     },

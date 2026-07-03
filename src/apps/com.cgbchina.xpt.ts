@@ -74,5 +74,18 @@ export default defineGkdApp({
         },
       ],
     },
+    {
+      key: 6,
+      name: '手机银行天天领福利，未中奖，知道了',
+      desc: '260703，添加开盲盒',
+      rules: [
+        {
+          resetMatch: 'match',
+          activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
+          matches:
+            '(View > Image + Image[text="noPrizeDialogBtn.e21b1317"][clickable=true]) || (View > Image + Image[text="prizeDialogBtn.cf846fd8"][clickable=true])',
+        },
+      ],
+    },
   ],
 });

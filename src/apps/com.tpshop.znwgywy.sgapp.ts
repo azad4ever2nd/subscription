@@ -257,5 +257,31 @@ export default defineGkdApp({
         },
       ],
     },
+    {
+      key: 20,
+      name: '服务器列表广告3',
+      desc: '260702',
+      rules: [
+        {
+          resetMatch: 'match',
+          activityIds: 'tool.seagull.v.ui.MainActivity',
+          matches:
+            'FrameLayout[vid="server_list_banner_ad"] FrameLayout > ImageView - FrameLayout[childCount=1] > View',
+        },
+      ],
+    },
+    {
+      key: 21,
+      name: '连接后广告弹窗5',
+      desc: '260703',
+      rules: [
+        {
+          resetMatch: 'match',
+          activityIds: 'tool.seagull.v.ui.MainActivity',
+          matches:
+            'ImageView[vid="vpnSwitchButton"][desc="停止"] +n ScrollView > FrameLayout > FrameLayout > FrameLayout > FrameLayout > FrameLayout > ImageView + FrameLayout[childCount=1] > View',
+        },
+      ],
+    },
   ],
 });

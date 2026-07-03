@@ -106,13 +106,14 @@ export default defineGkdApp({
     {
       key: 8,
       name: '更新提示',
-      desc: '251201',
+      desc: '260703',
       rules: [
         {
-          matches: ['[vid="version_dialog_close"]'],
-          fastQuery: true,
           resetMatch: 'match',
-          activityIds: ['com.njcb.mobile.biz.launcher.app.main.MainActivity'],
+          fastQuery: true,
+          activityIds: 'com.njcb.mobile.biz.launcher.app.main.MainActivity',
+          matches:
+            'ImageView[vid="version_dialog_close"][clickable=true][visibleToUser=true]',
         },
       ],
     },
@@ -202,6 +203,19 @@ export default defineGkdApp({
           activityIds: 'com.njcb.mobile.h5biz.H5ContainerActivity',
           matches:
             '([text="今日不再显示"] < * + *[clickable=true]) || (View > @TextView - View > TextView[text="今日不再显示"])',
+        },
+      ],
+    },
+    {
+      key: 15,
+      name: '任务，浏览完成',
+      desc: '260703',
+      rules: [
+        {
+          resetMatch: 'match',
+          action: 'back',
+          activityIds: 'com.njcb.mobile.h5biz.H5ContainerActivity',
+          matches: 'View > TextView[text="浏览完成"]',
         },
       ],
     },

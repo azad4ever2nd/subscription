@@ -315,7 +315,7 @@ export default defineGkdApp({
     {
       key: 22,
       name: '碳积分，去领取',
-      desc: '260624',
+      desc: '260703',
       rules: [
         {
           resetMatch: 'match',
@@ -324,7 +324,7 @@ export default defineGkdApp({
           activityIds:
             'com.hellobike.moped.platform.offline.web.OhoRealmWebActivity',
           matches:
-            '(@View > [text="碳积分"] + * + [text="去领取"]) || (Image[text="ea6cf0c3c8f6483c9dbbe484a2ea60e3_icon_green_c"] < View + TextView + View > TextView[text="去领取"]) || (@View > View > View > TextView - View > Image[text="aab668b57491499e89ee4a5b766bcf77_35"])',
+            '(@View > [text="碳积分"] + * + [text="去领取"]) || (Image[text="ea6cf0c3c8f6483c9dbbe484a2ea60e3_icon_green_c"] < View + TextView + View > TextView[text="去领取"]) || (View > View > View > TextView - @View > Image[text="aab668b57491499e89ee4a5b766bcf77_35"])',
         },
       ],
     },
