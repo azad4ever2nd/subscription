@@ -117,5 +117,20 @@ export default defineGkdApp({
         },
       ],
     },
+    {
+      key: 9,
+      name: '积分商城提示，我已知悉',
+      desc: '260704',
+      rules: [
+        {
+          resetMatch: 'match',
+          action: 'clickCenter',
+          actionCd: 0,
+          activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
+          matches:
+            'View > View > TextView[text="温馨提示"] + View + TextView[text="我已知悉"][clickable=true][visibleToUser=true]',
+        },
+      ],
+    },
   ],
 });

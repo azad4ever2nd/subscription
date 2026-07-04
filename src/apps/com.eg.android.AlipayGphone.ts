@@ -512,5 +512,19 @@ export default defineGkdApp({
         },
       ],
     },
+    {
+      key: 34,
+      name: '添加到首页，取消',
+      desc: '260704',
+      rules: [
+        {
+          resetMatch: 'match',
+          fastQuery: true,
+          activityIds: 'com.alipay.android.phone.home.market.AddToHomeActivity',
+          matches:
+            'TextView[text*="添加到首页"] < RelativeLayout < FrameLayout < FrameLayout + LinearLayout > Button[id="com.alipay.mobile.antui:id/btn_cancel"][clickable=true][visibleToUser=true][text="取消"]',
+        },
+      ],
+    },
   ],
 });

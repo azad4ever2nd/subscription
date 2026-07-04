@@ -6,16 +6,14 @@ export default defineGkdApp({
   groups: [
     {
       key: 1,
-      name: '最红星期五',
-      desc: '',
+      name: '最红星期五，立即购买',
+      desc: '260704',
       rules: [
         {
-          matches: [
-            '@[id="copy"][text*="立即购买"] <<n * - * [text="最红星期五"]',
-          ],
-          actionCd: 0,
           resetMatch: 'match',
-          activityIds: ['com.bankcomm.maidanba.activity.WebViewActivity'],
+          activityIds: 'com.bankcomm.maidanba.activity.WebViewActivity',
+          matches:
+            '(@[id="copy"][text*="立即购买"] <<n * - * [text="最红星期五"]) || (View > View > Button[id="copy"][clickable=true][visibleToUser=true]) || (WebView > View > View > View > View > Button[id="copy"][clickable=true][visibleToUser=true][text=" 立即购买"])',
         },
       ],
     },

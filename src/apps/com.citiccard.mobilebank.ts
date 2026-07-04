@@ -217,5 +217,19 @@ export default defineGkdApp({
         },
       ],
     },
+    {
+      key: 16,
+      name: '365权益兑换还没开始，我知道了',
+      desc: '260704',
+      rules: [
+        {
+          actionCd: 0,
+          resetMatch: 'match',
+          activityIds: 'com.citiccard.mobilebank.web.webpage.CommonWebPage',
+          matches:
+            'View > View > TextView[text="温馨提醒"] + TextView[text="权益兑换暂未开始！"] + View > TextView[clickable=false][visibleToUser=true][text="我知道了"]',
+        },
+      ],
+    },
   ],
 });

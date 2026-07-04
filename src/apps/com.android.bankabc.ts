@@ -7,14 +7,15 @@ export default defineGkdApp({
     {
       key: 1,
       name: '首页弹窗',
-      desc: '',
+      desc: '260704',
       rules: [
         {
-          resetMatch: 'app',
+          resetMatch: 'match',
+          actionCd: 0,
           fastQuery: true,
           activityIds: 'com.android.bankabc.MainActivity',
           matches:
-            '[vid="iv_notification_reminder_dialog"] + [vid="iv_notification_reminder_dialog_close"][desc="进入掌银首页"]',
+            '([vid="iv_notification_reminder_dialog"] + [vid="iv_notification_reminder_dialog_close"][desc="进入掌银首页"]) || (ViewGroup > ImageView[vid="iv_notification_reminder_dialog"] + ImageView[vid="iv_notification_reminder_dialog_close"][clickable=true][visibleToUser=true][desc="进入掌银首页"])',
         },
       ],
     },

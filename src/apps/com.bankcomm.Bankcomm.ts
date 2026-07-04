@@ -37,17 +37,14 @@ export default defineGkdApp({
     {
       key: 3,
       name: '最红星期五',
-      desc: '',
+      desc: '260704',
       rules: [
         {
-          matches: [
-            '@[id="copy"][text*="立即购买"] <<n * - * [text="最红星期五"]',
-          ],
-          actionCd: 0,
           resetMatch: 'match',
-          activityIds: [
-            'com.bankcomm.module.biz.webcontainer.BCMHtml5Activity',
-          ],
+          actionCd: 0,
+          activityIds: 'com.bankcomm.module.biz.webcontainer.BCMHtml5Activity',
+          matches:
+            '(@[id="copy"][text*="立即购买"] <<2 * - * [text="最红星期五"]) || (View > View > Button[id="copy"][clickable=true][visibleToUser=true]) || (WebView > View > View > View > View > Button[id="copy"][clickable=true][visibleToUser=true][text=" 立即购买"])',
         },
       ],
     },

@@ -91,5 +91,20 @@ export default defineGkdApp({
         },
       ],
     },
+    {
+      key: 7,
+      name: '弹窗，活动公告，我知道了',
+      desc: '260704',
+      rules: [
+        {
+          resetMatch: 'match',
+          actionCd: 0,
+          activityIds:
+            'com.ecitic.bank.mobile.ui.webview.CordovaExternalWebViewActivity',
+          matches:
+            'View > View + Button[clickable=true][visibleToUser=true][text="我知道了"]',
+        },
+      ],
+    },
   ],
 });

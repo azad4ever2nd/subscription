@@ -283,5 +283,34 @@ export default defineGkdApp({
         },
       ],
     },
+    {
+      key: 22,
+      name: '看广告签到获取金币，确认',
+      desc: '260704',
+      rules: [
+        {
+          resetMatch: 'match',
+          actionCd: 0,
+          fastQuery: true,
+          activityIds: 'tool.seagull.v.ui.MainActivity',
+          matches:
+            'TextView[text="签到"] < LinearLayout < LinearLayout +2 ScrollView > LinearLayout > Button[id="android:id/button1"][clickable=true][visibleToUser=true][text="确认"]',
+        },
+      ],
+    },
+    {
+      key: 23,
+      name: '签到后广告弹窗',
+      desc: '260704',
+      rules: [
+        {
+          resetMatch: 'match',
+          actionCd: 0,
+          activityIds: 'tool.seagull.v.ui.MainActivity',
+          matches:
+            'TextView[vid="checkin_button"][text^="已签"] + FrameLayout > FrameLayout > FrameLayout > FrameLayout > FrameLayout > FrameLayout[childCount=1] > View[clickable=false]',
+        },
+      ],
+    },
   ],
 });
