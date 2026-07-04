@@ -24,6 +24,7 @@ export default defineGkdApp({
       rules: [
         {
           resetMatch: 'match',
+          actionMaximum: 1,
           activityIds: 'com.github.android.main.MainActivity',
           matches: '[text="RUN WORKFLOW"] + @Button <<n * + * [text="CHANGE"]',
         },
