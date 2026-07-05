@@ -51,13 +51,15 @@ export default defineGkdApp({
     {
       key: 4,
       name: '定位，我知道了',
-      desc: '260503，测试matchroot',
+      desc: '260705，测试matchroot',
       rules: [
         {
-          matchRoot: true,
+          matchRoot: false,
+          actionCd: 0,
           resetMatch: 'match',
           activityIds: 'com.cmbc.cc.mbank.module.web.activity.WebViewActivity',
-          matches: '[text*="定位"] + [text="我知道了"]',
+          matches:
+            '([text*="定位"] + [text="我知道了"]) || (Dialog > TextView[text="提示"] + TextView + Button[clickable=true][visibleToUser=true][text="我知道了"]) || (WebView[text="惠买单"] > View > View > Dialog > TextView[text="提示"] + TextView + Button[clickable=true][visibleToUser=true][text="我知道了"])',
         },
       ],
     },

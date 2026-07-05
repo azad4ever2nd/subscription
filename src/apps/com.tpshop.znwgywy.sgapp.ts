@@ -312,5 +312,19 @@ export default defineGkdApp({
         },
       ],
     },
+    {
+      key: 24,
+      name: 'welcome，立刻出发',
+      desc: '260705',
+      rules: [
+        {
+          resetMatch: 'match',
+          actionCd: 0,
+          activityIds: 'tool.seagull.v.ui.MainActivity',
+          matches:
+            'LinearLayout > Button[clickable=true][visibleToUser=true][text="立刻出发！"]',
+        },
+      ],
+    },
   ],
 });

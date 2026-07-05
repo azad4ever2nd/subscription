@@ -22,13 +22,15 @@ export default defineGkdApp({
     {
       key: 2,
       name: '更新',
-      desc: '',
+      desc: '260705',
       rules: [
         {
-          matches: ['@[text="暂不更新"] + [text="立即体验"]'],
           fastQuery: true,
           resetMatch: 'match',
-          activityIds: ['com.mc10086.cmcc.view.tabs.AppTabFragment'],
+          actionCd: 0,
+          activityIds: 'com.mc10086.cmcc.view.tabs.AppTabFragment',
+          matches:
+            '(@[text="暂不更新"] + [text="立即体验"]) || (LinearLayout > @Button[vid="dialog_btn1"][clickable=true][text="暂不更新"] + Button[vid="dialog_btn2"][visibleToUser=true][text="立即体验"])',
         },
       ],
     },

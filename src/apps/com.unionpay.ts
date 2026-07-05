@@ -328,5 +328,24 @@ export default defineGkdApp({
         },
       ],
     },
+    {
+      key: 20,
+      name: '抽奖弹窗，谢谢参与，知道了',
+      desc: '260705',
+      rules: [
+        {
+          resetMatch: 'match',
+          actionCd: 0,
+          activityIds: [
+            'com.unionpay.liteapp.app.UPLiteAppActivity1',
+            'com.unionpay.liteapp.app.UPLiteAppActivity2',
+            'com.unionpay.liteapp.app.UPLiteAppActivity3',
+            'com.unionpay.liteapp.app.UPLiteAppActivity4',
+          ],
+          matches:
+            '(View > TextView[text="谢谢参与"] + TextView[text="知道了"] + Image[text="scMOOk4eCwfO2MXMA57klCN2cRQucR4ZsJPAuCw81thJPT6XbjhgNwMbAPAiq3hLBd4o0iqaRfxjmM16IkusKLl+YfM7Etm+Ty3VgYWWEXAiV2i27uIq4pB4BzRbd4E7E7rliWqX2owOgTfotu7ixoDIHLqtu8gZ0bOGbusuava4MINu6y4yXiB00G3dhaOYZNNnmzbM9KtMQWIKT9PBMB1JSzIwpSFTArSkXlPSt1w3povOcsWaLndLWWEpaCyllKmIs5SPlsLVUDJbinVLm2BtUOytkb0pM7WDP+PVKWG1cGJeAAAAAElFTkSuQmCC"][clickable=false])',
+        },
+      ],
+    },
   ],
 });

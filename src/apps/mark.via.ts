@@ -117,8 +117,24 @@ export default defineGkdApp({
           resetMatch: 'match',
           actionCd: 0,
           activityIds: 'mark.via.Shell',
+          action: 'clickCenter',
           matches:
             '(Dialog[text="暂无可用码"] > View > Button[clickable=true][visibleToUser=true][text="好的"]) || (Dialog[text="暂无可用码"] > Button[clickable=true][visibleToUser=true][text="好的"])',
+        },
+      ],
+    },
+    {
+      key: 10,
+      name: 'PDD半价助力，智能直达说明',
+      desc: '260703，',
+      rules: [
+        {
+          resetMatch: 'match',
+          actionCd: 0,
+          action: 'clickCenter',
+          activityIds: 'mark.via.Shell',
+          matches:
+            '(Dialog[text="智能直达说明"] > View > Button[clickable=true][visibleToUser=true][text="开启高效体验"]) || (Dialog[text="智能直达说明"] > Button[clickable=true][visibleToUser=true][text="开启高效体验"])',
         },
       ],
     },

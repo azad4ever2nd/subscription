@@ -106,14 +106,16 @@ export default defineGkdApp({
     {
       key: 8,
       name: '更新提示',
-      desc: '260703',
+      desc: '260705',
       rules: [
         {
           resetMatch: 'match',
           fastQuery: true,
+          action: 'clickCenter',
+          actionCd: 700,
           activityIds: 'com.njcb.mobile.biz.launcher.app.main.MainActivity',
           matches:
-            'ImageView[vid="version_dialog_close"][clickable=true][visibleToUser=true]',
+            'CheckBox[vid="login_privacy_iv"][checked=true] < LinearLayout < RelativeLayout <n RelativeLayout + ImageView[clickable=true][visibleToUser=true][vid="version_dialog_close"]',
         },
       ],
     },
@@ -216,6 +218,22 @@ export default defineGkdApp({
           action: 'back',
           activityIds: 'com.njcb.mobile.h5biz.H5ContainerActivity',
           matches: 'View > TextView[text="浏览完成"]',
+        },
+      ],
+    },
+    {
+      key: 16,
+      name: '更新提示，不再弹框提示新版本',
+      desc: '260705',
+      rules: [
+        {
+          fastQuery: true,
+          actionCd: 0,
+          resetMatch: 'match',
+          actionMaximum: 1,
+          activityIds: 'com.njcb.mobile.biz.launcher.app.main.MainActivity',
+          matches:
+            'LinearLayout > @CheckBox[vid="login_privacy_iv"][checked=false] + TextView[text="不再弹框提示新版本"]',
         },
       ],
     },

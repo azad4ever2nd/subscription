@@ -92,12 +92,15 @@ export default defineGkdApp({
     {
       key: 7,
       name: '同意授权',
-      desc: '',
+      desc: '260705',
       rules: [
         {
-          matches: ['[id="auth-main"] > [text="拒绝"] + [text="同意授权"]'],
           resetMatch: 'match',
-          activityIds: ['com.alipay.mobile.nebulacore.ui.H5Activity'],
+          actionCd: 0,
+          action: 'clickCenter',
+          activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
+          matches:
+            '([id="auth-main"] > [text="拒绝"] + [text="同意授权"]) || (View > View + Button[text="拒绝"] + Button[clickable=true][visibleToUser=true][text="同意授权"])',
         },
       ],
     },

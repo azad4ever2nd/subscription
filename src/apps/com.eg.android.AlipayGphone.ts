@@ -83,16 +83,16 @@ export default defineGkdApp({
     {
       key: 6,
       name: '开启重要消息通知',
-      desc: '260218',
+      desc: '260705',
       rules: [
         {
-          matches: [
-            '([id="com.alipay.android.phone.messageboxapp:id/image"] + [id="com.alipay.android.phone.messageboxapp:id/cancel_btn"]) || (@[id="com.alipay.android.phone.messageboxapp:id/cancel_btn"] + * > [text="去开启"])',
-          ],
           fastQuery: true,
-          activityIds: [
+          resetMatch: 'match',
+          actionCd: 0,
+          activityIds:
             'com.alipay.android.phone.msgboxapp.ui.activity.MBoxTabPageActivity',
-          ],
+          matches:
+            '([id="com.alipay.android.phone.messageboxapp:id/image"] + [id="com.alipay.android.phone.messageboxapp:id/cancel_btn"]) || (@[id="com.alipay.android.phone.messageboxapp:id/cancel_btn"] + * > [text="去开启"]) || (TextView[text.length=1] < @FrameLayout[id="com.alipay.android.phone.messageboxapp:id/cancel_btn"][clickable=true] + LinearLayout > Button[text="去开启"])',
         },
       ],
     },
