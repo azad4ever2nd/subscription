@@ -24,15 +24,14 @@ export default defineGkdApp({
     {
       key: 2,
       name: '工行开盲盒，抽奖',
-      desc: '260513，(@[id="lotteryIconFile"] + * > [text^="剩余次数："][text!*="0次"]) || ',
+      desc: '260706，点第二个，(@[id="lotteryIconFile"] + * > [text^="剩余次数："][text!*="0次"]) || ',
       rules: [
         {
-          matches: [
-            '(@*[parent.childCount=3] <<n * + * > [text="拆盲盒剩余次数：1次"])',
-          ],
           actionCd: 100,
           resetMatch: 'match',
-          activityIds: ['com.icbc.activity.web.ICBCWebView'],
+          matches:
+            '(@*[parent.childCount=3] <<n * + * > [text="拆盲盒剩余次数：1次"]) || (@TextView[clickable=false][visibleToUser=true] <2 View < View + View > TextView[text="拆盲盒剩余次数：1次"])',
+          activityIds: 'com.icbc.activity.web.ICBCWebView',
         },
       ],
     },
