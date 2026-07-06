@@ -105,15 +105,15 @@ export default defineGkdApp({
     {
       key: 8,
       name: '周一，江城礼遇四选一',
-      desc: '260525，新布局',
+      desc: '260706，新布局',
       rules: [
         {
           resetMatch: 'match',
           actionCd: 0,
-          actionMaximum: 5,
+          actionMaximum: 20,
           activityIds: 'com.icbc.activity.web.ICBCWebView',
           matches:
-            '([id="app"] > [id="viewWrapper"] >n [text=" 立即领取"]) || ([text="详情"] + * + [text$="元优惠券"] + Button[text!="未开始" && text!="已领完"]) || ([text="详情"] + * + [text$="元优惠券"] + Button[text*="立即领取"])',
+            '([id="app"] > [id="viewWrapper"] >n [text=" 立即领取"]) || ([text="详情"] + * + [text$="元优惠券"] + Button[text*="立即领取"]) || (View > TextView[text*="优惠券"] +n Button[clickable=true][visibleToUser=true][text="立即领取"])',
         },
       ],
     },
@@ -127,7 +127,7 @@ export default defineGkdApp({
           actionCdKey: 8,
           activityIds: 'com.icbc.activity.web.ICBCWebView',
           matches:
-            '([text="活动太火爆，请稍后再试"] + [text="我知道了"]) || ([text="刷新重试"])',
+            '([text*="活动太火爆，请稍后再试"] + [text="我知道了"]) || ([text="刷新重试"]) || (View > TextView[text*="活动太火爆" || text$="请稍后再试"] + Button[clickable=true][visibleToUser=true][text="我知道了"])',
         },
       ],
     },
