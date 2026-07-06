@@ -58,7 +58,7 @@ export default defineGkdApp({
           action: 'back',
           matches:
             '([text^="来的太晚啦"] + [text="知道了"]) || (View > View > View > View > TextView[text="拆盲盒剩余次数：0次1"])',
-          resetMatch: 'activity',
+          resetMatch: 'match',
           activityIds: ['com.icbc.activity.web.ICBCWebView'],
         },
       ],
@@ -120,7 +120,7 @@ export default defineGkdApp({
     {
       key: 9,
       name: '周一，江城礼遇四选一，刷新重试',
-      desc: '260505，刷新重试',
+      desc: '260706，刷新重试',
       rules: [
         {
           resetMatch: 'match',
