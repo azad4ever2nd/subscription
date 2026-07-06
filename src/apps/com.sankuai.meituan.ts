@@ -49,15 +49,18 @@ export default defineGkdApp({
     {
       key: 4,
       name: '定位服务授权，暂不开启',
-      desc: '260704',
+      desc: '260706，添加IDS',
       rules: [
         {
           fastQuery: true,
           resetMatch: 'match',
           actionCd: 0,
-          activityIds: 'com.meituan.android.mrn.container.MRNBaseActivity',
+          activityIds: [
+            'com.meituan.android.mrn.container.MRNBaseActivity',
+            'com.meituan.android.mrn.container.MRNStandardActivity',
+          ],
           matches:
-            '([text="定位服务授权"] +n * @*[clickable=true] [text="暂不开启"]) || (TextView[text="定位服务授权"] +n ViewGroup > @ViewGroup[clickable=true] > TextView[text="暂不开启"])',
+            '([text="定位服务授权"] +n * @*[clickable=true] [text="暂不开启"]) || (TextView[text="定位服务授权"] +n ViewGroup > @ViewGroup[clickable=true] > TextView[text="暂不开启"]) || (TextView[text="定位服务授权"] +n ViewGroup > ViewGroup > @ViewGroup[clickable=true] > TextView[text="暂不开启"])',
         },
       ],
     },

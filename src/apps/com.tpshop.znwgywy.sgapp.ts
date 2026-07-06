@@ -326,5 +326,19 @@ export default defineGkdApp({
         },
       ],
     },
+    {
+      key: 25,
+      name: '签到页面广告弹窗2，X掉',
+      desc: '260706，不管连接与否，匹配弹窗',
+      rules: [
+        {
+          resetMatch: 'match',
+          actionCd: 0,
+          activityIds: 'tool.seagull.v.ui.MainActivity',
+          matches:
+            'ImageView[vid="vpnSwitchButton"] +n ScrollView > FrameLayout > FrameLayout > FrameLayout > FrameLayout > FrameLayout > FrameLayout[childCount=1] > View',
+        },
+      ],
+    },
   ],
 });

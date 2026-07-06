@@ -63,14 +63,14 @@ export default defineGkdApp({
     {
       key: 5,
       name: '任务完成，返回领奖',
-      desc: '260705',
+      desc: '260706，返回领奖，去领奖',
       rules: [
         {
           resetMatch: 'match',
           actionCd: 100,
           activityIds: 'me.ele.component.webcontainer.view.AppUCWebActivity',
           matches:
-            '@View[clickable=true] > TextView[text="任务完成"] + TextView[text="返回领奖"]',
+            '@View[clickable=true] > TextView[text="任务完成"] + TextView[text*="领奖"]',
         },
       ],
     },

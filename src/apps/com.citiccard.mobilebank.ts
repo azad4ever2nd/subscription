@@ -53,15 +53,15 @@ export default defineGkdApp({
     {
       key: 4,
       name: '笔笔返开始，1.5元',
-      desc: '260601，clickable=false， + [text!="100%"]',
+      desc: '260706，clickable=false， + [text!="100%"]',
       rules: [
         {
-          matches: [
-            '[text="当前剩余领取次数 1"] + * [text="1.5 元"] + [text="立即领取"]',
-          ],
-          actionCd: 0,
           resetMatch: 'match',
-          activityIds: ['com.citiccard.mobilebank.web.webpage.CommonWebPage'],
+          actionCd: 0,
+          action: 'clickCenter',
+          activityIds: 'com.citiccard.mobilebank.web.webpage.CommonWebPage',
+          matches:
+            '([text="当前剩余领取次数 1"] + * TextView[text="1.5 元"] + TextView[text="立即领取"]) || (TextView[text="当前剩余领取次数 1"] + View > View > View > View > View > View > TextView[text="1.5 元"] + TextView[clickable=false][visibleToUser=true][text="立即领取"])',
         },
       ],
     },
@@ -174,32 +174,32 @@ export default defineGkdApp({
     {
       key: 13,
       name: '笔笔返开始，5元',
-      desc: '260601，clickable=false，+ [text!="100%"]',
+      desc: '260706，clickable=false，+ [text!="100%"]',
       rules: [
         {
-          matches: [
-            '[text="当前剩余领取次数 1"] + * [text="5 元"] + [text="立即领取"]',
-          ],
           actionCd: 0,
-          resetMatch: 'match',
           order: -2,
-          activityIds: ['com.citiccard.mobilebank.web.webpage.CommonWebPage'],
+          action: 'clickCenter',
+          resetMatch: 'match',
+          matches:
+            '([text="当前剩余领取次数 1"] + * TextView[text="5 元"] + TextView[text="立即领取"]) || (TextView[text="当前剩余领取次数 1"] + View > View > View > View > View > View > TextView[text="5 元"] + TextView[clickable=false][visibleToUser=true][text="立即领取"])',
+          activityIds: 'com.citiccard.mobilebank.web.webpage.CommonWebPage',
         },
       ],
     },
     {
       key: 14,
       name: '笔笔返开始，2元',
-      desc: '260601， clickable=false，+ [text!="100%"]',
+      desc: '260706， clickable=false，+ [text!="100%"]',
       rules: [
         {
-          matches: [
-            '[text="当前剩余领取次数 1"] + * [text="2 元"] + [text="立即领取"]',
-          ],
           actionCd: 0,
           resetMatch: 'match',
           order: -1,
-          activityIds: ['com.citiccard.mobilebank.web.webpage.CommonWebPage'],
+          action: 'clickCenter',
+          matches:
+            '([text="当前剩余领取次数 1"] + * TextView[text="2 元"] + TextView[text="立即领取"]) || (TextView[text="当前剩余领取次数 1"] + View > View > View > View > View > View > TextView[text="2 元"] + TextView[clickable=false][visibleToUser=true][text="立即领取"])',
+          activityIds: 'com.citiccard.mobilebank.web.webpage.CommonWebPage',
         },
       ],
     },
@@ -228,6 +228,23 @@ export default defineGkdApp({
           activityIds: 'com.citiccard.mobilebank.web.webpage.CommonWebPage',
           matches:
             'View > View > TextView[text="温馨提醒"] + TextView[text="权益兑换暂未开始！"] + View > TextView[clickable=false][visibleToUser=true][text="我知道了"]',
+        },
+      ],
+    },
+    {
+      key: 17,
+      name: '系统检测到VPN，继续使用',
+      desc: '260704',
+      rules: [
+        {
+          actionCd: 0,
+          resetMatch: 'match',
+          fastQuery: true,
+          action: 'click',
+          activityIds:
+            'com.citiccard.mobilebank.newconfig.appconstruct.TabsAppHomeActivity',
+          matches:
+            'TextView[text*="VPN"] < LinearLayout +2 LinearLayout > Button[vid="btn_confirm"][clickable=true][visibleToUser=true][text="继续使用"]',
         },
       ],
     },

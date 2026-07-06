@@ -19,13 +19,15 @@ export default defineGkdApp({
     },
     {
       key: 2,
-      name: '下载海报，X掉',
-      desc: '260521',
+      name: '下载海报，点击下载海报',
+      desc: '260706',
       rules: [
         {
           resetMatch: 'match',
+          actionCd: 0,
           activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
-          matches: '@Image + [text="点击下载海报"]',
+          matches:
+            'View > Image + TextView[clickable=true][visibleToUser=true][text="点击下载海报"]',
         },
       ],
     },

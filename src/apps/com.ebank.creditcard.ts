@@ -56,16 +56,15 @@ export default defineGkdApp({
     {
       key: 5,
       name: '优惠券不在销售时间内，确认',
-      desc: '260101',
+      desc: '260706',
       rules: [
         {
-          matches: [
-            '[vid="dialog_content"][text*="优惠券不在销售时间内"] < * +n * > [vid="dialog_button_positive"][text="确认"]',
-          ],
-          actionCd: 0,
-          fastQuery: true,
           resetMatch: 'match',
-          activityIds: ['com.alipay.mobile.nebulacore.ui.H5Activity'],
+          fastQuery: true,
+          actionCd: 0,
+          activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
+          matches:
+            '([vid="dialog_content"][text*="优惠券不在销售时间内"] < * +n * > [vid="dialog_button_positive"][text="确认"]) || (TextView[vid="dialog_content"][text*="优惠券不在销售时间内"] < ScrollView +n LinearLayout > TextView[vid="dialog_button_positive"][clickable=true][visibleToUser=true][text="确认"])',
         },
       ],
     },

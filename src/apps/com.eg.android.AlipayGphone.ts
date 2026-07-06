@@ -375,14 +375,14 @@ export default defineGkdApp({
     {
       key: 24,
       name: '弹窗2，与分期有关，X掉',
-      desc: '260703，添加',
+      desc: '260706，顶替规则3',
       rules: [
         {
           resetMatch: 'match',
           activityIds:
             'com.alipay.mobile.nebulax.xriver.activity.XRiverActivity',
           matches:
-            '(@Image < View + View Button[text="同意协议并分期"]) || (View > @Image[text="关闭弹窗"] + View > View > TextView[text="立即更换"]) || (@Image < View + View > TextView[text="开通信用卡借款享一站式服务"])',
+            '(@Image < View + View Button[text="同意协议并分期"]) || (View > @Image[text="关闭弹窗"] + View > View > TextView[text="立即更换"]) || (@Image < View + View > TextView[text="开通信用卡借款享一站式服务"]) || (@Image[clickable=false][visibleToUser=true] < View + View > Button[text="去看看"])',
         },
       ],
     },
@@ -523,6 +523,21 @@ export default defineGkdApp({
           activityIds: 'com.alipay.android.phone.home.market.AddToHomeActivity',
           matches:
             'TextView[text*="添加到首页"] < RelativeLayout < FrameLayout < FrameLayout + LinearLayout > Button[id="com.alipay.mobile.antui:id/btn_cancel"][clickable=true][visibleToUser=true][text="取消"]',
+        },
+      ],
+    },
+    {
+      key: 35,
+      name: '卡包删除卡，取消',
+      desc: '260705',
+      rules: [
+        {
+          resetMatch: 'match',
+          fastQuery: true,
+          activityIds:
+            'com.alipay.android.phone.xriver.bundlex.CSGAPushActivity',
+          matches:
+            'TextView[text*="确认删除" || text^="删除后无法恢复"] < ScrollView <n LinearLayout < LinearLayout + LinearLayout > @Button[id="com.alipay.mobile.antui:id/btn_cancel"][clickable=true][text="取消"] + Button[id="com.alipay.mobile.antui:id/btn_ensure"][text="确认删除"]',
         },
       ],
     },

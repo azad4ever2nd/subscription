@@ -324,5 +324,36 @@ export default defineGkdApp({
         },
       ],
     },
+    {
+      key: 24,
+      name: '如何解锁，去首页',
+      desc: '260706',
+      rules: [
+        {
+          resetMatch: 'match',
+          action: 'click',
+          actionCd: 300,
+          activityIds: 'com.xunmeng.pinduoduo.activity.NewPageActivity',
+          matches:
+            'View > TextView[text="如何解锁?"] + TextView[clickable=false][text="去首页"]',
+        },
+      ],
+    },
+    {
+      key: 25,
+      name: '5折点亮任务完成，去解锁',
+      desc: '260706',
+      rules: [
+        {
+          resetMatch: 'app',
+          action: 'click',
+          actionMaximum: 1,
+          actionCd: 300,
+          activityIds: 'com.xunmeng.pinduoduo.activity.NewPageActivity',
+          matches:
+            'TextView[text="点亮任务已完成"] +n View > View > TextView[clickable=false][visibleToUser=true][text="去解锁"]',
+        },
+      ],
+    },
   ],
 });
