@@ -8,13 +8,13 @@ export default defineGkdApp({
       key: 1,
       name: '广告弹窗',
       desc: '整合新的弹窗',
-      resetMatch: 'app',
       rules: [
         {
           matches: [
             '([vid="dialog"] + [vid="img_close"][desc="关闭"]) || ([vid="close_iv"])',
           ],
           fastQuery: true,
+          resetMatch: 'app',
           activityIds: [
             'com.icbc.activity.main.MainActivity',
             'com.icbc.oisc.UI.mainPage.OISCMainActivity',
