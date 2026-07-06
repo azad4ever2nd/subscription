@@ -52,11 +52,12 @@ export default defineGkdApp({
     {
       key: 4,
       name: '盲盒抽完了',
-      desc: '',
+      desc: '260706',
       rules: [
         {
           action: 'back',
-          matches: ['[text^="来的太晚啦"] + [text="知道了"]'],
+          matches:
+            '([text^="来的太晚啦"] + [text="知道了"]) || (View > View > View > View > TextView[text="拆盲盒剩余次数：0次1"])',
           resetMatch: 'activity',
           activityIds: ['com.icbc.activity.web.ICBCWebView'],
         },
