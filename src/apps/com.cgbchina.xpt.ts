@@ -87,5 +87,58 @@ export default defineGkdApp({
         },
       ],
     },
+    {
+      key: 7,
+      name: '天天领福利，签到',
+      desc: '260711"',
+      rules: [
+        {
+          resetMatch: 'match',
+          activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
+          matches:
+            'View[text="0"] < View < View - View > @Image[clickable=true][visibleToUser=true] + View',
+        },
+      ],
+    },
+    {
+      key: 8,
+      name: '签到页面，去抽奖',
+      desc: '260710',
+      rules: [
+        {
+          resetMatch: 'match',
+          activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
+          matches:
+            '(View[text="1"] < View < View - View > @Image[clickable=true][visibleToUser=true][text.length=0] + View[text^="已连续签到"]) || (View[text="1"] < View < View +(6,10) View > View > Image[clickable=true][visibleToUser=true][text="20260629113116910808676207755"])',
+        },
+      ],
+    },
+    {
+      key: 9,
+      name: '幸运大抽奖，还有次数，8积分抽',
+      desc: '260710',
+      rules: [
+        {
+          resetMatch: 'match',
+          activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
+          matches:
+            'View[text="1"] < View < View - View > View > View[id="luckDraw"] + @View[clickable=true][visibleToUser=true] > Image[text.length=0]',
+        },
+      ],
+    },
+    {
+      key: 10,
+      name: '抽奖提示，确认',
+      desc: '260710',
+      rules: [
+        {
+          resetMatch: 'match',
+          actionCd: 0,
+          activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
+          matches:
+            'Dialog > View[text="温馨提示"] + View[text^="抽奖一次消耗您的8积分"] + View > Button[clickable=true][visibleToUser=true][text="确认 "]',
+        },
+      ],
+    },
   ],
 });

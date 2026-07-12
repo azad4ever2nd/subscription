@@ -19,15 +19,14 @@ export default defineGkdApp({
     {
       key: 2,
       name: '更新提示',
-      desc: '260202',
+      desc: '260711',
       rules: [
         {
-          matches: [
-            '@[vid="dialog_update_tv_cancel"][text="下次再说"] + [vid="dialog_update_tv_update"][text="立即更新"]',
-          ],
-          fastQuery: true,
           resetMatch: 'match',
-          activityIds: ['com.yt.hxmb50.mainpages.ui.main.MainActivity'],
+          fastQuery: true,
+          activityIds: 'com.yt.hxmb50.mainpages.ui.main.MainActivity',
+          matches:
+            '(@[vid="dialog_update_tv_cancel"][text="下次再说"] + [vid="dialog_update_tv_update"][text="立即更新"]) || (LinearLayout > @TextView[vid="dialog_update_tv_cancel"][clickable=true][visibleToUser=true][text="下次再说"] + TextView[vid="dialog_update_tv_update"][text="立即更新"])',
         },
       ],
     },

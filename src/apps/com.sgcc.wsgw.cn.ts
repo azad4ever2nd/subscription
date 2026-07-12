@@ -109,5 +109,46 @@ export default defineGkdApp({
         },
       ],
     },
+    {
+      key: 9,
+      name: '3元优惠券，立即兑换',
+      desc: '260711"',
+      rules: [
+        {
+          resetMatch: 'match',
+          actionCd: 0,
+          activityIds: 'com.sgcc.wsgw.mainbundle.ElectricTitleActivity',
+          matches:
+            'TextView[text^="（剩余" && text="（剩余0张）"] - View > @TextView[clickable=false][visibleToUser=true][text="立即兑换"] - ListView > View[text="3元"]',
+        },
+      ],
+    },
+    {
+      key: 10,
+      name: '【湖北省】3元优惠券，确认兑换',
+      desc: '260711"',
+      rules: [
+        {
+          resetMatch: 'match',
+          actionCd: 0,
+          activityIds: 'com.sgcc.wsgw.mainbundle.ElectricTitleActivity',
+          matches:
+            'View > TextView[text="【湖北省】3元优惠券"] + TextView + TextView[text="取消"] + TextView[clickable=false][visibleToUser=true][text="确认兑换"]',
+        },
+      ],
+    },
+    {
+      key: 11,
+      name: '优惠券已被抢光～，知道啦',
+      desc: '260711"',
+      rules: [
+        {
+          resetMatch: 'match',
+          activityIds: 'com.sgcc.wsgw.mainbundle.ElectricTitleActivity',
+          matches:
+            'View > TextView[text="来晚啦！"] + TextView[text="优惠券已被抢光～"] + TextView + TextView[clickable=false][visibleToUser=true][text="知道啦"]',
+        },
+      ],
+    },
   ],
 });

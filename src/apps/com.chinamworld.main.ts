@@ -169,5 +169,51 @@ export default defineGkdApp({
         },
       ],
     },
+    {
+      key: 12,
+      name: '勾选 本人已认真阅读并同意以上内容',
+      desc: '260711"',
+      rules: [
+        {
+          resetMatch: 'match',
+          actionCd: 500,
+          actionMaximum: 1,
+          activityIds:
+            'com.nantian.iBank.ui.activity.container.ProgramSingleWindowActivity',
+          matches:
+            '@TextView[clickable=false][visibleToUser=true] + View > TextView[text="本人已认真阅读并同意以上内容"]',
+        },
+      ],
+    },
+    {
+      key: 13,
+      name: '阅读 产品资料概要，确定',
+      desc: '260711"',
+      rules: [
+        {
+          resetMatch: 'match',
+          fastQuery: true,
+          activityIds:
+            'com.nantian.iBank.ui.activity.container.ProgramSingleWindowActivity',
+          matches:
+            'TextView[vid="tv_risk_title"][text="产品资料概要"] <n RelativeLayout < LinearLayout +n LinearLayout > LinearLayout > Button[vid="next_btn"][clickable=true][visibleToUser=true][text="确定"]',
+        },
+      ],
+    },
+    {
+      key: 14,
+      name: '风险匹配告知书及确认函，确定',
+      desc: '260711"',
+      rules: [
+        {
+          resetMatch: 'match',
+          fastQuery: true,
+          activityIds:
+            'com.nantian.iBank.ui.activity.container.ProgramSingleWindowActivity',
+          matches:
+            'TextView[vid="tv_risk_title"][text*="风险匹配告知书" || text*="确认函"] <n RelativeLayout < LinearLayout +n LinearLayout > Button[vid="next_btn"][clickable=true][visibleToUser=true][text="确定"]',
+        },
+      ],
+    },
   ],
 });

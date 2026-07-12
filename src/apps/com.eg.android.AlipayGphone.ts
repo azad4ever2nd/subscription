@@ -259,34 +259,36 @@ export default defineGkdApp({
     {
       key: 17,
       name: '开启地理位置权限',
-      desc: '260312，增加IDS，[id="com.alipay.mobile.antui:id/title_txt_2"][text="开启位置权限并允许支付宝获取你的地理位置"]',
+      desc: '260710，增加IDS，[id="com.alipay.mobile.antui:id/title_txt_2"][text="开启位置权限并允许支付宝获取你的地理位置"]',
       rules: [
         {
-          matches: [
-            '@[id="com.alipay.mobile.antui:id/btn_close"][desc="取消"] + [id="com.alipay.mobile.antui:id/title_txt_1" || id="com.alipay.mobile.antui:id/title_txt_2"][text*="地理位置" || text="支付宝本地服务"]',
-          ],
-          fastQuery: true,
           resetMatch: 'match',
+          fastQuery: true,
           activityIds: [
+            'com.alipay.mobile.beehive.cityselect.ui.CeilingHomeCitySelectActivity',
             'com.eg.android.AlipayGphone.AlipayLogin',
             'com.alipay.mobile.nebulax.xriver.activity.XRiverActivity',
             'com.alipay.mobile.nebulax.xriver.activity.XRiverActivity$App01',
+            'com.alipay.mobile.nebulax.xriver.activity.XRiverActivity$App02',
           ],
+          matches:
+            '(@[id="com.alipay.mobile.antui:id/btn_close"][desc="取消"] + [id="com.alipay.mobile.antui:id/title_txt_1" || id="com.alipay.mobile.antui:id/title_txt_2"][text*="地理位置" || text="支付宝本地服务"]) || (@[id="com.alipay.mobile.antui:id/btn_close"][desc="取消"] + [id="com.alipay.mobile.antui:id/title_txt_1"][text*="地理位置" || text="支付宝本地服务"])',
         },
       ],
     },
     {
       key: 18,
       name: '添加神券到首页，X掉',
-      desc: '260221',
+      desc: '260710，添加 生活缴费',
       rules: [
         {
-          matches: ['@TextView <n * + [text="取消"] + [text="立即添加"]'],
           resetMatch: 'match',
           activityIds: [
             'com.alipay.mobile.nebulax.xriver.activity.XRiverActivity$App01',
             'com.alipay.mobile.nebulax.xriver.activity.XRiverActivity$App02',
           ],
+          matches:
+            '(View > @Image[clickable=false][visibleToUser=true] +2 TextView[text="去处理"] + TextView[text="暂不处理"]) || (@TextView <n * + [text="取消"] + [text="立即添加"])',
         },
       ],
     },
@@ -375,14 +377,14 @@ export default defineGkdApp({
     {
       key: 24,
       name: '弹窗2，与分期有关，X掉',
-      desc: '260706，顶替规则3',
+      desc: '260710，替换规则3，升级月利宝',
       rules: [
         {
           resetMatch: 'match',
           activityIds:
             'com.alipay.mobile.nebulax.xriver.activity.XRiverActivity',
           matches:
-            '(@Image < View + View Button[text="同意协议并分期"]) || (View > @Image[text="关闭弹窗"] + View > View > TextView[text="立即更换"]) || (@Image < View + View > TextView[text="开通信用卡借款享一站式服务"]) || (@Image[clickable=false][visibleToUser=true] < View + View > Button[text="去看看"])',
+            '(View > @Image[clickable=false][visibleToUser=true][text="关闭弹窗"] + View > View > View > Image[text="original?hm_biz=mybank_fund"]) || (@Image < View + View Button[text="同意协议并分期"]) || (View > @Image[text="关闭弹窗"] + View > View > TextView[text="立即更换"]) || (@Image < View + View > TextView[text="开通信用卡借款享一站式服务"]) || (@Image[clickable=false][visibleToUser=true] < View + View > Button[text="去看看"]) || (View > CheckBox[checked=true] + TextView + Button + @Button[clickable=true][visibleToUser=true][text="继续转出"])',
         },
       ],
     },
@@ -459,14 +461,15 @@ export default defineGkdApp({
     {
       key: 30,
       name: '转账提示，不再提示',
-      desc: '260702',
+      desc: '260710',
       rules: [
         {
           resetMatch: 'match',
+          actionMaximum: 1,
           activityIds:
             'com.alipay.mobile.nebulax.xriver.activity.XRiverActivity',
           matches:
-            '(View > @CheckBox[checked=false] + TextView + Button + Button[clickable=true][visibleToUser=true][text="继续转出"]) || (View > CheckBox[checked=true] + TextView + Button + @Button[clickable=true][visibleToUser=true][text="继续转出"])',
+            '(View > @CheckBox[checked=false] + TextView + Button + Button[clickable=true][visibleToUser=true][text="继续转出"])',
         },
       ],
     },

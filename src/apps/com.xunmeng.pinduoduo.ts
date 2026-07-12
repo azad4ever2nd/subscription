@@ -327,7 +327,7 @@ export default defineGkdApp({
     {
       key: 24,
       name: '如何解锁，去首页',
-      desc: '260706',
+      desc: '260711',
       rules: [
         {
           resetMatch: 'match',
@@ -335,7 +335,7 @@ export default defineGkdApp({
           actionCd: 300,
           activityIds: 'com.xunmeng.pinduoduo.activity.NewPageActivity',
           matches:
-            'View > TextView[text="如何解锁?"] + TextView[clickable=false][text="去首页"]',
+            'View > TextView[text="如何解锁?" || text="如何解锁点亮?"] + TextView[clickable=false][text="去首页"]',
         },
       ],
     },
@@ -352,6 +352,20 @@ export default defineGkdApp({
           activityIds: 'com.xunmeng.pinduoduo.activity.NewPageActivity',
           matches:
             'TextView[text="点亮任务已完成"] +n View > View > TextView[clickable=false][visibleToUser=true][text="去解锁"]',
+        },
+      ],
+    },
+    {
+      key: 26,
+      name: '确认删除最近搜索记录吗？删除',
+      desc: '260710',
+      rules: [
+        {
+          resetMatch: 'match',
+          action: 'click',
+          activityIds: 'com.xunmeng.pinduoduo.activity.NewPageActivity',
+          matches:
+            'LinearLayout > TextView[id="com.xunmeng.pinduoduo:id/pdd"][text="确认删除最近搜索记录吗？"] + LinearLayout > TextView[clickable=true][visibleToUser=true][text="删除"]',
         },
       ],
     },

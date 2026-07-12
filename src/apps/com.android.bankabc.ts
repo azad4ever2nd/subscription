@@ -149,13 +149,14 @@ export default defineGkdApp({
     {
       key: 11,
       name: '小豆立即抽奖',
-      desc: '260423，抽奖按钮和结果是在同一个View中，区别在于有无child',
+      desc: '260710，没抽是[clickable=true][text.length=0],没中奖是有提示[text="很遗憾，您未中奖"][clickable=false],抽过奖View[clickable=false]且有child,child是查看小豆[clickable=true]，([text="每日抽小豆"] +2 View[childCount=0]) || ',
       rules: [
         {
           actionMaximum: 1,
           resetMatch: 'match',
           activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
-          matches: '[text="每日抽小豆"] +2 View[childCount=0]',
+          matches:
+            '(WebView > View > View > View > View[text="每日抽小豆"] +2 View[clickable=true][visibleToUser=true][text.length=0])',
         },
       ],
     },

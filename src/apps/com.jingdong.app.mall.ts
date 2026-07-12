@@ -270,5 +270,33 @@ export default defineGkdApp({
         },
       ],
     },
+    {
+      key: 20,
+      name: '订单列表，未付款取消的订单，删除',
+      desc: '260710',
+      rules: [
+        {
+          resetMatch: 'match',
+          activityIds: 'com.jd.lib.ordercenter.taro.OrderListActivityTaro',
+          matches:
+            '(ViewGroup[childCount=9] > View[desc="已取消"] +n ViewGroup > ViewGroup > View[clickable=false][visibleToUser=true][desc="删除订单"])',
+        },
+      ],
+    },
+    {
+      key: 21,
+      name: '确认删除该订单？，删除',
+      desc: '260710',
+      rules: [
+        {
+          resetMatch: 'match',
+          actionCd: 0,
+          action: 'clickCenter',
+          activityIds: 'com.jd.lib.ordercenter.taro.OrderListActivityTaro',
+          matches:
+            '(View[desc="确认删除该订单？"] < ViewGroup +n @ViewGroup[clickable=false][visibleToUser=true] > View[desc="删除"])',
+        },
+      ],
+    },
   ],
 });

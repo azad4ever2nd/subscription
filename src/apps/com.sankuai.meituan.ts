@@ -365,5 +365,18 @@ export default defineGkdApp({
         },
       ],
     },
+    {
+      key: 25,
+      name: '直接间，幸运抽奖，X掉',
+      desc: '260710',
+      rules: [
+        {
+          resetMatch: 'match',
+          activityIds: 'com.dianping.live.live.mrn.MLiveMRNActivity',
+          matches:
+            'ViewGroup > TextView[text="幸运抽奖"] +2 ImageView[clickable=false][visibleToUser=true]',
+        },
+      ],
+    },
   ],
 });

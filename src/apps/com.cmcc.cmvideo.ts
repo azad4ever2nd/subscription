@@ -159,5 +159,21 @@ export default defineGkdApp({
         },
       ],
     },
+    {
+      key: 11,
+      name: '更新协议提示',
+      desc: '260711,更新协议',
+      rules: [
+        {
+          resetMatch: 'match',
+          fastQuery: true,
+          actionCd: 300,
+          activityIds:
+            'com.cmcc.cmvideo.main.application.CompatibleMainActivity',
+          matches:
+            '([vid="tv_title"][text="更新提示"] +4 [vid="btn_ok"][text="同意并继续"]) || (ViewGroup > TextView[text="更新提示" || text*="用户服务协议" || text*="隐私政策"] +n TextView + TextView[vid="btn_ok"][clickable=true][visibleToUser=true])',
+        },
+      ],
+    },
   ],
 });
