@@ -298,15 +298,16 @@ export default defineGkdApp({
     {
       key: 19,
       name: '恭喜中奖啦',
-      desc: '260525,clickCenter不行',
+      desc: '260717,clickCenter不行',
       rules: [
         {
           resetMatch: 'match',
+          action: 'clickCenter',
           actionCd: 100,
           activityIds:
             'cmb.pb.app.h5container.webviewcontainer.PBWebContainerActivity',
           matches:
-            '(@Button + [text*="恭喜"] +n [text="返回"]) || (@Button + [text^="恭喜"] +n [text="立即查看"])',
+            '(@Button + [text*="恭喜"] +n [text="返回"]) || (@Button + [text^="恭喜"] +n [text="立即查看"]) || (View > View > View > @Button[clickable=true][visibleToUser=true] + TextView[text*="恭喜"] +n TextView[text="返回"]) || (View > View > View > @Button[clickable=true][visibleToUser=true] + TextView[text^="恭喜"] +n TextView[text="立即查看"])',
         },
       ],
     },
@@ -344,17 +345,15 @@ export default defineGkdApp({
     {
       key: 22,
       name: '红包一键提现',
-      desc: '251117，一键提现，确认提现到账户',
+      desc: '260717，一键提现，确认提现到账户',
       rules: [
         {
-          matches: [
-            '([text="待提现红包"] + [text="一键提现"]) || ([text="确认提现到账户"])',
-          ],
-          actionCdKey: 1,
+          actionCd: 0,
           resetMatch: 'match',
-          activityIds: [
+          activityIds:
             'cmb.pb.app.h5container.webviewcontainer.PBWebContainerActivity',
-          ],
+          matches:
+            '([text="待提现红包"] + [text="一键提现"]) || (WebView > View > View > TextView[text="待提现红包"] + Button[clickable=true][visibleToUser=true][text="一键提现"]) || ([text="确认提现到账户"])',
         },
       ],
     },

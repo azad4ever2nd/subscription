@@ -215,5 +215,21 @@ export default defineGkdApp({
         },
       ],
     },
+    {
+      key: 15,
+      name: '本人已认真阅读并同意以上内容,复制并粘贴',
+      desc: '260717"',
+      rules: [
+        {
+          resetMatch: 'match',
+          actionCd: 100,
+          actionMaximum: 1,
+          activityIds:
+            'com.nantian.iBank.ui.activity.container.ProgramSingleWindowActivity',
+          matches:
+            '(@TextView[clickable=false][visibleToUser=true][text="复制并粘贴"] - TextView[text^="本人已阅读风险揭示"] < View + View > EditText[text.length=0])',
+        },
+      ],
+    },
   ],
 });

@@ -545,5 +545,20 @@ export default defineGkdApp({
         },
       ],
     },
+    {
+      key: 36,
+      name: '直播间限时福袋',
+      desc: '260717',
+      rules: [
+        {
+          resetMatch: 'match',
+          actionMaximum: 1,
+          activityIds:
+            'com.bankcomm.module.biz.bcmvideo.BCMVerticalVideoActivity',
+          matches:
+            'WebView > View > View > @View[clickable=false][visibleToUser=true] > Image[text="0MrX0eS4YNgAAAABJRU5ErkJggg=="] + Image[text^="fudai"]',
+        },
+      ],
+    },
   ],
 });

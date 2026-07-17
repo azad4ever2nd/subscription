@@ -31,5 +31,18 @@ export default defineGkdApp({
         },
       ],
     },
+    {
+      key: 3,
+      name: '内测更新，X掉',
+      desc: '260717',
+      rules: [
+        {
+          resetMatch: 'match',
+          activityIds: 'com.alipay.mobile.quinox.LauncherActivity',
+          matches:
+            'FrameLayout > ImageView + ImageView[clickable=true][visibleToUser=true][id="com.alipay.mobile.android.security.upgrade:id/update_cancel_tv"]',
+        },
+      ],
+    },
   ],
 });

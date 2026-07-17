@@ -51,15 +51,14 @@ export default defineGkdApp({
     {
       key: 4,
       name: '更新，下次再说',
-      desc: '260208',
+      desc: '260717',
       rules: [
         {
-          matches: [
-            '[vid="positiveButton"] + [vid="negativeButton"][text="下次再说"]',
-          ],
-          fastQuery: true,
           resetMatch: 'match',
-          activityIds: ['com.unicom.wopay.app.MainActivity'],
+          fastQuery: true,
+          activityIds: 'com.unicom.wopay.app.MainActivity',
+          matches:
+            '([vid="positiveButton"] + [vid="negativeButton"][text="下次再说"]) || (LinearLayout > Button[vid="positiveButton"] + Button[vid="negativeButton"][clickable=true][visibleToUser=true][text="下次再说"])',
         },
       ],
     },
