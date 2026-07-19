@@ -340,5 +340,18 @@ export default defineGkdApp({
         },
       ],
     },
+    {
+      key: 26,
+      name: '连接后广告弹窗6',
+      desc: '260719，有提示 摇动或点击跳转至详情页或第三方应用',
+      rules: [
+        {
+          resetMatch: 'match',
+          activityIds: 'tool.seagull.v.ui.MainActivity',
+          matches:
+            'FrameLayout > LinearLayout +2 ImageView - FrameLayout > View[clickable=false][visibleToUser=true]',
+        },
+      ],
+    },
   ],
 });

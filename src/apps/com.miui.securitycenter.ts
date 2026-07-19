@@ -18,5 +18,34 @@ export default defineGkdApp({
         },
       ],
     },
+    {
+      key: 2,
+      name: '勾选 我已知晓可能存在的风险',
+      desc: '260719',
+      rules: [
+        {
+          resetMatch: 'match',
+          activityIds:
+            'com.miui.permcenter.privacymanager.SpecialPermissionInterceptActivity',
+          matches:
+            'ViewGroup > @CheckBox[clickable=true][visibleToUser=true][checked=false][vid="check_box"] + TextView[text^="我已知晓可能存在的风险"] + Button + Button',
+        },
+      ],
+    },
+    {
+      key: 3,
+      name: '我已知晓可能存在的风险，确定',
+      desc: '260719',
+      rules: [
+        {
+          resetMatch: 'match',
+          actionMaximum: 1,
+          activityIds:
+            'com.miui.permcenter.privacymanager.SpecialPermissionInterceptActivity',
+          matches:
+            'ViewGroup > CheckBox[checked=true][vid="check_box"] + TextView[text^="我已知晓可能存在的风险"] + Button + Button[clickable=true][visibleToUser=true][vid="intercept_warn_allow"][text="确定"]',
+        },
+      ],
+    },
   ],
 });

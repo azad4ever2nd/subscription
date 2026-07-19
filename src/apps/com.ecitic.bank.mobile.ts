@@ -22,14 +22,14 @@ export default defineGkdApp({
     {
       key: 2,
       name: '开启消息通知',
-      desc: '260523',
+      desc: '260719，添加弹窗',
       rules: [
         {
           resetMatch: 'match',
           fastQuery: true,
           activityIds: 'com.ecitic.bank.mobile.ui.MainActivity',
           matches:
-            '(@[vid="alert_cancel"][text="取消"] + [vid="alert_confirm"][text="立即开启"]) || ([vid="alert_title"][text="开启消息通知"] <n * +n * > [vid="alert_cancel"][text="取消"])',
+            '(@[vid="alert_cancel"][text="取消"] + [vid="alert_confirm"][text="立即开启"]) || ([vid="alert_title"][text="开启消息通知"] <n * +n * > [vid="alert_cancel"][text="取消"]) || (RelativeLayout > RelativeLayout[vid="id_cordova_view"] + ImageView[clickable=true][visibleToUser=true][vid="close_product_send"])',
         },
       ],
     },

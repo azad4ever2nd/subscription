@@ -169,5 +169,19 @@ export default defineGkdApp({
         },
       ],
     },
+    {
+      key: 12,
+      name: '我的云朵，领云朵',
+      desc: '260719',
+      rules: [
+        {
+          resetMatch: 'match',
+          activityIds:
+            'com.chinamobile.mcloud.client.component.web.H5WebViewMainActivity',
+          matches:
+            'WebView[text="移动云盘云朵中心"] > View > View > View > View > @TextView[clickable=false][visibleToUser=true][text.length=0] -n View > View > TextView[text="完成任务"]',
+        },
+      ],
+    },
   ],
 });

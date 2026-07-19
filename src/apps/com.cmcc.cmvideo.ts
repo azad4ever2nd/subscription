@@ -175,5 +175,20 @@ export default defineGkdApp({
         },
       ],
     },
+    {
+      key: 12,
+      name: '提示 进群，X掉',
+      desc: '260719',
+      rules: [
+        {
+          resetMatch: 'match',
+          actionCd: 0,
+          activityIds:
+            'com.cmcc.cmvideo.main.application.CompatibleMainActivity',
+          matches:
+            'ViewGroup > FrameLayout > ImageView[clickable=true][visibleToUser=true][vid="iv_close_single"]',
+        },
+      ],
+    },
   ],
 });
