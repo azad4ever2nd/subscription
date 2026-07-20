@@ -218,5 +218,18 @@ export default defineGkdApp({
         },
       ],
     },
+    {
+      key: 15,
+      name: '五星好评，下次再说',
+      desc: '260720',
+      rules: [
+        {
+          resetMatch: 'match',
+          activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
+          matches:
+            'TextView[text="温馨提示"] < RelativeLayout +n LinearLayout > TextView[clickable=true][visibleToUser=true][text="下次再说"]',
+        },
+      ],
+    },
   ],
 });

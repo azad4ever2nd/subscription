@@ -36,14 +36,14 @@ export default defineGkdApp({
     {
       key: 3,
       name: '领奖完成',
-      desc: '260717，添加 云朵领取成功',
+      desc: '260720，添加 云朵领取成功',
       rules: [
         {
           resetMatch: 'match',
           activityIds:
             'com.chinamobile.mcloud.client.component.web.H5WebViewMainActivity',
           matches:
-            '(View > Image[text="+SOMf8vIwWVqABk0AAAAASUVORK5CYII="]) || ([text="立即前往"] <3 View + Image[text="+SOMf8vIwWVqABk0AAAAASUVORK5CYII="]) || (TextView[text="订购结果"] < View + Image[text="+SOMf8vIwWVqABk0AAAAASUVORK5CYII="]) || (TextView[text*="转存成功"] < View + Image[text="+SOMf8vIwWVqABk0AAAAASUVORK5CYII="]) || (Dialog > View > View > TextView[text="知道啦"] + Image[clickable=false][visibleToUser=true][text="wMHmBwYPo98SAAAAABJRU5ErkJggg=="])',
+            '(View > Image[text="+SOMf8vIwWVqABk0AAAAASUVORK5CYII=1"]) || (TextView[text="移动云盘体验评价"] < View + Image[clickable=false][visibleToUser=true][text="wMHmBwYPo98SAAAAABJRU5ErkJggg=="]) || ([text="立即前往"] <3 View + Image[text="+SOMf8vIwWVqABk0AAAAASUVORK5CYII="]) || (TextView[text="订购结果"] < View + Image[text="+SOMf8vIwWVqABk0AAAAASUVORK5CYII="]) || (TextView[text*="转存成功"] < View + Image[text="+SOMf8vIwWVqABk0AAAAASUVORK5CYII="]) || (Dialog > View > View > TextView[text="知道啦"] + Image[clickable=false][visibleToUser=true][text="wMHmBwYPo98SAAAAABJRU5ErkJggg=="])',
         },
       ],
     },
@@ -180,6 +180,38 @@ export default defineGkdApp({
             'com.chinamobile.mcloud.client.component.web.H5WebViewMainActivity',
           matches:
             'WebView[text="移动云盘云朵中心"] > View > View > View > View > @TextView[clickable=false][visibleToUser=true][text.length=0] -n View > View > TextView[text="完成任务"]',
+        },
+      ],
+    },
+    {
+      key: 13,
+      name: '新活动12点兑换，第1步，立即兑换',
+      desc: '260720',
+      rules: [
+        {
+          actionCd: 0,
+          resetMatch: 'match',
+          actionMaximum: 1,
+          activityIds:
+            'com.chinamobile.mcloud.client.component.web.H5WebViewMainActivity',
+          matches:
+            'WebView[text="兑换奖品"] > View > View > View > Button[clickable=true][visibleToUser=true][text="立即兑换"]',
+        },
+      ],
+    },
+    {
+      key: 14,
+      name: '新活动12点兑换，第2步，确认兑换',
+      desc: '260720',
+      rules: [
+        {
+          resetMatch: 'match',
+          actionCd: 0,
+          order: -10,
+          activityIds:
+            'com.chinamobile.mcloud.client.component.web.H5WebViewMainActivity',
+          matches:
+            'Dialog > View > View > TextView[text="取消"] + TextView[text="确认兑换"]',
         },
       ],
     },

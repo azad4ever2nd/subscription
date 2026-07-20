@@ -74,5 +74,20 @@ export default defineGkdApp({
         },
       ],
     },
+    {
+      key: 6,
+      name: '爷爷不泡茶，0.1购',
+      desc: '260720',
+      rules: [
+        {
+          resetMatch: 'match',
+          actionCd: 0,
+          actionMaximum: 2,
+          activityIds: 'me.ele.component.webcontainer.view.AppUCWebActivity',
+          matches:
+            'TextView[text="¥"] < View +n View > TextView[clickable=true][visibleToUser=true][text^="立即配送"]',
+        },
+      ],
+    },
   ],
 });

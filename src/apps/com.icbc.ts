@@ -120,14 +120,14 @@ export default defineGkdApp({
     {
       key: 9,
       name: '周一，江城礼遇四选一，刷新重试',
-      desc: '260706，刷新重试',
+      desc: '260720，最大次数，刷新重试',
       rules: [
         {
           resetMatch: 'match',
           actionCdKey: 8,
           activityIds: 'com.icbc.activity.web.ICBCWebView',
           matches:
-            '([text*="活动太火爆，请稍后再试"] + [text="我知道了"]) || ([text="刷新重试"]) || (View > TextView[text*="活动太火爆" || text$="请稍后再试"] + Button[clickable=true][visibleToUser=true][text="我知道了"])',
+            '([text*="活动太火爆，请稍后再试"] + [text="我知道了"]) || ([text="刷新重试"]) || (View > TextView[text*="最大参与次数" || text*="活动太火爆" || text$="请稍后再试"] + Button[clickable=true][visibleToUser=true][text="我知道了"])',
         },
       ],
     },
