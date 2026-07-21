@@ -560,5 +560,45 @@ export default defineGkdApp({
         },
       ],
     },
+    {
+      key: 37,
+      name: '基金理财操作，第1步，阅读资料',
+      desc: '260721',
+      rules: [
+        {
+          resetMatch: 'match',
+          actionMaximum: 1,
+          activityIds: 'com.bankcomm.module.biz.webcontainer.BCMHtml5Activity',
+          matches:
+            'Dialog > Button[clickable=true][visibleToUser=true][text="我已阅读并同意"]',
+        },
+      ],
+    },
+    {
+      key: 38,
+      name: '基金理财操作，第2步，风险提示声明，一键输入',
+      desc: '260721',
+      rules: [
+        {
+          resetMatch: 'match',
+          activityIds: 'com.bankcomm.module.biz.webcontainer.BCMHtml5Activity',
+          matches:
+            'View > EditText[text.length=0] + View > View > Button[clickable=true][visibleToUser=true][text="一键输入"]',
+        },
+      ],
+    },
+    {
+      key: 39,
+      name: '基金理财操作，第2步，风险提示声明，一键输入，确认',
+      desc: '260721',
+      rules: [
+        {
+          resetMatch: 'match',
+          activityIds: 'com.bankcomm.module.biz.webcontainer.BCMHtml5Activity',
+          matches:
+            'EditText[text.length>0] < View + Button[clickable=true][visibleToUser=true][text="确认"]',
+        },
+      ],
+    },
   ],
 });
