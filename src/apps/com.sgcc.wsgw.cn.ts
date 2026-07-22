@@ -35,12 +35,14 @@ export default defineGkdApp({
     },
     {
       key: 3,
-      name: '抽金币',
-      desc: '',
+      name: '签到多少天抽奖',
+      desc: '260722',
       rules: [
         {
-          matches: ['[text^="抽中"] + *'],
-          activityIds: ['com.sgcc.wsgw.mainbundle.ElectricTitleActivity'],
+          resetMatch: 'match',
+          activityIds: 'com.sgcc.wsgw.mainbundle.ElectricTitleActivity',
+          matches:
+            '([text^="抽中"] + *) || (WebView > View > View > View > View > View > TextView[text^="抽中" && text$="个签到金"] + TextView[clickable=false][visibleToUser=true])',
         },
       ],
     },

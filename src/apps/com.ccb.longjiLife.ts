@@ -144,5 +144,19 @@ export default defineGkdApp({
         },
       ],
     },
+    {
+      key: 12,
+      name: '低碳生活，一键收取',
+      desc: '260722[ChangeMe]本规则由GKD网页端审查工具生成',
+      rules: [
+        {
+          resetMatch: 'match',
+          actionMaximum: 1,
+          activityIds: 'com.ccb.cloudmerchant.view.WebViewActivity',
+          matches:
+            'WebView[text="低碳生活"] > View > View > Image[clickable=false][visibleToUser=true][text="oneKey"]',
+        },
+      ],
+    },
   ],
 });

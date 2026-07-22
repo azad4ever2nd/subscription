@@ -85,7 +85,7 @@ export default defineGkdApp({
           actionMaximum: 2,
           activityIds: 'me.ele.component.webcontainer.view.AppUCWebActivity',
           matches:
-            'TextView[text="¥"] < View +n View > TextView[clickable=true][visibleToUser=true][text^="立即配送"]',
+            '(TextView[text="¥"] - TextView[text="0.1"] < View +n View > TextView[clickable=true][visibleToUser=true][text^="立即配送"]) || (TextView[text="0.1"] - TextView[text="¥"] < View +n View > TextView[clickable=true][visibleToUser=true][text^="立即配送"])',
         },
       ],
     },
