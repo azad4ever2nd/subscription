@@ -7,16 +7,15 @@ export default defineGkdApp({
     {
       key: 1,
       name: '签到',
-      desc: '251127',
+      desc: '260723',
       rules: [
         {
-          matches: ['[id="normal"] +3 *'],
-          actionMaximum: 1,
-          matchDelay: 1000,
+          actionMaximum: 2,
           resetMatch: 'match',
-          activityIds: [
+          activityIds:
             'com.unicom.wopay.modules.h5module.ui.WopayWebViewActivity',
-          ],
+          matches:
+            '([id="normal"] +3 *) || (WebView[text="立减金"] > View  > View  > View  > View > View[id="normal"] +3 TextView[clickable=false][visibleToUser=true] )',
         },
       ],
     },

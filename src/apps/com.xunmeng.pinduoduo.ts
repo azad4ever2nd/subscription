@@ -369,5 +369,18 @@ export default defineGkdApp({
         },
       ],
     },
+    {
+      key: 27,
+      name: '此次评价未完成，退出',
+      desc: '260723',
+      rules: [
+        {
+          resetMatch: 'match',
+          activityIds: 'com.xunmeng.pinduoduo.activity.NewPageActivity',
+          matches:
+            'LinearLayout > TextView[vid="pdd"][text="取消"] +n TextView[clickable=true][visibleToUser=true][vid="pdd"][text="退出"]',
+        },
+      ],
+    },
   ],
 });

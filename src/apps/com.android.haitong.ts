@@ -135,7 +135,7 @@ export default defineGkdApp({
     {
       key: 10,
       name: '预约打新，全选',
-      desc: '260602，clickable=true',
+      desc: '260723，clickable=true',
       rules: [
         {
           resetMatch: 'match',
@@ -143,21 +143,23 @@ export default defineGkdApp({
           actionMaximum: 1,
           actionCd: 0,
           activityIds: 'com.gtja.trade.newstock.view.NewAppointMainActivity',
-          matches: '[text="全选"]',
+          matches:
+            '([text="全选"]) || (View > View > Button[clickable=true][visibleToUser=true][text="全选"])',
         },
       ],
     },
     {
       key: 11,
       name: '预约打新，全选后，确认',
-      desc: '260602，clickable=false',
+      desc: '260723，要求预约时间在14:30，[text="已选中 "] + [text!="0"] <n * + [text="确认"][clickable=false]',
       rules: [
         {
           resetMatch: 'match',
           actionMaximum: 1,
           preKeys: [10],
           activityIds: 'com.gtja.trade.newstock.view.NewAppointMainActivity',
-          matches: '[text="已选中 "] + [text!="0"] <n * + [text="确认"]',
+          matches:
+            'Button[text^="预约时间" && text*="14:30-14:35"] - View < View +n View > @TextView[clickable=false][visibleToUser=true][text="确认"] - View > TextView[text^="已选中"] + TextView[text!="0"]',
         },
       ],
     },
