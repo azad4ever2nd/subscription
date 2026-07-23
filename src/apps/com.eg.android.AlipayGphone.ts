@@ -377,14 +377,14 @@ export default defineGkdApp({
     {
       key: 24,
       name: '弹窗2，与分期有关，X掉',
-      desc: '260717，替换规则3，添加到桌面，银行卡抽奖，升级月利宝',
+      desc: '260723，替换规则3，添加到桌面，银行卡抽奖，升级月利宝',
       rules: [
         {
           resetMatch: 'match',
           activityIds:
             'com.alipay.mobile.nebulax.xriver.activity.XRiverActivity',
           matches:
-            '(View > @Image[clickable=false][visibleToUser=true][text="关闭弹窗"] + View > View > View > Image[text="original?hm_biz=mybank_fund"]) || (@Image < View + View Button[text="同意协议并分期"]) || (View > @Image[text="关闭弹窗"] + View > View > TextView[text="立即更换"]) || (@Image < View + View > TextView[text="开通信用卡借款享一站式服务"]) || (@Image[clickable=false][visibleToUser=true] < View + View > Button[text="去看看"]) || (View > CheckBox[checked=true] + TextView + Button + @Button[clickable=true][visibleToUser=true][text="继续转出"]) || (WebView > View > View > TextView[text^="抽奖机会1"] + TextView[clickable=false][visibleToUser=true]) || (View > TextView[text^="添加" && text$="到桌面"] - View[clickable=false] > Image[clickable=false][visibleToUser=true])',
+            '(@Image[clickable=false][visibleToUser=true] < View + View > TextView[text="去开启"]) || (@Image[clickable=false][visibleToUser=true] < View + View > View > TextView[text="确认要离开吗？"]) || (View > @Image[clickable=false][visibleToUser=true][text="关闭弹窗"] + View > View > View > Image[text="original?hm_biz=mybank_fund"]) || (@Image < View + View Button[text="同意协议并分期"]) || (View > @Image[text="关闭弹窗"] + View > View > TextView[text="立即更换"]) || (@Image < View + View > TextView[text="开通信用卡借款享一站式服务"]) || (@Image[clickable=false][visibleToUser=true] < View + View > Button[text="去看看"]) || (View > CheckBox[checked=true] + TextView + Button + @Button[clickable=true][visibleToUser=true][text="继续转出"]) || (WebView > View > View > TextView[text^="抽奖机会1"] + TextView[clickable=false][visibleToUser=true]) || (View > TextView[text^="添加" && text$="到桌面"] - View[clickable=false] > Image[clickable=false][visibleToUser=true])',
         },
       ],
     },
@@ -556,6 +556,21 @@ export default defineGkdApp({
             'com.alipay.mobile.nebulax.xriver.activity.XRiverActivity',
           matches:
             'WebView > View > View > TextView[text^="抽奖机会"] + TextView[clickable=false][visibleToUser=true]',
+        },
+      ],
+    },
+    {
+      key: 37,
+      name: '团购申请发送消息，取消 或 不再询问',
+      desc: '260723',
+      rules: [
+        {
+          resetMatch: 'match',
+          fastQuery: true,
+          activityIds:
+            'com.alipay.android.phone.mbox.biz.legacy.sbs.v2.MBoxSubscribeHostActivity',
+          matches:
+            '(LinearLayout > TextView[text="发送以下消息"] +n LinearLayout > Button[clickable=true][visibleToUser=true][id="com.alipay.android.phone.product_msgboxbase:id/negativeBtn"][text="取消"] + Button[text="好的"]) || (LinearLayout > TextView[id="com.alipay.android.phone.product_msgboxbase:id/pluginTitle"][text="发送以下消息"] +n FrameLayout > TextView[id="com.alipay.android.phone.product_msgboxbase:id/rejectTxtBtn"][clickable=true][visibleToUser=true])',
         },
       ],
     },
