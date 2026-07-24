@@ -70,14 +70,15 @@ export default defineGkdApp({
     },
     {
       key: 6,
-      name: '弹窗，继续你不用浏览器',
-      desc: '260426',
+      name: '弹窗，继续使用浏览器',
+      desc: '260724',
       rules: [
         {
           resetMatch: 'match',
           actionMaximum: 1,
           activityIds: 'mark.via.Shell',
-          matches: '[text="浏览器"] + View > [id="sacs_close"][text="继续"]',
+          matches:
+            '([text="浏览器"] + View > [id="sacs_close"][text="继续"]) || (View > TextView[text="当前浏览器"] + TextView[clickable=false][visibleToUser=true][text="继续"])',
         },
       ],
     },

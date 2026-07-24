@@ -34,15 +34,14 @@ export default defineGkdApp({
     {
       key: 3,
       name: '发现新版本，关闭',
-      desc: '251228',
+      desc: '260724',
       rules: [
         {
-          matches: [
-            '[vid="tv_update_now"][text="立即更新"] <<n * + [vid="iv_close"]',
-          ],
-          fastQuery: true,
           resetMatch: 'match',
-          activityIds: ['com.pupumall.customer.activity.SplashActivity'],
+          fastQuery: true,
+          activityIds: 'com.pupumall.customer.activity.SplashActivity',
+          matches:
+            '([vid="tv_update_now"][text="立即更新"] <<n * + [vid="iv_close"]) || (FrameLayout > LinearLayout > FrameLayout > LinearLayout > @ImageView[clickable=true][visibleToUser=true][vid="iv_close"] - ViewGroup > TextView[vid="tv_upgrade_now"][text="立即更新"])',
         },
       ],
     },

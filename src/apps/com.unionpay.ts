@@ -22,12 +22,12 @@ export default defineGkdApp({
     {
       key: 2,
       name: '开启定位',
-      desc: '260702，修复提示BUG，添加ids, + [vid="btn_ok"]',
+      desc: '260724，修复提示BUG，添加ids',
       rules: [
         {
           resetMatch: 'match',
           fastQuery: true,
-          actionCd: 500,
+          actionCd: 0,
           activityIds: [
             'com.unionpay.activity.react.UPActivityReactNative',
             'com.unionpay.liteapp.app.UPLiteAppActivity1',
@@ -36,7 +36,7 @@ export default defineGkdApp({
             'com.unionpay.liteapp.app.UPLiteAppActivity4',
           ],
           matches:
-            '([vid="tv_dialog_title"][text="开启手机定位服务"] < * +n * > [vid="btn_cancel"]) || (TextView[vid="tv_dialog_title"][text="开启手机定位服务"] < LinearLayout +n LinearLayout > TextView[vid="btn_cancel"][clickable=true])',
+            '([vid="tv_dialog_title"][text="开启手机定位服务"] < * +n * > [vid="btn_cancel"]) || (TextView[vid="tv_dialog_title"][text="开启手机定位服务"] < LinearLayout +n LinearLayout > TextView[vid="btn_cancel"][clickable=true]) || (LinearLayout > TextView[vid="tv_dialog_info"][text*="开启定位服务"] + LinearLayout > @TextView[vid="btn_cancel"][clickable=true][visibleToUser=true][text*="取消" || text="取 消"] + TextView[vid="btn_ok"])',
         },
       ],
     },

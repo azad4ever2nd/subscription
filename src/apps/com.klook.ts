@@ -16,5 +16,18 @@ export default defineGkdApp({
         },
       ],
     },
+    {
+      key: 2,
+      name: '广告弹窗',
+      desc: '260724',
+      rules: [
+        {
+          resetMatch: 'match',
+          activityIds: 'com.klooklib.MainActivity',
+          matches:
+            'FrameLayout > View > View > View > View > View > View > View[childCount=2] > @ImageView[clickable=true][visibleToUser=true] + ImageView[clickable=true]',
+        },
+      ],
+    },
   ],
 });

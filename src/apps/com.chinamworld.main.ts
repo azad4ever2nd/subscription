@@ -7,17 +7,15 @@ export default defineGkdApp({
     {
       key: 1,
       name: '签到成功',
-      desc: '260703,签到改版,冲突领取立减金，先暂时屏蔽一个',
+      desc: '260724,签到改版,冲突领取立减金，先暂时屏蔽一个',
       rules: [
         {
           actionCd: 0,
           resetMatch: 'match',
-          matches: [
-            '([text="立即使用"] -n [text="获得 1 龙积分" || text$="龙积分"] <<n * + * > [text="JkaCmWVQ500S2oPJIJv3pK4lAM8omfwAibAgp2L0QtsAAAAASUVORK5CYII="]) || (@[text="确定"] -3 * > [text="AU8HaNGNFfbEAAAAAElFTkSuQmCC"]) || (@[text="关闭 按钮"] +n [text="立即使用"]) || (Image[text="AU8HaNGNFfbEAAAAAElFTkSuQmCC"] <<n * Image[text="关闭 按钮"]) || ([text^="获得" && text$="龙积分"] <<n * + [text="关闭 按钮"])',
-          ],
-          activityIds: [
+          matches:
+            '([text="立即使用"] -n [text="获得 1 龙积分" || text$="龙积分"] <<n * + * > [text="JkaCmWVQ500S2oPJIJv3pK4lAM8omfwAibAgp2L0QtsAAAAASUVORK5CYII="]) || (@[text="确定"] -3 * > [text="AU8HaNGNFfbEAAAAAElFTkSuQmCC"]) || (@[text="关闭 按钮"] +n [text="立即使用"]) || (Image[text="AU8HaNGNFfbEAAAAAElFTkSuQmCC"] <<n * Image[text="关闭 按钮"]) || ([text^="获得" && text$="龙积分"] <<n * + [text="关闭 按钮"]) || (View > TextView[text="请勿重复签到"] + TextView[text="知道了"] + Image[text="关闭 按钮"])',
+          activityIds:
             'com.nantian.iBank.ui.activity.container.ProgramSingleWindowActivity',
-          ],
         },
       ],
     },
@@ -27,10 +25,10 @@ export default defineGkdApp({
       desc: '',
       rules: [
         {
-          matches: ['[vid="tip_view_pager"] +2 [vid="close"][desc="关闭"]'],
+          matches: '[vid="tip_view_pager"] +2 [vid="close"][desc="关闭"]',
           fastQuery: true,
           resetMatch: 'match',
-          activityIds: ['com.ccb.start.view.startdialog.StartDialogActivity'],
+          activityIds: 'com.ccb.start.view.startdialog.StartDialogActivity',
         },
       ],
     },
@@ -40,14 +38,12 @@ export default defineGkdApp({
       desc: '251118',
       rules: [
         {
-          matches: [
+          matches:
             '[text*="新版本"] <<n [vid="dialog_content_scroll"] +2 * > @[vid="dlg_left_tv"][text="取消"] +2 [vid="dlg_right_tv"][text="去更新"]',
-          ],
           fastQuery: true,
           resetMatch: 'match',
-          activityIds: [
+          activityIds:
             'com.nantian.iBank.ui.activity.container.ProgramSingleWindowActivity',
-          ],
         },
       ],
     },
@@ -58,13 +54,11 @@ export default defineGkdApp({
       rules: [
         {
           action: 'back',
-          matches: [
+          matches:
             '[text="活动火爆，请改日回到本页面再次领取"] + [text="确定"]',
-          ],
           resetMatch: 'match',
-          activityIds: [
+          activityIds:
             'com.nantian.iBank.ui.activity.container.ProgramSingleWindowActivity',
-          ],
         },
       ],
     },
@@ -74,13 +68,11 @@ export default defineGkdApp({
       desc: '260322，添加 火爆了',
       rules: [
         {
-          matches: [
+          matches:
             '([id="app"] > [text="我的礼包 按钮"] + [id="scroll"][childCount=1] [index=1]) || ([text="活动火爆，请稍候再试！"] + [text="知道了"] + [text="关闭 按钮"])',
-          ],
           resetMatch: 'match',
-          activityIds: [
+          activityIds:
             'com.nantian.iBank.ui.activity.container.ProgramSingleWindowActivity',
-          ],
         },
       ],
     },
