@@ -155,7 +155,7 @@ export default defineGkdApp({
       rules: [
         {
           resetMatch: 'match',
-          actionMaximum: 1,
+          actionMaximum: 100,
           preKeys: [10],
           activityIds: 'com.gtja.trade.newstock.view.NewAppointMainActivity',
           matches:

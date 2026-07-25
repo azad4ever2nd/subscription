@@ -1357,5 +1357,18 @@ export default defineGkdApp({
         },
       ],
     },
+    {
+      key: 66,
+      name: '图片，再次保存',
+      desc: '260725',
+      rules: [
+        {
+          resetMatch: 'match',
+          activityIds: 'com.tencent.mm.ui.chatting.gallery.ImageGalleryUI',
+          matches:
+            'RecyclerView > LinearLayout > RelativeLayout > LinearLayout > TextView[clickable=false][visibleToUser=true][text="再次保存"]',
+        },
+      ],
+    },
   ],
 });
