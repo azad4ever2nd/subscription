@@ -66,6 +66,36 @@ export default defineGkdApp({
     },
     {
       key: 5,
+      name: '给评价',
+      desc: '260726，添加 IDS，添加弹窗',
+      rules: [
+        {
+          actionCd: 0,
+          fastQuery: true,
+          resetMatch: 'match',
+          activityIds: [
+            'com.tongcheng.android.TongchengMainActivity',
+            'com.tongcheng.android.LoadingActivity',
+          ],
+          matches:
+            '([vid="top_iv" || vid="flADLayout" || vid="flContainer"] + [vid="iv_close" ])|| ([vid="top_iv" || vid="flADLayout" || vid="flContainer"] + [vid="ivClose"]) || (LinearLayout > FrameLayout[vid="flADLayout"] + ImageView[vid="ivClose"]) || (@ImageView[clickable=true][visibleToUser=true][vid="iv_close"] - ImageView[vid="top_iv"] < FrameLayout + LinearLayout > TextView[text*="好评"])',
+        },
+      ],
+    },
+    {
+      key: 6,
+      name: '限时免费福利弹窗，X掉',
+      desc: '260426',
+      rules: [
+        {
+          resetMatch: 'match',
+          activityIds: 'com.tongcheng.android.module.webapp.WebViewActivity',
+          matches: '[text="tc-ad"] + View[clickable=true]',
+        },
+      ],
+    },
+    {
+      key: 7,
       name: '广东文旅消费券，旅游景区券',
       desc: '260115',
       rules: [
@@ -80,26 +110,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 6,
-      name: '给评价',
-      desc: '260614，添加 IDS，添加弹窗',
-      rules: [
-        {
-          matches: [
-            '([vid="top_iv" || vid="flADLayout" || vid="flContainer"] + [vid="iv_close" ])|| ([vid="top_iv" || vid="flADLayout" || vid="flContainer"] + [vid="ivClose"]) || (LinearLayout > FrameLayout[vid="flADLayout"] + ImageView[vid="ivClose"])',
-          ],
-          actionCd: 10,
-          fastQuery: true,
-          resetMatch: 'match',
-          activityIds: [
-            'com.tongcheng.android.TongchengMainActivity',
-            'com.tongcheng.android.LoadingActivity',
-          ],
-        },
-      ],
-    },
-    {
-      key: 7,
+      key: 8,
       name: '广东文旅消费券，旅游景区券，已领完，返回',
       desc: '260322，添加暂未开始text="1IPvLxOd9gA"',
       rules: [
@@ -115,7 +126,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 8,
+      key: 9,
       name: '0点广州票根惠民券，抢券，',
       desc: '260319',
       rules: [
@@ -128,7 +139,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 9,
+      key: 10,
       name: '0点广州票根惠民券，抢券，抢完返回 ',
       desc: '260319',
       rules: [
@@ -138,18 +149,6 @@ export default defineGkdApp({
           actionCd: 0,
           resetMatch: 'match',
           activityIds: ['com.tongcheng.android.module.webapp.WebViewActivity'],
-        },
-      ],
-    },
-    {
-      key: 10,
-      name: '限时免费福利弹窗，X掉',
-      desc: '260426',
-      rules: [
-        {
-          resetMatch: 'match',
-          activityIds: 'com.tongcheng.android.module.webapp.WebViewActivity',
-          matches: '[text="tc-ad"] + View[clickable=true]',
         },
       ],
     },

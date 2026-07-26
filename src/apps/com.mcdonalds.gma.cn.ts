@@ -193,5 +193,19 @@ export default defineGkdApp({
         },
       ],
     },
+    {
+      key: 14,
+      name: '无法获取位置信息，取消',
+      desc: '260726',
+      rules: [
+        {
+          resetMatch: 'match',
+          actionCd: 0,
+          activityIds: 'com.mcdonalds.gma.cn.activity.MainActivity',
+          matches:
+            '(TextView[vid="tv_title"][text*="无法获取位置信息"] +n LinearLayout > TextView[clickable=true][visibleToUser=true][vid="tv_cancel"][text="取消"]) || (TextView[vid="tv_info"][text*="定位服务"] +n LinearLayout > TextView[clickable=true][visibleToUser=true][vid="tv_cancel"][text="取消"])',
+        },
+      ],
+    },
   ],
 });

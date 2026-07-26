@@ -7,14 +7,14 @@ export default defineGkdApp({
     {
       key: 1,
       name: '弹窗1',
-      desc: '260605,添加签到成功，活动结束了，未开始，若点击无反应，弹窗无反应，则拆分规则，一个默认，一个clickCenter',
+      desc: '260726,添加签到成功，活动结束了，未开始，若点击无反应，弹窗无反应，则拆分规则，一个默认，一个clickCenter',
       rules: [
         {
           action: 'clickCenter',
           resetMatch: 'match',
           activityIds: 'com.njcb.mobile.h5biz.H5ContainerActivity',
           matches:
-            '([text="活动已结束"] + * > [desc="知道了"]) || ([text="活动已结束"] + [text="确定" || text="知道了"]) || ([text="签到成功"] + TextView + TextView[text="确定"])',
+            '([text="签到成功"] + TextView + TextView[text="确定bak"]) || ([text="活动已结束"] + * > [desc="知道了"]) || ([text="活动已结束"] + [text="确定" || text="知道了"]) || (WebView > View > View > View > View > View > TextView[text="签到成功"] + TextView + TextView[text="确定"])',
         },
       ],
     },

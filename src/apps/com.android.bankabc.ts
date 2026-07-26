@@ -135,14 +135,14 @@ export default defineGkdApp({
     {
       key: 10,
       name: '每日签到抽奖',
-      desc: '260423',
+      desc: '260726',
       rules: [
         {
           actionMaximum: 1,
           resetMatch: 'app',
           activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
           matches:
-            '[id="beanAnswer"] > [text="a4613c7a03ec4aa1a32a00446de323ea9900032820260227"]',
+            '([id="beanAnswer"] > [text="a4613c7a03ec4aa1a32a00446de323ea9900032820260227bak"]) || (WebView[text="小豆乐园首页"] > View > View > View > @View[clickable=true][visibleToUser=true][id="beanAnswer"] > Image[text="a4613c7a03ec4aa1a32a00446de323ea9900032820260227"])',
         },
       ],
     },
@@ -175,15 +175,14 @@ export default defineGkdApp({
     {
       key: 13,
       name: '开启消息通知',
-      desc: '251120',
+      desc: '260726',
       rules: [
         {
-          matches: [
-            '[vid="dialog_notification_imageView"] +n [vid="dialog_notification_close"]',
-          ],
-          fastQuery: true,
           resetMatch: 'match',
-          activityIds: ['abc.feinno.uilibrary.activitys.PublicListActivity'],
+          fastQuery: true,
+          activityIds: 'abc.feinno.uilibrary.activitys.PublicListActivity',
+          matches:
+            '([vid="dialog_notification_imageView"] +n [vid="dialog_notification_close"]) || (FrameLayout > LinearLayout > ImageView[vid="dialog_notification_imageView"] +n ImageView[clickable=true][visibleToUser=true][vid="dialog_notification_close"])',
         },
       ],
     },

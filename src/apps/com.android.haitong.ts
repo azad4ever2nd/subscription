@@ -36,16 +36,15 @@ export default defineGkdApp({
     },
     {
       key: 3,
-      name: '预约打新，确认后二次确认',
-      desc: '260602，* > [desc="确认"]',
+      name: '预约打新，确认后，风险确认，二次确认',
+      desc: '260726',
       rules: [
         {
           resetMatch: 'match',
-          preKeys: [12],
-          actionCd: 1500,
+          preKeys: [11],
           activityIds: 'com.gtja.trade.newstock.view.NewAppointMainActivity',
           matches:
-            '[text="申购数量"] + [text="10000"] <n * + * [text="取消"] + *',
+            '([text="申购数量"] + [text="10000"] <n * + * [text="取消bak"] + *) || (TextView[text^="打新存在破发亏损风险"] < View + View > View > @View[clickable=true][visibleToUser=true][desc="确认"] > TextView[text="确认"])',
         },
       ],
     },
@@ -65,15 +64,15 @@ export default defineGkdApp({
     },
     {
       key: 5,
-      name: '智能打新完成',
-      desc: '260108',
+      name: '可转债智能打新完成，完成',
+      desc: '260726',
       rules: [
         {
-          matches: ['[text="退出"] + [text="智能打新"] + [text="完成"]'],
           resetMatch: 'match',
-          activityIds: [
+          activityIds:
             'com.gtja.business.component.browser.webview.BrowserScreen',
-          ],
+          matches:
+            '([text="退出"] + [text="智能打新"] + [text="完成bak"]) || (WebView[text="可转债申购"] > View > View > Image[clickable=false][visibleToUser=true][text="退出"] +n TextView[clickable=false][visibleToUser=true][text="完成"])',
         },
       ],
     },
@@ -155,7 +154,6 @@ export default defineGkdApp({
       rules: [
         {
           resetMatch: 'match',
-          actionMaximum: 100,
           preKeys: [10],
           activityIds: 'com.gtja.trade.newstock.view.NewAppointMainActivity',
           matches:

@@ -140,5 +140,20 @@ export default defineGkdApp({
         },
       ],
     },
+    {
+      key: 11,
+      name: '发现新版本，稍后再说',
+      desc: '260726',
+      rules: [
+        {
+          resetMatch: 'match',
+          actionCd: 0,
+          activityIds:
+            'com.cgb.mobilebank.sit.launcher.module.main.activity.IndexActivity',
+          matches:
+            'TextView[text*="新版本"] < LinearLayout +n LinearLayout > TextView[clickable=true][visibleToUser=true][vid="tv_left"][text="稍后再说"]',
+        },
+      ],
+    },
   ],
 });

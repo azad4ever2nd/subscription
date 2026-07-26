@@ -94,15 +94,14 @@ export default defineGkdApp({
     {
       key: 7,
       name: '开启通知（物流）',
-      desc: '251230,添加物流，促销，消息通知',
+      desc: '260726,添加物流，促销，消息通知',
       rules: [
         {
-          matches: [
-            '([text*="开启消息通知"] <<n * + [desc="关闭"]) || (@[id="com.jd.lib.message.feature:id/h7"] > [id="com.jd.lib.message.feature:id/h6"])',
-          ],
-          fastQuery: true,
           resetMatch: 'match',
-          activityIds: ['com.jingdong.app.mall.MainFrameActivity'],
+          fastQuery: true,
+          activityIds: 'com.jingdong.app.mall.MainFrameActivity',
+          matches:
+            '([text*="开启消息通知"] <<n * + [desc="关闭"]) || (@[id="com.jd.lib.message.feature:id/h7"] > [id="com.jd.lib.message.feature:id/h6"]) || (Button[text="去开启通知"] <n LinearLayout + ImageView[desc="关闭"])',
         },
       ],
     },
@@ -295,6 +294,20 @@ export default defineGkdApp({
           activityIds: 'com.jd.lib.ordercenter.taro.OrderListActivityTaro',
           matches:
             '(View[desc="确认删除该订单？"] < ViewGroup +n @ViewGroup[clickable=false][visibleToUser=true] > View[desc="删除"])',
+        },
+      ],
+    },
+    {
+      key: 22,
+      name: '去开启通知，X掉',
+      desc: '260726',
+      rules: [
+        {
+          resetMatch: 'match',
+          actionCd: 0,
+          activityIds: 'com.jingdong.app.mall.MainFrameActivity',
+          matches:
+            'Button[text="去开启通知"] <n LinearLayout + ImageView[desc="关闭"]',
         },
       ],
     },

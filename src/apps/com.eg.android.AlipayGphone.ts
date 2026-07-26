@@ -490,14 +490,14 @@ export default defineGkdApp({
     {
       key: 32,
       name: '神券抽奖，立即领取',
-      desc: '260702，添加 关闭',
+      desc: '260726，添加 关闭',
       rules: [
         {
           resetMatch: 'match',
           activityIds:
             'com.alipay.mobile.nebulax.xriver.activity.XRiverTransActivity$Main',
           matches:
-            '(@TextView[clickable=false][text="立即领取"] <n View + Button[clickable=true][visibleToUser=true][text="关闭"]) || (TextView[text="去下单"] <n View + Button[clickable=true][visibleToUser=true][text="关闭"])',
+            '(@TextView[clickable=false][text="立即领取"] <n View + Button[clickable=true][visibleToUser=true][text="关闭"]) || (TextView[text="去下单"] <n View + Button[clickable=true][visibleToUser=true][text="关闭"]) || (Dialog > View > View > Button[text="关闭"] - View > View > TextView[clickable=false][visibleToUser=true][text="继续领"])',
         },
       ],
     },

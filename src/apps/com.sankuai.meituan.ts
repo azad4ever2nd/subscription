@@ -378,5 +378,20 @@ export default defineGkdApp({
         },
       ],
     },
+    {
+      key: 26,
+      name: '我已阅读并同意',
+      desc: '260726',
+      rules: [
+        {
+          fastQuery: true,
+          resetMatch: 'match',
+          actionMaximum: 1,
+          activityIds: 'com.meituan.android.mrn.container.MRNStandardActivity',
+          matches:
+            '(ViewGroup > @ViewGroup[clickable=true][visibleToUser=true] + TextView[text^="我已阅读并同意"]) || (ViewGroup > @ViewGroup[clickable=true][visibleToUser=true] + TextView[text^="我已阅读并同意"] + ViewGroup > TextView[text="《用户授权协议》"])',
+        },
+      ],
+    },
   ],
 });

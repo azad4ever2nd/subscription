@@ -60,6 +60,18 @@ export default defineGkdApp({
     },
     {
       key: 5,
+      name: '开启通知弹窗，X掉',
+      desc: '260518',
+      rules: [
+        {
+          resetMatch: 'match',
+          activityIds: 'com.sankuai.movie.MovieMainActivity',
+          matches: '[text="开启通知"] <n * + ImageView',
+        },
+      ],
+    },
+    {
+      key: 6,
       name: '电影院下单界，跳转领券',
       desc: '260328',
       rules: [
@@ -76,7 +88,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 6,
+      key: 7,
       name: '电影票界面抢湖北电影消费，只抢25的',
       desc: '260322',
       rules: [
@@ -92,7 +104,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 7,
+      key: 8,
       name: '广州，乐享品质旅游 ，共赴美好山河',
       desc: '260516，五折演出券',
       rules: [
@@ -104,15 +116,32 @@ export default defineGkdApp({
         },
       ],
     },
+
     {
-      key: 8,
-      name: '开启通知弹窗，X掉',
-      desc: '260518',
+      key: 9,
+      name: '广州，乐享品质旅游 ，共赴美好山河，返回',
+      desc: '260519',
+      rules: [
+        {
+          resetMatch: 'app',
+          action: 'back',
+          actionMaximum: 10,
+          activityIds: 'com.sankuai.movie.knb2.container.MovieWebActivity',
+          matches: '[id="app"][childCount=2] > [text="没有更多内容了"]',
+        },
+      ],
+    },
+    {
+      key: 10,
+      name: '2026广东文旅消费券',
+      desc: '260726，100是1，200是2，8/31结束',
       rules: [
         {
           resetMatch: 'match',
-          activityIds: 'com.sankuai.movie.MovieMainActivity',
-          matches: '[text="开启通知"] <n * + ImageView',
+          actionCd: 500,
+          activityIds: 'com.sankuai.movie.knb2.container.MovieWebActivity',
+          matches:
+            'WebView[text="2026广东文旅消费券"] > View > View > View > View > View[childCount=5] > View[clickable=false][visibleToUser=true][index=1]',
         },
       ],
     },
