@@ -146,7 +146,7 @@ export default defineGkdApp({
     {
       key: 10,
       name: '广告弹窗',
-      desc: '260624',
+      desc: '260727',
       rules: [
         {
           resetMatch: 'match',
@@ -155,7 +155,7 @@ export default defineGkdApp({
           activityIds:
             'com.cmcc.cmvideo.main.application.CompatibleMainActivity',
           matches:
-            'FrameLayout > ViewGroup > FrameLayout[vid="close_bg_single"] > ImageView[vid="iv_close_single"][clickable=true][visibleToUser=true]',
+            '(FrameLayout > ViewGroup > FrameLayout[vid="close_bg_single"] > ImageView[vid="iv_close_single"][clickable=true][visibleToUser=true]) || (ViewGroup + FrameLayout[childCount=2] > FrameLayout[vid="h5_content_container"] + ImageView[clickable=true][visibleToUser=true])',
         },
       ],
     },

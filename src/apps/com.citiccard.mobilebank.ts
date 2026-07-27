@@ -25,14 +25,14 @@ export default defineGkdApp({
     {
       key: 2,
       name: '绿色能量',
-      desc: '260721,添加自助还款，电子账单，运动和支付',
+      desc: '260727,添加自助还款，电子账单，运动和支付',
       rules: [
         {
           resetMatch: 'match',
           actionCd: 0,
           activityIds: 'com.citiccard.mobilebank.web.webpage.CommonWebPage',
           matches:
-            '(@[text="0OtyvnGzoNS+5EoIAAAAASUVORK5CYII="] +n [text$="电子账单" || text="动卡空间自助还款"]) || ([text="绿色运动" || text="绿色支付" || text="绿色消费"] - [text="VK8fr6+sLwGnB552X3pvyv71EBhCUCcrVq1euHOf09gevPFGYnvp1uJmTJr399ksvPdXrcL8DlWgBfyVLJ3IAAAAASUVORK5CYII="]) || (TextView[text="绿色运动" || text="绿色支付" || text="绿色消费"] - Image[clickable=false][visibleToUser=true][text="VK8fr6+sLwGnB552X3pvyv71EBhCUCcrVq1euHOf09gevPFGYnvp1uJmTJr399ksvPdXrcL8DlWgBfyVLJ3IAAAAASUVORK5CYII="]) || (@Image[clickable=false][visibleToUser=true][text="0OtyvnGzoNS+5EoIAAAAASUVORK5CYII="] +n TextView[text$="电子账单" || text="动卡空间自助还款"])',
+            '(@Image[clickable=false][visibleToUser=true][text="0OtyvnGzoNS+5EoIAAAAASUVORK5CYII=bak"] +n TextView[text$="电子账单" || text="动卡空间自助还款"]) || (ListView > View > @Image[clickable=false][visibleToUser=true][text="VK8fr6+sLwGnB552X3pvyv71EBhCUCcrVq1euHOf09gevPFGYnvp1uJmTJr399ksvPdXrcL8DlWgBfyVLJ3IAAAAASUVORK5CYII="] + TextView[text^="绿色"])',
         },
       ],
     },

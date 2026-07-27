@@ -415,5 +415,20 @@ export default defineGkdApp({
         },
       ],
     },
+    {
+      key: 29,
+      name: '领行完领奖励金',
+      desc: '260727',
+      rules: [
+        {
+          resetMatch: 'match',
+          actionCd: 500,
+          activityIds:
+            'com.hellobike.moped.platform.offline.web.OhoRealmWebActivity',
+          matches:
+            'View[id="monad-return-ball"] > @View[clickable=false][visibleToUser=true] > TextView[text="奖励金"] - TextView - View > Image[text="c628086d6b3a4923907c57bc4326aa13_mask"]',
+        },
+      ],
+    },
   ],
 });
