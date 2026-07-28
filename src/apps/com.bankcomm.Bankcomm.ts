@@ -69,11 +69,11 @@ export default defineGkdApp({
     {
       key: 5,
       name: '领券中心,信用卡专享好券，还款券',
-      desc: '260419，第一个index=0',
+      desc: '260728，第一个index=0',
       rules: [
         {
           matches: [
-            '[text="ACIM_20250725000139_20250725155808212"] <<n * + * > *[index=0] [text="立即领取"]',
+            '(Image[text="ACIM_20250725000139_20250725155808212"] <<n View + View > View[index=1] Image[text="立即领取"]) || (Image[text="ACIM_20250725000139_20250725155808212"] < View < View < View + View > View[index=1] > View > Image[clickable=false][visibleToUser=true][text="立即领取"])',
           ],
           actionCd: 100,
           actionMaximum: 1,
@@ -422,13 +422,14 @@ export default defineGkdApp({
     {
       key: 27,
       name: '领券中心,信用卡专享好券，刷卡金',
-      desc: '260419，周五或周日再领，集齐2张再用，第二个index=1',
+      desc: '260728，周五或周日再领，集齐2张再用，第二个index=1',
       rules: [
         {
           matches: [
-            '[text="ACIM_20250725000139_20250725155808212"] <<n * + * > *[index=1] [text="立即领取"]',
+            '(Image[text="ACIM_20250725000139_20250725155808212"] <<n View + View > View[index=0] Image[text="立即领取"]) || (Image[text="ACIM_20250725000139_20250725155808212"] < View < View < View + View > View[index=0] > View > Image[clickable=false][visibleToUser=true][text="立即领取"])',
           ],
-          actionCd: 100,
+          actionCd: 50,
+          order: -10,
           actionMaximum: 1,
           resetMatch: 'match',
           activityIds: [
@@ -597,6 +598,19 @@ export default defineGkdApp({
           activityIds: 'com.bankcomm.module.biz.webcontainer.BCMHtml5Activity',
           matches:
             'EditText[text.length>0] < View + Button[clickable=true][visibleToUser=true][text="确认"]',
+        },
+      ],
+    },
+    {
+      key: 40,
+      name: '直播间任务完成，抽奖',
+      desc: '260728',
+      rules: [
+        {
+          resetMatch: 'match',
+          activityIds: 'com.bankcomm.module.biz.webcontainer.BCMHtml5Activity',
+          matches:
+            'WebView[text="交通银行"] > View > View > View > View > View > TextView[text="1次"] + TextView[clickable=false][visibleToUser=true][text.length=0]',
         },
       ],
     },

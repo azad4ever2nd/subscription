@@ -114,14 +114,14 @@ export default defineGkdApp({
     {
       key: 9,
       name: '3元优惠券，立即兑换',
-      desc: '260711"',
+      desc: '260728"',
       rules: [
         {
           resetMatch: 'match',
           actionCd: 0,
           activityIds: 'com.sgcc.wsgw.mainbundle.ElectricTitleActivity',
           matches:
-            'TextView[text^="（剩余" && text="（剩余0张）"] - View > @TextView[clickable=false][visibleToUser=true][text="立即兑换"] - ListView > View[text="3元"]',
+            'TextView[text^="（剩余" && text!="（剩余0张）"] - View > @TextView[clickable=false][visibleToUser=true][text="立即兑换"] - ListView > View[text="3元"]',
         },
       ],
     },

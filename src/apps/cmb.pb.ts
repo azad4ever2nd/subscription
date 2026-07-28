@@ -350,6 +350,7 @@ export default defineGkdApp({
         {
           actionCd: 0,
           resetMatch: 'match',
+          action: 'clickCenter',
           activityIds:
             'cmb.pb.app.h5container.webviewcontainer.PBWebContainerActivity',
           matches:

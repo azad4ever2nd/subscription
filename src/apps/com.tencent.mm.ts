@@ -1370,5 +1370,19 @@ export default defineGkdApp({
         },
       ],
     },
+    {
+      key: 67,
+      name: '图片，再次保存2',
+      desc: '260728',
+      rules: [
+        {
+          resetMatch: 'match',
+          fastQuery: true,
+          activityIds: 'com.tencent.mm.ui.LauncherUI',
+          matches:
+            'RecyclerView > @LinearLayout[clickable=true][visibleToUser=true] > RelativeLayout > LinearLayout > TextView[text="再次保存"]',
+        },
+      ],
+    },
   ],
 });

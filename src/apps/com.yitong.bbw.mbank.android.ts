@@ -20,10 +20,11 @@ export default defineGkdApp({
     {
       key: 2,
       name: '签到成功，确定',
-      desc: '260727',
+      desc: '260728',
       rules: [
         {
           resetMatch: 'match',
+          action: 'clickCenter',
           activityIds: 'com.yitong.mobile.biz.h5.container.WebViewActivity',
           matches:
             'View > View > View > TextView[text="签到成功"] + View > Button[id="msg_box_ok"][clickable=true][visibleToUser=true][text="确定"]',
