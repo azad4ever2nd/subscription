@@ -19,15 +19,15 @@ export default defineGkdApp({
     },
     {
       key: 2,
-      name: '半价话费',
-      desc: '251225',
+      name: '新版本，暂不升级',
+      desc: '260503',
       rules: [
         {
-          matches: ['[text="50元话费券"] +n * > [text="立即抢"]'],
           resetMatch: 'match',
-          activityIds: [
-            'com.sinovatech.unicom.basic.ui.activity.WebDetailActivity',
-          ],
+          fastQuery: true,
+          activityIds: 'com.sinovatech.unicom.basic.ui.activity.MainActivity',
+          matches:
+            '[vid="custom_dialog_ok_button"] + [vid="custom_dialog_cancel_button"]',
         },
       ],
     },
@@ -59,51 +59,6 @@ export default defineGkdApp({
     },
     {
       key: 5,
-      name: '签到成功，关闭',
-      desc: '260303',
-      rules: [
-        {
-          matches: [
-            '[text*="签到成功" || text*="继续做任务"] +n [text="X8DC9OwtmT2bwAAAABJRU5ErkJggg=="]',
-          ],
-          resetMatch: 'match',
-          activityIds: [
-            'com.sinovatech.unicom.basic.ui.activity.WebDetailActivity',
-          ],
-        },
-      ],
-    },
-    {
-      key: 6,
-      name: '签到后弹窗',
-      desc: '260228',
-      rules: [
-        {
-          matches: ['[text="b6RVEJpvijzQgAAAABJRU5ErkJggg=="]'],
-          resetMatch: 'match',
-          activityIds: [
-            'com.sinovatech.unicom.basic.ui.activity.WebDetailActivity',
-          ],
-        },
-      ],
-    },
-    {
-      key: 7,
-      name: '权益超市抽奖，弹窗',
-      desc: '260312',
-      rules: [
-        {
-          matches: ['@* > [text="close.8ce8930c"]'],
-          actionDelay: 1000,
-          resetMatch: 'match',
-          activityIds: [
-            'com.sinovatech.unicom.basic.ui.activity.WebDetailActivity',
-          ],
-        },
-      ],
-    },
-    {
-      key: 8,
       name: '支付成功，完成',
       desc: '260319',
       rules: [
@@ -116,7 +71,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 9,
+      key: 6,
       name: '交费成功，退出',
       desc: '260319',
       rules: [
@@ -134,16 +89,62 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 10,
-      name: '新版本，暂不升级',
-      desc: '260503',
+      key: 7,
+      name: '半价话费',
+      desc: '251225',
       rules: [
         {
+          matches: ['[text="50元话费券"] +n * > [text="立即抢"]'],
           resetMatch: 'match',
-          fastQuery: true,
-          activityIds: 'com.sinovatech.unicom.basic.ui.activity.MainActivity',
-          matches:
-            '[vid="custom_dialog_ok_button"] + [vid="custom_dialog_cancel_button"]',
+          activityIds: [
+            'com.sinovatech.unicom.basic.ui.activity.WebDetailActivity',
+          ],
+        },
+      ],
+    },
+    {
+      key: 8,
+      name: '签到成功，关闭',
+      desc: '260303',
+      rules: [
+        {
+          matches: [
+            '[text*="签到成功" || text*="继续做任务"] +n [text="X8DC9OwtmT2bwAAAABJRU5ErkJggg=="]',
+          ],
+          resetMatch: 'match',
+          activityIds: [
+            'com.sinovatech.unicom.basic.ui.activity.WebDetailActivity',
+          ],
+        },
+      ],
+    },
+    {
+      key: 9,
+      name: '签到后弹窗',
+      desc: '260228',
+      rules: [
+        {
+          matches: ['[text="b6RVEJpvijzQgAAAABJRU5ErkJggg=="]'],
+          resetMatch: 'match',
+          activityIds: [
+            'com.sinovatech.unicom.basic.ui.activity.WebDetailActivity',
+          ],
+        },
+      ],
+    },
+
+    {
+      key: 10,
+      name: '权益超市抽奖，弹窗',
+      desc: '260312',
+      rules: [
+        {
+          matches: ['@* > [text="close.8ce8930c"]'],
+          actionDelay: 1000,
+          resetMatch: 'match',
+          activityIds: [
+            'com.sinovatech.unicom.basic.ui.activity.WebDetailActivity',
+          ],
         },
       ],
     },

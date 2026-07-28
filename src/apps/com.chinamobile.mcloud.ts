@@ -95,21 +95,6 @@ export default defineGkdApp({
     },
     {
       key: 7,
-      name: '弹窗',
-      desc: '251118，增加开启通知',
-      rules: [
-        {
-          matches: [
-            '([vid="rl_container"] + [vid="iv_close"]) || (@[vid="btn_push_notice_close_dialog"] + * > [vid="tv_header_title"][text="开启中国移动云盘通知"])',
-          ],
-          fastQuery: true,
-          resetMatch: 'match',
-          activityIds: ['com.chinamobile.mcloud.client.ui.MenuActivity'],
-        },
-      ],
-    },
-    {
-      key: 8,
       name: '获取验证码',
       desc: '251205，领奖与获取验证码在同一页面，容易冲突',
       rules: [
@@ -124,7 +109,53 @@ export default defineGkdApp({
       ],
     },
     {
+      key: 8,
+      name: '我的云朵，领云朵',
+      desc: '260719',
+      rules: [
+        {
+          resetMatch: 'match',
+          activityIds:
+            'com.chinamobile.mcloud.client.component.web.H5WebViewMainActivity',
+          matches:
+            'WebView[text="移动云盘云朵中心"] > View > View > View > View > @TextView[clickable=false][visibleToUser=true][text.length=0] -n View > View > TextView[text="完成任务"]',
+        },
+      ],
+    },
+    {
       key: 9,
+      name: '新活动12点兑换，第1步，立即兑换',
+      desc: '260720',
+      rules: [
+        {
+          actionCd: 0,
+          resetMatch: 'match',
+          actionMaximum: 1,
+          activityIds:
+            'com.chinamobile.mcloud.client.component.web.H5WebViewMainActivity',
+          matches:
+            'WebView[text="兑换奖品"] > View > View > View > Button[clickable=true][visibleToUser=true][text="立即兑换"]',
+        },
+      ],
+    },
+    {
+      key: 10,
+      name: '新活动12点兑换，第2步，确认兑换',
+      desc: '260720',
+      rules: [
+        {
+          resetMatch: 'match',
+          actionCd: 0,
+          order: -10,
+          activityIds:
+            'com.chinamobile.mcloud.client.component.web.H5WebViewMainActivity',
+          matches:
+            'Dialog > View > View > TextView[text="取消"] + TextView[text="确认兑换"]',
+        },
+      ],
+    },
+    {
+      key: 11,
       name: '开启通知',
       desc: '251205',
       rules: [
@@ -139,7 +170,22 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 10,
+      key: 12,
+      name: '弹窗',
+      desc: '251118，增加开启通知',
+      rules: [
+        {
+          matches: [
+            '([vid="rl_container"] + [vid="iv_close"]) || (@[vid="btn_push_notice_close_dialog"] + * > [vid="tv_header_title"][text="开启中国移动云盘通知"])',
+          ],
+          fastQuery: true,
+          resetMatch: 'match',
+          activityIds: ['com.chinamobile.mcloud.client.ui.MenuActivity'],
+        },
+      ],
+    },
+    {
+      key: 13,
       name: '发现新版本',
       desc: '251208',
       rules: [
@@ -156,7 +202,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 11,
+      key: 14,
       name: '服务通知，X掉',
       desc: '260702',
       rules: [
@@ -166,52 +212,6 @@ export default defineGkdApp({
           activityIds: 'com.mcloud.circle.ui.main.CircleMainActivity',
           matches:
             'LinearLayout > ImageView[vid="ad_iv"] + ImageView[vid="close_iv"][clickable=true][visibleToUser=true]',
-        },
-      ],
-    },
-    {
-      key: 12,
-      name: '我的云朵，领云朵',
-      desc: '260719',
-      rules: [
-        {
-          resetMatch: 'match',
-          activityIds:
-            'com.chinamobile.mcloud.client.component.web.H5WebViewMainActivity',
-          matches:
-            'WebView[text="移动云盘云朵中心"] > View > View > View > View > @TextView[clickable=false][visibleToUser=true][text.length=0] -n View > View > TextView[text="完成任务"]',
-        },
-      ],
-    },
-    {
-      key: 13,
-      name: '新活动12点兑换，第1步，立即兑换',
-      desc: '260720',
-      rules: [
-        {
-          actionCd: 0,
-          resetMatch: 'match',
-          actionMaximum: 1,
-          activityIds:
-            'com.chinamobile.mcloud.client.component.web.H5WebViewMainActivity',
-          matches:
-            'WebView[text="兑换奖品"] > View > View > View > Button[clickable=true][visibleToUser=true][text="立即兑换"]',
-        },
-      ],
-    },
-    {
-      key: 14,
-      name: '新活动12点兑换，第2步，确认兑换',
-      desc: '260720',
-      rules: [
-        {
-          resetMatch: 'match',
-          actionCd: 0,
-          order: -10,
-          activityIds:
-            'com.chinamobile.mcloud.client.component.web.H5WebViewMainActivity',
-          matches:
-            'Dialog > View > View > TextView[text="取消"] + TextView[text="确认兑换"]',
         },
       ],
     },

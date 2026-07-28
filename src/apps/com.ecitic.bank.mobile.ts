@@ -35,6 +35,34 @@ export default defineGkdApp({
     },
     {
       key: 3,
+      name: '弹窗2',
+      desc: '260720',
+      rules: [
+        {
+          resetMatch: 'match',
+          activityIds: 'com.ecitic.bank.mobile.ui.MainActivity',
+          matches:
+            'RelativeLayout > RelativeLayout[vid="id_cordova_view"] + ImageView[clickable=true][visibleToUser=true][vid="close_product_send"]',
+        },
+      ],
+    },
+    {
+      key: 4,
+      name: '浏览任务完成，点击返回',
+      desc: '260522',
+      rules: [
+        {
+          resetMatch: 'match',
+          activityIds: [
+            'com.ecitic.bank.mobile.ui.MainActivity',
+            'com.ecitic.bank.mobile.ui.webview.CordovaWebViewActivity',
+          ],
+          matches: '[text="任务已完成点击查看奖励"]',
+        },
+      ],
+    },
+    {
+      key: 5,
       name: '财富周游记，',
       desc: '251210，抽奖完成',
       rules: [
@@ -51,36 +79,9 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 4,
-      name: '浏览任务完成，点击返回',
-      desc: '260522',
-      rules: [
-        {
-          resetMatch: 'match',
-          activityIds: [
-            'com.ecitic.bank.mobile.ui.webview.CordovaWebViewActivity',
-            'com.ecitic.bank.mobile.ui.MainActivity',
-          ],
-          matches: '[text="任务已完成点击查看奖励"]',
-        },
-      ],
-    },
-    {
-      key: 5,
-      name: '抽奖，弹窗',
-      desc: '251208，D',
-      rules: [
-        {
-          matches: ['Dialog [text="close"]'],
-          resetMatch: 'match',
-          activityIds: ['com.citic.jk.activity.H5ContainerAty'],
-        },
-      ],
-    },
-    {
       key: 6,
       name: '新版签到',
-      desc: '260503',
+      desc: '260503，D',
       rules: [
         {
           resetMatch: 'match',
@@ -107,15 +108,14 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 8,
-      name: '弹窗2',
-      desc: '260720',
+      key: 5,
+      name: '抽奖，弹窗',
+      desc: '251208，D',
       rules: [
         {
+          matches: ['Dialog [text="close"]'],
           resetMatch: 'match',
-          activityIds: 'com.ecitic.bank.mobile.ui.MainActivity',
-          matches:
-            'RelativeLayout > RelativeLayout[vid="id_cordova_view"] + ImageView[clickable=true][visibleToUser=true][vid="close_product_send"]',
+          activityIds: ['com.citic.jk.activity.H5ContainerAty'],
         },
       ],
     },

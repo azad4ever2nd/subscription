@@ -23,6 +23,64 @@ export default defineGkdApp({
     },
     {
       key: 2,
+      name: '工行消费季立减金，领取',
+      desc: '251211，一个是标题，一个是按钮',
+      rules: [
+        {
+          matches: [
+            '([text="工享湖北消费季"] +n [text="领取"]) || ([text="工享湖北消费季"] +n * >n [text="领取"])',
+          ],
+          actionCd: 0,
+          resetMatch: 'match',
+          activityIds: ['com.icbc.activity.web.ICBCWebView'],
+        },
+      ],
+    },
+    {
+      key: 3,
+      name: '周一，江城礼遇四选一',
+      desc: '260706，新布局',
+      rules: [
+        {
+          resetMatch: 'match',
+          actionCd: 0,
+          actionMaximum: 100,
+          activityIds: 'com.icbc.activity.web.ICBCWebView',
+          matches:
+            '([id="app"] > [id="viewWrapper"] >n [text=" 立即领取"]) || ([text="详情"] + * + [text$="元优惠券"] + Button[text*="立即领取"]) || (View > TextView[text*="优惠券"] +n Button[clickable=true][visibleToUser=true][text="立即领取"])',
+        },
+      ],
+    },
+    {
+      key: 4,
+      name: '周一，江城礼遇四选一，刷新重试',
+      desc: '260720，最大次数，刷新重试',
+      rules: [
+        {
+          resetMatch: 'match',
+          actionCdKey: 2,
+          activityIds: 'com.icbc.activity.web.ICBCWebView',
+          matches:
+            '([text*="活动太火爆，请稍后再试"] + [text="我知道了"]) || ([text="刷新重试"]) || (View > TextView[text*="最大参与次数" || text*="活动太火爆" || text$="请稍后再试"] + Button[clickable=true][visibleToUser=true][text="我知道了"])',
+        },
+      ],
+    },
+    {
+      key: 5,
+      name: '周一，江城礼遇四选一，抢完，返回',
+      desc: '260518，D,新布局',
+      rules: [
+        {
+          resetMatch: 'match',
+          action: 'back',
+          activityIds: 'com.icbc.activity.web.ICBCWebView',
+          matches:
+            '([text="商品已抢完"] + [text="我知道了"]) || ([text="商品已领完"]) || ([text="已领完"])',
+        },
+      ],
+    },
+    {
+      key: 6,
       name: '工行开盲盒，抽奖',
       desc: '260706，点第二个，(@[id="lotteryIconFile"] + * > [text^="剩余次数："][text!*="0次"]) || ',
       rules: [
@@ -36,7 +94,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 3,
+      key: 7,
       name: '盲盒来早了',
       desc: '',
       rules: [
@@ -50,7 +108,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 4,
+      key: 8,
       name: '盲盒抽完了',
       desc: '260706',
       rules: [
@@ -64,75 +122,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 5,
-      name: '场景号取关',
-      desc: '',
-      rules: [
-        {
-          matches: ['[id="android:id/title"][text="不再关注"]'],
-          fastQuery: true,
-          resetMatch: 'match',
-          activityIds: ['com.scene.ui.SceneListActivity'],
-        },
-      ],
-    },
-    {
-      key: 6,
-      name: '江城每日签到',
-      desc: '',
-      rules: [
-        {
-          matches: ['@[text="立即签到"] + [text="兑换记录"]'],
-          resetMatch: 'match',
-          activityIds: ['com.icbc.activity.web.ICBCWebView'],
-        },
-      ],
-    },
-    {
-      key: 7,
-      name: '江城每日签到成功',
-      desc: '',
-      rules: [
-        {
-          action: 'back',
-          matches: ['[text^="签到成功"] + [text*="我知道了"]'],
-          matchTime: 10000,
-          resetMatch: 'match',
-          activityIds: ['com.icbc.activity.web.ICBCWebView'],
-        },
-      ],
-    },
-    {
-      key: 8,
-      name: '周一，江城礼遇四选一',
-      desc: '260706，新布局',
-      rules: [
-        {
-          resetMatch: 'match',
-          actionCd: 0,
-          actionMaximum: 20,
-          activityIds: 'com.icbc.activity.web.ICBCWebView',
-          matches:
-            '([id="app"] > [id="viewWrapper"] >n [text=" 立即领取"]) || ([text="详情"] + * + [text$="元优惠券"] + Button[text*="立即领取"]) || (View > TextView[text*="优惠券"] +n Button[clickable=true][visibleToUser=true][text="立即领取"])',
-        },
-      ],
-    },
-    {
       key: 9,
-      name: '周一，江城礼遇四选一，刷新重试',
-      desc: '260720，最大次数，刷新重试',
-      rules: [
-        {
-          resetMatch: 'match',
-          actionCdKey: 8,
-          activityIds: 'com.icbc.activity.web.ICBCWebView',
-          matches:
-            '([text*="活动太火爆，请稍后再试"] + [text="我知道了"]) || ([text="刷新重试"]) || (View > TextView[text*="最大参与次数" || text*="活动太火爆" || text$="请稍后再试"] + Button[clickable=true][visibleToUser=true][text="我知道了"])',
-        },
-      ],
-    },
-    {
-      key: 10,
       name: '各种中奖',
       desc: '260605，添加未中奖，数字藏品中奖',
       rules: [
@@ -146,7 +136,58 @@ export default defineGkdApp({
       ],
     },
     {
+      key: 10,
+      name: '恭喜获得，领取',
+      desc: '251219,clickCenter',
+      rules: [
+        {
+          action: 'clickCenter',
+          matches: ['[text="关闭"] + [text^="恭喜获得"] +n @[text="领取"]'],
+          resetMatch: 'match',
+          activityIds: ['com.icbc.activity.web.ICBCWebView'],
+        },
+      ],
+    },
+    {
       key: 11,
+      name: '江城每日签到',
+      desc: 'D',
+      rules: [
+        {
+          matches: ['@[text="立即签到"] + [text="兑换记录"]'],
+          resetMatch: 'match',
+          activityIds: ['com.icbc.activity.web.ICBCWebView'],
+        },
+      ],
+    },
+    {
+      key: 12,
+      name: '江城每日签到成功',
+      desc: 'D',
+      rules: [
+        {
+          action: 'back',
+          matches: ['[text^="签到成功"] + [text*="我知道了"]'],
+          matchTime: 10000,
+          resetMatch: 'match',
+          activityIds: ['com.icbc.activity.web.ICBCWebView'],
+        },
+      ],
+    },
+    {
+      key: 13,
+      name: '弹窗，X掉',
+      desc: '260702',
+      rules: [
+        {
+          resetMatch: 'match',
+          activityIds: 'com.icbc.activity.web.ICBCWebView',
+          matches: 'View > Image +n @TextView - View > TextView[text="去许愿"]',
+        },
+      ],
+    },
+    {
+      key: 14,
       name: '浇水',
       desc: '260703，每月要变更id',
       rules: [
@@ -160,7 +201,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 12,
+      key: 15,
       name: '浇水成功',
       desc: '',
       rules: [
@@ -173,7 +214,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 13,
+      key: 16,
       name: '前往微信浇水',
       desc: '260615',
       rules: [
@@ -190,7 +231,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 14,
+      key: 17,
       name: '前往微信再浇一次后，关闭',
       desc: '260601',
       rules: [
@@ -204,21 +245,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 15,
-      name: '周一，江城礼遇四选一，抢完，返回',
-      desc: '260518，新布局',
-      rules: [
-        {
-          resetMatch: 'match',
-          action: 'back',
-          activityIds: 'com.icbc.activity.web.ICBCWebView',
-          matches:
-            '([text="商品已抢完"] + [text="我知道了"]) || ([text="商品已领完"]) || ([text="已领完"])',
-        },
-      ],
-    },
-    {
-      key: 16,
+      key: 18,
       name: '恭喜完成任务，去看看',
       desc: '260114,整合14',
       rules: [
@@ -238,35 +265,20 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 17,
-      name: '工行消费季立减金，领取',
-      desc: '251211，一个是标题，一个是按钮',
-      rules: [
-        {
-          matches: [
-            '([text="工享湖北消费季"] +n [text="领取"]) || ([text="工享湖北消费季"] +n * >n [text="领取"])',
-          ],
-          actionCdKey: 8,
-          resetMatch: 'match',
-          activityIds: ['com.icbc.activity.web.ICBCWebView'],
-        },
-      ],
-    },
-    {
-      key: 18,
-      name: '恭喜获得，领取',
-      desc: '251219,clickCenter',
-      rules: [
-        {
-          action: 'clickCenter',
-          matches: ['[text="关闭"] + [text^="恭喜获得"] +n @[text="领取"]'],
-          resetMatch: 'match',
-          activityIds: ['com.icbc.activity.web.ICBCWebView'],
-        },
-      ],
-    },
-    {
       key: 19,
+      name: '场景号取关',
+      desc: '',
+      rules: [
+        {
+          matches: ['[id="android:id/title"][text="不再关注"]'],
+          fastQuery: true,
+          resetMatch: 'match',
+          activityIds: ['com.scene.ui.SceneListActivity'],
+        },
+      ],
+    },
+    {
+      key: 20,
       name: '分享到，微信好友',
       desc: '260218',
       rules: [
@@ -277,18 +289,6 @@ export default defineGkdApp({
           fastQuery: true,
           resetMatch: 'match',
           activityIds: ['com.ebdp.share.ui.ShareActivity'],
-        },
-      ],
-    },
-    {
-      key: 20,
-      name: '弹窗，X掉',
-      desc: '260702',
-      rules: [
-        {
-          resetMatch: 'match',
-          activityIds: 'com.icbc.activity.web.ICBCWebView',
-          matches: 'View > Image +n @TextView - View > TextView[text="去许愿"]',
         },
       ],
     },

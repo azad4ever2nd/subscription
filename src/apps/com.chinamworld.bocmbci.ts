@@ -23,6 +23,21 @@ export default defineGkdApp({
     },
     {
       key: 2,
+      name: '分享到微信',
+      desc: '260212',
+      rules: [
+        {
+          matches: ['@[desc="分享到微信"] <<n * +n [vid="btn_share_cancel"]'],
+          fastQuery: true,
+          resetMatch: 'match',
+          activityIds: [
+            'com.boc.bocsoft.mobile.bocmobile.base.activity.generalcontainer.GeneralCordovaActivity',
+          ],
+        },
+      ],
+    },
+    {
+      key: 3,
       name: '弹窗',
       desc: '251120，D,添加新弹窗',
       rules: [
@@ -38,7 +53,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 3,
+      key: 4,
       name: '维护通知',
       desc: '',
       rules: [
@@ -48,21 +63,6 @@ export default defineGkdApp({
           resetMatch: 'match',
           activityIds: [
             'com.boc.bocsoft.mobile.bocmobile.buss.login.ui.LoginBaseActivity',
-          ],
-        },
-      ],
-    },
-    {
-      key: 4,
-      name: '分享到微信',
-      desc: '260212',
-      rules: [
-        {
-          matches: ['@[desc="分享到微信"] <<n * +n [vid="btn_share_cancel"]'],
-          fastQuery: true,
-          resetMatch: 'match',
-          activityIds: [
-            'com.boc.bocsoft.mobile.bocmobile.base.activity.generalcontainer.GeneralCordovaActivity',
           ],
         },
       ],

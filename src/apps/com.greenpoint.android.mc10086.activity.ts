@@ -12,9 +12,7 @@ export default defineGkdApp({
         {
           resetMatch: 'app',
           fastQuery: true,
-
           matches: ['@[vid="iv_top_close"] + [vid="rl_top_bg"]'],
-
           activityIds: ['com.mc10086.cmcc.view.tabs.AppTabFragment'],
         },
       ],
@@ -42,15 +40,27 @@ export default defineGkdApp({
         {
           resetMatch: 'match',
           fastQuery: true,
-
           matches: ['[vid="close_btn"][desc="关闭"]'],
-
           activityIds: ['com.mc10086.cmcc.view.tabs.AppTabFragment'],
         },
       ],
     },
     {
       key: 4,
+      name: '周三活动，弹窗',
+      desc: '260621',
+      rules: [
+        {
+          resetMatch: 'match',
+          fastQuery: true,
+          activityIds: 'com.mc10086.cmcc.view.tabs.AppTabFragment',
+          matches:
+            'ImageView[vid="ad_image"][desc="广告"] < RelativeLayout + ImageView[vid="close_btn"][desc="关闭"][clickable=true]',
+        },
+      ],
+    },
+    {
+      key: 5,
       name: '签到有礼',
       desc: '',
       rules: [
@@ -63,7 +73,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 5,
+      key: 6,
       name: '获取验证码',
       desc: '',
       rules: [
@@ -76,7 +86,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 6,
+      key: 7,
       name: '兑换成功',
       desc: '260304，添加兑换中，签到成功领奖',
       rules: [
@@ -91,7 +101,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 7,
+      key: 8,
       name: '签到奖励，X掉',
       desc: '260402',
       rules: [
@@ -101,20 +111,6 @@ export default defineGkdApp({
           activityIds: 'com.cmccit.webview.ac.CommonHtml5Activity',
           matches:
             '[text="累计签到奖励"] +n [text="去使用"] + *[clickable=true]',
-        },
-      ],
-    },
-    {
-      key: 8,
-      name: '周三活动，弹窗',
-      desc: '260621',
-      rules: [
-        {
-          resetMatch: 'match',
-          fastQuery: true,
-          activityIds: 'com.mc10086.cmcc.view.tabs.AppTabFragment',
-          matches:
-            'ImageView[vid="ad_image"][desc="广告"] < RelativeLayout + ImageView[vid="close_btn"][desc="关闭"][clickable=true]',
         },
       ],
     },
