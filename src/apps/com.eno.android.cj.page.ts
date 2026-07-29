@@ -21,6 +21,77 @@ export default defineGkdApp({
     },
     {
       key: 2,
+      name: '弹窗2',
+      desc: '',
+      rules: [
+        {
+          matches: '[vid="content_iv"] + [vid="close_iv"]',
+          fastQuery: true,
+          resetMatch: 'match',
+          activityIds: 'com.cjsc.cjeh.view.main.CJMainNewActivity',
+        },
+      ],
+    },
+    {
+      key: 3,
+      name: '长按删除',
+      desc: '',
+      rules: [
+        {
+          matches: [
+            'LinearLayout > [vid="zx_pop_long_click_delete"][text="删除"]',
+          ],
+          fastQuery: true,
+          resetMatch: 'match',
+          activityIds: ['com.cjsc.cjeh.view.main.CJMainNewActivity'],
+        },
+      ],
+    },
+    {
+      key: 4,
+      name: '申购提醒',
+      desc: '251209',
+      rules: [
+        {
+          matches: [
+            '[vid="global_newstock_title"][text="申购提醒"] +n * [vid="global_newstock_sure"][text="去申购"]',
+          ],
+          fastQuery: true,
+          resetMatch: 'match',
+          activityIds: ['com.cjsc.cjeh.view.main.CJMainNewActivity'],
+        },
+      ],
+    },
+    {
+      key: 5,
+      name: '股东投标提醒',
+      desc: '251230',
+      rules: [
+        {
+          matches: ['[vid="dlg_home_annc_buttons"] > [text="我知道了"]'],
+          fastQuery: true,
+          resetMatch: 'match',
+          activityIds: ['com.cjsc.cjeh.view.main.CJMainNewActivity'],
+        },
+      ],
+    },
+    {
+      key: 6,
+      name: '复盘弹窗3',
+      desc: '260205，先观察',
+      rules: [
+        {
+          matches: [
+            '@[vid="fupan_report_close_iv"] + [vid="fupan_report_main_content_iv"]',
+          ],
+          fastQuery: true,
+          resetMatch: 'match',
+          activityIds: ['com.cjsc.cjeh.view.main.CJMainNewActivity'],
+        },
+      ],
+    },
+    {
+      key: 7,
       name: '弹窗复盘',
       desc: '260129，增加IDS',
       rules: [
@@ -39,63 +110,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 3,
-      name: '弹窗2',
-      desc: '',
-      rules: [
-        {
-          matches: ['[vid="content_iv"] + [vid="close_iv"]'],
-          fastQuery: true,
-          resetMatch: 'match',
-          activityIds: ['com.cjsc.cjeh.view.main.CJMainNewActivity'],
-        },
-      ],
-    },
-    {
-      key: 4,
-      name: '长按删除',
-      desc: '',
-      rules: [
-        {
-          matches: [
-            'LinearLayout > [vid="zx_pop_long_click_delete"][text="删除"]',
-          ],
-          fastQuery: true,
-          resetMatch: 'match',
-          activityIds: ['com.cjsc.cjeh.view.main.CJMainNewActivity'],
-        },
-      ],
-    },
-    {
-      key: 5,
-      name: '申购提醒',
-      desc: '251209',
-      rules: [
-        {
-          matches: [
-            '[vid="global_newstock_title"][text="申购提醒"] +n * [vid="global_newstock_sure"][text="去申购"]',
-          ],
-          fastQuery: true,
-          resetMatch: 'match',
-          activityIds: ['com.cjsc.cjeh.view.main.CJMainNewActivity'],
-        },
-      ],
-    },
-    {
-      key: 6,
-      name: '股东投标提醒',
-      desc: '251230',
-      rules: [
-        {
-          matches: ['[vid="dlg_home_annc_buttons"] > [text="我知道了"]'],
-          fastQuery: true,
-          resetMatch: 'match',
-          activityIds: ['com.cjsc.cjeh.view.main.CJMainNewActivity'],
-        },
-      ],
-    },
-    {
-      key: 7,
+      key: 8,
       name: '风险提示',
       desc: '260115',
       rules: [
@@ -110,7 +125,22 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 8,
+      key: 9,
+      name: '测试公告弹窗',
+      desc: '260117',
+      rules: [
+        {
+          matches: [
+            '[vid="dlg_home_annc_title"][text*="公告"] + * [text="关闭"]',
+          ],
+          fastQuery: true,
+          resetMatch: 'match',
+          activityIds: ['com.cjsc.platform.NewLoginActivity'],
+        },
+      ],
+    },
+    {
+      key: 10,
       name: '申购高风险产品提示',
       desc: '260115',
       rules: [
@@ -127,7 +157,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 9,
+      key: 11,
       name: '我已阅读协议',
       desc: '260115',
       rules: [
@@ -140,7 +170,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 10,
+      key: 12,
       name: '立即签署协议',
       desc: '260116，添加阅读协议',
       rules: [
@@ -151,36 +181,6 @@ export default defineGkdApp({
           fastQuery: true,
           resetMatch: 'match',
           activityIds: ['com.cjsc.platform.SignProtocolActivity'],
-        },
-      ],
-    },
-    {
-      key: 11,
-      name: '测试公告弹窗',
-      desc: '260117',
-      rules: [
-        {
-          matches: [
-            '[vid="dlg_home_annc_title"][text*="公告"] + * [text="关闭"]',
-          ],
-          fastQuery: true,
-          resetMatch: 'match',
-          activityIds: ['com.cjsc.platform.NewLoginActivity'],
-        },
-      ],
-    },
-    {
-      key: 12,
-      name: '复盘弹窗3',
-      desc: '260205，先观察',
-      rules: [
-        {
-          matches: [
-            '@[vid="fupan_report_close_iv"] + [vid="fupan_report_main_content_iv"]',
-          ],
-          fastQuery: true,
-          resetMatch: 'match',
-          activityIds: ['com.cjsc.cjeh.view.main.CJMainNewActivity'],
         },
       ],
     },
