@@ -1,5 +1,4 @@
 import { defineGkdApp } from '@gkd-kit/define';
-
 export default defineGkdApp({
   id: 'com.unionpay',
   name: '云闪付',
@@ -21,6 +20,39 @@ export default defineGkdApp({
     },
     {
       key: 2,
+      name: '开启消息通知',
+      desc: '',
+      rules: [
+        {
+          matches: [
+            '[vid="view_dialog_other_container"] [vid="view_alert_cancel"]',
+          ],
+          fastQuery: true,
+          activityIds: ['com.unionpay.activity.UPActivityMain'],
+        },
+      ],
+    },
+    {
+      key: 3,
+      name: '发现新版本，稍后再说',
+      desc: '260327',
+      rules: [
+        {
+          matches: [
+            '[vid="tv_dialog_info"][text^="发现新版本"] + * > [vid="btn_cancel"][text="稍候再说"]',
+          ],
+          actionCd: 0,
+          fastQuery: true,
+          resetMatch: 'match',
+          activityIds: [
+            'com.unionpay.activity.UPActivityMain',
+            'com.unionpay.mobile.pay.activity.PayWalletActivity',
+          ],
+        },
+      ],
+    },
+    {
+      key: 4,
       name: '开启定位',
       desc: '260724，修复提示BUG，添加ids',
       rules: [
@@ -41,66 +73,22 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 3,
-      name: '0元购，立即抢购',
-      desc: '260621',
-      rules: [
-        {
-          resetMatch: 'match',
-          actionCd: 0,
-          activityIds: [
-            'com.unionpay.activity.react.UPActivityReactNative',
-            'com.unionpay.liteapp.app.UPLiteAppActivity1',
-            'com.unionpay.liteapp.app.UPLiteAppActivity2',
-            'com.unionpay.liteapp.app.UPLiteAppActivity3',
-            'com.unionpay.liteapp.app.UPLiteAppActivity4',
-          ],
-          matches:
-            'View > TextView[text="￥ 0"] + TextView[text="预估到手价"] + TextView[text="立即抢购"]',
-        },
-      ],
-    },
-    {
-      key: 4,
-      name: '0元购上限',
-      desc: '260621',
-      rules: [
-        {
-          resetMatch: 'match',
-          actionCd: 0,
-          activityIds: [
-            'com.unionpay.liteapp.app.UPLiteAppActivity1',
-            'com.unionpay.liteapp.app.UPLiteAppActivity2',
-            'com.unionpay.liteapp.app.UPLiteAppActivity3',
-            'com.unionpay.liteapp.app.UPLiteAppActivity4',
-          ],
-          matches:
-            '(View > TextView[text="￥ 0"] + TextView[text="预估到手价"] + TextView[text^="达到限购次数"])',
-          action: 'back',
-        },
-      ],
-    },
-    {
       key: 5,
-      name: '0元购已抢光',
-      desc: '260621',
+      name: '签到成功',
+      desc: '',
       rules: [
         {
           resetMatch: 'match',
-          actionCd: 0,
           activityIds: [
             'com.unionpay.liteapp.app.UPLiteAppActivity1',
             'com.unionpay.liteapp.app.UPLiteAppActivity2',
             'com.unionpay.liteapp.app.UPLiteAppActivity3',
             'com.unionpay.liteapp.app.UPLiteAppActivity4',
           ],
-          matches:
-            '(View > TextView[text="￥ 0"] + TextView[text="预估到手价"] + TextView[text^="已抢光"])',
-          action: 'back',
+          matches: '[text="签到成功"] + TextView',
         },
       ],
     },
-
     {
       key: 6,
       name: '幸运扭蛋机，点击抽奖',
@@ -140,23 +128,173 @@ export default defineGkdApp({
     },
     {
       key: 8,
-      name: '签到成功',
-      desc: '',
+      name: '抽奖弹窗，谢谢参与，知道了',
+      desc: '260705',
       rules: [
         {
           resetMatch: 'match',
+          actionCd: 0,
           activityIds: [
             'com.unionpay.liteapp.app.UPLiteAppActivity1',
             'com.unionpay.liteapp.app.UPLiteAppActivity2',
             'com.unionpay.liteapp.app.UPLiteAppActivity3',
             'com.unionpay.liteapp.app.UPLiteAppActivity4',
           ],
-          matches: '[text="签到成功"] + TextView',
+          matches:
+            '(View > TextView[text="谢谢参与"] + TextView[text="知道了"] + Image[text="scMOOk4eCwfO2MXMA57klCN2cRQucR4ZsJPAuCw81thJPT6XbjhgNwMbAPAiq3hLBd4o0iqaRfxjmM16IkusKLl+YfM7Etm+Ty3VgYWWEXAiV2i27uIq4pB4BzRbd4E7E7rliWqX2owOgTfotu7ixoDIHLqtu8gZ0bOGbusuava4MINu6y4yXiB00G3dhaOYZNNnmzbM9KtMQWIKT9PBMB1JSzIwpSFTArSkXlPSt1w3povOcsWaLndLWWEpaCyllKmIs5SPlsLVUDJbinVLm2BtUOytkb0pM7WDP+PVKWG1cGJeAAAAAElFTkSuQmCC"][clickable=false])',
         },
       ],
     },
     {
       key: 9,
+      name: '立即领取',
+      desc: '251128,D',
+      rules: [
+        {
+          matches: [
+            '[text="中国银联"] +n [text^="今日剩余"] <<n * +2 * [text="立即领取"]',
+          ],
+          fastQuery: true,
+          actionMaximum: 1,
+          resetMatch: 'match',
+          activityIds: ['com.unionpay.activity.react.UPActivityReactNative'],
+        },
+      ],
+    },
+    {
+      key: 10,
+      name: '领取成功提示',
+      desc: '也可去卡包查看[text="去查看"]',
+      rules: [
+        {
+          matches: ['[text="恭喜您领取成功"] +n * > [text="知道了"]'],
+          fastQuery: true,
+          resetMatch: 'match',
+          activityIds: ['com.unionpay.activity.react.UPActivityReactNative'],
+        },
+      ],
+    },
+    {
+      key: 11,
+      name: '0元购，立即抢购',
+      desc: '260621',
+      rules: [
+        {
+          resetMatch: 'match',
+          actionCd: 0,
+          activityIds: [
+            'com.unionpay.activity.react.UPActivityReactNative',
+            'com.unionpay.liteapp.app.UPLiteAppActivity1',
+            'com.unionpay.liteapp.app.UPLiteAppActivity2',
+            'com.unionpay.liteapp.app.UPLiteAppActivity3',
+            'com.unionpay.liteapp.app.UPLiteAppActivity4',
+          ],
+          matches:
+            'View > TextView[text="￥ 0"] + TextView[text="预估到手价"] + TextView[text="立即抢购"]',
+        },
+      ],
+    },
+    {
+      key: 12,
+      name: '0元购上限',
+      desc: '260621',
+      rules: [
+        {
+          resetMatch: 'match',
+          actionCd: 0,
+          activityIds: [
+            'com.unionpay.liteapp.app.UPLiteAppActivity1',
+            'com.unionpay.liteapp.app.UPLiteAppActivity2',
+            'com.unionpay.liteapp.app.UPLiteAppActivity3',
+            'com.unionpay.liteapp.app.UPLiteAppActivity4',
+          ],
+          matches:
+            '(View > TextView[text="￥ 0"] + TextView[text="预估到手价"] + TextView[text^="达到限购次数"])',
+          action: 'back',
+        },
+      ],
+    },
+    {
+      key: 13,
+      name: '0元购已抢光',
+      desc: '260621',
+      rules: [
+        {
+          resetMatch: 'match',
+          actionCd: 0,
+          activityIds: [
+            'com.unionpay.liteapp.app.UPLiteAppActivity1',
+            'com.unionpay.liteapp.app.UPLiteAppActivity2',
+            'com.unionpay.liteapp.app.UPLiteAppActivity3',
+            'com.unionpay.liteapp.app.UPLiteAppActivity4',
+          ],
+          matches:
+            '(View > TextView[text="￥ 0"] + TextView[text="预估到手价"] + TextView[text^="已抢光"])',
+          action: 'back',
+        },
+      ],
+    },
+    {
+      key: 14,
+      name: '迪士尼梦享券500-60，立即领取',
+      desc: '260508',
+      rules: [
+        {
+          resetMatch: 'match',
+          actionCd: 0,
+          actionMaximum: 1,
+          fastQuery: true,
+          activityIds: 'com.unionpay.activity.react.UPActivityReactNative',
+          matches: '[text="60元梦享券-乐园门票"] <<n * +n * [text="立即领取"]',
+        },
+      ],
+    },
+    {
+      key: 15,
+      name: '迪士尼梦享券1000-120，立即领取',
+      desc: '260508',
+      rules: [
+        {
+          resetMatch: 'match',
+          actionCd: 0,
+          actionMaximum: 1,
+          fastQuery: true,
+          activityIds: 'com.unionpay.activity.react.UPActivityReactNative',
+          matches: '[text="120元梦享券-乐园门票"] <<n * +n * [text="未开始"]',
+        },
+      ],
+    },
+    {
+      key: 16,
+      name: '迪士尼梦享券2000-200，立即领取',
+      desc: '260508',
+      rules: [
+        {
+          resetMatch: 'match',
+          actionCd: 0,
+          actionMaximum: 1,
+          fastQuery: true,
+          activityIds: 'com.unionpay.activity.react.UPActivityReactNative',
+          matches: '[text="200元梦享券-乐园门票"] <<n * +n * [text="未开始"]',
+        },
+      ],
+    },
+    {
+      key: 17,
+      name: '开通指纹支付，以后再说',
+      desc: '260303',
+      rules: [
+        {
+          matches: ['[text="开通指纹支付"] +n @* > [text="稍后再说"]'],
+          actionCd: 500,
+          fastQuery: true,
+          resetMatch: 'match',
+          activityIds: ['com.unionpay.activity.react.UPActivityReactNative'],
+        },
+      ],
+    },
+    {
+      key: 18,
       name: '暂不领取权益',
       desc: '双标卡权益',
       rules: [
@@ -174,7 +312,21 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 10,
+      key: 19,
+      name: '无界卡每月一次星巴克，去领取',
+      desc: '260131',
+      rules: [
+        {
+          matches: [
+            '@[id="wjGetGuestBoxBonusRightGroup06FromCreditCardPage"][text="去领取"] + [text^="用户每月可领一次"]',
+          ],
+          resetMatch: 'match',
+          activityIds: ['com.unionpay.cordova.UPActivityCordovaWeb'],
+        },
+      ],
+    },
+    {
+      key: 20,
       name: '0元购上限+抢光',
       desc: '260621',
       rules: [
@@ -190,160 +342,6 @@ export default defineGkdApp({
           matches:
             '(View > TextView[text="￥ 0"] + TextView[text="预估到手价"] + TextView[text^="达到限购次数"]) || (View > TextView[text="￥ 0"] + TextView[text="预估到手价"] + TextView[text^="已抢光"])',
           action: 'back',
-        },
-      ],
-    },
-    {
-      key: 11,
-      name: '开启消息通知',
-      desc: '',
-      rules: [
-        {
-          matches: [
-            '[vid="view_dialog_other_container"] [vid="view_alert_cancel"]',
-          ],
-          fastQuery: true,
-          activityIds: ['com.unionpay.activity.UPActivityMain'],
-        },
-      ],
-    },
-    {
-      key: 12,
-      name: '领取成功提示',
-      desc: '也可去卡包查看[text="去查看"]',
-      rules: [
-        {
-          matches: ['[text="恭喜您领取成功"] +n * > [text="知道了"]'],
-          fastQuery: true,
-          resetMatch: 'match',
-          activityIds: ['com.unionpay.activity.react.UPActivityReactNative'],
-        },
-      ],
-    },
-    {
-      key: 13,
-      name: '立即领取',
-      desc: '251128,D',
-      rules: [
-        {
-          matches: [
-            '[text="中国银联"] +n [text^="今日剩余"] <<n * +2 * [text="立即领取"]',
-          ],
-          fastQuery: true,
-          actionMaximum: 1,
-          resetMatch: 'match',
-          activityIds: ['com.unionpay.activity.react.UPActivityReactNative'],
-        },
-      ],
-    },
-    {
-      key: 14,
-      name: '无界卡每月一次星巴克，去领取',
-      desc: '260131',
-      rules: [
-        {
-          matches: [
-            '@[id="wjGetGuestBoxBonusRightGroup06FromCreditCardPage"][text="去领取"] + [text^="用户每月可领一次"]',
-          ],
-          resetMatch: 'match',
-          activityIds: ['com.unionpay.cordova.UPActivityCordovaWeb'],
-        },
-      ],
-    },
-    {
-      key: 15,
-      name: '开通指纹支付，以后再说',
-      desc: '260303',
-      rules: [
-        {
-          matches: ['[text="开通指纹支付"] +n @* > [text="稍后再说"]'],
-          actionCd: 500,
-          fastQuery: true,
-          resetMatch: 'match',
-          activityIds: ['com.unionpay.activity.react.UPActivityReactNative'],
-        },
-      ],
-    },
-    {
-      key: 16,
-      name: '发现新版本，稍后再说',
-      desc: '260327',
-      rules: [
-        {
-          matches: [
-            '[vid="tv_dialog_info"][text^="发现新版本"] + * > [vid="btn_cancel"][text="稍候再说"]',
-          ],
-          actionCd: 0,
-          fastQuery: true,
-          resetMatch: 'match',
-          activityIds: [
-            'com.unionpay.activity.UPActivityMain',
-            'com.unionpay.mobile.pay.activity.PayWalletActivity',
-          ],
-        },
-      ],
-    },
-    {
-      key: 17,
-      name: '迪士尼梦享券500-60，立即领取',
-      desc: '260508',
-      rules: [
-        {
-          resetMatch: 'match',
-          actionCd: 0,
-          actionMaximum: 1,
-          fastQuery: true,
-          activityIds: 'com.unionpay.activity.react.UPActivityReactNative',
-          matches: '[text="60元梦享券-乐园门票"] <<n * +n * [text="立即领取"]',
-        },
-      ],
-    },
-    {
-      key: 18,
-      name: '迪士尼梦享券1000-120，立即领取',
-      desc: '260508',
-      rules: [
-        {
-          resetMatch: 'match',
-          actionCd: 0,
-          actionMaximum: 1,
-          fastQuery: true,
-          activityIds: 'com.unionpay.activity.react.UPActivityReactNative',
-          matches: '[text="120元梦享券-乐园门票"] <<n * +n * [text="未开始"]',
-        },
-      ],
-    },
-    {
-      key: 19,
-      name: '迪士尼梦享券2000-200，立即领取',
-      desc: '260508',
-      rules: [
-        {
-          resetMatch: 'match',
-          actionCd: 0,
-          actionMaximum: 1,
-          fastQuery: true,
-          activityIds: 'com.unionpay.activity.react.UPActivityReactNative',
-          matches: '[text="200元梦享券-乐园门票"] <<n * +n * [text="未开始"]',
-        },
-      ],
-    },
-    {
-      key: 20,
-      name: '抽奖弹窗，谢谢参与，知道了',
-      desc: '260705',
-      rules: [
-        {
-          resetMatch: 'match',
-          actionCd: 0,
-          activityIds: [
-            'com.unionpay.liteapp.app.UPLiteAppActivity1',
-            'com.unionpay.liteapp.app.UPLiteAppActivity2',
-            'com.unionpay.liteapp.app.UPLiteAppActivity3',
-            'com.unionpay.liteapp.app.UPLiteAppActivity4',
-          ],
-          matches:
-            '(View > TextView[text="谢谢参与"] + TextView[text="知道了"] + Image[text="scMOOk4eCwfO2MXMA57klCN2cRQucR4ZsJPAuCw81thJPT6XbjhgNwMbAPAiq3hLBd4o0iqaRfxjmM16IkusKLl+YfM7Etm+Ty3VgYWWEXAiV2i27uIq4pB4BzRbd4E7E7rliWqX2owOgTfotu7ixoDIHLqtu8gZ0bOGbusuava4MINu6y4yXiB00G3dhaOYZNNnmzbM9KtMQWIKT9PBMB1JSzIwpSFTArSkXlPSt1w3povOcsWaLndLWWEpaCyllKmIs5SPlsLVUDJbinVLm2BtUOytkb0pM7WDP+PVKWG1cGJeAAAAAElFTkSuQmCC"][clickable=false])',
         },
       ],
     },
