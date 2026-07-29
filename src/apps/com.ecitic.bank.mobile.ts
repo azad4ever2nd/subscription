@@ -108,7 +108,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 5,
+      key: 8,
       name: '抽奖，弹窗',
       desc: '251208，D',
       rules: [
