@@ -1,5 +1,4 @@
 import { defineGkdApp } from '@gkd-kit/define';
-
 export default defineGkdApp({
   id: 'com.ccb.longjiLife',
   name: '建行生活',
@@ -20,42 +19,19 @@ export default defineGkdApp({
     },
     {
       key: 2,
-      name: '0元抢',
+      name: '签到成功奖励弹窗，',
+      desc: '260218',
       rules: [
         {
-          matches: '[text="0元抢"]',
           resetMatch: 'match',
-          activityIds: 'com.ccb.cloudmerchant.view.WebViewActivity',
+          matches:
+            '[text="签到成功"] + [text^="奖励8选1" || text$="领取"] +n [text="确定领取"] + TextView[index=parent.childCount.minus(1)]',
+          activityIds: 'com.ccb.longjiLife.MainActivity',
         },
       ],
     },
     {
       key: 3,
-      name: '活动太火爆了',
-      desc: '',
-      rules: [
-        {
-          resetMatch: 'match',
-          matches: '[text^="活动太火爆"] +3 * > [text="知道了"]',
-          activityIds: 'com.ccb.cloudmerchant.view.WebViewActivity',
-        },
-      ],
-    },
-    {
-      key: 4,
-      name: '优惠券已抢光',
-      desc: '      matchTime:10000,action:"back",',
-      rules: [
-        {
-          action: 'back',
-          resetMatch: 'match',
-          matches: '[text^="优惠券已抢光"] +3 * > [text="知道了"]',
-          activityIds: 'com.ccb.cloudmerchant.view.WebViewActivity',
-        },
-      ],
-    },
-    {
-      key: 5,
       name: '弹窗',
       desc: '251118',
       rules: [
@@ -67,13 +43,39 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 6,
-      name: '未中奖，弹窗',
-      desc: 'D',
+      key: 4,
+      name: '0元抢',
+      rules: [
+        {
+          matches: '[text="0元抢"]',
+          actionCd: 0,
+          resetMatch: 'match',
+          activityIds: 'com.ccb.cloudmerchant.view.WebViewActivity',
+        },
+      ],
+    },
+    {
+      key: 5,
+      name: '活动太火爆了',
+      desc: '',
       rules: [
         {
           resetMatch: 'match',
-          matches: '[text="cancel.ca07b919"]',
+          actionCd: 0,
+          matches: '[text^="活动太火爆"] +3 * > [text="知道了"]',
+          activityIds: 'com.ccb.cloudmerchant.view.WebViewActivity',
+        },
+      ],
+    },
+    {
+      key: 6,
+      name: '优惠券已抢光',
+      desc: '      matchTime:10000,action:"back",',
+      rules: [
+        {
+          action: 'back',
+          resetMatch: 'match',
+          matches: '[text^="优惠券已抢光"] +3 * > [text="知道了"]',
           activityIds: 'com.ccb.cloudmerchant.view.WebViewActivity',
         },
       ],
@@ -93,6 +95,32 @@ export default defineGkdApp({
     },
     {
       key: 8,
+      name: '未中奖，弹窗',
+      desc: 'D',
+      rules: [
+        {
+          resetMatch: 'match',
+          matches: '[text="cancel.ca07b919"]',
+          activityIds: 'com.ccb.cloudmerchant.view.WebViewActivity',
+        },
+      ],
+    },
+    {
+      key: 9,
+      name: '低碳生活，一键收取',
+      desc: '260722[ChangeMe]本规则由GKD网页端审查工具生成',
+      rules: [
+        {
+          resetMatch: 'match',
+          actionMaximum: 1,
+          activityIds: 'com.ccb.cloudmerchant.view.WebViewActivity',
+          matches:
+            'WebView[text="低碳生活"] > View > View > Image[clickable=false][visibleToUser=true][text="oneKey"]',
+        },
+      ],
+    },
+    {
+      key: 10,
       name: '弹窗2',
       desc: '251205,D，匹配规则是图形按钮',
       rules: [
@@ -105,7 +133,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 9,
+      key: 11,
       name: '财富会员，中间横幅，社保卡活动',
       desc: '260114',
       rules: [
@@ -119,7 +147,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 10,
+      key: 12,
       name: '财富会员，中间横幅，社保卡活动，身份信息验证',
       desc: '260114',
       rules: [
@@ -128,33 +156,6 @@ export default defineGkdApp({
           resetMatch: 'match',
           matches: '[text="身份信息验证"] +n CheckBox[checked=false]',
           activityIds: 'com.ccb.cloudmerchant.view.WebViewActivity',
-        },
-      ],
-    },
-    {
-      key: 11,
-      name: '签到成功奖励弹窗，',
-      desc: '260218',
-      rules: [
-        {
-          resetMatch: 'match',
-          matches:
-            '[text="签到成功"] + [text^="奖励8选1" || text$="领取"] +n [text="确定领取"] + TextView[index=parent.childCount.minus(1)]',
-          activityIds: 'com.ccb.longjiLife.MainActivity',
-        },
-      ],
-    },
-    {
-      key: 12,
-      name: '低碳生活，一键收取',
-      desc: '260722[ChangeMe]本规则由GKD网页端审查工具生成',
-      rules: [
-        {
-          resetMatch: 'match',
-          actionMaximum: 1,
-          activityIds: 'com.ccb.cloudmerchant.view.WebViewActivity',
-          matches:
-            'WebView[text="低碳生活"] > View > View > Image[clickable=false][visibleToUser=true][text="oneKey"]',
         },
       ],
     },

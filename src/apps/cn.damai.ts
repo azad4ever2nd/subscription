@@ -1,5 +1,4 @@
 import { defineGkdApp } from '@gkd-kit/define';
-
 export default defineGkdApp({
   id: 'cn.damai',
   name: '大麦',
@@ -22,6 +21,35 @@ export default defineGkdApp({
     },
     {
       key: 2,
+      name: '切换地理位置',
+      desc: '251205',
+      rules: [
+        {
+          matches: [
+            '[vid="damai_theme_dialog_title"][text="地理位置变更"] +n * > [vid="damai_theme_dialog_cancel_btn"][text="不切换"]',
+          ],
+          fastQuery: true,
+          resetMatch: 'match',
+          activityIds: ['cn.damai.homepage.MainActivity'],
+        },
+      ],
+    },
+    {
+      key: 3,
+      name: '演唱会弹窗',
+      desc: '260122',
+      rules: [
+        {
+          matches: ['[vid="new_person_dialog_top_close_iv"]'],
+          actionCdKey: 1,
+          fastQuery: true,
+          resetMatch: 'match',
+          activityIds: ['cn.damai.homepage.MainActivity'],
+        },
+      ],
+    },
+    {
+      key: 4,
       name: '升级提示',
       desc: '260319，添加搜索页面',
       rules: [
@@ -44,7 +72,58 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 3,
+      key: 5,
+      name: '抽奖动画，跳过',
+      desc: '260608',
+      rules: [
+        {
+          resetMatch: 'match',
+          action: 'clickCenter',
+          actionCdKey: 1,
+          activityIds: 'cn.damai.h5container.DMH5Activity',
+          matches: 'WebView > View > Button[text="点击跳过动画"]',
+        },
+      ],
+    },
+    {
+      key: 6,
+      name: '抽奖',
+      desc: '',
+      rules: [
+        {
+          matches: ['[text="恭喜中奖了"] +5 *'],
+          activityIds: ['cn.damai.h5container.DMH5Activity'],
+        },
+      ],
+    },
+    {
+      key: 7,
+      name: '口令复制分享，X掉',
+      desc: '260410',
+      rules: [
+        {
+          resetMatch: 'match',
+          actionCd: 0,
+          activityIds: 'cn.damai.h5container.DMH5Activity',
+          matches: '[text=" 去粘贴给好友"] + Image',
+        },
+      ],
+    },
+    {
+      key: 8,
+      name: '分享好友助力，X掉',
+      desc: '260410',
+      rules: [
+        {
+          resetMatch: 'match',
+          actionCd: 0,
+          activityIds: 'cn.damai.h5container.DMH5Activity',
+          matches: '[text=" 分享好友助力 再抽一次"] <<n View + Image',
+        },
+      ],
+    },
+    {
+      key: 9,
       name: '开启位置权限',
       desc: '251118,添加搜索页面',
       rules: [
@@ -63,33 +142,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 4,
-      name: '抽奖',
-      desc: '',
-      rules: [
-        {
-          matches: ['[text="恭喜中奖了"] +5 *'],
-          activityIds: ['cn.damai.h5container.DMH5Activity'],
-        },
-      ],
-    },
-    {
-      key: 5,
-      name: '切换地理位置',
-      desc: '251205',
-      rules: [
-        {
-          matches: [
-            '[vid="damai_theme_dialog_title"][text="地理位置变更"] +n * > [vid="damai_theme_dialog_cancel_btn"][text="不切换"]',
-          ],
-          fastQuery: true,
-          resetMatch: 'match',
-          activityIds: ['cn.damai.homepage.MainActivity'],
-        },
-      ],
-    },
-    {
-      key: 6,
+      key: 10,
       name: '点评，X掉',
       desc: '260114',
       rules: [
@@ -102,60 +155,6 @@ export default defineGkdApp({
           activityIds: [
             'com.taobao.movie.android.app.oscar.ui.film.activity.FilmReviewActivity',
           ],
-        },
-      ],
-    },
-    {
-      key: 7,
-      name: '演唱会弹窗',
-      desc: '260122',
-      rules: [
-        {
-          matches: ['[vid="new_person_dialog_top_close_iv"]'],
-          actionCdKey: 1,
-          fastQuery: true,
-          resetMatch: 'match',
-          activityIds: ['cn.damai.homepage.MainActivity'],
-        },
-      ],
-    },
-    {
-      key: 8,
-      name: '抽奖动画，跳过',
-      desc: '260608',
-      rules: [
-        {
-          resetMatch: 'match',
-          action: 'clickCenter',
-          actionCdKey: 1,
-          activityIds: 'cn.damai.h5container.DMH5Activity',
-          matches: 'WebView > View > Button[text="点击跳过动画"]',
-        },
-      ],
-    },
-    {
-      key: 9,
-      name: '口令复制分享，X掉',
-      desc: '260410',
-      rules: [
-        {
-          resetMatch: 'match',
-          actionCd: 0,
-          activityIds: 'cn.damai.h5container.DMH5Activity',
-          matches: '[text=" 去粘贴给好友"] + Image',
-        },
-      ],
-    },
-    {
-      key: 10,
-      name: '分享好友助力，X掉',
-      desc: '260410',
-      rules: [
-        {
-          resetMatch: 'match',
-          actionCd: 0,
-          activityIds: 'cn.damai.h5container.DMH5Activity',
-          matches: '[text=" 分享好友助力 再抽一次"] <<n View + Image',
         },
       ],
     },

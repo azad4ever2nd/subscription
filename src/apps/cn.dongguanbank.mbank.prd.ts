@@ -1,11 +1,23 @@
 import { defineGkdApp } from '@gkd-kit/define';
-
 export default defineGkdApp({
   id: 'cn.dongguanbank.mbank.prd',
   name: '东莞银行',
   groups: [
     {
       key: 1,
+      name: '立即签到',
+      desc: '260523',
+      rules: [
+        {
+          resetMatch: 'match',
+          actionMaximum: 1,
+          activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
+          matches: '@*[clickable=true] > [text="立即签到"][visibleToUser=true]',
+        },
+      ],
+    },
+    {
+      key: 2,
       name: '签完到弹窗，X掉',
       desc: '260502',
       rules: [
@@ -18,7 +30,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 2,
+      key: 3,
       name: '下载海报，点击下载海报',
       desc: '260706',
       rules: [
@@ -28,19 +40,6 @@ export default defineGkdApp({
           activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
           matches:
             'View > Image + TextView[clickable=true][visibleToUser=true][text="点击下载海报"]',
-        },
-      ],
-    },
-    {
-      key: 3,
-      name: '立即签到',
-      desc: '260523',
-      rules: [
-        {
-          resetMatch: 'match',
-          actionMaximum: 1,
-          activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
-          matches: '@*[clickable=true] > [text="立即签到"][visibleToUser=true]',
         },
       ],
     },
@@ -61,6 +60,21 @@ export default defineGkdApp({
     },
     {
       key: 5,
+      name: '积分商城提示，我已知悉',
+      desc: '260704',
+      rules: [
+        {
+          resetMatch: 'match',
+          action: 'clickCenter',
+          actionCd: 0,
+          activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
+          matches:
+            'View > View > TextView[text="温馨提示"] + View + TextView[text="我已知悉"][clickable=true][visibleToUser=true]',
+        },
+      ],
+    },
+    {
+      key: 6,
       name: '周四秒杀活动，立即兑换',
       desc: '260702',
       rules: [
@@ -75,7 +89,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 6,
+      key: 7,
       name: '周四秒杀活动尚未开始，确认',
       desc: '260702',
       rules: [
@@ -90,7 +104,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 7,
+      key: 8,
       name: '周四秒杀活动，提交订单',
       desc: '260702',
       rules: [
@@ -105,7 +119,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 8,
+      key: 9,
       name: '周四秒杀活动，提交订单，确认支付',
       desc: '260702',
       rules: [
@@ -116,21 +130,6 @@ export default defineGkdApp({
           activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
           matches:
             'Dialog > TextView[text="去支付？"] + View > Button[clickable=true][visibleToUser=true][text="确认"]',
-        },
-      ],
-    },
-    {
-      key: 9,
-      name: '积分商城提示，我已知悉',
-      desc: '260704',
-      rules: [
-        {
-          resetMatch: 'match',
-          action: 'clickCenter',
-          actionCd: 0,
-          activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
-          matches:
-            'View > View > TextView[text="温馨提示"] + View + TextView[text="我已知悉"][clickable=true][visibleToUser=true]',
         },
       ],
     },

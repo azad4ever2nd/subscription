@@ -1,5 +1,4 @@
 import { defineGkdApp } from '@gkd-kit/define';
-
 export default defineGkdApp({
   id: 'com.bankcomm.Bankcomm',
   name: '交通银行',
@@ -50,14 +49,43 @@ export default defineGkdApp({
     },
     {
       key: 4,
-      name: '领券中心,精选推荐',
-      desc: '260312,指定领第3个index=2',
+      name: '达美乐50元代金券',
+      desc: '260403',
+      rules: [
+        {
+          resetMatch: 'match',
+          actionCd: 100,
+          activityIds: 'com.bankcomm.module.biz.webcontainer.BCMHtml5Activity',
+          matches: '@View [text="达美乐50元代金券"]',
+        },
+      ],
+    },
+    {
+      key: 5,
+      name: '达美乐售罄，返回',
+      desc: '260403，D,先占位',
+      rules: [
+        {
+          resetMatch: 'match',
+          actionCd: 100,
+          action: 'back',
+          activityIds: 'com.bankcomm.module.biz.webcontainer.BCMHtml5Activity',
+          matches:
+            '[text="达美乐50元代金券"] <<n * + * [id="copy"][text="已售罄"]',
+        },
+      ],
+    },
+    {
+      key: 6,
+      name: '领券中心,信用卡专享好券，刷卡金',
+      desc: '260728，周五或周日再领，集齐2张再用，第二个index=1',
       rules: [
         {
           matches: [
-            '[text="ACIM_20250901000022_20250901111730286"] <<n * + * > *[index=2] >n [text="立即领取"]',
+            '(Image[text="ACIM_20250725000139_20250725155808212"] <<n View + View > View[index=0] Image[text="立即领取"]) || (Image[text="ACIM_20250725000139_20250725155808212"] < View < View < View + View > View[index=0] > View > Image[clickable=false][visibleToUser=true][text="立即领取"])',
           ],
-          actionCd: 0,
+          actionCd: 10,
+          order: -10,
           actionMaximum: 1,
           resetMatch: 'match',
           activityIds: [
@@ -67,7 +95,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 5,
+      key: 7,
       name: '领券中心,信用卡专享好券，还款券',
       desc: '260728，第一个index=0',
       rules: [
@@ -85,7 +113,40 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 6,
+      key: 8,
+      name: '领券中心，周五12点云网券',
+      desc: '260626',
+      rules: [
+        {
+          resetMatch: 'match',
+          actionCd: 0,
+          actionMaximum: 1,
+          activityIds: 'com.bankcomm.module.biz.webcontainer.BCMHtml5Activity',
+          matches:
+            'Image[text="ACIM_20260611000178_20260611152611360"] < View < View < View + View > View > View > View > Image[text="立即领取"]',
+        },
+      ],
+    },
+    {
+      key: 9,
+      name: '领券中心,精选推荐',
+      desc: '260312,指定领第3个index=2',
+      rules: [
+        {
+          matches: [
+            '[text="ACIM_20250901000022_20250901111730286"] <<n * + * > *[index=2] >n [text="立即领取"]',
+          ],
+          actionCd: 0,
+          actionMaximum: 1,
+          resetMatch: 'match',
+          activityIds: [
+            'com.bankcomm.module.biz.webcontainer.BCMHtml5Activity',
+          ],
+        },
+      ],
+    },
+    {
+      key: 10,
       name: '领券中心，优选美食，线下门票展码立减，指定领第3个index=2,',
       desc: '260312，规则先暂时定好定位',
       rules: [
@@ -103,7 +164,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 7,
+      key: 11,
       name: '领券中心，品质商超，扫一扫门店享优惠，暂时指定领第2张index=1',
       desc: '260312，规则先暂时定好定位',
       rules: [
@@ -121,22 +182,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 8,
-      name: '领券中心，郊游通勤 低碳出行，火车票-3，index=1',
-      desc: '260614，',
-      rules: [
-        {
-          actionMaximum: 1,
-          resetMatch: 'match',
-          actionCd: 0,
-          activityIds: 'com.bankcomm.module.biz.webcontainer.BCMHtml5Activity',
-          matches:
-            'Image[text="ACIM_20260302000116_20260302113642643"] <<3 View + View > View[index=1] > View > Image[text="立即领取"][clickable=false]',
-        },
-      ],
-    },
-    {
-      key: 9,
+      key: 12,
       name: '领券中心，娱乐影音，优酷-3',
       desc: '260223，优酷是第3个，index=2',
       rules: [
@@ -154,22 +200,22 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 10,
-      name: '领券中心，周五12点云网券',
-      desc: '260626',
+      key: 13,
+      name: '领券中心，郊游通勤 低碳出行，火车票-3，index=1',
+      desc: '260614，',
       rules: [
         {
+          actionMaximum: 1,
           resetMatch: 'match',
           actionCd: 0,
-          actionMaximum: 1,
           activityIds: 'com.bankcomm.module.biz.webcontainer.BCMHtml5Activity',
           matches:
-            'Image[text="ACIM_20260611000178_20260611152611360"] < View < View < View + View > View > View > View > Image[text="立即领取"]',
+            'Image[text="ACIM_20260302000116_20260302113642643"] <<3 View + View > View[index=1] > View > Image[text="立即领取"][clickable=false]',
         },
       ],
     },
     {
-      key: 11,
+      key: 14,
       name: '当前奖励已领完',
       desc: '260209',
       rules: [
@@ -184,7 +230,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 12,
+      key: 15,
       name: '人数太多，关闭',
       desc: '260403，增加服务器在忙，上限',
       rules: [
@@ -198,7 +244,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 13,
+      key: 16,
       name: '每月一次，爱优哔 立即领取',
       desc: '251206，',
       rules: [
@@ -213,7 +259,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 14,
+      key: 17,
       name: '爱优哔已领完，返回',
       desc: '251206',
       rules: [
@@ -231,7 +277,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 15,
+      key: 18,
       name: '碳星任务，点击签到',
       desc: '251121',
       rules: [
@@ -250,7 +296,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 16,
+      key: 19,
       name: '能量签到完成',
       desc: '251122',
       rules: [
@@ -264,41 +310,87 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 17,
-      name: '碳星星级礼',
-      desc: '251227，D',
+      key: 20,
+      name: '感谢订阅，知道了',
+      desc: '260601',
       rules: [
         {
-          matches: [
-            '[text$="星礼"] +(2,3,4,5,6) * [text="2lingqublue_1758591208946"]',
-          ],
-          actionMaximum: 5,
           resetMatch: 'match',
-          activityIds: [
-            'com.bankcomm.module.biz.webcontainer.BCMHtml5Activity',
-          ],
+          activityIds: 'com.bankcomm.module.biz.webcontainer.BCMHtml5Activity',
+          matches: '[text="感谢您的订阅"] <<n * + * > [text="知道了"]',
         },
       ],
     },
     {
-      key: 18,
-      name: '浏览任务完成',
-      desc: '26051，添加新布局，添加权限弹窗，直播间ids',
+      key: 21,
+      name: '分享到微信好友',
+      desc: '260601',
       rules: [
         {
-          action: 'back',
           resetMatch: 'match',
-          activityIds: [
-            'com.bankcomm.module.biz.bcmvideo.BCMVerticalVideoActivity',
-            'com.bankcomm.module.biz.webcontainer.BCMHtml5Activity',
-          ],
+          actionMaximum: 1,
+          activityIds: 'com.bankcomm.module.biz.webcontainer.BCMHtml5Activity',
+          matches: '@[text="微信好友"] + [text="朋友圈"]',
+        },
+      ],
+    },
+    {
+      key: 22,
+      name: '直播间任务，去完成',
+      desc: '260624',
+      rules: [
+        {
+          resetMatch: 'match',
+          actionMaximum: 1,
+          activityIds: 'com.bankcomm.module.biz.webcontainer.BCMHtml5Activity',
           matches:
-            '([id="android:id/message"][text*="权限"] <<n * + [id="android:id/buttonPanel"] [id="android:id/button2"][text="否"] + [id="android:id/button1"][text="是"]) || ([text="Pyi3KQBzgJA1F+Xm7MrWYA0HQqTcq4GrAAAAAASUVORK5CYII="]) || ([text="gthEFTB6uRQ36UPWtwD"]) || ([text="countdown-fulfilled-bg.f65a2ea"])',
+            'WebView > View > View > View > View > TextView[text="1次抽奖机会"] + View > Image[text="去完成"]',
         },
       ],
     },
     {
-      key: 19,
+      key: 23,
+      name: '直播间任务完成，立即领取',
+      desc: '260624',
+      rules: [
+        {
+          resetMatch: 'match',
+          actionMaximum: 1,
+          activityIds: 'com.bankcomm.module.biz.webcontainer.BCMHtml5Activity',
+          matches:
+            'WebView > View > View > View > View > TextView[text="1次抽奖机会"] + View > Image[text="去领奖"]',
+        },
+      ],
+    },
+    {
+      key: 24,
+      name: '直播间任务完成，抽奖弹窗',
+      desc: '260624',
+      rules: [
+        {
+          resetMatch: 'match',
+          activityIds: 'com.bankcomm.module.biz.webcontainer.BCMHtml5Activity',
+          matches:
+            'View > View > View > View[childCount=4] > TextView[text="恭喜获得"] + TextView[text="1次抽奖机会"] + Image + Image',
+        },
+      ],
+    },
+    {
+      key: 25,
+      name: '直播间任务完成，抽奖',
+      desc: '260728',
+      rules: [
+        {
+          resetMatch: 'match',
+          activityIds: 'com.bankcomm.module.biz.webcontainer.BCMHtml5Activity',
+          matches:
+            'WebView[text="交通银行"] > View > View > View > View > View > TextView[text="1次"] + TextView[clickable=false][visibleToUser=true][text.length=0]',
+        },
+      ],
+    },
+
+    {
+      key: 26,
       name: '恭喜中奖了',
       desc: '',
       rules: [
@@ -311,7 +403,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 20,
+      key: 27,
       name: '抽奖弹窗，关闭',
       desc: '260228',
       rules: [
@@ -327,7 +419,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 21,
+      key: 28,
       name: '终止心愿',
       desc: '251201，整合终止和确认过程，关注任务',
       rules: [
@@ -344,7 +436,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 22,
+      key: 29,
       name: '惠民贷广告',
       desc: '',
       rules: [
@@ -358,7 +450,97 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 23,
+      key: 30,
+      name: '碳星星级礼',
+      desc: '251227，D',
+      rules: [
+        {
+          matches: [
+            '[text$="星礼"] +(2,3,4,5,6) * [text="2lingqublue_1758591208946"]',
+          ],
+          actionMaximum: 5,
+          resetMatch: 'match',
+          activityIds: [
+            'com.bankcomm.module.biz.webcontainer.BCMHtml5Activity',
+          ],
+        },
+      ],
+    },
+    {
+      key: 31,
+      name: '基金理财操作，第1步，阅读资料',
+      desc: '260721',
+      rules: [
+        {
+          resetMatch: 'match',
+          actionMaximum: 1,
+          activityIds: 'com.bankcomm.module.biz.webcontainer.BCMHtml5Activity',
+          matches:
+            'Dialog > Button[clickable=true][visibleToUser=true][text="我已阅读并同意"]',
+        },
+      ],
+    },
+    {
+      key: 32,
+      name: '基金理财操作，第2步，风险提示声明，一键输入',
+      desc: '260721',
+      rules: [
+        {
+          resetMatch: 'match',
+          activityIds: 'com.bankcomm.module.biz.webcontainer.BCMHtml5Activity',
+          matches:
+            'View > EditText[text.length=0] + View > View > Button[clickable=true][visibleToUser=true][text="一键输入"]',
+        },
+      ],
+    },
+    {
+      key: 33,
+      name: '基金理财操作，第2步，风险提示声明，一键输入，确认',
+      desc: '260721',
+      rules: [
+        {
+          resetMatch: 'match',
+          activityIds: 'com.bankcomm.module.biz.webcontainer.BCMHtml5Activity',
+          matches:
+            'EditText[text.length>0] < View + Button[clickable=true][visibleToUser=true][text="确认"]',
+        },
+      ],
+    },
+    {
+      key: 34,
+      name: '浏览任务完成',
+      desc: '26051，添加新布局，添加权限弹窗，直播间ids',
+      rules: [
+        {
+          action: 'back',
+          resetMatch: 'match',
+          activityIds: [
+            'com.bankcomm.module.biz.bcmvideo.BCMVerticalVideoActivity',
+            'com.bankcomm.module.biz.webcontainer.BCMHtml5Activity',
+          ],
+          matches:
+            '([id="android:id/message"][text*="权限"] <<n * + [id="android:id/buttonPanel"] [id="android:id/button2"][text="否"] + [id="android:id/button1"][text="是"]) || ([text="Pyi3KQBzgJA1F+Xm7MrWYA0HQqTcq4GrAAAAAASUVORK5CYII="]) || ([text="gthEFTB6uRQ36UPWtwD"]) || ([text="countdown-fulfilled-bg.f65a2ea"])',
+        },
+      ],
+    },
+
+    {
+      key: 35,
+      name: '直播间限时福袋',
+      desc: '260717',
+      rules: [
+        {
+          resetMatch: 'match',
+          actionMaximum: 1,
+          activityIds:
+            'com.bankcomm.module.biz.bcmvideo.BCMVerticalVideoActivity',
+          matches:
+            'WebView > View > View > @View[clickable=false][visibleToUser=true] > Image[text="0MrX0eS4YNgAAAABJRU5ErkJggg=="] + Image[text^="fudai"]',
+        },
+      ],
+    },
+    {
+      key: 36,
       name: '系统定位权限未开启,暂不开启',
       desc: '251207,',
       rules: [
@@ -374,8 +556,9 @@ export default defineGkdApp({
         },
       ],
     },
+
     {
-      key: 24,
+      key: 37,
       name: '领券中心，1分购，外面等',
       desc: '2600508，可以指定抢什么券，朴朴，移动，联通，美团，闪购，',
       rules: [
@@ -390,7 +573,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 25,
+      key: 38,
       name: '领券中心，1分购，里面等，立即抢购',
       desc: '260508',
       rules: [
@@ -404,7 +587,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 26,
+      key: 39,
       name: '领券中心，1分购，达到限购次数，返回',
       desc: '260327',
       rules: [
@@ -420,54 +603,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 27,
-      name: '领券中心,信用卡专享好券，刷卡金',
-      desc: '260728，周五或周日再领，集齐2张再用，第二个index=1',
-      rules: [
-        {
-          matches: [
-            '(Image[text="ACIM_20250725000139_20250725155808212"] <<n View + View > View[index=0] Image[text="立即领取"]) || (Image[text="ACIM_20250725000139_20250725155808212"] < View < View < View + View > View[index=0] > View > Image[clickable=false][visibleToUser=true][text="立即领取"])',
-          ],
-          actionCd: 50,
-          order: -10,
-          actionMaximum: 1,
-          resetMatch: 'match',
-          activityIds: [
-            'com.bankcomm.module.biz.webcontainer.BCMHtml5Activity',
-          ],
-        },
-      ],
-    },
-    {
-      key: 28,
-      name: '达美乐50元代金券',
-      desc: '260403',
-      rules: [
-        {
-          resetMatch: 'match',
-          actionCd: 100,
-          activityIds: 'com.bankcomm.module.biz.webcontainer.BCMHtml5Activity',
-          matches: '@View [text="达美乐50元代金券"]',
-        },
-      ],
-    },
-    {
-      key: 29,
-      name: '达美乐售罄，返回',
-      desc: '260403，D,先占位',
-      rules: [
-        {
-          resetMatch: 'match',
-          actionCd: 100,
-          action: 'back',
-          activityIds: 'com.bankcomm.module.biz.webcontainer.BCMHtml5Activity',
-          matches:
-            '[text="达美乐50元代金券"] <<n * + * [id="copy"][text="已售罄"]',
-        },
-      ],
-    },
-    {
-      key: 30,
+      key: 40,
       name: '领券中心，1分购，里面等2',
       desc: '260608，不分品种，无actionMaximum限制',
       rules: [
@@ -477,140 +613,6 @@ export default defineGkdApp({
           activityIds: 'com.unionpay.cordova.UPActivityWeb',
           matches:
             'View > TextView[text="￥ 0.01"] + TextView[text="预估到手价"] + TextView[text="立即抢购"]',
-        },
-      ],
-    },
-    {
-      key: 31,
-      name: '感谢订阅，知道了',
-      desc: '260601',
-      rules: [
-        {
-          resetMatch: 'match',
-          activityIds: 'com.bankcomm.module.biz.webcontainer.BCMHtml5Activity',
-          matches: '[text="感谢您的订阅"] <<n * + * > [text="知道了"]',
-        },
-      ],
-    },
-    {
-      key: 32,
-      name: '分享到微信好友',
-      desc: '260601',
-      rules: [
-        {
-          resetMatch: 'match',
-          actionMaximum: 1,
-          activityIds: 'com.bankcomm.module.biz.webcontainer.BCMHtml5Activity',
-          matches: '@[text="微信好友"] + [text="朋友圈"]',
-        },
-      ],
-    },
-    {
-      key: 33,
-      name: '直播间任务，去完成',
-      desc: '260624',
-      rules: [
-        {
-          resetMatch: 'match',
-          actionMaximum: 1,
-          activityIds: 'com.bankcomm.module.biz.webcontainer.BCMHtml5Activity',
-          matches:
-            'WebView > View > View > View > View > TextView[text="1次抽奖机会"] + View > Image[text="去完成"]',
-        },
-      ],
-    },
-    {
-      key: 34,
-      name: '直播间任务完成，立即领取',
-      desc: '260624',
-      rules: [
-        {
-          resetMatch: 'match',
-          actionMaximum: 1,
-          activityIds: 'com.bankcomm.module.biz.webcontainer.BCMHtml5Activity',
-          matches:
-            'WebView > View > View > View > View > TextView[text="1次抽奖机会"] + View > Image[text="去领奖"]',
-        },
-      ],
-    },
-    {
-      key: 35,
-      name: '直播间任务完成，抽奖弹窗',
-      desc: '260624',
-      rules: [
-        {
-          resetMatch: 'match',
-          activityIds: 'com.bankcomm.module.biz.webcontainer.BCMHtml5Activity',
-          matches:
-            'View > View > View > View[childCount=4] > TextView[text="恭喜获得"] + TextView[text="1次抽奖机会"] + Image + Image',
-        },
-      ],
-    },
-    {
-      key: 36,
-      name: '直播间限时福袋',
-      desc: '260717',
-      rules: [
-        {
-          resetMatch: 'match',
-          actionMaximum: 1,
-          activityIds:
-            'com.bankcomm.module.biz.bcmvideo.BCMVerticalVideoActivity',
-          matches:
-            'WebView > View > View > @View[clickable=false][visibleToUser=true] > Image[text="0MrX0eS4YNgAAAABJRU5ErkJggg=="] + Image[text^="fudai"]',
-        },
-      ],
-    },
-    {
-      key: 37,
-      name: '基金理财操作，第1步，阅读资料',
-      desc: '260721',
-      rules: [
-        {
-          resetMatch: 'match',
-          actionMaximum: 1,
-          activityIds: 'com.bankcomm.module.biz.webcontainer.BCMHtml5Activity',
-          matches:
-            'Dialog > Button[clickable=true][visibleToUser=true][text="我已阅读并同意"]',
-        },
-      ],
-    },
-    {
-      key: 38,
-      name: '基金理财操作，第2步，风险提示声明，一键输入',
-      desc: '260721',
-      rules: [
-        {
-          resetMatch: 'match',
-          activityIds: 'com.bankcomm.module.biz.webcontainer.BCMHtml5Activity',
-          matches:
-            'View > EditText[text.length=0] + View > View > Button[clickable=true][visibleToUser=true][text="一键输入"]',
-        },
-      ],
-    },
-    {
-      key: 39,
-      name: '基金理财操作，第2步，风险提示声明，一键输入，确认',
-      desc: '260721',
-      rules: [
-        {
-          resetMatch: 'match',
-          activityIds: 'com.bankcomm.module.biz.webcontainer.BCMHtml5Activity',
-          matches:
-            'EditText[text.length>0] < View + Button[clickable=true][visibleToUser=true][text="确认"]',
-        },
-      ],
-    },
-    {
-      key: 40,
-      name: '直播间任务完成，抽奖',
-      desc: '260728',
-      rules: [
-        {
-          resetMatch: 'match',
-          activityIds: 'com.bankcomm.module.biz.webcontainer.BCMHtml5Activity',
-          matches:
-            'WebView[text="交通银行"] > View > View > View > View > View > TextView[text="1次"] + TextView[clickable=false][visibleToUser=true][text.length=0]',
         },
       ],
     },
