@@ -402,26 +402,8 @@ export default defineGkdApp({
         },
       ],
     },
-
     {
-      key: 15,
-      name: '金豆抽奖',
-      desc: '',
-      rules: [
-        {
-          matches: [
-            '@View << * + * >2 [text="差一点就中奖啦"] + [text="继续抽奖"]',
-          ],
-          resetMatch: 'match',
-          activityIds: [
-            'com.cebbank.mobile.cemb.ui.activity.mobilePayment.MobilePaymentWebNoSingleTopActivity',
-          ],
-        },
-      ],
-    },
-
-    {
-      key: 16,
+      key: 29,
       name: '金知了弹窗',
       desc: '',
       rules: [
@@ -435,7 +417,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 17,
+      key: 30,
       name: '金知了兑换抽奖',
       desc: '',
       rules: [
