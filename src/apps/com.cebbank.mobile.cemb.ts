@@ -312,7 +312,7 @@ export default defineGkdApp({
       rules: [
         {
           resetMatch: 'match',
-          prekeys: [21],
+          preKeys: [21],
           activityIds:
             'com.cebbank.mobile.cemb.ui.activity.mobilePayment.MobilePaymentWebActivity',
           matches: '[text^="搜索并关注微信公众号"] + *[clickable=true]',
@@ -621,7 +621,7 @@ export default defineGkdApp({
       rules: [
         {
           resetMatch: 'match',
-          prekeys: [21],
+          preKeys: [21],
           activityIds:
             'com.cebbank.mobile.cemb.ui.activity.mobilePayment.MobilePaymentWebActivity',
           matches: '[text^="搜索并关注微信公众号"] + *[clickable=true]',
