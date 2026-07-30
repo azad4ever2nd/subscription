@@ -82,7 +82,7 @@ export default defineGkdApp({
       rules: [
         {
           matches: [
-            '(Image[text="ACIM_20250725000139_20250725155808212"] <<n View + View > View[index=0] Image[text="立即领取"]) || (Image[text="ACIM_20250725000139_20250725155808212"] < View < View < View + View > View[index=0] > View > Image[clickable=false][visibleToUser=true][text="立即领取"])',
+            '(Image[text="ACIM_20250725000139_20250725155808212"] <<n View + View > View[index=0] Image[text="立即领取"]) || (Image[text="ACIM_20250725000139_20250725155808212"] < View < View < View + View > View[index=0] > View > Image[clickable=false][visibleToUser=true || visibleToUser=false][text="立即领取"])',
           ],
           actionCd: 10,
           order: -10,
@@ -101,7 +101,7 @@ export default defineGkdApp({
       rules: [
         {
           matches: [
-            '(Image[text="ACIM_20250725000139_20250725155808212"] <<n View + View > View[index=1] Image[text="立即领取"]) || (Image[text="ACIM_20250725000139_20250725155808212"] < View < View < View + View > View[index=1] > View > Image[clickable=false][visibleToUser=true][text="立即领取"])',
+            '(Image[text="ACIM_20250725000139_20250725155808212"] <<n View + View > View[index=1] Image[text="立即领取"]) || (Image[text="ACIM_20250725000139_20250725155808212"] < View < View < View + View > View[index=1] > View > Image[clickable=false][visibleToUser=true || visibleToUser=false][text="立即领取"])',
           ],
           actionCd: 100,
           actionMaximum: 1,

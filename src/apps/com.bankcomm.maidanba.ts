@@ -6,19 +6,6 @@ export default defineGkdApp({
   groups: [
     {
       key: 1,
-      name: '最红星期五，立即购买',
-      desc: '260704',
-      rules: [
-        {
-          resetMatch: 'match',
-          activityIds: 'com.bankcomm.maidanba.activity.WebViewActivity',
-          matches:
-            '(@[id="copy"][text*="立即购买"] <<n * - * [text="最红星期五"]) || (View > View > Button[id="copy"][clickable=true][visibleToUser=true]) || (WebView > View > View > View > View > Button[id="copy"][clickable=true][visibleToUser=true][text=" 立即购买"])',
-        },
-      ],
-    },
-    {
-      key: 2,
       name: '首页弹窗',
       desc: '',
       rules: [
@@ -31,50 +18,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 3,
-      name: '还款后开启消息通知',
-      desc: '251206,添加首页弹',
-      rules: [
-        {
-          matches: ['[vid="tv_title"][text="开启消息通知"] + [vid="im_close"]'],
-          fastQuery: true,
-          resetMatch: 'match',
-          activityIds: [
-            'com.bankcomm.maidanba.activity.MainActivity',
-            'com.bankcomm.maidanba.creditcardpay.RepaymentResultActivity',
-          ],
-        },
-      ],
-    },
-    {
-      key: 4,
-      name: '专属权限弹窗',
-      desc: '251127',
-      rules: [
-        {
-          matches: ['[vid="iv_dialog_guide_to_install_close"]'],
-          fastQuery: true,
-          resetMatch: 'match',
-          activityIds: [
-            'com.bankcomm.maidanba.creditcardpay.CreditCardListActivity',
-          ],
-        },
-      ],
-    },
-    {
-      key: 5,
-      name: '领取买单币',
-      desc: '251201',
-      rules: [
-        {
-          matches: ['[text^="领"] + [text="领取"]'],
-          resetMatch: 'match',
-          activityIds: ['com.bankcomm.maidanba.activity.WebViewActivity'],
-        },
-      ],
-    },
-    {
-      key: 6,
+      key: 2,
       name: '给好评',
       desc: '251207',
       rules: [
@@ -87,17 +31,75 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 7,
-      name: '开启消息通知，关闭',
-      desc: '260607',
+      key: 3,
+      name: '首页弹窗，开启消息通知，X掉',
+      desc: '260616',
       rules: [
         {
-          actionCd: 0,
+          resetMatch: 'match',
+          actionCd: 100,
+          fastQuery: true,
+          activityIds: 'com.bankcomm.maidanba.activity.MainActivity',
+          matches:
+            'TextView[vid="tv_title"][text="开启消息通知"] + ImageView[vid="im_close"][clickable=true]',
+        },
+      ],
+    },
+    {
+      key: 4,
+      name: '还款后开启消息通知',
+      desc: '251206,添加首页弹',
+      rules: [
+        {
+          matches: '[vid="tv_title"][text="开启消息通知"] + [vid="im_close"]',
           fastQuery: true,
           resetMatch: 'match',
+          activityIds: [
+            'com.bankcomm.maidanba.activity.MainActivity',
+            'com.bankcomm.maidanba.creditcardpay.RepaymentResultActivity',
+          ],
+        },
+      ],
+    },
+    {
+      key: 5,
+      name: '最红五折列表，达美乐50代金券',
+      desc: '260403',
+      rules: [
+        {
+          resetMatch: 'match',
+          actionCd: 100,
+          activityIds: 'com.bankcomm.maidanba.activity.WebViewActivity',
+          matches: '@View [text="达美乐50元代金券"] +n [text="¥ 25"]',
+        },
+      ],
+    },
+    {
+      key: 6,
+      name: '最红星期五，立即购买',
+      desc: '260704',
+      rules: [
+        {
+          resetMatch: 'match',
+          actionCd: 0,
           activityIds: 'com.bankcomm.maidanba.activity.WebViewActivity',
           matches:
-            '(@* + [text="开启消息通知"] +n [text="去开启"]) || (View > @TextView + TextView[text="开启消息通知"])',
+            '(@[id="copy"][text*="立即购买"] <<n * - * [text="最红星期五"]) || (View > View > Button[id="copy"][clickable=true][visibleToUser=true]) || (WebView > View > View > View > View > Button[id="copy"][clickable=true][visibleToUser=true][text=" 立即购买"])',
+        },
+      ],
+    },
+    {
+      key: 7,
+      name: '达美乐售罄，返回',
+      desc: '260403，只针对中午12点捡漏打开，平时要关闭',
+      rules: [
+        {
+          resetMatch: 'match',
+          actionCd: 100,
+          action: 'back',
+          activityIds: 'com.bankcomm.maidanba.activity.WebViewActivity',
+          matches:
+            '[text="达美乐50元代金券"] <<n * + * [id="copy"][text="已售罄"]',
         },
       ],
     },
@@ -117,44 +119,43 @@ export default defineGkdApp({
     },
     {
       key: 9,
-      name: '最红五折列表，达美乐50代金券',
-      desc: '260403',
+      name: '领取买单币',
+      desc: '251201',
       rules: [
         {
+          matches: '[text^="领"] + [text="领取"]',
           resetMatch: 'match',
-          actionCd: 100,
-          activityIds: 'com.bankcomm.maidanba.activity.WebViewActivity',
-          matches: '@View [text="达美乐50元代金券"] +n [text="¥ 25"]',
+          activityIds: ['com.bankcomm.maidanba.activity.WebViewActivity'],
         },
       ],
     },
     {
       key: 10,
-      name: '达美乐售罄，返回',
-      desc: '260403，只针对中午12点捡漏打开，平时要关闭',
+      name: '首页弹窗，开启消息通知，关闭',
+      desc: '260607',
       rules: [
         {
+          actionCd: 0,
+          fastQuery: true,
           resetMatch: 'match',
-          actionCd: 100,
-          action: 'back',
           activityIds: 'com.bankcomm.maidanba.activity.WebViewActivity',
           matches:
-            '[text="达美乐50元代金券"] <<n * + * [id="copy"][text="已售罄"]',
+            '(@* + [text="开启消息通知"] +n [text="去开启"]) || (View > @TextView + TextView[text="开启消息通知"])',
         },
       ],
     },
     {
       key: 11,
-      name: '首页弹窗，开启消息通知，X掉',
-      desc: '260616',
+      name: '专属权限弹窗',
+      desc: '251127',
       rules: [
         {
-          resetMatch: 'match',
-          actionCd: 100,
+          matches: '[vid="iv_dialog_guide_to_install_close"]',
           fastQuery: true,
-          activityIds: 'com.bankcomm.maidanba.activity.MainActivity',
-          matches:
-            'TextView[vid="tv_title"][text="开启消息通知"] + ImageView[vid="im_close"][clickable=true]',
+          resetMatch: 'match',
+          activityIds: [
+            'com.bankcomm.maidanba.creditcardpay.CreditCardListActivity',
+          ],
         },
       ],
     },

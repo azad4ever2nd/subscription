@@ -1,5 +1,4 @@
 import { defineGkdApp } from '@gkd-kit/define';
-
 export default defineGkdApp({
   id: 'com.jingdong.app.mall',
   name: '京东',
@@ -21,6 +20,18 @@ export default defineGkdApp({
     },
     {
       key: 2,
+      name: '黑五预约',
+      desc: 'D',
+      rules: [
+        {
+          matches: ['Image -2 * > [text="提醒我抢购"]'],
+          resetMatch: 'match',
+          activityIds: ['com.jd.lib.ttt.page.TTTMultiPageActivity'],
+        },
+      ],
+    },
+    {
+      key: 3,
       name: '黑五鸡蛋',
       desc: '260703，需要注意每期标题和价格',
       rules: [
@@ -34,38 +45,35 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 3,
-      name: '下单后抽奖有就金豆，立即领取',
-      desc: '260507，		  actionMaximum:2,',
-      rules: [
-        {
-          resetMatch: 'match',
-          fastQuery: true,
-          action: 'clickCenter',
-          matchRoot: true,
-          activityIds:
-            'com.jingdong.app.mall.bundle.cashierfinish.view.CashierUserContentCompleteActivity',
-          matches:
-            '[text^="恭喜你"] + * [text$="京豆"] +n @[text="立即领取"][clickable=true] > [text="立即领取"]',
-        },
-      ],
-    },
-    {
       key: 4,
-      name: '签到完成返回',
-      desc: '',
+      name: '黑五纸巾',
+      desc: '260703，需要注意每期标题和价格，D',
       rules: [
         {
-          action: 'back',
-          matches: ['[text="今天已签到，获得奖励"]'],
-          actionMaximum: 1,
           resetMatch: 'match',
-          activityIds: ['com.jingdong.app.mall.WebActivity'],
+          actionCd: 0,
+          activityIds: 'com.jd.lib.ttt.page.TTTMultiPageActivity',
+          matches:
+            '(View > TextView[text*="纸" && text*="12"] +3  TextView[clickable=true][text="领券抢"]) || (TextView[text^="券后¥"] - TextView[text*="卷纸"] - TextView < View + TextView[text="领券抢"][clickable=true])',
         },
       ],
     },
     {
       key: 5,
+      name: '黑五秒杀鸡蛋，误点弹窗，X掉',
+      desc: '260616',
+      rules: [
+        {
+          resetMatch: 'match',
+          actionCd: 0,
+          activityIds: 'com.jd.lib.ttt.page.TTTMultiPageActivity',
+          matches:
+            '(@TextView - View > [text="¥"] + [text="4.90"] + [text="黑五价"]) || (View[childCount=2] > View[childCount=3] > View[childCount=7] + @TextView[clickable=true] + TextView)',
+        },
+      ],
+    },
+    {
+      key: 6,
       name: '下单后抽奖',
       desc: '',
       rules: [
@@ -80,33 +88,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 6,
-      name: '黑五预约',
-      desc: 'D',
-      rules: [
-        {
-          matches: ['Image -2 * > [text="提醒我抢购"]'],
-          resetMatch: 'match',
-          activityIds: ['com.jd.lib.ttt.page.TTTMultiPageActivity'],
-        },
-      ],
-    },
-    {
       key: 7,
-      name: '开启通知（物流）',
-      desc: '260726,添加物流，促销，消息通知',
-      rules: [
-        {
-          resetMatch: 'match',
-          fastQuery: true,
-          activityIds: 'com.jingdong.app.mall.MainFrameActivity',
-          matches:
-            '([text*="开启消息通知"] <<n * + [desc="关闭"]) || (@[id="com.jd.lib.message.feature:id/h7"] > [id="com.jd.lib.message.feature:id/h6"]) || (Button[text="去开启通知"] <n LinearLayout + ImageView[desc="关闭"])',
-        },
-      ],
-    },
-    {
-      key: 8,
       name: '领金豆页面的幸运奖励',
       desc: '251119',
       rules: [
@@ -119,7 +101,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 9,
+      key: 8,
       name: '通知权限未开启',
       desc: '251123',
       rules: [
@@ -134,33 +116,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 10,
-      name: '京东秒送1分够',
-      desc: '251218',
-      rules: [
-        {
-          matches: ['[text="0153148071ca2233"] <<n * + * > [text="¥0.01"]'],
-          resetMatch: 'match',
-          activityIds: ['com.jd.lib.babel.view.activity.BabelActivity'],
-        },
-      ],
-    },
-    {
-      key: 11,
-      name: '黑五纸巾',
-      desc: '260703，需要注意每期标题和价格，D',
-      rules: [
-        {
-          resetMatch: 'match',
-          actionCd: 0,
-          activityIds: 'com.jd.lib.ttt.page.TTTMultiPageActivity',
-          matches:
-            '(View > TextView[text*="纸" && text*="12"] +3  TextView[clickable=true][text="领券抢"]) || (TextView[text^="券后¥"] - TextView[text*="卷纸"] - TextView < View + TextView[text="领券抢"][clickable=true])',
-        },
-      ],
-    },
-    {
-      key: 12,
+      key: 9,
       name: '定位提示',
       desc: '251226',
       rules: [
@@ -174,58 +130,21 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 13,
-      name: '秒杀自提一分购',
-      desc: '260118',
+      key: 10,
+      name: '签到完成返回',
+      desc: '',
       rules: [
         {
-          matches: ['@Image <<n * + * > [text="到手价"] + [text="¥0.01"]'],
+          action: 'back',
+          matches: ['[text="今天已签到，获得奖励"]'],
+          actionMaximum: 1,
           resetMatch: 'match',
-          activityIds: ['com.jd.lib.babel.view.activity.BabelActivity'],
+          activityIds: ['com.jingdong.app.mall.WebActivity'],
         },
       ],
     },
     {
-      key: 14,
-      name: '补贴价0.01，立即购买',
-      desc: '260118',
-      rules: [
-        {
-          matches: ['LinearLayout > @FrameLayout [text="补贴价¥0.01"]'],
-          fastQuery: true,
-          resetMatch: 'match',
-          activityIds: ['com.jd.lib.productdetail.ProductDetailPopActivity'],
-        },
-      ],
-    },
-    {
-      key: 15,
-      name: '补贴价0.01，去抢购',
-      desc: '260118',
-      rules: [
-        {
-          matches: ['[text="0点01元 已补 9.99元"] <n * + * > [text="去抢购"]'],
-          fastQuery: true,
-          activityIds: ['com.jingdong.manto.card.MantoLightActivity'],
-        },
-      ],
-    },
-    {
-      key: 16,
-      name: '黑五秒杀鸡蛋，误点弹窗，X掉',
-      desc: '260616',
-      rules: [
-        {
-          resetMatch: 'match',
-          actionCd: 0,
-          activityIds: 'com.jd.lib.ttt.page.TTTMultiPageActivity',
-          matches:
-            '(@TextView - View > [text="¥"] + [text="4.90"] + [text="黑五价"]) || (View[childCount=2] > View[childCount=3] > View[childCount=7] + @TextView[clickable=true] + TextView)',
-        },
-      ],
-    },
-    {
-      key: 17,
+      key: 11,
       name: '开启刷脸支付',
       desc: '260310',
       rules: [
@@ -238,6 +157,89 @@ export default defineGkdApp({
           activityIds: [
             'com.wangyin.payment.jdpaysdk.counter.ui.pay.CounterActivity',
           ],
+        },
+      ],
+    },
+    {
+      key: 12,
+      name: '支付完后提示开启积分当钱花，X掉',
+      desc: '260502',
+      rules: [
+        {
+          fastQuery: true,
+          resetMatch: 'match',
+          activityIds:
+            'com.wangyin.payment.jdpaysdk.counter.ui.pay.CounterActivity',
+          matches:
+            '[id="com.jd.lib.jdpaysdk.feature:id/a2w"][text="积分当钱花 支付更优惠"] +n [id="com.jd.lib.jdpaysdk.feature:id/afl"][desc="关闭"]',
+        },
+      ],
+    },
+    {
+      key: 13,
+      name: '订单列表，未付款取消的订单，删除',
+      desc: '260710',
+      rules: [
+        {
+          resetMatch: 'match',
+          activityIds: 'com.jd.lib.ordercenter.taro.OrderListActivityTaro',
+          matches:
+            '(ViewGroup[childCount=9] > View[desc="已取消"] +n ViewGroup > ViewGroup > View[clickable=false][visibleToUser=true][desc="删除订单"])',
+        },
+      ],
+    },
+    {
+      key: 14,
+      name: '确认删除该订单？，删除',
+      desc: '260710',
+      rules: [
+        {
+          resetMatch: 'match',
+          actionCd: 0,
+          action: 'clickCenter',
+          activityIds: 'com.jd.lib.ordercenter.taro.OrderListActivityTaro',
+          matches:
+            '(View[desc="确认删除该订单？"] < ViewGroup +n @ViewGroup[clickable=false][visibleToUser=true] > View[desc="删除"])',
+        },
+      ],
+    },
+    {
+      key: 15,
+      name: '去开启通知，X掉',
+      desc: '260726',
+      rules: [
+        {
+          resetMatch: 'match',
+          actionCd: 0,
+          activityIds: 'com.jingdong.app.mall.MainFrameActivity',
+          matches:
+            'Button[text="去开启通知"] <n LinearLayout + ImageView[desc="关闭"]',
+        },
+      ],
+    },
+    {
+      key: 16,
+      name: '开启通知（物流）',
+      desc: '260726,添加物流，促销，消息通知',
+      rules: [
+        {
+          resetMatch: 'match',
+          fastQuery: true,
+          activityIds: 'com.jingdong.app.mall.MainFrameActivity',
+          matches:
+            '([text*="开启消息通知"] <<n * + [desc="关闭"]) || (@[id="com.jd.lib.message.feature:id/h7"] > [id="com.jd.lib.message.feature:id/h6"]) || (Button[text="去开启通知"] <n LinearLayout + ImageView[desc="关闭"])',
+        },
+      ],
+    },
+    {
+      key: 17,
+      name: '京东秒送1分够',
+      desc: '251218',
+      rules: [
+        {
+          matches: ['[text="0153148071ca2233"] <<n * + * > [text="¥0.01"]'],
+          resetMatch: 'match',
+          activityIds: ['com.jd.lib.babel.view.activity.BabelActivity'],
         },
       ],
     },
@@ -256,58 +258,55 @@ export default defineGkdApp({
     },
     {
       key: 19,
-      name: '支付完后提示开启积分当钱花，X掉',
-      desc: '260502',
+      name: '秒杀自提一分购',
+      desc: '260118',
       rules: [
         {
-          fastQuery: true,
+          matches: ['@Image <<n * + * > [text="到手价"] + [text="¥0.01"]'],
           resetMatch: 'match',
-          activityIds:
-            'com.wangyin.payment.jdpaysdk.counter.ui.pay.CounterActivity',
-          matches:
-            '[id="com.jd.lib.jdpaysdk.feature:id/a2w"][text="积分当钱花 支付更优惠"] +n [id="com.jd.lib.jdpaysdk.feature:id/afl"][desc="关闭"]',
+          activityIds: ['com.jd.lib.babel.view.activity.BabelActivity'],
         },
       ],
     },
     {
       key: 20,
-      name: '订单列表，未付款取消的订单，删除',
-      desc: '260710',
+      name: '下单后抽奖有金豆，立即领取',
+      desc: '260507，		  actionMaximum:2,',
       rules: [
         {
           resetMatch: 'match',
-          activityIds: 'com.jd.lib.ordercenter.taro.OrderListActivityTaro',
+          fastQuery: true,
+          action: 'clickCenter',
+          matchRoot: true,
+          activityIds:
+            'com.jingdong.app.mall.bundle.cashierfinish.view.CashierUserContentCompleteActivity',
           matches:
-            '(ViewGroup[childCount=9] > View[desc="已取消"] +n ViewGroup > ViewGroup > View[clickable=false][visibleToUser=true][desc="删除订单"])',
+            '[text^="恭喜你"] + * [text$="京豆"] +n @[text="立即领取"][clickable=true] > [text="立即领取"]',
         },
       ],
     },
     {
       key: 21,
-      name: '确认删除该订单？，删除',
-      desc: '260710',
+      name: '补贴价0.01，立即购买',
+      desc: '260118',
       rules: [
         {
+          matches: ['LinearLayout > @FrameLayout [text="补贴价¥0.01"]'],
+          fastQuery: true,
           resetMatch: 'match',
-          actionCd: 0,
-          action: 'clickCenter',
-          activityIds: 'com.jd.lib.ordercenter.taro.OrderListActivityTaro',
-          matches:
-            '(View[desc="确认删除该订单？"] < ViewGroup +n @ViewGroup[clickable=false][visibleToUser=true] > View[desc="删除"])',
+          activityIds: ['com.jd.lib.productdetail.ProductDetailPopActivity'],
         },
       ],
     },
     {
       key: 22,
-      name: '去开启通知，X掉',
-      desc: '260726',
+      name: '补贴价0.01，去抢购',
+      desc: '260118',
       rules: [
         {
-          resetMatch: 'match',
-          actionCd: 0,
-          activityIds: 'com.jingdong.app.mall.MainFrameActivity',
-          matches:
-            'Button[text="去开启通知"] <n LinearLayout + ImageView[desc="关闭"]',
+          matches: ['[text="0点01元 已补 9.99元"] <n * + * > [text="去抢购"]'],
+          fastQuery: true,
+          activityIds: ['com.jingdong.manto.card.MantoLightActivity'],
         },
       ],
     },
