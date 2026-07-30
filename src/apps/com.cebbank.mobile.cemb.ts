@@ -329,7 +329,7 @@ export default defineGkdApp({
           activityIds:
             'com.cebbank.mobile.cemb.ui.activity.mobilePayment.MobilePaymentWebActivity',
           matches:
-            '(View > View > TextView[text="立即领取"][index=parent.childCount.minus(1)]) || ',
+            '(View > View > TextView[text="立即领取"][index=parent.childCount.minus(1)])  || (View TextView[text^="剩余"] + TextView[text="立即领取"])',
         },
       ],
     },
