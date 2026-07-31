@@ -1,5 +1,4 @@
 import { defineGkdApp } from '@gkd-kit/define';
-
 export default defineGkdApp({
   id: 'ctrip.android.view',
   name: '携程旅行',
@@ -23,44 +22,6 @@ export default defineGkdApp({
     },
     {
       key: 2,
-      name: '开启推送通知',
-      desc: '',
-      rules: [
-        {
-          matches: ['[text="去开启"] < * + Image'],
-          resetMatch: 'match',
-          activityIds: ['ctrip.android.view.h5v2.view.H5Container'],
-        },
-      ],
-    },
-    {
-      key: 3,
-      name: '签到',
-      desc: '260629，两台手机布局不同',
-      rules: [
-        {
-          actionMaximum: 1,
-          resetMatch: 'match',
-          activityIds: 'ctrip.android.view.h5v2.view.H5Container',
-          matches:
-            '([id="NotificationModal"] +2 * [id="signBtnInModal"][text="立即签到"]) || (View > View > View > TextView[id="signBtnInModal"][clickable=false][text="立即签到"])',
-        },
-      ],
-    },
-    {
-      key: 4,
-      name: '发现一波红包，一键领取，X掉',
-      desc: '260525',
-      rules: [
-        {
-          resetMatch: 'match',
-          activityIds: 'ctrip.android.reactnative.preloadv2.CRNBaseActivityV2',
-          matches: '[desc="一键领取"] <n * + @*[clickable=true] > ImageView',
-        },
-      ],
-    },
-    {
-      key: 5,
       name: '618弹窗',
       desc: '260609',
       rules: [
@@ -75,7 +36,33 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 6,
+      key: 3,
+      name: '开启推送通知',
+      desc: '',
+      rules: [
+        {
+          matches: ['[text="去开启"] < * + Image'],
+          resetMatch: 'match',
+          activityIds: ['ctrip.android.view.h5v2.view.H5Container'],
+        },
+      ],
+    },
+    {
+      key: 4,
+      name: '签到',
+      desc: '260629，两台手机布局不同',
+      rules: [
+        {
+          actionMaximum: 1,
+          resetMatch: 'match',
+          activityIds: 'ctrip.android.view.h5v2.view.H5Container',
+          matches:
+            '([id="NotificationModal"] +2 * [id="signBtnInModal"][text="立即签到"]) || (View > View > View > TextView[id="signBtnInModal"][clickable=false][text="立即签到"])',
+        },
+      ],
+    },
+    {
+      key: 5,
       name: '签到后弹窗',
       desc: '260601，解决clickable bug',
       rules: [
@@ -88,7 +75,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 7,
+      key: 6,
       name: '确定退出吗，x掉',
       desc: '26/6/7',
       rules: [
@@ -101,7 +88,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 8,
+      key: 7,
       name: '升级，开心收下',
       desc: '260624',
       rules: [
@@ -109,6 +96,18 @@ export default defineGkdApp({
           resetMatch: 'match',
           activityIds: 'ctrip.android.view.h5v2.view.H5Container',
           matches: 'View > View > View > TextView[text="开心收下"]',
+        },
+      ],
+    },
+    {
+      key: 8,
+      name: '发现一波红包，一键领取，X掉',
+      desc: '260525',
+      rules: [
+        {
+          resetMatch: 'match',
+          activityIds: 'ctrip.android.reactnative.preloadv2.CRNBaseActivityV2',
+          matches: '[desc="一键领取"] <n * + @*[clickable=true] > ImageView',
         },
       ],
     },

@@ -6,17 +6,14 @@ export default defineGkdApp({
   groups: [
     {
       key: 1,
-      name: '火锅券',
-      desc: '251212，D',
+      name: '开启通知',
+      desc: '251216',
       rules: [
         {
-          matches: [
-            '[text="民生借记卡专属"] +n [text^="今日剩余" && text$="%"] + [text="50d230ef35357706bbfe" || text="e2df8c32b64d20560e14"]',
-          ],
+          fastQuery: true,
           resetMatch: 'match',
-          activityIds: [
-            'com.cmbc.cc.mbank.module.web.activity.WebViewActivity',
-          ],
+          matches: '@[vid="tv_close"] +n * > [vid="iv_notification_bg"]',
+          activityIds: 'com.cmbc.cc.mbank.module.main.HomeActivity',
         },
       ],
     },
@@ -26,9 +23,8 @@ export default defineGkdApp({
       desc: '260401，不限于身份证过期',
       rules: [
         {
-          matches: [
+          matches:
             '@[vid="views_close_main_alert_window_middle"] + [vid="views_image_main_alert_window"]',
-          ],
           fastQuery: true,
           resetMatch: 'match',
           activityIds: ['com.cmbc.cc.mbank.module.main.HomeActivity'],
@@ -37,19 +33,6 @@ export default defineGkdApp({
     },
     {
       key: 3,
-      name: '开启通知',
-      desc: '251216',
-      rules: [
-        {
-          matches: ['@[vid="tv_close"] +n * > [vid="iv_notification_bg"]'],
-          fastQuery: true,
-          resetMatch: 'match',
-          activityIds: ['com.cmbc.cc.mbank.module.main.HomeActivity'],
-        },
-      ],
-    },
-    {
-      key: 4,
       name: '定位，我知道了',
       desc: '260705，测试matchroot',
       rules: [
@@ -64,7 +47,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 5,
+      key: 4,
       name: '定位服务',
       desc: '260503，测试matchroot',
       rules: [
@@ -77,7 +60,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 6,
+      key: 5,
       name: '周日10点30-15券',
       desc: '260531，(@*[clickable=true] + [text="周日10:00开抢"] +n [text="民生借记卡专享"]) || ',
       rules: [
@@ -86,6 +69,19 @@ export default defineGkdApp({
           activityIds: 'com.cmbc.cc.mbank.module.web.activity.WebViewActivity',
           matches:
             '([text*="15元代金券"] + @[text="立即抢"] +3 [text="民生借记卡专享"])',
+        },
+      ],
+    },
+    {
+      key: 6,
+      name: '火锅券',
+      desc: '251212，D',
+      rules: [
+        {
+          matches:
+            '[text="民生借记卡专属"] +n [text^="今日剩余" && text$="%"] + [text="50d230ef35357706bbfe" || text="e2df8c32b64d20560e14"]',
+          resetMatch: 'match',
+          activityIds: 'com.cmbc.cc.mbank.module.web.activity.WebViewActivity',
         },
       ],
     },

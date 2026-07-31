@@ -22,6 +22,21 @@ export default defineGkdApp({
     },
     {
       key: 2,
+      name: '发送通知，拒绝',
+      desc: '260629',
+      rules: [
+        {
+          resetMatch: 'match',
+          fastQuery: true,
+          activityIds:
+            'com.xingin.authorization.NotificationAuthorizationTranslucentActivity',
+          matches:
+            'TextView[vid="tv_title"][text*="发送通知"] < LinearLayout + LinearLayout > TextView[vid="btn_deny"][clickable=true]',
+        },
+      ],
+    },
+    {
+      key: 3,
       name: '开启通知',
       desc: '260209',
       rules: [
@@ -35,7 +50,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 3,
+      key: 4,
       name: '关注推送弹窗',
       desc: '260213',
       rules: [
@@ -50,7 +65,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 4,
+      key: 5,
       name: '删除全部搜索历史，确认',
       desc: '260213',
       rules: [
@@ -61,21 +76,6 @@ export default defineGkdApp({
           fastQuery: true,
           resetMatch: 'match',
           activityIds: ['com.xingin.alioth.search.GlobalSearchActivity'],
-        },
-      ],
-    },
-    {
-      key: 5,
-      name: '发送通知，拒绝',
-      desc: '260629',
-      rules: [
-        {
-          resetMatch: 'match',
-          fastQuery: true,
-          activityIds:
-            'com.xingin.authorization.NotificationAuthorizationTranslucentActivity',
-          matches:
-            'TextView[vid="tv_title"][text*="发送通知"] < LinearLayout + LinearLayout > TextView[vid="btn_deny"][clickable=true]',
         },
       ],
     },

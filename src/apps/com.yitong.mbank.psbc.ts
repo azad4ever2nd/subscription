@@ -1,5 +1,4 @@
 import { defineGkdApp } from '@gkd-kit/define';
-
 export default defineGkdApp({
   id: 'com.yitong.mbank.psbc',
   name: '邮储银行',
@@ -22,21 +21,6 @@ export default defineGkdApp({
     },
     {
       key: 2,
-      name: '权益去领取',
-      desc: '251215，添加集邮活动，火爆了',
-      rules: [
-        {
-          matches: [
-            '([text^="恭喜您抢到一张" && text*="邮票图片"] +2 Image) || ([text="权益二选一"] +3 [text="去领取"]) || ([text*="火爆"] <<n * + [text^="我已知晓"])',
-          ],
-          matchDelay: 5000,
-          resetMatch: 'match',
-          activityIds: ['com.alipay.mobile.nebulacore.ui.H5Activity'],
-        },
-      ],
-    },
-    {
-      key: 3,
       name: '弹窗',
       desc: '',
       rules: [
@@ -52,7 +36,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 4,
+      key: 3,
       name: '消息通知',
       desc: '',
       rules: [
@@ -69,7 +53,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 5,
+      key: 4,
       name: '温馨提示（无障碍）',
       desc: '251203',
       rules: [
@@ -87,20 +71,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 6,
-      name: '五星好评，X',
-      desc: '260103',
-      rules: [
-        {
-          matches: ['@[vid="tv_cancel"] + [vid="mContent"][text*="好评"]'],
-          fastQuery: true,
-          resetMatch: 'match',
-          activityIds: ['com.alipay.mobile.nebulacore.ui.H5Activity'],
-        },
-      ],
-    },
-    {
-      key: 7,
+      key: 5,
       name: '修改密码弹窗',
       desc: '260606，([vid="ll_dialog_common"][desc*="修改登录密码"] +n * > [vid="mLeftBtn"][text="下次再说"]) ||',
       rules: [
@@ -117,22 +88,36 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 8,
-      name: '山东邮储，支付0.01抽奖',
-      desc: '260315，活动到3/31止，每天9点开始',
+      key: 6,
+      name: '权益去领取',
+      desc: '251215，添加集邮活动，火爆了',
       rules: [
         {
           matches: [
-            '*[clickable=true] [text="0d4cafa48c61477aa8b38819f069bb91"]',
+            '([text^="恭喜您抢到一张" && text*="邮票图片"] +2 Image) || ([text="权益二选一"] +3 [text="去领取"]) || ([text*="火爆"] <<n * + [text^="我已知晓"])',
           ],
-          actionCd: 500,
+          matchDelay: 3000,
           resetMatch: 'match',
-          activityIds: ['com.unionpay.cordova.UPActivityWeb'],
+          activityIds: ['com.alipay.mobile.nebulacore.ui.H5Activity'],
         },
       ],
     },
     {
-      key: 9,
+      key: 7,
+      name: '五星好评，X 或 下次再说',
+      desc: '260103',
+      rules: [
+        {
+          matches:
+            '(@[vid="tv_cancel"] + [vid="mContent"][text*="好评"]) || (TextView[text="温馨提示"] < RelativeLayout +n LinearLayout > TextView[clickable=true][visibleToUser=true][text="下次再说"])',
+          fastQuery: true,
+          resetMatch: 'match',
+          activityIds: ['com.alipay.mobile.nebulacore.ui.H5Activity'],
+        },
+      ],
+    },
+    {
+      key: 8,
       name: '任务完成，返回',
       desc: '2604017',
       rules: [
@@ -145,21 +130,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 10,
-      name: '任务，分享到微信好友',
-      desc: '260417',
-      rules: [
-        {
-          resetMatch: 'activity',
-          fastQuery: true,
-          actionMaximum: 1,
-          activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
-          matches: '[text="分享到"] + * [vid="wx_btn"][text="微信好友"]',
-        },
-      ],
-    },
-    {
-      key: 11,
+      key: 9,
       name: '任务完成，返回 前往权益专区',
       desc: '260505',
       rules: [
@@ -173,7 +144,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 12,
+      key: 10,
       name: '任务完成，返回2',
       desc: '260505',
       rules: [
@@ -188,7 +159,21 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 13,
+      key: 11,
+      name: '任务，分享到微信好友',
+      desc: '260417',
+      rules: [
+        {
+          resetMatch: 'activity',
+          fastQuery: true,
+          actionMaximum: 1,
+          activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
+          matches: '[text="分享到"] + * [vid="wx_btn"][text="微信好友"]',
+        },
+      ],
+    },
+    {
+      key: 12,
       name: '三方页面，勾选30天内不再提示',
       desc: '260525',
       rules: [
@@ -203,7 +188,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 14,
+      key: 13,
       name: '三方页面，勾选30天内不再提示，点击进入',
       desc: '260525',
       rules: [
@@ -219,15 +204,17 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 15,
-      name: '五星好评，下次再说',
-      desc: '260720',
+      key: 14,
+      name: '山东邮储，支付0.01抽奖',
+      desc: '260315，活动到3/31止，每天9点开始',
       rules: [
         {
+          matches: [
+            '*[clickable=true] [text="0d4cafa48c61477aa8b38819f069bb91"]',
+          ],
+          actionCd: 500,
           resetMatch: 'match',
-          activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
-          matches:
-            'TextView[text="温馨提示"] < RelativeLayout +n LinearLayout > TextView[clickable=true][visibleToUser=true][text="下次再说"]',
+          activityIds: ['com.unionpay.cordova.UPActivityWeb'],
         },
       ],
     },

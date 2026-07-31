@@ -1,26 +1,10 @@
 import { defineGkdApp } from '@gkd-kit/define';
-
 export default defineGkdApp({
   id: 'com.huawei.phoneservice',
   name: '我的华为',
   groups: [
     {
       key: 1,
-      name: '更新，以后再说',
-      desc: '260319',
-      rules: [
-        {
-          matches: [
-            '[vid="information"] <<n * + * [id="android:id/button2"][text="以后再说"]',
-          ],
-          fastQuery: true,
-          resetMatch: 'match',
-          activityIds: ['com.huawei.myhw.ui.HwHomeActivity'],
-        },
-      ],
-    },
-    {
-      key: 2,
       name: '隐私变更，同意',
       desc: '260710，增加IDS',
       rules: [
@@ -38,71 +22,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 3,
-      name: '领奖励',
-      desc: '260701,添加更多',
-      rules: [
-        {
-          resetMatch: 'match',
-          fastQuery: true,
-          activityIds: [
-            'com.huawei.myhw.ui.HwHomeActivity',
-            'com.huawei.module.commonwebview.ui.CommonWebviewActivity',
-          ],
-          matches:
-            '([text="领奖励"]) || ([vid="tv_tasks_title"][text="我的任务"] + [vid="tv_tasks_more"][text="更多"]) || (ViewGroup > TextView[vid="tv_tasks_type"][text="领奖励"])',
-        },
-      ],
-    },
-    {
-      key: 4,
-      name: '知道了',
-      desc: '260701，领奖后弹窗',
-      rules: [
-        {
-          resetMatch: 'match',
-          fastQuery: true,
-          activityIds: 'com.huawei.myhw.ui.HwHomeActivity',
-          matches:
-            '([text="恭喜您获得经验值"] +2 * > [vid="bt_negative"][text="知道了"]) || (ViewGroup > TextView[vid="tv_title"][text="恭喜您获得经验值"] +2 LinearLayout > Button[vid="bt_negative"][clickable=true][visibleToUser=true][text="知道了"])',
-        },
-      ],
-    },
-    {
-      key: 5,
-      name: '任务领奖后弹窗，我知道了',
-      desc: '251202，我知道了，按钮id动态，原@* > [id="cxui-button-175" || id="cxui-button-235"] > [text="我知道了"]',
-      rules: [
-        {
-          matches: [
-            '([text^="签到成功"] + [text="我知道了"]) || ([text="恭喜您获得经验值奖励"] +n * [text="我知道了"]) || ([text^="恭喜您获取经验值"] +2 @* >3 [text="我知道了"])',
-          ],
-          resetMatch: 'match',
-          activityIds: [
-            'com.huawei.module.commonwebview.ui.CommonWebviewActivity',
-          ],
-        },
-      ],
-    },
-    {
-      key: 6,
-      name: '精确位置信息，取消',
-      desc: '260701',
-      rules: [
-        {
-          fastQuery: true,
-          resetMatch: 'match',
-          activityIds: [
-            'com.huawei.module.commonwebview.ui.CommonWebviewActivity',
-            'com.huawei.arkui.impl.ui.ArkShopActivity',
-          ],
-          matches:
-            'TextView[vid="textView"][text*="精确位置信息"] < LinearLayout + LinearLayout > LinearLayout > Button[id="android:id/button2"][text="取消"]',
-        },
-      ],
-    },
-    {
-      key: 7,
+      key: 2,
       name: '弹窗',
       desc: '251227',
       rules: [
@@ -117,7 +37,50 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 8,
+      key: 3,
+      name: '更新，以后再说',
+      desc: '260319',
+      rules: [
+        {
+          matches: [
+            '[vid="information"] <<n * + * [id="android:id/button2"][text="以后再说"]',
+          ],
+          fastQuery: true,
+          resetMatch: 'match',
+          activityIds: ['com.huawei.myhw.ui.HwHomeActivity'],
+        },
+      ],
+    },
+    {
+      key: 4,
+      name: '开启活动通知，否',
+      desc: '260523',
+      rules: [
+        {
+          resetMatch: 'match',
+          fastQuery: true,
+          activityIds: 'com.huawei.myhw.ui.HwHomeActivity',
+          matches:
+            '[vid="recommend_pushwindow_title"][text="开启活动通知"] +n * > [vid="recommend_pushwindow_left_button"][text="否"]',
+        },
+      ],
+    },
+    {
+      key: 5,
+      name: '知道了',
+      desc: '260701，领奖后弹窗',
+      rules: [
+        {
+          resetMatch: 'match',
+          fastQuery: true,
+          activityIds: 'com.huawei.myhw.ui.HwHomeActivity',
+          matches:
+            '([text="恭喜您获得经验值"] +2 * > [vid="bt_negative"][text="知道了"]) || (ViewGroup > TextView[vid="tv_title"][text="恭喜您获得经验值"] +2 LinearLayout > Button[vid="bt_negative"][clickable=true][visibleToUser=true][text="知道了"])',
+        },
+      ],
+    },
+    {
+      key: 6,
       name: '我的任务，去完成',
       desc: '260701，增加IDS ',
       rules: [
@@ -134,24 +97,40 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 9,
-      name: '清除消息中心未读，确定',
-      desc: '260205',
+      key: 7,
+      name: '领奖励',
+      desc: '260701,添加更多',
+      rules: [
+        {
+          resetMatch: 'match',
+          fastQuery: true,
+          activityIds: [
+            'com.huawei.myhw.ui.HwHomeActivity',
+            'com.huawei.module.commonwebview.ui.CommonWebviewActivity',
+          ],
+          matches:
+            '([text="领奖励"]) || ([vid="tv_tasks_title"][text="我的任务"] + [vid="tv_tasks_more"][text="更多"]) || (ViewGroup > TextView[vid="tv_tasks_type"][text="领奖励"])',
+        },
+      ],
+    },
+    {
+      key: 8,
+      name: '任务领奖后弹窗，我知道了',
+      desc: '251202，我知道了，按钮id动态，原@* > [id="cxui-button-175" || id="cxui-button-235"] > [text="我知道了"]',
       rules: [
         {
           matches: [
-            '[id="android:id/message"][text^="确定清除"] <<n * + * [id="android:id/button1"][text="确定"]',
+            '([text^="签到成功"] + [text="我知道了"]) || ([text="恭喜您获得经验值奖励"] +n * [text="我知道了"]) || ([text^="恭喜您获取经验值"] +2 @* >3 [text="我知道了"])',
           ],
-          fastQuery: true,
           resetMatch: 'match',
           activityIds: [
-            'com.huawei.module.mynotice.impl.revision.MessageActivity',
+            'com.huawei.module.commonwebview.ui.CommonWebviewActivity',
           ],
         },
       ],
     },
     {
-      key: 10,
+      key: 9,
       name: '开启精确位置信息 权限，取消',
       desc: '260402',
       rules: [
@@ -166,16 +145,36 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 11,
-      name: '开启活动通知，否',
-      desc: '260523',
+      key: 10,
+      name: '精确位置信息，取消',
+      desc: '260701',
       rules: [
         {
-          resetMatch: 'match',
           fastQuery: true,
-          activityIds: 'com.huawei.myhw.ui.HwHomeActivity',
+          resetMatch: 'match',
+          activityIds: [
+            'com.huawei.module.commonwebview.ui.CommonWebviewActivity',
+            'com.huawei.arkui.impl.ui.ArkShopActivity',
+          ],
           matches:
-            '[vid="recommend_pushwindow_title"][text="开启活动通知"] +n * > [vid="recommend_pushwindow_left_button"][text="否"]',
+            'TextView[vid="textView"][text*="精确位置信息"] < LinearLayout + LinearLayout > LinearLayout > Button[id="android:id/button2"][text="取消"]',
+        },
+      ],
+    },
+    {
+      key: 11,
+      name: '清除消息中心未读，确定',
+      desc: '260205',
+      rules: [
+        {
+          matches: [
+            '[id="android:id/message"][text^="确定清除"] <<n * + * [id="android:id/button1"][text="确定"]',
+          ],
+          fastQuery: true,
+          resetMatch: 'match',
+          activityIds: [
+            'com.huawei.module.mynotice.impl.revision.MessageActivity',
+          ],
         },
       ],
     },

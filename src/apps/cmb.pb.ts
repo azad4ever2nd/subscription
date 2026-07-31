@@ -14,6 +14,7 @@ export default defineGkdApp({
             '([text="（周三5折）哈根达斯50元代金券" || text="（周三5折）肯德基20元代金券" || text="（周三5折）喜茶20元代金券" ||  text="（周三5折）必胜客50元代金券"] +n * > [text*="立即抢购"])',
           actionCd: 0,
           resetMatch: 'match',
+          action: 'clickCenter',
           activityIds:
             'cmb.pb.app.h5container.webviewcontainer.PBWebContainerActivity',
         },
@@ -41,6 +42,7 @@ export default defineGkdApp({
       desc: '251119',
       rules: [
         {
+          action: 'clickCenter',
           matches: '[text="抢购失败"] +2 * > [text="再试一次"]',
           actionCd: 0,
           resetMatch: 'match',
@@ -195,7 +197,7 @@ export default defineGkdApp({
     },
     {
       key: 13,
-      name: '基金页面，加自选2',
+      name: '基金页面下方，加自选2',
       desc: '260706，clickable=false',
       rules: [
         {
@@ -267,6 +269,7 @@ export default defineGkdApp({
           matches: [
             '([text="分享指定文章"] +n [text="去分享"]) || ([text="分享招财号文章"] +n * > [text="去分享"])',
           ],
+          action: 'clickCenter',
           actionCdKey: 1,
           resetMatch: 'match',
           activityIds:
@@ -362,6 +365,7 @@ export default defineGkdApp({
       desc: '260602',
       rules: [
         {
+          action: 'clickCenter',
           actionCd: 0,
           resetMatch: 'match',
           activityIds:
@@ -457,6 +461,7 @@ export default defineGkdApp({
       rules: [
         {
           resetMatch: 'match',
+          action: 'clickCenter',
           actionCdKey: 1,
           activityIds:
             'cmb.pb.app.h5container.webviewcontainer.PBWebContainerActivity',
@@ -470,6 +475,7 @@ export default defineGkdApp({
       desc: '260602，增加风险确认',
       rules: [
         {
+          action: 'clickCenter',
           actionCdKey: 1,
           resetMatch: 'match',
           activityIds:

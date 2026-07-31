@@ -1,5 +1,4 @@
 import { defineGkdApp } from '@gkd-kit/define';
-
 export default defineGkdApp({
   id: 'com.miui.tsmclient',
   name: '小米智能卡',
@@ -20,20 +19,6 @@ export default defineGkdApp({
     },
     {
       key: 2,
-      name: '提示 打开NFC，去设置',
-      desc: '260503',
-      rules: [
-        {
-          resetMatch: 'match',
-          fastQuery: true,
-          activityIds: 'com.miui.tsmclient.ui.MifareCardListActivity',
-          matches:
-            '[vid="message"][text="请开启NFC功能"] <<n * + * [id="android:id/button1"]',
-        },
-      ],
-    },
-    {
-      key: 3,
       name: '提示 移入移出成功，完成',
       desc: '260503',
       rules: [
@@ -43,6 +28,20 @@ export default defineGkdApp({
           activityIds: 'com.miui.tsmclient.ui.result.TransitResultActivity',
           matches:
             '[vid="center_content_tv"][text^="移" && text$="成功"] <<n * + * [vid="footer_op_btn"]',
+        },
+      ],
+    },
+    {
+      key: 3,
+      name: '提示 打开NFC，去设置',
+      desc: '260503',
+      rules: [
+        {
+          resetMatch: 'match',
+          fastQuery: true,
+          activityIds: 'com.miui.tsmclient.ui.MifareCardListActivity',
+          matches:
+            '[vid="message"][text="请开启NFC功能"] <<n * + * [id="android:id/button1"]',
         },
       ],
     },

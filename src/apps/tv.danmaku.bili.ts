@@ -21,23 +21,35 @@ export default defineGkdApp({
     },
     {
       key: 2,
-      name: '青少年模式',
-      desc: '',
+      name: '请选择适合的登录选项',
+      desc: '260528',
       rules: [
         {
-          matches: [
-            '[vid="title"][text="青少年模式"] +3 [vid="button"][text="我知道了"]',
-          ],
-          fastQuery: true,
           resetMatch: 'match',
-          activityIds: [
-            'com.bilibili.teenagersmode.ui.TeenagersModeDialogActivity',
-          ],
+          actionMaximum: 1,
+          order: -1,
+          activityIds: 'tv.danmaku.bili.ui.webview.MWebActivity',
+          matches:
+            '[text="请选择适合的登录选项"] +n [text="在安全的环境登录，如办公室，家里"][clickable=true][visibleToUser=true]',
         },
       ],
     },
     {
       key: 3,
+      name: '哔哩哔哩扫码登录，确认',
+      desc: '260528',
+      rules: [
+        {
+          resetMatch: 'match',
+          preKeys: [6],
+          activityIds: 'tv.danmaku.bili.ui.webview.MWebActivity',
+          matches:
+            '[text="哔哩哔哩扫码登录"] <<n * +n [text="确认"][clickable=true][visibleToUser=true]',
+        },
+      ],
+    },
+    {
+      key: 4,
       name: '流量使用提醒',
       desc: '',
       rules: [
@@ -54,13 +66,13 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 4,
+      key: 5,
       name: '浏览回复中的图片，过几秒关闭',
       desc: '260123,图片5秒自动关闭',
       rules: [
         {
           matches: ['@[vid="close"] > ImageView'],
-          actionDelay: 50000,
+          actionDelay: 5000,
           resetMatch: 'match',
           activityIds: [
             'com.bilibili.ship.theseus.detail.UnitedBizDetailsActivity',
@@ -69,7 +81,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 5,
+      key: 6,
       name: '订阅通知，暂不开启',
       desc: '260427，增加IDS',
       rules: [
@@ -86,31 +98,19 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 6,
-      name: '请选择适合的登录选项',
-      desc: '260528',
-      rules: [
-        {
-          resetMatch: 'match',
-          actionMaximum: 1,
-          order: -1,
-          activityIds: 'tv.danmaku.bili.ui.webview.MWebActivity',
-          matches:
-            '[text="请选择适合的登录选项"] +n [text="在安全的环境登录，如办公室，家里"][clickable=true][visibleToUser=true]',
-        },
-      ],
-    },
-    {
       key: 7,
-      name: '哔哩哔哩扫码登录，确认',
-      desc: '260528',
+      name: '青少年模式',
+      desc: '',
       rules: [
         {
+          matches: [
+            '[vid="title"][text="青少年模式"] +3 [vid="button"][text="我知道了"]',
+          ],
+          fastQuery: true,
           resetMatch: 'match',
-          preKeys: [6],
-          activityIds: 'tv.danmaku.bili.ui.webview.MWebActivity',
-          matches:
-            '[text="哔哩哔哩扫码登录"] <<n * +n [text="确认"][clickable=true][visibleToUser=true]',
+          activityIds: [
+            'com.bilibili.teenagersmode.ui.TeenagersModeDialogActivity',
+          ],
         },
       ],
     },

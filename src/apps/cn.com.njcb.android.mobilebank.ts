@@ -1,25 +1,42 @@
 import { defineGkdApp } from '@gkd-kit/define';
-
 export default defineGkdApp({
   id: 'cn.com.njcb.android.mobilebank',
   name: '南京银行',
   groups: [
     {
       key: 1,
-      name: '弹窗1',
-      desc: '260726,添加签到成功，活动结束了，未开始，若点击无反应，弹窗无反应，则拆分规则，一个默认，一个clickCenter',
+      name: '更新提示',
+      desc: '260705',
       rules: [
         {
-          action: 'clickCenter',
           resetMatch: 'match',
-          activityIds: 'com.njcb.mobile.h5biz.H5ContainerActivity',
+          fastQuery: true,
+          action: 'clickCenter',
+          actionCd: 700,
+          activityIds: 'com.njcb.mobile.biz.launcher.app.main.MainActivity',
           matches:
-            '([text="签到成功"] + TextView + TextView[text="确定bak"]) || ([text="活动已结束"] + * > [desc="知道了"]) || ([text="活动已结束"] + [text="确定" || text="知道了"]) || (WebView > View > View > View > View > View > TextView[text="签到成功"] + TextView + TextView[text="确定"])',
+            'CheckBox[vid="login_privacy_iv"][checked=true] < LinearLayout < RelativeLayout <n RelativeLayout + ImageView[clickable=true][visibleToUser=true][vid="version_dialog_close"]',
         },
       ],
     },
     {
       key: 2,
+      name: '更新提示，不再弹框提示新版本',
+      desc: '260705',
+      rules: [
+        {
+          fastQuery: true,
+          actionCd: 0,
+          resetMatch: 'match',
+          actionMaximum: 1,
+          activityIds: 'com.njcb.mobile.biz.launcher.app.main.MainActivity',
+          matches:
+            'LinearLayout > @CheckBox[vid="login_privacy_iv"][checked=false] + TextView[text="不再弹框提示新版本"]',
+        },
+      ],
+    },
+    {
+      key: 3,
       name: '周四盒马和猫超',
       desc: '260212，优先猫超，顺序可改',
       rules: [
@@ -33,27 +50,13 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 3,
+      key: 4,
       name: '周四猫超和盒马',
       desc: '260212，D,优先盒马，顺序可改',
       rules: [
         {
           matches: [
             '[text^="天猫超市卡" || text^="盒马红包券" ] +2 @* > [text="去抢购"]',
-          ],
-          resetMatch: 'match',
-          activityIds: ['com.njcb.mobile.h5biz.H5ContainerActivity'],
-        },
-      ],
-    },
-    {
-      key: 4,
-      name: '确认支付',
-      desc: '',
-      rules: [
-        {
-          matches: [
-            '@[text="确认支付"] < * -4 * [text="支付金额"] + [text*="积分+"]',
           ],
           resetMatch: 'match',
           activityIds: ['com.njcb.mobile.h5biz.H5ContainerActivity'],
@@ -90,6 +93,34 @@ export default defineGkdApp({
     },
     {
       key: 7,
+      name: '周一惊喜，盒马和猫超',
+      desc: '260126',
+      rules: [
+        {
+          matches: [
+            '[text^="盒马红包券50元" || text^="天猫超市卡100元卡券" || text^="天猫超市卡50元卡券" ] + [text!="100%"] + * > [text="去抢购"]',
+          ],
+          resetMatch: 'match',
+          activityIds: ['com.njcb.mobile.h5biz.H5ContainerActivity'],
+        },
+      ],
+    },
+    {
+      key: 8,
+      name: '确认支付',
+      desc: '',
+      rules: [
+        {
+          matches: [
+            '@[text="确认支付"] < * -4 * [text="支付金额"] + [text*="积分+"]',
+          ],
+          resetMatch: 'match',
+          activityIds: ['com.njcb.mobile.h5biz.H5ContainerActivity'],
+        },
+      ],
+    },
+    {
+      key: 9,
       name: '每日签到',
       desc: '260309,matchDelay是延迟匹配，而不是匹配后休眠指定时间',
       rules: [
@@ -104,82 +135,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 8,
-      name: '更新提示',
-      desc: '260705',
-      rules: [
-        {
-          resetMatch: 'match',
-          fastQuery: true,
-          action: 'clickCenter',
-          actionCd: 700,
-          activityIds: 'com.njcb.mobile.biz.launcher.app.main.MainActivity',
-          matches:
-            'CheckBox[vid="login_privacy_iv"][checked=true] < LinearLayout < RelativeLayout <n RelativeLayout + ImageView[clickable=true][visibleToUser=true][vid="version_dialog_close"]',
-        },
-      ],
-    },
-    {
-      key: 9,
-      name: '同意授权',
-      desc: '251203',
-      rules: [
-        {
-          matches: [
-            '[id="cn.com.njcb.android.mobilebank:id/empower_name"][text="鑫福生活"] +n [id="cn.com.njcb.android.mobilebank:id/ares_empower_button"][text="同意授权"]',
-          ],
-          fastQuery: true,
-          resetMatch: 'match',
-          activityIds: ['com.njcb.mobile.h5biz.activity.EmpowerActivity'],
-        },
-      ],
-    },
-    {
       key: 10,
-      name: '弹窗2，返回',
-      desc: '260122,添加活动结束了，未开始，若点击无反应，弹窗无反应，则拆分规则，一个默认，一个clickCenter',
-      rules: [
-        {
-          action: 'back',
-          matches: [
-            '([text="活动已结束" || text="活动暂未开始" || text="当前商品已抢完bak" || text^="人太多了"] + * > [text="好的" || text="确定" || text="知道了" || desc="知道了"]) || ([text="活动已结束" || text="活动暂未开始" || text="当前商品已抢完bak" || text^="人太多了"] +n [text="好的" ||  text="确定" || text="知道了" || desc="知道了"])',
-          ],
-          resetMatch: 'match',
-          activityIds: ['com.njcb.mobile.h5biz.H5ContainerActivity'],
-        },
-      ],
-    },
-    {
-      key: 11,
-      name: '测额弹窗',
-      desc: '260122',
-      rules: [
-        {
-          matches: ['[vid="gift_close"][desc="关闭"]'],
-          fastQuery: true,
-          resetMatch: 'match',
-          activityIds: [
-            'com.njcb.mobile.biz.launcher.app.main.dialog.GiftActDialogActivity',
-          ],
-        },
-      ],
-    },
-    {
-      key: 12,
-      name: '周一惊喜，盒马和猫超',
-      desc: '260126',
-      rules: [
-        {
-          matches: [
-            '[text^="盒马红包券50元" || text^="天猫超市卡100元卡券" || text^="天猫超市卡50元卡券" ] + [text!="100%"] + * > [text="去抢购"]',
-          ],
-          resetMatch: 'match',
-          activityIds: ['com.njcb.mobile.h5biz.H5ContainerActivity'],
-        },
-      ],
-    },
-    {
-      key: 13,
       name: '签到完成，返回',
       desc: '260401',
       rules: [
@@ -194,7 +150,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 14,
+      key: 11,
       name: '鑫动好物，今日不再显示，X掉',
       desc: '260615',
       rules: [
@@ -209,7 +165,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 15,
+      key: 12,
       name: '任务，浏览完成',
       desc: '260703',
       rules: [
@@ -222,18 +178,61 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 16,
-      name: '更新提示，不再弹框提示新版本',
-      desc: '260705',
+      key: 13,
+      name: '弹窗1',
+      desc: '260726,添加签到成功，活动结束了，未开始，若点击无反应，弹窗无反应，则拆分规则，一个默认，一个clickCenter',
       rules: [
         {
-          fastQuery: true,
-          actionCd: 0,
+          action: 'clickCenter',
           resetMatch: 'match',
-          actionMaximum: 1,
-          activityIds: 'com.njcb.mobile.biz.launcher.app.main.MainActivity',
+          activityIds: 'com.njcb.mobile.h5biz.H5ContainerActivity',
           matches:
-            'LinearLayout > @CheckBox[vid="login_privacy_iv"][checked=false] + TextView[text="不再弹框提示新版本"]',
+            '([text="签到成功"] + TextView + TextView[text="确定bak"]) || ([text="活动已结束"] + * > [desc="知道了"]) || ([text="活动已结束"] + [text="确定" || text="知道了"]) || (WebView > View > View > View > View > View > TextView[text="签到成功"] + TextView + TextView[text="确定"])',
+        },
+      ],
+    },
+    {
+      key: 14,
+      name: '弹窗2，返回',
+      desc: '260122,添加活动结束了，未开始，若点击无反应，弹窗无反应，则拆分规则，一个默认，一个clickCenter',
+      rules: [
+        {
+          action: 'back',
+          matches: [
+            '([text="活动已结束" || text="活动暂未开始" || text="当前商品已抢完bak" || text^="人太多了"] + * > [text="好的" || text="确定" || text="知道了" || desc="知道了"]) || ([text="活动已结束" || text="活动暂未开始" || text="当前商品已抢完bak" || text^="人太多了"] +n [text="好的" ||  text="确定" || text="知道了" || desc="知道了"])',
+          ],
+          resetMatch: 'match',
+          activityIds: ['com.njcb.mobile.h5biz.H5ContainerActivity'],
+        },
+      ],
+    },
+    {
+      key: 15,
+      name: '同意授权',
+      desc: '251203',
+      rules: [
+        {
+          matches: [
+            '[id="cn.com.njcb.android.mobilebank:id/empower_name"][text="鑫福生活"] +n [id="cn.com.njcb.android.mobilebank:id/ares_empower_button"][text="同意授权"]',
+          ],
+          fastQuery: true,
+          resetMatch: 'match',
+          activityIds: ['com.njcb.mobile.h5biz.activity.EmpowerActivity'],
+        },
+      ],
+    },
+    {
+      key: 16,
+      name: '测额弹窗',
+      desc: '260122',
+      rules: [
+        {
+          matches: ['[vid="gift_close"][desc="关闭"]'],
+          fastQuery: true,
+          resetMatch: 'match',
+          activityIds: [
+            'com.njcb.mobile.biz.launcher.app.main.dialog.GiftActDialogActivity',
+          ],
         },
       ],
     },
