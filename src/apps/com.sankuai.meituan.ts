@@ -301,7 +301,7 @@ export default defineGkdApp({
       rules: [
         {
           resetMatch: 'match',
-          matchCd: 1000,
+          actionCd: 500,
           activityIds:
             'com.meituan.android.hybridcashier.HybridCashierActivity',
           matches: '[text="确定放弃付款？"] +n [text="确认离开"]',
@@ -382,7 +382,7 @@ export default defineGkdApp({
       rules: [
         {
           resetMatch: 'match',
-          matchCD: 100,
+          actionCd: 100,
           activityIds: 'com.sankuai.waimai.business.knb.TakeoutKNBWebActivity',
           matches:
             '@View[clickable=true] [text="立即抢券"] < * - [text="满38可用"] - * > [text="38"]',
