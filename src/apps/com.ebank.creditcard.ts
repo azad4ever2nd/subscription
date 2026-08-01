@@ -1,12 +1,11 @@
 import { defineGkdApp } from '@gkd-kit/define';
-
 export default defineGkdApp({
   id: 'com.ebank.creditcard',
   name: '阳光惠生活',
   groups: [
     {
       key: 1,
-      name: '首面分期弹窗',
+      name: '首页分期弹窗',
       desc: '',
       rules: [
         {
@@ -42,12 +41,13 @@ export default defineGkdApp({
     },
     {
       key: 4,
-      name: '确认购买',
-      desc: '260101',
+      name: '开启系统通知，取消',
+      desc: '260120',
       rules: [
         {
-          matches: ['@[text="确认购买"] + [text="提醒我"]'],
-          actionCd: 0,
+          matches: [
+            '[text="提示"] + [text*="系统通知" || text*="推送功能"] +n * > [text="取消"]',
+          ],
           resetMatch: 'match',
           activityIds: ['com.alipay.mobile.nebulacore.ui.H5Activity'],
         },
@@ -55,6 +55,20 @@ export default defineGkdApp({
     },
     {
       key: 5,
+      name: '确认购买',
+      desc: '260801',
+      rules: [
+        {
+          resetMatch: 'match',
+          actionCd: 0,
+          activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
+          matches:
+            '(@[text="确认购买"] + [text="提醒我"]) || (WebView > View > View > View > Button[clickable=true][visibleToUser=true][text="确认购买"] + Button[text="提醒我"])',
+        },
+      ],
+    },
+    {
+      key: 6,
       name: '优惠券不在销售时间内，确认',
       desc: '260706',
       rules: [
@@ -69,7 +83,22 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 6,
+      key: 7,
+      name: '每日/每月限购',
+      desc: '260801',
+      rules: [
+        {
+          fastQuery: true,
+          resetMatch: 'match',
+          action: 'back',
+          activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
+          matches:
+            '([vid="dialog_content"][text*="仅可购买1张" || text^="每个用户每月仅可购买2张" || text^="每个用户每日仅可购买1张" ] <<n * +n * > [vid="dialog_button_negative"][text="取消"]) || (TextView[vid="dialog_content"][text*="仅可购买1张" || text^="每个用户每月仅可购买2张" || text^="每个用户每日仅可购买1张" ] < ScrollView +n LinearLayout > @TextView[vid="dialog_button_negative"][clickable=true][visibleToUser=true][text="取消"] +2 TextView[text="查看订单"])',
+        },
+      ],
+    },
+    {
+      key: 8,
       name: '太火爆了，确认',
       desc: '260101',
       rules: [
@@ -79,36 +108,6 @@ export default defineGkdApp({
           ],
           actionCd: 0,
           fastQuery: true,
-          resetMatch: 'match',
-          activityIds: ['com.alipay.mobile.nebulacore.ui.H5Activity'],
-        },
-      ],
-    },
-    {
-      key: 7,
-      name: '每日/每月限购',
-      desc: '260126',
-      rules: [
-        {
-          matches: [
-            '[vid="dialog_content"][text*="仅可购买1张" || text^="每个用户每月仅可购买2张" || text^="每个用户每日仅可购买1张" ] <<n * +n * > [vid="dialog_button_negative"][text="取消"]',
-          ],
-          actionCd: 0,
-          fastQuery: true,
-          resetMatch: 'match',
-          activityIds: ['com.alipay.mobile.nebulacore.ui.H5Activity'],
-        },
-      ],
-    },
-    {
-      key: 8,
-      name: '开启系统通知，取消',
-      desc: '260120',
-      rules: [
-        {
-          matches: [
-            '[text="提示"] + [text*="系统通知" || text*="推送功能"] +n * > [text="取消"]',
-          ],
           resetMatch: 'match',
           activityIds: ['com.alipay.mobile.nebulacore.ui.H5Activity'],
         },

@@ -7,13 +7,17 @@ export default defineGkdApp({
     {
       key: 1,
       name: '每日分享指定视频至微信，立即分享',
-      desc: '260621',
+      desc: '260801，每个月要更新',
       rules: [
         {
           resetMatch: 'app',
           actionMaximum: 1,
-          activityIds: 'com.quickjs.android.example.RNFragmentActivity',
-          matches: 'View > View > View > Image[text="1O7F90FG42JLK"]',
+          activityIds: [
+            'com.quickjs.android.example.RNFragmentActivity',
+            'com.cmvideo.capability.remote_web.WebProcessActivity',
+          ],
+          matches:
+            'View > View > View > Image[clickable=false][visibleToUser=true][text="1O7GEIFASA29N"]',
         },
       ],
     },
@@ -69,14 +73,19 @@ export default defineGkdApp({
     {
       key: 5,
       name: '领2GB日流量，马上领取',
-      desc: '260621',
+      desc: '260801',
       rules: [
         {
           resetMatch: 'app',
           actionMaximum: 1,
           preKeys: [4],
-          activityIds: 'com.quickjs.android.example.RNFragmentActivity',
-          matches: 'View > View > View > Image[text="1O7F90FG6NVJ7"]',
+          matchDelay: 1500,
+          activityIds: [
+            'com.quickjs.android.example.RNFragmentActivity',
+            'com.cmvideo.capability.remote_web.WebProcessActivity',
+          ],
+          matches:
+            'View > View > View > Image[clickable=false][visibleToUser=true][text="1O7GEIFAUMH91"]',
         },
       ],
     },

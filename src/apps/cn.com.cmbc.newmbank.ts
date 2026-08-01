@@ -1,11 +1,24 @@
 import { defineGkdApp } from '@gkd-kit/define';
-
 export default defineGkdApp({
   id: 'cn.com.cmbc.newmbank',
   name: '民生银行',
   groups: [
     {
       key: 1,
+      name: '隐私政策，同意并继续',
+      desc: '260601',
+      rules: [
+        {
+          resetMatch: 'match',
+          fastQuery: true,
+          activityIds: 'cn.com.cmbc.newmbank.privacy.PrivacyPolicyActivity',
+          matches:
+            '[text="隐私政策"] +n * > [vid="btn_privacy_policy_agree"][text="同意并继续"]',
+        },
+      ],
+    },
+    {
+      key: 2,
       name: '打开消息通知',
       desc: '251130',
       rules: [
@@ -20,34 +33,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 2,
-      name: 'V+任务领卡券',
-      desc: '251206,整合浏览任务完成',
-      rules: [
-        {
-          matches: [
-            '([text="4Sf0Hfm7X8Ar14i2VC1FrsAAAAASUVORK5CYII="] <<n * + * > [text="wG3E8rLbFftjgAAAABJRU5ErkJggg=="]) || ([vid="tv_countdown_over"][text*="任务完成"])',
-          ],
-          activityIds: ['cn.com.cmbc.newmbank.activity.WebViewActivity'],
-        },
-      ],
-    },
-    {
       key: 3,
-      name: '复制券码弹窗',
-      desc: '260117',
-      rules: [
-        {
-          matches: [
-            '[text="提示"] + [text^="兑换码已复制成功"] + * > [text="确定"]',
-          ],
-          resetMatch: 'match',
-          activityIds: ['cn.com.cmbc.newmbank.activity.WebViewActivity'],
-        },
-      ],
-    },
-    {
-      key: 4,
       name: 'V+任务，每月一次，去完成',
       desc: '260201，',
       rules: [
@@ -61,19 +47,20 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 5,
-      name: 'V+任务完成，抽奖结果弹窗',
-      desc: '260201',
+      key: 4,
+      name: 'V+任务领卡券',
+      desc: '251206,整合浏览任务完成',
       rules: [
         {
-          matches: ['[text^="恭喜获奖"] + [text="开心收下"]'],
-          resetMatch: 'match',
+          matches: [
+            '([text="4Sf0Hfm7X8Ar14i2VC1FrsAAAAASUVORK5CYII="] <<n * + * > [text="wG3E8rLbFftjgAAAABJRU5ErkJggg=="]) || ([vid="tv_countdown_over"][text*="任务完成"])',
+          ],
           activityIds: ['cn.com.cmbc.newmbank.activity.WebViewActivity'],
         },
       ],
     },
     {
-      key: 6,
+      key: 5,
       name: '民生V+任务，抽奖',
       desc: '260202',
       rules: [
@@ -88,16 +75,28 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 7,
-      name: '隐私政策，同意并继续',
-      desc: '260601',
+      key: 6,
+      name: 'V+任务完成，抽奖结果弹窗',
+      desc: '260201',
       rules: [
         {
+          matches: ['[text^="恭喜获奖"] + [text="开心收下"]'],
           resetMatch: 'match',
-          fastQuery: true,
-          activityIds: 'cn.com.cmbc.newmbank.privacy.PrivacyPolicyActivity',
-          matches:
-            '[text="隐私政策"] +n * > [vid="btn_privacy_policy_agree"][text="同意并继续"]',
+          activityIds: ['cn.com.cmbc.newmbank.activity.WebViewActivity'],
+        },
+      ],
+    },
+    {
+      key: 7,
+      name: '复制券码弹窗',
+      desc: '260117',
+      rules: [
+        {
+          matches: [
+            '[text="提示"] + [text^="兑换码已复制成功"] + * > [text="确定"]',
+          ],
+          resetMatch: 'match',
+          activityIds: ['cn.com.cmbc.newmbank.activity.WebViewActivity'],
         },
       ],
     },

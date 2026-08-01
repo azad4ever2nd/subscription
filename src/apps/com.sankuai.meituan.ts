@@ -10,11 +10,11 @@ export default defineGkdApp({
       desc: '',
       rules: [
         {
-          matches: ['[text="￥0"] < * +2 * > [text="去结算"]'],
           fastQuery: true,
-          matchTime: 10000,
           resetMatch: 'activity',
-          activityIds: ['com.meituan.android.mrn.container.MRNBaseActivity'],
+          matchTime: 10000,
+          activityIds: 'com.meituan.android.mrn.container.MRNBaseActivity',
+          matches: '[text="￥0"] < * +2 * > [text="去结算"]',
         },
       ],
     },
@@ -24,11 +24,11 @@ export default defineGkdApp({
       desc: '',
       rules: [
         {
-          matches: ['[text="￥0"] < * +2 * > [text="立即支付"]'],
           fastQuery: true,
-          matchTime: 10000,
           resetMatch: 'activity',
-          activityIds: ['com.meituan.android.mrn.container.MRNBaseActivity'],
+          matchTime: 10000,
+          activityIds: 'com.meituan.android.mrn.container.MRNBaseActivity',
+          matches: '[text="￥0"] < * +2 * > [text="立即支付"]',
         },
       ],
     },
@@ -38,18 +38,32 @@ export default defineGkdApp({
       desc: 'D',
       rules: [
         {
-          matches: ['[text="更换门店"] < * +2 * > [text="确认门店并支付"]'],
           fastQuery: true,
+          resetMatch: 'match',
           matchTime: 10000,
-          resetMatch: 'activity',
-          activityIds: ['com.meituan.android.mrn.container.MRNBaseActivity'],
+          activityIds: 'com.meituan.android.mrn.container.MRNBaseActivity',
+          matches: '[text="更换门店"] < * +2 * > [text="确认门店并支付"]',
         },
       ],
     },
     {
       key: 4,
+      name: '确认退出评价，退出',
+      desc: '260312',
+      rules: [
+        {
+          resetMatch: 'match',
+          fastQuery: true,
+          actionCd: 0,
+          activityIds: 'com.meituan.android.mrn.container.MRNBaseActivity',
+          matches: '[text="确认退出评价吗？"] +n * > [text="退出评价"]',
+        },
+      ],
+    },
+    {
+      key: 5,
       name: '定位服务授权，暂不开启',
-      desc: '260706，添加IDS',
+      desc: '260706，D，添加IDS',
       rules: [
         {
           fastQuery: true,
@@ -65,120 +79,80 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 5,
-      name: '分享直播间抽奖',
-      desc: 'D,关闭下方抽奖提示',
-      rules: [
-        {
-          matches: ['[text="幸运抽奖"] +2 ImageView'],
-          matchTime: 10000,
-          resetMatch: 'activity',
-          activityIds: ['com.dianping.live.live.mrn.MLiveMRNActivity'],
-        },
-      ],
-    },
-    {
       key: 6,
-      name: '上方提现悬浮窗',
+      name: '美团0.01提交订单',
       desc: '',
       rules: [
         {
-          matches: ['[vid="novel_inner_push_view"] >3 * +2 *'],
           resetMatch: 'match',
-          activityIds: [
-            'com.sankuai.meituan.search.result.SearchResultActivity',
-          ],
+          fastQuery: true,
+          actionCd: 0,
+          activityIds: 'com.meituan.android.mrn.container.MRNStandardActivity',
+          matches: '[text="合计"] + [text="¥0.01"] <<n * + * [text="提交订单"]',
         },
       ],
     },
     {
       key: 7,
-      name: '美团0.01提交订单',
-      desc: '',
+      name: '0元购提交',
+      desc: '251121',
       rules: [
         {
-          matches: [
-            '[text="合计"] + [text="¥0.01"] <<n * + * [text="提交订单"]',
-          ],
-          fastQuery: true,
           resetMatch: 'match',
-          activityIds: [
-            'com.meituan.android.mrn.container.MRNStandardActivity',
-          ],
+          fastQuery: true,
+          activityIds: 'com.meituan.android.mrn.container.MRNStandardActivity',
+          matches: '[text="¥0"] - [text="合计"] <<n * + * >3 [text="提交订单"]',
         },
       ],
     },
     {
       key: 8,
-      name: '免费膨胀1次',
-      desc: '260107,增加IDS',
+      name: '0元购立即团购',
+      desc: '251121，D',
       rules: [
         {
-          matches: ['[text^="免费膨胀"]'],
-          actionCdKey: 1,
-          actionMaximum: 2,
           resetMatch: 'match',
-          activityIds: [
-            'com.sankuai.waimai.business.knb.WMMultiWebViewActivity',
-            'com.sankuai.titans.adapter.mtapp.KNBWebViewActivity',
-          ],
+          fastQuery: true,
+          activityIds: 'com.meituan.android.mrn.container.MRNStandardActivity',
+          matches: '[text="折后 ￥0"] + [text="立即团购"]',
         },
       ],
     },
     {
       key: 9,
-      name: '0元购提交',
-      desc: '251121',
+      name: '我已阅读并同意',
+      desc: '260726',
       rules: [
         {
-          matches: [
-            '[text="¥0"] - [text="合计"] <<n * + * >3 [text="提交订单"]',
-          ],
           fastQuery: true,
           resetMatch: 'match',
-          activityIds: [
-            'com.meituan.android.mrn.container.MRNStandardActivity',
-          ],
+          actionMaximum: 1,
+          activityIds: 'com.meituan.android.mrn.container.MRNStandardActivity',
+          matches:
+            '(ViewGroup > @ViewGroup[clickable=true][visibleToUser=true] + TextView[text^="我已阅读并同意"]) || (ViewGroup > @ViewGroup[clickable=true][visibleToUser=true] + TextView[text^="我已阅读并同意"] + ViewGroup > TextView[text="《用户授权协议》"])',
         },
       ],
     },
     {
       key: 10,
-      name: '0元购立即团购',
-      desc: '251121',
+      name: '分享直播间抽奖',
+      desc: 'D，关闭下方抽奖提示',
       rules: [
         {
-          matches: ['[text="折后 ￥0"] + [text="立即团购"]'],
-          fastQuery: true,
-          resetMatch: 'match',
-          activityIds: [
-            'com.meituan.android.mrn.container.MRNStandardActivity',
-          ],
+          activityIds: 'com.dianping.live.live.mrn.MLiveMRNActivity',
+          matches: '[text="幸运抽奖"] +2 ImageView',
+          resetMatch: 'activity',
         },
       ],
     },
     {
       key: 11,
-      name: '上方横幅',
-      desc: '251123',
-      rules: [
-        {
-          matches: ['[text="您的 18 元红包即将失效"] + ImageView'],
-          resetMatch: 'match',
-          activityIds: [
-            'com.meituan.android.pt.homepage.activity.MainActivity',
-          ],
-        },
-      ],
-    },
-    {
-      key: 12,
       name: '直播间任务，领亲密度，去逛逛',
       desc: '260702',
       rules: [
         {
           resetMatch: 'match',
-          matchDelay: 10000,
+          matchDelay: 5000,
           fastQuery: true,
           activityIds: 'com.dianping.live.live.mrn.MLiveMRNActivity',
           matches: 'ViewGroup > TextView[text="领亲密度" || text="去逛逛"]',
@@ -186,80 +160,20 @@ export default defineGkdApp({
       ],
     },
     {
+      key: 12,
+      name: '直接间，幸运抽奖，X掉',
+      desc: '260710',
+      rules: [
+        {
+          resetMatch: 'match',
+          activityIds: 'com.dianping.live.live.mrn.MLiveMRNActivity',
+          matches:
+            'ViewGroup > TextView[text="幸运抽奖"] +2 ImageView[clickable=false][visibleToUser=true]',
+        },
+      ],
+    },
+    {
       key: 13,
-      name: '确定放弃侍款，确认离开',
-      desc: '260227',
-      rules: [
-        {
-          matches: ['[text="确定放弃付款？"] +n [text="确认离开"]'],
-          resetMatch: 'match',
-          activityIds: [
-            'com.meituan.android.hybridcashier.HybridCashierActivity',
-          ],
-        },
-      ],
-    },
-    {
-      key: 14,
-      name: '美妙三八',
-      desc: '260305',
-      rules: [
-        {
-          matches: [
-            '@View[clickable=true] [text="立即抢券"] < * - [text="满38可用"] - * > [text="38"]',
-          ],
-          actionCd: 100,
-          resetMatch: 'match',
-          activityIds: [
-            'com.sankuai.waimai.business.knb.TakeoutKNBWebActivity',
-          ],
-        },
-      ],
-    },
-    {
-      key: 15,
-      name: '右下角开启通知提示',
-      desc: '260310，0元购：([text="确定兑换该商品？"] +n * [text="确认0元兑换"]) || ',
-      rules: [
-        {
-          matches: [
-            '(ImageView < @ViewGroup[clickable=true] + [text*="开启通知，不错过重要信息提醒"])',
-          ],
-          fastQuery: true,
-          resetMatch: 'match',
-          activityIds: [
-            'com.meituan.traveltools.mrncontainer.HTMRNBaseActivity',
-          ],
-        },
-      ],
-    },
-    {
-      key: 16,
-      name: '确认退出评价，退出',
-      desc: '260312',
-      rules: [
-        {
-          matches: ['[text="确认退出评价吗？"] +n * > [text="退出评价"]'],
-          fastQuery: true,
-          resetMatch: 'match',
-          activityIds: ['com.meituan.android.mrn.container.MRNBaseActivity'],
-        },
-      ],
-    },
-    {
-      key: 17,
-      name: '膨胀奖励，开心收下',
-      desc: '260402',
-      rules: [
-        {
-          resetMatch: 'match',
-          activityIds: 'com.sankuai.titans.adapter.mtapp.KNBWebViewActivity',
-          matches: '[text="恭喜获得膨胀奖励"] +n * > [text="开心收下"]',
-        },
-      ],
-    },
-    {
-      key: 18,
       name: '直播间小屋子领券，金额可自定义',
       desc: '260701',
       rules: [
@@ -277,7 +191,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 19,
+      key: 14,
       name: '直播间右上角待领取',
       desc: '260701',
       rules: [
@@ -295,49 +209,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 20,
-      name: '定位服务未开启，去设置',
-      desc: '260514',
-      rules: [
-        {
-          resetMatch: 'match',
-          fastQuery: true,
-          activityIds:
-            'com.meituan.android.bike.component.feature.main.view.MobikeMainActivity',
-          matches: '[text="定位服务未开启"] +n * > [text="去设置"]',
-        },
-      ],
-    },
-    {
-      key: 21,
-      name: '美团骑行需要获取地理位置，去设置',
-      desc: '260518',
-      rules: [
-        {
-          resetMatch: 'match',
-          fastQuery: true,
-          activityIds: 'com.meituan.msc.modules.container.MSCActivity',
-          matches:
-            '[vid="dlg_title"][text*="地理位置"] < * +n * > [vid="dlg_right_btn"][text="去设置"]',
-        },
-      ],
-    },
-    {
-      key: 22,
-      name: '钱包笔笔返，领取骑行返利，美团支付',
-      desc: '260528',
-      rules: [
-        {
-          resetMatch: 'match',
-          actionCd: 500,
-          activityIds: 'com.sankuai.eh.framework.EHContainerActivity',
-          matches:
-            'View[clickable=true][visibleToUser=true] [text="骑行返利" || text="美团支付"]',
-        },
-      ],
-    },
-    {
-      key: 23,
+      key: 15,
       name: '美团单车，定位服务未开启，去设置',
       desc: '260606',
       rules: [
@@ -352,7 +224,47 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 24,
+      key: 16,
+      name: '美团骑行需要获取地理位置，去设置',
+      desc: '260518',
+      rules: [
+        {
+          resetMatch: 'match',
+          fastQuery: true,
+          activityIds: 'com.meituan.msc.modules.container.MSCActivity',
+          matches:
+            '[vid="dlg_title"][text*="地理位置"] < * +n * > [vid="dlg_right_btn"][text="去设置"]',
+        },
+      ],
+    },
+    {
+      key: 17,
+      name: '定位服务未开启，去设置',
+      desc: '260514',
+      rules: [
+        {
+          resetMatch: 'match',
+          fastQuery: true,
+          activityIds:
+            'com.meituan.android.bike.component.feature.main.view.MobikeMainActivity',
+          matches: '() || ([text="定位服务未开启"] +n * > [text="去设置"])',
+        },
+      ],
+    },
+    {
+      key: 18,
+      name: '膨胀奖励，开心收下',
+      desc: '260402',
+      rules: [
+        {
+          resetMatch: 'match',
+          activityIds: 'com.sankuai.titans.adapter.mtapp.KNBWebViewActivity',
+          matches: '[text="恭喜获得膨胀奖励"] +n * > [text="开心收下"]',
+        },
+      ],
+    },
+    {
+      key: 19,
       name: '请到广东过端午',
       desc: '260616',
       rules: [
@@ -366,30 +278,114 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 25,
-      name: '直接间，幸运抽奖，X掉',
-      desc: '260710',
+      key: 20,
+      name: '免费膨胀1次',
+      desc: '260107,增加IDS',
       rules: [
         {
           resetMatch: 'match',
-          activityIds: 'com.dianping.live.live.mrn.MLiveMRNActivity',
+          actionCdKey: 1,
+          actionMaximum: 2,
+          activityIds: [
+            'com.sankuai.titans.adapter.mtapp.KNBWebViewActivity',
+            'com.sankuai.waimai.business.knb.WMMultiWebViewActivity',
+          ],
+          matches: '[text^="免费膨胀"]',
+        },
+      ],
+    },
+    {
+      key: 21,
+      name: '确定放弃侍款，确认离开',
+      desc: '260227',
+      rules: [
+        {
+          resetMatch: 'match',
+          matchCd: 1000,
+          activityIds:
+            'com.meituan.android.hybridcashier.HybridCashierActivity',
+          matches: '[text="确定放弃付款？"] +n [text="确认离开"]',
+        },
+      ],
+    },
+    {
+      key: 22,
+      name: '上方提现悬浮窗',
+      desc: '',
+      rules: [
+        {
+          resetMatch: 'match',
+          activityIds: 'com.sankuai.meituan.search.result.SearchResultActivity',
+          matches: '[vid="novel_inner_push_view"] >3 * +2 *',
+        },
+      ],
+    },
+    {
+      key: 23,
+      name: '上方横幅',
+      desc: '251123',
+      rules: [
+        {
+          resetMatch: 'match',
+          activityIds: 'com.meituan.android.pt.homepage.activity.MainActivity',
+          matches: '[text="您的 18 元红包即将失效"] + ImageView',
+        },
+      ],
+    },
+    {
+      key: 24,
+      name: '右下角开启通知提示',
+      desc: '260310，0元购：([text="确定兑换该商品？"] +n * [text="确认0元兑换"]) || ',
+      rules: [
+        {
+          resetMatch: 'match',
+          fastQuery: true,
+          activityIds: 'com.meituan.traveltools.mrncontainer.HTMRNBaseActivity',
           matches:
-            'ViewGroup > TextView[text="幸运抽奖"] +2 ImageView[clickable=false][visibleToUser=true]',
+            '(ImageView < @ViewGroup[clickable=true] + [text*="开启通知，不错过重要信息提醒"])',
+        },
+      ],
+    },
+    {
+      key: 25,
+      name: '0元购提交订单',
+      desc: '251118，暂时先不添加，避免下单地址没有选好。',
+      rules: [
+        {
+          resetMatch: 'match',
+          fastQuery: true,
+          activityIds:
+            'com.sankuai.waimai.bussiness.order.confirm.OrderConfirmNoTransActivity',
+          matches:
+            '[text="合计"] +n [text="¥"] + [text="0"] <<n * + * > [text="提交订单"]',
         },
       ],
     },
     {
       key: 26,
-      name: '我已阅读并同意',
-      desc: '260726',
+      name: '钱包笔笔返，领取骑行返利，美团支付',
+      desc: '260528',
       rules: [
         {
-          fastQuery: true,
           resetMatch: 'match',
-          actionMaximum: 1,
-          activityIds: 'com.meituan.android.mrn.container.MRNStandardActivity',
+          actionCd: 500,
+          activityIds: 'com.sankuai.eh.framework.EHContainerActivity',
           matches:
-            '(ViewGroup > @ViewGroup[clickable=true][visibleToUser=true] + TextView[text^="我已阅读并同意"]) || (ViewGroup > @ViewGroup[clickable=true][visibleToUser=true] + TextView[text^="我已阅读并同意"] + ViewGroup > TextView[text="《用户授权协议》"])',
+            'View[clickable=true][visibleToUser=true] [text="骑行返利" || text="美团支付"]',
+        },
+      ],
+    },
+    {
+      key: 27,
+      name: '美妙三八',
+      desc: '260305',
+      rules: [
+        {
+          resetMatch: 'match',
+          matchCD: 100,
+          activityIds: 'com.sankuai.waimai.business.knb.TakeoutKNBWebActivity',
+          matches:
+            '@View[clickable=true] [text="立即抢券"] < * - [text="满38可用"] - * > [text="38"]',
         },
       ],
     },

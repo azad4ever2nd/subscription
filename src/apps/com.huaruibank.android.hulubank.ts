@@ -20,6 +20,19 @@ export default defineGkdApp({
     },
     {
       key: 2,
+      name: '去签到',
+      desc: 'D',
+      rules: [
+        {
+          matches: ['[text="20240711bb0ad1ae88fe4256b4d31f889471965a"]'],
+          actionMaximum: 1,
+          resetMatch: 'match',
+          activityIds: ['com.alipay.mobile.nebulacore.ui.H5Activity'],
+        },
+      ],
+    },
+    {
+      key: 3,
       name: '签到成功',
       desc: 'D',
       rules: [
@@ -32,7 +45,20 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 3,
+      key: 4,
+      name: '今日已签到',
+      desc: '251127，返回',
+      rules: [
+        {
+          action: 'back',
+          matches: ['[text="今日已签到"]'],
+          resetMatch: 'match',
+          activityIds: ['com.alipay.mobile.nebulacore.ui.H5Activity'],
+        },
+      ],
+    },
+    {
+      key: 5,
       name: '点亮拼图',
       desc: '',
       rules: [
@@ -46,21 +72,9 @@ export default defineGkdApp({
         },
       ],
     },
+
     {
-      key: 4,
-      name: '去签到',
-      desc: 'D',
-      rules: [
-        {
-          matches: ['[text="20240711bb0ad1ae88fe4256b4d31f889471965a"]'],
-          actionMaximum: 1,
-          resetMatch: 'match',
-          activityIds: ['com.alipay.mobile.nebulacore.ui.H5Activity'],
-        },
-      ],
-    },
-    {
-      key: 5,
+      key: 6,
       name: '登陆',
       desc: 'D',
       rules: [
@@ -72,19 +86,6 @@ export default defineGkdApp({
           matchTime: 10000,
           resetMatch: 'app',
           activityIds: ['com.shrb.mbank.ui.XcmsActivity'],
-        },
-      ],
-    },
-    {
-      key: 6,
-      name: '今日已签到',
-      desc: '251127，返回',
-      rules: [
-        {
-          action: 'back',
-          matches: ['[text="今日已签到"]'],
-          resetMatch: 'match',
-          activityIds: ['com.alipay.mobile.nebulacore.ui.H5Activity'],
         },
       ],
     },
