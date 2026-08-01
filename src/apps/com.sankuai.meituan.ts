@@ -247,7 +247,7 @@ export default defineGkdApp({
           fastQuery: true,
           activityIds:
             'com.meituan.android.bike.component.feature.main.view.MobikeMainActivity',
-          matches: '() || ([text="定位服务未开启"] +n * > [text="去设置"])',
+          matches: '([text="定位服务未开启"] +n * > [text="去设置"])',
         },
       ],
     },
