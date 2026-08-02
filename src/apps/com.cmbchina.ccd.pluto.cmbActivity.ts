@@ -12,7 +12,6 @@ export default defineGkdApp({
         {
           resetMatch: 'match',
           fastQuery: true,
-          actionCd: 0,
           activityIds:
             'com.cmbchina.ccd.pluto.cmbActivity.o2oMealTicket.activity.cmbBVAXA85',
           matches: '[vid="advertise_iv"] +2 [vid="advertise_close_img"]',
@@ -27,7 +26,6 @@ export default defineGkdApp({
         {
           resetMatch: 'match',
           fastQuery: true,
-          actionCd: 0,
           activityIds: 'com.cmbchina.ccd.pluto.cmbActivity.CMBRootActivityV2',
           matches:
             '([vid="tv_ad_label" || vid="img_cf_view_close"] + [vid="img_cf_view_close"]) || ([vid="tv_title"] <<n * + [vid="iv_close"]) || ([vid="img_cf_view_close"])',
@@ -42,7 +40,6 @@ export default defineGkdApp({
         {
           resetMatch: 'match',
           fastQuery: true,
-          actionCd: 0,
           activityIds: 'com.cmbchina.ccd.pluto.cmbActivity.CMBRootActivityV2',
           matches:
             '([vid="tv_title"][text="发现新版本"] <<n * + * [vid="bt_cancel_tips"][text="暂不更新"])',
@@ -152,7 +149,6 @@ export default defineGkdApp({
       desc: '',
       rules: [
         {
-          actionCd: 0,
           resetMatch: 'match',
           fastQuery: true,
           activityIds:

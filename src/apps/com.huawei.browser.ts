@@ -26,7 +26,6 @@ export default defineGkdApp({
         {
           order: -1,
           actionMaximum: 1,
-          actionCd: 0,
           resetMatch: 'match',
           activityIds: 'com.huawei.browser.BrowserMainActivity',
           matches:
@@ -41,7 +40,6 @@ export default defineGkdApp({
       rules: [
         {
           order: -2,
-          actionCd: 0,
           actionMaximum: 1,
           resetMatch: 'match',
           fastQuery: true,
@@ -58,7 +56,6 @@ export default defineGkdApp({
       rules: [
         {
           actionMaximum: 1,
-          actionCd: 0,
           order: -1,
           resetMatch: 'match',
           activityIds: 'com.huawei.browser.BrowserMainActivity',

@@ -26,7 +26,6 @@ export default defineGkdApp({
           resetMatch: 'match',
           fastQuery: true,
           action: 'clickCenter',
-          actionCd: 0,
           activityIds: 'com.mcdonalds.gma.cn.activity.MainActivity',
           matches:
             'RelativeLayout > TextView[vid="tv_confirm"][text="立即升级"] + TextView[vid="tv_cancel"][text="暂不升级"][clickable=true]',
@@ -68,7 +67,6 @@ export default defineGkdApp({
       rules: [
         {
           resetMatch: 'match',
-          actionCd: 0,
           fastQuery: true,
           activityIds: 'com.mcdonalds.gma.cn.activity.MainActivity',
           matches:
@@ -83,7 +81,6 @@ export default defineGkdApp({
       rules: [
         {
           resetMatch: 'match',
-          actionCd: 0,
           activityIds: 'com.mcdonalds.gma.cn.activity.MainActivity',
           matches:
             '(TextView[vid="tv_title"][text*="无法获取位置信息"] +n LinearLayout > TextView[clickable=true][visibleToUser=true][vid="tv_cancel"][text="取消"]) || (TextView[vid="tv_info"][text*="定位服务"] +n LinearLayout > TextView[clickable=true][visibleToUser=true][vid="tv_cancel"][text="取消"])',
@@ -172,7 +169,7 @@ export default defineGkdApp({
         {
           activityIds: 'com.mcd.web.activity.BaseWebActivity',
           resetMatch: 'match',
-          actionCd: 0,
+          actionCd: 500,
           matches:
             '[text*="网络不给力，请稍后重试"] + [id="reLoad"][text="重新加载"]',
         },

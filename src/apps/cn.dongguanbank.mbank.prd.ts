@@ -36,7 +36,6 @@ export default defineGkdApp({
       rules: [
         {
           resetMatch: 'match',
-          actionCd: 0,
           activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
           matches:
             'View > Image + TextView[clickable=true][visibleToUser=true][text="点击下载海报"]',
@@ -96,7 +95,6 @@ export default defineGkdApp({
         {
           resetMatch: 'match',
           action: 'clickCenter',
-          actionCd: 0,
           activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
           matches:
             'View > TextView[text="活动尚未开始\\n"] + View > Button[text=" 确认"][clickable=true]',
@@ -112,6 +110,7 @@ export default defineGkdApp({
           resetMatch: 'match',
           action: 'clickCenter',
           actionCd: 0,
+          order: -1,
           activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
           matches:
             'WebView[text="提交订单"] > View > View > Button[clickable=true][visibleToUser=true][text="提交订单"]',
@@ -127,6 +126,7 @@ export default defineGkdApp({
           resetMatch: 'match',
           action: 'clickCenter',
           actionCd: 0,
+          order: -2,
           activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
           matches:
             'Dialog > TextView[text="去支付？"] + View > Button[clickable=true][visibleToUser=true][text="确认"]',

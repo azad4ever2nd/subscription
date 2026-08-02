@@ -9,7 +9,7 @@ export default defineGkdApp({
       desc: '260721',
       rules: [
         {
-          actionCd: 0,
+          matchTime: 1000,
           resetMatch: 'match',
           activityIds: 'com.citiccard.mobilebank.web.applet.NewAppletActivity',
           matches:
@@ -23,6 +23,7 @@ export default defineGkdApp({
       desc: '260308',
       rules: [
         {
+          matchTime: 1000,
           matches: ['[vid="dialog"] + [vid="cancelArea"]'],
           fastQuery: true,
           resetMatch: 'match',
@@ -123,7 +124,6 @@ export default defineGkdApp({
       desc: '260616',
       rules: [
         {
-          actionCd: 0,
           resetMatch: 'match',
           activityIds: 'com.citiccard.mobilebank.web.webpage.CommonWebPage',
           matches:
@@ -148,14 +148,15 @@ export default defineGkdApp({
     {
       key: 11,
       name: '合成三叶草',
-      desc: '251221,增加三叶草清零抽奖提示',
+      desc: '260802,增加三叶草清零抽奖提示',
       rules: [
         {
-          matches: [
-            '([text="恭喜你"] +3 [text="开心收下"]) || (* - * > [text="9b4b1bdec2d54f369d23adfb8099d075"])',
-          ],
+          activityIds: 'com.citiccard.mobilebank.web.webpage.CommonWebPage',
           resetMatch: 'match',
-          activityIds: ['com.citiccard.mobilebank.web.webpage.CommonWebPage'],
+          action: 'clickCenter',
+          actionCd: 500,
+          matches:
+            '([text="恭喜你"] +3 [text="开心收下"]) || (* - * > [text="9b4b1bdec2d54f369d23adfb8099d075"]) || (View > View > View > TextView[text="恭喜你"] +3 Button[clickable=true][visibleToUser=true][text="开心收下"])',
         },
       ],
     },
@@ -179,6 +180,7 @@ export default defineGkdApp({
       desc: '260406',
       rules: [
         {
+          matchTime: 1000,
           fastQuery: true,
           resetMatch: 'match',
           activityIds: 'com.citiccard.mobilebank.web.webpage.CommonWebPage',
@@ -218,7 +220,6 @@ export default defineGkdApp({
       desc: '260704',
       rules: [
         {
-          actionCd: 0,
           resetMatch: 'match',
           activityIds: 'com.citiccard.mobilebank.web.webpage.CommonWebPage',
           matches:
@@ -232,7 +233,6 @@ export default defineGkdApp({
       desc: '260704',
       rules: [
         {
-          actionCd: 0,
           resetMatch: 'match',
           fastQuery: true,
           action: 'click',
@@ -251,7 +251,7 @@ export default defineGkdApp({
         {
           resetMatch: 'match',
           fastQuery: true,
-          actionCd: 0,
+          matchTime: 1000,
           activityIds: [
             'com.citiccard.mobilebank.newconfig.appconstruct.TabsAppHomeActivity',
             'com.citiccard.mobilebank..newconfig.appconstruct.TabsAppHomeActivity',

@@ -12,7 +12,6 @@ export default defineGkdApp({
           matches: [
             '[vid="tv_dialog_title"][text*="定位"] +n * > [vid="btn_dialog_left"][text="稍后开启"]',
           ],
-          actionCd: 0,
           fastQuery: true,
           resetMatch: 'match',
           activityIds: [
@@ -40,7 +39,6 @@ export default defineGkdApp({
       desc: '260613，添加浏览订单时的弹窗',
       rules: [
         {
-          actionCd: 0,
           action: 'clickCenter',
           resetMatch: 'match',
           activityIds: 'com.tongcheng.android.module.webapp.WebViewActivity',
@@ -114,7 +112,7 @@ export default defineGkdApp({
       rules: [
         {
           matches: ['[text="1Iqxem34OZy"] < * + * > *[index=2]'],
-          actionCdKey: 1,
+          actionCdKey: 4,
           resetMatch: 'match',
           activityIds: ['com.tongcheng.android.module.webapp.WebViewActivity'],
         },
@@ -127,7 +125,7 @@ export default defineGkdApp({
       rules: [
         {
           matches: ['[text="订单金额：￥1"] + @* > [text="提交订单"]'],
-          actionCdKey: 1,
+          actionCdKey: 4,
           resetMatch: 'match',
           activityIds: ['com.tongcheng.android.module.webapp.WebViewActivity'],
         },
@@ -139,7 +137,7 @@ export default defineGkdApp({
       desc: '260726，添加 IDS，添加弹窗',
       rules: [
         {
-          actionCd: 0,
+          matchTime: 1500,
           fastQuery: true,
           resetMatch: 'match',
           activityIds: [

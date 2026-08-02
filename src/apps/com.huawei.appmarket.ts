@@ -13,12 +13,12 @@ export default defineGkdApp({
           matches: [
             '[id="android:id/alertTitle"][text="发现新版本"] <<n * +n * [id="android:id/button2"][text="以后再说"]',
           ],
-          actionCd: 0,
+          matchDelay: 500,
+          matchTime: 1000,
           fastQuery: true,
           resetMatch: 'match',
-          activityIds: [
+          activityIds:
             'com.huawei.appmarket.service.thirdupdate.ThirdUpdateActivity',
-          ],
         },
       ],
     },
@@ -31,13 +31,12 @@ export default defineGkdApp({
           matches: [
             '[vid="updatemanager_choose_state_card_desc" || vid="updatemanager_choose_state_card_title"] <n * + * > [vid="updatemanager_choose_state_btn_no"]',
           ],
-          actionCd: 0,
+          matchDelay: 500,
           fastQuery: true,
           actionMaximum: 1,
           resetMatch: 'app',
-          activityIds: [
+          activityIds:
             'com.huawei.appmarket.service.appmgr.view.activity.AppUpdateActivity',
-          ],
         },
       ],
     },
@@ -48,7 +47,6 @@ export default defineGkdApp({
       rules: [
         {
           resetMatch: 'match',
-          actionCd: 500,
           fastQuery: true,
           activityIds:
             'com.huawei.appmarket.service.appmgr.view.activity.AppUpdateActivity',

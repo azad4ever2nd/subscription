@@ -24,6 +24,8 @@ export default defineGkdApp({
         {
           resetMatch: 'match',
           fastQuery: true,
+          matchDelay: 500,
+          matchTime: 1500,
           activityIds: 'com.yt.hxmb50.mainpages.ui.main.MainActivity',
           matches:
             '(@[vid="dialog_update_tv_cancel"][text="下次再说"] + [vid="dialog_update_tv_update"][text="立即更新"]) || (LinearLayout > @TextView[vid="dialog_update_tv_cancel"][clickable=true][visibleToUser=true][text="下次再说"] + TextView[vid="dialog_update_tv_update"][text="立即更新"])',

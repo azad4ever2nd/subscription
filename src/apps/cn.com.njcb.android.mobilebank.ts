@@ -12,7 +12,7 @@ export default defineGkdApp({
           resetMatch: 'match',
           fastQuery: true,
           action: 'clickCenter',
-          actionCd: 700,
+          matchTime: 1000,
           activityIds: 'com.njcb.mobile.biz.launcher.app.main.MainActivity',
           matches:
             'CheckBox[vid="login_privacy_iv"][checked=true] < LinearLayout < RelativeLayout <n RelativeLayout + ImageView[clickable=true][visibleToUser=true][vid="version_dialog_close"]',
@@ -26,7 +26,6 @@ export default defineGkdApp({
       rules: [
         {
           fastQuery: true,
-          actionCd: 0,
           resetMatch: 'match',
           actionMaximum: 1,
           activityIds: 'com.njcb.mobile.biz.launcher.app.main.MainActivity',
@@ -137,13 +136,13 @@ export default defineGkdApp({
     {
       key: 10,
       name: '签到完成，返回',
-      desc: '260401',
+      desc: '260401，依赖 每日签到',
       rules: [
         {
           resetMatch: 'app',
           actionMaximum: 1,
           action: 'back',
-          preKeys: [7],
+          preKeys: [9],
           activityIds: 'com.njcb.mobile.h5biz.H5ContainerActivity',
           matches: '[text="任务中心"] <<n * +n * [text="规则"]',
         },
@@ -157,7 +156,7 @@ export default defineGkdApp({
         {
           resetMatch: 'match',
           action: 'clickCenter',
-          actionCd: 0,
+          matchTime: 1000,
           activityIds: 'com.njcb.mobile.h5biz.H5ContainerActivity',
           matches:
             '([text="今日不再显示"] < * + *[clickable=true]) || (View > @TextView - View > TextView[text="今日不再显示"])',

@@ -71,7 +71,7 @@ export default defineGkdApp({
         {
           matches: '([text="每日"] + [text="阅读产品文章"] +3 TextView)',
           actionMaximum: 1,
-          matchDelay: 3000,
+          actionDelay: 3000,
           resetMatch: 'app',
           activityIds:
             'com.cebbank.mobile.cemb.ui.activity.mobilePayment.MobilePaymentWebActivity',
@@ -84,7 +84,7 @@ export default defineGkdApp({
       desc: '260608，([text="每周"] + [text="指定产品加自选" || text="浏览指定专区"] + [text="(0/1)"] +3 TextView)',
       rules: [
         {
-          actionCd: 2000,
+          actionDelay: 2000,
           action: 'clickCenter',
           activityIds:
             'com.cebbank.mobile.cemb.ui.activity.mobilePayment.MobilePaymentWebActivity',
@@ -99,7 +99,7 @@ export default defineGkdApp({
       rules: [
         {
           actionMaximum: 1,
-          matchDelay: 1000,
+          actionDelay: 1000,
           resetMatch: 'app',
           action: 'clickCenter',
           activityIds:
@@ -116,7 +116,6 @@ export default defineGkdApp({
         {
           matches:
             '([text$="金币"] < View +2 TextView[clickable=true]) || ([text^="您已完成" && text$="任务"] < * + TextView[clickable=true]) || (View > @TextView - View > TextView[text^="您已完成" && text$="任务"])',
-          actionCd: 0,
           action: 'clickCenter',
           resetMatch: 'match',
           activityIds:

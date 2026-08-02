@@ -24,7 +24,7 @@ export default defineGkdApp({
       rules: [
         {
           resetMatch: 'match',
-          actionCd: 0,
+          matchTime: 1000,
           activityIds:
             'com.cgb.mobilebank.sit.launcher.module.main.activity.IndexActivity',
           matches:
@@ -39,6 +39,7 @@ export default defineGkdApp({
       rules: [
         {
           resetMatch: 'match',
+          matchTime: 1000,
           fastQuery: true,
           activityIds: [
             'com.cgb.mobilebank.sit.launcher.module.main.activity.IndexActivity',
@@ -120,7 +121,6 @@ export default defineGkdApp({
       rules: [
         {
           resetMatch: 'match',
-          actionCd: 0,
           activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
           matches:
             'Dialog > View[text="温馨提示"] + View[text^="抽奖一次消耗您的8积分"] + View > Button[clickable=true][visibleToUser=true][text="确认 "]',

@@ -10,7 +10,7 @@ export default defineGkdApp({
       rules: [
         {
           matches: ['[vid="bt_cancel"][text="暂不更新"]'],
-          actionCd: 0,
+          matchTime: 1000,
           fastQuery: true,
           resetMatch: 'match',
           activityIds: [
@@ -26,7 +26,6 @@ export default defineGkdApp({
       rules: [
         {
           matches: ['[vid="iv_theme"] + [vid="iv_theme_close_btn"]'],
-          actionCdKey: 1,
           fastQuery: true,
           resetMatch: 'match',
           activityIds: [
@@ -42,7 +41,6 @@ export default defineGkdApp({
       rules: [
         {
           matches: ['[vid="picture"] + * > [vid="iv_left_btn"]'],
-          actionCdKey: 1,
           fastQuery: true,
           actionMaximum: 2,
           resetMatch: 'match',
@@ -61,7 +59,6 @@ export default defineGkdApp({
           matches: [
             '[vid="mTitle"][text="温馨提示"] <<n * +n [vid="mIKnow"][text="确定"]',
           ],
-          actionCdKey: 1,
           fastQuery: true,
           resetMatch: 'match',
           activityIds: [
@@ -79,7 +76,6 @@ export default defineGkdApp({
           resetMatch: 'match',
           action: 'clickCenter',
           fastQuery: true,
-          actionCdKey: 1,
           activityIds:
             'com.yitong.mbank.psbc.module.home.view.activity.MainActivity',
           matches:
@@ -96,6 +92,7 @@ export default defineGkdApp({
           matches: [
             '([text^="恭喜您抢到一张" && text*="邮票图片"] +2 Image) || ([text="权益二选一"] +3 [text="去领取"]) || ([text*="火爆"] <<n * + [text^="我已知晓"])',
           ],
+          matchTime: 1000,
           matchDelay: 3000,
           resetMatch: 'match',
           activityIds: ['com.alipay.mobile.nebulacore.ui.H5Activity'],
@@ -179,6 +176,7 @@ export default defineGkdApp({
       rules: [
         {
           resetMatch: 'match',
+          matchTime: 1500,
           actionCd: 100,
           fastQuery: true,
           activityIds:
@@ -195,6 +193,7 @@ export default defineGkdApp({
         {
           resetMatch: 'match',
           actionCd: 100,
+          matchTime: 1500,
           fastQuery: true,
           activityIds:
             'com.yitong.mbank.psbc.module.app.view.activity.ThirdPartRedirectActivity',

@@ -37,7 +37,6 @@ export default defineGkdApp({
       rules: [
         {
           resetMatch: 'match',
-          actionCd: 100,
           fastQuery: true,
           activityIds: 'com.bankcomm.maidanba.activity.MainActivity',
           matches:
@@ -95,7 +94,6 @@ export default defineGkdApp({
       rules: [
         {
           resetMatch: 'match',
-          actionCd: 100,
           action: 'back',
           activityIds: 'com.bankcomm.maidanba.activity.WebViewActivity',
           matches:
@@ -135,7 +133,7 @@ export default defineGkdApp({
       desc: '260607',
       rules: [
         {
-          actionCd: 0,
+          matchTime: 1000,
           fastQuery: true,
           resetMatch: 'match',
           activityIds: 'com.bankcomm.maidanba.activity.WebViewActivity',

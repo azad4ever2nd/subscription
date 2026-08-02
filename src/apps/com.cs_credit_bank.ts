@@ -38,6 +38,7 @@ export default defineGkdApp({
       rules: [
         {
           matches: ['[vid="cancel"][text="暂不激活"]'],
+          matchTime: 1000,
           fastQuery: true,
           resetMatch: 'match',
           activityIds: ['com.mapass.example.activity.MainActivity_'],
@@ -83,6 +84,7 @@ export default defineGkdApp({
           matches: [
             '[text="可购1次"] + @Button <<3 * - * >4 [text*="买一赠一"]',
           ],
+          actionCd: 0,
           actionMaximum: 3,
           resetMatch: 'match',
           activityIds: ['com.alipay.mobile.nebulacore.ui.H5Activity'],
@@ -98,6 +100,7 @@ export default defineGkdApp({
           matches: [
             '[text="【食力狂欢】1元抵12.12元代金券" || text*="屈臣氏"] <<n * +n @* > [text="立即抢购"]',
           ],
+          actionCd: 0,
           actionMaximum: 5,
           resetMatch: 'match',
           activityIds: ['com.alipay.mobile.nebulacore.ui.H5Activity'],
@@ -123,7 +126,7 @@ export default defineGkdApp({
       rules: [
         {
           resetMatch: 'match',
-          actionCd: 100,
+          matchTime: 1000,
           activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
           matches:
             '@*[clickable=true][text.length=1] + [text="恭喜获得"] <n * +n [text="立即提升"]',
@@ -152,7 +155,7 @@ export default defineGkdApp({
       rules: [
         {
           resetMatch: 'match',
-          actionCd: 100,
+          matchTime: 1000,
           actionMaximum: 1,
           activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
           matches:
@@ -166,7 +169,6 @@ export default defineGkdApp({
       desc: '260410,action改为clickCenter测试',
       rules: [
         {
-          actionCd: 0,
           action: 'clickCenter',
           fastQuery: true,
           resetMatch: 'match',

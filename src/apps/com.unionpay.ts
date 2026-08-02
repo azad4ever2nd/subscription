@@ -12,7 +12,6 @@ export default defineGkdApp({
           matches: [
             '[vid="tv_dialog_info"][text^="发现新版本"] + * > [vid="btn_cancel"][text="稍候再说"]',
           ],
-          actionCd: 0,
           fastQuery: true,
           resetMatch: 'match',
           activityIds: [
@@ -89,7 +88,6 @@ export default defineGkdApp({
         {
           resetMatch: 'match',
           fastQuery: true,
-          actionCd: 0,
           activityIds: [
             'com.unionpay.activity.react.UPActivityReactNative',
             'com.unionpay.liteapp.app.UPLiteAppActivity1',
@@ -147,7 +145,6 @@ export default defineGkdApp({
       rules: [
         {
           matches: ['[text="开通指纹支付"] +n @* > [text="稍后再说"]'],
-          actionCd: 500,
           fastQuery: true,
           resetMatch: 'match',
           activityIds: ['com.unionpay.activity.react.UPActivityReactNative'],
@@ -161,7 +158,6 @@ export default defineGkdApp({
       rules: [
         {
           resetMatch: 'match',
-          actionCd: 0,
           actionMaximum: 1,
           fastQuery: true,
           activityIds: 'com.unionpay.activity.react.UPActivityReactNative',
@@ -176,7 +172,6 @@ export default defineGkdApp({
       rules: [
         {
           resetMatch: 'match',
-          actionCd: 0,
           actionMaximum: 1,
           fastQuery: true,
           activityIds: 'com.unionpay.activity.react.UPActivityReactNative',
@@ -191,7 +186,6 @@ export default defineGkdApp({
       rules: [
         {
           resetMatch: 'match',
-          actionCd: 0,
           actionMaximum: 1,
           fastQuery: true,
           activityIds: 'com.unionpay.activity.react.UPActivityReactNative',
@@ -244,7 +238,6 @@ export default defineGkdApp({
       rules: [
         {
           resetMatch: 'match',
-          actionCd: 0,
           activityIds: [
             'com.unionpay.activity.react.UPActivityReactNative',
             'com.unionpay.liteapp.app.UPLiteAppActivity1',
@@ -284,7 +277,6 @@ export default defineGkdApp({
       rules: [
         {
           resetMatch: 'match',
-          actionCd: 0,
           activityIds: [
             'com.unionpay.liteapp.app.UPLiteAppActivity1',
             'com.unionpay.liteapp.app.UPLiteAppActivity2',
@@ -304,7 +296,6 @@ export default defineGkdApp({
       rules: [
         {
           resetMatch: 'match',
-          actionCd: 0,
           activityIds: [
             'com.unionpay.liteapp.app.UPLiteAppActivity1',
             'com.unionpay.liteapp.app.UPLiteAppActivity2',

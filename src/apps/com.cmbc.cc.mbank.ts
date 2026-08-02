@@ -38,7 +38,7 @@ export default defineGkdApp({
       rules: [
         {
           matchRoot: false,
-          actionCd: 0,
+          matchTime: 2000,
           resetMatch: 'match',
           activityIds: 'com.cmbc.cc.mbank.module.web.activity.WebViewActivity',
           matches:
@@ -53,6 +53,7 @@ export default defineGkdApp({
       rules: [
         {
           matchRoot: true,
+          matchTime: 2000,
           resetMatch: 'match',
           activityIds: 'com.cmbc.cc.mbank.module.web.activity.WebViewActivity',
           matches: '[text="提示"] + [text*="定位服务"] +n * > [text="确认"]',
@@ -67,6 +68,7 @@ export default defineGkdApp({
         {
           resetMatch: 'match',
           activityIds: 'com.cmbc.cc.mbank.module.web.activity.WebViewActivity',
+          actionCd: 0,
           matches:
             '([text*="15元代金券"] + @[text="立即抢"] +3 [text="民生借记卡专享"])',
         },
@@ -81,6 +83,7 @@ export default defineGkdApp({
           matches:
             '[text="民生借记卡专属"] +n [text^="今日剩余" && text$="%"] + [text="50d230ef35357706bbfe" || text="e2df8c32b64d20560e14"]',
           resetMatch: 'match',
+          actionCd: 0,
           activityIds: 'com.cmbc.cc.mbank.module.web.activity.WebViewActivity',
         },
       ],

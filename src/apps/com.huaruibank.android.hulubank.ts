@@ -83,7 +83,7 @@ export default defineGkdApp({
             '[text="你好"] <<n FrameLayout[childCount=3] > FrameLayout[childCount=1] > ImageView',
           ],
           actionMaximum: 1,
-          matchTime: 10000,
+          matchTime: 2000,
           resetMatch: 'app',
           activityIds: ['com.shrb.mbank.ui.XcmsActivity'],
         },

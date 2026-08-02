@@ -82,7 +82,7 @@ export default defineGkdApp({
       rules: [
         {
           matches: ['@View > [text="点击签到" || text="签到领金币"]'],
-          actionCd: 0,
+          actionCd: 500,
           actionMaximum: 3,
           resetMatch: 'match',
           activityIds: 'com.taobao.themis.container.app.TMSActivity',
@@ -153,6 +153,7 @@ export default defineGkdApp({
         {
           resetMatch: 'match',
           fastQuery: true,
+          matchTime: 1000,
           activityIds: 'com.alipay.android.msp.ui.views.MspContainerActivity',
           matches:
             '([text="淘宝 推荐你"] <<n * +n @* > [text="关闭"]) || (@[text="关闭"] <<n * +n * [text="同意协议并开通"]) || (@* > [text="关闭"] <<n * +n * [text="同意协议并开通"])',

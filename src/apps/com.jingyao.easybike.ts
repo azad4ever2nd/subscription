@@ -10,6 +10,7 @@ export default defineGkdApp({
       desc: '260616',
       rules: [
         {
+          matchTime: 2000,
           activityIds:
             'com.hellobike.flutter.platform.android.flutterboost.FlutterHostFragmentActivity',
           matches:
@@ -26,7 +27,6 @@ export default defineGkdApp({
       rules: [
         {
           resetMatch: 'match',
-          actionCd: 0,
           activityIds:
             'com.hellobike.flutter.platform.android.flutterboost.FlutterHostFragmentActivity',
           matches: '[desc="骑行卡" || desc="主题卡"] <n * +n [desc="确认开锁"]',
@@ -42,7 +42,6 @@ export default defineGkdApp({
           fastQuery: true,
           order: -1,
           resetMatch: 'match',
-          actionCd: 0,
           activityIds:
             'com.hellobike.flutter.platform.android.flutterboost.FlutterHostFragmentActivity',
           matches: '[vid="creativeContainer"] + [vid="actionDialogClose"]',
@@ -101,6 +100,7 @@ export default defineGkdApp({
       rules: [
         {
           fastQuery: true,
+          matchTime: 2000,
           actionCd: 500,
           resetMatch: 'app',
           actionMaximum: 1,
@@ -117,8 +117,10 @@ export default defineGkdApp({
       rules: [
         {
           resetMatch: 'match',
+          matchDelay: 500,
+          matchTime: 1000,
+          actionCd: 100,
           fastQuery: true,
-          actionCd: 0,
           activityIds: 'com.hellobike.atlas.business.portal.PortalActivity',
           matches:
             '([vid="hbDialogLayout"] +n [vid="actionDialogClose"]) || ([vid="creativeContainer"] + [vid="actionDialogClose"]) || (FrameLayout > LinearLayout > LinearLayout[vid="hbDialogLayout"] + View + ImageView[vid="actionDialogClose"]) || (LinearLayout > FrameLayout[vid="creativeContainer"] + ImageView[vid="actionDialogClose"][clickable=true][visibleToUser=true])',
@@ -134,7 +136,7 @@ export default defineGkdApp({
           fastQuery: true,
           resetMatch: 'match',
           action: 'clickCenter',
-          actionCd: 0,
+          matchTime: 2000,
           matchRoot: false,
           activityIds: [
             'com.hellobike.atlas.business.portal.PortalActivity',
@@ -181,7 +183,8 @@ export default defineGkdApp({
           resetMatch: 'match',
           actionMaximum: 1,
           matchRoot: true,
-          actionCd: 300,
+          matchDelay: 1000,
+          matchTime: 1000,
           activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
           matches:
             '([text="请点击下方按钮，立即签到"] + * [text="签到"]) || ([text="签到"])',
@@ -208,6 +211,7 @@ export default defineGkdApp({
       rules: [
         {
           resetMatch: 'match',
+          matchTime: 1000,
           fastQuery: true,
           activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
           matches: '[vid="ivTopBg"] +n [vid="ivClose"]',
@@ -222,7 +226,8 @@ export default defineGkdApp({
         {
           resetMatch: 'match',
           actionMaximum: 1,
-          actionCd: 300,
+          matchDelay: 1000,
+          matchTime: 1000,
           activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
           matches: '@TextView[clickable=true] +n [text="明日再来"]',
         },
@@ -248,7 +253,7 @@ export default defineGkdApp({
         {
           resetMatch: 'match',
           action: 'clickCenter',
-          actionCd: 900,
+          matchTime: 1000,
           activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
           matches:
             '([text="会员单单返"] + [text="领奖励"]) || (View > View > View > TextView[text*="奖励金"] + View + TextView[text="知道了"][clickable=true])',
@@ -263,7 +268,8 @@ export default defineGkdApp({
         {
           resetMatch: 'match',
           actionMaximum: 1,
-          actionCd: 100,
+          matchDelay: 1000,
+          matchTime: 1000,
           activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
           matches:
             '@View[clickable=true] TextView + [text="单单返"][parent.childCount=2]',
@@ -303,7 +309,6 @@ export default defineGkdApp({
         {
           resetMatch: 'match',
           actionMaximum: 1,
-          actionCd: 0,
           activityIds:
             'com.hellobike.moped.platform.offline.web.OhoRealmWebActivity',
           matches:
@@ -318,7 +323,8 @@ export default defineGkdApp({
       rules: [
         {
           resetMatch: 'match',
-          actionCd: 500,
+          matchDelay: 500,
+          matchTime: 1000,
           activityIds:
             'com.hellobike.moped.platform.offline.web.OhoRealmWebActivity',
           matches:
@@ -333,7 +339,8 @@ export default defineGkdApp({
       rules: [
         {
           resetMatch: 'match',
-          actionCd: 0,
+          matchDelay: 500,
+          matchTime: 1000,
           activityIds:
             'com.hellobike.moped.platform.offline.web.OhoRealmWebActivity',
           matches:
@@ -349,7 +356,7 @@ export default defineGkdApp({
         {
           resetMatch: 'match',
           actionMaximum: 10,
-          actionCd: 1000,
+          matchTime: 1000,
           activityIds:
             'com.hellobike.moped.platform.offline.web.OhoRealmWebActivity',
           matches:
@@ -364,7 +371,7 @@ export default defineGkdApp({
       rules: [
         {
           resetMatch: 'match',
-          actionCd: 500,
+          matchTime: 1000,
           activityIds:
             'com.hellobike.moped.platform.offline.web.OhoRealmWebActivity',
           matches: '@View Image[text="aab668b57491499e89ee4a5b766bcf77_35"]',

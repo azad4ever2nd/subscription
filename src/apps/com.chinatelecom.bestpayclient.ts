@@ -12,6 +12,8 @@ export default defineGkdApp({
         {
           resetMatch: 'match',
           fastQuery: true,
+          matchDelay: 500,
+          matchTime: 1000,
           activityIds: 'com.chinatelecom.bestpayclient.ui.MainActivity',
           matches:
             '([vid="msg_notification_open_title"] +n [vid="msg_notification_skip_btn"][text="跳过"]) || ([vid="iv_dialog_bg"] +n [vid="iv_dialog_close"]) || (RelativeLayout + ImageView[vid="iv_dialog_close_one"][clickable=true])',
@@ -39,6 +41,8 @@ export default defineGkdApp({
       desc: '260131',
       rules: [
         {
+          matchDelay: 500,
+          matchTime: 1000,
           matches: ['@* + [text*="开启系统通知"] + [text="立即开启"]'],
           resetMatch: 'match',
           activityIds: ['com.mpaas.mriver.integration.MriverActivityBase$Main'],
@@ -53,7 +57,8 @@ export default defineGkdApp({
         {
           fastQuery: true,
           resetMatch: 'match',
-          actionCd: 100,
+          matchDelay: 500,
+          matchTime: 1000,
           activityIds: 'com.mpaas.mriver.integration.MriverActivityBase$Main',
           matches: '[vid="llLandscape"] [vid="ivLandscapeClose"]',
         },
@@ -66,7 +71,6 @@ export default defineGkdApp({
       rules: [
         {
           resetMatch: 'match',
-          actionCd: 100,
           fastQuery: true,
           activityIds: 'com.mpaas.mriver.integration.MriverActivityBase$Main',
           matches: '* + [vid="ivVerticalClose"]',
@@ -80,7 +84,7 @@ export default defineGkdApp({
       rules: [
         {
           resetMatch: 'match',
-          actionCd: 100,
+          matchTime: 1000,
           actionMaximum: 1,
           activityIds: 'com.mpaas.mriver.integration.MriverActivityBase$Main',
           matches:

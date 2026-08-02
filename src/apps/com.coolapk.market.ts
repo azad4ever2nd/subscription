@@ -26,7 +26,8 @@ export default defineGkdApp({
         {
           resetMatch: 'match',
           fastQuery: true,
-          actionCd: 100,
+          matchDelay: 500,
+          matchTime: 1000,
           activityIds: 'com.coolapk.market.view.feed.FeedDetailActivityV8',
           matches:
             '[id="android:id/button3"][text="【去广告】 今日免广告"] + [id="android:id/button1"][text="关闭"]',

@@ -6,6 +6,21 @@ export default defineGkdApp({
   groups: [
     {
       key: 1,
+      name: '内测更新，X掉',
+      desc: '260717',
+      rules: [
+        {
+          resetMatch: 'match',
+          matchDelay: 750,
+          matchTime: 1000,
+          activityIds: 'com.alipay.mobile.quinox.LauncherActivity',
+          matches:
+            'FrameLayout > ImageView + ImageView[clickable=true][visibleToUser=true][id="com.alipay.mobile.android.security.upgrade:id/update_cancel_tv"]',
+        },
+      ],
+    },
+    {
+      key: 2,
       name: '本月不再提示',
       desc: '260601',
       rules: [
@@ -18,7 +33,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 2,
+      key: 3,
       name: '转出提示，继续转出',
       desc: '260601',
       rules: [
@@ -32,15 +47,16 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 3,
-      name: '内测更新，X掉',
-      desc: '260717',
+      key: 4,
+      name: '弹窗',
+      desc: '260802，财运红包',
       rules: [
         {
           resetMatch: 'match',
-          activityIds: 'com.alipay.mobile.quinox.LauncherActivity',
+          activityIds:
+            'com.alipay.mobile.nebulax.xriver.activity.XRiverActivity',
           matches:
-            'FrameLayout > ImageView + ImageView[clickable=true][visibleToUser=true][id="com.alipay.mobile.android.security.upgrade:id/update_cancel_tv"]',
+            '@TextView[clickable=true][visibleToUser=true] < View +2 TextView[text="已学习，去使用"]',
         },
       ],
     },

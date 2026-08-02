@@ -68,7 +68,6 @@ export default defineGkdApp({
       rules: [
         {
           actionMaximum: 15,
-          actionCd: 0,
           resetMatch: 'match',
           action: 'clickCenter',
           activityIds: 'com.xunmeng.pinduoduo.activity.NewPageActivity',
@@ -84,7 +83,7 @@ export default defineGkdApp({
       rules: [
         {
           resetMatch: 'match',
-          actionCd: 0,
+          actionCd: 1500,
           activityIds: 'com.xunmeng.pinduoduo.activity.NewPageActivity',
           matches:
             '([text^="邀请你加入队伍"] < *  +n @*[visibleToUser=true] > [text="立即加入抽福袋"]) || ([text^="邀请你加入队伍"] +n @*[clickable=true][visibleToUser=true] > [text="立即加入抽福袋"])',
@@ -154,6 +153,8 @@ export default defineGkdApp({
         {
           fastQuery: true,
           resetMatch: 'match',
+          matchTime: 2000,
+          actionCd: 300,
           activityIds: 'com.xunmeng.pinduoduo.activity.NewPageActivity',
           matches:
             '(@Button[text="关闭按钮"] +n [text^="还差1人" || text^="拼单已发起"]) || ([vid="pdd"] < @[vid="pdd"] + [vid="pdd"] > [text="评价拍摄"]) || (@[vid="pdd"][desc="返回"] < * +n * > [vid="tv_title"][text="发表评价" || text="发表真实评价"]) || (TextView[text="继续编辑"] < FrameLayout < ViewGroup + @ViewGroup[clickable=true] > FrameLayout > TextView[text="退出"]) || (TextView[text="继续编辑" || text="放弃打款"] < FrameLayout  <n ViewGroup + ViewGroup[clickable=true])',
@@ -168,6 +169,8 @@ export default defineGkdApp({
         {
           resetMatch: 'match',
           activityIds: 'com.xunmeng.pinduoduo.activity.NewPageActivity',
+          matchTime: 2000,
+          actionCd: 300,
           matches:
             'LinearLayout > TextView[vid="pdd"][text="取消"] +n TextView[clickable=true][visibleToUser=true][vid="pdd"][text="退出"]',
         },
@@ -182,6 +185,8 @@ export default defineGkdApp({
           matches: [
             '(@Button[text="关闭按钮"] +n [text^="还差1人" || text^="拼单已发起"]) || ([text="邀请好友拼单"] + [text="去首页逛逛"]) || ([text="继续编辑"] <<n *[clickable=true] + @*[clickable=true] >n [text="放弃领券"])',
           ],
+          matchTime: 2000,
+          actionCd: 300,
           fastQuery: true,
           resetMatch: 'match',
           activityIds: ['com.xunmeng.pinduoduo.activity.NewPageActivity'],
@@ -280,7 +285,6 @@ export default defineGkdApp({
         {
           resetMatch: 'match',
           action: 'click',
-          actionCd: 300,
           activityIds: 'com.xunmeng.pinduoduo.activity.NewPageActivity',
           matches:
             'View > TextView[text="如何解锁?" || text="如何解锁点亮?"] + TextView[clickable=false][text="去首页"]',
@@ -296,7 +300,6 @@ export default defineGkdApp({
           resetMatch: 'app',
           action: 'click',
           actionMaximum: 1,
-          actionCd: 300,
           activityIds: 'com.xunmeng.pinduoduo.activity.NewPageActivity',
           matches:
             'TextView[text="点亮任务已完成"] +n View > View > TextView[clickable=false][visibleToUser=true][text="去解锁"]',
@@ -338,6 +341,8 @@ export default defineGkdApp({
       rules: [
         {
           resetMatch: 'match',
+          matchTime: 2000,
+          actionCd: 300,
           activityIds: 'com.xunmeng.pinduoduo.activity.NewPageMaskActivity',
           matches:
             '([text="暂时放弃"] <<n @* + [text="继续支付"]) || ([text="暂时放弃"] <<n @*[clickable=true] + [text="继续支付"])',

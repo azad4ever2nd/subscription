@@ -12,6 +12,7 @@ export default defineGkdApp({
         {
           resetMatch: 'app',
           actionMaximum: 1,
+          actionCd: 5000,
           activityIds: [
             'com.quickjs.android.example.RNFragmentActivity',
             'com.cmvideo.capability.remote_web.WebProcessActivity',
@@ -24,7 +25,7 @@ export default defineGkdApp({
     {
       key: 2,
       name: '播放界面，右下角分享按钮',
-      desc: '260621',
+      desc: '260621，依赖 每日分享指定视频至微信，立即分享',
       rules: [
         {
           resetMatch: 'app',
@@ -40,7 +41,7 @@ export default defineGkdApp({
     {
       key: 3,
       name: '分享界面，分享到 微信好友',
-      desc: '260621',
+      desc: '260621，依赖 右下角分享按钮',
       rules: [
         {
           resetMatch: 'app',
@@ -56,12 +57,11 @@ export default defineGkdApp({
     {
       key: 4,
       name: '分享完成，返回到福利中心',
-      desc: '260621',
+      desc: '260621，依赖 分享到 微信好友',
       rules: [
         {
           resetMatch: 'app',
           actionMaximum: 1,
-          actionCd: 0,
           fastQuery: true,
           preKeys: [3],
           activityIds: 'com.cmvideo.capability.vod.VodActivity',
@@ -73,13 +73,14 @@ export default defineGkdApp({
     {
       key: 5,
       name: '领2GB日流量，马上领取',
-      desc: '260801',
+      desc: '260801，依赖 返回到福利中心',
       rules: [
         {
           resetMatch: 'app',
           actionMaximum: 1,
           preKeys: [4],
-          matchDelay: 1500,
+          matchTime: 1500,
+          actionCd: 3000,
           activityIds: [
             'com.quickjs.android.example.RNFragmentActivity',
             'com.cmvideo.capability.remote_web.WebProcessActivity',
@@ -92,11 +93,12 @@ export default defineGkdApp({
     {
       key: 6,
       name: '获取验证码',
-      desc: '260622',
+      desc: '260622，依赖 领2GB日流量，马上领取',
       rules: [
         {
           actionMaximum: 1,
           resetMatch: 'match',
+          actionCd: 2000,
           preKeys: [5],
           activityIds: [
             'com.quickjs.android.example.RNFragmentActivity',
@@ -110,7 +112,7 @@ export default defineGkdApp({
     {
       key: 7,
       name: '恭喜获得2GB通用流量，好的',
-      desc: '260622，添加 IDS',
+      desc: '260802，添加 IDS',
       rules: [
         {
           resetMatch: 'match',
@@ -118,8 +120,7 @@ export default defineGkdApp({
             'com.quickjs.android.example.RNFragmentActivity',
             'com.cmvideo.capability.remote_web.WebProcessActivity',
           ],
-          matches:
-            '(@View > View > View > Image[text="1O6KI5PKEDG36" || text="1O6KI5PKO6N57"])',
+          matches: '(@View > View > View > Image[text="1O7GEIFBFRPLK"])',
         },
       ],
     },
@@ -176,7 +177,6 @@ export default defineGkdApp({
         {
           resetMatch: 'match',
           fastQuery: true,
-          actionCd: 300,
           activityIds:
             'com.cmcc.cmvideo.main.application.CompatibleMainActivity',
           matches:
@@ -191,7 +191,6 @@ export default defineGkdApp({
       rules: [
         {
           resetMatch: 'match',
-          actionCd: 0,
           activityIds:
             'com.cmcc.cmvideo.main.application.CompatibleMainActivity',
           matches:

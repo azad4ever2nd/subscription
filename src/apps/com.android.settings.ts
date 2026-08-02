@@ -75,7 +75,6 @@ export default defineGkdApp({
         {
           fastQuery: true,
           resetMatch: 'match',
-          actionCd: 0,
           preKeys: [4],
           activityIds: 'com.android.settings.Settings$LocationSettingsActivity',
           matches:

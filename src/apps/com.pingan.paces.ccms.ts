@@ -66,6 +66,7 @@ export default defineGkdApp({
       rules: [
         {
           resetMatch: 'match',
+          matchTime: 1000,
           activityIds: 'com.pingan.componet.hybrid.webUrl.WebUrlActivity',
           matches:
             '(View > [text="恭喜您获得"] + [text$="橙长值"] + View > TextView[text="开心收下"]) || ([text="恭喜您获得"] +n TextView[clickable=true])',
@@ -80,7 +81,7 @@ export default defineGkdApp({
         {
           resetMatch: 'match',
           action: 'clickCenter',
-          actionCd: 0,
+          matchTime: 1000,
           activityIds: 'com.pingan.componet.hybrid.webUrl.WebUrlActivity',
           matches: '@Button[text="关闭弹窗按钮"] + * [text="您本周已参与"]',
         },

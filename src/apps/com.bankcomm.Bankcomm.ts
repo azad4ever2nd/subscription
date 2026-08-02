@@ -67,7 +67,6 @@ export default defineGkdApp({
       rules: [
         {
           resetMatch: 'match',
-          actionCd: 100,
           action: 'back',
           activityIds: 'com.bankcomm.module.biz.webcontainer.BCMHtml5Activity',
           matches:
@@ -84,7 +83,7 @@ export default defineGkdApp({
           matches: [
             '(Image[text="ACIM_20250725000139_20250725155808212"] <<n View + View > View[index=0] Image[text="立即领取"]) || (Image[text="ACIM_20250725000139_20250725155808212"] < View < View < View + View > View[index=0] > View > Image[clickable=false][visibleToUser=true || visibleToUser=false][text="立即领取"])',
           ],
-          actionCd: 10,
+          actionCd: 0,
           order: -10,
           actionMaximum: 1,
           resetMatch: 'match',
@@ -103,7 +102,7 @@ export default defineGkdApp({
           matches: [
             '(Image[text="ACIM_20250725000139_20250725155808212"] <<n View + View > View[index=1] Image[text="立即领取"]) || (Image[text="ACIM_20250725000139_20250725155808212"] < View < View < View + View > View[index=1] > View > Image[clickable=false][visibleToUser=true || visibleToUser=false][text="立即领取"])',
           ],
-          actionCd: 100,
+          actionCd: 0,
           actionMaximum: 1,
           resetMatch: 'match',
           activityIds: [
@@ -119,8 +118,7 @@ export default defineGkdApp({
       rules: [
         {
           resetMatch: 'match',
-          actionCd: 0,
-          actionMaximum: 1,
+          actionMaximum: 2,
           activityIds: 'com.bankcomm.module.biz.webcontainer.BCMHtml5Activity',
           matches:
             'Image[text="ACIM_20260611000178_20260611152611360"] < View < View < View + View > View > View > View > Image[text="立即领取"]',
@@ -136,7 +134,6 @@ export default defineGkdApp({
           matches: [
             '[text="ACIM_20250901000022_20250901111730286"] <<n * + * > *[index=2] >n [text="立即领取"]',
           ],
-          actionCd: 0,
           actionMaximum: 1,
           resetMatch: 'match',
           activityIds: [
@@ -154,7 +151,6 @@ export default defineGkdApp({
           matches: [
             '[text="ACIM_20250530000096_20250530170818619"] <<n * + * > *[index=2] [text="立即领取"]',
           ],
-          actionCd: 0,
           actionMaximum: 1,
           resetMatch: 'match',
           activityIds: [
@@ -172,7 +168,6 @@ export default defineGkdApp({
           matches: [
             '[text="ACIM_20251027000174_20251027163532007"] <<n * + * > *[index=1] [text="立即领取"]',
           ],
-          actionCd: 0,
           actionMaximum: 1,
           resetMatch: 'match',
           activityIds: [
@@ -190,7 +185,6 @@ export default defineGkdApp({
           matches: [
             '[text="ACIM_20260206000011_20260206101205385"] <<n * + * > *[index=2] [text="立即领取"]',
           ],
-          actionCd: 0,
           actionMaximum: 1,
           resetMatch: 'match',
           activityIds: [
@@ -207,7 +201,6 @@ export default defineGkdApp({
         {
           actionMaximum: 1,
           resetMatch: 'match',
-          actionCd: 0,
           activityIds: 'com.bankcomm.module.biz.webcontainer.BCMHtml5Activity',
           matches:
             'Image[text="ACIM_20260302000116_20260302113642643"] <<3 View + View > View[index=1] > View > Image[text="立即领取"][clickable=false]',
@@ -235,7 +228,6 @@ export default defineGkdApp({
       desc: '260403，增加服务器在忙，上限',
       rules: [
         {
-          actionCd: 100,
           resetMatch: 'match',
           activityIds: 'com.bankcomm.module.biz.webcontainer.BCMHtml5Activity',
           matches:
@@ -250,7 +242,6 @@ export default defineGkdApp({
       rules: [
         {
           matches: ['[text*="每日限量，10点更新库存"] + * > [text="立即领取"]'],
-          actionCd: 0,
           resetMatch: 'match',
           activityIds: [
             'com.bankcomm.module.biz.webcontainer.BCMHtml5Activity',
@@ -268,7 +259,6 @@ export default defineGkdApp({
           matches: [
             '[text*="券每日限量，10点更新库存"] + * > [text="周期已领完"]',
           ],
-          actionCd: 0,
           resetMatch: 'match',
           activityIds: [
             'com.bankcomm.module.biz.webcontainer.BCMHtml5Activity',
@@ -579,8 +569,7 @@ export default defineGkdApp({
       rules: [
         {
           resetMatch: 'match',
-          actionCd: 0,
-          actionMaximum: 1,
+          actionMaximum: 2,
           activityIds: 'com.unionpay.cordova.UPActivityWeb',
           matches: '[text="￥ 0.01"] + [text="预估到手价"] + [text="立即抢购"]',
         },
@@ -596,7 +585,6 @@ export default defineGkdApp({
           matches: [
             '[text="￥ 0.01"] + [text="预估到手价"] + [text^="达到限购次数" || text="已抢光"]',
           ],
-          actionCd: 200,
           resetMatch: 'match',
           activityIds: ['com.unionpay.cordova.UPActivityWeb'],
         },
@@ -609,7 +597,6 @@ export default defineGkdApp({
       rules: [
         {
           resetMatch: 'match',
-          actionCd: 0,
           activityIds: 'com.unionpay.cordova.UPActivityWeb',
           matches:
             'View > TextView[text="￥ 0.01"] + TextView[text="预估到手价"] + TextView[text="立即抢购"]',

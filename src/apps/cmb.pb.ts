@@ -74,6 +74,7 @@ export default defineGkdApp({
       rules: [
         {
           action: 'back',
+          matchTime: 1000,
           matches:
             '[text="（周三5折）必胜客50元代金券" || text="（周三5折）肯德基20元代金券" || text="（周三5折）喜茶20元代金券" || text="（周三5折）哈根达斯50元代金券"] +n * > [text*="卖光了"]',
           actionCdKey: 1,
@@ -89,7 +90,6 @@ export default defineGkdApp({
       rules: [
         {
           resetMatch: 'match',
-          actionCd: 0,
           action: 'clickCenter',
           activityIds:
             'cmb.pb.app.h5container.webviewcontainer.PBWebContainerActivity',
@@ -138,7 +138,6 @@ export default defineGkdApp({
           preKeys: [8],
           action: 'clickCenter',
           resetMatch: 'match',
-          actionCd: 0,
           activityIds:
             'cmb.pb.app.h5container.webviewcontainer.PBWebContainerActivity',
           matches:
@@ -154,7 +153,6 @@ export default defineGkdApp({
         {
           order: -1,
           action: 'back',
-          actionCd: 0,
           resetMatch: 'match',
           activityIds:
             'cmb.pb.app.h5container.webviewcontainer.PBWebContainerActivity',
@@ -170,7 +168,7 @@ export default defineGkdApp({
         {
           resetMatch: 'match',
           action: 'clickCenter',
-          actionCd: 0,
+          matchTime: 1000,
           matches:
             '(WebView > View > View > View > Button[clickable=true][visibleToUser=true][text="去加自选"]) || (WebView > View > View > View > Button[clickable=true][visibleToUser=true][text="加自选"]) || (WebView > View > View > View > View > Button[clickable=true][visibleToUser=true][text="加自选"])',
           activityIds:
@@ -186,6 +184,7 @@ export default defineGkdApp({
         {
           action: 'clickCenter',
           actionCd: 0,
+          matchTime: 1000,
           actionMaximum: 1,
           resetMatch: 'match',
           activityIds:
@@ -203,6 +202,7 @@ export default defineGkdApp({
         {
           resetMatch: 'match',
           action: 'click',
+          matchTime: 1000,
           actionCd: 0,
           actionMaximum: 1,
           activityIds:
@@ -218,7 +218,6 @@ export default defineGkdApp({
       desc: '260601',
       rules: [
         {
-          actionCd: 0,
           resetMatch: 'match',
           activityIds:
             'cmb.pb.app.h5container.webviewcontainer.PBWebContainerActivity',
@@ -235,7 +234,6 @@ export default defineGkdApp({
         {
           matches:
             '[vid="ll_dialgo_app_gray_bg"] [vid="btn_positive"][text="我知道了"]',
-          actionCdKey: 1,
           fastQuery: true,
           resetMatch: 'match',
           activityIds:
@@ -250,7 +248,6 @@ export default defineGkdApp({
       rules: [
         {
           resetMatch: 'match',
-          actionCd: 0,
           actionMaximum: 1,
           action: 'click',
           activityIds:
@@ -270,7 +267,7 @@ export default defineGkdApp({
             '([text="分享指定文章"] +n [text="去分享"]) || ([text="分享招财号文章"] +n * > [text="去分享"])',
           ],
           action: 'clickCenter',
-          actionCdKey: 1,
+          matchTime: 1000,
           resetMatch: 'match',
           activityIds:
             'cmb.pb.app.h5container.webviewcontainer.PBWebContainerActivity',
@@ -284,7 +281,7 @@ export default defineGkdApp({
       rules: [
         {
           resetMatch: 'match',
-          actionCd: 0,
+          matchTime: 1000,
           actionMaximum: 1,
           action: 'clickCenter',
           activityIds:
@@ -301,7 +298,6 @@ export default defineGkdApp({
       rules: [
         {
           resetMatch: 'match',
-          actionCd: 0,
           actionMaximum: 1,
           action: 'click',
           activityIds:
@@ -319,7 +315,6 @@ export default defineGkdApp({
         {
           resetMatch: 'match',
           action: 'clickCenter',
-          actionCd: 100,
           activityIds:
             'cmb.pb.app.h5container.webviewcontainer.PBWebContainerActivity',
           matches:
@@ -333,7 +328,7 @@ export default defineGkdApp({
       desc: '260717，一键提现，确认提现到账户',
       rules: [
         {
-          actionCd: 0,
+          matchTime: 1500,
           resetMatch: 'match',
           action: 'clickCenter',
           activityIds:
@@ -351,6 +346,7 @@ export default defineGkdApp({
         {
           resetMatch: 'match',
           action: 'clickCenter',
+          matchTime: 1000,
           actionCd: 0,
           activityIds:
             'cmb.pb.app.h5container.webviewcontainer.PBWebContainerActivity',
@@ -366,7 +362,7 @@ export default defineGkdApp({
       rules: [
         {
           action: 'clickCenter',
-          actionCd: 0,
+          matchTime: 1000,
           resetMatch: 'match',
           activityIds:
             'cmb.pb.app.h5container.webviewcontainer.PBWebContainerActivity',
@@ -383,7 +379,7 @@ export default defineGkdApp({
         {
           matches:
             '[text="确定不再关注？"] < * + [text="取消"] + [text="确定"]',
-          actionCdKey: 1,
+          matchTime: 1000,
           resetMatch: 'match',
           activityIds:
             'cmb.pb.app.h5container.webviewcontainer.PBWebContainerActivity',
@@ -462,7 +458,7 @@ export default defineGkdApp({
         {
           resetMatch: 'match',
           action: 'clickCenter',
-          actionCdKey: 1,
+          matchTime: 1000,
           activityIds:
             'cmb.pb.app.h5container.webviewcontainer.PBWebContainerActivity',
           matches: '([text$="定投确认"] < * +n [text="确认继续定投"])',
@@ -476,7 +472,7 @@ export default defineGkdApp({
       rules: [
         {
           action: 'clickCenter',
-          actionCdKey: 1,
+          matchTime: 1000,
           resetMatch: 'match',
           activityIds:
             'cmb.pb.app.h5container.webviewcontainer.PBWebContainerActivity',
@@ -494,6 +490,7 @@ export default defineGkdApp({
           activityIds:
             'cmb.pb.app.h5container.webviewcontainer.PBWebContainerActivity',
           actionMaximum: 1,
+          matchTime: 1000,
           resetMatch: 'match',
           matches: '@*[clickable=true][checked=false] + [text="全选"]',
         },
@@ -508,6 +505,7 @@ export default defineGkdApp({
           resetMatch: 'match',
           preKeys: [31],
           actionMaximum: 1,
+          matchTime: 1000,
           activityIds:
             'cmb.pb.app.h5container.webviewcontainer.PBWebContainerActivity',
           matches: '[text="全选"] + * > [text^="删除(" && text$=") "]',
@@ -520,6 +518,7 @@ export default defineGkdApp({
       desc: '260424',
       rules: [
         {
+          matchTime: 1000,
           resetMatch: 'match',
           actionMaximum: 1,
           preKeys: [32],
@@ -535,6 +534,7 @@ export default defineGkdApp({
       desc: '260424',
       rules: [
         {
+          matchTime: 1000,
           resetMatch: 'match',
           actionMaximum: 1,
           preKeys: [33],
@@ -550,7 +550,6 @@ export default defineGkdApp({
       desc: '251120，动态text',
       rules: [
         {
-          actionCd: 0,
           matches:
             '([text$="秒后关闭"] +n @TextView + [text="广告"]) || ([vid="alertTitle"] +n * > [vid="buttonNegative"][text="拒绝"]) || ([text="1762179375715243693"] + Image)',
           resetMatch: 'match',
@@ -567,7 +566,7 @@ export default defineGkdApp({
         {
           matches:
             '[text="（周三5折）必胜客50元代金券"] +n * > [text*="立即抢购"]',
-          actionCd: 0,
+          actionCdKey: 1,
           resetMatch: 'match',
           activityIds:
             'cmb.pb.app.h5container.webviewcontainer.PBWebContainerActivity',
@@ -582,7 +581,7 @@ export default defineGkdApp({
         {
           matches:
             '[text="（周三5折）喜茶20元代金券"] +n * > [text*="立即抢购"]',
-          actionCd: 0,
+          actionCdKey: 1,
           resetMatch: 'match',
           activityIds:
             'cmb.pb.app.h5container.webviewcontainer.PBWebContainerActivity',
@@ -597,7 +596,7 @@ export default defineGkdApp({
         {
           matches:
             '[text="（周三5折）肯德基20元代金券"] +n * > [text*="立即抢购"]',
-          actionCd: 0,
+          actionCdKey: 1,
           resetMatch: 'match',
           activityIds:
             'cmb.pb.app.h5container.webviewcontainer.PBWebContainerActivity',
@@ -610,7 +609,7 @@ export default defineGkdApp({
       desc: 'D',
       rules: [
         {
-          actionCd: 0,
+          actionCdKey: 1,
           matches:
             '[text="（周三5折）哈根达斯50元代金券"] +n * > [text*="立即抢购"]',
           resetMatch: 'match',
@@ -625,7 +624,7 @@ export default defineGkdApp({
       desc: 'D',
       rules: [
         {
-          actionCd: 0,
+          actionCdKey: 1,
           matches: '[text="（周三5折）必胜客50元代金券"] +6 [text*="立即抢购"]',
           resetMatch: 'match',
           activityIds:
@@ -640,7 +639,6 @@ export default defineGkdApp({
       rules: [
         {
           matches: '[text="（周三5折）喜茶20元代金券"] +6 [text*="立即抢购"]',
-          actionCd: 0,
           actionCdKey: 1,
           resetMatch: 'match',
           activityIds:
@@ -685,7 +683,7 @@ export default defineGkdApp({
       rules: [
         {
           resetMatch: 'match',
-          actionCd: 0,
+          matchTime: 1000,
           fastQuery: true,
           matches: '[vid="title"][text="开启消息通知"] + [vid="close_btn"]',
           activityIds: [
@@ -702,7 +700,7 @@ export default defineGkdApp({
       rules: [
         {
           resetMatch: 'match',
-          actionCd: 0,
+          matchTime: 1000,
           actionMaximum: 1,
           action: 'click',
           activityIds: 'com.pb.livestream.NewLiveStreamListActivity',

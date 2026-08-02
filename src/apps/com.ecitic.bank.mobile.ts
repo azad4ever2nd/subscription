@@ -53,6 +53,7 @@ export default defineGkdApp({
       rules: [
         {
           resetMatch: 'match',
+          matchTime: 1000,
           activityIds: [
             'com.ecitic.bank.mobile.ui.MainActivity',
             'com.ecitic.bank.mobile.ui.webview.CordovaWebViewActivity',
@@ -99,7 +100,7 @@ export default defineGkdApp({
       rules: [
         {
           resetMatch: 'match',
-          actionCd: 0,
+          matchTime: 1000,
           activityIds:
             'com.ecitic.bank.mobile.ui.webview.CordovaExternalWebViewActivity',
           matches:
@@ -113,6 +114,7 @@ export default defineGkdApp({
       desc: '251208，D',
       rules: [
         {
+          matchTime: 1000,
           matches: ['Dialog [text="close"]'],
           resetMatch: 'match',
           activityIds: ['com.citic.jk.activity.H5ContainerAty'],

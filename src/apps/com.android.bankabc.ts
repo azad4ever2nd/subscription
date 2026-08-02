@@ -11,7 +11,6 @@ export default defineGkdApp({
       rules: [
         {
           resetMatch: 'match',
-          actionCd: 0,
           fastQuery: true,
           activityIds: 'com.android.bankabc.MainActivity',
           matches:
@@ -27,7 +26,6 @@ export default defineGkdApp({
         {
           resetMatch: 'match',
           fastQuery: true,
-          actionCd: 0,
           activityIds: 'com.android.bankabc.MainActivity',
           matches:
             '([vid="tv_title"][text*="位置"] +3 * [vid="tv_cancel"][text="取消"]) || (LinearLayout > TextView[vid="tv_title"][text="允许获取位置信息"] +n LinearLayout > TextView[vid="tv_cancel"][clickable=true][visibleToUser=true][text="取消"])',
@@ -111,7 +109,6 @@ export default defineGkdApp({
       rules: [
         {
           resetMatch: 'match',
-          actionCd: 0,
           action: 'clickCenter',
           activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
           matches:

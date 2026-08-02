@@ -10,7 +10,6 @@ export default defineGkdApp({
       rules: [
         {
           resetMatch: 'match',
-          actionCd: 0,
           activityIds: 'tool.seagull.v.ui.MainActivity',
           matches:
             'LinearLayout > Button[clickable=true][visibleToUser=true][text="立刻出发！"]',
@@ -79,7 +78,6 @@ export default defineGkdApp({
       rules: [
         {
           resetMatch: 'match',
-          actionCd: 0,
           activityIds: 'tool.seagull.v.ui.MainActivity',
           matches:
             'ImageView[vid="vpnSwitchButton"] +n ScrollView > FrameLayout > FrameLayout > FrameLayout > FrameLayout > FrameLayout > FrameLayout[childCount=1] > View',
@@ -224,7 +222,6 @@ export default defineGkdApp({
       rules: [
         {
           resetMatch: 'match',
-          actionCd: 0,
           fastQuery: true,
           activityIds: 'tool.seagull.v.ui.MainActivity',
           matches:
@@ -253,7 +250,6 @@ export default defineGkdApp({
         {
           fastQuery: true,
           resetMatch: 'match',
-          actionCd: 100,
           activityIds: 'com.windmill.sdk.widget.InterstitialView_4012003',
           matches:
             '(@*[clickable=true] > [text="关闭"]) || (@*[clickable=true] > [vid="tobid_interstitial_skip_text"][text="关闭"]) || (@[vid="tobid_interstitial_skip_ll"][clickable=true] > [text="关闭"])',
@@ -332,7 +328,6 @@ export default defineGkdApp({
       rules: [
         {
           resetMatch: 'match',
-          actionCd: 0,
           action: 'clickCenter',
           activityIds: 'com.qq.e.ads.PortraitADActivity',
           matches:

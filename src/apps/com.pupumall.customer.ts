@@ -11,6 +11,7 @@ export default defineGkdApp({
         {
           resetMatch: 'match',
           fastQuery: true,
+          matchTime: 1000,
           activityIds: 'com.pupumall.customer.activity.SplashActivity',
           matches:
             '([vid="tv_update_now"][text="立即更新"] <<n * + [vid="iv_close"]) || (FrameLayout > LinearLayout > FrameLayout > LinearLayout > @ImageView[clickable=true][visibleToUser=true][vid="iv_close"] - ViewGroup > TextView[vid="tv_upgrade_now"][text="立即更新"])',
@@ -27,6 +28,7 @@ export default defineGkdApp({
             '([vid="iv_ad"] + [vid="iv_close"]) || ([vid="tv_title"][text="尚未开启系统通知"] +n [vid="btn_close"][text="跳过"]) || ([id="app"] [text^="此图片未加标签"]) || ([id="J-webglCanvas"] - View >2 Image) ',
           ],
           fastQuery: true,
+          matchTime: 1000,
           resetMatch: 'match',
           activityIds: ['com.pupumall.customer.activity.SplashActivity'],
         },
@@ -40,6 +42,7 @@ export default defineGkdApp({
         {
           matches: ['[vid="iv_ad"] + [vid="iv_close"]'],
           fastQuery: true,
+          matchTime: 1000,
           resetMatch: 'match',
           activityIds: ['com.pupumall.customer.activity.SplashActivity'],
         },
@@ -53,6 +56,7 @@ export default defineGkdApp({
         {
           matches: ['[text="残忍离开"]'],
           resetMatch: 'match',
+          matchTime: 1000,
           activityIds: ['com.pupumall.webview.page.PuPuWebViewActivity'],
         },
       ],

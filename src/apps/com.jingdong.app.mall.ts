@@ -9,8 +9,9 @@ export default defineGkdApp({
       desc: '260615',
       rules: [
         {
-          matchDelay: 1500,
+          matchDelay: 500,
           actionMaximum: 2,
+          matchTime: 1000,
           resetMatch: 'match',
           activityIds: 'com.jd.lib.ttt.page.TTTMultiPageActivity',
           matches:
@@ -65,7 +66,7 @@ export default defineGkdApp({
       rules: [
         {
           resetMatch: 'match',
-          actionCd: 0,
+          matchTime: 1000,
           activityIds: 'com.jd.lib.ttt.page.TTTMultiPageActivity',
           matches:
             '(@TextView - View > [text="¥"] + [text="4.90"] + [text="黑五价"]) || (View[childCount=2] > View[childCount=3] > View[childCount=7] + @TextView[clickable=true] + TextView)',
@@ -195,7 +196,7 @@ export default defineGkdApp({
       rules: [
         {
           resetMatch: 'match',
-          actionCd: 0,
+          actionCd: 100,
           action: 'clickCenter',
           activityIds: 'com.jd.lib.ordercenter.taro.OrderListActivityTaro',
           matches:
@@ -210,7 +211,6 @@ export default defineGkdApp({
       rules: [
         {
           resetMatch: 'match',
-          actionCd: 0,
           activityIds: 'com.jingdong.app.mall.MainFrameActivity',
           matches:
             'Button[text="去开启通知"] <n LinearLayout + ImageView[desc="关闭"]',

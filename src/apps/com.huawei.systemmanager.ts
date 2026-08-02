@@ -30,7 +30,7 @@ export default defineGkdApp({
           matches: [
             '[id="android:id/alertTitle"][text="手动管理"] <<n * +n * [id="android:id/button1"][text="确定"]',
           ],
-          actionDelay: 20000,
+          actionDelay: 2000,
           fastQuery: true,
           resetMatch: 'match',
           activityIds: [

@@ -9,7 +9,8 @@ export default defineGkdApp({
       desc: '260705,添加首页签到成功, ([text="签到成功"] < * + TextView) || (@[text="知道了"] <n * + TextView) ||',
       rules: [
         {
-          actionCd: 0,
+          matchTime: 1000,
+          actionCd: 100,
           resetMatch: 'match',
           activityIds: 'com.ccb.longjiLife.MainActivity',
           matches:
@@ -113,6 +114,7 @@ export default defineGkdApp({
         {
           resetMatch: 'match',
           actionMaximum: 1,
+          matchTime: 1000,
           activityIds: 'com.ccb.cloudmerchant.view.WebViewActivity',
           matches:
             'WebView[text="低碳生活"] > View > View > Image[clickable=false][visibleToUser=true][text="oneKey"]',

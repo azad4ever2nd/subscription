@@ -12,7 +12,8 @@ export default defineGkdApp({
         {
           action: 'clickCenter',
           resetMatch: 'match',
-          actionCd: 100,
+          matchDelay: 500,
+          matchTime: 1000,
           activityIds: 'com.google.android.gms.ads.AdActivity',
           matches:
             '(@[id="close-button"] > [text="关闭广告并继续打开应用" || text="继续使用应用"] + View) || ([text="Close" || text="关闭"][clickable=true])',
@@ -26,7 +27,6 @@ export default defineGkdApp({
       rules: [
         {
           resetMatch: 'match',
-          actionCd: 100,
           fastQuery: true,
           activityIds: 'com.content.magnetsearch.ui.MainActivity',
           matches:

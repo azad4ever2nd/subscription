@@ -13,7 +13,7 @@ export default defineGkdApp({
           matches: ['[text="广告"] + Image + Image'],
           actionMaximum: 1,
           resetMatch: 'match',
-          activityIds: ['com.sinovatech.unicom.basic.ui.activity.MainActivity'],
+          activityIds: 'com.sinovatech.unicom.basic.ui.activity.MainActivity',
         },
       ],
     },
@@ -40,7 +40,7 @@ export default defineGkdApp({
           matches: ['[text="确认要离开收银台？"] +n * > [text="确认离开"]'],
           fastQuery: true,
           resetMatch: 'match',
-          activityIds: ['com.unicom.pay.normal.order.ui.WPOrderActivity'],
+          activityIds: 'com.unicom.pay.normal.order.ui.WPOrderActivity',
         },
       ],
     },
@@ -53,7 +53,7 @@ export default defineGkdApp({
           matches: ['@[text="放弃优惠"] +n [text="享受优惠"]'],
           fastQuery: true,
           resetMatch: 'match',
-          activityIds: ['com.unicom.pay.normal.order.ui.WPOrderActivity'],
+          activityIds: 'com.unicom.pay.normal.order.ui.WPOrderActivity',
         },
       ],
     },
@@ -66,7 +66,7 @@ export default defineGkdApp({
           matches: ['[vid="wopay_pay_result_confirm_btn"][text="完成"]'],
           fastQuery: true,
           resetMatch: 'match',
-          activityIds: ['com.unicom.pay.modules.result.ui.WPPayResultActivity'],
+          activityIds: 'com.unicom.pay.modules.result.ui.WPPayResultActivity',
         },
       ],
     },
@@ -79,12 +79,10 @@ export default defineGkdApp({
           matches: [
             '[vid="webdetail_title_textview"][text="交费完成"] < * + * > [vid="web_close"][desc="退出"]',
           ],
-          actionCd: 0,
           fastQuery: true,
           resetMatch: 'match',
-          activityIds: [
+          activityIds:
             'com.sinovatech.unicom.basic.ui.activity.WebDetailActivity',
-          ],
         },
       ],
     },
@@ -96,9 +94,8 @@ export default defineGkdApp({
         {
           matches: ['[text="50元话费券"] +n * > [text="立即抢"]'],
           resetMatch: 'match',
-          activityIds: [
+          activityIds:
             'com.sinovatech.unicom.basic.ui.activity.WebDetailActivity',
-          ],
         },
       ],
     },
@@ -112,9 +109,8 @@ export default defineGkdApp({
             '[text*="签到成功" || text*="继续做任务"] +n [text="X8DC9OwtmT2bwAAAABJRU5ErkJggg=="]',
           ],
           resetMatch: 'match',
-          activityIds: [
+          activityIds:
             'com.sinovatech.unicom.basic.ui.activity.WebDetailActivity',
-          ],
         },
       ],
     },
@@ -126,9 +122,8 @@ export default defineGkdApp({
         {
           matches: ['[text="b6RVEJpvijzQgAAAABJRU5ErkJggg=="]'],
           resetMatch: 'match',
-          activityIds: [
+          activityIds:
             'com.sinovatech.unicom.basic.ui.activity.WebDetailActivity',
-          ],
         },
       ],
     },
@@ -142,9 +137,8 @@ export default defineGkdApp({
           matches: ['@* > [text="close.8ce8930c"]'],
           actionDelay: 1000,
           resetMatch: 'match',
-          activityIds: [
+          activityIds:
             'com.sinovatech.unicom.basic.ui.activity.WebDetailActivity',
-          ],
         },
       ],
     },

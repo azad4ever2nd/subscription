@@ -37,11 +37,11 @@ export default defineGkdApp({
     {
       key: 3,
       name: '哔哩哔哩扫码登录，确认',
-      desc: '260528',
+      desc: '260528，依赖 请选择适合的登录选项',
       rules: [
         {
           resetMatch: 'match',
-          preKeys: [6],
+          preKeys: [2],
           activityIds: 'tv.danmaku.bili.ui.webview.MWebActivity',
           matches:
             '[text="哔哩哔哩扫码登录"] <<n * +n [text="确认"][clickable=true][visibleToUser=true]',

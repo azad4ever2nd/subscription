@@ -25,7 +25,6 @@ export default defineGkdApp({
         {
           fastQuery: true,
           resetMatch: 'match',
-          actionCd: 0,
           activityIds: 'com.mc10086.cmcc.view.tabs.AppTabFragment',
           matches:
             '(@[text="暂不更新"] + [text="立即体验"]) || (LinearLayout > @Button[vid="dialog_btn1"][clickable=true][text="暂不更新"] + Button[vid="dialog_btn2"][visibleToUser=true][text="立即体验"])',
@@ -67,7 +66,6 @@ export default defineGkdApp({
         {
           resetMatch: 'match',
           matches: ['[text="恭喜您获得"] +3 [text="开心收下"] + TextView'],
-
           activityIds: ['com.cmccit.webview.ac.CommonHtml5Activity'],
         },
       ],
@@ -91,7 +89,6 @@ export default defineGkdApp({
       desc: '260304，添加兑换中，签到成功领奖',
       rules: [
         {
-          actionCd: 0,
           resetMatch: 'match',
           matches: [
             '([text="兑换成功"] + Image) || (@* +2 * > [text="恭喜获得"]) || ([text="兑换中"] < * +n [text="我知道了"])',
@@ -107,7 +104,6 @@ export default defineGkdApp({
       rules: [
         {
           resetMatch: 'match',
-          actionCd: 0,
           activityIds: 'com.cmccit.webview.ac.CommonHtml5Activity',
           matches:
             '[text="累计签到奖励"] +n [text="去使用"] + *[clickable=true]',
