@@ -12,7 +12,7 @@ export default defineGkdApp({
         {
           matches: ['[vid="rvMarketing"] +2 [vid="ivCloseCur"]'],
           fastQuery: true,
-          activityIds: ['com.yt.hxmb50.mainpages.ui.main.MainActivity'],
+          activityIds: 'com.yt.hxmb50.mainpages.ui.main.MainActivity',
         },
       ],
     },
@@ -73,6 +73,25 @@ export default defineGkdApp({
           activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
           matches:
             '([text="活动太火爆了，请稍后再试！"] + * > [text="知道了"]) || (Dialog > View[text*="活动太火爆了" || text*="权益已被抢完"] + View > Button[clickable=true][visibleToUser=true][text*="知道了"])',
+        },
+      ],
+    },
+    {
+      id: 'com.hxb.mobile.client',
+      name: '华夏银行',
+      groups: [
+        {
+          key: 6,
+          name: '签到成功，返回 或 X掉 ',
+          desc: '260803',
+          rules: [
+            {
+              resetMatch: 'match',
+              activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
+              matches:
+                'WebView > View > View > View > View > View[text*="签到成功"] +n View[clickable=true][text="返回"] + @View[clickable=true] > Image',
+            },
+          ],
         },
       ],
     },

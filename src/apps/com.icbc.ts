@@ -78,7 +78,7 @@ export default defineGkdApp({
           actionMaximum: 3,
           activityIds: 'com.icbc.activity.web.ICBCWebView',
           matches:
-            '([text="商品已领完"]) || ([text="已领完"]) || ([text="商品已抢完"] + [text="我知道了"])',
+            '([text="商品已领完"]) || ([text="已领完"]) || ([text="商品已抢完"] + [text="我知道了"]) || (WebView > View > TextView[text="商品已抢完"] + Button[clickable=true][visibleToUser=true][text="我知道了"])',
         },
       ],
     },

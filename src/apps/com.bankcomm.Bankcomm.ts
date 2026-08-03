@@ -311,7 +311,8 @@ export default defineGkdApp({
         {
           resetMatch: 'match',
           activityIds: 'com.bankcomm.module.biz.webcontainer.BCMHtml5Activity',
-          matches: '[text="感谢您的订阅"] <<n * + * > [text="知道了"]',
+          matches:
+            '([text="感谢您的订阅"] <<n * + * > [text="知道了"]) || (TextView[text*="订阅"] <n View < View + View > @Button[clickable=true][visibleToUser=true][text="知道了"] + Button[text="去查看"])',
         },
       ],
     },

@@ -20,7 +20,7 @@ export default defineGkdApp({
     {
       key: 2,
       name: '收藏基金',
-      desc: '260130',
+      desc: '260803',
       rules: [
         {
           matches:

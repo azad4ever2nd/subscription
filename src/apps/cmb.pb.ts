@@ -362,12 +362,13 @@ export default defineGkdApp({
       rules: [
         {
           action: 'clickCenter',
-          matchTime: 1000,
           resetMatch: 'match',
+          actionMaximum: 4,
+          actionCd: 800,
           activityIds:
             'cmb.pb.app.h5container.webviewcontainer.PBWebContainerActivity',
           matches:
-            '(Button[text="管理"]) || ([text="修改"] + [text="暂停"] + [text="终止"]) || ([text="确定终止该定投计划吗？"] +n * > [text="确定"])',
+            '(Button[text="管理"]) || (View > Button[text="修改"] + Button[text="暂停"] + Button[clickable=true][visibleToUser=true][text="终止"]) || ([text="确定终止该定投计划吗？"] +n * > [text="确定"])',
         },
       ],
     },

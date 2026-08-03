@@ -85,12 +85,12 @@ export default defineGkdApp({
     {
       key: 7,
       name: '每日/每月限购',
-      desc: '260801',
+      desc: '260803',
       rules: [
         {
           fastQuery: true,
           resetMatch: 'match',
-          action: 'back',
+          actionCd: 0,
           activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
           matches:
             '([vid="dialog_content"][text*="仅可购买1张" || text^="每个用户每月仅可购买2张" || text^="每个用户每日仅可购买1张" ] <<n * +n * > [vid="dialog_button_negative"][text="取消"]) || (TextView[vid="dialog_content"][text*="仅可购买1张" || text^="每个用户每月仅可购买2张" || text^="每个用户每日仅可购买1张" ] < ScrollView +n LinearLayout > @TextView[vid="dialog_button_negative"][clickable=true][visibleToUser=true][text="取消"] +2 TextView[text="查看订单"])',
