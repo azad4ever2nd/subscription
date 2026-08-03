@@ -44,7 +44,8 @@ export default defineGkdApp({
         {
           resetMatch: 'match',
           actionCd: 0,
-          actionMaximum: 100,
+          actionMaximum: 300,
+          action: 'clickCenter',
           activityIds: 'com.icbc.activity.web.ICBCWebView',
           matches:
             '([id="app"] > [id="viewWrapper"] >n [text=" 立即领取"]) || ([text="详情"] + * + [text$="元优惠券"] + Button[text*="立即领取"]) || (View > TextView[text*="优惠券"] +n Button[clickable=true][visibleToUser=true][text="立即领取"])',
@@ -59,6 +60,7 @@ export default defineGkdApp({
         {
           resetMatch: 'match',
           actionCdKey: 2,
+          action: 'clickCenter',
           activityIds: 'com.icbc.activity.web.ICBCWebView',
           matches:
             '([text*="活动太火爆，请稍后再试"] + [text="我知道了"]) || ([text="刷新重试"]) || (View > TextView[text*="最大参与次数" || text*="活动太火爆" || text$="请稍后再试"] + Button[clickable=true][visibleToUser=true][text="我知道了"])',
@@ -72,10 +74,11 @@ export default defineGkdApp({
       rules: [
         {
           resetMatch: 'match',
-          action: 'back',
+          action: 'clickCenter',
+          actionMaximum: 3,
           activityIds: 'com.icbc.activity.web.ICBCWebView',
           matches:
-            '([text="商品已抢完"] + [text="我知道了"]) || ([text="商品已领完"]) || ([text="已领完"])',
+            '([text="商品已领完"]) || ([text="已领完"]) || ([text="商品已抢完"] + [text="我知道了"])',
         },
       ],
     },

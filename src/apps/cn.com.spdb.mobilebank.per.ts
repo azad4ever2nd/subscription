@@ -23,7 +23,8 @@ export default defineGkdApp({
       desc: '260130',
       rules: [
         {
-          matches: ['@View > [text="收藏"]'],
+          matches:
+            '(TextView[text="收藏"] - Image < @View[clickable=false][visibleToUser=true] <2 View + View > Button[text="定投"] + Button[text="购买"])',
           resetMatch: 'match',
           activityIds:
             'cn.com.spdb.mobilebank.per.activity.web.stage.StageCommonWebActivity',
@@ -69,6 +70,20 @@ export default defineGkdApp({
           resetMatch: 'match',
           activityIds:
             'cn.com.spdb.mobilebank.per.activity.web.stage.StageOutLinkActivity',
+        },
+      ],
+    },
+    {
+      key: 6,
+      name: '取消关注，确定',
+      desc: '260803',
+      rules: [
+        {
+          resetMatch: 'match',
+          activityIds:
+            'cn.com.spdb.mobilebank.per.activity.web.stage.StageCommonWebActivity',
+          matches:
+            'WebView > View > View > View[text*="确定取消关注"] > View > View > View > Button[clickable=true][visibleToUser=true][text="确定"]',
         },
       ],
     },

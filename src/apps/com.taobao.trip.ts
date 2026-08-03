@@ -22,15 +22,16 @@ export default defineGkdApp({
     {
       key: 2,
       name: '签到成功',
-      desc: '260704，第一K40，第二nova7，两台手机而成不同，改布局，漏签，动态，只能通过关键信息',
+      desc: '260704，第一K40，第二nova7，两台手机而成不同，改布局，漏签，动态，只能通过关键信息 (@*[clickable=true][visibleToUser=true] + [text^="已连签" && text$="累计获得"] +n [text="里程"]) || (@*[clickable=true][visibleToUser=true] + [text="连签"] +2 [text="日可领"] +2 [text="里程"]) || ',
       rules: [
         {
           actionMaximum: 1,
           resetMatch: 'match',
           action: 'clickCenter',
+          matchRoot: true,
           activityIds: 'fliggyx.android.unicorn.ActWebviewActivity',
           matches:
-            '(@*[clickable=true][visibleToUser=true] + [text^="已连签" && text$="累计获得"] +n [text="里程"]) || (@*[clickable=true][visibleToUser=true] + [text="连签"] +2 [text="日可领"] +2 [text="里程"]) || (View > View > @TextView[clickable=true][visibleToUser=true] + TextView[text="连签"] + TextView + TextView[text="日可领"]) || (View > View > @TextView[clickable=true][visibleToUser=true] + TextView[text^="已连签"] + TextView[text*="保持连签"]) || (View > View > View > View > @TextView[clickable=true][visibleToUser=true] + TextView[text*="连签"])',
+            '(View > View > View > View > @TextView[clickable=true][visibleToUser=true] + TextView[text*="连签"]) || (View > View > @TextView[clickable=true][visibleToUser=true] + TextView[text^="已连签"] + TextView[text*="保持连签"])',
         },
       ],
     },

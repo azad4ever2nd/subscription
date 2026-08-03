@@ -10,7 +10,7 @@ export default defineGkdApp({
       desc: '260616',
       rules: [
         {
-          matchTime: 2000,
+          matchTime: 1000,
           activityIds:
             'com.hellobike.flutter.platform.android.flutterboost.FlutterHostFragmentActivity',
           matches:
@@ -100,8 +100,7 @@ export default defineGkdApp({
       rules: [
         {
           fastQuery: true,
-          matchTime: 2000,
-          actionCd: 500,
+          matchTime: 1000,
           resetMatch: 'app',
           actionMaximum: 1,
           activityIds: 'com.hellobike.atlas.business.portal.PortalActivity',
@@ -117,9 +116,8 @@ export default defineGkdApp({
       rules: [
         {
           resetMatch: 'match',
-          matchDelay: 500,
           matchTime: 1000,
-          actionCd: 100,
+          actionCd: 0,
           fastQuery: true,
           activityIds: 'com.hellobike.atlas.business.portal.PortalActivity',
           matches:
@@ -136,7 +134,7 @@ export default defineGkdApp({
           fastQuery: true,
           resetMatch: 'match',
           action: 'clickCenter',
-          matchTime: 2000,
+          matchTime: 1000,
           matchRoot: false,
           activityIds: [
             'com.hellobike.atlas.business.portal.PortalActivity',
@@ -183,7 +181,6 @@ export default defineGkdApp({
           resetMatch: 'match',
           actionMaximum: 1,
           matchRoot: true,
-          matchDelay: 1000,
           matchTime: 1000,
           activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
           matches:
@@ -226,7 +223,6 @@ export default defineGkdApp({
         {
           resetMatch: 'match',
           actionMaximum: 1,
-          matchDelay: 1000,
           matchTime: 1000,
           activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
           matches: '@TextView[clickable=true] +n [text="明日再来"]',
@@ -268,7 +264,6 @@ export default defineGkdApp({
         {
           resetMatch: 'match',
           actionMaximum: 1,
-          matchDelay: 1000,
           matchTime: 1000,
           activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
           matches:
@@ -323,7 +318,6 @@ export default defineGkdApp({
       rules: [
         {
           resetMatch: 'match',
-          matchDelay: 500,
           matchTime: 1000,
           activityIds:
             'com.hellobike.moped.platform.offline.web.OhoRealmWebActivity',
@@ -339,7 +333,6 @@ export default defineGkdApp({
       rules: [
         {
           resetMatch: 'match',
-          matchDelay: 500,
           matchTime: 1000,
           activityIds:
             'com.hellobike.moped.platform.offline.web.OhoRealmWebActivity',

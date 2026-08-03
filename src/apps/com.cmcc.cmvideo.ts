@@ -80,7 +80,7 @@ export default defineGkdApp({
           actionMaximum: 1,
           preKeys: [4],
           matchTime: 1500,
-          actionCd: 3000,
+          actionCd: 0,
           activityIds: [
             'com.quickjs.android.example.RNFragmentActivity',
             'com.cmvideo.capability.remote_web.WebProcessActivity',
@@ -98,7 +98,7 @@ export default defineGkdApp({
         {
           actionMaximum: 1,
           resetMatch: 'match',
-          actionCd: 2000,
+          actionCd: 0,
           preKeys: [5],
           activityIds: [
             'com.quickjs.android.example.RNFragmentActivity',
@@ -112,15 +112,17 @@ export default defineGkdApp({
     {
       key: 7,
       name: '恭喜获得2GB通用流量，好的',
-      desc: '260802，添加 IDS',
+      desc: '260802，各种弹窗，添加 IDS',
       rules: [
         {
           resetMatch: 'match',
+          actionCd: 500,
           activityIds: [
             'com.quickjs.android.example.RNFragmentActivity',
             'com.cmvideo.capability.remote_web.WebProcessActivity',
           ],
-          matches: '(@View > View > View > Image[text="1O7GEIFBFRPLK"])',
+          matches:
+            '(@View > View > View > Image[text="1O7GEIFBFRPLK" || text="1O7GEIFC0TJFP" || text="1O7GE0VC9N7O0"])',
         },
       ],
     },

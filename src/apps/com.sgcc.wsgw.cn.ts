@@ -34,8 +34,8 @@ export default defineGkdApp({
       desc: '260719，添加补签成功[text="知道啦"] < * + * > Image',
       rules: [
         {
-          matchDelay: 1500,
-          matchTime: 1000,
+          matchTime: 1500,
+          actionCd: 0,
           resetMatch: 'match',
           activityIds: [
             'com.sgcc.wsgw.mainbundle.ElectricTitleActivity',
@@ -52,7 +52,6 @@ export default defineGkdApp({
       desc: '260717',
       rules: [
         {
-          matchDelay: 1000,
           matchTime: 1000,
           resetMatch: 'match',
           activityIds: 'com.sgcc.wsgw.mainbundle.ElectricTitleActivity',
@@ -69,8 +68,8 @@ export default defineGkdApp({
         {
           matches: ['[text="签到功能升级公告"] +2 * > Image'],
           fastQuery: true,
-          matchDelay: 1000,
           matchTime: 1000,
+          actionCd: 0,
           resetMatch: 'match',
           activityIds: ['com.sgcc.wsgw.mainbundle.ElectricTitleActivity'],
         },
@@ -137,8 +136,8 @@ export default defineGkdApp({
       rules: [
         {
           resetMatch: 'match',
-          matchDelay: 1000,
           matchTime: 1000,
+          actionCd: 0,
           activityIds: 'com.sgcc.wsgw.rnbundle.activity.MyReactActivity',
           matches: '[text^="本次升级" || text*="更新"] + * > *',
         },
@@ -152,8 +151,8 @@ export default defineGkdApp({
         {
           resetMatch: 'match',
           fastQuery: true,
-          matchDelay: 1000,
           matchTime: 1000,
+          actionCd: 0,
           activityIds: 'com.sgcc.wsgw.rnbundle.activity.MyReactActivity',
           matches:
             'TextView[text*="进行评价"] <2 ViewGroup + ViewGroup > ViewGroup > TextView[text="关闭"]',
