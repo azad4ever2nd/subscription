@@ -77,21 +77,15 @@ export default defineGkdApp({
       ],
     },
     {
-      id: 'com.hxb.mobile.client',
-      name: '华夏银行',
-      groups: [
+      key: 6,
+      name: '签到成功，返回 或 X掉 ',
+      desc: '260803',
+      rules: [
         {
-          key: 6,
-          name: '签到成功，返回 或 X掉 ',
-          desc: '260803',
-          rules: [
-            {
-              resetMatch: 'match',
-              activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
-              matches:
-                'WebView > View > View > View > View > View[text*="签到成功"] +n View[clickable=true][text="返回"] + @View[clickable=true] > Image',
-            },
-          ],
+          resetMatch: 'match',
+          activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
+          matches:
+            'WebView > View > View > View > View > View[text*="签到成功"] +n View[clickable=true][text="返回"] + @View[clickable=true] > Image',
         },
       ],
     },
