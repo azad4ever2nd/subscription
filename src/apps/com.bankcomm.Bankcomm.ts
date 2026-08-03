@@ -499,7 +499,7 @@ export default defineGkdApp({
             'com.bankcomm.module.biz.webcontainer.BCMHtml5Activity',
           ],
           matches:
-            '([id="android:id/message"][text*="权限"] <<n * + [id="android:id/buttonPanel"] [id="android:id/button2"][text="否"] + [id="android:id/button1"][text="是"]) || ([text="Pyi3KQBzgJA1F+Xm7MrWYA0HQqTcq4GrAAAAAASUVORK5CYII="]) || ([text="gthEFTB6uRQ36UPWtwD"]) || ([text="countdown-fulfilled-bg.f65a2ea"])',
+            '([id="android:id/message"][text*="权限"] <<n * + [id="android:id/buttonPanel"] [id="android:id/button2"][text="否"] + [id="android:id/button1"][text="是"]) || ([text="Pyi3KQBzgJA1F+Xm7MrWYA0HQqTcq4GrAAAAAASUVORK5CYII="]) || ([text="gthEFTB6uRQ36UPWtwD"]) || ([text="countdown-fulfilled-bg.f65a2ea"]) || (View > Image[clickable=false][text="gthEFTB6uRQ36UPWtwD"])',
         },
       ],
     },

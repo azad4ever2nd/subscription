@@ -42,9 +42,8 @@ export default defineGkdApp({
             '([text="每日签到"] +2 * [text^="今日签到"]) || (@View > [text="每日签到"] +n * >n [text^="今日签到+"])',
           ],
           resetMatch: 'activity',
-          activityIds: [
+          activityIds:
             'com.alipay.mobile.nebulax.xriver.activity.XRiverActivity',
-          ],
         },
       ],
     },
@@ -58,9 +57,8 @@ export default defineGkdApp({
             '([text="赚更多积分"] <<n * -2 [text="每日签到"] <<n * [text^="领取"][text*="积分"]) || ([text="我的订单"] <<n * + * >n [text^="领取" && text$="积分"])',
           ],
           resetMatch: 'match',
-          activityIds: [
+          activityIds:
             'com.alipay.mobile.nebulax.xriver.activity.XRiverActivity',
-          ],
         },
       ],
     },
@@ -140,7 +138,7 @@ export default defineGkdApp({
     {
       key: 10,
       name: '推荐开通花呗',
-      desc: '260725，添加放弃还款，推荐习惯，([text^="支付宝推荐" || text^="支付宝  推荐"] < * +n * > [text="关闭"]) ||',
+      desc: '260803，关闭PDD免密付款，添加放弃还款，推荐习惯，([text^="支付宝推荐" || text^="支付宝  推荐"] < * +n * > [text="关闭"]) ||',
       rules: [
         {
           resetMatch: 'match',
@@ -148,7 +146,7 @@ export default defineGkdApp({
           actionCd: 0,
           activityIds: 'com.alipay.android.msp.ui.views.MspContainerActivity',
           matches:
-            '([text="支付宝"] + [text="邀请你" || text="推荐你"] + [text="跳过"]) || ([text="是否放弃本次付款？"] <<n * +n * [text="放弃"]) || ([text^="支付宝推荐" || text^="支付宝  推荐"] <<n * +n * > [text="关闭"]) || ([id="com.alipay.mobile.antui:id/message"][text="是否放弃本次付款？" || text*="是否放弃付款"] <<n * + * [id="com.alipay.mobile.antui:id/cancel"][text="放弃"]) || (TextView[text="支付宝推荐你"] < FrameLayout +n FrameLayout[clickable=true] > TextView[text="关闭"]) || (View > View > TextView[text="支付宝"] + TextView[text="邀请你"] + TextView[clickable=false][visibleToUser=true][text="跳过"])',
+            '(FrameLayout > TextView[text*="免密快捷支付"] + FrameLayout > CheckBox[clickable=true][checkable=true]) || ([text="支付宝"] + [text="邀请你" || text="推荐你"] + [text="跳过"]) || ([text="是否放弃本次付款？"] <<n * +n * [text="放弃"]) || ([text^="支付宝推荐" || text^="支付宝  推荐"] <<n * +n * > [text="关闭"]) || ([id="com.alipay.mobile.antui:id/message"][text="是否放弃本次付款？" || text*="是否放弃付款"] <<n * + * [id="com.alipay.mobile.antui:id/cancel"][text="放弃"]) || (TextView[text="支付宝推荐你"] < FrameLayout +n FrameLayout[clickable=true] > TextView[text="关闭"]) || (View > View > TextView[text="支付宝"] + TextView[text="邀请你"] + TextView[clickable=false][visibleToUser=true][text="跳过"])',
         },
       ],
     },
@@ -181,9 +179,8 @@ export default defineGkdApp({
             '@[text="关闭"] + [text="开通信用卡积分抵扣"] +n [text="同意协议并开通"]',
           ],
           resetMatch: 'match',
-          activityIds: [
+          activityIds:
             'com.alipay.mobile.nebulax.xriver.activity.XRiverTransActivity$Main',
-          ],
         },
       ],
     },
@@ -244,9 +241,8 @@ export default defineGkdApp({
           ],
           matchTime: 10000,
           resetMatch: 'match',
-          activityIds: [
+          activityIds:
             'com.alipay.mobile.nebulax.xriver.activity.XRiverActivity',
-          ],
         },
       ],
     },
@@ -305,9 +301,8 @@ export default defineGkdApp({
             '[id="ant-render-id-CPT_690b10f36cbe9081bc793593"][childCount=5] > [index=2]',
           ],
           resetMatch: 'match',
-          activityIds: [
+          activityIds:
             'com.alipay.mobile.nebulax.xriver.activity.XRiverActivity',
-          ],
         },
       ],
     },
@@ -417,9 +412,8 @@ export default defineGkdApp({
         {
           matches: ['@View + ViewGroup *[desc="开心收下"]'],
           resetMatch: 'match',
-          activityIds: [
+          activityIds:
             'com.alipay.android.phone.xriver.bundlex.CSGAPushActivity',
-          ],
         },
       ],
     },
@@ -508,9 +502,8 @@ export default defineGkdApp({
           ],
           actionCd: 0,
           resetMatch: 'match',
-          activityIds: [
+          activityIds:
             'com.alipay.mobile.nebulax.xriver.activity.XRiverActivity',
-          ],
         },
       ],
     },
@@ -557,9 +550,8 @@ export default defineGkdApp({
           ],
           fastQuery: true,
           resetMatch: 'match',
-          activityIds: [
+          activityIds:
             'com.alipay.mobile.rome.pushservice.integration.PushOpenGuideActivity',
-          ],
         },
       ],
     },

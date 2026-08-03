@@ -133,7 +133,7 @@ export default defineGkdApp({
           action: 'clickCenter',
           activityIds: 'com.icbc.activity.web.ICBCWebView',
           matches:
-            '([text="很遗憾，未中奖"] + [text="关闭"]) || ([text="微信立减金" || text="支付宝红包"] + [text="立即领取"] + [text="关闭"]) || ([text="恭喜中奖了"] <<n * + * > [text="关闭"]) || ([text="恭喜您中奖！"] + [text="关闭"]) || ([text^="奖品已发放至"] < * + [text="确认"]) || ([text="去兑好物"] + [text="开心收下"]) || (Dialog > TextView[text*="日前领取" || text$="过期未领将失效"] + Button[text="立即领取"]) || (Dialog > View > Button[text="完成"])',
+            '([text="很遗憾，未中奖"] + [text="关闭"]) || ([text="微信立减金" || text="支付宝红包"] + [text="立即领取"] + [text="关闭"]) || ([text="恭喜中奖了"] <<n * + * > [text="关闭"]) || ([text="恭喜您中奖！"] + [text="关闭"]) || ([text^="奖品已发放至"] < * + [text="确认"]) || ([text="去兑好物"] + [text="开心收下"]) || (TextView[text^="不要灰心" || text="差一点就中奖了"] <n View + View > Image[text="关闭按钮"][clickable=false]) || (Dialog > TextView[text*="日前领取" || text$="过期未领将失效"] + Button[text="立即领取"]) || (Dialog > View > Button[text="完成"]) || ( (View > View > @Button[clickable=true][text="关闭"] + TextView[text="恭喜获得"]))',
         },
       ],
     },

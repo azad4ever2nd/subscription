@@ -96,20 +96,33 @@ export default defineGkdApp({
     {
       key: 7,
       name: '弹窗，活动公告，我知道了',
-      desc: '260704',
+      desc: '260803，添加 抽奖公告',
       rules: [
         {
           resetMatch: 'match',
-          matchTime: 1000,
           activityIds:
             'com.ecitic.bank.mobile.ui.webview.CordovaExternalWebViewActivity',
           matches:
-            'View > View + Button[clickable=true][visibleToUser=true][text="我知道了"]',
+            '(View > View + Button[clickable=true][visibleToUser=true][text="我知道了"]) || (View > @Button[clickable=true][text="我知道了"] - View > TextView[text.length=1][clickable=false])',
         },
       ],
     },
     {
       key: 8,
+      name: '恭喜中奖，确定',
+      desc: '260803',
+      rules: [
+        {
+          resetMatch: 'match',
+          activityIds:
+            'com.ecitic.bank.mobile.ui.webview.CordovaExternalWebViewActivity',
+          matches:
+            'View > TextView[text="恭喜中奖"] +n Button[clickable=true][visibleToUser=true][text="确定"]',
+        },
+      ],
+    },
+    {
+      key: 9,
       name: '抽奖，弹窗',
       desc: '251208，D',
       rules: [
