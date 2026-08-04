@@ -89,5 +89,45 @@ export default defineGkdApp({
         },
       ],
     },
+    {
+      key: 7,
+      name: '恭喜抽中微信红包，浏览后领取',
+      desc: '260804',
+      rules: [
+        {
+          resetMatch: 'match',
+          activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
+          matches:
+            'View[text^="恭喜您抽中"] < View + View[clickable=true][visibleToUser=true]',
+        },
+      ],
+    },
+    {
+      key: 8,
+      name: '浏览后领取立减金',
+      desc: '260804',
+      rules: [
+        {
+          resetMatch: 'match',
+          activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
+          matches:
+            'WebView[text="签到赢立减金"] > View > View > View > Image + View[clickable=true][visibleToUser=true]',
+        },
+      ],
+    },
+    {
+      key: 9,
+      name: '风险评估过期，知道了',
+      desc: '260804',
+      rules: [
+        {
+          resetMatch: 'match',
+          fastQuery: true,
+          activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
+          matches:
+            'LinearLayout +n LinearLayout > @LinearLayout[clickable=true][visibleToUser=true][vid="ll_no"] > TextView[text="知道了"]',
+        },
+      ],
+    },
   ],
 });

@@ -10,7 +10,6 @@ export default defineGkdApp({
       desc: '260616',
       rules: [
         {
-          matchTime: 1000,
           activityIds:
             'com.hellobike.flutter.platform.android.flutterboost.FlutterHostFragmentActivity',
           matches:
@@ -100,7 +99,6 @@ export default defineGkdApp({
       rules: [
         {
           fastQuery: true,
-          matchTime: 1000,
           resetMatch: 'app',
           actionMaximum: 1,
           activityIds: 'com.hellobike.atlas.business.portal.PortalActivity',
@@ -116,7 +114,6 @@ export default defineGkdApp({
       rules: [
         {
           resetMatch: 'match',
-          matchTime: 1000,
           actionCd: 0,
           fastQuery: true,
           activityIds: 'com.hellobike.atlas.business.portal.PortalActivity',
@@ -134,7 +131,6 @@ export default defineGkdApp({
           fastQuery: true,
           resetMatch: 'match',
           action: 'clickCenter',
-          matchTime: 1000,
           matchRoot: false,
           activityIds: [
             'com.hellobike.atlas.business.portal.PortalActivity',
@@ -181,7 +177,6 @@ export default defineGkdApp({
           resetMatch: 'match',
           actionMaximum: 1,
           matchRoot: true,
-          matchTime: 1000,
           activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
           matches:
             '([text="请点击下方按钮，立即签到"] + * [text="签到"]) || ([text="签到"])',
@@ -208,7 +203,6 @@ export default defineGkdApp({
       rules: [
         {
           resetMatch: 'match',
-          matchTime: 1000,
           fastQuery: true,
           activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
           matches: '[vid="ivTopBg"] +n [vid="ivClose"]',
@@ -223,7 +217,6 @@ export default defineGkdApp({
         {
           resetMatch: 'match',
           actionMaximum: 1,
-          matchTime: 1000,
           activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
           matches: '@TextView[clickable=true] +n [text="明日再来"]',
         },
@@ -249,7 +242,6 @@ export default defineGkdApp({
         {
           resetMatch: 'match',
           action: 'clickCenter',
-          matchTime: 1000,
           activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
           matches:
             '([text="会员单单返"] + [text="领奖励"]) || (View > View > View > TextView[text*="奖励金"] + View + TextView[text="知道了"][clickable=true])',
@@ -264,7 +256,6 @@ export default defineGkdApp({
         {
           resetMatch: 'match',
           actionMaximum: 1,
-          matchTime: 1000,
           activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
           matches:
             '@View[clickable=true] TextView + [text="单单返"][parent.childCount=2]',
@@ -318,7 +309,6 @@ export default defineGkdApp({
       rules: [
         {
           resetMatch: 'match',
-          matchTime: 1000,
           activityIds:
             'com.hellobike.moped.platform.offline.web.OhoRealmWebActivity',
           matches:
@@ -333,7 +323,6 @@ export default defineGkdApp({
       rules: [
         {
           resetMatch: 'match',
-          matchTime: 1000,
           activityIds:
             'com.hellobike.moped.platform.offline.web.OhoRealmWebActivity',
           matches:
@@ -349,7 +338,6 @@ export default defineGkdApp({
         {
           resetMatch: 'match',
           actionMaximum: 10,
-          matchTime: 1000,
           activityIds:
             'com.hellobike.moped.platform.offline.web.OhoRealmWebActivity',
           matches:
@@ -364,7 +352,6 @@ export default defineGkdApp({
       rules: [
         {
           resetMatch: 'match',
-          matchTime: 1000,
           activityIds:
             'com.hellobike.moped.platform.offline.web.OhoRealmWebActivity',
           matches: '@View Image[text="aab668b57491499e89ee4a5b766bcf77_35"]',

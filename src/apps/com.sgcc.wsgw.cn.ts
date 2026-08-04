@@ -11,6 +11,7 @@ export default defineGkdApp({
       rules: [
         {
           resetMatch: 'match',
+          actionCd: 0,
           activityIds: 'com.sgcc.wsgw.rnbundle.activity.HomeReactActivity',
           matches: 'ViewGroup > ViewGroup[desc="关闭"] > ImageView',
         },
@@ -34,7 +35,6 @@ export default defineGkdApp({
       desc: '260719，添加补签成功[text="知道啦"] < * + * > Image',
       rules: [
         {
-          matchTime: 1500,
           actionCd: 0,
           resetMatch: 'match',
           activityIds: [
@@ -54,6 +54,7 @@ export default defineGkdApp({
         {
           matchTime: 1000,
           resetMatch: 'match',
+          actionCd: 0,
           activityIds: 'com.sgcc.wsgw.mainbundle.ElectricTitleActivity',
           matches:
             '([text="立即查看"] < View + View > *) || (TextView[text="立即查看"] < View + View > Image[clickable=false][visibleToUser=true])',

@@ -23,7 +23,7 @@ export default defineGkdApp({
     {
       key: 2,
       name: '618弹窗',
-      desc: '260609',
+      desc: '260804',
       rules: [
         {
           resetMatch: 'match',
@@ -31,7 +31,7 @@ export default defineGkdApp({
           activityIds:
             'ctrip.android.publicproduct.home.business.activity.CtripHomeActivity',
           matches:
-            '(@[vid="a"][clickable=true] < * + *[vid="a"] [text="立刻领取"]) || (RelativeLayout > RelativeLayout[vid="a"] - RelativeLayout > ImageView[vid="a"])',
+            '(@[vid="a"][clickable=true] < * + *[vid="a"] [text="立刻领取"]) || (RelativeLayout > RelativeLayout[vid="a"] - RelativeLayout > ImageView[vid="a"]) || (@ImageView[clickable=true][visibleToUser=true][vid="a"] < RelativeLayout + RelativeLayout >n ImageView[desc="广告素材"])',
         },
       ],
     },

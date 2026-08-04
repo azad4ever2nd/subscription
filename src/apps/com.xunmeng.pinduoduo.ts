@@ -277,14 +277,14 @@ export default defineGkdApp({
     {
       key: 20,
       name: '如何解锁，去首页',
-      desc: '260803',
+      desc: '260804',
       rules: [
         {
           resetMatch: 'match',
           action: 'click',
           activityIds: 'com.xunmeng.pinduoduo.activity.NewPageActivity',
           matches:
-            '(View > TextView[text="如何解锁?" || text="如何解锁点亮?"] + TextView[clickable=false][text="去首页"]) || (View > View > View > TextView[text*="浏览商品10秒"] +n TextView[clickable=false][visibleToUser=true][text^="去看看"])',
+            '(View > TextView[text="解锁消费券"] + TextView + TextView[clickable=false][visibleToUser=true][text="去首页领券"]) || (View > TextView[text="如何解锁?" || text="如何解锁点亮?"] + TextView[clickable=false][text="去首页"]) || (View > View > View > TextView[text*="浏览商品10秒"] +n TextView[clickable=false][visibleToUser=true][text^="去看看"])',
         },
       ],
     },

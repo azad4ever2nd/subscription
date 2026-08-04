@@ -12,7 +12,6 @@ export default defineGkdApp({
         {
           fastQuery: true,
           resetMatch: 'activity',
-          matchTime: 2000,
           activityIds: 'com.meituan.android.mrn.container.MRNBaseActivity',
           matches: '[text="￥0"] < * +2 * > [text="去结算"]',
         },
@@ -26,7 +25,6 @@ export default defineGkdApp({
         {
           fastQuery: true,
           resetMatch: 'activity',
-          matchTime: 2000,
           activityIds: 'com.meituan.android.mrn.container.MRNBaseActivity',
           matches: '[text="￥0"] < * +2 * > [text="立即支付"]',
         },
@@ -40,7 +38,6 @@ export default defineGkdApp({
         {
           fastQuery: true,
           resetMatch: 'match',
-          matchTime: 2000,
           activityIds: 'com.meituan.android.mrn.container.MRNBaseActivity',
           matches: '[text="更换门店"] < * +2 * > [text="确认门店并支付"]',
         },
@@ -49,14 +46,14 @@ export default defineGkdApp({
     {
       key: 4,
       name: '确认退出评价，退出',
-      desc: '260312',
+      desc: '260804，添加 复制链接 ',
       rules: [
         {
           resetMatch: 'match',
           fastQuery: true,
-          matchTime: 2000,
           activityIds: 'com.meituan.android.mrn.container.MRNBaseActivity',
-          matches: '[text="确认退出评价吗？"] +n * > [text="退出评价"]',
+          matches:
+            '([text="确认退出评价吗？"] +n * > [text="退出评价"]) || (ViewGroup > ViewGroup > @ViewGroup > TextView[text="点击复制"])',
         },
       ],
     },
@@ -113,7 +110,6 @@ export default defineGkdApp({
         {
           resetMatch: 'match',
           fastQuery: true,
-          matchTime: 2000,
           activityIds: 'com.meituan.android.mrn.container.MRNStandardActivity',
           matches: '[text="折后 ￥0"] + [text="立即团购"]',
         },
@@ -128,7 +124,6 @@ export default defineGkdApp({
           fastQuery: true,
           resetMatch: 'match',
           actionMaximum: 1,
-          matchTime: 2000,
           activityIds: 'com.meituan.android.mrn.container.MRNStandardActivity',
           matches:
             '(ViewGroup > @ViewGroup[clickable=true][visibleToUser=true] + TextView[text^="我已阅读并同意"]) || (ViewGroup > @ViewGroup[clickable=true][visibleToUser=true] + TextView[text^="我已阅读并同意"] + ViewGroup > TextView[text="《用户授权协议》"])',
@@ -143,7 +138,6 @@ export default defineGkdApp({
         {
           activityIds: 'com.dianping.live.live.mrn.MLiveMRNActivity',
           matches: '[text="幸运抽奖"] +2 ImageView',
-          matchTime: 1000,
           resetMatch: 'activity',
         },
       ],
@@ -155,7 +149,7 @@ export default defineGkdApp({
       rules: [
         {
           resetMatch: 'match',
-          matchDelay: 2000,
+          matchTime: 2000,
           fastQuery: true,
           activityIds: 'com.dianping.live.live.mrn.MLiveMRNActivity',
           matches: 'ViewGroup > TextView[text="领亲密度" || text="去逛逛"]',
@@ -169,7 +163,6 @@ export default defineGkdApp({
       rules: [
         {
           resetMatch: 'match',
-          matchTime: 2000,
           activityIds: 'com.dianping.live.live.mrn.MLiveMRNActivity',
           matches:
             'ViewGroup > TextView[text="幸运抽奖"] +2 ImageView[clickable=false][visibleToUser=true]',
@@ -222,7 +215,6 @@ export default defineGkdApp({
         {
           resetMatch: 'match',
           fastQuery: true,
-          matchTime: 1000,
           activityIds:
             'com.meituan.android.bike.component.feature.main.view.MobikeMainActivity',
           matches:
@@ -238,7 +230,6 @@ export default defineGkdApp({
         {
           resetMatch: 'match',
           fastQuery: true,
-          matchTime: 1000,
           activityIds: 'com.meituan.msc.modules.container.MSCActivity',
           matches:
             '[vid="dlg_title"][text*="地理位置"] < * +n * > [vid="dlg_right_btn"][text="去设置"]',
@@ -253,7 +244,6 @@ export default defineGkdApp({
         {
           resetMatch: 'match',
           fastQuery: true,
-          matchTime: 1000,
           activityIds:
             'com.meituan.android.bike.component.feature.main.view.MobikeMainActivity',
           matches: '([text="定位服务未开启"] +n * > [text="去设置"])',
@@ -267,7 +257,6 @@ export default defineGkdApp({
       rules: [
         {
           resetMatch: 'match',
-          matchTime: 1000,
           activityIds: 'com.sankuai.titans.adapter.mtapp.KNBWebViewActivity',
           matches: '[text="恭喜获得膨胀奖励"] +n * > [text="开心收下"]',
         },
@@ -325,7 +314,6 @@ export default defineGkdApp({
       rules: [
         {
           resetMatch: 'match',
-          matchTime: 1000,
           activityIds: 'com.sankuai.meituan.search.result.SearchResultActivity',
           matches: '[vid="novel_inner_push_view"] >3 * +2 *',
         },
@@ -338,7 +326,7 @@ export default defineGkdApp({
       rules: [
         {
           resetMatch: 'match',
-          matchTime: 1000,
+
           activityIds: 'com.meituan.android.pt.homepage.activity.MainActivity',
           matches: '[text="您的 18 元红包即将失效"] + ImageView',
         },

@@ -63,14 +63,14 @@ export default defineGkdApp({
     {
       key: 5,
       name: '开启通知权限，X掉',
-      desc: '260724',
+      desc: '260804',
       rules: [
         {
           resetMatch: 'match',
           fastQuery: true,
           activityIds: 'com.mcdonalds.gma.cn.activity.MainActivity',
           matches:
-            'ViewGroup > TextView[vid="bottom_dialog_title"][text="开启通知权限"] + ImageView[clickable=true][visibleToUser=true][vid="bottom_dialog_button_close"] +n TextView[vid="bottom_dialog_button_confirm"][text="去开启"]',
+            'ViewGroup > TextView[vid="bottom_dialog_title"][text="开启通知权限"] + @ImageView[clickable=true][visibleToUser=true][vid="bottom_dialog_button_close"] +n TextView[vid="bottom_dialog_button_confirm"][text="去开启"]',
         },
       ],
     },

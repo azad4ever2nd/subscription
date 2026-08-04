@@ -39,7 +39,7 @@ export default defineGkdApp({
         {
           fastQuery: true,
           resetMatch: 'match',
-          actionDelay: 2500,
+          actionDelay: 2000,
           activityIds: 'com.tencent.mm.plugin.webview.ui.tools.MMWebViewUI',
           matches: '[text="识别图中的二维码"]',
         },
@@ -295,6 +295,7 @@ export default defineGkdApp({
       rules: [
         {
           resetMatch: 'match',
+          actionCd: 0,
           activityIds:
             'com.tencent.mm.plugin.brandservice.ui.timeline.preload.ui.TmplWebViewMMUI',
           matches:
@@ -796,17 +797,17 @@ export default defineGkdApp({
     {
       key: 44,
       name: '即将跳转',
-      desc: '260103，添加IDS，移动抽奖，动态ID，增加小程序里的跳转，改匹配顺序，尽量从左往右',
+      desc: '260804，com.tencent.mm.plugin.brandservice.ui.timeline.preload.ui.TmplWebViewMMUI,添加IDS，移动抽奖，动态ID，增加小程序里的跳转，改匹配顺序，尽量从左往右',
       rules: [
         {
           resetMatch: 'match',
           matches:
             '(Dialog [text*="即将打开第三方"] + * > [text="允许"]) || ([text="get_prize_title.dc05dc4a"] +n * > [text="立即前往"]) || ([id="js_minipro_dialog_head"][text="即将打开小程序"] <<n * +n * > [id="js_minipro_dialog_ok"][text="允许"]) || ([text^="即将"] <<n  * + * >n [vid="mm_alert_cancel_btn"][text="取消"] +n [vid="mm_alert_ok_btn"][text="确认跳转" || text="允许"])',
           fastQuery: true,
-          actionCd: 2000,
+          actionCd: 1000,
           activityIds: [
-            'com.tencent.mm.plugin.brandservice.ui.timeline.preload.ui.TmplWebViewMMUI',
             'com.tencent.mm.plugin.webview.ui.tools.CustomSchemeEntryMMWebViewUI',
+            'com.tencent.mm.plugin.webview.ui.tools.MMWebViewUI',
             'com.tencent.mm.framework.app.UIPageFragmentActivity',
             'com.tencent.mm.plugin.webview.stub.WebViewStubProxyUI',
             'com.tencent.mm.plugin.appbrand.ui.AppBrandCheckWxaShortLinkUI',
@@ -845,14 +846,14 @@ export default defineGkdApp({
             'com.tencent.mm.plugin.appbrand.ui.AppBrandUI04',
           ],
           matches:
-            '(View[childCount=2] > [text$="元理财金"] + *) || (View[childCount=3] > * + [text$="元理财金"] + *) || (View[childCount=3][clickable=true] > [text$="元理财金"] + *) || (View > @View > TextView + TextView[text$="元理财金"] + TextView[clickable=true]) || (WebView [text="领取奖励"]) || ([text^="成功领取奖励" || text="成功开始模拟"] <<n FrameLayout + * >n [desc="关闭"][childCount=1]) || ([text^="成功领取奖励"] <<n FrameLayout + * >n [desc="关闭"])',
+            '(WebView [text="领取奖励bak"]) || ([text^="成功领取奖励" || text="成功开始模拟"] <<n FrameLayout + * >n [desc="关闭bak"][childCount=1]) || ([text^="成功领取奖励"] <<n FrameLayout + * >n [desc="关闭bak"]) || (View[childCount=2] > [text$="元理财金"] + *) || (View[childCount=3] > * + [text$="元理财金"] + *) || (View[childCount=3][clickable=true] > [text$="元理财金"] + *) || (View > @View > TextView + TextView[text$="元理财金"] + TextView[clickable=true])',
         },
       ],
     },
     {
       key: 46,
       name: '腾讯理财通，领取奖励，同意服务协议',
-      desc: '260425',
+      desc: '260425，先禁用后续找出改余额',
       rules: [
         {
           resetMatch: 'match',
@@ -1114,7 +1115,6 @@ export default defineGkdApp({
             'com.tencent.mm.plugin.appbrand.ui.AppBrandUI03',
             'com.tencent.mm.plugin.appbrand.ui.AppBrandUI04',
           ],
-          actionCd: 1000,
           actionMaximum: 5,
           resetMatch: 'match',
           matches:
@@ -1203,7 +1203,7 @@ export default defineGkdApp({
       rules: [
         {
           resetMatch: 'match',
-          actionCd: 750,
+          actionCd: 500,
           activityIds: [
             'com.tencent.mm.plugin.appbrand.ui.AppBrandUI0',
             'com.tencent.mm.plugin.appbrand.ui.AppBrandUI1',
@@ -1218,6 +1218,44 @@ export default defineGkdApp({
           ],
           matches:
             'WebView[text*="八闽有礼"] > View > View > View > View > View > @Image[clickable=true][visibleToUser=true][text="关闭"] + Image[text="地市详情"]',
+        },
+      ],
+    },
+    {
+      key: 62,
+      name: '活动未开始，我知道了',
+      desc: '260803',
+      rules: [
+        {
+          resetMatch: 'match',
+          actionCd: 100,
+          activityIds: [
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI0',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI1',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI2',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI3',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI4',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI00',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI01',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI02',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI03',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI04',
+          ],
+          matches:
+            'View > TextView[text^="活动未开始"] + View > View > Image[clickable=true][visibleToUser=true]',
+        },
+      ],
+    },
+    {
+      key: 63,
+      name: '自动登录该设备',
+      desc: '260804',
+      rules: [
+        {
+          resetMatch: 'match',
+          activityIds: 'com.tencent.mm.plugin.webwx.ui.ExtDeviceWXLoginUI',
+          matches:
+            'RelativeLayout > TextView[text="登录 Windows 微信"] + CheckBox[desc="同步最近的消息"] + CheckBox[desc="自动登录该设备"] + LinearLayout > Button[clickable=true][visibleToUser=true][text="登录"]',
         },
       ],
     },

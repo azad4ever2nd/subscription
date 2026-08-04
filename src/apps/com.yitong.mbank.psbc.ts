@@ -122,7 +122,7 @@ export default defineGkdApp({
           activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
           resetMatch: 'match',
           matches:
-            '@*[clickable=true] [text="返回活动" || text="返回权益专区"]',
+            '(@*[clickable=true] [text="返回活动" || text="返回权益专区"]) || (@View[clickable=false][visibleToUser=true] > TextView + TextView[text="返回活动"])',
         },
       ],
     },

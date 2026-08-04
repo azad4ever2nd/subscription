@@ -191,13 +191,13 @@ export default defineGkdApp({
     {
       key: 14,
       name: '浇水',
-      desc: '260703，每月要变更id',
+      desc: '260804，每月要变更id',
       rules: [
         {
           actionMaximum: 1,
           resetMatch: 'match',
           matches:
-            'View > Image[text="56216925f8a94308847f3bee873cf4282485282187"][visibleToUser=true]',
+            'View > Image[text="30b2664f811b49268daf0884b451bd741055117292"][visibleToUser=true]',
           activityIds: 'com.icbc.activity.web.ICBCWebView',
         },
       ],
