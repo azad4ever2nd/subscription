@@ -96,7 +96,7 @@ export default defineGkdApp({
       desc: '260622，依赖 领2GB日流量，马上领取',
       rules: [
         {
-          actionMaximum: 1,
+          actionMaximum: 3,
           resetMatch: 'match',
           actionCd: 0,
           preKeys: [5],
@@ -197,6 +197,20 @@ export default defineGkdApp({
             'com.cmcc.cmvideo.main.application.CompatibleMainActivity',
           matches:
             'ViewGroup > FrameLayout > ImageView[clickable=true][visibleToUser=true][vid="iv_close_single"]',
+        },
+      ],
+    },
+    {
+      key: 13,
+      name: '钻石会员弹窗，X掉',
+      desc: '260804',
+      rules: [
+        {
+          resetMatch: 'match',
+          activityIds:
+            'com.cmcc.cmvideo.main.application.CompatibleMainActivity',
+          matches:
+            'ViewGroup[vid="root_view"] + FrameLayout[childCount=2] > FrameLayout + ImageView[clickable=true][visibleToUser=true]',
         },
       ],
     },

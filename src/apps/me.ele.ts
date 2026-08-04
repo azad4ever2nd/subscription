@@ -63,13 +63,13 @@ export default defineGkdApp({
     {
       key: 5,
       name: '任务完成，返回领奖',
-      desc: '260726，返回领奖，去领奖',
+      desc: '260804，返回领奖，去领奖',
       rules: [
         {
           resetMatch: 'match',
           activityIds: 'me.ele.component.webcontainer.view.AppUCWebActivity',
           matches:
-            '(@View[clickable=true] > TextView[text="任务完成"] + TextView[text*="领奖"]) || (View > @View[clickable=true][visibleToUser=true] > TextView[text="任务完成"] + TextView[text="返回领奖"])',
+            '(@View[clickable=true] > TextView[text="任务完成"] + TextView[text*="领奖"]) || (View > @View[clickable=true][visibleToUser=true] > TextView[text="任务完成"] + TextView[text="返回领奖"]) || (@View[clickable=true][visibleToUser=true] > Image + TextView + TextView[text="任务完成"] + TextView[text="返回领奖"])',
         },
       ],
     },

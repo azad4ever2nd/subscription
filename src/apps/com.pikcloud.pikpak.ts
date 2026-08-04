@@ -73,5 +73,19 @@ export default defineGkdApp({
         },
       ],
     },
+    {
+      key: 5,
+      name: '识别到剪贴板链接，高速云下载',
+      desc: '260804',
+      rules: [
+        {
+          resetMatch: 'match',
+          actionCd: 3000,
+          activityIds: 'com.pikcloud.xpan.clipboard.ClipboardAddUrlActivity',
+          matches:
+            'ViewGroup[vid="cl_add_url_dialog"] > TextView[text="识别到剪贴板链接"] +n TextView[clickable=true][visibleToUser=true][vid="add"][text="高速云下载"]',
+        },
+      ],
+    },
   ],
 });

@@ -32,7 +32,7 @@ export default defineGkdApp({
     {
       key: 3,
       name: '签到',
-      desc: '260719，添加补签成功[text="知道啦"] < * + * > Image',
+      desc: '260804，添加补签成功[text="知道啦"] < * + * > Image',
       rules: [
         {
           actionCd: 0,
@@ -42,7 +42,7 @@ export default defineGkdApp({
             'com.sgcc.wsgw.rnbundle.activity.HomeReactActivity',
           ],
           matches:
-            '([text="签到成功"] + [text^="恭喜您获得1" || text*="签到金1"] + *) || ([text="签到成功"] +2 @* + * > Image) || ([text="补签成功"] +3 *) || (View > View > TextView[text="签到成功"] + TextView[text^="恭喜您获得" || text$="签到金"] + TextView[clickable=false][visibleToUser=true][text.length=0])',
+            '([text="签到成功"] + [text^="恭喜您获得1" || text*="签到金1"] + *) || ([text="签到成功"] +2 @* + * > Image) || ([text="补签成功"] +3 *) || (View > TextView[text="补签成功"] +3 TextView[clickable=false][text.length=0]) ||  (View > View > TextView[text="签到成功"] + TextView[text^="恭喜您获得" || text$="签到金"] + TextView[clickable=false][visibleToUser=true][text.length=0])',
         },
       ],
     },

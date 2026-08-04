@@ -83,5 +83,19 @@ export default defineGkdApp({
         },
       ],
     },
+    {
+      key: 7,
+      name: '服务器证书检验失败，取消',
+      desc: '260804',
+      rules: [
+        {
+          resetMatch: 'match',
+          activityIds:
+            'com.newland.framework.ui.widget.TransparentActivityForDialogStack',
+          matches:
+            'TextView[text="服务器证书检验失败"] <2 RelativeLayout < ScrollView +n LinearLayout > TextView[clickable=true][visibleToUser=true][text="取消"]',
+        },
+      ],
+    },
   ],
 });

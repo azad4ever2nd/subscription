@@ -23,7 +23,6 @@ export default defineGkdApp({
         {
           matches: ['[text="确定删除当前快照吗?"] +n @* > [text="确定"]'],
           resetMatch: 'match',
-          matchTime: 2000,
           actionCd: 0,
           activityIds: ['li.songe.gkd.MainActivity'],
         },
@@ -36,7 +35,6 @@ export default defineGkdApp({
       rules: [
         {
           matches: ['[text="确定删除所有快照记录?"] + @* > [text="取消"]'],
-          matchTime: 2000,
           actionCd: 0,
           resetMatch: 'match',
           activityIds: ['li.songe.gkd.MainActivity'],
@@ -64,7 +62,6 @@ export default defineGkdApp({
         {
           resetMatch: 'match',
           action: 'clickCenter',
-          matchTime: 2000,
           actionCd: 100,
           activityIds: 'li.songe.gkd.MainActivity',
           matches: '@[text="加载失败, 点击重试"] + View',
