@@ -80,7 +80,7 @@ export default defineGkdApp({
       rules: [
         {
           resetMatch: 'match',
-          actionCd: 3000,
+          actionCd: 2000,
           activityIds: 'com.pikcloud.xpan.clipboard.ClipboardAddUrlActivity',
           matches:
             'ViewGroup[vid="cl_add_url_dialog"] > TextView[text="识别到剪贴板链接"] +n TextView[clickable=true][visibleToUser=true][vid="add"][text="高速云下载"]',

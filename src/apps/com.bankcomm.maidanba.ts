@@ -133,7 +133,6 @@ export default defineGkdApp({
       desc: '260607',
       rules: [
         {
-          matchTime: 1000,
           fastQuery: true,
           resetMatch: 'match',
           activityIds: 'com.bankcomm.maidanba.activity.WebViewActivity',
@@ -144,6 +143,33 @@ export default defineGkdApp({
     },
     {
       key: 11,
+      name: '溢缴款赎回，勾选 同意',
+      desc: '260806',
+      rules: [
+        {
+          resetMatch: 'match',
+          activityIds: 'com.bankcomm.maidanba.activity.WebViewActivity',
+          matches:
+            'View > View > CheckBox[clickable=true][visibleToUser=true][checked=false][text^="本人已阅读并同意"]',
+        },
+      ],
+    },
+    {
+      key: 12,
+      name: '溢缴款赎回，获取验证码',
+      desc: '260806',
+      rules: [
+        {
+          resetMatch: 'match',
+          preKeys: [11],
+          activityIds: 'com.bankcomm.maidanba.activity.WebViewActivity',
+          matches:
+            'View > TextView[id="sendBtn"][clickable=true][visibleToUser=true][text="获取验证码"]',
+        },
+      ],
+    },
+    {
+      key: 13,
       name: '专属权限弹窗',
       desc: '251127',
       rules: [

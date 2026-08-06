@@ -804,7 +804,7 @@ export default defineGkdApp({
           matches:
             '(Dialog [text*="即将打开第三方"] + * > [text="允许"]) || ([text="get_prize_title.dc05dc4a"] +n * > [text="立即前往"]) || ([id="js_minipro_dialog_head"][text="即将打开小程序"] <<n * +n * > [id="js_minipro_dialog_ok"][text="允许"]) || ([text^="即将"] <<n  * + * >n [vid="mm_alert_cancel_btn"][text="取消"] +n [vid="mm_alert_ok_btn"][text="确认跳转" || text="允许"])',
           fastQuery: true,
-          actionCd: 1000,
+          actionCd: 800,
           activityIds: [
             'com.tencent.mm.plugin.webview.ui.tools.CustomSchemeEntryMMWebViewUI',
             'com.tencent.mm.plugin.webview.ui.tools.MMWebViewUI',
@@ -1228,7 +1228,7 @@ export default defineGkdApp({
       rules: [
         {
           resetMatch: 'match',
-          actionCd: 100,
+          actionCd: 500,
           activityIds: [
             'com.tencent.mm.plugin.appbrand.ui.AppBrandUI0',
             'com.tencent.mm.plugin.appbrand.ui.AppBrandUI1',

@@ -65,7 +65,6 @@ export default defineGkdApp({
         {
           resetMatch: 'match',
           fastQuery: true,
-          actionCd: 0,
           activityIds: 'cn.htsec.SecurityHome',
           matches:
             '([vid="pushinfodlg_btn1"] +n [vid="pushinfodlg_btn2"][text="关闭"]) || (LinearLayout > TextView[vid="pushinfodlg_btn1"] +n TextView[vid="pushinfodlg_btn2"][clickable=true][visibleToUser=true][text="关闭"])',
@@ -95,7 +94,6 @@ export default defineGkdApp({
           matches: [
             '[desc="预约信息确认" || desc="预约打新"] +n [desc="确定"]',
           ],
-          matchDelay: 1500,
           resetMatch: 'match',
           activityIds: 'cn.htsec.SecurityHome',
         },
@@ -110,7 +108,6 @@ export default defineGkdApp({
           resetMatch: 'match',
           action: 'clickCenter',
           actionMaximum: 1,
-          actionCd: 0,
           activityIds: 'com.gtja.trade.newstock.view.NewAppointMainActivity',
           matches:
             '([text="全选"]) || (View > View > Button[clickable=true][visibleToUser=true][text="全选bak"]) || (View > View > @Button[clickable=true][visibleToUser=true][text="全选"] +n TextView[text="已选中 "] + TextView[text="0"] + TextView[text=" 只"])',

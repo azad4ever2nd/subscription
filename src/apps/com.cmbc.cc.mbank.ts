@@ -38,7 +38,8 @@ export default defineGkdApp({
       rules: [
         {
           matchRoot: false,
-          matchTime: 2000,
+          matchDelay: 1000,
+          actionCd: 300,
           resetMatch: 'match',
           activityIds: 'com.cmbc.cc.mbank.module.web.activity.WebViewActivity',
           matches:
@@ -53,7 +54,8 @@ export default defineGkdApp({
       rules: [
         {
           matchRoot: true,
-          matchTime: 2000,
+          matchDelay: 1000,
+          actionCd: 300,
           resetMatch: 'match',
           activityIds: 'com.cmbc.cc.mbank.module.web.activity.WebViewActivity',
           matches: '[text="提示"] + [text*="定位服务"] +n * > [text="确认"]',

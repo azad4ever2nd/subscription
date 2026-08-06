@@ -149,7 +149,6 @@ export default defineGkdApp({
       rules: [
         {
           resetMatch: 'match',
-          matchTime: 2000,
           fastQuery: true,
           activityIds: 'com.dianping.live.live.mrn.MLiveMRNActivity',
           matches: 'ViewGroup > TextView[text="领亲密度" || text="去逛逛"]',

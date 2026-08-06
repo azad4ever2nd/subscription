@@ -12,6 +12,7 @@ export default defineGkdApp({
         {
           resetMatch: 'match',
           fastQuery: true,
+          actionCd: 800,
           activityIds: [
             'com.huawei.gallery.recycle.app.RecycleAlbumActivity',
             'com.huawei.gallery.app.HwCameraPhotoActivityPortrait',

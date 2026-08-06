@@ -32,10 +32,11 @@ export default defineGkdApp({
     {
       key: 3,
       name: '签到',
-      desc: '260804，添加补签成功[text="知道啦"] < * + * > Image',
+      desc: '260805，测试matchDelay,time,添加补签成功[text="知道啦"] < * + * > Image',
       rules: [
         {
           actionCd: 0,
+          matchDelay: 2000,
           resetMatch: 'match',
           activityIds: [
             'com.sgcc.wsgw.mainbundle.ElectricTitleActivity',
@@ -52,7 +53,6 @@ export default defineGkdApp({
       desc: '260717',
       rules: [
         {
-          matchTime: 1000,
           resetMatch: 'match',
           actionCd: 0,
           activityIds: 'com.sgcc.wsgw.mainbundle.ElectricTitleActivity',
@@ -69,7 +69,6 @@ export default defineGkdApp({
         {
           matches: ['[text="签到功能升级公告"] +2 * > Image'],
           fastQuery: true,
-          matchTime: 1000,
           actionCd: 0,
           resetMatch: 'match',
           activityIds: ['com.sgcc.wsgw.mainbundle.ElectricTitleActivity'],
@@ -137,7 +136,7 @@ export default defineGkdApp({
       rules: [
         {
           resetMatch: 'match',
-          matchTime: 1000,
+          matchDelay: 1000,
           actionCd: 0,
           activityIds: 'com.sgcc.wsgw.rnbundle.activity.MyReactActivity',
           matches: '[text^="本次升级" || text*="更新"] + * > *',
@@ -151,8 +150,8 @@ export default defineGkdApp({
       rules: [
         {
           resetMatch: 'match',
+          matchDelay: 1000,
           fastQuery: true,
-          matchTime: 1000,
           actionCd: 0,
           activityIds: 'com.sgcc.wsgw.rnbundle.activity.MyReactActivity',
           matches:

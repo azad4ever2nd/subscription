@@ -9,7 +9,7 @@ export default defineGkdApp({
       desc: '260721',
       rules: [
         {
-          matchTime: 1000,
+          matchDelay: 1000,
           resetMatch: 'match',
           activityIds: 'com.citiccard.mobilebank.web.applet.NewAppletActivity',
           matches:
@@ -23,7 +23,7 @@ export default defineGkdApp({
       desc: '260308',
       rules: [
         {
-          matchTime: 1000,
+          matchDelay: 1000,
           matches: ['[vid="dialog"] + [vid="cancelArea"]'],
           fastQuery: true,
           resetMatch: 'match',
@@ -180,7 +180,6 @@ export default defineGkdApp({
       desc: '260406',
       rules: [
         {
-          matchTime: 1000,
           fastQuery: true,
           resetMatch: 'match',
           activityIds: 'com.citiccard.mobilebank.web.webpage.CommonWebPage',
@@ -251,7 +250,6 @@ export default defineGkdApp({
         {
           resetMatch: 'match',
           fastQuery: true,
-          matchTime: 1000,
           activityIds: [
             'com.citiccard.mobilebank.newconfig.appconstruct.TabsAppHomeActivity',
             'com.citiccard.mobilebank..newconfig.appconstruct.TabsAppHomeActivity',

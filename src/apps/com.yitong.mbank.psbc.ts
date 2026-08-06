@@ -10,7 +10,7 @@ export default defineGkdApp({
       rules: [
         {
           matches: ['[vid="bt_cancel"][text="暂不更新"]'],
-          matchTime: 1000,
+          matchDelay: 1000,
           fastQuery: true,
           resetMatch: 'match',
           activityIds: [
@@ -92,8 +92,7 @@ export default defineGkdApp({
           matches: [
             '([text^="恭喜您抢到一张" && text*="邮票图片"] +2 Image) || ([text="权益二选一"] +3 [text="去领取"]) || ([text*="火爆"] <<n * + [text^="我已知晓"])',
           ],
-          matchTime: 1000,
-          matchDelay: 3000,
+          matchDelay: 2000,
           resetMatch: 'match',
           activityIds: ['com.alipay.mobile.nebulacore.ui.H5Activity'],
         },
@@ -176,7 +175,7 @@ export default defineGkdApp({
       rules: [
         {
           resetMatch: 'match',
-          matchTime: 1500,
+          matchDelay: 1000,
           actionCd: 100,
           fastQuery: true,
           activityIds:
@@ -193,7 +192,7 @@ export default defineGkdApp({
         {
           resetMatch: 'match',
           actionCd: 100,
-          matchTime: 1500,
+          matchDelay: 1000,
           fastQuery: true,
           activityIds:
             'com.yitong.mbank.psbc.module.app.view.activity.ThirdPartRedirectActivity',

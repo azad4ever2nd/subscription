@@ -13,7 +13,6 @@ export default defineGkdApp({
           matches: [
             '[vid="dialog_zone"] > [vid="ll_title"] + [vid="btn_close"]',
           ],
-          actionCd: 0,
           fastQuery: true,
           resetMatch: 'match',
           activityIds: [

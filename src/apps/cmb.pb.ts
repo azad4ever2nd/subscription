@@ -167,7 +167,6 @@ export default defineGkdApp({
         {
           resetMatch: 'match',
           action: 'clickCenter',
-          matchTime: 1000,
           actionCd: 500,
           matches:
             '(WebView > View > View > View > Button[clickable=true][visibleToUser=true][text="去加自选"]) || (WebView > View > View > View > Button[clickable=true][visibleToUser=true][text="加自选"]) || (WebView > View > View > View > View > Button[clickable=true][visibleToUser=true][text="加自选"])',
@@ -184,7 +183,6 @@ export default defineGkdApp({
         {
           action: 'clickCenter',
           actionCd: 0,
-          matchTime: 1000,
           actionMaximum: 1,
           resetMatch: 'match',
           activityIds:
@@ -202,7 +200,6 @@ export default defineGkdApp({
         {
           resetMatch: 'match',
           action: 'click',
-          matchTime: 1500,
           actionCd: 0,
           actionMaximum: 1,
           activityIds:
@@ -267,7 +264,6 @@ export default defineGkdApp({
             '([text="分享指定文章"] +n [text="去分享"]) || ([text="分享招财号文章"] +n * > [text="去分享"])',
           ],
           action: 'clickCenter',
-          matchTime: 1500,
           resetMatch: 'match',
           activityIds:
             'cmb.pb.app.h5container.webviewcontainer.PBWebContainerActivity',
@@ -281,7 +277,6 @@ export default defineGkdApp({
       rules: [
         {
           resetMatch: 'match',
-          matchTime: 1500,
           actionMaximum: 1,
           action: 'clickCenter',
           activityIds:
@@ -328,7 +323,6 @@ export default defineGkdApp({
       desc: '260717，一键提现，确认提现到账户',
       rules: [
         {
-          matchTime: 1000,
           resetMatch: 'match',
           action: 'clickCenter',
           activityIds:
@@ -346,7 +340,6 @@ export default defineGkdApp({
         {
           resetMatch: 'match',
           action: 'clickCenter',
-          matchTime: 1000,
           actionCd: 0,
           activityIds:
             'cmb.pb.app.h5container.webviewcontainer.PBWebContainerActivity',

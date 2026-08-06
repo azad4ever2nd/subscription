@@ -170,7 +170,6 @@ export default defineGkdApp({
         {
           action: 'back',
           matches: ['[text^="签到成功"] + [text*="我知道了"]'],
-          matchTime: 1000,
           resetMatch: 'match',
           activityIds: 'com.icbc.activity.web.ICBCWebView',
         },

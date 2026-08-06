@@ -23,6 +23,7 @@ export default defineGkdApp({
         {
           matches: ['[text="确定删除当前快照吗?"] +n @* > [text="确定"]'],
           resetMatch: 'match',
+          matchDelay: 1000,
           actionCd: 0,
           activityIds: ['li.songe.gkd.MainActivity'],
         },

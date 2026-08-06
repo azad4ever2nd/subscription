@@ -40,7 +40,7 @@ export default defineGkdApp({
       rules: [
         {
           resetMatch: 'match',
-          actionCd: 500,
+          actionCd: 350,
           activityIds:
             'com.chinamobile.mcloud.client.component.web.H5WebViewMainActivity',
           matches:

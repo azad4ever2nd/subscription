@@ -63,14 +63,14 @@ export default defineGkdApp({
     {
       key: 5,
       name: '开启通知权限，X掉',
-      desc: '260804',
+      desc: '260806，新布局',
       rules: [
         {
           resetMatch: 'match',
           fastQuery: true,
           activityIds: 'com.mcdonalds.gma.cn.activity.MainActivity',
           matches:
-            'ViewGroup > TextView[vid="bottom_dialog_title"][text="开启通知权限"] + @ImageView[clickable=true][visibleToUser=true][vid="bottom_dialog_button_close"] +n TextView[vid="bottom_dialog_button_confirm"][text="去开启"]',
+            '(ViewGroup > TextView[vid="bottom_dialog_title"][text="开启通知权限"] + @ImageView[clickable=true][visibleToUser=true][vid="bottom_dialog_button_close"] +n TextView[vid="bottom_dialog_button_confirm"][text="去开启"]) || (ViewGroup > TextView[vid="bottom_dialog_title"][text="开启通知权限"] +n ImageView[clickable=true][visibleToUser=true][vid="bottom_dialog_button_close"][desc="关闭"])',
         },
       ],
     },
@@ -169,7 +169,7 @@ export default defineGkdApp({
         {
           activityIds: 'com.mcd.web.activity.BaseWebActivity',
           resetMatch: 'match',
-          actionCd: 500,
+          actionCd: 300,
           matches:
             '[text*="网络不给力，请稍后重试"] + [id="reLoad"][text="重新加载"]',
         },

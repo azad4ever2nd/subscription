@@ -53,7 +53,7 @@ export default defineGkdApp({
       rules: [
         {
           resetMatch: 'match',
-          matchTime: 1000,
+          actionCd: 500,
           activityIds: [
             'com.ecitic.bank.mobile.ui.MainActivity',
             'com.ecitic.bank.mobile.ui.webview.CordovaWebViewActivity',
@@ -110,14 +110,14 @@ export default defineGkdApp({
     {
       key: 8,
       name: '恭喜中奖，确定',
-      desc: '260803',
+      desc: '260806，添加领取成功',
       rules: [
         {
           resetMatch: 'match',
           activityIds:
             'com.ecitic.bank.mobile.ui.webview.CordovaExternalWebViewActivity',
           matches:
-            'View > TextView[text="恭喜中奖"] +n Button[clickable=true][visibleToUser=true][text="确定"]',
+            '(View > TextView[text="恭喜中奖"] +n Button[clickable=true][visibleToUser=true][text="确定"]) || (View > View > View > TextView[text="领取成功"] +n Button[clickable=true][visibleToUser=true][text="确定"])',
         },
       ],
     },
@@ -127,7 +127,7 @@ export default defineGkdApp({
       desc: '251208，D',
       rules: [
         {
-          matchTime: 1000,
+          matchDelay: 1000,
           matches: ['Dialog [text="close"]'],
           resetMatch: 'match',
           activityIds: ['com.citic.jk.activity.H5ContainerAty'],

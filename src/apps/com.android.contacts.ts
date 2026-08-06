@@ -8,7 +8,7 @@ export default defineGkdApp({
       key: 1,
       name: '删除通话记录',
       resetMatch: 'match',
-      desc: '小米      matchTime:10000,',
+      desc: '小米',
       rules: [
         {
           fastQuery: true,

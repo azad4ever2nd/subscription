@@ -62,7 +62,6 @@ export default defineGkdApp({
       rules: [
         {
           resetMatch: 'match',
-          actionCd: 0,
           activityIds: 'mark.via.Shell',
           matches: '[text="Chrome浏览器"] + [desc="继续"][clickable=true]',
         },
@@ -89,7 +88,6 @@ export default defineGkdApp({
       rules: [
         {
           resetMatch: 'match',
-          actionCd: 0,
           activityIds: 'mark.via.Shell',
           matches: '[text^="是否在" && text$="内阅读全文"] + [text="取消"]',
         },
@@ -116,7 +114,7 @@ export default defineGkdApp({
       rules: [
         {
           resetMatch: 'match',
-          actionCd: 0,
+          actionCd: 500,
           activityIds: 'mark.via.Shell',
           action: 'clickCenter',
           matches:
@@ -131,7 +129,7 @@ export default defineGkdApp({
       rules: [
         {
           resetMatch: 'match',
-          actionCd: 0,
+          actionCd: 500,
           action: 'clickCenter',
           activityIds: 'mark.via.Shell',
           matches:

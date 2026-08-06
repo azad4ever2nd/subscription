@@ -24,8 +24,7 @@ export default defineGkdApp({
       rules: [
         {
           resetMatch: 'match',
-          matchDelay: 500,
-          matchTime: 1000,
+          matchDelay: 1000,
           actionCd: 0,
           activityIds:
             'com.cgb.mobilebank.sit.launcher.module.main.activity.IndexActivity',
@@ -41,8 +40,6 @@ export default defineGkdApp({
       rules: [
         {
           resetMatch: 'match',
-          matchTime: 1000,
-          actionCd: 0,
           fastQuery: true,
           activityIds: [
             'com.cgb.mobilebank.sit.launcher.module.main.activity.IndexActivity',

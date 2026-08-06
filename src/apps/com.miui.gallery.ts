@@ -12,6 +12,7 @@ export default defineGkdApp({
         {
           resetMatch: 'match',
           fastQuery: true,
+          actionCd: 800,
           activityIds: [
             'com.miui.gallery.activity.AlbumDetailGroupingActivity',
             'com.miui.gallery.activity.TrashActivity',

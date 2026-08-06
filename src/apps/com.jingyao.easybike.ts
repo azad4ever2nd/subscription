@@ -318,6 +318,61 @@ export default defineGkdApp({
     },
     {
       key: 23,
+      name: '奖励金，今日签到',
+      desc: '260806',
+      rules: [
+        {
+          activityIds:
+            'com.hellobike.moped.platform.offline.web.OhoRealmWebActivity',
+          matches:
+            'TextView[text="我的奖励金"] +n View > View > @View[clickable=false][visibleToUser=true] > TextView + TextView[text="今日签到"]',
+        },
+      ],
+    },
+    {
+      key: 24,
+      name: '奖励金，弹窗，签到',
+      desc: '260806',
+      rules: [
+        {
+          activityIds:
+            'com.hellobike.moped.platform.offline.web.OhoRealmWebActivity',
+          matches:
+            'TextView[text="我的奖励金"] +n View > View > TextView[index=parent.childCount.minus(1)][clickable=false][visibleToUser=true][text="签到"]',
+        },
+      ],
+    },
+    {
+      key: 25,
+      name: '奖励金，签到后弹窗，明日再来，X掉',
+      desc: '260806',
+      rules: [
+        {
+          resetMatch: 'match',
+          activityIds:
+            'com.hellobike.moped.platform.offline.web.OhoRealmWebActivity',
+          matches:
+            'TextView[text="我的奖励金"] +n View > View > @TextView[clickable=false][visibleToUser=true][text.length=0] +n TextView[text="明日再来"]',
+        },
+      ],
+    },
+    {
+      key: 26,
+      name: '奖金金，每日单单返，知道了',
+      desc: '260806',
+      rules: [
+        {
+          resetMatch: 'match',
+          activityIds:
+            'com.hellobike.moped.platform.offline.web.OhoRealmWebActivity',
+          matches:
+            'TextView[text="我的奖励金"] +n View > View > TextView[clickable=false][visibleToUser=true][text="知道了"]',
+        },
+      ],
+    },
+
+    {
+      key: 27,
       name: '一键收碳',
       desc: '260702',
       rules: [
@@ -331,7 +386,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 24,
+      key: 28,
       name: '碳积分，去领取',
       desc: '260703',
       rules: [
@@ -346,7 +401,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 25,
+      key: 29,
       name: '低碳会员页面，碳积分奖励，',
       desc: '260509',
       rules: [
@@ -359,7 +414,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 26,
+      key: 30,
       name: '侍款弹窗',
       desc: '260308',
       rules: [
@@ -374,7 +429,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 27,
+      key: 31,
       name: '骑行完弹窗',
       desc: '260309,添加有无故障弹窗',
       rules: [
@@ -388,7 +443,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 28,
+      key: 32,
       name: '秒杀价月卡',
       desc: '251213，增加价格变化，0.01,0.99,1.99,7天无限次卡',
       rules: [
@@ -404,7 +459,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 29,
+      key: 33,
       name: '骑行任务弹窗，关闭',
       desc: '260505',
       rules: [

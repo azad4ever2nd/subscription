@@ -38,7 +38,7 @@ export default defineGkdApp({
       rules: [
         {
           matches: ['[vid="cancel"][text="暂不激活"]'],
-          matchTime: 1000,
+          actionCd: 100,
           fastQuery: true,
           resetMatch: 'match',
           activityIds: ['com.mapass.example.activity.MainActivity_'],
@@ -126,7 +126,6 @@ export default defineGkdApp({
       rules: [
         {
           resetMatch: 'match',
-          matchTime: 1000,
           activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
           matches:
             '@*[clickable=true][text.length=1] + [text="恭喜获得"] <n * +n [text="立即提升"]',
@@ -155,8 +154,8 @@ export default defineGkdApp({
       rules: [
         {
           resetMatch: 'match',
-          matchTime: 1000,
           actionMaximum: 1,
+          actionCd: 0,
           activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
           matches:
             '([text="开通小额免密支付"] + [text="暂不开通"]) || ([text="分期还账单"] + [text="暂不办理"])',

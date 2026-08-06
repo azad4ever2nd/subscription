@@ -98,6 +98,7 @@ export default defineGkdApp({
         {
           actionMaximum: 3,
           resetMatch: 'match',
+          action: 'clickCenter',
           actionCd: 0,
           preKeys: [5],
           activityIds: [
@@ -122,7 +123,7 @@ export default defineGkdApp({
             'com.cmvideo.capability.remote_web.WebProcessActivity',
           ],
           matches:
-            '(@View > View > View > Image[text="1O7GEIFBFRPLK" || text="1O7GEIFC0TJFP" || text="1O7GE0VC9N7O0"])',
+            '(@View > View > View > Image[text="1O7GEIFBFRPLK" || text="1O7GEIFC0TJFP" || text="1O7GE0VC9N7O0" || text="1O7GC3SARU1RQ"])',
         },
       ],
     },

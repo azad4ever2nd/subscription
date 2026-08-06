@@ -10,7 +10,6 @@ export default defineGkdApp({
       desc: '',
       rules: [
         {
-          matchTime: 1000,
           matches: '[vid="tip_view_pager"] +2 [vid="close"][desc="关闭"]',
           fastQuery: true,
           resetMatch: 'match',
@@ -109,9 +108,8 @@ export default defineGkdApp({
       rules: [
         {
           resetMatch: 'match',
-          matchTime: 1000,
           actionCd: 0,
-          actionMaximum: 2,
+          actionMaximum: 4,
           activityIds:
             'com.nantian.iBank.ui.activity.container.ProgramSingleWindowActivity',
           matches:

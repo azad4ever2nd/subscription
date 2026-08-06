@@ -239,7 +239,6 @@ export default defineGkdApp({
           matches: [
             '[text="安徽农信" || text="武汉农商行"] <n * +4 TextView[text!="已抢完"]',
           ],
-          matchTime: 10000,
           resetMatch: 'match',
           activityIds:
             'com.alipay.mobile.nebulax.xriver.activity.XRiverActivity',
@@ -485,7 +484,7 @@ export default defineGkdApp({
         {
           activityIds:
             'com.alipay.mobile.nebulax.xriver.activity.XRiverTransActivity$Main',
-          actionCd: 0,
+          actionCd: 300,
           matches:
             'Dialog > View > View > Button[text="关闭"] - View > View > TextView[text="继续领"]',
         },
@@ -500,7 +499,7 @@ export default defineGkdApp({
           matches: [
             '(@* + [text*="碰一下"] +n [text="去申请"]) || (@* - [text^="开启"] <n * +n * > [text="去订阅"]) || (@Button + * > [text=" 立即添加"]) || (@Image + [text*="收益可升级" || text="上架商品促成单" || text$="挑战活动"] +n [text="去升级" || text="去了解"]) || (@Image < * + * > [text*="红包奖励" || text="分期新户专享" || text^="开通"  || text="去看看1" || text*="同意协议" || text="同意协议并分期"]) || (@Image < * + * > [text*="红包奖励" || text="分期新户专享" || text^="开通"] +n [text="去看看1" || text*="同意协议" || text="同意协议并分期"]) || (@Image < [text*="红包奖励" || text="分期新户专享" || text^="开通"] +n [text="去看看1" || text*="同意协议"]) || (@Image[text=""] < * +n [text^="境外信用卡消费满"] +n * [text="提交"]) ||(@TextView + View >n [text="开启使用"]) || (@TextView + [text^="恭喜" || text="你新购的基金抗风险能力强"] +n [text="去看看"]) || (@TextView +n [text="去完成"] - * > [text^="搭配海外基金" || text^="搭配一笔" || text^="恭喜完成一笔国内" ]) || (@TextView - [text*="红包" || text^="学知识"] < * +n [text*="领取" || text*="福利"]) || (@TextView < View +2 [text="已学习，去使用"]) || (@[text="BE4E7D81-3958-4F2E-9956-E6071199885F@2x"] < * + [text^="添加"] ) || (@[text="关闭"] + * > [text="去看看" || text="去收礼"]) || (@[text="关闭"] +n [text="立即续卡"]) || ([text="关闭弹窗"] + * [text="立即更换"]) || ([text="去转换"] + [text="仍要卖出"]) || ([text="支付宝"] + [text="邀请你" || text="推荐你"] + [text="跳过"]) || ([text="暂不转出"] + [text="继续转出"]) || ([text="去看看"] - [text="淘宝闪购"] <<n * + [text="关闭"]) || (Dialog >n Button[text="关闭"]) || ([text^="无法获取定位信息"] + [text="我知道了"])',
           ],
-          actionCd: 0,
+          actionCd: 300,
           resetMatch: 'match',
           activityIds:
             'com.alipay.mobile.nebulax.xriver.activity.XRiverActivity',
@@ -518,7 +517,6 @@ export default defineGkdApp({
             'com.alipay.mobile.nebulax.xriver.activity.XRiverActivity$App01',
             'com.alipay.mobile.nebulax.xriver.activity.XRiverActivity$App02',
           ],
-          actionCd: 0,
           matches:
             '(View > @Image[clickable=false][visibleToUser=true] +2 TextView[text="去处理"] + TextView[text="暂不处理"]) || (@TextView <n * + [text="取消"] + [text="立即添加"])',
         },
@@ -613,7 +611,6 @@ export default defineGkdApp({
         {
           resetMatch: 'match',
           fastQuery: true,
-          actionCd: 0,
           activityIds:
             'com.alipay.android.phone.mbox.biz.legacy.sbs.v2.MBoxSubscribeHostActivity',
           matches:

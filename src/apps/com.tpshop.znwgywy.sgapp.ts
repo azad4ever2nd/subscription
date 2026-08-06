@@ -86,6 +86,19 @@ export default defineGkdApp({
     },
     {
       key: 7,
+      name: '签到完广告弹窗，X掉',
+      desc: '260806',
+      rules: [
+        {
+          resetMatch: 'match',
+          activityIds: 'tool.seagull.v.ui.MainActivity',
+          matches:
+            'TextView[vid="checkin_button"][text^="已签"] + FrameLayout[vid="banner_container"] > FrameLayout > FrameLayout > FrameLayout > LinearLayout[childCount=3] > FrameLayout[childCount=3] > @FrameLayout[clickable=false][visibleToUser=true] > ImageView',
+        },
+      ],
+    },
+    {
+      key: 8,
       name: '连接弹窗1',
       desc: '260621',
       rules: [
@@ -98,7 +111,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 8,
+      key: 9,
       name: '连接页面广告弹窗',
       desc: '260625',
       rules: [
@@ -111,7 +124,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 9,
+      key: 10,
       name: '服务器列表广告1',
       desc: '260625',
       rules: [
@@ -124,7 +137,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 10,
+      key: 11,
       name: '服务器列表广告2',
       desc: '260625',
       rules: [
@@ -137,7 +150,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 11,
+      key: 12,
       name: '服务器列表广告3',
       desc: '260702',
       rules: [
@@ -150,7 +163,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 12,
+      key: 13,
       name: '连接后广告窗',
       desc: '260615',
       rules: [
@@ -163,7 +176,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 13,
+      key: 14,
       name: '连接后广告窗3',
       desc: '260621',
       rules: [
@@ -177,7 +190,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 14,
+      key: 15,
       name: '连接后广告弹窗4',
       desc: '20260628',
       rules: [
@@ -190,7 +203,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 15,
+      key: 16,
       name: '连接后广告弹窗5',
       desc: '260703',
       rules: [
@@ -203,7 +216,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 16,
+      key: 17,
       name: '连接后广告弹窗6',
       desc: '260719，有提示 摇动或点击跳转至详情页或第三方应用',
       rules: [
@@ -216,7 +229,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 17,
+      key: 18,
       name: '看广告签到获取金币，确认',
       desc: '260704',
       rules: [
@@ -230,7 +243,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 18,
+      key: 19,
       name: '连接后广告窗2',
       desc: '260616',
       rules: [
@@ -243,7 +256,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 19,
+      key: 20,
       name: '广告1，关闭',
       desc: '260513',
       rules: [
@@ -257,7 +270,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 20,
+      key: 21,
       name: '奖励已下发，跳过',
       desc: '260510',
       rules: [
@@ -269,7 +282,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 21,
+      key: 22,
       name: '反馈，close_btn',
       desc: '260510',
       rules: [
@@ -282,7 +295,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 22,
+      key: 23,
       name: '签到完广告弹窗，跳过',
       desc: '260511',
       rules: [
@@ -295,7 +308,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 23,
+      key: 24,
       name: '点击广告拿奖励',
       desc: '260531',
       rules: [
@@ -310,7 +323,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 24,
+      key: 25,
       name: '恭喜获得奖励2',
       desc: '260526',
       rules: [
@@ -322,7 +335,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 25,
+      key: 26,
       name: '恭喜获得奖励3',
       desc: '260607',
       rules: [
@@ -336,7 +349,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 26,
+      key: 27,
       name: '签到点击广告后，X掉',
       desc: '260507',
       rules: [

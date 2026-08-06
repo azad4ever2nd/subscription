@@ -74,7 +74,7 @@ export default defineGkdApp({
       rules: [
         {
           matches: ['[text*="活动火爆"] + * > @* > [text="确定"]'],
-          actionCd: 0,
+          actionCd: 300,
           resetMatch: 'match',
           activityIds: [
             'com.boc.android.foundation.h5.WebViewContainerActivity',

@@ -12,7 +12,6 @@ export default defineGkdApp({
         {
           matches: ['[vid="imageHomeGG_Middle"] + [vid="imageHomeGG_Close"]'],
           fastQuery: true,
-          matchTime: 10000,
           resetMatch: 'match',
           activityIds: ['com.jy.sptcc.ui.MainActivity'],
         },

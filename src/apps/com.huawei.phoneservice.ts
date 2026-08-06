@@ -10,7 +10,6 @@ export default defineGkdApp({
       rules: [
         {
           actionMaximum: 1,
-          matchTime: 1000,
           resetMatch: 'app',
           fastQuery: true,
           activityIds: [
@@ -105,7 +104,6 @@ export default defineGkdApp({
         {
           resetMatch: 'match',
           fastQuery: true,
-          matchTime: 1500,
           activityIds: [
             'com.huawei.myhw.ui.HwHomeActivity',
             'com.huawei.module.commonwebview.ui.CommonWebviewActivity',

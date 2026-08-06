@@ -9,7 +9,6 @@ export default defineGkdApp({
       desc: '260705,添加首页签到成功, ([text="签到成功"] < * + TextView) || (@[text="知道了"] <n * + TextView) ||',
       rules: [
         {
-          matchTime: 1000,
           actionCd: 100,
           resetMatch: 'match',
           activityIds: 'com.ccb.longjiLife.MainActivity',
@@ -71,7 +70,7 @@ export default defineGkdApp({
     {
       key: 6,
       name: '优惠券已抢光',
-      desc: '      matchTime:10000,action:"back",',
+      desc: '',
       rules: [
         {
           action: 'back',
@@ -109,15 +108,14 @@ export default defineGkdApp({
     {
       key: 9,
       name: '低碳生活，一键收取',
-      desc: '260722[ChangeMe]本规则由GKD网页端审查工具生成',
+      desc: '260806',
       rules: [
         {
           resetMatch: 'match',
           actionMaximum: 1,
-          matchTime: 1000,
           activityIds: 'com.ccb.cloudmerchant.view.WebViewActivity',
           matches:
-            'WebView[text="低碳生活"] > View > View > Image[clickable=false][visibleToUser=true][text="oneKey"]',
+            '(WebView[text="低碳生活"] >n View > Image[clickable=false][visibleToUser=true][text="oneKey"]) || (WebView[text="低碳生活"] > View > Image[clickable=false][visibleToUser=true][text="oneKey"])',
         },
       ],
     },
@@ -158,6 +156,67 @@ export default defineGkdApp({
           resetMatch: 'match',
           matches: '[text="身份信息验证"] +n CheckBox[checked=false]',
           activityIds: 'com.ccb.cloudmerchant.view.WebViewActivity',
+        },
+      ],
+    },
+
+    {
+      key: 13,
+      name: '建行社保卡，公告，X掉',
+      desc: '260806',
+      rules: [
+        {
+          resetMatch: 'match',
+          actionCd: 0,
+          action: 'clickCenter',
+          activityIds: 'com.ccb.cloudmerchant.view.WebViewActivity',
+          matches:
+            'WebView[text*="建行社保卡"] > View > View > View > @Image[text="NWJ6tc6mwaKQfgbADXAJPIxaVNUQJguwpoNgAy0x2ew8SgXab+AzNTubJfuAmp7HtQL5K8AARxBdk+5zMOgAAAAASUVORK5CYII="] - View > TextView[text*="建行社保福利日" || text="尊敬的客户："] ',
+        },
+      ],
+    },
+    {
+      key: 14,
+      name: '建行社保卡，勾选同意',
+      desc: '260806',
+      rules: [
+        {
+          resetMatch: 'match',
+          actionCd: 0,
+          action: 'clickCenter',
+          activityIds: 'com.ccb.cloudmerchant.view.WebViewActivity',
+          matches:
+            'WebView[text*="建行社保卡"] > View > View > View > CheckBox[checked=false]',
+        },
+      ],
+    },
+    {
+      key: 15,
+      name: '建行社保卡，勾选同意后，立即参与',
+      desc: '260806',
+      rules: [
+        {
+          resetMatch: 'match',
+          actionCd: 0,
+          action: 'clickCenter',
+          activityIds: 'com.ccb.cloudmerchant.view.WebViewActivity',
+          matches:
+            'WebView[text*="建行社保卡"] > View > View > View > CheckBox[checked=true] +2 CheckBox[checked=true] +2 Image[clickable=false][visibleToUser=true][text="loginBtn.f302f730"]',
+        },
+      ],
+    },
+    {
+      key: 16,
+      name: '建行社保卡，火暴',
+      desc: '260806',
+      rules: [
+        {
+          resetMatch: 'match',
+          actionCd: 0,
+          action: 'clickCenter',
+          activityIds: 'com.ccb.cloudmerchant.view.WebViewActivity',
+          matches:
+            '(WebView[text*="建行社保卡"] > View > View > @Image[visibleToUser=true][clickable=true][text="NWJ6tc6mwaKQfgbADXAJPIxaVNUQJguwpoNgAy0x2ew8SgXab+AzNTubJfuAmp7HtQL5K8AARxBdk+5zMOgAAAAASUVORK5CYII="] - View > View > TextView[text^="尊敬的客户"]) || (WebView[text*="建行社保卡"] > View > Dialog > View > Button[text="好的"])',
         },
       ],
     },

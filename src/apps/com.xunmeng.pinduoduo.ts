@@ -147,8 +147,8 @@ export default defineGkdApp({
     },
     {
       key: 11,
-      name: '放弃发真实带图评价',
-      desc: '260702',
+      name: '放弃发真实带图评价，退出',
+      desc: '260806， || (TextView[text="继续编辑" || text="放弃打款"] < FrameLayout  <n ViewGroup + ViewGroup[clickable=true]) || (@[vid="pdd"][desc="返回"] < * +n * > [vid="tv_title"][text="发表评价" || text="发表真实评价"]) || ',
       rules: [
         {
           fastQuery: true,
@@ -156,7 +156,7 @@ export default defineGkdApp({
           actionCd: 300,
           activityIds: 'com.xunmeng.pinduoduo.activity.NewPageActivity',
           matches:
-            '(@Button[text="关闭按钮"] +n [text^="还差1人" || text^="拼单已发起"]) || ([vid="pdd"] < @[vid="pdd"] + [vid="pdd"] > [text="评价拍摄"]) || (@[vid="pdd"][desc="返回"] < * +n * > [vid="tv_title"][text="发表评价" || text="发表真实评价"]) || (TextView[text="继续编辑"] < FrameLayout < ViewGroup + @ViewGroup[clickable=true] > FrameLayout > TextView[text="退出"]) || (TextView[text="继续编辑" || text="放弃打款"] < FrameLayout  <n ViewGroup + ViewGroup[clickable=true])',
+            '(@Button[text="关闭按钮"] +n [text^="还差1人" || text^="拼单已发起"]) || ([vid="pdd"] < @[vid="pdd"] + [vid="pdd"] > [text="评价拍摄"]) || (TextView[text="继续编辑"] < FrameLayout < ViewGroup + @ViewGroup[clickable=true] > FrameLayout > TextView[text="退出"])',
         },
       ],
     },
@@ -347,6 +347,20 @@ export default defineGkdApp({
     },
     {
       key: 25,
+      name: '发表评价，返回',
+      desc: '260806',
+      rules: [
+        {
+          fastQuery: true,
+          resetMatch: 'match',
+          activityIds: 'com.xunmeng.pinduoduo.activity.NewPageActivity',
+          matches:
+            '@[vid="pdd"][desc="返回"] < * +n * > [vid="tv_title"][text="发表评价" || text="发表真实评价"]',
+        },
+      ],
+    },
+    {
+      key: 26,
       name: '通知关闭，拒绝接收',
       desc: '260609',
       rules: [
