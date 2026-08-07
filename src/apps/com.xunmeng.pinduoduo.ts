@@ -361,6 +361,19 @@ export default defineGkdApp({
     },
     {
       key: 26,
+      name: '提前锁定限时翻倍券，开心收下 或 X掉',
+      desc: '260807',
+      rules: [
+        {
+          resetMatch: 'match',
+          activityIds: 'com.xunmeng.pinduoduo.activity.NewPageActivity',
+          matches:
+            '(View > View > View > View > TextView[clickable=false][text="开心收下"] + Image[clickable=false][visibleToUser=true][text="webp"])',
+        },
+      ],
+    },
+    {
+      key: 27,
       name: '通知关闭，拒绝接收',
       desc: '260609',
       rules: [

@@ -151,10 +151,12 @@ export default defineGkdApp({
     {
       key: 11,
       name: '开启通知2',
-      desc: '260209',
+      desc: '260807，添加开启通知权限',
       rules: [
         {
-          matches: ['[vid="iv_dialog"] + [vid="v_cancel"]'],
+          matches:
+            '([vid="iv_dialog"] + [vid="v_cancel"]) || (ViewGroup > TextView[vid="bottom_dialog_title"][text="开启通知权限"] +n ImageView[clickable=true][visibleToUser=true][vid="bottom_dialog_button_close"][desc="关闭"])',
+          actionCd: 500,
           fastQuery: true,
           resetMatch: 'match',
           activityIds: ['com.mcd.order.activity.OrderDetailActivity'],

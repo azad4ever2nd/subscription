@@ -110,15 +110,16 @@ export default defineGkdApp({
     {
       key: 8,
       name: '月卡弹窗',
-      desc: '260711，添加车主福利弹窗，IDS，哈罗快送跑腿弹窗',
+      desc: '260807，添加车主福利弹窗，IDS，哈罗快送跑腿弹窗',
       rules: [
         {
           resetMatch: 'match',
+          matchDelay: 1000,
           actionCd: 0,
           fastQuery: true,
           activityIds: 'com.hellobike.atlas.business.portal.PortalActivity',
           matches:
-            '([vid="hbDialogLayout"] +n [vid="actionDialogClose"]) || ([vid="creativeContainer"] + [vid="actionDialogClose"]) || (FrameLayout > LinearLayout > LinearLayout[vid="hbDialogLayout"] + View + ImageView[vid="actionDialogClose"]) || (LinearLayout > FrameLayout[vid="creativeContainer"] + ImageView[vid="actionDialogClose"][clickable=true][visibleToUser=true])',
+            '(FrameLayout > LinearLayout > LinearLayout[vid="hbDialogLayout"] + View + ImageView[vid="actionDialogClose"]) || (LinearLayout > FrameLayout[vid="creativeContainer"] + ImageView[vid="actionDialogClose"][clickable=true][visibleToUser=true])',
         },
       ],
     },

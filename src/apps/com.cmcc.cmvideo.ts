@@ -93,14 +93,12 @@ export default defineGkdApp({
     {
       key: 6,
       name: '获取验证码',
-      desc: '260622，依赖 领2GB日流量，马上领取',
+      desc: '260807，取消依赖测试，依赖 领2GB日流量，马上领取',
       rules: [
         {
-          actionMaximum: 3,
+          actionMaximum: 6,
           resetMatch: 'match',
           action: 'clickCenter',
-          actionCd: 0,
-          preKeys: [5],
           activityIds: [
             'com.quickjs.android.example.RNFragmentActivity',
             'com.cmvideo.capability.remote_web.WebProcessActivity',
@@ -113,17 +111,17 @@ export default defineGkdApp({
     {
       key: 7,
       name: '恭喜获得2GB通用流量，好的',
-      desc: '260802，各种弹窗，添加 IDS',
+      desc: '260807，添加各种抽奖类的提示，各种弹窗，添加 IDS',
       rules: [
         {
           resetMatch: 'match',
-          actionCd: 500,
+          actionCd: 300,
           activityIds: [
             'com.quickjs.android.example.RNFragmentActivity',
             'com.cmvideo.capability.remote_web.WebProcessActivity',
           ],
           matches:
-            '(@View > View > View > Image[text="1O7GEIFBFRPLK" || text="1O7GEIFC0TJFP" || text="1O7GE0VC9N7O0" || text="1O7GC3SARU1RQ"])',
+            '(@View > View > View > Image[text="1O7GDU9LRD8A8" || text="1O7GDU9LPCKHS" || text="1O7GE0VDLVO51"]) || (@View > View > View > Image[text="1O7GEIFBFRPLK" || text="1O7GEIFC0TJFP" || text="1O7GE0VC9N7O0" || text="1O7GC3SARU1RQ" || text="1O7GDU9N7V7LU" || text="1O7GDU9H2A5TQ" || text="1O7GL9PTD3DCA" || text="1O7GE0VD20609"])',
         },
       ],
     },

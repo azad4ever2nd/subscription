@@ -88,5 +88,20 @@ export default defineGkdApp({
         },
       ],
     },
+    {
+      key: 7,
+      name: '秋奶，立即抢',
+      desc: '260807',
+      rules: [
+        {
+          resetMatch: 'match',
+          actionCd: 0,
+          actionMaximum: 20,
+          activityIds: 'me.ele.component.webcontainer.view.AppUCWebActivity',
+          matches:
+            'View > TextView[text="11.9元通兑券"] +n TextView[clickable=true][visibleToUser=true][text="立即抢"]',
+        },
+      ],
+    },
   ],
 });

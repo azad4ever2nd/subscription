@@ -1224,11 +1224,11 @@ export default defineGkdApp({
     {
       key: 62,
       name: '活动未开始，我知道了',
-      desc: '260803',
+      desc: '260807，添加已参加过',
       rules: [
         {
           resetMatch: 'match',
-          actionCd: 500,
+          actionCd: 300,
           activityIds: [
             'com.tencent.mm.plugin.appbrand.ui.AppBrandUI0',
             'com.tencent.mm.plugin.appbrand.ui.AppBrandUI1',
@@ -1242,7 +1242,7 @@ export default defineGkdApp({
             'com.tencent.mm.plugin.appbrand.ui.AppBrandUI04',
           ],
           matches:
-            'View > TextView[text^="活动未开始"] + View > View > Image[clickable=true][visibleToUser=true]',
+            'View > TextView[text^="活动未开始" || text^="已参加过本次活动"] + View > View > Image[clickable=true][visibleToUser=true]',
         },
       ],
     },

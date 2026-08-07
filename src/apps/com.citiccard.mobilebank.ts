@@ -27,9 +27,7 @@ export default defineGkdApp({
           matches: ['[vid="dialog"] + [vid="cancelArea"]'],
           fastQuery: true,
           resetMatch: 'match',
-          activityIds: [
-            'com.citiccard.mobilebank.web.applet.NewAppletActivity',
-          ],
+          activityIds: 'com.citiccard.mobilebank.web.applet.NewAppletActivity',
         },
       ],
     },
@@ -244,16 +242,16 @@ export default defineGkdApp({
     },
     {
       key: 18,
-      name: '弹窗广告',
-      desc: '260621，添加分期弹窗',
+      name: '首页弹窗广告',
+      desc: '260807，添加分期弹窗',
       rules: [
         {
           resetMatch: 'match',
+          matchDelay: 1000,
+          matchTime: 1000,
           fastQuery: true,
-          activityIds: [
+          activityIds:
             'com.citiccard.mobilebank.newconfig.appconstruct.TabsAppHomeActivity',
-            'com.citiccard.mobilebank..newconfig.appconstruct.TabsAppHomeActivity',
-          ],
           matches:
             '([vid="dialog"] + [vid="cancelArea"]) || (FrameLayout > RelativeLayout > ImageView[vid="dialog"] + ImageView[vid="cancelArea"][clickable=true])',
         },

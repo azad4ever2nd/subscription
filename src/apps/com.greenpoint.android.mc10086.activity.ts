@@ -20,10 +20,11 @@ export default defineGkdApp({
     {
       key: 2,
       name: '更新',
-      desc: '260705',
+      desc: '260807',
       rules: [
         {
           fastQuery: true,
+          matchDelay: 1500,
           resetMatch: 'match',
           activityIds: 'com.mc10086.cmcc.view.tabs.AppTabFragment',
           matches:

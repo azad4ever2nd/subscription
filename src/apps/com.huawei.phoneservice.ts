@@ -99,7 +99,7 @@ export default defineGkdApp({
     {
       key: 7,
       name: '领奖励',
-      desc: '260701,添加更多',
+      desc: '260807，领奖励顺序变动，添加更多',
       rules: [
         {
           resetMatch: 'match',
@@ -109,7 +109,7 @@ export default defineGkdApp({
             'com.huawei.module.commonwebview.ui.CommonWebviewActivity',
           ],
           matches:
-            '([text="领奖励"]) || ([vid="tv_tasks_title"][text="我的任务"] + [vid="tv_tasks_more"][text="更多"]) || (ViewGroup > TextView[vid="tv_tasks_type"][text="领奖励"])',
+            '([vid="tv_tasks_title"][text="我的任务"] + [vid="tv_tasks_more"][text="更多"]) || (ViewGroup > TextView[clickable=true][vid="tv_tasks_type"][text="领奖励"]) || (ViewGroup > TextView[vid="tv_tasks_type"][text="领奖励"]) || (ListView > View > TextView[clickable=true][text="领奖励"])',
         },
       ],
     },

@@ -104,7 +104,7 @@ export default defineGkdApp({
     {
       key: 8,
       name: '签到待领',
-      desc: '260607',
+      desc: '260807',
       rules: [
         {
           resetMatch: 'match',
@@ -113,7 +113,7 @@ export default defineGkdApp({
           activityIds:
             'com.nantian.iBank.ui.activity.container.ProgramSingleWindowActivity',
           matches:
-            '([text="签到有礼楼层"] +n @View[clickable=true][childCount=1] + [text="今天"]) || (TextView[text^="+" && text$="0"] < @View[childCount=1] + TextView[text="今天"])',
+            '([text="签到有礼楼层"] +n @View[clickable=false][childCount=1] + [text="今天"]) || ([text="签到有礼楼层"] +n @View[clickable=true][childCount=1] + [text="今天"]) || (TextView[text^="+" && text$="0"] < @View[childCount=1] + TextView[text="今天"]) || (@View[childCount=1] + TextView[text="今天"])',
         },
       ],
     },

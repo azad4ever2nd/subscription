@@ -101,6 +101,19 @@ export default defineGkdApp({
     },
     {
       key: 8,
+      name: '签到页面，左上角，立即领取',
+      desc: '260807',
+      rules: [
+        {
+          resetMatch: 'match',
+          activityIds: 'ctrip.android.view.h5v2.view.H5Container',
+          matches:
+            'View[childCount=3] > @View > TextView[text^="+"] + View > TextView[text="立即领取"]',
+        },
+      ],
+    },
+    {
+      key: 9,
       name: '发现一波红包，一键领取，X掉',
       desc: '260525',
       rules: [
