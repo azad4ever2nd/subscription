@@ -1248,6 +1248,38 @@ export default defineGkdApp({
     },
     {
       key: 63,
+      name: '粤工会滑块验证',
+      desc: '260808',
+      rules: [
+        {
+          action: 'swipe',
+          actionMaximum: 1,
+          matches:
+            'View > TextView[text="滑动验证"] + TextView[text="关闭"] + View > TextView + TextView[text.length=0]',
+          swipeArg: {
+            end: {
+              right: 'parent.right',
+              top: 'parent.top',
+            },
+            duration: 3000,
+          },
+          activityIds: [
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI0',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI1',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI2',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI3',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI4',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI00',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI01',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI02',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI03',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI04',
+          ],
+        },
+      ],
+    },
+    {
+      key: 64,
       name: '自动登录该设备',
       desc: '260804',
       rules: [

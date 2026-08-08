@@ -38,6 +38,7 @@ export default defineGkdApp({
           actionCd: 0,
           matchDelay: 10000,
           resetMatch: 'match',
+          forcedTime: 10000,
           matchRoot: false,
           activityIds: [
             'com.sgcc.wsgw.mainbundle.ElectricTitleActivity',

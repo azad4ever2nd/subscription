@@ -108,7 +108,7 @@ export default defineGkdApp({
           resetMatch: 'match',
           activityIds: 'ctrip.android.view.h5v2.view.H5Container',
           matches:
-            'View[childCount=3] > @View > TextView[text^="+"] + View > TextView[text="立即领取"]',
+            'View > @View[clickable=false][visibleToUser=true] > TextView[text^="+"] + View > TextView[text="立即领取"]',
         },
       ],
     },
