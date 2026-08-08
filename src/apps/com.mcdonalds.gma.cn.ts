@@ -63,11 +63,12 @@ export default defineGkdApp({
     {
       key: 5,
       name: '开启通知权限，X掉',
-      desc: '260806，新布局',
+      desc: '260808，新布局，改fastquery测试',
       rules: [
         {
           resetMatch: 'match',
-          fastQuery: true,
+          fastQuery: false,
+          actionCd: 500,
           activityIds: 'com.mcdonalds.gma.cn.activity.MainActivity',
           matches:
             '(ViewGroup > TextView[vid="bottom_dialog_title"][text="开启通知权限"] + @ImageView[clickable=true][visibleToUser=true][vid="bottom_dialog_button_close"] +n TextView[vid="bottom_dialog_button_confirm"][text="去开启"]) || (ViewGroup > TextView[vid="bottom_dialog_title"][text="开启通知权限"] +n ImageView[clickable=true][visibleToUser=true][vid="bottom_dialog_button_close"][desc="关闭"])',
@@ -151,12 +152,12 @@ export default defineGkdApp({
     {
       key: 11,
       name: '开启通知2',
-      desc: '260807，添加开启通知权限',
+      desc: '260808，添加奖牌领取，开启通知权限',
       rules: [
         {
           matches:
-            '([vid="iv_dialog"] + [vid="v_cancel"]) || (ViewGroup > TextView[vid="bottom_dialog_title"][text="开启通知权限"] +n ImageView[clickable=true][visibleToUser=true][vid="bottom_dialog_button_close"][desc="关闭"])',
-          actionCd: 500,
+            '([vid="iv_dialog"] + [vid="v_cancel"]) || (ViewGroup > TextView[vid="bottom_dialog_title"][text="开启通知权限"] +n ImageView[clickable=true][visibleToUser=true][vid="bottom_dialog_button_close"][desc="关闭"]) || (ViewGroup > TextView[clickable=true][visibleToUser=true][vid="tv_badge_dialog_save"][clickable=true][visibleToUser=true][text="开心收下"] + TextView + ImageView[vid="tv_badge_dialog_close"])',
+          actionCd: 300,
           fastQuery: true,
           resetMatch: 'match',
           activityIds: ['com.mcd.order.activity.OrderDetailActivity'],

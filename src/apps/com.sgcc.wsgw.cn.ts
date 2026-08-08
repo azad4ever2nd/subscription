@@ -36,8 +36,9 @@ export default defineGkdApp({
       rules: [
         {
           actionCd: 0,
-          matchDelay: 2000,
+          matchDelay: 10000,
           resetMatch: 'match',
+          matchRoot: false,
           activityIds: [
             'com.sgcc.wsgw.mainbundle.ElectricTitleActivity',
             'com.sgcc.wsgw.rnbundle.activity.HomeReactActivity',

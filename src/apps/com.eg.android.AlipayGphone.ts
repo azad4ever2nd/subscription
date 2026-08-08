@@ -312,8 +312,10 @@ export default defineGkdApp({
       rules: [
         {
           resetMatch: 'match',
-          activityIds:
+          activityIds: [
             'com.alipay.mobile.nebulax.xriver.activity.XRiverActivity$App01',
+            'com.alipay.mobile.nebulax.xriver.activity.XRiverActivity$App02',
+          ],
           matches: '[text="75元"] + [text="游览券"] +2 TextView',
         },
       ],
@@ -325,8 +327,10 @@ export default defineGkdApp({
       rules: [
         {
           resetMatch: 'match',
-          activityIds:
+          activityIds: [
             'com.alipay.mobile.nebulax.xriver.activity.XRiverActivity$App01',
+            'com.alipay.mobile.nebulax.xriver.activity.XRiverActivity$App02',
+          ],
           matches: '[text="50元"] + [text="游览券"] +2 TextView',
         },
       ],
@@ -509,7 +513,7 @@ export default defineGkdApp({
     {
       key: 35,
       name: '添加神券到首页，X掉',
-      desc: '260710，添加 生活缴费',
+      desc: '260808，没有fastquery，没有clickable=true，添加到首页，添加 生活缴费',
       rules: [
         {
           resetMatch: 'match',
@@ -518,7 +522,7 @@ export default defineGkdApp({
             'com.alipay.mobile.nebulax.xriver.activity.XRiverActivity$App02',
           ],
           matches:
-            '(View > @Image[clickable=false][visibleToUser=true] +2 TextView[text="去处理"] + TextView[text="暂不处理"]) || (@TextView <n * + [text="取消"] + [text="立即添加"])',
+            '(View > @Image[clickable=false][visibleToUser=true] +2 TextView[text="去处理"] + TextView[text="暂不处理"]) || (@TextView <n * + [text="取消"] + [text="立即添加"]) || (View > TextView[text*="添加" && text*="首页" && text*="红包"] +n TextView[text="取消"] + TextView[clickable=false][visibleToUser=true][text="添加到首页"])',
         },
       ],
     },

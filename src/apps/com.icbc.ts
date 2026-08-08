@@ -69,8 +69,8 @@ export default defineGkdApp({
     },
     {
       key: 5,
-      name: '周一，江城礼遇四选一，抢完，返回',
-      desc: '260518，D,新布局',
+      name: '周一，江城礼遇四选一，抢完，返回 或 重试',
+      desc: '260807，',
       rules: [
         {
           resetMatch: 'match',

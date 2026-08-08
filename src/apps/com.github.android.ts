@@ -20,10 +20,11 @@ export default defineGkdApp({
     {
       key: 2,
       name: 'build_release 界面，RUN WORKFLOW',
-      desc: '260731',
+      desc: '260807',
       rules: [
         {
           resetMatch: 'app',
+          matchDelay: 1500,
           actionMaximum: 1,
           activityIds: 'com.github.android.main.MainActivity',
           matches:

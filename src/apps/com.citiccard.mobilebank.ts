@@ -243,12 +243,11 @@ export default defineGkdApp({
     {
       key: 18,
       name: '首页弹窗广告',
-      desc: '260807，添加分期弹窗',
+      desc: '260808，延长等待时间，取消matchTime，添加分期弹窗',
       rules: [
         {
           resetMatch: 'match',
-          matchDelay: 1000,
-          matchTime: 1000,
+          matchDelay: 3000,
           fastQuery: true,
           activityIds:
             'com.citiccard.mobilebank.newconfig.appconstruct.TabsAppHomeActivity',

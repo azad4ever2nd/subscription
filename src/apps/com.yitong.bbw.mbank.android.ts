@@ -11,7 +11,8 @@ export default defineGkdApp({
       rules: [
         {
           resetMatch: 'match',
-          actionCd: 2000,
+          matchDelay: 2000,
+          actionCd: 0,
           actionMaximum: 1,
           activityIds: 'com.yitong.mobile.biz.h5.container.WebViewActivity',
           matches:
