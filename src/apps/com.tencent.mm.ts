@@ -1257,9 +1257,13 @@ export default defineGkdApp({
           matches:
             'View > TextView[text="滑动验证"] + TextView[text="关闭"] + View > TextView + TextView[text.length=0]',
           swipeArg: {
+            start: {
+              left: 'left',
+              right: 'right',
+            },
             end: {
               right: 'parent.right',
-              top: 'parent.top',
+              bottom: 'parent.bottom',
             },
             duration: 3000,
           },
