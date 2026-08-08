@@ -21,13 +21,13 @@ export default defineGkdApp({
     {
       key: 2,
       name: '弹窗',
-      desc: '260511，添加弹窗下载君弘app',
+      desc: '260808，添加弹窗下载君弘app',
       rules: [
         {
           resetMatch: 'match',
           activityIds: 'cn.htsec.SecurityHome',
           matches:
-            '([vid="pushinfodlg_msgarea"] > *[index=1]) || ([vid="pushinfodlg_msgarea"] > *[index=parent.childCount.minus(1)])',
+            '([vid="pushinfodlg_msgarea"] > *[index=1]) || (LinearLayout[vid="pushinfodlg_msgarea"] > ImageView[clickable=true][visibleToUser=true][index=1]) || (LinearLayout[vid="pushinfodlg_msgarea"] > ImageView[clickable=true][visibleToUser=true][index=parent.childCount.minus(1)])',
         },
       ],
     },
@@ -154,6 +154,19 @@ export default defineGkdApp({
             'com.gtja.business.component.browser.webview.BrowserScreen',
           matches:
             '([text="退出"] + [text="智能打新"] + [text="完成bak"]) || (WebView[text="可转债申购"] > View > View > Image[clickable=false][visibleToUser=true][text="退出"] +n TextView[clickable=false][visibleToUser=true][text="完成"])',
+        },
+      ],
+    },
+    {
+      key: 12,
+      name: '交易系统清算期间，我知道了',
+      desc: '260808',
+      rules: [
+        {
+          resetMatch: 'match',
+          activityIds: 'com.gtja.flashtrade.general.holding.FlashHoldingTable',
+          matches:
+            'LinearLayout > LinearLayout > TextView[clickable=true][visibleToUser=true][vid="btn_p"][text="我知道了"]',
         },
       ],
     },
