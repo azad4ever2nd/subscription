@@ -49,12 +49,12 @@ export default defineGkdApp({
     },
     {
       key: 4,
-      name: '申购提醒',
-      desc: '251209',
+      name: '申购提醒，取消',
+      desc: '260810，改成取消 [vid="global_newstock_sure"][text="去申购"]',
       rules: [
         {
           matches: [
-            '[vid="global_newstock_title"][text="申购提醒"] +n * [vid="global_newstock_sure"][text="去申购"]',
+            '[vid="global_newstock_title"][text="申购提醒"] +n * [vid="global_newstock_cancel"][text="取消"]',
           ],
           fastQuery: true,
           resetMatch: 'match',
@@ -181,6 +181,20 @@ export default defineGkdApp({
           fastQuery: true,
           resetMatch: 'match',
           activityIds: ['com.cjsc.platform.SignProtocolActivity'],
+        },
+      ],
+    },
+    {
+      key: 13,
+      name: '申购提醒2，取消',
+      desc: '260810',
+      rules: [
+        {
+          resetMatch: 'match',
+          fastQuery: true,
+          activityIds: 'com.eno.android.cj.page.Activity_a_jy_new',
+          matches:
+            'RelativeLayout > TextView + TextView + ScrollView > LinearLayout > LinearLayout > @Button[vid="global_newstock_cancel"][text="取消"][clickable=true][visibleToUser=true] + Button[text="去申购"]',
         },
       ],
     },

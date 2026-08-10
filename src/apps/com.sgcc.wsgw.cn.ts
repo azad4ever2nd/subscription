@@ -32,20 +32,20 @@ export default defineGkdApp({
     {
       key: 3,
       name: '签到',
-      desc: '260805，测试matchDelay,time,添加补签成功[text="知道啦"] < * + * > Image',
+      desc: '260810，测试matchDelay,time,添加补签成功[text="知道啦"] < * + * > Image',
       rules: [
         {
           actionCd: 0,
-          matchDelay: 10000,
+          matchDelay: 3000,
           resetMatch: 'match',
           forcedTime: 10000,
-          matchRoot: false,
+          matchRoot: true,
           activityIds: [
             'com.sgcc.wsgw.mainbundle.ElectricTitleActivity',
             'com.sgcc.wsgw.rnbundle.activity.HomeReactActivity',
           ],
           matches:
-            '([text="签到成功"] + [text^="恭喜您获得1" || text*="签到金1"] + *) || ([text="签到成功"] +2 @* + * > Image) || ([text="补签成功"] +3 *) || (View > TextView[text="补签成功"] +3 TextView[clickable=false][text.length=0]) ||  (View > View > TextView[text="签到成功"] + TextView[text^="恭喜您获得" || text$="签到金"] + TextView[clickable=false][visibleToUser=true][text.length=0])',
+            '(View > TextView[text="补签成功"] +3 TextView[clickable=false][text.length=0]) || (View > View > TextView[text="签到成功"] + TextView[text^="恭喜您获得" && text$="签到金"] + TextView[text.length=0][clickable=false][visibleToUser=true]) || (View > View > TextView[text="签到成功"] + TextView[text^="恭喜您获得" && text$="签到金"] +n View > Image[clickable=false][visibleToUser=true])',
         },
       ],
     },
@@ -80,13 +80,13 @@ export default defineGkdApp({
     {
       key: 6,
       name: '签到多少天抽奖',
-      desc: '260722',
+      desc: '260810',
       rules: [
         {
           resetMatch: 'match',
           activityIds: 'com.sgcc.wsgw.mainbundle.ElectricTitleActivity',
           matches:
-            '([text^="抽中"] + *) || (WebView > View > View > View > View > View > TextView[text^="抽中" && text$="个签到金"] + TextView[clickable=false][visibleToUser=true])',
+            '(WebView > View > View > View > View > View > TextView[text^="抽中" && text$="个签到金"] + TextView[clickable=false][visibleToUser=true]) || (View > View > TextView[text^="抽中" && text$="个签到金"] + TextView[text.length=0][clickable=false][visibleToUser=true] )',
         },
       ],
     },

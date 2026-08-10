@@ -99,30 +99,32 @@ export default defineGkdApp({
     {
       key: 7,
       name: '领奖励',
-      desc: '260807，领奖励顺序变动，添加更多',
+      desc: '260810，领奖励顺序变动，添加更多',
       rules: [
         {
           resetMatch: 'match',
-          fastQuery: true,
+          fastQuery: false,
+          actionCd: 300,
           activityIds: [
             'com.huawei.myhw.ui.HwHomeActivity',
             'com.huawei.module.commonwebview.ui.CommonWebviewActivity',
           ],
           matches:
-            '([vid="tv_tasks_title"][text="我的任务"] + [vid="tv_tasks_more"][text="更多"]) || (ViewGroup > TextView[clickable=true][vid="tv_tasks_type"][text="领奖励"]) || (ViewGroup > TextView[vid="tv_tasks_type"][text="领奖励"]) || (ListView > View > TextView[clickable=true][text="领奖励"])',
+            '(ListView > View > TextView[clickable=true][text="领奖励"]) || (ViewGroup > TextView[vid="tv_tasks_type"][text="领奖励"]) || ([vid="tv_tasks_title"][text="我的任务"] + [vid="tv_tasks_more"][text="更多"]) || (ViewGroup > TextView[clickable=true][vid="tv_tasks_type"][text="领奖励"]) || (View > TextView[text="领奖励"][clickable=true])',
         },
       ],
     },
     {
       key: 8,
       name: '任务领奖后弹窗，我知道了',
-      desc: '251202，我知道了，按钮id动态，原@* > [id="cxui-button-175" || id="cxui-button-235"] > [text="我知道了"]',
+      desc: '260810，我知道了，按钮id动态，原@* > [id="cxui-button-175" || id="cxui-button-235"] > [text="我知道了"]',
       rules: [
         {
           matches: [
             '([text^="签到成功"] + [text="我知道了"]) || ([text="恭喜您获得经验值奖励"] +n * [text="我知道了"]) || ([text^="恭喜您获取经验值"] +2 @* >3 [text="我知道了"])',
           ],
           resetMatch: 'match',
+          actionCd: 500,
           activityIds: [
             'com.huawei.module.commonwebview.ui.CommonWebviewActivity',
           ],

@@ -36,19 +36,33 @@ export default defineGkdApp({
     {
       key: 3,
       name: '下单后弹窗',
-      desc: '260613，添加浏览订单时的弹窗',
+      desc: '260810，clickable=true,添加浏览订单时的弹窗',
       rules: [
         {
           action: 'clickCenter',
           resetMatch: 'match',
           activityIds: 'com.tongcheng.android.module.webapp.WebViewActivity',
           matches:
-            '(@View[clickable=true] > Image[text="close_icon"]) ||(Image < View + @View[clickable=true] > [text="close_icon"]) || (TextView[text="广告"] +n @View[clickable=true] > Image[text="close_icon"])',
+            '(@View[clickable=true] > Image[text="close_icon"]) ||(Image < View + @View[clickable=true] > [text="close_icon"]) || (TextView[text="广告"] +n @View[clickable=true] > Image[text="close_icon"]) || (View > TextView[text="广告"] +n View[clickable=false] > Image[text="close_icon"][clickable=false][visibleToUser=true])',
         },
       ],
     },
     {
       key: 4,
+      name: '下单后弹窗2',
+      desc: '260810，clickable=false，添加浏览订单时的弹窗',
+      rules: [
+        {
+          action: 'click',
+          resetMatch: 'match',
+          activityIds: 'com.tongcheng.android.module.webapp.WebViewActivity',
+          matches:
+            '(View > TextView[text="广告"] +n View[clickable=false] > Image[text="close_icon"][clickable=false][visibleToUser=true])',
+        },
+      ],
+    },
+    {
+      key: 5,
       name: '0点广州票根惠民券，抢券，',
       desc: '260319',
       rules: [
@@ -61,7 +75,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 5,
+      key: 6,
       name: '0点广州票根惠民券，抢券，抢完返回 ',
       desc: '260319',
       rules: [
@@ -75,7 +89,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 6,
+      key: 7,
       name: '广东文旅消费券，旅游景区券',
       desc: '260115',
       rules: [
@@ -90,7 +104,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 7,
+      key: 8,
       name: '广东文旅消费券，旅游景区券，已领完，返回',
       desc: '260322，添加暂未开始text="1IPvLxOd9gA"',
       rules: [
@@ -106,7 +120,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 8,
+      key: 9,
       name: '美美星期五1',
       desc: '260109',
       rules: [
@@ -119,7 +133,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 9,
+      key: 10,
       name: '美美星期五，提交订单',
       desc: '260109',
       rules: [
@@ -132,7 +146,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 10,
+      key: 11,
       name: '给评价',
       desc: '260726，添加 IDS，添加弹窗',
       rules: [
