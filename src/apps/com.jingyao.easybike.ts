@@ -132,7 +132,7 @@ export default defineGkdApp({
           fastQuery: true,
           resetMatch: 'match',
           action: 'clickCenter',
-		  actionCd:0,
+          actionCd: 0,
           matchRoot: false,
           activityIds: [
             'com.hellobike.atlas.business.portal.PortalActivity',

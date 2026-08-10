@@ -69,7 +69,8 @@ export default defineGkdApp({
           resetMatch: 'match',
           fastQuery: true,
           activityIds: 'com.mpaas.mriver.integration.MriverActivityBase$Main',
-          matches: '(* + [vid="ivVerticalClose"]) || (FrameLayout[vid="dialogMxView"] > RelativeLayout > LinearLayout > ImageView[vid="ivLandscapeClose"])',
+          matches:
+            '(* + [vid="ivVerticalClose"]) || (FrameLayout[vid="dialogMxView"] > RelativeLayout > LinearLayout > ImageView[vid="ivLandscapeClose"])',
         },
       ],
     },

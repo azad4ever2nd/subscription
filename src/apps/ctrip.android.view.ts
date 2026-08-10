@@ -41,7 +41,8 @@ export default defineGkdApp({
       desc: '260810',
       rules: [
         {
-          matches: '([text="去开启"] < * + Image) || (View > @Image[clickable=false][visibleToUser=true] - View > TextView[text="去开启"])',
+          matches:
+            '([text="去开启"] < * + Image) || (View > @Image[clickable=false][visibleToUser=true] - View > TextView[text="去开启"])',
           resetMatch: 'match',
           activityIds: ['ctrip.android.view.h5v2.view.H5Container'],
         },
