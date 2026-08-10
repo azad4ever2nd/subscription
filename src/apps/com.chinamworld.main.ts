@@ -7,10 +7,10 @@ export default defineGkdApp({
     {
       key: 1,
       name: '弹窗',
-      desc: '',
+      desc: '260810',
       rules: [
         {
-          matches: '[vid="tip_view_pager"] +2 [vid="close"][desc="关闭"]',
+          matches: 'RelativeLayout > FrameLayout[vid="indicator_container_container"] + ImageView[vid="close"][desc="关闭"][clickable=true][visibleToUser=true]',
           fastQuery: true,
           resetMatch: 'match',
           activityIds: 'com.ccb.start.view.startdialog.StartDialogActivity',

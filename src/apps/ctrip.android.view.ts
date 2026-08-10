@@ -38,10 +38,10 @@ export default defineGkdApp({
     {
       key: 3,
       name: '开启推送通知',
-      desc: '',
+      desc: '260810',
       rules: [
         {
-          matches: ['[text="去开启"] < * + Image'],
+          matches: '([text="去开启"] < * + Image) || (View > @Image[clickable=false][visibleToUser=true] - View > TextView[text="去开启"])',
           resetMatch: 'match',
           activityIds: ['ctrip.android.view.h5v2.view.H5Container'],
         },

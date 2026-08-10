@@ -1248,6 +1248,54 @@ export default defineGkdApp({
     },
     {
       key: 63,
+      name: '粤工会，同意协议',
+      desc: '260810',
+      rules: [
+        {
+          resetMatch: 'match',
+		  actionMaximum:1,
+          activityIds: [
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI0',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI1',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI2',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI3',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI4',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI00',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI01',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI02',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI03',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI04',
+          ],
+          matches: 'WebView > View > View > @View[clickable=false][visibleToUser=true] + TextView[text="已阅读并同意"]',
+        },
+      ],
+    },
+    {
+      key: 64,
+      name: '粤工会，登陆',
+      desc: '260810',
+      rules: [
+        {
+          resetMatch: 'match',
+		  actionMaximum:1,
+          activityIds: [
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI0',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI1',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI2',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI3',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI4',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI00',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI01',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI02',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI03',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI04',
+          ],
+          matches: 'WebView > TextView[text*="请先登录账号"] + TextView[text*="登录后可享受平台提供的服务"] +n View > Button[text="登录"][clickable=true][visibleToUser=true]',
+        },
+      ],
+    },
+    {
+      key: 65,
       name: '粤工会滑块验证',
       desc: '260808',
       rules: [
@@ -1283,7 +1331,77 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 64,
+      key: 66,
+      name: '粤工会，成功参与今日抽奖，确定',
+      desc: '260810',
+      rules: [
+        {
+          fastQuery: true,
+          matches: 'TextView[text="成功参与今日抽奖"] <<n LinearLayout + LinearLayout > LinearLayout > Button[vid="mm_alert_ok_btn"][text="确定"][clickable=true][visibleToUser=true]',
+          activityIds: [
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI0',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI1',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI2',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI3',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI4',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI00',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI01',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI02',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI03',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI04',
+          ],
+        },
+      ],
+    },
+    {
+      key: 67,
+      name: '瑞幸，一键换购，X掉',
+      desc: '260810',
+      rules: [
+        {
+          resetMatch: 'match',
+          matches: 'View > View > View > TextView[text="一键换购"] + View[clickable=false][visibleToUser=true]',
+		  activityIds: [
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI0',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI1',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI2',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI3',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI4',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI00',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI01',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI02',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI03',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI04',
+          ],
+        },
+      ],
+    },
+    {
+      key: 68,
+      name: '瑞幸，更改优惠',
+      desc: '260810',
+      rules: [
+        {
+          resetMatch: 'match',
+          matches: 'WebView > View > View > View > TextView[text="更改优惠"][clickable=false][visibleToUser=true]',
+		  actionMaximum:1,
+		  activityIds: [
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI0',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI1',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI2',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI3',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI4',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI00',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI01',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI02',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI03',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI04',
+          ],
+        },
+      ],
+    },
+    {
+      key: 69,
       name: '自动登录该设备',
       desc: '260804',
       rules: [

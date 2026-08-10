@@ -7,16 +7,15 @@ export default defineGkdApp({
     {
       key: 1,
       name: '开启消息通知',
-      desc: '260629，添加弹窗',
+      desc: '260810，添加弹窗',
       rules: [
         {
           resetMatch: 'match',
           fastQuery: true,
           matchDelay: 500,
-          matchTime: 1000,
           activityIds: 'com.chinatelecom.bestpayclient.ui.MainActivity',
           matches:
-            '([vid="msg_notification_open_title"] +n [vid="msg_notification_skip_btn"][text="跳过"]) || ([vid="iv_dialog_bg"] +n [vid="iv_dialog_close"]) || (RelativeLayout + ImageView[vid="iv_dialog_close_one"][clickable=true])',
+            '([vid="msg_notification_open_title"] +n [vid="msg_notification_skip_btn"][text="跳过"]) || ([vid="iv_dialog_bg"] +n [vid="iv_dialog_close"]) || (RelativeLayout + ImageView[vid="iv_dialog_close_one"][clickable=true]) || (RelativeLayout > LinearLayout > ImageView[vid="iv_sky_close"][clickable=true][visibleToUser=true])',
         },
       ],
     },
@@ -42,7 +41,6 @@ export default defineGkdApp({
       rules: [
         {
           matchDelay: 500,
-          matchTime: 1000,
           matches: ['@* + [text*="开启系统通知"] + [text="立即开启"]'],
           resetMatch: 'match',
           activityIds: ['com.mpaas.mriver.integration.MriverActivityBase$Main'],
@@ -57,8 +55,6 @@ export default defineGkdApp({
         {
           fastQuery: true,
           resetMatch: 'match',
-          matchDelay: 500,
-          matchTime: 1000,
           activityIds: 'com.mpaas.mriver.integration.MriverActivityBase$Main',
           matches: '[vid="llLandscape"] [vid="ivLandscapeClose"]',
         },
@@ -66,29 +62,28 @@ export default defineGkdApp({
     },
     {
       key: 5,
-      name: '话费充值后弹窗',
-      desc: '260510',
+      name: '支付成功，弹窗',
+      desc: '260810',
       rules: [
         {
           resetMatch: 'match',
           fastQuery: true,
           activityIds: 'com.mpaas.mriver.integration.MriverActivityBase$Main',
-          matches: '* + [vid="ivVerticalClose"]',
+          matches: '(* + [vid="ivVerticalClose"]) || (FrameLayout[vid="dialogMxView"] > RelativeLayout > LinearLayout > ImageView[vid="ivLandscapeClose"])',
         },
       ],
     },
     {
       key: 6,
       name: '绿色能量，立即领取',
-      desc: '260702',
+      desc: '260810',
       rules: [
         {
           resetMatch: 'match',
-          matchTime: 1000,
           actionMaximum: 1,
           activityIds: 'com.mpaas.mriver.integration.MriverActivityBase$Main',
           matches:
-            '([text="可在能量商城兑换好礼"] + [text="立即领取"]) || (TextView[text="绿色能量"] <n View < View <n View + View > TextView[clickable=true][visibleToUser=true][text="立即领取"])',
+            '([text="可在能量商城兑换好礼"] + [text="立即领取"]) || (TextView[text="绿色能量"] <n View < View <n View + View > TextView[clickable=true][visibleToUser=true][text="立即领取"]) || (WebView > WebView > View > View > TextView[text$="绿色能量"] +2 TextView[text="立即领取"][clickable=false][visibleToUser=true])',
         },
       ],
     },
