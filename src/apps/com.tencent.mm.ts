@@ -1308,14 +1308,14 @@ export default defineGkdApp({
             'View > TextView[text="滑动验证"] + TextView[text="关闭"] + View > TextView + TextView[text.length=0]',
           swipeArg: {
             start: {
-              left: 'left',
-              top: 'top',
+              x: 'left',
+              y: 'top',
             },
             end: {
-              right: 'parent.right-width',
-              top: 'top',
+              x: 'parent.right-width',
+              y: 'top',
             },
-            duration: 3000,
+            duration: 2000,
           },
           activityIds: [
             'com.tencent.mm.plugin.appbrand.ui.AppBrandUI0',

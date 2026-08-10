@@ -24,7 +24,7 @@ export default defineGkdApp({
       rules: [
         {
           resetMatch: 'app',
-          matchDelay: 4000,
+          forcedTime: 7000,
           actionMaximum: 1,
           activityIds: 'com.github.android.main.MainActivity',
           matches:
