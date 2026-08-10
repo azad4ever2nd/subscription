@@ -10,7 +10,8 @@ export default defineGkdApp({
       desc: '260810',
       rules: [
         {
-          matches: 'RelativeLayout > FrameLayout[vid="indicator_container_container"] + ImageView[vid="close"][desc="关闭"][clickable=true][visibleToUser=true]',
+          matches:
+            'RelativeLayout > FrameLayout[vid="indicator_container_container"] + ImageView[vid="close"][desc="关闭"][clickable=true][visibleToUser=true]',
           fastQuery: true,
           resetMatch: 'match',
           activityIds: 'com.ccb.start.view.startdialog.StartDialogActivity',

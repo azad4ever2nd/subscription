@@ -1253,7 +1253,7 @@ export default defineGkdApp({
       rules: [
         {
           resetMatch: 'match',
-		  actionMaximum:1,
+          actionMaximum: 1,
           activityIds: [
             'com.tencent.mm.plugin.appbrand.ui.AppBrandUI0',
             'com.tencent.mm.plugin.appbrand.ui.AppBrandUI1',
@@ -1266,7 +1266,8 @@ export default defineGkdApp({
             'com.tencent.mm.plugin.appbrand.ui.AppBrandUI03',
             'com.tencent.mm.plugin.appbrand.ui.AppBrandUI04',
           ],
-          matches: 'WebView > View > View > @View[clickable=false][visibleToUser=true] + TextView[text="已阅读并同意"]',
+          matches:
+            'WebView > View > View > @View[clickable=false][visibleToUser=true] + TextView[text="已阅读并同意"]',
         },
       ],
     },
@@ -1277,7 +1278,7 @@ export default defineGkdApp({
       rules: [
         {
           resetMatch: 'match',
-		  actionMaximum:1,
+          actionMaximum: 1,
           activityIds: [
             'com.tencent.mm.plugin.appbrand.ui.AppBrandUI0',
             'com.tencent.mm.plugin.appbrand.ui.AppBrandUI1',
@@ -1290,7 +1291,8 @@ export default defineGkdApp({
             'com.tencent.mm.plugin.appbrand.ui.AppBrandUI03',
             'com.tencent.mm.plugin.appbrand.ui.AppBrandUI04',
           ],
-          matches: 'WebView > TextView[text*="请先登录账号"] + TextView[text*="登录后可享受平台提供的服务"] +n View > Button[text="登录"][clickable=true][visibleToUser=true]',
+          matches:
+            'WebView > TextView[text*="请先登录账号"] + TextView[text*="登录后可享受平台提供的服务"] +n View > Button[text="登录"][clickable=true][visibleToUser=true]',
         },
       ],
     },
@@ -1337,7 +1339,8 @@ export default defineGkdApp({
       rules: [
         {
           fastQuery: true,
-          matches: 'TextView[text="成功参与今日抽奖"] <<n LinearLayout + LinearLayout > LinearLayout > Button[vid="mm_alert_ok_btn"][text="确定"][clickable=true][visibleToUser=true]',
+          matches:
+            'TextView[text="成功参与今日抽奖"] <<n LinearLayout + LinearLayout > LinearLayout > Button[vid="mm_alert_ok_btn"][text="确定"][clickable=true][visibleToUser=true]',
           activityIds: [
             'com.tencent.mm.plugin.appbrand.ui.AppBrandUI0',
             'com.tencent.mm.plugin.appbrand.ui.AppBrandUI1',
@@ -1360,8 +1363,9 @@ export default defineGkdApp({
       rules: [
         {
           resetMatch: 'match',
-          matches: 'View > View > View > TextView[text="一键换购"] + View[clickable=false][visibleToUser=true]',
-		  activityIds: [
+          matches:
+            'View > View > View > TextView[text="一键换购"] + View[clickable=false][visibleToUser=true]',
+          activityIds: [
             'com.tencent.mm.plugin.appbrand.ui.AppBrandUI0',
             'com.tencent.mm.plugin.appbrand.ui.AppBrandUI1',
             'com.tencent.mm.plugin.appbrand.ui.AppBrandUI2',
@@ -1383,9 +1387,10 @@ export default defineGkdApp({
       rules: [
         {
           resetMatch: 'match',
-          matches: 'WebView > View > View > View > TextView[text="更改优惠"][clickable=false][visibleToUser=true]',
-		  actionMaximum:1,
-		  activityIds: [
+          matches:
+            'WebView > View > View > View > TextView[text="更改优惠"][clickable=false][visibleToUser=true]',
+          actionMaximum: 1,
+          activityIds: [
             'com.tencent.mm.plugin.appbrand.ui.AppBrandUI0',
             'com.tencent.mm.plugin.appbrand.ui.AppBrandUI1',
             'com.tencent.mm.plugin.appbrand.ui.AppBrandUI2',
