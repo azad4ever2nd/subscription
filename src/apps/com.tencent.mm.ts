@@ -1309,11 +1309,11 @@ export default defineGkdApp({
           swipeArg: {
             start: {
               left: 'left',
-              right: 'right',
+              top: 'top',
             },
             end: {
-              right: 'parent.right',
-              bottom: 'parent.bottom',
+              right: 'parent.right-width',
+              top: 'top',
             },
             duration: 3000,
           },
