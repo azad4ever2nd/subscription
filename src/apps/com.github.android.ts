@@ -52,7 +52,6 @@ export default defineGkdApp({
       desc: '260811',
       rules: [
         {
-          resetMatch: 'match',
           forcedTime: 2000,
           actionMaximum: 1,
           resetMatch: 'app',
