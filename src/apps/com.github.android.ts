@@ -19,6 +19,51 @@ export default defineGkdApp({
     },
     {
       key: 2,
+      name: '步骤一，选 build_relese',
+      desc: '260811',
+      rules: [
+        {
+          resetMatch: 'match',
+          actionMaximum: 1,
+          activityIds: 'com.github.android.main.MainActivity',
+          matches:
+            'FrameLayout[vid="nav_host_fragment"][visibleToUser=true] @View[clickable=false][visibleToUser=true] > TextView[text="build_release"] + TextView + TextView',
+        },
+      ],
+    },
+    {
+      key: 3,
+      name: '步骤二，build_release，RUN WORKFLOW',
+      desc: '260811',
+      rules: [
+        {
+          forcedTime: 3000,
+          actionMaximum: 1,
+          resetMatch: 'app',
+          activityIds: 'com.github.android.main.MainActivity',
+          matches:
+            'View > TextView[text="This workflow has a workflow_dispatch event trigger."] + @View[clickable=true][visibleToUser=true] > TextView[text="RUN WORKFLOW"] + Button',
+        },
+      ],
+    },
+    {
+      key: 4,
+      name: '步骤三，Configure workflow，RUN WORKFLOW',
+      desc: '260811',
+      rules: [
+        {
+          resetMatch: 'match',
+          forcedTime: 2000,
+          actionMaximum: 1,
+          resetMatch: 'app',
+          activityIds: 'com.github.android.main.MainActivity',
+          matches:
+            'Button - TextView[text="RUN WORKFLOW"] < @View[clickable=true][visibleToUser=true] + View > View > TextView[text="main"] + TextView[text="CHANGE"] + Button',
+        },
+      ],
+    },
+    {
+      key: 5,
       name: 'build_release 界面，RUN WORKFLOW',
       desc: '260807',
       rules: [
@@ -33,7 +78,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 3,
+      key: 6,
       name: 'RUN WORKFLOW,自动点击脚本执行',
       desc: '260731',
       rules: [

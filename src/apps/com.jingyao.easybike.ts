@@ -280,12 +280,13 @@ export default defineGkdApp({
     {
       key: 20,
       name: '新人首单，X',
-      desc: '260111',
+      desc: '260811，添加 兑换取消',
       rules: [
         {
           resetMatch: 'match',
           activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
-          matches: '@TextView[clickable=true] + [text="新人首单，兑免费骑车"]',
+          matches:
+            '(@TextView[clickable=true] + [text="新人首单，兑免费骑车"] || (View > View > TextView[text^="兑换" || text=" 单车1.5元券"] +2 @TextView[text="再想想"][clickable=true][visibleToUser=true] + TextView[text="确认兑换"])',
         },
       ],
     },

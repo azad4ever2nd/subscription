@@ -6,7 +6,7 @@ export default defineGkdApp({
     {
       key: 1,
       name: '需要打开系统定位开关',
-      desc: '260202，增加 IDS',
+      desc: '260811，com.elong.android.flutter.TCELFlutterBoostActivity,增加 IDS',
       rules: [
         {
           matches: [
@@ -14,10 +14,7 @@ export default defineGkdApp({
           ],
           fastQuery: true,
           resetMatch: 'match',
-          activityIds: [
-            'com.tongcheng.android.module.webapp.WebViewActivity',
-            'com.elong.android.flutter.TCELFlutterBoostActivity',
-          ],
+          activityIds: ['com.tongcheng.android.module.webapp.WebViewActivity'],
         },
       ],
     },
@@ -121,6 +118,21 @@ export default defineGkdApp({
     },
     {
       key: 9,
+      name: '2026暑假当然来广东，抢旅游景区券',
+      desc: '260811',
+      rules: [
+        {
+          actionCd: 500,
+          resetMatch: 'match',
+          actionMaximum: 10,
+          activityIds: 'com.tongcheng.android.module.webapp.WebViewActivity',
+          matches:
+            'WebView[text*="暑假当然来广东"] > View > View > View > Image[text="1NZmP5zb7wI"] + View > Image[text="1LBYVwKptxS"]',
+        },
+      ],
+    },
+    {
+      key: 10,
       name: '美美星期五1',
       desc: '260109',
       rules: [
@@ -133,7 +145,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 10,
+      key: 11,
       name: '美美星期五，提交订单',
       desc: '260109',
       rules: [
@@ -146,7 +158,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 11,
+      key: 12,
       name: '给评价',
       desc: '260726，添加 IDS，添加弹窗',
       rules: [
@@ -160,6 +172,20 @@ export default defineGkdApp({
           ],
           matches:
             '([vid="top_iv" || vid="flADLayout" || vid="flContainer"] + [vid="iv_close" ])|| ([vid="top_iv" || vid="flADLayout" || vid="flContainer"] + [vid="ivClose"]) || (LinearLayout > FrameLayout[vid="flADLayout"] + ImageView[vid="ivClose"]) || (@ImageView[clickable=true][visibleToUser=true][vid="iv_close"] - ImageView[vid="top_iv"] < FrameLayout + LinearLayout > TextView[text*="好评"])',
+        },
+      ],
+    },
+    {
+      key: 13,
+      name: '需要打开系统定位开关，稍后开启',
+      desc: '260811，clickable=true,fastquery=true',
+      rules: [
+        {
+          fastQuery: true,
+          action: 'clickCenter',
+          activityIds: 'com.elong.android.flutter.TCELFlutterBoostActivity',
+          matches:
+            'LinearLayout > TextView[vid="tv_dialog_title"][text*="定位"] +n LinearLayout > @TextView[vid="btn_dialog_left"][text="稍后开启"][clickable=true][visibleToUser=true] + TextView[text="去设置"][clickable=true]',
         },
       ],
     },

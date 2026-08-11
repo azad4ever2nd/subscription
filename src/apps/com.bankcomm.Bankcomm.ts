@@ -277,13 +277,13 @@ export default defineGkdApp({
     {
       key: 20,
       name: '碳星任务，点击签到',
-      desc: '251121',
+      desc: '260811，添加 签到成功clickable=true',
       rules: [
         {
           action: 'clickCenter',
           matches:
-            '([text="碳星任务"] [text="点击签到"]) || ([text="+1"] + [text="点击签到"])',
-          actionMaximum: 2,
+            '([text="碳星任务"] [text="点击签到"]) || ([text="+1"] + [text="点击签到"]) || (Dialog > View > @Button[clickable=true][visibleToUser=true][text="我知道了"] + Button[text="赚更多能量"])',
+          actionMaximum: 3,
           matchDelay: 1000,
           resetMatch: 'match',
           activityIds: 'com.bankcomm.module.biz.webcontainer.BCMHtml5Activity',
@@ -296,8 +296,7 @@ export default defineGkdApp({
       desc: '260803',
       rules: [
         {
-          matches:
-            '([text="恭喜您签到成功"] +n [text="我知道了"]) || (Dialog > View > @Button[clickable=true][visibleToUser=true][text="我知道了"] + Button[text="赚更多能量"])',
+          matches: '([text="恭喜您签到成功"] +n [text="我知道了"])',
           resetMatch: 'match',
           activityIds: 'com.bankcomm.module.biz.webcontainer.BCMHtml5Activity',
         },

@@ -12,6 +12,7 @@ export default defineGkdApp({
         {
           resetMatch: 'match',
           matchDelay: 2000,
+          forcedTime: 2000,
           actionCd: 0,
           actionMaximum: 1,
           activityIds: 'com.yitong.mobile.biz.h5.container.WebViewActivity',
