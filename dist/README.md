@@ -1,13 +1,13 @@
 # 订阅
 
-v116
+v117
 
 |||
 | - |:-:|
 |类别|0|
 |全局规则|0|
 |应用|133|
-|应用规则|1051|
+|应用规则|1052|
 
 ## 规则类别
 
@@ -25,7 +25,7 @@ v116
 | - |:-:|-|
 |AppShare|1|<li>新版本，忽略|
 |DeepSeek|2|<li>长按菜单，删除<li>永久删除对话，删除|
-|GitHub|6|<li>登陆验证完成，CLOSE<li>步骤一，选 build_relese<li>步骤二，build_release，RUN WORKFLOW<li>步骤三，Configure workflow，RUN WORKFLOW<li>build_release 界面，RUN WORKFLOW<li>RUN WORKFLOW,自动点击脚本执行|
+|GitHub|7|<li>登陆验证完成，CLOSE<li>步骤一，选 build_relese<li>步骤二，build_release，RUN WORKFLOW<li>步骤三，Configure workflow，RUN WORKFLOW<li>build_release 界面，RUN WORKFLOW<li>RUN WORKFLOW,自动点击脚本执行<li>下滑刷新|
 |GKD|6|<li>新版本<li>删除当前快照，确定<li>删除所有快照，取消<li>确定删除所有触发记录，取消<li>加载失败点击重试<li>规则保存到下载|
 |HMS Core|1|<li>发送通知，禁止|
 |Outlook|1|<li>是否永久删除邮件，永久删除|
