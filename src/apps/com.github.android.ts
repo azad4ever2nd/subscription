@@ -109,7 +109,7 @@ export default defineGkdApp({
               x: 510,
               y: 1645,
             },
-            duration: 2500, //滑动时长
+            duration: 1000, //滑动时长
           },
           activityIds: 'com.github.android.main.MainActivity',
           matches:
