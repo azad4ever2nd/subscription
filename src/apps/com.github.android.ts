@@ -90,5 +90,32 @@ export default defineGkdApp({
         },
       ],
     },
+    {
+      key: 7,
+      name: '下滑刷新',
+      desc: '260812',
+      rules: [
+        {
+          resetMatch: 'match',
+          preKeys: [4],
+          actionMaximum: 1,
+          action: 'swipe',
+          SwipeArg: {
+            start: {
+              x: 510,
+              y: 390,
+            },
+            end: {
+              x: 510,
+              y: 1645,
+            },
+            duration: 2500, //滑动时长
+          },
+          activityIds: 'com.github.android.main.MainActivity',
+          matches:
+            'View > TextView[text="This workflow has a workflow_dispatch event trigger."] + @View[clickable=true][visibleToUser=true] > TextView[text="RUN WORKFLOW"] + Button',
+        },
+      ],
+    },
   ],
 });
