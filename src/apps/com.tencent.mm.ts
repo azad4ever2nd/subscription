@@ -1274,11 +1274,10 @@ export default defineGkdApp({
     {
       key: 64,
       name: '粤工会，登陆',
-      desc: '260810',
+      desc: '260812',
       rules: [
         {
           resetMatch: 'match',
-          actionMaximum: 1,
           activityIds: [
             'com.tencent.mm.plugin.appbrand.ui.AppBrandUI0',
             'com.tencent.mm.plugin.appbrand.ui.AppBrandUI1',

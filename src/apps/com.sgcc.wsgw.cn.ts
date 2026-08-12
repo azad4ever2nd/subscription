@@ -37,8 +37,8 @@ export default defineGkdApp({
         {
           actionCd: 0,
           matchDelay: 3000,
-          resetMatch: 'match',
           forcedTime: 10000,
+          resetMatch: 'match',
           matchRoot: true,
           activityIds: [
             'com.sgcc.wsgw.mainbundle.ElectricTitleActivity',
@@ -57,6 +57,8 @@ export default defineGkdApp({
         {
           resetMatch: 'match',
           actionCd: 0,
+          matchDelay: 3000,
+          forcedTime: 10000,
           activityIds: 'com.sgcc.wsgw.mainbundle.ElectricTitleActivity',
           matches:
             '([text="立即查看"] < View + View > *) || (TextView[text="立即查看"] < View + View > Image[clickable=false][visibleToUser=true])',

@@ -293,10 +293,11 @@ export default defineGkdApp({
     {
       key: 21,
       name: '能量签到完成',
-      desc: '260803',
+      desc: '260812，添加每周在线互动',
       rules: [
         {
-          matches: '([text="恭喜您签到成功"] +n [text="我知道了"])',
+          matches:
+            '(TextView[text^="查看" && text*="超过" && text$="秒"] +2 TextView[text="去完成"][clickable=false][visibleToUser=true]) || ([text="恭喜您签到成功"] +n [text="我知道了"])',
           resetMatch: 'match',
           activityIds: 'com.bankcomm.module.biz.webcontainer.BCMHtml5Activity',
         },

@@ -418,10 +418,11 @@ export default defineGkdApp({
     {
       key: 30,
       name: '金知了兑换抽奖',
-      desc: '',
+      desc: '260812 添加 差一点就中奖，',
       rules: [
         {
-          matches: ['[text="返回去抽奖"]'],
+          matches:
+            '([text="返回去抽奖"]) || (TextView[text="差一点就中奖啦"] <n View < View + View > @View[clickable=false][visibleToUser=true] > TextView[text.length=1])',
           resetMatch: 'match',
           activityIds: [
             'com.cebbank.mobile.cemb.ui.activity.mobilePayment.MobilePaymentWebActivity',

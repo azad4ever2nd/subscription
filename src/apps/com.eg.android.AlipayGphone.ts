@@ -7,10 +7,11 @@ export default defineGkdApp({
     {
       key: 1,
       name: '首页弹窗',
-      desc: '',
+      desc: '260812，添加 消息标为已读',
       rules: [
         {
-          matches: ['[desc="推荐广告"] + * > [desc="关闭"]'],
+          matches:
+            '([desc="推荐广告"] + * > [desc="关闭"]) || (View > TextView[text="将所有消息标为已读？"] + @View[clickable=true][visibleToUser=true] > TextView[text="取消"] + Button)',
           resetMatch: 'match',
           activityIds: ['com.eg.android.AlipayGphone.AlipayLogin'],
         },

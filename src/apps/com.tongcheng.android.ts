@@ -159,6 +159,19 @@ export default defineGkdApp({
     },
     {
       key: 12,
+      name: '恭喜获得红包，残忍离开',
+      desc: '260812，添加 酒店权益已到账',
+      rules: [
+        {
+          resetMatch: 'match',
+          activityIds: 'com.tongcheng.android.module.webapp.WebViewActivity',
+          matches:
+            '(View > View > @TextView[text="残忍离开"][clickable=false][visibleToUser=true] + TextView) || (View > TextView[text="酒店权益已到账"] +n View > Image[text*="close"][clickable=false][visibleToUser=true])',
+        },
+      ],
+    },
+    {
+      key: 13,
       name: '给评价',
       desc: '260726，添加 IDS，添加弹窗',
       rules: [
@@ -176,7 +189,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 13,
+      key: 14,
       name: '需要打开系统定位开关，稍后开启',
       desc: '260811，clickable=true,fastquery=true',
       rules: [

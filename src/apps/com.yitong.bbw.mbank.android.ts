@@ -11,7 +11,7 @@ export default defineGkdApp({
       rules: [
         {
           resetMatch: 'match',
-          matchDelay: 2000,
+          matchDelay: 3000,
           forcedTime: 2000,
           actionCd: 0,
           actionMaximum: 1,
