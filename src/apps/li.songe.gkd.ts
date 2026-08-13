@@ -18,13 +18,14 @@ export default defineGkdApp({
     {
       key: 2,
       name: '删除当前快照，确定',
-      desc: '260312',
+      desc: '260813',
       rules: [
         {
           matches: ['[text="确定删除当前快照吗?"] +n @* > [text="确定"]'],
           resetMatch: 'match',
-          matchDelay: 1000,
-          actionCd: 0,
+          matchDelay: 500,
+          forcedTime: 1500,
+          actionCd: 600,
           activityIds: ['li.songe.gkd.MainActivity'],
         },
       ],
@@ -58,12 +59,13 @@ export default defineGkdApp({
     {
       key: 5,
       name: '加载失败点击重试',
-      desc: '260511',
+      desc: '260813',
       rules: [
         {
           resetMatch: 'match',
           action: 'clickCenter',
           actionCd: 100,
+          forcedTime: 1200,
           activityIds: 'li.songe.gkd.MainActivity',
           matches: '@[text="加载失败, 点击重试"] + View',
         },

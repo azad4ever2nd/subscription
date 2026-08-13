@@ -341,5 +341,20 @@ export default defineGkdApp({
         },
       ],
     },
+    {
+      key: 21,
+      name: '加载失败，刷新',
+      desc: '260813',
+      rules: [
+        {
+          resetMatch: 'match',
+          action: 'clickCenter',
+          fastQuery: true,
+          activityIds: 'com.unionpay.activity.UPActivityAppletCheck',
+          matches:
+            'LinearLayout > ImageView[vid="img_fail_load"] + TextView[vid="tv_fail_load"] + TextView[text="刷新"][clickable=true][visibleToUser=true]',
+        },
+      ],
+    },
   ],
 });

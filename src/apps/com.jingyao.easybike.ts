@@ -475,5 +475,29 @@ export default defineGkdApp({
         },
       ],
     },
+    {
+      key: 34,
+      name: '拖住滑块，还车',
+      desc: '260813',
+      rules: [
+        {
+          action: 'swipe',
+          swipeArg: {
+            start: {
+              x: 35,
+              y: 2275,
+            },
+            end: {
+              x: 872,
+              y: 2275,
+            },
+            duration: 1000, //滑动时长
+          },
+          activityIds:
+            'com.hellobike.flutter.platform.android.flutterboost.FlutterHostFragmentActivity',
+          matches: '@ImageView +n View[desc="按住滑块，拖到右边还车"]',
+        },
+      ],
+    },
   ],
 });

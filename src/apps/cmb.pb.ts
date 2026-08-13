@@ -162,14 +162,15 @@ export default defineGkdApp({
     {
       key: 11,
       name: '抽奖领任务页面，加自选 任务',
-      desc: '260706，clickable=true',
+      desc: '260813，clickable=true',
       rules: [
         {
           resetMatch: 'match',
+          matchDelay: 500,
+          forcedTime: 1000,
           action: 'clickCenter',
-          actionCd: 500,
           matches:
-            '(WebView > View > View > View > Button[clickable=true][visibleToUser=true][text="去加自选"]) || (WebView > View > View > View > Button[clickable=true][visibleToUser=true][text="加自选"]) || (WebView > View > View > View > View > Button[clickable=true][visibleToUser=true][text="加自选"])',
+            '(WebView > View > View > View >n Button[text="加自选"][clickable=true][visibleToUser=true]) || (WebView > View > View > View > View > Button[text="加自选"][clickable=true][visibleToUser=true]) || (WebView > View > View > View >n Button[text="去加自选" || text="去添加" || text="加自选"][clickable=true][visibleToUser=true])',
           activityIds:
             'cmb.pb.app.h5container.webviewcontainer.PBWebContainerActivity',
         },
@@ -178,34 +179,38 @@ export default defineGkdApp({
     {
       key: 12,
       name: '基金页面下方，添加自选1',
-      desc: '260706，clickable=true',
+      desc: '260812，clickable=true',
       rules: [
         {
           action: 'clickCenter',
+          matchDelay: 500,
           actionCd: 0,
+          forcedTime: 1500,
           actionMaximum: 1,
           resetMatch: 'match',
           activityIds:
             'cmb.pb.app.h5container.webviewcontainer.PBWebContainerActivity',
           matches:
-            '(WebView > View > View > View > View > Button[clickable=true][visibleToUser=true][text="自选"])',
+            '(WebView > View > View > View > View > Button[text="自选"][clickable=true][visibleToUser=true])',
         },
       ],
     },
     {
       key: 13,
       name: '基金页面下方，加自选2',
-      desc: '260706，clickable=false',
+      desc: '260812，clickable=false',
       rules: [
         {
           resetMatch: 'match',
           action: 'click',
           actionCd: 0,
+          matchDelay: 500,
+          forcedTime: 1500,
           actionMaximum: 1,
           activityIds:
             'cmb.pb.app.h5container.webviewcontainer.PBWebContainerActivity',
           matches:
-            '(WebView > View > View > View > View > TextView[clickable=false][visibleToUser=true][text="加自选"])',
+            '(WebView > View > View > View > View > TextView[text="加自选"][clickable=false][visibleToUser=true])',
         },
       ],
     },
@@ -216,6 +221,7 @@ export default defineGkdApp({
       rules: [
         {
           resetMatch: 'match',
+          actionCd: 300,
           activityIds:
             'cmb.pb.app.h5container.webviewcontainer.PBWebContainerActivity',
           matches: 'TextView[text="添加自选成功"][visibleToUser=true]',
@@ -264,6 +270,8 @@ export default defineGkdApp({
             '([text="分享指定文章"] +n [text="去分享"]) || ([text="分享招财号文章"] +n * > [text="去分享"])',
           ],
           action: 'clickCenter',
+          matchDelay: 500,
+          forcedTime: 1500,
           resetMatch: 'match',
           activityIds:
             'cmb.pb.app.h5container.webviewcontainer.PBWebContainerActivity',
@@ -273,16 +281,18 @@ export default defineGkdApp({
     {
       key: 18,
       name: '分享到，微信好友',
-      desc: '260706，clickable=true',
+      desc: '260813，clickable=true',
       rules: [
         {
           resetMatch: 'match',
           actionMaximum: 1,
+          matchDelay: 500,
+          forcedTime: 1500,
           action: 'clickCenter',
           activityIds:
             'cmb.pb.app.h5container.webviewcontainer.PBWebContainerActivity',
           matches:
-            'View > Button[clickable=true][visibleToUser=true][text="微信好友"]',
+            '(WebView > View > View > View > View >n Button[text="微信好友"][clickable=true][visibleToUser=true]) || (WebView > View > View > View > View > View > Button[clickable=true][visibleToUser=true][text="微信好友"]) || (WebView > View > View > View > View > View > View > Button[text="分享海报"] + Button[text="微信好友"][clickable=true][visibleToUser=true])',
         },
       ],
     },
@@ -678,9 +688,23 @@ export default defineGkdApp({
         },
       ],
     },
-
     {
       key: 45,
+      name: '讨论，关闭投票',
+      desc: '260813',
+      rules: [
+        {
+          resetMatch: 'match',
+          actionMaximum: 1,
+          activityIds:
+            'cmb.pb.app.h5container.webviewcontainer.PBWebContainerActivity',
+          matches:
+            'View > View > View > View > EditText[text="发布了投票"] + * + Image[text="图片"][clickable=false][visibleToUser=true]',
+        },
+      ],
+    },
+    {
+      key: 46,
       name: '开启消息通知',
       desc: '260105,增加IDS',
       rules: [
@@ -696,7 +720,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 46,
+      key: 47,
       name: '资讯分享任务，微信好友',
       desc: '260706，clickable=false',
       rules: [

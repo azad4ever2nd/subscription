@@ -104,13 +104,14 @@ export default defineGkdApp({
     {
       key: 8,
       name: '周四秒杀活动，提交订单',
-      desc: '260702',
+      desc: '260813',
       rules: [
         {
           resetMatch: 'match',
           action: 'clickCenter',
           actionCd: 0,
           order: -1,
+          forcedTime: 1000,
           activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
           matches:
             'WebView[text="提交订单"] > View > View > Button[clickable=true][visibleToUser=true][text="提交订单"]',
@@ -120,13 +121,14 @@ export default defineGkdApp({
     {
       key: 9,
       name: '周四秒杀活动，提交订单，确认支付',
-      desc: '260702',
+      desc: '260813',
       rules: [
         {
           resetMatch: 'match',
           action: 'clickCenter',
           actionCd: 0,
           order: -2,
+          forcedTime: 1000,
           activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
           matches:
             'Dialog > TextView[text="去支付？"] + View > Button[clickable=true][visibleToUser=true][text="确认"]',

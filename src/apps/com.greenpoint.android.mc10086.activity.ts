@@ -35,12 +35,13 @@ export default defineGkdApp({
     {
       key: 3,
       name: '弹窗',
-      desc: '',
+      desc: '260813',
       rules: [
         {
           resetMatch: 'match',
           fastQuery: true,
-          matches: ['[vid="close_btn"][desc="关闭"]'],
+          matches:
+            '([vid="close_btn"][desc="关闭"]) || (ImageView[vid="ad_image"][desc="广告"] <n RelativeLayout + ImageView[vid="close_btn"][desc="关闭"][clickable=true][visibleToUser=true])',
           activityIds: ['com.mc10086.cmcc.view.tabs.AppTabFragment'],
         },
       ],
