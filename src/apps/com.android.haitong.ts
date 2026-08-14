@@ -33,8 +33,8 @@ export default defineGkdApp({
     },
     {
       key: 3,
-      name: '今日申购提醒p',
-      desc: '260814，提醒',
+      name: '今日申购提醒',
+      desc: '260814，关闭',
       rules: [
         {
           fastQuery: true,
