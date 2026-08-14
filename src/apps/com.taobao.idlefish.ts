@@ -126,7 +126,7 @@ export default defineGkdApp({
     },
     {
       key: 9,
-      name: '分享，立即查看',
+      name: '分享，立即查看1',
       desc: '251213,增加ids',
       rules: [
         {
@@ -278,7 +278,7 @@ export default defineGkdApp({
     },
     {
       key: 20,
-      name: '分享，立即查看',
+      name: '分享，立即查看2',
       desc: '251213,增加ids',
       rules: [
         {
