@@ -103,5 +103,20 @@ export default defineGkdApp({
         },
       ],
     },
+    {
+      key: 8,
+      name: '天降红包，X掉',
+      desc: '260814',
+      rules: [
+        {
+          resetMatch: 'match',
+          forcedTime: 2000,
+          activityIds:
+            'me.ele.android.themis_alsc.eleme.container.EleTMSActivity',
+          matches:
+            'ViewGroup[vid="id_magex_mist_view"] > ViewGroup > ImageView[clickable=true][visibleToUser=true]',
+        },
+      ],
+    },
   ],
 });

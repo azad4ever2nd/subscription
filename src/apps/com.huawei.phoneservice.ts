@@ -6,12 +6,13 @@ export default defineGkdApp({
     {
       key: 1,
       name: '隐私变更，同意',
-      desc: '260710，增加IDS',
+      desc: '260814，增加IDS',
       rules: [
         {
           actionMaximum: 1,
           resetMatch: 'app',
           fastQuery: true,
+          forcedTime: 1500,
           activityIds: [
             'com.huawei.myhw.ui.HwHomeActivity',
             'com.huawei.myhuawei.ui.HwSplashActivity',

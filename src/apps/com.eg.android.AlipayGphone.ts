@@ -610,6 +610,24 @@ export default defineGkdApp({
     },
     {
       key: 41,
+      name: '做任务领幸运星，领取奖励',
+      desc: '260814，添加明天不断签提醒，签到提醒，无clickable=true 和 fastquery=true',
+      rules: [
+        {
+          resetMatch: 'match',
+          activityIds: [
+            'com.alipay.mobile.nebulax.xriver.activity.XRiverActivity$App01',
+            'com.alipay.mobile.nebulax.xriver.activity.XRiverActivity$App02',
+            'com.alipay.mobile.nebulax.xriver.activity.XRiverActivity$App03',
+            'com.alipay.mobile.nebulax.xriver.activity.XRiverActivity$App04',
+          ],
+          matches:
+            '(TextView[text="做任务领幸运星"] +2 View > View > View > TextView[text="领取奖励"][clickable=false][visibleToUser=true]) || (@TextView[clickable=false][visibleToUser=true] - View > TextView[text^="开启消息提醒"] + View > TextView[text="立即开启"]) || (@TextView - View > View > TextView[text="提醒我不断签"])',
+        },
+      ],
+    },
+    {
+      key: 42,
       name: '团购申请发送消息，取消 或 不再询问',
       desc: '260723',
       rules: [

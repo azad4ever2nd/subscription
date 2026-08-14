@@ -111,6 +111,37 @@ export default defineGkdApp({
     },
     {
       key: 8,
+      name: '确定删除本条记录吗？确认',
+      desc: '260814',
+      rules: [
+        {
+          resetMatch: 'match',
+          forcedTime: 3000,
+          activityIds:
+            'com.idlefish.flutterbridge.flutterboost.boost.FishFlutterBoostActivity',
+          matches:
+            'View > View > View > ImageView[desc="确定删除本条记录吗？"] > Button[desc="取消"] + Button[desc="确认"][clickable=true][visibleToUser=true]',
+        },
+      ],
+    },
+    {
+      key: 9,
+      name: '分享，立即查看',
+      desc: '251213,增加ids',
+      rules: [
+        {
+          matches: [
+            '@[vid="goDetail"][text="立即查看"] <<n * + [vid="ivClose"]',
+          ],
+          fastQuery: true,
+          resetMatch: 'match',
+          activityIds:
+            'com.idlefish.flutterbridge.flutterboost.boost.FishFlutterBoostActivity',
+        },
+      ],
+    },
+    {
+      key: 10,
       name: '小额免密',
       desc: '260101,([text="闲鱼社区小额免密 推荐你"] <2 * +2 * > [text="关闭"]) || ',
       rules: [
@@ -123,7 +154,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 9,
+      key: 11,
       name: '放弃本次付款',
       desc: '251215 ',
       rules: [
@@ -136,7 +167,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 10,
+      key: 12,
       name: '进入直播间失败',
       desc: '251201',
       rules: [
@@ -150,7 +181,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 11,
+      key: 13,
       name: '直播间立即购买',
       desc: '251201，整合瑞幸，汉堡王',
       rules: [
@@ -164,7 +195,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 12,
+      key: 14,
       name: '直播间购物车去购买',
       desc: '251202，D,相当于立即购买',
       rules: [
@@ -178,7 +209,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 13,
+      key: 15,
       name: '直播间列表进去',
       desc: '251227，D,需要汉堡王可添加 text*="汉堡王代下单汉堡4选1" || ',
       rules: [
@@ -190,7 +221,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 14,
+      key: 16,
       name: '直播间价格不对，返回',
       desc: '251225',
       rules: [
@@ -206,7 +237,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 15,
+      key: 17,
       name: '闲鱼红包',
       desc: '251206',
       rules: [
@@ -219,7 +250,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 16,
+      key: 18,
       name: '提取卡券跳转，返回',
       desc: '251208',
       rules: [
@@ -232,7 +263,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 17,
+      key: 19,
       name: '订单支付完成，返回2',
       desc: '251220',
       rules: [
@@ -246,7 +277,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 18,
+      key: 20,
       name: '分享，立即查看',
       desc: '251213,增加ids',
       rules: [
@@ -258,7 +289,6 @@ export default defineGkdApp({
           resetMatch: 'match',
           activityIds: [
             'com.taobao.idlefish.webview.WebHybridActivity',
-            'com.idlefish.flutterbridge.flutterboost.boost.FishFlutterBoostActivity',
             'com.fleamarket.yunlive.LiveAudienceFlowActivity',
             'com.taobao.idlefish.maincontainer.activity.MainActivity',
           ],
@@ -266,7 +296,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 19,
+      key: 21,
       name: '立即支付',
       desc: '251203',
       rules: [

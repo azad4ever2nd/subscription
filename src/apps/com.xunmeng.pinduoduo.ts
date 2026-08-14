@@ -389,13 +389,13 @@ export default defineGkdApp({
     {
       key: 28,
       name: '百亿补贴消费券天天抢，点击领取消费券（激活）',
-      desc: '260812',
+      desc: '260814',
       rules: [
         {
           resetMatch: 'match',
           activityIds: 'com.xunmeng.pinduoduo.ui.activity.MainFrameActivity',
           matches:
-            'ViewGroup[childCount=3] > ImageView + ViewGroup[childCount=2] > ViewGroup[childCount=2] > ViewGroup[childCount=3] + ImageView[clickable=false][visibleToUser=true]',
+            'ViewGroup[childCount=3] > ImageView + @ViewGroup[childCount=2][clickable=true] > ViewGroup[childCount=2] > ViewGroup[childCount=3] + ImageView[clickable=false][visibleToUser=true]',
         },
       ],
     },
