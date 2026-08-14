@@ -166,8 +166,8 @@ export default defineGkdApp({
       rules: [
         {
           resetMatch: 'match',
-          matchDelay: 500,
-          forcedTime: 1000,
+          matchDelay: 1000,
+          forcedTime: 1500,
           action: 'clickCenter',
           matches:
             '(WebView > View > View > View >n Button[text="加自选"][clickable=true][visibleToUser=true]) || (WebView > View > View > View > View > Button[text="加自选"][clickable=true][visibleToUser=true]) || (WebView > View > View > View >n Button[text="去加自选" || text="去添加" || text="加自选"][clickable=true][visibleToUser=true])',

@@ -85,5 +85,19 @@ export default defineGkdApp({
         },
       ],
     },
+    {
+      key: 7,
+      name: '应用规则自动开启',
+      desc: '260814，慎开',
+      rules: [
+        {
+          resetMatch: 'match',
+          actionCd: 500,
+          activityIds: 'li.songe.gkd.MainActivity',
+          matches:
+            'View[childCount=4] > View[childCount=2][clickable=true][visibleToUser=true][checked=false]',
+        },
+      ],
+    },
   ],
 });

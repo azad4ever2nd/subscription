@@ -146,7 +146,7 @@ export default defineGkdApp({
     {
       key: 11,
       name: '合成三叶草',
-      desc: '260802,增加三叶草清零抽奖提示',
+      desc: '260814,增加三叶草不足，三叶草清零抽奖提示',
       rules: [
         {
           activityIds: 'com.citiccard.mobilebank.web.webpage.CommonWebPage',
@@ -154,7 +154,7 @@ export default defineGkdApp({
           action: 'clickCenter',
           actionCd: 500,
           matches:
-            '([text="恭喜你"] +3 [text="开心收下"]) || (* - * > [text="9b4b1bdec2d54f369d23adfb8099d075"]) || (View > View > View > TextView[text="恭喜你"] +3 Button[clickable=true][visibleToUser=true][text="开心收下"])',
+            '(TextView[text*="三叶草不足"]  < View <n View + Image[text="wN856FOtsI2bwAAAABJRU5ErkJggg=="][clickable=false][visibleToUser=true]) || ([text="恭喜你"] +3 [text="开心收下"]) || (* - * > [text="9b4b1bdec2d54f369d23adfb8099d075"]) || (View > View > View > TextView[text="恭喜你"] +3 Button[clickable=true][visibleToUser=true][text="开心收下"])',
         },
       ],
     },

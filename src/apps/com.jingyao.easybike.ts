@@ -35,15 +35,18 @@ export default defineGkdApp({
     {
       key: 3,
       name: '骑车抽免单弹窗，',
-      desc: '260325',
+      desc: '260814',
       rules: [
         {
           fastQuery: true,
           order: -1,
           resetMatch: 'match',
+          forcedTime: 1200,
+          actionCd: 600,
           activityIds:
             'com.hellobike.flutter.platform.android.flutterboost.FlutterHostFragmentActivity',
-          matches: '[vid="creativeContainer"] + [vid="actionDialogClose"]',
+          matches:
+            '([vid="creativeContainer"] + [vid="actionDialogClose"]) || (LinearLayout > FrameLayout[vid="creativeContainer"] + ImageView[vid="actionDialogClose"][clickable=true][visibleToUser=true])',
         },
       ],
     },

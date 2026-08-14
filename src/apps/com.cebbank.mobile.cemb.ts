@@ -40,7 +40,7 @@ export default defineGkdApp({
       rules: [
         {
           matches:
-            '([id="mainContainer"] [text^="天天领金币" && text$="关注产品收益上涨可领翻倍金币"] +3 * > *[text=""][visibleToUser=true][index=parent.childCount.minus(1)]) || ([text^="天天领金币"] +n *[text=""][clickable=true][visibleToUser=true][index=parent.childCount.minus(1)] + View[childCount=2]) || (View > TextView[text^="天天领金币"] +n View[childCount=2] > TextView[index=parent.childCount.minus(1)][text.length=0])',
+            '([id="mainContainer"] [text^="天天领金币" && text$="关注产品收益上涨可领翻倍金币"] +3 * > *[text=""][visibleToUser=true][index=parent.childCount.minus(1)]) || ([text^="天天领金币"] +n *[text=""][clickable=true][visibleToUser=true][index=parent.childCount.minus(1)] + View[childCount=2]) || (WebView > View > View > View > TextView[text^="天天领金币"] +n View[childCount=2] > TextView[index=parent.childCount.minus(1)][text.length=0][clickable=false][visibleToUser=true])',
           actionMaximum: 1,
           resetMatch: 'match',
           activityIds:
@@ -51,7 +51,7 @@ export default defineGkdApp({
     {
       key: 4,
       name: '基金财富月历，签到成功',
-      desc: '260703',
+      desc: '260814',
       rules: [
         {
           action: 'clickCenter',
@@ -81,21 +81,22 @@ export default defineGkdApp({
     {
       key: 6,
       name: '基金财富月历，每周任务',
-      desc: '260608，([text="每周"] + [text="指定产品加自选" || text="浏览指定专区"] + [text="(0/1)"] +3 TextView)',
+      desc: '260814，([text="每周"] +2 TextView[text="(0/1)"] +3 TextView) || ([text="每周"] + [text="指定产品加自选" || text="浏览指定专区"] + [text="(0/1)"] +3 TextView)',
       rules: [
         {
           actionDelay: 2000,
           action: 'clickCenter',
           activityIds:
             'com.cebbank.mobile.cemb.ui.activity.mobilePayment.MobilePaymentWebActivity',
-          matches: '[text="每周"] +2 TextView[text="(0/1)"] +3 TextView',
+          matches:
+            '(WebView > View > View > View > View > TextView[text="每周"] +2 TextView[text="(0/1)"] +(3,5) TextView[text.length=0][clickable=false][visibleToUser=true])',
         },
       ],
     },
     {
       key: 7,
       name: '基金财富月历，每周任务，参与话题讨论',
-      desc: '260608',
+      desc: '260814',
       rules: [
         {
           actionMaximum: 1,
@@ -104,7 +105,8 @@ export default defineGkdApp({
           action: 'clickCenter',
           activityIds:
             'com.cebbank.mobile.cemb.ui.activity.mobilePayment.MobilePaymentWebActivity',
-          matches: '([text="参与话题讨论"] +3 TextView)',
+          matches:
+            '(WebView > View > View > View > View > TextView[text="参与话题讨论"] +(3,5) TextView[text.length=0][clickable=false][visibleToUser=true])',
         },
       ],
     },
