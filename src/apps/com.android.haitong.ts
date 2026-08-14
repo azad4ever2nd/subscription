@@ -33,13 +33,16 @@ export default defineGkdApp({
     },
     {
       key: 3,
-      name: '弹窗下载君弘app',
-      desc: 'D,260309，占位',
+      name: '今日申购提醒p',
+      desc: '260814，提醒',
       rules: [
         {
-          matches: ['[vid="pushinfodlg_msgarea"] > *[index=1]'],
+          fastQuery: true,
           resetMatch: 'match',
+          actionDelay: 1000,
           activityIds: 'cn.htsec.SecurityHome',
+          matches:
+            'LinearLayout > @TextView[vid="pushinfodlg_btn1"][text="关闭"][clickable=true][visibleToUser=true] +2 TextView[vid="pushinfodlg_btn2"][text="一键打新"]',
         },
       ],
     },

@@ -25,7 +25,7 @@ export default defineGkdApp({
           resetMatch: 'match',
           matchDelay: 500,
           forcedTime: 1500,
-          actionCd: 600,
+          actionCd: 500,
           activityIds: ['li.songe.gkd.MainActivity'],
         },
       ],

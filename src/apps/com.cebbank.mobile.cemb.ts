@@ -689,5 +689,21 @@ export default defineGkdApp({
         },
       ],
     },
+    {
+      key: 49,
+      name: '体验定投',
+      desc: '260814，可不用',
+      rules: [
+        {
+          resetMatch: 'app',
+          actionCd: 3000,
+          actionMaximum: 2,
+          activityIds:
+            'com.cebbank.mobile.cemb.ui.activity.mobilePayment.MobilePaymentWebActivity',
+          matches:
+            'WebView > View > View > View > View > TextView[text^="体验" && text$="定投协议开通流程"] +(5,6) TextView[text.length=0][clickable=false][visibleToUser=true]',
+        },
+      ],
+    },
   ],
 });

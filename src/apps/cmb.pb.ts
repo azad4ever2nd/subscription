@@ -263,7 +263,7 @@ export default defineGkdApp({
     {
       key: 17,
       name: '去分享',
-      desc: '260322',
+      desc: '260814',
       rules: [
         {
           matches: [
@@ -706,12 +706,13 @@ export default defineGkdApp({
     {
       key: 46,
       name: '开启消息通知',
-      desc: '260105,增加IDS',
+      desc: '260814,增加IDS',
       rules: [
         {
           resetMatch: 'match',
           fastQuery: true,
-          matches: '[vid="title"][text="开启消息通知"] + [vid="close_btn"]',
+          matches:
+            '([vid="title"][text="开启消息通知"] + [vid="close_btn"]) || (FrameLayout > ViewGroup > RelativeLayout > TextView[vid="title"][text="开启消息通知"] + ImageView[vid="close_btn"][clickable=true][visibleToUser=true])',
           activityIds: [
             'cmb.pb.app.mainframe.container.PBMainActivity',
             'com.cmb.zh.ui.mbank.im.activitys.messagecenter.MessageCenterActivity',

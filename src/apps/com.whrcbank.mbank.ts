@@ -7,15 +7,15 @@ export default defineGkdApp({
     {
       key: 1,
       name: '广告弹窗',
-      desc: '251205',
+      desc: '260814，添加 退出提示',
       rules: [
         {
-          matches: ['[vid="ll_pics"] + [vid="close_image"]'],
-          fastQuery: true,
           resetMatch: 'match',
-          activityIds: [
+          fastQuery: true,
+          activityIds:
             'com.yitong.mobile.biz.launcher.secondapp.activity.SecondMainActivity',
-          ],
+          matches:
+            '(TextView[vid="dialog_iosokcancle_content_neirong"][text="确定要退出应用吗？"] <n LinearLayout +2 LinearLayout > Button[vid="dialog_iosokcancle_left"][text="确定"][clickable=true][visibleToUser=true]) || (FrameLayout > RelativeLayout > LinearLayout[vid="page_indicator"] + ImageView[vid="close_image"][clickable=true][visibleToUser=true])',
         },
       ],
     },
