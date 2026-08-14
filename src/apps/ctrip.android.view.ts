@@ -51,14 +51,14 @@ export default defineGkdApp({
     {
       key: 4,
       name: '签到',
-      desc: '260629，两台手机布局不同',
+      desc: '260814，添加clickable=true，两台手机布局不同',
       rules: [
         {
           actionMaximum: 1,
           resetMatch: 'match',
           activityIds: 'ctrip.android.view.h5v2.view.H5Container',
           matches:
-            '([id="NotificationModal"] +2 * [id="signBtnInModal"][text="立即签到"]) || (View > View > View > TextView[id="signBtnInModal"][clickable=false][text="立即签到"])',
+            '(WebView >(8,10) View > TextView[id="signBtnInModal"][text="立即签到"][clickable=true][visibleToUser=true]) || ([id="NotificationModal"] +2 * [id="signBtnInModal"][text="立即签到"]) || (View > View > View > TextView[id="signBtnInModal"][clickable=false][text="立即签到"])',
         },
       ],
     },
