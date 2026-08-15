@@ -436,13 +436,14 @@ export default defineGkdApp({
     {
       key: 32,
       name: '删除优惠券，确认',
-      desc: '260803',
+      desc: '260815',
       rules: [
         {
           resetMatch: 'match',
+          action: 'clickCenter',
           activityIds: 'com.bankcomm.module.biz.webcontainer.BCMHtml5Activity',
           matches:
-            'TextView[text="删除优惠券"] < View + View > Button[clickable=true][visibleToUser=true][text="确认"]',
+            'TextView[text="删除优惠券"] < View + View > Button[text="确认"][clickable=true][visibleToUser=true]',
         },
       ],
     },

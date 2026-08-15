@@ -253,14 +253,14 @@ export default defineGkdApp({
     {
       key: 18,
       name: '抽福袋，收下',
-      desc: '260616',
+      desc: '260815，添加 去兑换，完成任务弹窗，clickable=false',
       rules: [
         {
           resetMatch: 'match',
           activityIds:
             'com.cebbank.mobile.cemb.ui.activity.mobilePayment.MobilePaymentWebActivity',
           matches:
-            'View > TextView[text="抽福袋攒财气，有机会赢好礼"] + TextView',
+            '(View > TextView[text="抽福袋攒财气，有机会赢好礼"] + TextView) || (View > View > TextView[text^="您还没有完成任务" || text*="完成任务"] + TextView[text="确定"][clickable=false][visibleToUser=true]) || (View > View > TextView[text="已成功领取啦"] +n TextView[text="去兑换"] + View > TextView[text.length=1][clickable=false][visibleToUser=true])',
         },
       ],
     },

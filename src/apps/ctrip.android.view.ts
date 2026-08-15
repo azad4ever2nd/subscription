@@ -69,6 +69,7 @@ export default defineGkdApp({
       rules: [
         {
           resetMatch: 'match',
+          preKeys: [4],
           activityIds: 'ctrip.android.view.h5v2.view.H5Container',
           matches:
             '([id="popup_bg-id"] <n * +n TextView[text=""][childCount=0][clickable=true][visibleToUser=true]) || ([id="popup_bg-id"] <<n * +n TextView[text=""][childCount=0][visibleToUser=true])',
@@ -107,6 +108,7 @@ export default defineGkdApp({
       rules: [
         {
           resetMatch: 'match',
+          preKeys: [5],
           activityIds: 'ctrip.android.view.h5v2.view.H5Container',
           matches:
             'View > @View[clickable=false][visibleToUser=true] > TextView[text^="+"] + View > TextView[text="立即领取"]',

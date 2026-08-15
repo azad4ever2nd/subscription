@@ -35,11 +35,12 @@ export default defineGkdApp({
     {
       key: 3,
       name: '弹窗',
-      desc: '260813',
+      desc: '260815',
       rules: [
         {
           resetMatch: 'match',
           fastQuery: true,
+          forcedTime: 1500,
           matches:
             '([vid="close_btn"][desc="关闭"]) || (ImageView[vid="ad_image"][desc="广告"] <n RelativeLayout + ImageView[vid="close_btn"][desc="关闭"][clickable=true][visibleToUser=true])',
           activityIds: ['com.mc10086.cmcc.view.tabs.AppTabFragment'],
@@ -54,9 +55,10 @@ export default defineGkdApp({
         {
           resetMatch: 'match',
           fastQuery: true,
+          forcedTime: 1500,
           activityIds: 'com.mc10086.cmcc.view.tabs.AppTabFragment',
           matches:
-            'ImageView[vid="ad_image"][desc="广告"] < RelativeLayout + ImageView[vid="close_btn"][desc="关闭"][clickable=true]',
+            'ImageView[vid="ad_image"][desc="广告"] < RelativeLayout + ImageView[vid="close_btn"][desc="关闭"][clickable=true][visibleToUser=true]',
         },
       ],
     },

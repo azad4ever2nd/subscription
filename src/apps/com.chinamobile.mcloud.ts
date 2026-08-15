@@ -24,7 +24,8 @@ export default defineGkdApp({
       desc: '260615',
       rules: [
         {
-          actionMaximum: 1,
+          actionMaximum: 2,
+          forcedTime: 2000,
           resetMatch: 'match',
           activityIds:
             'com.chinamobile.mcloud.client.component.web.H5WebViewMainActivity',

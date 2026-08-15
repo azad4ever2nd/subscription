@@ -20,14 +20,15 @@ export default defineGkdApp({
     {
       key: 2,
       name: '提示 移入移出成功，完成',
-      desc: '260503',
+      desc: '260815',
       rules: [
         {
           resetMatch: 'match',
           fastQuery: true,
+          forcedTime: 1500,
           activityIds: 'com.miui.tsmclient.ui.result.TransitResultActivity',
           matches:
-            '[vid="center_content_tv"][text^="移" && text$="成功"] <<n * + * [vid="footer_op_btn"]',
+            '([vid="center_content_tv"][text^="移" && text$="成功"] <<n * + * [vid="footer_op_btn"]) || (LinearLayout[vid="footer_layout"] > Button[vid="footer_op_btn"][text="完成"][clickable=true][visibleToUser=true])',
         },
       ],
     },

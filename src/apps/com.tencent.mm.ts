@@ -63,7 +63,7 @@ export default defineGkdApp({
     {
       key: 5,
       name: '建行社保卡，勾选同意',
-      desc: '260708',
+      desc: '260815，添加 非建行社保卡活动',
       rules: [
         {
           resetMatch: 'match',
@@ -71,7 +71,7 @@ export default defineGkdApp({
           action: 'clickCenter',
           activityIds: 'com.tencent.mm.plugin.webview.ui.tools.MMWebViewUI',
           matches:
-            '(WebView[text*="建行社保卡"] > View > View > View > CheckBox[clickable=true][checked=false])',
+            '(WebView > View > View > View > CheckBox[clickable=true][checked=false]) || (WebView[text*="建行社保卡"] > View > View > View > CheckBox[clickable=true][checked=false])',
         },
       ],
     },

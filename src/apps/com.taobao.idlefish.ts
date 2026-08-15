@@ -53,14 +53,14 @@ export default defineGkdApp({
     {
       key: 4,
       name: '开启系统通知',
-      desc: '260706',
+      desc: '260815，添加 桌面小组件',
       rules: [
         {
           resetMatch: 'match',
           activityIds:
             'com.idlefish.flutterbridge.flutterboost.boost.FishFlutterBoostTransparencyActivity',
           matches:
-            'View[desc^="开启系统通知"] > ImageView[clickable=true][index=0]',
+            '(View[desc^="开启系统通知"] > ImageView[clickable=true][index=0]) || (View > View > @ImageView[clickable=false][visibleToUser=true] + View[desc="添加闲鱼关注桌面小组件"])',
         },
       ],
     },
@@ -116,7 +116,8 @@ export default defineGkdApp({
       rules: [
         {
           resetMatch: 'match',
-          forcedTime: 3000,
+          forcedTime: 2000,
+          actionCd: 2000,
           activityIds:
             'com.idlefish.flutterbridge.flutterboost.boost.FishFlutterBoostActivity',
           matches:

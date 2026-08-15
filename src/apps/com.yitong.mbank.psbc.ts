@@ -10,7 +10,8 @@ export default defineGkdApp({
       rules: [
         {
           matches: ['[vid="bt_cancel"][text="暂不更新"]'],
-          matchDelay: 1000,
+          matchDelay: 500,
+          forcedTime: 2500,
           fastQuery: true,
           resetMatch: 'match',
           activityIds: [
