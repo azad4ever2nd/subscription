@@ -43,6 +43,7 @@ export default defineGkdApp({
             '([text="每日签到"] +2 * [text^="今日签到"]) || (@View > [text="每日签到"] +n * >n [text^="今日签到+"])',
           ],
           resetMatch: 'activity',
+          actionCd: 5000,
           activityIds:
             'com.alipay.mobile.nebulax.xriver.activity.XRiverActivity',
         },
@@ -131,7 +132,7 @@ export default defineGkdApp({
           activityIds:
             'com.alipay.mobile.nebulax.xriver.activity.XRiverActivity',
           matches:
-            '(View > View > View > @Image[clickable=false][visibleToUser=true] + TextView[text^="用碰一下"] +n TextView[text="去申请"]) || (@View[clickable=false][visibleToUser=true] > View > TextView[text*="任务完成"] + TextView[text*="返回领奖"]) || (Dialog > View > View > @Button[clickable=true][visibleToUser=true][text="关闭"] - View >n TextView[text="去抢购"]) || (@Image[clickable=false][visibleToUser=true] < View + View > TextView[text="去开启"]) || (@Image[clickable=false][visibleToUser=true] < View + View > View > TextView[text="确认要离开吗？"]) || (View > @Button[text="关闭"][clickable=true][visibleToUser=true] + TextView[text^="该信用卡支持查询账单"]) || (@Image[clickable=false][visibleToUser=true] < View + View > TextView[text^="确认要离开"]) || (View > TextView[text="开启推送服务"] + @View[clickable=false][visibleToUser=true] > TextView[text.length=1]) || (View > @Image[clickable=false][visibleToUser=true][text="关闭弹窗"] + View > View > View > Image[text="original?hm_biz=mybank_fund"]) || (@Image < View + View Button[text="同意协议并分期"]) || (View > @Image[text="关闭弹窗"] + View > View > TextView[text="立即更换"]) || (@Image < View + View > TextView[text="开通信用卡借款享一站式服务"]) || (@Image[clickable=false][visibleToUser=true] < View + View > Button[text="去看看"]) || (View > CheckBox[checked=true] + TextView + Button + @Button[clickable=true][visibleToUser=true][text="继续转出"]) || (WebView > View > View > TextView[text^="抽奖机会1"] + TextView[clickable=false][visibleToUser=true]) || (View > TextView[text^="添加" && text$="到桌面"] - View[clickable=false] > Image[clickable=false][visibleToUser=true]) || (View > View > TextView[text="支付宝"] + TextView[text="邀请你"] + TextView[clickable=false][visibleToUser=true][text="跳过"]) || (TextView[text="确认要离开吗？"] < View - View > Image[clickable=false][visibleToUser=true]) || (View > TextView[text="添加会员小组件到桌面"] -n View > Image[text="BE4E7D81-3958-4F2E-9956-E6071199885F@2x"][clickable=false][visibleToUser=true])',
+            '(@View[clickable=false][visibleToUser=true] > Button[text="去看看"][clickable=true][visibleToUser=false]) || (TextView[text="拼多多 推荐你"] <n FrameLayout +n FrameLayout > TextView[text="不感兴趣"][clickable=false][visibleToUser=true]) || (TextView[text="立即攒下"] <n View + TextView[text.length=0][clickable=false][visibleToUser=true]) || (View > @Image[text="关闭弹窗"][clickable=false][visibleToUser=true] + View > Button) || (View > View > View > @Image[clickable=false][visibleToUser=true] + TextView[text^="用碰一下"] +n TextView[text="去申请"]) || (@View[clickable=false][visibleToUser=true] > View > TextView[text*="任务完成"] + TextView[text*="返回领奖"]) || (Dialog > View > View > @Button[clickable=true][visibleToUser=true][text="关闭"] - View >n TextView[text="去抢购"]) || (@Image[clickable=false][visibleToUser=true] < View + View > TextView[text="去开启"]) || (@Image[clickable=false][visibleToUser=true] < View + View > View > TextView[text="确认要离开吗？"]) || (View > @Button[text="关闭"][clickable=true][visibleToUser=true] + TextView[text^="该信用卡支持查询账单"]) || (@Image[clickable=false][visibleToUser=true] < View + View > TextView[text^="确认要离开"]) || (View > TextView[text="开启推送服务"] + @View[clickable=false][visibleToUser=true] > TextView[text.length=1]) || (View > @Image[clickable=false][visibleToUser=true][text="关闭弹窗"] + View > View > View > Image[text="original?hm_biz=mybank_fund"]) || (@Image < View + View Button[text="同意协议并分期"]) || (View > @Image[text="关闭弹窗"] + View > View > TextView[text="立即更换"]) || (@Image < View + View > TextView[text="开通信用卡借款享一站式服务"]) || (@Image[clickable=false][visibleToUser=true] < View + View > Button[text="去看看"]) || (View > CheckBox[checked=true] + TextView + Button + @Button[clickable=true][visibleToUser=true][text="继续转出"]) || (WebView > View > View > TextView[text^="抽奖机会1"] + TextView[clickable=false][visibleToUser=true]) || (View > TextView[text^="添加" && text$="到桌面"] - View[clickable=false] > Image[clickable=false][visibleToUser=true]) || (View > View > TextView[text="支付宝"] + TextView[text="邀请你"] + TextView[clickable=false][visibleToUser=true][text="跳过"]) || (TextView[text="确认要离开吗？"] < View - View > Image[clickable=false][visibleToUser=true]) || (View > TextView[text="添加会员小组件到桌面"] -n View > Image[text="BE4E7D81-3958-4F2E-9956-E6071199885F@2x"][clickable=false][visibleToUser=true])',
         },
       ],
     },
@@ -513,7 +514,7 @@ export default defineGkdApp({
     {
       key: 35,
       name: '添加神券到首页，X掉',
-      desc: '260810，没有fastquery，没有clickable=true，添加到首页，添加 生活缴费',
+      desc: '260829，添加闪购小程序，没有fastquery，没有clickable=true，添加到首页，添加 生活缴费',
       rules: [
         {
           resetMatch: 'match',
@@ -522,7 +523,7 @@ export default defineGkdApp({
             'com.alipay.mobile.nebulax.xriver.activity.XRiverActivity$App02',
           ],
           matches:
-            '(View > @Image[clickable=false][visibleToUser=true] +2 TextView[text="去处理"] + TextView[text="暂不处理"]) || (@TextView <n * + [text="取消"] + [text="立即添加"]) || (View > TextView[text*="添加" && text*="首页" && text*="红包"] +n TextView[text="取消"] + TextView[clickable=false][visibleToUser=true][text="添加到首页"]) || (@TextView[clickable=false][visibleToUser=true] <2 View + TextView[text="取消"] + TextView[text="立即添加"])',
+            '(TextView[text="立即抽免单"][clickable=false][visibleToUser=true] < View < View + TextView[text.length=0][clickable=false][visibleToUser=true]) || (View > View > TextView[text="立即抽"][clickable=false][visibleToUser=true]) || (View > @TextView[text="领取签到奖励"][clickable=false][visibleToUser=true] + View > Image + TextView[text.length>0]) || (View > @Image[clickable=false][visibleToUser=true] +2 TextView[text="去处理"] + TextView[text="暂不处理"]) || (@TextView <n * + [text="取消"] + [text="立即添加"]) || (View > TextView[text*="添加" && text*="首页" && text*="红包"] +n TextView[text="取消"] + TextView[clickable=false][visibleToUser=true][text="添加到首页"]) || (@TextView[clickable=false][visibleToUser=true] <2 View + TextView[text="取消"] + TextView[text="立即添加"])',
         },
       ],
     },
@@ -576,14 +577,16 @@ export default defineGkdApp({
     {
       key: 39,
       name: '添加到首页，取消',
-      desc: '260704',
+      desc: '260829',
       rules: [
         {
           resetMatch: 'match',
           fastQuery: true,
           activityIds: 'com.alipay.android.phone.home.market.AddToHomeActivity',
-          matches:
+          matches: [
             'TextView[text*="添加到首页"] < RelativeLayout < FrameLayout < FrameLayout + LinearLayout > Button[id="com.alipay.mobile.antui:id/btn_cancel"][clickable=true][visibleToUser=true][text="取消"]',
+            'TextView[text="编辑首页服务"] < LinearLayout < FrameLayout + LinearLayout > Button[text="取消"][clickable=true][visibleToUser=true] + Button[text="完成"][clickable=true][visibleToUser=true]',
+          ],
         },
       ],
     },

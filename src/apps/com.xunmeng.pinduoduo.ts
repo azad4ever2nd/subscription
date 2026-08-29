@@ -376,6 +376,58 @@ export default defineGkdApp({
     },
     {
       key: 27,
+      name: '弹窗，余额可抵扣，X掉',
+      desc: '260829',
+      rules: [
+        {
+          action: 'clickCenter',
+          resetMatch: 'match',
+          activityIds: 'com.xunmeng.pinduoduo.activity.NewPageActivity',
+          matches:
+            'View > @Button[text="关闭按钮"][clickable=true][visibleToUser=true] + TextView[text^="余额¥" && text$="购物可直接抵扣"]',
+        },
+      ],
+    },
+    {
+      key: 28,
+      name: '立即点亮',
+      desc: '260829',
+      rules: [
+        {
+          resetMatch: 'match',
+          activityIds: 'com.xunmeng.pinduoduo.activity.NewPageActivity',
+          matches:
+            'View > View > TextView[text="立即点亮"][clickable=false][visibleToUser=true]',
+        },
+      ],
+    },
+    {
+      key: 29,
+      name: '浏览当前页面10秒即可点亮',
+      desc: '260829',
+      rules: [
+        {
+          resetMatch: 'match',
+          action: 'swipe',
+          swipeArg: {
+            start: {
+              x: 538,
+              y: 2052,
+            },
+            end: {
+              x: 538,
+              y: 1000,
+            },
+            duration: 800, //滑动时长
+          },
+          activityIds: 'com.xunmeng.pinduoduo.activity.NewPageActivity',
+          matches:
+            'View[id="sticky_Gffa"] > TextView[text="滑动浏览当前页面"] +2 TextView[text="秒即可点亮"]',
+        },
+      ],
+    },
+    {
+      key: 30,
       name: '通知关闭，拒绝接收',
       desc: '260609',
       rules: [
