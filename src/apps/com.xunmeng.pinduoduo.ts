@@ -441,7 +441,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 28,
+      key: 31,
       name: '百亿补贴消费券天天抢，点击领取消费券（激活）',
       desc: '260814',
       rules: [
