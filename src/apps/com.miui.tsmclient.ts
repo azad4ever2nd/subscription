@@ -59,5 +59,19 @@ export default defineGkdApp({
         },
       ],
     },
+    {
+      key: 5,
+      name: '提示，请开启NFC功能，设置',
+      desc: '260829',
+      rules: [
+        {
+          fastQuery: true,
+          resetMatch: 'match',
+          activityIds: 'com.miui.tsmclient.ui.TransitEntryActivity',
+          matches:
+            '[vid="message"][text="请开启NFC功能"] <<n ScrollView + LinearLayout > Button + Button[id="android:id/button1"][text="设置"][clickable=true][visibleToUser=true]',
+        },
+      ],
+    },
   ],
 });

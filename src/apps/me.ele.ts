@@ -21,6 +21,20 @@ export default defineGkdApp({
     },
     {
       key: 2,
+      name: '弹窗，请选择你的收货地址，X掉',
+      desc: '260829',
+      rules: [
+        {
+          fastQuery: true,
+          resetMatch: 'match',
+          activityIds: 'me.ele.application.ui.Launcher.LauncherActivity',
+          matches:
+            'RelativeLayout[vid="dialog_container"] > ImageView[vid="close_btn"][desc="关闭"][clickable=true][visibleToUser=true]',
+        },
+      ],
+    },
+    {
+      key: 3,
       name: '定位服务未开启，取消',
       desc: '260611',
       rules: [
@@ -34,7 +48,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 3,
+      key: 4,
       name: '应用内更新权限2，取消',
       desc: '260621',
       rules: [
@@ -48,7 +62,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 4,
+      key: 5,
       name: '下单后弹出开启订单通知，X掉',
       desc: '260629',
       rules: [
@@ -61,7 +75,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 5,
+      key: 6,
       name: '任务完成，返回领奖',
       desc: '260804，返回领奖，去领奖',
       rules: [
@@ -74,7 +88,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 6,
+      key: 7,
       name: '爷爷不泡茶，0.1购',
       desc: '260720',
       rules: [
@@ -89,7 +103,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 7,
+      key: 8,
       name: '秋奶，立即抢',
       desc: '260807',
       rules: [
@@ -104,9 +118,9 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 8,
-      name: '天降红包，X掉',
-      desc: '260814',
+      key: 9,
+      name: '弹窗，天降红包，X掉',
+      desc: '260829',
       rules: [
         {
           resetMatch: 'match',
@@ -119,7 +133,36 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 9,
+      key: 10,
+      name: '弹窗，单单返现金，X掉',
+      desc: '260829',
+      rules: [
+        {
+          activityIds:
+            'me.ele.android.themis_alsc.eleme.container.EleTMSActivity',
+          resetMatch: 'match',
+          matches:
+            'ViewGroup[vid="id_magex_mist_view"] > ViewGroup > ViewGroup > ImageView[clickable=true][visibleToUser=true]',
+        },
+      ],
+    },
+    {
+      key: 11,
+      name: '弹窗，大额红包，X掉',
+      desc: '260829',
+      rules: [
+        {
+          activityIds:
+            'me.ele.android.themis_alsc.eleme.container.EleTMSActivity',
+          resetMatch: 'match',
+          matches:
+            'ViewGroup[vid="id_magex_mistview"] > ViewGroup[clickable=true][visibleToUser=true]',
+        },
+      ],
+    },
+
+    {
+      key: 12,
       name: '位置权限使用说明',
       desc: '260829',
       rules: [
@@ -133,7 +176,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 10,
+      key: 13,
       name: '吃货豆兑名单红包',
       desc: '260829',
       rules: [
