@@ -116,7 +116,7 @@ export default defineGkdApp({
     },
     {
       key: 8,
-      name: '订阅通知，暂不开启',
+      name: '订阅通知2，暂不开启',
       desc: '260829',
       rules: [
         {
