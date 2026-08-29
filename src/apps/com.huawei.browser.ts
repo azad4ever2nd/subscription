@@ -66,6 +66,20 @@ export default defineGkdApp({
     },
     {
       key: 5,
+      name: '下载',
+      desc: '260829',
+      rules: [
+        {
+          resetMatch: 'match',
+          fastQuery: true,
+          activityIds: 'com.huawei.browser.BrowserMainActivity',
+          matches:
+            'LinearLayout[desc="关闭"] - LinearLayout[vid="ll_snack_bar_text_open"] > TextView[vid="tv_snack_bar_btn_text"][text="下载"]',
+        },
+      ],
+    },
+    {
+      key: 6,
       name: '确认下载弹窗，下载',
       desc: '260410',
       rules: [
@@ -74,7 +88,7 @@ export default defineGkdApp({
           fastQuery: true,
           activityIds: 'com.huawei.browser.download.DownloadRecordsActivity',
           matches:
-            '[id="android:id/alertTitle"][text="下载"] <<n * +n * [id="android:id/button3"][text="取消"] + [id="android:id/button1"][text="下载"]',
+            '([id="android:id/alertTitle"][text="下载"] <<n * +n * [id="android:id/button3"][text="取消"] + [id="android:id/button1"][text="下载"])',
         },
       ],
     },

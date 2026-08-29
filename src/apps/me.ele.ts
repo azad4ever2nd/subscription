@@ -69,7 +69,7 @@ export default defineGkdApp({
           resetMatch: 'match',
           activityIds: 'me.ele.component.webcontainer.view.AppUCWebActivity',
           matches:
-            '(@View[clickable=true] > TextView[text="任务完成"] + TextView[text*="领奖"]) || (View > @View[clickable=true][visibleToUser=true] > TextView[text="任务完成"] + TextView[text="返回领奖"]) || (@View[clickable=true][visibleToUser=true] > Image + TextView + TextView[text="任务完成"] + TextView[text="返回领奖"])',
+            '(View > @View[clickable=true][visibleToUser=true] > TextView[text="任务完成"] + TextView[text="返回领奖"]) || (@View[clickable=true][visibleToUser=true] > Image + TextView + TextView[text="任务完成"] + TextView[text="返回领奖"]) || (@View[clickable=true] > TextView[text="任务完成"] + TextView[text*="领奖"])',
         },
       ],
     },
@@ -115,6 +115,33 @@ export default defineGkdApp({
             'me.ele.android.themis_alsc.eleme.container.EleTMSActivity',
           matches:
             'ViewGroup[vid="id_magex_mist_view"] > ViewGroup > ImageView[clickable=true][visibleToUser=true]',
+        },
+      ],
+    },
+    {
+      key: 9,
+      name: '位置权限使用说明',
+      desc: '260829',
+      rules: [
+        {
+          resetMatch: 'match',
+          fastQuery: true,
+          activityIds: 'me.ele.runtimepermission.PermissionActivity',
+          matches:
+            'FrameLayout > RelativeLayout > TextView[text="位置权限使用说明"] +n Button[text="拒绝"][clickable=true][visibleToUser=true] + Button[text="同意"][clickable=true]',
+        },
+      ],
+    },
+    {
+      key: 10,
+      name: '吃货豆兑名单红包',
+      desc: '260829',
+      rules: [
+        {
+          resetMatch: 'match',
+          activityIds: 'me.ele.android.emagex.container.EMagexActivity',
+          matches:
+            'ViewGroup[vid="id_magex_mistview"] > ImageView + ImageView[clickable=true][visibleToUser=true]',
         },
       ],
     },

@@ -72,7 +72,7 @@ export default defineGkdApp({
       rules: [
         {
           matches: ['@[vid="close"] > ImageView'],
-          actionDelay: 5000,
+          actionDelay: 15000,
           resetMatch: 'match',
           activityIds: [
             'com.bilibili.ship.theseus.detail.UnitedBizDetailsActivity',
@@ -111,6 +111,21 @@ export default defineGkdApp({
           activityIds: [
             'com.bilibili.teenagersmode.ui.TeenagersModeDialogActivity',
           ],
+        },
+      ],
+    },
+    {
+      key: 8,
+      name: '订阅通知，暂不开启',
+      desc: '260829',
+      rules: [
+        {
+          fastQuery: true,
+          resetMatch: 'match',
+          activityIds:
+            'com.bilibili.ship.theseus.detail.UnitedBizDetailsActivity',
+          matches:
+            'LinearLayout > @TextView[vid="close"][text="暂不开启"][clickable=true][visibleToUser=true] + TextView[vid="open"][text="去开启"]',
         },
       ],
     },

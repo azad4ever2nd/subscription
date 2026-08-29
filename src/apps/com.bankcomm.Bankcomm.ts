@@ -238,13 +238,13 @@ export default defineGkdApp({
     {
       key: 17,
       name: '人数太多，关闭',
-      desc: '260403，增加服务器在忙，上限',
+      desc: '260829，增加当前奖励已领完，服务器在忙，上限',
       rules: [
         {
           resetMatch: 'match',
           activityIds: 'com.bankcomm.module.biz.webcontainer.BCMHtml5Activity',
           matches:
-            '[id="dialogInnerDiv"][text^="哎呀" || text^="人数太多" || text*="次数上限" || text^="服务器在忙" || text$="请稍后再试" ] <<n * + * > [text="关闭"]',
+            '([id="dialogInnerDiv"][text^="哎呀" || text^="人数太多" || text*="次数上限" || text^="服务器在忙" || text$="请稍后再试" ] <<n * + * > [text="关闭"]) || (TextView[id="dialogInnerDiv"][text*="当前奖励已领完"] < View < View + View > Button[text="关闭"][clickable=true][visibleToUser=true])',
         },
       ],
     },
@@ -293,11 +293,11 @@ export default defineGkdApp({
     {
       key: 21,
       name: '能量签到完成',
-      desc: '260812，添加每周在线互动',
+      desc: '260829，添加每周在线互动',
       rules: [
         {
           matches:
-            '(TextView[text^="查看" && text*="超过" && text$="秒"] +2 TextView[text="去完成"][clickable=false][visibleToUser=true]) || ([text="恭喜您签到成功"] +n [text="我知道了"])',
+            '(TextView[text^="访问" || text^="查看"][text*="超过" && text$="秒"] +2 TextView[text="去完成"][clickable=false][visibleToUser=true]) || (TextView[text^="访问" || text^="查看"][text*="超过" && text$="秒"] <n View +2 TextView[text="去完成"][clickable=true][visibleToUser=true]) || ([text="恭喜您签到成功"] +n [text="我知道了"])',
           resetMatch: 'match',
           activityIds: 'com.bankcomm.module.biz.webcontainer.BCMHtml5Activity',
         },
@@ -515,12 +515,28 @@ export default defineGkdApp({
             'com.bankcomm.module.biz.webcontainer.BCMHtml5Activity',
           ],
           matches:
-            '([id="android:id/message"][text*="权限"] <<n * + [id="android:id/buttonPanel"] [id="android:id/button2"][text="否"] + [id="android:id/button1"][text="是"]) || ([text="Pyi3KQBzgJA1F+Xm7MrWYA0HQqTcq4GrAAAAAASUVORK5CYII="]) || ([text="countdown-fulfilled-bg.f65a2ea"]) || (View > Image[clickable=false][text="gthEFTB6uRQ36UPWtwD"]) || (WebView > @View[clickable=false][visibleToUser=true] > Image[text="gthEFTB6uRQ36UPWtwD"])',
+            '([id="android:id/message"][text*="权限"] <<n * + [id="android:id/buttonPanel"] [id="android:id/button2"][text="否"] + [id="android:id/button1"][text="是"]) || ([text="Pyi3KQBzgJA1F+Xm7MrWYA0HQqTcq4GrAAAAAASUVORK5CYII="]) || ([text="countdown-fulfilled-bg.f65a2ea-bak"]) || (View > Image[clickable=false][text="gthEFTB6uRQ36UPWtwD"]) || (WebView > @View[clickable=false][visibleToUser=true] > Image[text="gthEFTB6uRQ36UPWtwD"])',
         },
       ],
     },
     {
       key: 38,
+      name: '浏览任务完成2',
+      desc: '260829，取消back，添加新布局，添加权限弹窗，直播间ids',
+      rules: [
+        {
+          resetMatch: 'match',
+          activityIds: [
+            'com.bankcomm.module.biz.bcmvideo.BCMVerticalVideoActivity',
+            'com.bankcomm.module.biz.webcontainer.BCMHtml5Activity',
+          ],
+          matches:
+            '([id="android:id/message"][text*="权限"] <<n * + [id="android:id/buttonPanel"] [id="android:id/button2"][text="否"] + [id="android:id/button1"][text="是"]) || ([text="Pyi3KQBzgJA1F+Xm7MrWYA0HQqTcq4GrAAAAAASUVORK5CYII="]) || ([text="countdown-fulfilled-bg.f65a2ea"]) || (View > Image[clickable=false][text="gthEFTB6uRQ36UPWtwD"]) || (WebView > @View[clickable=false][visibleToUser=true] > Image[text="gthEFTB6uRQ36UPWtwD"])',
+        },
+      ],
+    },
+    {
+      key: 39,
       name: '直播间限时福袋',
       desc: '260717',
       rules: [
@@ -535,7 +551,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 39,
+      key: 40,
       name: '系统定位权限未开启,暂不开启',
       desc: '251207,',
       rules: [
@@ -550,7 +566,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 40,
+      key: 41,
       name: '领券中心，1分购，外面等',
       desc: '2600508，可以指定抢什么券，朴朴，移动，联通，美团，闪购，',
       rules: [
@@ -565,7 +581,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 41,
+      key: 42,
       name: '领券中心，1分购，里面等，立即抢购',
       desc: '260508',
       rules: [
@@ -578,7 +594,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 42,
+      key: 43,
       name: '领券中心，1分购，达到限购次数，返回',
       desc: '260327',
       rules: [
@@ -592,7 +608,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 43,
+      key: 44,
       name: '领券中心，1分购，里面等2',
       desc: '260608，不分品种，无actionMaximum限制',
       rules: [

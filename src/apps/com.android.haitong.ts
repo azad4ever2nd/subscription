@@ -21,11 +21,13 @@ export default defineGkdApp({
     {
       key: 2,
       name: '弹窗',
-      desc: '260808，添加弹窗下载君弘app',
+      desc: '260829，排除新股弹窗，添加弹窗下载君弘app',
       rules: [
         {
           resetMatch: 'match',
           activityIds: 'cn.htsec.SecurityHome',
+          excludeMatches:
+            'LinearLayout > TextView[text="请关注"] + TextView[text="《新股申购风险提示》"]',
           matches:
             '([vid="pushinfodlg_msgarea"] > *[index=1]) || (LinearLayout[vid="pushinfodlg_msgarea"] > ImageView[clickable=true][visibleToUser=true][index=1]) || (LinearLayout[vid="pushinfodlg_msgarea"] > ImageView[clickable=true][visibleToUser=true][index=parent.childCount.minus(1)])',
         },

@@ -6,16 +6,17 @@ export default defineGkdApp({
     {
       key: 1,
       name: '积分兑无门槛5元',
-      desc: '251201,解决兑满时不点击，整合兑换成功，确认兑换，积分兑换',
+      desc: '260829，排除确认兑换',
       rules: [
         {
-          matches: [
-            ' (*[childCount=4] > [text="无门槛券"] + [text="100"] + [text="积分兑换"])',
-          ],
-          actionCd: 0,
+          actionCd: 200,
           actionMaximum: 15,
           order: -1,
           resetMatch: 'match',
+          excludeMatches:
+            'TextView[text="确认兑换"][clickable=false][visibleToUser=true] + View > TextView[text="查看可用商品"][visibleToUser=true]',
+          matches:
+            '@View[childCount=4][clickable=true][visibleToUser=true] > TextView[text="无门槛券"] + View[text="100"] + TextView[text="积分兑换"]',
           activityIds: ['com.xunmeng.pinduoduo.activity.NewPageActivity'],
         },
       ],
@@ -23,11 +24,12 @@ export default defineGkdApp({
     {
       key: 2,
       name: '积分兑无门槛券确认兑换',
-      desc: '',
+      desc: '260829',
       rules: [
         {
-          matches: ['@[text="确认兑换"] + * > [text="查看可用商品"]'],
-          actionCd: 0,
+          matches:
+            'TextView[text*="百亿补贴无门槛券" || text$="无门槛券"] <n View + TextView[text="确认兑换"][clickable=false][visibleToUser=true]',
+          actionCd: 100,
           resetMatch: 'match',
           order: -2,
           activityIds: ['com.xunmeng.pinduoduo.activity.NewPageActivity'],

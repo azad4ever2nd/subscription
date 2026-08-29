@@ -6,12 +6,12 @@ export default defineGkdApp({
     {
       key: 1,
       name: '签到领豆',
-      desc: '260615',
+      desc: '260829',
       rules: [
         {
           matchDelay: 500,
-          actionMaximum: 2,
-          matchTime: 1000,
+          actionMaximum: 3,
+          forcedTime: 2000,
           resetMatch: 'match',
           activityIds: 'com.jd.lib.ttt.page.TTTMultiPageActivity',
           matches:

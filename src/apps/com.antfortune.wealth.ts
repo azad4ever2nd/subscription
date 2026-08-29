@@ -7,12 +7,11 @@ export default defineGkdApp({
     {
       key: 1,
       name: '内测更新，X掉',
-      desc: '260717',
+      desc: '260829',
       rules: [
         {
           resetMatch: 'match',
-          matchDelay: 750,
-          matchTime: 1000,
+          forcedTime: 3000,
           activityIds: 'com.alipay.mobile.quinox.LauncherActivity',
           matches:
             'FrameLayout > ImageView + ImageView[clickable=true][visibleToUser=true][id="com.alipay.mobile.android.security.upgrade:id/update_cancel_tv"]',
