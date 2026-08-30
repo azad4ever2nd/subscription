@@ -29,7 +29,7 @@ export default defineGkdApp({
           excludeMatches:
             'LinearLayout > TextView[text="请关注"] + TextView[text="《新股申购风险提示》"]',
           matches:
-            '([vid="pushinfodlg_msgarea"] > *[index=1]) || (LinearLayout[vid="pushinfodlg_msgarea"] > ImageView[clickable=true][visibleToUser=true][index=1]) || (LinearLayout[vid="pushinfodlg_msgarea"] > ImageView[clickable=true][visibleToUser=true][index=parent.childCount.minus(1)])',
+            '(LinearLayout[vid="pushinfodlg_msgarea"] > ImageView[clickable=true][visibleToUser=true][index=parent.childCount.minus(1)])',
         },
       ],
     },

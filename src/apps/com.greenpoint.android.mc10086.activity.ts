@@ -24,7 +24,7 @@ export default defineGkdApp({
       rules: [
         {
           fastQuery: true,
-          matchDelay: 1500,
+          forcedTime: 1500,
           resetMatch: 'match',
           activityIds: 'com.mc10086.cmcc.view.tabs.AppTabFragment',
           matches:
@@ -35,14 +35,14 @@ export default defineGkdApp({
     {
       key: 3,
       name: '弹窗',
-      desc: '260815',
+      desc: '260830',
       rules: [
         {
           resetMatch: 'match',
           fastQuery: true,
           forcedTime: 1500,
           matches:
-            '([vid="close_btn"][desc="关闭"]) || (ImageView[vid="ad_image"][desc="广告"] <n RelativeLayout + ImageView[vid="close_btn"][desc="关闭"][clickable=true][visibleToUser=true])',
+            '(ViewGroup[vid="cl_pop"] > ImageView[vid="img_close"][clickable=true][visibleToUser=true]) || ([vid="close_btn"][desc="关闭"]) || (ImageView[vid="ad_image"][desc="广告"] <n RelativeLayout + ImageView[vid="close_btn"][desc="关闭"][clickable=true][visibleToUser=true])',
           activityIds: ['com.mc10086.cmcc.view.tabs.AppTabFragment'],
         },
       ],
@@ -64,8 +64,8 @@ export default defineGkdApp({
     },
     {
       key: 5,
-      name: '签到有礼',
-      desc: '',
+      name: '弹窗，签到有礼，X掉',
+      desc: '260830',
       rules: [
         {
           resetMatch: 'match',
@@ -103,6 +103,21 @@ export default defineGkdApp({
     },
     {
       key: 8,
+      name: '签到有礼',
+      desc: '260830',
+      rules: [
+        {
+          resetMatch: 'app',
+          actionMaximum: 1,
+          fastQuery: true,
+          activityIds: 'com.mc10086.cmcc.view.tabs.AppTabFragment',
+          matches:
+            'ViewGroup > TextView[text="签到有礼"][clickable=false][visibleToUser=true]',
+        },
+      ],
+    },
+    {
+      key: 9,
       name: '签到奖励，X掉',
       desc: '260402',
       rules: [
@@ -111,6 +126,20 @@ export default defineGkdApp({
           activityIds: 'com.cmccit.webview.ac.CommonHtml5Activity',
           matches:
             '[text="累计签到奖励"] +n [text="去使用"] + *[clickable=true]',
+        },
+      ],
+    },
+    {
+      key: 10,
+      name: '立即签到',
+      desc: '260830',
+      rules: [
+        {
+          resetMatch: 'app',
+          actionMaximum: 2,
+          activityIds: 'com.cmccit.webview.ac.CommonHtml5Activity',
+          matches:
+            'TextView[text^="累签" && text$="次"] <<n View + View > TextView[index=0][clickable=true][visibleToUser=true]',
         },
       ],
     },

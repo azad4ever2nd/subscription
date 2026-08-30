@@ -100,11 +100,13 @@ export default defineGkdApp({
     {
       key: 7,
       name: '收益奖励发放方式，我已阅读',
-      desc: '260627',
+      desc: '260830，		  excludeMatches:TextView[text="请输入取款密码"] < View +n View > Button[text="确定"][clickable=true][visibleToUser=true]',
       rules: [
         {
           resetMatch: 'match',
           action: 'clickCenter',
+          excludeMatches:
+            'TextView[text="请输入取款密码"] < View +n View > Button[text="确定"][clickable=true][visibleToUser=true]',
           activityIds:
             'cmb.pb.app.h5container.webviewcontainer.PBWebContainerActivity',
           matches:
@@ -131,12 +133,14 @@ export default defineGkdApp({
     {
       key: 9,
       name: '收益奖励将免费发放到您这张银行卡，提交',
-      desc: '260627，D，([text="收益奖励将免费发放到您这张银行卡："] +n * > [text="提交"]) || 容易和输入密码冲突',
+      desc: '260830，D，([text="收益奖励将免费发放到您这张银行卡："] +n * > [text="提交"]) || 容易和输入密码冲突',
       rules: [
         {
           preKeys: [8],
           action: 'clickCenter',
           resetMatch: 'match',
+          excludeMatches:
+            'TextView[text="请输入取款密码"] < View +n View > Button[text="确定"][clickable=true][visibleToUser=true]',
           activityIds:
             'cmb.pb.app.h5container.webviewcontainer.PBWebContainerActivity',
           matches:
