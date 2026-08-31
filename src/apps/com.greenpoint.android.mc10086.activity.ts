@@ -45,7 +45,7 @@ export default defineGkdApp({
           matches: [
             '[vid="close_btn"][desc="关闭"]',
             'ViewGroup[vid="cl_pop"] > ImageView[vid="img_close"][clickable=true][visibleToUser=true]',
-            'ImageView[vid="ad_image"][desc="广告"] <n RelativeLayout + ImageView[vid="close_btn"][desc="关闭"][clickable=true][visibleToUser=true])',
+            'ImageView[vid="ad_image"][desc="广告"] <n RelativeLayout + ImageView[vid="close_btn"][desc="关闭"][clickable=true][visibleToUser=true]',
             'LinearLayout > @ImageView[vid="close_btn"][desc="关闭"][clickable=true][visibleToUser=true] - RelativeLayout > ImageView[vid="ad_image"][desc="广告"]',
           ],
           activityIds: ['com.mc10086.cmcc.view.tabs.AppTabFragment'],
