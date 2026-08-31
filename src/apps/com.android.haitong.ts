@@ -116,7 +116,7 @@ export default defineGkdApp({
           actionCd: 10000,
           activityIds: 'com.gtja.trade.newstock.view.NewAppointMainActivity',
           matches:
-            '(View > View > @Button[text="全选"][clickable=true][visibleToUser=true] +n TextView[text="已选中 "] + TextView[text="0"] + TextView[text*="只"]))',
+            '(View > View > @Button[text="全选"][clickable=true][visibleToUser=true] +n TextView[text="已选中 "] + TextView[text="0"] + TextView[text*="只"])',
         },
       ],
     },
