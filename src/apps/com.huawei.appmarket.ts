@@ -14,7 +14,7 @@ export default defineGkdApp({
             '[id="android:id/alertTitle"][text="发现新版本"] <<n * +n * [id="android:id/button2"][text="以后再说"]',
           ],
           matchDelay: 500,
-          forcedTime:2000,
+          forcedTime: 2000,
           fastQuery: true,
           resetMatch: 'match',
           activityIds:
