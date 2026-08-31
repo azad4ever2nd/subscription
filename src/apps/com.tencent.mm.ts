@@ -105,20 +105,33 @@ export default defineGkdApp({
     },
     {
       key: 8,
+      name: '湖北邮政e权益，达标1万元，抽奖',
+      desc: '260831',
+      rules: [
+        {
+          resetMatch: 'match',
+          activityIds: 'com.tencent.mm.plugin.webview.ui.tools.MMWebViewUI',
+          matches:
+            'TextView[text="达标1万元"] + View > View > @TextView[text="抽奖"][clickable=false][visibleToUser=true] + View[text!*="0"]',
+        },
+      ],
+    },
+    {
+      key: 9,
       name: '湖北邮政e权益，抽奖',
-      desc: '260118',
+      desc: '260831',
       rules: [
         {
           resetMatch: 'match',
           actionCd: 3000,
           activityIds: 'com.tencent.mm.plugin.webview.ui.tools.MMWebViewUI',
           matches:
-            '@Image < View + [text!="剩余次数：0次" && text^="剩余次数："]',
+            '@Image < View + [text!="剩余次数：0次" && text^="剩余次数："] +n TextView[text="达标1万元"] + View > View > View[text="0次" || text*="0"]',
         },
       ],
     },
     {
-      key: 9,
+      key: 10,
       name: '湖北邮政e权益，抽奖弹窗，确认',
       desc: '260218',
       rules: [
@@ -132,22 +145,22 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 10,
+      key: 11,
       name: '湖北邮政e权益，抽奖弹窗，碎片，返回',
-      desc: '260519',
+      desc: '260831',
       rules: [
         {
           resetMatch: 'match',
           action: 'back',
-          actionCd: 700,
+          actionCd: 2000,
           activityIds: 'com.tencent.mm.plugin.webview.ui.tools.MMWebViewUI',
           matches:
-            '([text="绑卡有礼"] [text^="X" && text$="我的碎片"] + [text="碎片 + 0.1"] + [text*="-" && text*=":"])',
+            '([text="绑卡有礼"] [text^="X" && text$="我的碎片"] + [text="碎片 + 0.1"] + [text*="-" && text*=":"]) || (WebView[text="绑卡有礼"] > View > TextView[text*="我的碎片 (仅显示近三个月记录)"][clickable=false][visibleToUser=true])',
         },
       ],
     },
     {
-      key: 11,
+      key: 12,
       name: '湖北邮政e权益，抽奖弹窗，立减金，返回',
       desc: '260519',
       rules: [
@@ -162,7 +175,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 12,
+      key: 13,
       name: '闲鱼链接，右上角三点菜单',
       desc: '251229',
       rules: [
@@ -175,7 +188,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 13,
+      key: 14,
       name: '湖北电影消费券猫眼，要定位，否',
       desc: '260305',
       rules: [
@@ -189,7 +202,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 14,
+      key: 15,
       name: '需要获取你的地理位置，否，',
       desc: '251231，先不启用避免误杀',
       rules: [
@@ -203,7 +216,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 15,
+      key: 16,
       name: '图片，再次保存',
       desc: '260725',
       rules: [
@@ -216,7 +229,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 16,
+      key: 17,
       name: '图片，再次保存2',
       desc: '260728',
       rules: [
@@ -230,7 +243,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 17,
+      key: 18,
       name: '不显示该聊天，不显示',
       desc: '260123',
       rules: [
@@ -245,7 +258,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 18,
+      key: 19,
       name: '领红包',
       desc: '260119',
       rules: [
@@ -259,7 +272,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 19,
+      key: 20,
       name: '打开红包',
       desc: '260130',
       rules: [
@@ -274,7 +287,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 20,
+      key: 21,
       name: '领完红包返回',
       desc: '260130',
       rules: [
@@ -289,7 +302,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 21,
+      key: 22,
       name: '公众号里跳转小程序',
       desc: '251221，增加工行',
       rules: [
@@ -304,7 +317,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 22,
+      key: 23,
       name: '分享返回微信',
       desc: '',
       rules: [
@@ -318,7 +331,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 23,
+      key: 24,
       name: '确定删除聊天记录，清空',
       desc: '260221，[text="清空"]',
       rules: [
@@ -332,7 +345,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 24,
+      key: 25,
       name: '不再关注',
       desc: '260220,[text="不再关注"]',
       rules: [
@@ -350,7 +363,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 25,
+      key: 26,
       name: '不再关注2，',
       desc: '260220',
       rules: [
@@ -362,7 +375,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 26,
+      key: 27,
       name: '清空公众号聊天中的所有内容，清空',
       desc: '260220,[text="清空"]',
       rules: [
@@ -377,7 +390,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 27,
+      key: 28,
       name: '深工积分兑换，立即抢购',
       desc: '260626',
       rules: [
@@ -402,7 +415,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 28,
+      key: 29,
       name: '深工积分兑换，确认支付',
       desc: '260626',
       rules: [
@@ -428,7 +441,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 29,
+      key: 30,
       name: '深工积分兑换，人数过多，我知道了',
       desc: '260703',
       rules: [
@@ -454,7 +467,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 30,
+      key: 31,
       name: '阳光兑换外面',
       desc: '251127，挑有库存的进',
       rules: [
@@ -478,7 +491,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 31,
+      key: 32,
       name: '阳光兑换1，立即兑换',
       desc: '251127，|| ([text="兑换确认"] +n * > [text="取消"] + [text="确认"])',
       rules: [
@@ -502,7 +515,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 32,
+      key: 33,
       name: '阳光兑换2，确认兑换',
       desc: '251202，',
       rules: [
@@ -527,7 +540,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 33,
+      key: 34,
       name: '阳光兑换3，兑换完成与返回',
       desc: '260814，添加 排除 微信金币兑换',
       rules: [
@@ -553,7 +566,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 34,
+      key: 35,
       name: '阳光兑换2，已兑完返回',
       desc: '251127，',
       rules: [
@@ -577,7 +590,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 35,
+      key: 36,
       name: '金币抽提现券1',
       desc: '251222，添加第一步兑换',
       rules: [
@@ -601,7 +614,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 36,
+      key: 37,
       name: '金币抽提现券2',
       desc: '',
       rules: [
@@ -625,7 +638,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 37,
+      key: 38,
       name: '金币抽提现券，立即收下',
       desc: '260406，兑换提示',
       rules: [
@@ -650,7 +663,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 38,
+      key: 39,
       name: '湖北SKP',
       desc: '260406，中国银行信用卡湖北 公众号进去，立即支付，不能限制1次',
       rules: [
@@ -674,7 +687,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 39,
+      key: 40,
       name: '湖北SKP，确认支付',
       desc: '260406，优先测试',
       rules: [
@@ -700,7 +713,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 40,
+      key: 41,
       name: '湖北SKP，火爆，刷新',
       desc: '260102',
       rules: [
@@ -724,7 +737,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 41,
+      key: 42,
       name: '沪上阿姨一分购，同意服务协议',
       desc: '260511',
       rules: [
@@ -748,7 +761,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 42,
+      key: 43,
       name: '沪上阿姨一分购，同意服务协议弹窗',
       desc: '260511',
       rules: [
@@ -772,7 +785,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 43,
+      key: 44,
       name: '沪上阿姨一分购，同意服务协议后，立即购买',
       desc: '260511，依赖 沪上阿姨一分购，同意服务协议弹窗',
       rules: [
@@ -797,7 +810,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 44,
+      key: 45,
       name: '即将跳转',
       desc: '260804，com.tencent.mm.plugin.brandservice.ui.timeline.preload.ui.TmplWebViewMMUI,添加IDS，移动抽奖，动态ID，增加小程序里的跳转，改匹配顺序，尽量从左往右',
       rules: [
@@ -829,7 +842,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 45,
+      key: 46,
       name: '腾讯理财通，领取奖励',
       desc: '260608,添加抢理财金，整合领取与返回，体验完成，',
       rules: [
@@ -853,7 +866,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 46,
+      key: 47,
       name: '腾讯理财通，领取奖励，同意服务协议',
       desc: '260425，先禁用后续找出改余额',
       rules: [
@@ -877,7 +890,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 47,
+      key: 48,
       name: '广发小程序周五半价',
       desc: '260503，增加跨年，布局有变',
       rules: [
@@ -902,7 +915,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 48,
+      key: 49,
       name: '屈臣氏42代50',
       desc: '251202，1立即抢购，2提交',
       rules: [
@@ -927,7 +940,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 49,
+      key: 50,
       name: '光大小程序弹窗',
       desc: '260624',
       rules: [
@@ -952,7 +965,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 50,
+      key: 51,
       name: '深工登陆弹窗，X掉',
       desc: '260627',
       rules: [
@@ -976,7 +989,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 51,
+      key: 52,
       name: '请到广东过端午',
       desc: '260616',
       rules: [
@@ -1001,7 +1014,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 52,
+      key: 53,
       name: '同程抢旅游景区券',
       desc: '251229',
       rules: [
@@ -1026,7 +1039,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 53,
+      key: 54,
       name: '广州，乐享品质旅游 ，共赴美好山河',
       desc: '260516，五折演出券',
       rules: [
@@ -1050,7 +1063,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 54,
+      key: 55,
       name: '湖北电影消费券猫眼小程序',
       desc: '260117',
       rules: [
@@ -1075,7 +1088,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 55,
+      key: 56,
       name: '湖北电影消费券淘票票小程序',
       desc: '260117',
       rules: [
@@ -1100,7 +1113,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 56,
+      key: 57,
       name: '工行浇水',
       desc: '260802，延时要考虑弹窗',
       rules: [
@@ -1125,7 +1138,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 57,
+      key: 58,
       name: '光大小程序阳光抽奖',
       desc: '251224',
       rules: [
@@ -1149,7 +1162,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 58,
+      key: 59,
       name: '月月刷未开始，最小化',
       desc: '260302',
       rules: [

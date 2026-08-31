@@ -211,15 +211,16 @@ export default defineGkdApp({
     {
       key: 15,
       name: '本人已认真阅读并同意以上内容,复制并粘贴',
-      desc: '260717"',
+      desc: '260831',
       rules: [
         {
           resetMatch: 'match',
           actionMaximum: 1,
+          forcedTime: 2000,
           activityIds:
             'com.nantian.iBank.ui.activity.container.ProgramSingleWindowActivity',
           matches:
-            '(@TextView[clickable=false][visibleToUser=true][text="复制并粘贴"] - TextView[text^="本人已阅读风险揭示"] < View + View > EditText[text.length=0])',
+            '(@TextView[clickable=false][visibleToUser=true][text="复制并粘贴"] - TextView[text^="本人已阅读风险揭示"] < View + View > EditText[text.length=0]) || (@TextView[text="复制并粘贴"][clickable=false][visibleToUser=true] <n View + View > EditText[text.length=0])',
         },
       ],
     },

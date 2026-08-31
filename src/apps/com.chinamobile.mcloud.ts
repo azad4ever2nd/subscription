@@ -37,7 +37,7 @@ export default defineGkdApp({
     {
       key: 3,
       name: '领奖完成',
-      desc: '260720，添加 云朵领取成功',
+      desc: '260831，添加 弹窗，云朵领取成功',
       rules: [
         {
           resetMatch: 'match',
@@ -45,7 +45,7 @@ export default defineGkdApp({
           activityIds:
             'com.chinamobile.mcloud.client.component.web.H5WebViewMainActivity',
           matches:
-            '(View > Image[text="+SOMf8vIwWVqABk0AAAAASUVORK5CYII=1"]) || (TextView[text="移动云盘体验评价"] < View + Image[clickable=false][visibleToUser=true][text="wMHmBwYPo98SAAAAABJRU5ErkJggg=="]) || ([text="立即前往"] <3 View + Image[text="+SOMf8vIwWVqABk0AAAAASUVORK5CYII="]) || (TextView[text="订购结果"] < View + Image[text="+SOMf8vIwWVqABk0AAAAASUVORK5CYII="]) || (TextView[text*="转存成功"] < View + Image[text="+SOMf8vIwWVqABk0AAAAASUVORK5CYII="]) || (Dialog > View > View > TextView[text="知道啦"] + Image[clickable=false][visibleToUser=true][text="wMHmBwYPo98SAAAAABJRU5ErkJggg=="])',
+            '(View > Image[text="+SOMf8vIwWVqABk0AAAAASUVORK5CYII=1"]) || (TextView[text="移动云盘体验评价"] < View + Image[clickable=false][visibleToUser=true][text="wMHmBwYPo98SAAAAABJRU5ErkJggg=="]) || ([text="立即前往"] <3 View + Image[text="+SOMf8vIwWVqABk0AAAAASUVORK5CYII="]) || (TextView[text="订购结果"] < View + Image[text="+SOMf8vIwWVqABk0AAAAASUVORK5CYII="]) || (TextView[text*="转存成功"] < View + Image[text="+SOMf8vIwWVqABk0AAAAASUVORK5CYII="]) || (Dialog > View > View > TextView[text="知道啦"] + Image[clickable=false][visibleToUser=true][text="wMHmBwYPo98SAAAAABJRU5ErkJggg=="]) || ([text="我知道了"] <n View + Image[text="+SOMf8vIwWVqABk0AAAAASUVORK5CYII="][clickable=false][visibleToUser=true])',
         },
       ],
     },

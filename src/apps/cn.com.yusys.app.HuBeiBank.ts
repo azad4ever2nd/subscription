@@ -17,5 +17,18 @@ export default defineGkdApp({
         },
       ],
     },
+    {
+      key: 2,
+      name: '弹窗，关于更新，关闭',
+      desc: '260831',
+      rules: [
+        {
+          resetMatch: 'match',
+          activityIds: 'io.dcloud.PandoraEntryActivity',
+          matches:
+            'View > View > TextView[text="关闭"][id="closeNews"][clickable=false][visibleToUser=true]',
+        },
+      ],
+    },
   ],
 });

@@ -83,11 +83,12 @@ export default defineGkdApp({
     {
       key: 7,
       name: '已抢光',
-      desc: '25123 [text*="欢乐周末惠"] <<n * +n * > [text="已抢光"]',
+      desc: '260831，排除 低碳挑战， [text*="欢乐周末惠"] <<n * +n * > [text="已抢光"]',
       rules: [
         {
           action: 'back',
           resetMatch: 'match',
+          excludeMatches: 'TextView[text="低碳挑战"]',
           matches: '[text="已抢光"]',
           activityIds: 'com.ccb.cloudmerchant.view.WebViewActivity',
         },
@@ -179,7 +180,7 @@ export default defineGkdApp({
     {
       key: 14,
       name: '建行社保卡，勾选同意',
-      desc: '260806',
+      desc: '260831',
       rules: [
         {
           resetMatch: 'match',
@@ -187,7 +188,7 @@ export default defineGkdApp({
           action: 'clickCenter',
           activityIds: 'com.ccb.cloudmerchant.view.WebViewActivity',
           matches:
-            'WebView[text*="建行社保卡"] > View > View > View > CheckBox[checked=false]',
+            '(WebView > View > View > View > CheckBox[checked=false][visibleToUser=true]) || (WebView[text*="建行社保卡"] > View > View > View > CheckBox[checked=false][visibleToUser=true])',
         },
       ],
     },
@@ -218,6 +219,19 @@ export default defineGkdApp({
           activityIds: 'com.ccb.cloudmerchant.view.WebViewActivity',
           matches:
             '(WebView[text*="建行社保卡"] > View > View > @Image[visibleToUser=true][clickable=true][text="NWJ6tc6mwaKQfgbADXAJPIxaVNUQJguwpoNgAy0x2ew8SgXab+AzNTubJfuAmp7HtQL5K8AARxBdk+5zMOgAAAAASUVORK5CYII="] - View > View > TextView[text^="尊敬的客户"]) || (WebView[text*="建行社保卡"] > View > Dialog > View > Button[text="好的"])',
+        },
+      ],
+    },
+    {
+      key: 17,
+      name: '弹窗，低碳挑战，领取成功，X掉',
+      desc: '260831',
+      rules: [
+        {
+          resetMatch: 'match',
+          activityIds: 'com.ccb.cloudmerchant.view.WebViewActivity',
+          matches:
+            'View > Button[text="查看积分"] + Image[text="close.c2f29ee4"][clickable=false][visibleToUser=true]',
         },
       ],
     },

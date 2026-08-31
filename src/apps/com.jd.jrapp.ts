@@ -7,11 +7,12 @@ export default defineGkdApp({
     {
       key: 1,
       name: '发现新版本',
-      desc: '260103',
+      desc: '260831',
       rules: [
         {
           matches: [
             '[vid="tv_title"][text*="新版本"] <<n * + [vid="ib_close"]',
+            '@ImageButton[vid="ib_close"][clickable=true][visibleToUser=true] + FrameLayout TextView[vid="tv_main_title"][text^="发现新版本"]',
           ],
           fastQuery: true,
           resetMatch: 'match',
@@ -73,6 +74,19 @@ export default defineGkdApp({
           fastQuery: true,
           resetMatch: 'match',
           activityIds: ['com.jd.jrapp.bm.common.web.ui.WebActivity'],
+        },
+      ],
+    },
+    {
+      key: 6,
+      name: '弹窗，邀友办卡，X掉',
+      desc: '260831',
+      rules: [
+        {
+          resetMatch: 'match',
+          activityIds: 'com.jd.jrapp.bm.common.web.ui.WebActivity',
+          matches:
+            'View > @Image[text="关闭"][clickable=false][visibleToUser=true] + View > Image[text="045b26c3268cb28a.png!q70"]',
         },
       ],
     },

@@ -119,11 +119,12 @@ export default defineGkdApp({
     {
       key: 9,
       name: '定位提示',
-      desc: '251226',
+      desc: '260831，添加 金条额度更新',
       rules: [
         {
           matches: [
             '([vid="bv"][text*="定位"] +n * > [vid="br"][text="取消"])',
+            'View > View > View > @View[clickable=true][visibleToUser=true] > Image[text="关闭"]',
           ],
           resetMatch: 'match',
           activityIds: ['com.jingdong.app.mall.WebActivity'],
@@ -179,7 +180,7 @@ export default defineGkdApp({
     {
       key: 13,
       name: '订单列表，未付款取消的订单，删除',
-      desc: '260829',
+      desc: '260831',
       rules: [
         {
           resetMatch: 'match',
@@ -187,7 +188,7 @@ export default defineGkdApp({
           excludeMatches:
             '(View[desc="确认删除该订单？"] < ViewGroup +n @ViewGroup[clickable=false][visibleToUser=true] > View[desc="删除"])',
           matches:
-            '(ViewGroup[childCount=9] > View[desc="已取消"] +n ViewGroup > ViewGroup > View[clickable=false][visibleToUser=true][desc="删除订单"])',
+            '(ViewGroup > View[desc="已取消"] +n ViewGroup > ViewGroup > View[clickable=false][visibleToUser=true][desc="删除订单"])',
         },
       ],
     },

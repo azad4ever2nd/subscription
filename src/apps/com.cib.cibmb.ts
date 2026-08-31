@@ -7,12 +7,16 @@ export default defineGkdApp({
     {
       key: 1,
       name: '首页弹窗',
-      desc: '',
+      desc: '260831',
       rules: [
         {
-          matches: ['[vid="adv_alert"] > [vid="ivClose"][desc="关闭"]'],
+          matches: [
+            '[vid="adv_alert"] > [vid="ivClose"][desc="关闭"]',
+            'ViewGroup[vid="adv_alert"] > ImageView + ImageView[vid="ivClose"][desc="关闭"][clickable=true][visibleToUser=true]',
+          ],
           fastQuery: true,
           resetMatch: 'match',
+          forcedTime: 2000,
           activityIds: [
             'com.newland.framework.ui.widget.TransparentActivityForDialogStack',
           ],

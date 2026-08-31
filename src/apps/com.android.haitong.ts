@@ -113,9 +113,10 @@ export default defineGkdApp({
           resetMatch: 'match',
           action: 'clickCenter',
           actionMaximum: 1,
+          actionCd: 10000,
           activityIds: 'com.gtja.trade.newstock.view.NewAppointMainActivity',
           matches:
-            '([text="全选"]) || (View > View > Button[clickable=true][visibleToUser=true][text="全选bak"]) || (View > View > @Button[clickable=true][visibleToUser=true][text="全选"] +n TextView[text="已选中 "] + TextView[text="0"] + TextView[text=" 只"])',
+            '(View > View > @Button[text="全选"][clickable=true][visibleToUser=true] +n TextView[text="已选中 "] + TextView[text="0"] + TextView[text*="只"]))',
         },
       ],
     },
@@ -144,7 +145,7 @@ export default defineGkdApp({
           action: 'clickCenter',
           activityIds: 'com.gtja.trade.newstock.view.NewAppointMainActivity',
           matches:
-            '([text="申购数量"] + [text="10000"] <n * + * [text="取消bak"] + *) || (TextView[text^="打新存在破发亏损风险"] < View + View > @View[clickable=false][visibleToUser=true] > View[clickable=true][visibleToUser=true][desc="确认"] > TextView[text="确认"])',
+            '([text="申购数量"] + [text="10000"] <n * + * [text="取消bak"] + *) || (TextView[text^="打新存在破发亏损风险"] < View + View > @View[clickable=false][visibleToUser=true] > View[clickable=true][visibleToUser=true][desc="确认"] > TextView[text="确认"]) || (View > TextView[text^="打新存在破发亏损风险"] +n TextView[text="取消"] + TextView[text="确认"][clickable=false][visibleToUser=true])',
         },
       ],
     },

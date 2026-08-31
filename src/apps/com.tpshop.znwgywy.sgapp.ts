@@ -19,14 +19,14 @@ export default defineGkdApp({
     {
       key: 2,
       name: '请关闭 获取运动方向权限 和 快应用权限，确定',
-      desc: '260507',
+      desc: '260831',
       rules: [
         {
           resetMatch: 'match',
           fastQuery: true,
           activityIds: 'tool.seagull.v.ui.MainActivity',
           matches:
-            '[text^="请关闭 获取运动方向权限 和 快应用权限"] <<n * + * [id="android:id/button1"][text="确定"]',
+            '([text^="请关闭 获取运动方向权限 和 快应用权限"] <<n * + * [id="android:id/button1"][text="确定"]) || (ScrollView > LinearLayout > Button[text="确定"][id="android:id/button1"][clickable=true][visibleToUser=true])',
         },
       ],
     },

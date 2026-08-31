@@ -7,11 +7,12 @@ export default defineGkdApp({
     {
       key: 1,
       name: '开启通知栏提醒店',
-      desc: '',
+      desc: '260831，添加 隐私政策更新',
       rules: [
         {
           matches: [
             '[vid="buttonPanel"] > [text="不了，谢谢"] + [text="立即开启"]',
+            'LinearLayout > TextView[text="隐私政策更新"] +n TextView[text="同意"][clickable=true][visibleToUser=true]',
           ],
           fastQuery: true,
           resetMatch: 'match',

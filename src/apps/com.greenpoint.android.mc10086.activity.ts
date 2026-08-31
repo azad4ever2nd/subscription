@@ -7,11 +7,12 @@ export default defineGkdApp({
     {
       key: 1,
       name: '开启推送通知',
-      desc: '',
+      desc: '260831，fastQuery=true,clickable=true',
       rules: [
         {
           resetMatch: 'app',
           fastQuery: true,
+          forcedTime: 3000,
           matches: ['@[vid="iv_top_close"] + [vid="rl_top_bg"]'],
           activityIds: ['com.mc10086.cmcc.view.tabs.AppTabFragment'],
         },
@@ -35,14 +36,18 @@ export default defineGkdApp({
     {
       key: 3,
       name: '弹窗',
-      desc: '260830',
+      desc: '260831,fastQuery=true,clickable=true',
       rules: [
         {
           resetMatch: 'match',
           fastQuery: true,
           forcedTime: 1500,
-          matches:
-            '(ViewGroup[vid="cl_pop"] > ImageView[vid="img_close"][clickable=true][visibleToUser=true]) || ([vid="close_btn"][desc="关闭"]) || (ImageView[vid="ad_image"][desc="广告"] <n RelativeLayout + ImageView[vid="close_btn"][desc="关闭"][clickable=true][visibleToUser=true])',
+          matches: [
+            '[vid="close_btn"][desc="关闭"]',
+            'ViewGroup[vid="cl_pop"] > ImageView[vid="img_close"][clickable=true][visibleToUser=true]',
+            'ImageView[vid="ad_image"][desc="广告"] <n RelativeLayout + ImageView[vid="close_btn"][desc="关闭"][clickable=true][visibleToUser=true])',
+            'LinearLayout > @ImageView[vid="close_btn"][desc="关闭"][clickable=true][visibleToUser=true] - RelativeLayout > ImageView[vid="ad_image"][desc="广告"]',
+          ],
           activityIds: ['com.mc10086.cmcc.view.tabs.AppTabFragment'],
         },
       ],
@@ -132,11 +137,11 @@ export default defineGkdApp({
     {
       key: 10,
       name: '立即签到',
-      desc: '260830',
+      desc: '260831',
       rules: [
         {
           resetMatch: 'app',
-          actionMaximum: 2,
+          actionMaximum: 1,
           activityIds: 'com.cmccit.webview.ac.CommonHtml5Activity',
           matches:
             'TextView[text^="累签" && text$="次"] <<n View + View > TextView[index=0][clickable=true][visibleToUser=true]',

@@ -37,10 +37,11 @@ export default defineGkdApp({
     {
       key: 3,
       name: '弹窗2',
-      desc: '260720',
+      desc: '260831',
       rules: [
         {
           resetMatch: 'match',
+          forcedTime: 2000,
           activityIds: 'com.ecitic.bank.mobile.ui.MainActivity',
           matches:
             'RelativeLayout > RelativeLayout[vid="id_cordova_view"] + ImageView[clickable=true][visibleToUser=true][vid="close_product_send"]',

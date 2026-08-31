@@ -7,7 +7,7 @@ export default defineGkdApp({
     {
       key: 1,
       name: '每日分享指定视频至微信，立即分享',
-      desc: '260801，每个月要更新',
+      desc: '260831，每个月要更新',
       rules: [
         {
           resetMatch: 'app',
@@ -25,12 +25,13 @@ export default defineGkdApp({
     {
       key: 2,
       name: '播放界面，右下角分享按钮',
-      desc: '260621，依赖 每日分享指定视频至微信，立即分享',
+      desc: '260831，依赖 每日分享指定视频至微信，立即分享',
       rules: [
         {
           resetMatch: 'app',
           fastQuery: true,
           actionMaximum: 1,
+          actionCd: 10000,
           preKeys: [1],
           activityIds: 'com.cmvideo.capability.vod.VodActivity',
           matches:
@@ -41,14 +42,17 @@ export default defineGkdApp({
     {
       key: 3,
       name: '分享界面，分享到 微信好友',
-      desc: '260621，依赖 右下角分享按钮',
+      desc: '260831，依赖 右下角分享按钮',
       rules: [
         {
           resetMatch: 'app',
           fastQuery: true,
           actionMaximum: 1,
+          actionCd: 10000,
           preKeys: [2],
           activityIds: 'com.cmvideo.capability.vod.VodActivity',
+          excludeMatches:
+            'LinearLayout > ViewGroup > ImageView[vid="sdv_static_pocket_pic"][clickable=true]',
           matches:
             'ViewGroup > GridView > @LinearLayout[clickable=true][visibleToUser=true] > TextView[text="微信好友"]',
         },
@@ -73,14 +77,13 @@ export default defineGkdApp({
     {
       key: 5,
       name: '领2GB日流量，马上领取',
-      desc: '260801，依赖 返回到福利中心',
+      desc: '260831，依赖 返回到福利中心',
       rules: [
         {
           resetMatch: 'app',
           actionMaximum: 1,
           preKeys: [4],
-          matchTime: 1500,
-          actionCd: 0,
+          forcedTime: 2000,
           activityIds: [
             'com.quickjs.android.example.RNFragmentActivity',
             'com.cmvideo.capability.remote_web.WebProcessActivity',
@@ -93,7 +96,7 @@ export default defineGkdApp({
     {
       key: 6,
       name: '获取验证码',
-      desc: '260807，取消依赖测试，依赖 领2GB日流量，马上领取',
+      desc: '260831，取消依赖测试，依赖 领2GB日流量，马上领取',
       rules: [
         {
           actionMaximum: 6,
@@ -103,8 +106,10 @@ export default defineGkdApp({
             'com.quickjs.android.example.RNFragmentActivity',
             'com.cmvideo.capability.remote_web.WebProcessActivity',
           ],
-          matches:
+          matches: [
+            'View > TextView[text="获取验证码"][clickable=false][visibleToUser=true]',
             'View[id="verfyDiv"] > @View[id="smsBtn"][clickable=true][desc="获取验证码"] > TextView[text="获取验证码"]',
+          ],
         },
       ],
     },

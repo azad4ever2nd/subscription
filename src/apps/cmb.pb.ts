@@ -70,12 +70,13 @@ export default defineGkdApp({
     {
       key: 5,
       name: '卖光了',
-      desc: '[text^="（周三5折）"] +n * > [text*="卖光了"]',
+      desc: '260831',
       rules: [
         {
           action: 'back',
+          forcedTime: 2000,
           matches:
-            '[text="（周三5折）必胜客50元代金券" || text="（周三5折）肯德基20元代金券" || text="（周三5折）喜茶20元代金券" || text="（周三5折）哈根达斯50元代金券"] +n * > [text*="卖光了"]',
+            'View > TextView[text*="周三5折"][text*="肯德基" || text*="喜茶" || text*="必胜客" || text*="哈根达斯"] +n View > TextView[text="卖光了"]',
           actionCdKey: 1,
           activityIds:
             'cmb.pb.app.h5container.webviewcontainer.PBWebContainerActivity',
@@ -505,14 +506,15 @@ export default defineGkdApp({
     {
       key: 32,
       name: '我的自选 ，全选',
-      desc: '260424',
+      desc: '260831',
       rules: [
         {
           activityIds:
             'cmb.pb.app.h5container.webviewcontainer.PBWebContainerActivity',
           actionMaximum: 1,
           resetMatch: 'match',
-          matches: '@*[clickable=true][checked=false] + [text="全选"]',
+          matches:
+            '(@*[clickable=false][checked=false] + [text="全选"]) || (@*[clickable=true][checked=false] + [text="全选"])',
         },
       ],
     },

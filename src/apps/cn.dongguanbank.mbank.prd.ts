@@ -135,5 +135,19 @@ export default defineGkdApp({
         },
       ],
     },
+    {
+      key: 10,
+      name: '弹窗，协议更新，确定',
+      desc: '260831',
+      rules: [
+        {
+          resetMatch: 'match',
+          fastQuery: true,
+          activityIds: 'com.mobile.mbank.launcher.activity.IndexActivity_',
+          matches:
+            '[vid="ln_dialog_bod_content"] > TextView[text="协议更新提示"] +n LinearLayout > TextView[text="同意"][vid="btn_submit"][clickable=true][visibleToUser=true]',
+        },
+      ],
+    },
   ],
 });

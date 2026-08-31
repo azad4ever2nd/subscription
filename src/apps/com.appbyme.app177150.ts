@@ -7,15 +7,16 @@ export default defineGkdApp({
     {
       key: 1,
       name: '弹窗',
-      desc: '260811',
+      desc: '260831',
       rules: [
         {
           resetMatch: 'match',
           fastQuery: true,
+          forcedTime: 2000,
           action: 'clickCenter',
           activityIds: 'net.duohuo.magappx.main.IndexTabActivity',
           matches:
-            '([vid="iv_close_ad"]) || (ImageView[vid="iv_close_ad"][clickable=true][visibleToUser=true])',
+            '([vid="iv_close_ad"]) || (ImageView[vid="iv_close_ad"][clickable=true][visibleToUser=true]) || (RelativeLayout > ImageView[vid="iv_close_ad"][clickable=true][visibleToUser=true])',
         },
       ],
     },
