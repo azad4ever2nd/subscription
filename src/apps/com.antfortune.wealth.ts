@@ -60,7 +60,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 3,
+      key: 5,
       name: '弹窗，体验金领取成功,立即攒下',
       desc: '260904，换textview就是X掉',
       rules: [
@@ -73,7 +73,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 4,
+      key: 6,
       name: '弹窗，获得体验金，X掉',
       desc: '260904',
       rules: [
