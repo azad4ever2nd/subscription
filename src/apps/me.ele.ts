@@ -40,7 +40,6 @@ export default defineGkdApp({
       rules: [
         {
           activityIds: 'me.ele.application.ui.Launcher.LauncherActivity',
-          matches: ,
 		  matchTime:2000,
 		  forcedTime:2000,
           matches:[
