@@ -156,7 +156,7 @@ export default defineGkdApp({
             'TextView[text^="打新存在破发亏损风险"] < View + View > @View[clickable=false][visibleToUser=true] > View[clickable=true][visibleToUser=true][desc="确认"] > TextView[text="确认"]',
 			'View > TextView[text^="打新存在破发亏损风险"] +n TextView[text="取消"] + TextView[text="确认"][clickable=false][visibleToUser=true])',
 			'View > View > TextView[text^="打新存在破发亏损风险" || text="债券名称:"] +n TextView[text="确认"][clickable=true][visibleToUser=true]',
-		]
+		],
         },
       ],
     },
