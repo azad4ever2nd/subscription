@@ -154,5 +154,18 @@ export default defineGkdApp({
         },
       ],
     },
+    {
+      key: 12,
+      name: '弹窗，隐私政策更新提示，同意',
+      desc: '260904',
+      rules: [
+        {
+          resetMatch: 'match',
+          fastQuery: true,
+          activityIds: 'com.cgb.mobilebank.android.login.module.login.activity.LoginActivityV2',
+          matches: 'LinearLayout > TextView[text="不同意"] +n TextView[text="同意并继续"][clickable=true][visibleToUser=true]',
+        },
+      ],
+    },
   ],
 });

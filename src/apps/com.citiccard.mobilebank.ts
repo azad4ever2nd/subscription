@@ -226,6 +226,18 @@ export default defineGkdApp({
     },
     {
       key: 17,
+      name: '弹窗，推荐有礼，X掉',
+      desc: '260904',
+      rules: [
+        {
+          resetMatch: 'match',
+          activityIds: 'com.citiccard.mobilebank.web.webpage.CommonWebPage',
+          matches: 'View > View > Image[text="1787731085779jlbPK"] + TextView[clickable=true][visibleToUser=true]',
+        },
+      ],
+    },
+    {
+      key: 18,
       name: '系统检测到VPN，继续使用',
       desc: '260704',
       rules: [
@@ -241,13 +253,14 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 18,
+      key: 19,
       name: '首页弹窗广告',
       desc: '260808，延长等待时间，取消matchTime，添加分期弹窗',
       rules: [
         {
           resetMatch: 'match',
           matchDelay: 3000,
+		  forcedTime:3000,
           fastQuery: true,
           activityIds:
             'com.citiccard.mobilebank.newconfig.appconstruct.TabsAppHomeActivity',

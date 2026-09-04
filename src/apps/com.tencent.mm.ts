@@ -176,14 +176,17 @@ export default defineGkdApp({
     },
     {
       key: 13,
-      name: '闲鱼链接，右上角三点菜单',
-      desc: '251229',
+      name: '弹窗，华夏银行立减金领取',
+      desc: '260904，clickable=true，添加 闲鱼链接，右上角三点菜单',
       rules: [
         {
           resetMatch: 'match',
           actionMaximum: 1,
           activityIds: 'com.tencent.mm.plugin.webview.ui.tools.MMWebViewUI',
-          matches: 'WebView[text="闲鱼"] <<n * + * [desc="更多信息"]',
+          matches: [
+			'WebView[text="闲鱼"] <<n * + * [desc="更多信息"]',
+			'View > TextView[clickable=true][visibleToUser=true] + View > Button[text="我知道了"][clickable=true][visibleToUser=true]',
+		  ],
         },
       ],
     },
@@ -1115,7 +1118,7 @@ export default defineGkdApp({
     {
       key: 57,
       name: '工行浇水',
-      desc: '260802，延时要考虑弹窗',
+      desc: '260904，延时要考虑弹窗',
       rules: [
         {
           activityIds: [
@@ -1133,7 +1136,7 @@ export default defineGkdApp({
           actionMaximum: 5,
           resetMatch: 'match',
           matches:
-            '([text="30b2664f811b49268daf0884b451bd741055117292"]) || (WebView > View > View > View > View > Image[clickable=true][visibleToUser=true][text="30b2664f811b49268daf0884b451bd741055117292"]) || ([text="奖励派送中，稍后送达～"] <n * + * > *[clickable=true])',
+            '([text="17dde62e88314a499c524c9666c878785335466675"]) || (WebView > View > View > View > View > Image[clickable=true][visibleToUser=true][text="30b2664f811b49268daf0884b451bd741055117292" || text="17dde62e88314a499c524c9666c878785335466675"]) || ([text="奖励派送中，稍后送达～"] <n * + * > *[clickable=true])',
         },
       ],
     },
@@ -1239,7 +1242,7 @@ export default defineGkdApp({
     {
       key: 62,
       name: '活动未开始，我知道了',
-      desc: '260814，添加 工行余姚，湘约工行，贵州工行，已参加过',
+      desc: '260814，添加 贵阳工行，工行余姚，湘约工行，贵州工行，已参加过',
       rules: [
         {
           resetMatch: 'match',
@@ -1257,7 +1260,7 @@ export default defineGkdApp({
             'com.tencent.mm.plugin.appbrand.ui.AppBrandUI04',
           ],
           matches:
-            '(View > TextView[text^="活动未开始" || text^="已参加过本次活动"] + View > View > Image[clickable=true][visibleToUser=true]) || (WebView[text^="湘约工行"] > View > View > View > View > @TextView[clickable=true][visibleToUser=true] - View > View > TextView[text="目前活动权益已领完"]) || (WebView > View > View > View > View > @TextView[clickable=true][visibleToUser=true] - View > TextView[text="立即前往"])',
+            '(View > TextView[text^="活动未开始" || text^="已参加过本次活动"] + View > View > Image[clickable=true][visibleToUser=true]) || (WebView[text^="湘约工行"] > View > View > View > View > @TextView[clickable=true][visibleToUser=true] - View > View > TextView[text="目前活动权益已领完"]) || (WebView > View > View > View > View > @TextView[clickable=true][visibleToUser=true] - View > TextView[text="立即前往"]) || (View > TextView[text="Blocked by Sentinel"] + View + TextView[clickable=true][visibleToUser=true])',
         },
       ],
     },

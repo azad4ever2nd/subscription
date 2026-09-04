@@ -107,59 +107,73 @@ export default defineGkdApp({
     {
       key: 8,
       name: '预约打新，第一步，全选',
-      desc: '260728，clickable=true',
+      desc: '260904，clickable=true',
       rules: [
         {
           resetMatch: 'match',
           action: 'clickCenter',
-          actionMaximum: 1,
-          actionCd: 10000,
+		  matchTime:3000,
+		  forcedTime:3000,
           activityIds: 'com.gtja.trade.newstock.view.NewAppointMainActivity',
-          matches:
+          matches:[
             '(View > View > @Button[text="全选"][clickable=true][visibleToUser=true] +n TextView[text="已选中 "] + TextView[text="0"] + TextView[text*="只"])',
+			'WebView[text="newstock"] > View > View > View > @Button[text="全选"][clickable=true][visibleToUser=true] + TextView[text="已选中 "] + TextView[text="0"]',
+		],
         },
       ],
     },
     {
       key: 9,
       name: '预约打新，第二步，符合预约时间后，确认',
-      desc: '260728，要求预约时间在14:30，[text="已选中 "] + [text!="0"] <n * + [text="确认"][clickable=false]',
+      desc: '260904，要求预约时间在14:30，[text="已选中 "] + [text!="0"] <n * + [text="确认"][clickable=false]',
       rules: [
         {
           resetMatch: 'match',
           preKeys: [8],
+		  matchTime:3000,
+		  forcedTime:3000,
           activityIds: 'com.gtja.trade.newstock.view.NewAppointMainActivity',
-          matches:
+          matches:[
             'Button[text^="预约时间" && text*="14:30-14:35"] - View < View +n View > @TextView[clickable=false][visibleToUser=true][text="确认"] - View > TextView[text^="已选中"] + TextView[text!="0"]',
+			'Button[text="预约时间 14:30-14:35" || text*="14:30-14:35"] <n View +n View > @TextView[text="确认"][clickable=true][visibleToUser=true] - View > TextView[text="已选中 "] + TextView[text!="0"]',
+		],
         },
       ],
     },
     {
       key: 10,
       name: '预约打新，第三步，风险确认，二次确认',
-      desc: '260728',
+      desc: '260904',
       rules: [
         {
           resetMatch: 'match',
           preKeys: [9],
+		  matchTime:3000,
+		  forcedTime:3000,
           action: 'clickCenter',
           activityIds: 'com.gtja.trade.newstock.view.NewAppointMainActivity',
-          matches:
-            '([text="申购数量"] + [text="10000"] <n * + * [text="取消bak"] + *) || (TextView[text^="打新存在破发亏损风险"] < View + View > @View[clickable=false][visibleToUser=true] > View[clickable=true][visibleToUser=true][desc="确认"] > TextView[text="确认"]) || (View > TextView[text^="打新存在破发亏损风险"] +n TextView[text="取消"] + TextView[text="确认"][clickable=false][visibleToUser=true])',
+          matches:[
+            'TextView[text^="打新存在破发亏损风险"] < View + View > @View[clickable=false][visibleToUser=true] > View[clickable=true][visibleToUser=true][desc="确认"] > TextView[text="确认"]',
+			'View > TextView[text^="打新存在破发亏损风险"] +n TextView[text="取消"] + TextView[text="确认"][clickable=false][visibleToUser=true])',
+			'View > View > TextView[text^="打新存在破发亏损风险" || text="债券名称:"] +n TextView[text="确认"][clickable=true][visibleToUser=true]',
+		]
         },
       ],
     },
     {
       key: 11,
       name: '预约打新完成，完成',
-      desc: '260728',
+      desc: '260904',
       rules: [
         {
           resetMatch: 'match',
+		  action:'clickCenter',
           activityIds:
             'com.gtja.business.component.browser.webview.BrowserScreen',
-          matches:
+          matches:[
             '([text="退出"] + [text="智能打新"] + [text="完成bak"]) || (WebView[text="可转债申购"] > View > View > Image[clickable=false][visibleToUser=true][text="退出"] +n TextView[clickable=false][visibleToUser=true][text="完成"])',
+			'WebView > View > View > Image[text="退出"] + TextView + TextView[text="完成"][clickable=true][visibleToUser=true]',
+		]
         },
       ],
     },

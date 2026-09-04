@@ -62,13 +62,15 @@ export default defineGkdApp({
     {
       key: 5,
       name: '应用还没有授权位置权限，是否立即去设置开启？取消',
-      desc: '260815',
+      desc: '260904',
       rules: [
         {
           action: 'clickCenter',
           resetMatch: 'match',
           fastQuery: true,
-          forcedTime: 2000,
+		  actionCd:500,
+		  matchTime:2000,
+          forcedTime: 2500,
           activityIds: 'io.dcloud.PandoraEntryActivity',
           matches:
             'TextView[id="android:id/message"][text*="位置权限"] < LinearLayout < ScrollView < FrameLayout + ScrollView > LinearLayout > Button[text="去设置"][id="android:id/button2"] + Button[id="android:id/button1"][text="取消"]',

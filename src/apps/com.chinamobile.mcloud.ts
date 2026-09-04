@@ -158,6 +158,30 @@ export default defineGkdApp({
     },
     {
       key: 11,
+      name: '弹窗，签到N天，X掉',
+      desc: '260904，clickable=true',
+      rules: [
+        {
+          resetMatch: 'match',
+          activityIds: 'com.chinamobile.mcloud.client.component.web.H5WebViewMainActivity',
+          matches: 'Dialog > View > View > @Image[text="wMHmBwYPo98SAAAAABJRU5ErkJggg=="][clickable=true][visibleToUser=true] - View > TextView[text="移动云盘体验评价"]',
+        },
+      ],
+    },
+    {
+      key: 12,
+      name: '弹窗，登陆，X掉',
+      desc: '260904，clickable=true',
+      rules: [
+        {
+          resetMatch: 'match',
+          activityIds: 'com.chinamobile.mcloud.client.component.web.H5WebViewMainActivity',
+          matches: 'View[id="msg-login-pop"] > View > Button[text="发送验证码"] + TextView + Button[text="登录"] +n TextView[clickable=true][visibleToUser=true]',
+        },
+      ],
+    },
+    {
+      key: 13,
       name: '开启通知',
       desc: '251205',
       rules: [
@@ -172,7 +196,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 12,
+      key: 14,
       name: '弹窗',
       desc: '251118，增加开启通知',
       rules: [
@@ -187,7 +211,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 13,
+      key: 15,
       name: '发现新版本',
       desc: '251208',
       rules: [
@@ -204,7 +228,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 14,
+      key: 16,
       name: '服务通知，X掉',
       desc: '260702',
       rules: [

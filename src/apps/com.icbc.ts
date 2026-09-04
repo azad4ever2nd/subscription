@@ -190,13 +190,14 @@ export default defineGkdApp({
     {
       key: 14,
       name: '浇水',
-      desc: '260804，每月要变更id',
+      desc: '260904，每月要变更id',
       rules: [
         {
           actionMaximum: 1,
           resetMatch: 'match',
+		  action:'clickCenter',
           matches:
-            'View > Image[text="30b2664f811b49268daf0884b451bd741055117292"][visibleToUser=true]',
+            'View > Image[text="17dde62e88314a499c524c9666c878785335466675"][clickable=true][visibleToUser=true]',
           activityIds: 'com.icbc.activity.web.ICBCWebView',
         },
       ],
@@ -248,7 +249,7 @@ export default defineGkdApp({
     {
       key: 18,
       name: '恭喜完成任务，去看看',
-      desc: '260114,整合14',
+      desc: '260904,整合14',
       rules: [
         {
           matches: ['@[vid="iv_task_center"] + [vid="iv_close_task_center"]'],
@@ -261,6 +262,7 @@ export default defineGkdApp({
             'com.icbc.activity.web.ICBCWebView',
             'com.icbc.activity.web.ICBCWebViewToExternal',
             'com.icbc.mydetail.MyDetailMainActivity',
+			'.family_assets.FamilyAssetsActivity',
           ],
         },
       ],

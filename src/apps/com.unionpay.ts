@@ -214,7 +214,7 @@ export default defineGkdApp({
     {
       key: 14,
       name: '抽奖弹窗，谢谢参与，知道了',
-      desc: '260705',
+      desc: '260904，未中奖',
       rules: [
         {
           resetMatch: 'match',
@@ -225,12 +225,13 @@ export default defineGkdApp({
             'com.unionpay.liteapp.app.UPLiteAppActivity3',
             'com.unionpay.liteapp.app.UPLiteAppActivity4',
           ],
-          matches:
-            '(View > TextView[text="谢谢参与"] + TextView[text="知道了"] + Image[text="scMOOk4eCwfO2MXMA57klCN2cRQucR4ZsJPAuCw81thJPT6XbjhgNwMbAPAiq3hLBd4o0iqaRfxjmM16IkusKLl+YfM7Etm+Ty3VgYWWEXAiV2i27uIq4pB4BzRbd4E7E7rliWqX2owOgTfotu7ixoDIHLqtu8gZ0bOGbusuava4MINu6y4yXiB00G3dhaOYZNNnmzbM9KtMQWIKT9PBMB1JSzIwpSFTArSkXlPSt1w3povOcsWaLndLWWEpaCyllKmIs5SPlsLVUDJbinVLm2BtUOytkb0pM7WDP+PVKWG1cGJeAAAAAElFTkSuQmCC"][clickable=false])',
+          matches:[
+            'View > TextView[text="谢谢参与"] + TextView[text="知道了"] + Image[text="scMOOk4eCwfO2MXMA57klCN2cRQucR4ZsJPAuCw81thJPT6XbjhgNwMbAPAiq3hLBd4o0iqaRfxjmM16IkusKLl+YfM7Etm+Ty3VgYWWEXAiV2i27uIq4pB4BzRbd4E7E7rliWqX2owOgTfotu7ixoDIHLqtu8gZ0bOGbusuava4MINu6y4yXiB00G3dhaOYZNNnmzbM9KtMQWIKT9PBMB1JSzIwpSFTArSkXlPSt1w3povOcsWaLndLWWEpaCyllKmIs5SPlsLVUDJbinVLm2BtUOytkb0pM7WDP+PVKWG1cGJeAAAAAElFTkSuQmCC"][clickable=false]',
+			'WebView[text="幸运扭蛋机"] > View > View > View > TextView[text="您离中奖还差一点点"] + TextView[text="知道了"] + Image[text="scMOOk4eCwfO2MXMA57klCN2cRQucR4ZsJPAuCw81thJPT6XbjhgNwMbAPAiq3hLBd4o0iqaRfxjmM16IkusKLl+YfM7Etm+Ty3VgYWWEXAiV2i27uIq4pB4BzRbd4E7E7rliWqX2owOgTfotu7ixoDIHLqtu8gZ0bOGbusuava4MINu6y4yXiB00G3dhaOYZNNnmzbM9KtMQWIKT9PBMB1JSzIwpSFTArSkXlPSt1w3povOcsWaLndLWWEpaCyllKmIs5SPlsLVUDJbinVLm2BtUOytkb0pM7WDP+PVKWG1cGJeAAAAAElFTkSuQmCC"]',
+		],
         },
       ],
     },
-
     {
       key: 15,
       name: '0元购，立即抢购',
@@ -308,11 +309,10 @@ export default defineGkdApp({
         },
       ],
     },
-
     {
       key: 19,
       name: '暂不领取权益',
-      desc: '双标卡权益',
+      desc: 'D,双标卡权益',
       rules: [
         {
           actionMaximum: 2,
@@ -329,6 +329,24 @@ export default defineGkdApp({
     },
     {
       key: 20,
+      name: '弹窗，会员惊喜开学季',
+      desc: '260904',
+      rules: [
+        {
+          resetMatch: 'match',
+		  action: 'clickCenter',
+          activityIds: [
+            'com.unionpay.liteapp.app.UPLiteAppActivity1',
+            'com.unionpay.liteapp.app.UPLiteAppActivity2',
+            'com.unionpay.liteapp.app.UPLiteAppActivity3',
+            'com.unionpay.liteapp.app.UPLiteAppActivity4',
+          ],
+          matches: '@Image[clickable=true][visibleToUser=true] <<n View + View[id="1CEC4277-380E-42E3-BA36-C07721DB1887--1788439106611"]',
+        },
+      ],
+    },
+    {
+      key: 21,
       name: '无界卡每月一次星巴克，去领取',
       desc: '260131',
       rules: [
@@ -342,7 +360,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 21,
+      key: 22,
       name: '加载失败，刷新',
       desc: '260813',
       rules: [

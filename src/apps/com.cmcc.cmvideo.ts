@@ -116,17 +116,16 @@ export default defineGkdApp({
     {
       key: 7,
       name: '恭喜获得2GB通用流量，好的',
-      desc: '260807，添加各种抽奖类的提示，各种弹窗，添加 IDS',
+      desc: '260904，添加各种抽奖类的提示，各种弹窗，添加 IDS',
       rules: [
         {
           resetMatch: 'match',
-          actionCd: 300,
           activityIds: [
             'com.quickjs.android.example.RNFragmentActivity',
             'com.cmvideo.capability.remote_web.WebProcessActivity',
           ],
           matches:
-            '(@View > View > View > Image[text="1O7GDU9LRD8A8" || text="1O7GDU9LPCKHS" || text="1O7GE0VDLVO51"]) || (@View > View > View > Image[text="1O7GEIFBFRPLK" || text="1O7GEIFC0TJFP" || text="1O7GE0VC9N7O0" || text="1O7GC3SARU1RQ" || text="1O7GDU9N7V7LU" || text="1O7GDU9H2A5TQ" || text="1O7GL9PTD3DCA" || text="1O7GE0VD20609"])',
+            '(@View > View > View > Image[text="1O7GDU9LRD8A8" || text="1O7GDU9LPCKHS" || text="1O7GE0VDLVO51" || text="1O7GEIFC0TJFP"]) || (@View > View > View > Image[text="1O7GEIFBFRPLK" || text="1O7GEIFC0TJFP" || text="1O7GE0VC9N7O0" || text="1O7GC3SARU1RQ" || text="1O7GDU9N7V7LU" || text="1O7GDU9H2A5TQ" || text="1O7GL9PTD3DCA" || text="1O7GE0VD20609" || text="1O7GEIFC0TJFP"]) || (View[clickable=true][visibleToUser=true] > View > Image[text="1O7GDU9H0PKEV"])',
         },
       ],
     },

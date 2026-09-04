@@ -36,12 +36,14 @@ export default defineGkdApp({
     {
       key: 3,
       name: '弹窗',
-      desc: '260831,fastQuery=true,clickable=true',
+      desc: '260904,fastQuery=true,clickable=true',
       rules: [
         {
           resetMatch: 'match',
+		  action:'clickCenter',
+		  matchTime:2000,
           fastQuery: true,
-          forcedTime: 1500,
+          forcedTime: 2000,
           matches: [
             '[vid="close_btn"][desc="关闭"]',
             'ViewGroup[vid="cl_pop"] > ImageView[vid="img_close"][clickable=true][visibleToUser=true]',
@@ -109,7 +111,7 @@ export default defineGkdApp({
     {
       key: 8,
       name: '签到有礼',
-      desc: '260830',
+      desc: 'D,260830',
       rules: [
         {
           resetMatch: 'app',
@@ -134,19 +136,22 @@ export default defineGkdApp({
         },
       ],
     },
-    {
-      key: 10,
-      name: '立即签到',
-      desc: '260831',
-      rules: [
-        {
-          resetMatch: 'app',
-          actionMaximum: 1,
-          activityIds: 'com.cmccit.webview.ac.CommonHtml5Activity',
-          matches:
-            'TextView[text^="累签" && text$="次"] <<n View + View > TextView[index=0][clickable=true][visibleToUser=true]',
-        },
-      ],
-    },
+	{
+	  key: 10,
+	  name: '立即签到',
+	  desc: '260831',
+	  rules: [
+		{
+		  matches: [
+			'TextView[text^="累签" && text$="次"] <<n View + View > TextView[index=0][clickable=true][visibleToUser=true]',
+		  ],
+		  actionMaximum: 1,
+		  resetMatch: 'app',
+		  activityIds: [
+			'com.cmccit.webview.ac.CommonHtml5Activity',
+		  ],
+		},
+	  ],
+	}
   ],
 });

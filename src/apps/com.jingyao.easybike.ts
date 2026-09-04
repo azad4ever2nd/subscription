@@ -35,18 +35,18 @@ export default defineGkdApp({
     {
       key: 3,
       name: '骑车抽免单弹窗，',
-      desc: '260814',
+      desc: '260904',
       rules: [
         {
           fastQuery: true,
           order: -1,
           resetMatch: 'match',
-          forcedTime: 1200,
-          actionCd: 600,
+          forcedTime: 3000,
+		  matchTime:3000,
           activityIds:
             'com.hellobike.flutter.platform.android.flutterboost.FlutterHostFragmentActivity',
           matches:
-            '([vid="creativeContainer"] + [vid="actionDialogClose"]) || (LinearLayout > FrameLayout[vid="creativeContainer"] + ImageView[vid="actionDialogClose"][clickable=true][visibleToUser=true])',
+            '(LinearLayout > FrameLayout[vid="creativeContainer"] + ImageView[vid="actionDialogClose"][clickable=true][visibleToUser=true])',
         },
       ],
     },
@@ -70,14 +70,16 @@ export default defineGkdApp({
     {
       key: 5,
       name: '哈啰还不知道您在哪里',
-      desc: '251119',
+      desc: '260904，添加 消息通知',
       rules: [
         {
           resetMatch: 'match',
           fastQuery: true,
           activityIds: 'com.hellobike.atlas.business.portal.PortalActivity',
-          matches:
+          matches:[
             '[vid="title_tv"][text="哈啰还不知道您在哪里"] +2 @[vid="sign_out_tv"][text="暂不开启"] + [vid="agreement_tv"][text="快速开启定位"]',
+			'TextView[text="开启消息通知"] < FrameLayout +n FrameLayout > LinearLayout > Button[text="取消"][clickable=true][visibleToUser=true]',
+		],
         },
       ],
     },
@@ -129,20 +131,21 @@ export default defineGkdApp({
     {
       key: 9,
       name: '系统定位服务已关闭',
-      desc: '260810，添加matchroo测试，添加打开定位服务，,添加IDS,消息通知 com.hellobike.business.hitch.common.home.HLPHHomeActivity',
+      desc: '260904，添加matchroo测试，添加打开定位服务，,添加IDS,消息通知 com.hellobike.business.hitch.common.home.HLPHHomeActivity',
       rules: [
         {
           fastQuery: true,
           resetMatch: 'match',
           action: 'clickCenter',
-          actionCd: 0,
+		  matchTime:3000,
+		  forcedTime:3000,
           matchRoot: false,
           activityIds: [
             'com.hellobike.atlas.business.portal.PortalActivity',
             'com.hellobike.business.hitch.common.home.HLPHHomeActivity',
           ],
           matches:
-            '([text^="请打开定位服务"] <<n * +n * [text="取消"]) || (TextView[text^="请打开定位服务"] < FrameLayout + FrameLayout[id="com.jingyao.easybike:id/bottomContainer"] > LinearLayout > Button[text="取消"][clickable=true][visibleToUser=true])',
+            '([text^="请打开定位服务"] <<n * +n * [text="取消"][clickable=true][visibleToUser=true]) || (TextView[text^="请打开定位服务"] < FrameLayout + FrameLayout[id="com.jingyao.easybike:id/bottomContainer"] > LinearLayout > Button[text="取消"][clickable=true][visibleToUser=true])',
         },
       ],
     },
@@ -311,14 +314,15 @@ export default defineGkdApp({
     {
       key: 22,
       name: '领行完领奖励金',
-      desc: '260727',
+      desc: '260904,clickable=true',
       rules: [
         {
           resetMatch: 'match',
+		  action:'clickCenter',
           activityIds:
             'com.hellobike.moped.platform.offline.web.OhoRealmWebActivity',
           matches:
-            'View[id="monad-return-ball"] > @View[clickable=false][visibleToUser=true] > TextView[text="奖励金"] - TextView - View > Image[text="c628086d6b3a4923907c57bc4326aa13_mask"]',
+            'View[id="monad-return-ball"] > @View[clickable=true][visibleToUser=true] > TextView[text="奖励金"] - TextView - View > Image[text="c628086d6b3a4923907c57bc4326aa13_mask"]',
         },
       ],
     },

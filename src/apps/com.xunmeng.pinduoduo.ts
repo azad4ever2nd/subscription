@@ -52,7 +52,7 @@ export default defineGkdApp({
     {
       key: 4,
       name: '积分兑无门槛券抢光',
-      desc: '整合每周2张封顶，券已抢光，下周再来',
+      desc: 'D，整合每周2张封顶，券已抢光，下周再来',
       rules: [
         {
           action: 'back',
@@ -279,7 +279,7 @@ export default defineGkdApp({
     {
       key: 20,
       name: '如何解锁，去首页',
-      desc: '260804',
+      desc: '260904',
       rules: [
         {
           resetMatch: 'match',
@@ -404,7 +404,7 @@ export default defineGkdApp({
     {
       key: 29,
       name: '浏览当前页面10秒即可点亮',
-      desc: '260829',
+      desc: '260904',
       rules: [
         {
           resetMatch: 'match',
@@ -422,12 +422,26 @@ export default defineGkdApp({
           },
           activityIds: 'com.xunmeng.pinduoduo.activity.NewPageActivity',
           matches:
-            'View[id="sticky_Gffa"] > TextView[text="滑动浏览当前页面"] +2 TextView[text="秒即可点亮"]',
+            'View[id^="sticky_"] > TextView[text="滑动浏览当前页面"] +2 TextView[text="秒即可点亮"]',
         },
       ],
     },
     {
       key: 30,
+      name: '如何解锁，去首页2',
+      desc: '260904,clickable=true',
+      rules: [
+        {
+          resetMatch: 'match',
+          action: 'clickCenter',
+          activityIds: 'com.xunmeng.pinduoduo.activity.NewPageActivity',
+          matches:
+            '(View > View > View > TextView[text="如何解锁点亮?"] + TextView[text="去首页"][clickable=true][visibleToUser=true])',
+        },
+      ],
+    },	
+    {
+      key: 31,
       name: '通知关闭，拒绝接收',
       desc: '260609',
       rules: [
@@ -441,7 +455,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 31,
+      key: 32,
       name: '百亿补贴消费券天天抢，点击领取消费券（激活）',
       desc: '260814',
       rules: [
