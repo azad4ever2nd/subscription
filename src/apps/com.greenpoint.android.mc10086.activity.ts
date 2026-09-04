@@ -40,8 +40,8 @@ export default defineGkdApp({
       rules: [
         {
           resetMatch: 'match',
-		  action:'clickCenter',
-		  matchTime:2000,
+          action: 'clickCenter',
+          matchTime: 2000,
           fastQuery: true,
           forcedTime: 2000,
           matches: [
@@ -136,22 +136,20 @@ export default defineGkdApp({
         },
       ],
     },
-	{
-	  key: 10,
-	  name: '立即签到',
-	  desc: '260831',
-	  rules: [
-		{
-		  matches: [
-			'TextView[text^="累签" && text$="次"] <<n View + View > TextView[index=0][clickable=true][visibleToUser=true]',
-		  ],
-		  actionMaximum: 1,
-		  resetMatch: 'app',
-		  activityIds: [
-			'com.cmccit.webview.ac.CommonHtml5Activity',
-		  ],
-		},
-	  ],
-	}
+    {
+      key: 10,
+      name: '立即签到',
+      desc: '260831',
+      rules: [
+        {
+          matches: [
+            'TextView[text^="累签" && text$="次"] <<n View + View > TextView[index=0][clickable=true][visibleToUser=true]',
+          ],
+          actionMaximum: 1,
+          resetMatch: 'app',
+          activityIds: ['com.cmccit.webview.ac.CommonHtml5Activity'],
+        },
+      ],
+    },
   ],
 });

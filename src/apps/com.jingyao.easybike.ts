@@ -42,7 +42,7 @@ export default defineGkdApp({
           order: -1,
           resetMatch: 'match',
           forcedTime: 3000,
-		  matchTime:3000,
+          matchTime: 3000,
           activityIds:
             'com.hellobike.flutter.platform.android.flutterboost.FlutterHostFragmentActivity',
           matches:
@@ -76,10 +76,10 @@ export default defineGkdApp({
           resetMatch: 'match',
           fastQuery: true,
           activityIds: 'com.hellobike.atlas.business.portal.PortalActivity',
-          matches:[
+          matches: [
             '[vid="title_tv"][text="哈啰还不知道您在哪里"] +2 @[vid="sign_out_tv"][text="暂不开启"] + [vid="agreement_tv"][text="快速开启定位"]',
-			'TextView[text="开启消息通知"] < FrameLayout +n FrameLayout > LinearLayout > Button[text="取消"][clickable=true][visibleToUser=true]',
-		],
+            'TextView[text="开启消息通知"] < FrameLayout +n FrameLayout > LinearLayout > Button[text="取消"][clickable=true][visibleToUser=true]',
+          ],
         },
       ],
     },
@@ -137,8 +137,8 @@ export default defineGkdApp({
           fastQuery: true,
           resetMatch: 'match',
           action: 'clickCenter',
-		  matchTime:3000,
-		  forcedTime:3000,
+          matchTime: 3000,
+          forcedTime: 3000,
           matchRoot: false,
           activityIds: [
             'com.hellobike.atlas.business.portal.PortalActivity',
@@ -318,7 +318,7 @@ export default defineGkdApp({
       rules: [
         {
           resetMatch: 'match',
-		  action:'clickCenter',
+          action: 'clickCenter',
           activityIds:
             'com.hellobike.moped.platform.offline.web.OhoRealmWebActivity',
           matches:

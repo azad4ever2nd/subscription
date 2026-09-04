@@ -439,7 +439,7 @@ export default defineGkdApp({
             '(View > View > View > TextView[text="如何解锁点亮?"] + TextView[text="去首页"][clickable=true][visibleToUser=true])',
         },
       ],
-    },	
+    },
     {
       key: 31,
       name: '通知关闭，拒绝接收',

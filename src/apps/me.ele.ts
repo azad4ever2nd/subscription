@@ -40,12 +40,12 @@ export default defineGkdApp({
       rules: [
         {
           activityIds: 'me.ele.application.ui.Launcher.LauncherActivity',
-		  matchTime:2000,
-		  forcedTime:2000,
-          matches:[
+          matchTime: 2000,
+          forcedTime: 2000,
+          matches: [
             'ViewGroup[vid="id_magex_mist_view"] > ViewGroup > ViewGroup > ImageView[clickable=true][visibleToUser=true]',
-			'ViewGroup[vid="id_magex_mist_view"] > ViewGroup > ImageView[clickable=true][visibleToUser=true]'
-		],
+            'ViewGroup[vid="id_magex_mist_view"] > ViewGroup > ImageView[clickable=true][visibleToUser=true]',
+          ],
         },
       ],
     },
@@ -140,7 +140,7 @@ export default defineGkdApp({
       rules: [
         {
           resetMatch: 'match',
-		  matchTime:2000,
+          matchTime: 2000,
           forcedTime: 2000,
           activityIds:
             'me.ele.android.themis_alsc.eleme.container.EleTMSActivity',
@@ -158,8 +158,8 @@ export default defineGkdApp({
           activityIds:
             'me.ele.android.themis_alsc.eleme.container.EleTMSActivity',
           resetMatch: 'match',
-		  matchTime:2000,
-		  forcedTime:2000,
+          matchTime: 2000,
+          forcedTime: 2000,
           matches:
             'ViewGroup[vid="id_magex_mist_view"] > ViewGroup > ViewGroup > ImageView[clickable=true][visibleToUser=true]',
         },

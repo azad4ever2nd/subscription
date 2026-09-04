@@ -163,8 +163,10 @@ export default defineGkdApp({
       rules: [
         {
           resetMatch: 'match',
-          activityIds: 'com.chinamobile.mcloud.client.component.web.H5WebViewMainActivity',
-          matches: 'Dialog > View > View > @Image[text="wMHmBwYPo98SAAAAABJRU5ErkJggg=="][clickable=true][visibleToUser=true] - View > TextView[text="移动云盘体验评价"]',
+          activityIds:
+            'com.chinamobile.mcloud.client.component.web.H5WebViewMainActivity',
+          matches:
+            'Dialog > View > View > @Image[text="wMHmBwYPo98SAAAAABJRU5ErkJggg=="][clickable=true][visibleToUser=true] - View > TextView[text="移动云盘体验评价"]',
         },
       ],
     },
@@ -175,8 +177,10 @@ export default defineGkdApp({
       rules: [
         {
           resetMatch: 'match',
-          activityIds: 'com.chinamobile.mcloud.client.component.web.H5WebViewMainActivity',
-          matches: 'View[id="msg-login-pop"] > View > Button[text="发送验证码"] + TextView + Button[text="登录"] +n TextView[clickable=true][visibleToUser=true]',
+          activityIds:
+            'com.chinamobile.mcloud.client.component.web.H5WebViewMainActivity',
+          matches:
+            'View[id="msg-login-pop"] > View > Button[text="发送验证码"] + TextView + Button[text="登录"] +n TextView[clickable=true][visibleToUser=true]',
         },
       ],
     },

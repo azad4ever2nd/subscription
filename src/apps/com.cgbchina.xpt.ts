@@ -162,8 +162,10 @@ export default defineGkdApp({
         {
           resetMatch: 'match',
           fastQuery: true,
-          activityIds: 'com.cgb.mobilebank.android.login.module.login.activity.LoginActivityV2',
-          matches: 'LinearLayout > TextView[text="不同意"] +n TextView[text="同意并继续"][clickable=true][visibleToUser=true]',
+          activityIds:
+            'com.cgb.mobilebank.android.login.module.login.activity.LoginActivityV2',
+          matches:
+            'LinearLayout > TextView[text="不同意"] +n TextView[text="同意并继续"][clickable=true][visibleToUser=true]',
         },
       ],
     },

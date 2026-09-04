@@ -195,7 +195,7 @@ export default defineGkdApp({
         {
           actionMaximum: 1,
           resetMatch: 'match',
-		  action:'clickCenter',
+          action: 'clickCenter',
           matches:
             'View > Image[text="17dde62e88314a499c524c9666c878785335466675"][clickable=true][visibleToUser=true]',
           activityIds: 'com.icbc.activity.web.ICBCWebView',
@@ -262,7 +262,7 @@ export default defineGkdApp({
             'com.icbc.activity.web.ICBCWebView',
             'com.icbc.activity.web.ICBCWebViewToExternal',
             'com.icbc.mydetail.MyDetailMainActivity',
-			'.family_assets.FamilyAssetsActivity',
+            '.family_assets.FamilyAssetsActivity',
           ],
         },
       ],

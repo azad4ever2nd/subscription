@@ -232,7 +232,8 @@ export default defineGkdApp({
         {
           resetMatch: 'match',
           activityIds: 'com.citiccard.mobilebank.web.webpage.CommonWebPage',
-          matches: 'View > View > Image[text="1787731085779jlbPK"] + TextView[clickable=true][visibleToUser=true]',
+          matches:
+            'View > View > Image[text="1787731085779jlbPK"] + TextView[clickable=true][visibleToUser=true]',
         },
       ],
     },
@@ -260,7 +261,7 @@ export default defineGkdApp({
         {
           resetMatch: 'match',
           matchDelay: 3000,
-		  forcedTime:3000,
+          forcedTime: 3000,
           fastQuery: true,
           activityIds:
             'com.citiccard.mobilebank.newconfig.appconstruct.TabsAppHomeActivity',

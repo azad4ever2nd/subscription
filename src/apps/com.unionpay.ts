@@ -225,10 +225,10 @@ export default defineGkdApp({
             'com.unionpay.liteapp.app.UPLiteAppActivity3',
             'com.unionpay.liteapp.app.UPLiteAppActivity4',
           ],
-          matches:[
+          matches: [
             'View > TextView[text="谢谢参与"] + TextView[text="知道了"] + Image[text="scMOOk4eCwfO2MXMA57klCN2cRQucR4ZsJPAuCw81thJPT6XbjhgNwMbAPAiq3hLBd4o0iqaRfxjmM16IkusKLl+YfM7Etm+Ty3VgYWWEXAiV2i27uIq4pB4BzRbd4E7E7rliWqX2owOgTfotu7ixoDIHLqtu8gZ0bOGbusuava4MINu6y4yXiB00G3dhaOYZNNnmzbM9KtMQWIKT9PBMB1JSzIwpSFTArSkXlPSt1w3povOcsWaLndLWWEpaCyllKmIs5SPlsLVUDJbinVLm2BtUOytkb0pM7WDP+PVKWG1cGJeAAAAAElFTkSuQmCC"][clickable=false]',
-			'WebView[text="幸运扭蛋机"] > View > View > View > TextView[text="您离中奖还差一点点"] + TextView[text="知道了"] + Image[text="scMOOk4eCwfO2MXMA57klCN2cRQucR4ZsJPAuCw81thJPT6XbjhgNwMbAPAiq3hLBd4o0iqaRfxjmM16IkusKLl+YfM7Etm+Ty3VgYWWEXAiV2i27uIq4pB4BzRbd4E7E7rliWqX2owOgTfotu7ixoDIHLqtu8gZ0bOGbusuava4MINu6y4yXiB00G3dhaOYZNNnmzbM9KtMQWIKT9PBMB1JSzIwpSFTArSkXlPSt1w3povOcsWaLndLWWEpaCyllKmIs5SPlsLVUDJbinVLm2BtUOytkb0pM7WDP+PVKWG1cGJeAAAAAElFTkSuQmCC"]',
-		],
+            'WebView[text="幸运扭蛋机"] > View > View > View > TextView[text="您离中奖还差一点点"] + TextView[text="知道了"] + Image[text="scMOOk4eCwfO2MXMA57klCN2cRQucR4ZsJPAuCw81thJPT6XbjhgNwMbAPAiq3hLBd4o0iqaRfxjmM16IkusKLl+YfM7Etm+Ty3VgYWWEXAiV2i27uIq4pB4BzRbd4E7E7rliWqX2owOgTfotu7ixoDIHLqtu8gZ0bOGbusuava4MINu6y4yXiB00G3dhaOYZNNnmzbM9KtMQWIKT9PBMB1JSzIwpSFTArSkXlPSt1w3povOcsWaLndLWWEpaCyllKmIs5SPlsLVUDJbinVLm2BtUOytkb0pM7WDP+PVKWG1cGJeAAAAAElFTkSuQmCC"]',
+          ],
         },
       ],
     },
@@ -334,14 +334,15 @@ export default defineGkdApp({
       rules: [
         {
           resetMatch: 'match',
-		  action: 'clickCenter',
+          action: 'clickCenter',
           activityIds: [
             'com.unionpay.liteapp.app.UPLiteAppActivity1',
             'com.unionpay.liteapp.app.UPLiteAppActivity2',
             'com.unionpay.liteapp.app.UPLiteAppActivity3',
             'com.unionpay.liteapp.app.UPLiteAppActivity4',
           ],
-          matches: '@Image[clickable=true][visibleToUser=true] <<n View + View[id="1CEC4277-380E-42E3-BA36-C07721DB1887--1788439106611"]',
+          matches:
+            '@Image[clickable=true][visibleToUser=true] <<n View + View[id="1CEC4277-380E-42E3-BA36-C07721DB1887--1788439106611"]',
         },
       ],
     },

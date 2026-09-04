@@ -184,9 +184,9 @@ export default defineGkdApp({
           actionMaximum: 1,
           activityIds: 'com.tencent.mm.plugin.webview.ui.tools.MMWebViewUI',
           matches: [
-			'WebView[text="闲鱼"] <<n * + * [desc="更多信息"]',
-			'View > TextView[clickable=true][visibleToUser=true] + View > Button[text="我知道了"][clickable=true][visibleToUser=true]',
-		  ],
+            'WebView[text="闲鱼"] <<n * + * [desc="更多信息"]',
+            'View > TextView[clickable=true][visibleToUser=true] + View > Button[text="我知道了"][clickable=true][visibleToUser=true]',
+          ],
         },
       ],
     },

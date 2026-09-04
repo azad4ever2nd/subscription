@@ -68,8 +68,8 @@ export default defineGkdApp({
           action: 'clickCenter',
           resetMatch: 'match',
           fastQuery: true,
-		  actionCd:500,
-		  matchTime:2000,
+          actionCd: 500,
+          matchTime: 2000,
           forcedTime: 2500,
           activityIds: 'io.dcloud.PandoraEntryActivity',
           matches:

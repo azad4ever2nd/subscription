@@ -67,8 +67,10 @@ export default defineGkdApp({
         {
           forcedTime: 3000,
           resetMatch: 'match',
-          activityIds: 'com.alipay.mobile.nebulax.xriver.activity.XRiverActivity',
-          matches: 'Dialog > View > View > TextView[clickable=true][visibleToUser=true] - View > TextView[text="体验金领取成功"] +n TextView[text="立即攒下"][clickable=true][visibleToUser=true]',
+          activityIds:
+            'com.alipay.mobile.nebulax.xriver.activity.XRiverActivity',
+          matches:
+            'Dialog > View > View > TextView[clickable=true][visibleToUser=true] - View > TextView[text="体验金领取成功"] +n TextView[text="立即攒下"][clickable=true][visibleToUser=true]',
         },
       ],
     },
@@ -80,8 +82,10 @@ export default defineGkdApp({
         {
           forcedTime: 3000,
           resetMatch: 'match',
-          activityIds: 'com.alipay.mobile.nebulax.xriver.activity.XRiverActivity',
-          matches: '@Image[clickable=true][visibleToUser=true] < View + View TextView[text="转入余额宝(元)"]',
+          activityIds:
+            'com.alipay.mobile.nebulax.xriver.activity.XRiverActivity',
+          matches:
+            '@Image[clickable=true][visibleToUser=true] < View + View TextView[text="转入余额宝(元)"]',
         },
       ],
     },
