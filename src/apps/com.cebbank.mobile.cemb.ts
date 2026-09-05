@@ -124,6 +124,7 @@ export default defineGkdApp({
 			'(View > @TextView[clickable=false][visibleToUser=true] + TextView[text="可在【金币明细】查看"])',
 			'(View > TextView[text="10金币"] + TextView[text="1次抽奖机会"] + TextView + TextView[clickable=false][visibleToUser=true])',
 			'@TextView[clickable=true][visibleToUser=true] < View + View > View > TextView[text="很遗憾，您未中奖"] +n TextView[text="谢谢参与"]',
+			],
           action: 'clickCenter',
           resetMatch: 'match',
           activityIds:

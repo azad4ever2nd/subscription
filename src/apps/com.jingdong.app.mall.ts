@@ -61,6 +61,7 @@ export default defineGkdApp({
             '(View > TextView[text*="纸" && text*="12"] +3  TextView[clickable=true][text="领券抢"])',
 			'(TextView[text^="券后¥"] - TextView[text*="卷纸"] - TextView < View + TextView[text="领券抢"][clickable=true])',
 			'@TextView[text="领券抢"][clickable=true][visibleToUser=true] - View > TextView[text="12卷纸"] + TextView[text^="券后"]',
+			],
         },
       ],
     },

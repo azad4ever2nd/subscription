@@ -522,7 +522,7 @@ export default defineGkdApp({
           matches:[
             '([id="android:id/message"][text*="权限"] <<n * + [id="android:id/buttonPanel"] [id="android:id/button2"][text="否"] + [id="android:id/button1"][text="是"])',
 			'([text="Pyi3KQBzgJA1F+Xm7MrWYA0HQqTcq4GrAAAAAASUVORK5CYII="])',
-			'View > Image[text="countdown-fulfilled-bg.f65a2ea"]'
+			'View > Image[text="countdown-fulfilled-bg.f65a2ea"]',
 			'(View > Image[clickable=false][text="gthEFTB6uRQ36UPWtwD"])',
 			'(WebView > @View[clickable=false][visibleToUser=true] > Image[text="gthEFTB6uRQ36UPWtwD"])',
 			],
