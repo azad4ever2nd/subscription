@@ -57,7 +57,7 @@ export default defineGkdApp({
         {
           resetMatch: 'match',
           actionCd: 0,
-          matchDelay: 3000,
+          matchTime: 10000,
           forcedTime: 10000,
           activityIds: 'com.sgcc.wsgw.mainbundle.ElectricTitleActivity',
           matches:
@@ -74,6 +74,8 @@ export default defineGkdApp({
           matches: ['[text="签到功能升级公告"] +2 * > Image'],
           fastQuery: true,
           actionCd: 0,
+          matchTime: 10000,
+          forcedTime: 10000,
           resetMatch: 'match',
           activityIds: ['com.sgcc.wsgw.mainbundle.ElectricTitleActivity'],
         },
@@ -87,6 +89,7 @@ export default defineGkdApp({
         {
           resetMatch: 'match',
           forcedTime: 5000,
+          matchTime: 10000,
           activityIds: 'com.sgcc.wsgw.mainbundle.ElectricTitleActivity',
           matches:
             '(WebView > View > View > View > View > View > TextView[text^="抽中" && text$="个签到金"] + TextView[clickable=false][visibleToUser=true]) || (View > View > TextView[text^="抽中" && text$="个签到金"] + TextView[text.length=0][clickable=false][visibleToUser=true] )',
@@ -142,6 +145,8 @@ export default defineGkdApp({
         {
           resetMatch: 'match',
           matchDelay: 1000,
+          matchTime: 10000,
+          forcedTime: 10000,
           actionCd: 0,
           activityIds: 'com.sgcc.wsgw.rnbundle.activity.MyReactActivity',
           matches: '[text^="本次升级" || text*="更新"] + * > *',
@@ -156,6 +161,8 @@ export default defineGkdApp({
         {
           resetMatch: 'match',
           matchDelay: 1000,
+          matchTime: 10000,
+          forcedTime: 10000,
           fastQuery: true,
           actionCd: 0,
           activityIds: 'com.sgcc.wsgw.rnbundle.activity.MyReactActivity',
