@@ -238,13 +238,15 @@ export default defineGkdApp({
     {
       key: 17,
       name: '人数太多，关闭',
-      desc: '260829，增加当前奖励已领完，服务器在忙，上限',
+      desc: '260905，增加当前奖励已领完，服务器在忙，上限',
       rules: [
         {
           resetMatch: 'match',
           activityIds: 'com.bankcomm.module.biz.webcontainer.BCMHtml5Activity',
-          matches:
-            '([id="dialogInnerDiv"][text^="哎呀" || text^="人数太多" || text*="次数上限" || text^="服务器在忙" || text$="请稍后再试" ] <<n * + * > [text="关闭"]) || (TextView[id="dialogInnerDiv"][text*="当前奖励已领完"] < View < View + View > Button[text="关闭"][clickable=true][visibleToUser=true])',
+          matches:[
+            '([id="dialogInnerDiv"][text^="哎呀" || text^="人数太多" || text*="次数上限" || text^="服务器在忙" || text$="请稍后再试" ] <<n * + * > [text="关闭"])',
+			'(TextView[id="dialogInnerDiv"][text*="当前奖励已领完"] < View < View + View > Button[text="关闭"][clickable=true][visibleToUser=true])',
+			],
         },
       ],
     },
@@ -293,11 +295,14 @@ export default defineGkdApp({
     {
       key: 21,
       name: '能量签到完成',
-      desc: '260829，添加每周在线互动',
+      desc: '260905，添加每周在线互动',
       rules: [
         {
-          matches:
-            '(TextView[text^="访问" || text^="查看"][text*="超过" && text$="秒"] +2 TextView[text="去完成"][clickable=false][visibleToUser=true]) || (TextView[text^="访问" || text^="查看"][text*="超过" && text$="秒"] <n View +2 TextView[text="去完成"][clickable=true][visibleToUser=true]) || ([text="恭喜您签到成功"] +n [text="我知道了"])',
+          matches:[
+            '(TextView[text^="浏览" || text^="访问" || text^="查看"][text*="超过" && text$="秒"] +2 TextView[text="去完成"][clickable=false][visibleToUser=true])',
+			'(TextView[text^="浏览" || text^="访问" || text^="查看"][text*="超过" && text$="秒"] <n View +2 TextView[text="去完成"][clickable=true][visibleToUser=true])',
+			'([text="恭喜您签到成功"] +n [text="我知道了"])',
+			],
           resetMatch: 'match',
           activityIds: 'com.bankcomm.module.biz.webcontainer.BCMHtml5Activity',
         },
@@ -505,7 +510,7 @@ export default defineGkdApp({
     {
       key: 37,
       name: '浏览任务完成',
-      desc: '26806，添加新布局，添加权限弹窗，直播间ids',
+      desc: '260905，添加新布局，添加权限弹窗，直播间ids',
       rules: [
         {
           action: 'back',
@@ -514,8 +519,13 @@ export default defineGkdApp({
             'com.bankcomm.module.biz.bcmvideo.BCMVerticalVideoActivity',
             'com.bankcomm.module.biz.webcontainer.BCMHtml5Activity',
           ],
-          matches:
-            '([id="android:id/message"][text*="权限"] <<n * + [id="android:id/buttonPanel"] [id="android:id/button2"][text="否"] + [id="android:id/button1"][text="是"]) || ([text="Pyi3KQBzgJA1F+Xm7MrWYA0HQqTcq4GrAAAAAASUVORK5CYII="]) || ([text="countdown-fulfilled-bg.f65a2ea"]) || (View > Image[clickable=false][text="gthEFTB6uRQ36UPWtwD"]) || (WebView > @View[clickable=false][visibleToUser=true] > Image[text="gthEFTB6uRQ36UPWtwD"])',
+          matches:[
+            '([id="android:id/message"][text*="权限"] <<n * + [id="android:id/buttonPanel"] [id="android:id/button2"][text="否"] + [id="android:id/button1"][text="是"])',
+			'([text="Pyi3KQBzgJA1F+Xm7MrWYA0HQqTcq4GrAAAAAASUVORK5CYII="])',
+			'View > Image[text="countdown-fulfilled-bg.f65a2ea"]'
+			'(View > Image[clickable=false][text="gthEFTB6uRQ36UPWtwD"])',
+			'(WebView > @View[clickable=false][visibleToUser=true] > Image[text="gthEFTB6uRQ36UPWtwD"])',
+			],
         },
       ],
     },

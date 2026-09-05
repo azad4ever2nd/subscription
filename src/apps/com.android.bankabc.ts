@@ -21,11 +21,13 @@ export default defineGkdApp({
     {
       key: 2,
       name: '允许获取位置信息，取消',
-      desc: '260702',
+      desc: '260905',
       rules: [
         {
           resetMatch: 'match',
           fastQuery: true,
+		  matchTime:3000,
+		  forcedTime:3000,
           activityIds: 'com.android.bankabc.MainActivity',
           matches:
             '([vid="tv_title"][text*="位置"] +3 * [vid="tv_cancel"][text="取消"]) || (LinearLayout > TextView[vid="tv_title"][text="允许获取位置信息"] +n LinearLayout > TextView[vid="tv_cancel"][clickable=true][visibleToUser=true][text="取消"])',

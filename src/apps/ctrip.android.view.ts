@@ -117,6 +117,18 @@ export default defineGkdApp({
     },
     {
       key: 9,
+      name: '弹窗，开启签到提醒，X掉 或 退出',
+      desc: '260905',
+      rules: [
+        {
+          resetMatch: 'match',
+          activityIds: 'ctrip.android.view.h5v2.view.H5Container',
+          matches: 'WebView[text="携程会员签到"] > View > View > View > @Image[clickable=true][visibleToUser=true] + Image[text="头图"] + View > TextView[text="继续退出"][clickable=true][visibleToUser=true] + TextView[text="提醒我"]',
+        },
+      ],
+    },
+    {
+      key: 10,
       name: '发现一波红包，一键领取，X掉',
       desc: '260525',
       rules: [
