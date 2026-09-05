@@ -244,7 +244,7 @@ export default defineGkdApp({
     {
       key: 14,
       name: '任务完成，返回领奖',
-      desc: '260905，没有clickable=true定位，添加返回，',
+      desc: '260905，fastQuery=false,clickable=true，添加返回，',
       rules: [
         {
           action: 'clickCenter',
@@ -257,6 +257,8 @@ export default defineGkdApp({
             'com.alipay.mobile.nebulax.xriver.activity.XRiverActivity',
             'com.alipay.mobile.nebulax.xriver.activity.XRiverActivity$App01',
             'com.alipay.mobile.nebulax.xriver.activity.XRiverActivity$App02',
+            'com.alipay.mobile.nebulax.xriver.activity.XRiverActivity$App03',
+            'com.alipay.mobile.nebulax.xriver.activity.XRiverActivity$App04',
           ],
         },
       ],
@@ -360,6 +362,8 @@ export default defineGkdApp({
           activityIds: [
             'com.alipay.mobile.nebulax.xriver.activity.XRiverActivity$App01',
             'com.alipay.mobile.nebulax.xriver.activity.XRiverActivity$App02',
+            'com.alipay.mobile.nebulax.xriver.activity.XRiverActivity$App03',
+            'com.alipay.mobile.nebulax.xriver.activity.XRiverActivity$App04',
           ],
           matches: '[text="75元"] + [text="游览券"] +2 TextView',
         },
@@ -375,6 +379,8 @@ export default defineGkdApp({
           activityIds: [
             'com.alipay.mobile.nebulax.xriver.activity.XRiverActivity$App01',
             'com.alipay.mobile.nebulax.xriver.activity.XRiverActivity$App02',
+            'com.alipay.mobile.nebulax.xriver.activity.XRiverActivity$App03',
+            'com.alipay.mobile.nebulax.xriver.activity.XRiverActivity$App04',
           ],
           matches: '[text="50元"] + [text="游览券"] +2 TextView',
         },
@@ -558,16 +564,28 @@ export default defineGkdApp({
     {
       key: 35,
       name: '添加神券到首页，X掉',
-      desc: '260829，添加闪购小程序，没有fastquery，没有clickable=true，添加到首页，添加 生活缴费',
+      desc: '260905，添加闪购小程序，没有fastquery，没有clickable=true，添加到首页，添加 生活缴费',
       rules: [
         {
           resetMatch: 'match',
           activityIds: [
             'com.alipay.mobile.nebulax.xriver.activity.XRiverActivity$App01',
             'com.alipay.mobile.nebulax.xriver.activity.XRiverActivity$App02',
+            'com.alipay.mobile.nebulax.xriver.activity.XRiverActivity$App03',
+            'com.alipay.mobile.nebulax.xriver.activity.XRiverActivity$App04',
           ],
-          matches:
-            '(TextView[text="立即抽免单"][clickable=false][visibleToUser=true] < View < View + TextView[text.length=0][clickable=false][visibleToUser=true]) || (View > View > TextView[text="立即抽"][clickable=false][visibleToUser=true]) || (View > @TextView[text="领取签到奖励"][clickable=false][visibleToUser=true] + View > Image + TextView[text.length>0]) || (View > @Image[clickable=false][visibleToUser=true] +2 TextView[text="去处理"] + TextView[text="暂不处理"]) || (@TextView <n * + [text="取消"] + [text="立即添加"]) || (View > TextView[text*="添加" && text*="首页" && text*="红包"] +n TextView[text="取消"] + TextView[clickable=false][visibleToUser=true][text="添加到首页"]) || (@TextView[clickable=false][visibleToUser=true] <2 View + TextView[text="取消"] + TextView[text="立即添加"])',
+          matches:[
+            '(TextView[text="立即抽免单"][clickable=false][visibleToUser=true] < View < View + TextView[text.length=0][clickable=false][visibleToUser=true])',
+			'(View > View > TextView[text="立即抽"][clickable=false][visibleToUser=true])',
+			'(View > @TextView[text="领取签到奖励"][clickable=false][visibleToUser=true] + View > Image + TextView[text.length>0])',
+			'(View > @Image[clickable=false][visibleToUser=true] +2 TextView[text="去处理"] + TextView[text="暂不处理"])',
+			'(@TextView <n * + [text="取消"] + [text="立即添加"])',
+			'(View > TextView[text*="添加" && text*="首页" && text*="红包"] +n TextView[text="取消"] + TextView[clickable=false][visibleToUser=true][text="添加到首页"])',
+			'(@TextView[clickable=false][visibleToUser=true] <2 View + TextView[text="取消"] + TextView[text="立即添加"])',
+			'@TextView[clickable=false][visibleToUser=true]  -  View > View > TextView[text="购物爆红包"] + TextView[text="今天23:59到期"]',
+			'[text^="完成"] <<n View + View > TextView[text="领取奖励"][clickable=false][visibleToUser=true]',
+			'TextView[text="开心收下"] <<n View + TextView[text.length=0][clickable=false][visibleToUser=true]',
+			],
         },
       ],
     },
