@@ -669,7 +669,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 47
+      key: 47,
       name: '自选，删除',
       desc: '260905',
       rules: [
