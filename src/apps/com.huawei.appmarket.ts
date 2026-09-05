@@ -95,8 +95,10 @@ export default defineGkdApp({
         {
           resetMatch: 'match',
           fastQuery: true,
-          activityIds: 'com.huawei.appmarket.service.appmgr.view.activity.AppUnInstallActivity',
-          matches: 'LinearLayout > LinearLayout > CheckBox[text="从所有帐号下卸载"][checked=false][clickable=true][visibleToUser=true]',
+          activityIds:
+            'com.huawei.appmarket.service.appmgr.view.activity.AppUnInstallActivity',
+          matches:
+            'LinearLayout > LinearLayout > CheckBox[text="从所有帐号下卸载"][checked=false][clickable=true][visibleToUser=true]',
         },
       ],
     },
@@ -108,8 +110,10 @@ export default defineGkdApp({
         {
           resetMatch: 'match',
           fastQuery: true,
-          activityIds: 'com.huawei.appmarket.service.appmgr.view.activity.AppUnInstallActivity',
-          matches: 'CheckBox[text="从所有帐号下卸载"][checked=true][clickable=true][visibleToUser=true] <<n FrameLayout + LinearLayout > LinearLayout > Button[text="卸载"][clickable=true][visibleToUser=true]',
+          activityIds:
+            'com.huawei.appmarket.service.appmgr.view.activity.AppUnInstallActivity',
+          matches:
+            'CheckBox[text="从所有帐号下卸载"][checked=true][clickable=true][visibleToUser=true] <<n FrameLayout + LinearLayout > LinearLayout > Button[text="卸载"][clickable=true][visibleToUser=true]',
         },
       ],
     },

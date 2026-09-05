@@ -247,7 +247,8 @@ export default defineGkdApp({
           forcedTime: 3000,
           resetMatch: 'match',
           activityIds: 'com.citiccard.mobilebank.web.webpage.CommonWebPage',
-          matches: 'View > TextView[text="当前不在抢兑时间内"] + TextView[text="我知道了"][clickable=true][visibleToUser=true]',
+          matches:
+            'View > TextView[text="当前不在抢兑时间内"] + TextView[text="我知道了"][clickable=true][visibleToUser=true]',
         },
       ],
     },

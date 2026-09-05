@@ -94,12 +94,15 @@ export default defineGkdApp({
       rules: [
         {
           resetMatch: 'match',
-		  matchTime:3000,
-		  forcedTime:3000,
-		  actionMaximum:1,
-		  excludeMatches:'View > View[text^="选择账户"][clickable=true][visibleToUser=true]',
-          activityIds: 'cn.com.spdb.mobilebank.per.activity.web.stage.StageCommonWebActivity',
-          matches: 'View > View > TextView[text="活动奖励发放"] + @View[clickable=true][visibleToUser=true] > TextView[text="更换"]',
+          matchTime: 3000,
+          forcedTime: 3000,
+          actionMaximum: 1,
+          excludeMatches:
+            'View > View[text^="选择账户"][clickable=true][visibleToUser=true]',
+          activityIds:
+            'cn.com.spdb.mobilebank.per.activity.web.stage.StageCommonWebActivity',
+          matches:
+            'View > View > TextView[text="活动奖励发放"] + @View[clickable=true][visibleToUser=true] > TextView[text="更换"]',
         },
       ],
     },
@@ -110,9 +113,11 @@ export default defineGkdApp({
       rules: [
         {
           resetMatch: 'match',
-		  actionDelay:3000,
-          activityIds: 'cn.com.spdb.mobilebank.per.activity.web.stage.StageCommonWebActivity',
-          matches: 'TextView[text="交易确认"] <<n View + View > View > Button[text="取消"] + Button[text="确定"][clickable=true][visibleToUser=true]',
+          actionDelay: 3000,
+          activityIds:
+            'cn.com.spdb.mobilebank.per.activity.web.stage.StageCommonWebActivity',
+          matches:
+            'TextView[text="交易确认"] <<n View + View > View > Button[text="取消"] + Button[text="确定"][clickable=true][visibleToUser=true]',
         },
       ],
     },

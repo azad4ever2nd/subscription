@@ -117,14 +117,14 @@ export default defineGkdApp({
       desc: '260905 添加 兑换确认 原([text^="您已完成"] <<3 * + TextView) || ([text^="您已完成"] < * - [text^="+"] <<n View + TextView) || ([text^="微信立减金将在5个工作日内发放"] + TextView) || ([text="恭喜获得"] +n [text="产品涨跌情况将在财富日历中展示~"] +n TextView[clickable=true][index=parent.childCount.minus(1)])',
       rules: [
         {
-          matches:[
+          matches: [
             '([text$="金币"] < View +2 TextView[clickable=true])',
-			'([text^="您已完成" && text$="任务"] < * + TextView[clickable=true])',
-			'(View > @TextView - View > TextView[text^="您已完成" && text$="任务"])',
-			'(View > @TextView[clickable=false][visibleToUser=true] + TextView[text="可在【金币明细】查看"])',
-			'(View > TextView[text="10金币"] + TextView[text="1次抽奖机会"] + TextView + TextView[clickable=false][visibleToUser=true])',
-			'@TextView[clickable=true][visibleToUser=true] < View + View > View > TextView[text="很遗憾，您未中奖"] +n TextView[text="谢谢参与"]',
-			],
+            '([text^="您已完成" && text$="任务"] < * + TextView[clickable=true])',
+            '(View > @TextView - View > TextView[text^="您已完成" && text$="任务"])',
+            '(View > @TextView[clickable=false][visibleToUser=true] + TextView[text="可在【金币明细】查看"])',
+            '(View > TextView[text="10金币"] + TextView[text="1次抽奖机会"] + TextView + TextView[clickable=false][visibleToUser=true])',
+            '@TextView[clickable=true][visibleToUser=true] < View + View > View > TextView[text="很遗憾，您未中奖"] +n TextView[text="谢谢参与"]',
+          ],
           action: 'clickCenter',
           resetMatch: 'match',
           activityIds:
@@ -675,10 +675,12 @@ export default defineGkdApp({
       rules: [
         {
           resetMatch: 'match',
-		  actionCd:2000,
+          actionCd: 2000,
           activityIds: 'com.cebbank.mobile.cemb.ui.activity.WebActivity',
-		  excludeMatches:'LinearLayout[vid="ll_button_mid"] > View + TextView[text="确定"][vid="dialog_btn_mid"][clickable=true][visibleToUser=true]',
-          matches: 'View > View > Image[text="deletesel"][clickable=false][visibleToUser=true]',
+          excludeMatches:
+            'LinearLayout[vid="ll_button_mid"] > View + TextView[text="确定"][vid="dialog_btn_mid"][clickable=true][visibleToUser=true]',
+          matches:
+            'View > View > Image[text="deletesel"][clickable=false][visibleToUser=true]',
         },
       ],
     },
@@ -690,9 +692,10 @@ export default defineGkdApp({
         {
           resetMatch: 'match',
           fastQuery: true,
-		  action:'clickCenter',
+          action: 'clickCenter',
           activityIds: 'com.cebbank.mobile.cemb.ui.activity.WebActivity',
-          matches: 'LinearLayout[vid="ll_button_mid"] > View + TextView[text="确定"][vid="dialog_btn_mid"][clickable=true][visibleToUser=true]',
+          matches:
+            'LinearLayout[vid="ll_button_mid"] > View + TextView[text="确定"][vid="dialog_btn_mid"][clickable=true][visibleToUser=true]',
         },
       ],
     },
