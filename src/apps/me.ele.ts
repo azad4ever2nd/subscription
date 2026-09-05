@@ -36,12 +36,12 @@ export default defineGkdApp({
     {
       key: 3,
       name: '弹窗，天降红包，X掉',
-      desc: '260904,fastquery=false,',
+      desc: '260905,fastquery=false,clickable=true',
       rules: [
         {
           activityIds: 'me.ele.application.ui.Launcher.LauncherActivity',
-          matchTime: 2000,
-          forcedTime: 2000,
+          matchTime: 3000,
+          forcedTime: 3000,
           matches: [
             'ViewGroup[vid="id_magex_mist_view"] > ViewGroup > ViewGroup > ImageView[clickable=true][visibleToUser=true]',
             'ViewGroup[vid="id_magex_mist_view"] > ViewGroup > ImageView[clickable=true][visibleToUser=true]',

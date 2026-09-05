@@ -239,6 +239,20 @@ export default defineGkdApp({
     },
     {
       key: 18,
+      name: '弹窗，不在抢兑时间，我知道了',
+      desc: '260905',
+      rules: [
+        {
+          matchTime: 3000,
+          forcedTime: 3000,
+          resetMatch: 'match',
+          activityIds: 'com.citiccard.mobilebank.web.webpage.CommonWebPage',
+          matches: 'View > TextView[text="当前不在抢兑时间内"] + TextView[text="我知道了"][clickable=true][visibleToUser=true]',
+        },
+      ],
+    },
+    {
+      key: 19,
       name: '系统检测到VPN，继续使用',
       desc: '260704',
       rules: [
@@ -254,7 +268,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 19,
+      key: 20,
       name: '首页弹窗广告',
       desc: '260808，延长等待时间，取消matchTime，添加分期弹窗',
       rules: [

@@ -153,10 +153,22 @@ export default defineGkdApp({
         {
           resetMatch: 'match',
           fastQuery: true,
-          matchTime: 1000,
+          matchTime: 3000,
           activityIds: 'com.alipay.android.msp.ui.views.MspContainerActivity',
           matches:
             '([text="淘宝 推荐你"] <<n * +n @* > [text="关闭"]) || (@[text="关闭"] <<n * +n * [text="同意协议并开通"]) || (@* > [text="关闭"] <<n * +n * [text="同意协议并开通"])',
+        },
+      ],
+    },
+    {
+      key: 12,
+      name: '弹窗，天降消费券',
+      desc: '260905',
+      rules: [
+        {
+          resetMatch: 'match',
+          activityIds: 'com.taobao.android.tbabilitykit.pop.StdPopContainerActivity',
+          matches: 'View > View > Image[text="O1CN018F6Hlq1LXZWiBKDOs_!!6000000001309-2-tps-72-72.png_90x90q50.jpg_"][clickable=false][visibleToUser=true]',
         },
       ],
     },

@@ -18,13 +18,16 @@ export default defineGkdApp({
     {
       key: 2,
       name: '删除当前快照，确定',
-      desc: '260813',
+      desc: '260905',
       rules: [
         {
-          matches: ['[text="确定删除当前快照吗?"] +n @* > [text="确定"]'],
           resetMatch: 'match',
-          forcedTime: 2000,
-          actionCd: 0,
+          forcedTime: 5000,
+		  matchTime:5000,
+		  matches: [
+			'[text="确定删除当前快照吗?"] +n @* > [text="确定"]',
+			'[text="确定删除当前快照吗?"] +n @View[clickable=true][visibleToUser=true] > TextView[text="确定"]',
+			],
           activityIds: ['li.songe.gkd.MainActivity'],
         },
       ],

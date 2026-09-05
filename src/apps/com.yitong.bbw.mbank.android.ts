@@ -31,7 +31,7 @@ export default defineGkdApp({
           action: 'clickCenter',
           activityIds: 'com.yitong.mobile.biz.h5.container.WebViewActivity',
           matches:
-            'View > View > View > TextView[text*="请勿重复点击" || text="签到成功" || text^="已签到"] + View > Button[id="msg_box_ok"][clickable=true][visibleToUser=true][text="确定"]',
+            'View > View > View > TextView[text*="请稍后重试" || text*="请勿重复点击" || text="签到成功" || text^="已签到"] + View > Button[id="msg_box_ok"][clickable=true][visibleToUser=true][text="确定"]',
         },
       ],
     },
