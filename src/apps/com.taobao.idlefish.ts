@@ -57,8 +57,8 @@ export default defineGkdApp({
       rules: [
         {
           resetMatch: 'match',
-		  matchTime:3000,
-		  forcedTime:3000,
+          matchTime: 3000,
+          forcedTime: 3000,
           activityIds:
             'com.idlefish.flutterbridge.flutterboost.boost.FishFlutterBoostTransparencyActivity',
           matches:
