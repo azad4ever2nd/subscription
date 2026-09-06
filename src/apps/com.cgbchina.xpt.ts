@@ -78,13 +78,13 @@ export default defineGkdApp({
     {
       key: 6,
       name: '签到页面，去抽奖',
-      desc: '260710',
+      desc: '260906',
       rules: [
         {
           resetMatch: 'match',
           activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
           matches:
-            '(View[text="1"] < View < View - View > @Image[clickable=true][visibleToUser=true][text.length=0] + View[text^="已连续签到"]) || (View[text="1"] < View < View +(6,10) View > View > Image[clickable=true][visibleToUser=true][text="20260629113116910808676207755"])',
+            '(View[text="1"] < View < View - View > @Image[clickable=true][visibleToUser=true][text.length=0] + View[text^="已连续签到"]) || (View[text="1"] < View < View +(6,10) View > View > Image[clickable=true][visibleToUser=true][text="20260629113116910808676207755"]) || (View[text="1"] < View < View - View > View[text="提醒我签到"] +3 Image[clickable=true][visibleToUser=true])',
         },
       ],
     },

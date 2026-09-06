@@ -53,10 +53,12 @@ export default defineGkdApp({
     {
       key: 4,
       name: '开启系统通知',
-      desc: '260815，添加 桌面小组件',
+      desc: '260906，添加 桌面小组件',
       rules: [
         {
           resetMatch: 'match',
+		  matchTime:3000,
+		  forcedTime:3000,
           activityIds:
             'com.idlefish.flutterbridge.flutterboost.boost.FishFlutterBoostTransparencyActivity',
           matches:

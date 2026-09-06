@@ -30,7 +30,7 @@ export default defineGkdApp({
             '(View > View > TextView[text="权益领取中，请稍后"]) || (View > View >  TextView[text="权益领取成功"] +2 Button[text="我知道了"][clickable=true][visibleToUser=true])',
           ],
           matches: [
-            '( @[text="继续访问"] +n * > [desc="申请恢复访问"]) || (@[text="批量上传"] + [text*="知道了"]) || ([text="操作提示"] + [text="上传成功，是否继续上传？"] + * > [text="取消"]) || (View > TextView[text^="微信红包" && text$="元"] +n View > Button[text="立即领取"][clickable=true][visibleToUser=true])',
+            '(@[text="继续访问"] +n * > [desc="申请恢复访问"]) || (@[text="批量上传"] + [text*="知道了"]) || ([text="操作提示"] + [text="上传成功，是否继续上传？"] + * > [text="取消"]) || (View > TextView[text^="微信红包" && text$="元"] +n View > Button[text="立即领取"][clickable=true][visibleToUser=true])',
           ],
         },
       ],
@@ -1251,7 +1251,7 @@ export default defineGkdApp({
     {
       key: 62,
       name: '活动未开始，我知道了',
-      desc: '260905，添加 动卡空间，内蒙工行，贵阳工行，工行余姚，湘约工行，贵州工行，已参加过',
+      desc: '260906，添加 动卡空间，内蒙工行，贵阳工行，工行余姚，湘约工行，贵州工行，已参加过',
       rules: [
         {
           resetMatch: 'match',
@@ -1269,7 +1269,7 @@ export default defineGkdApp({
             'com.tencent.mm.plugin.appbrand.ui.AppBrandUI04',
           ],
           matches: [
-            '(View > TextView[text="该商品已售罄"] + TextView[text="我知道了"][clickable=true][visibleToUser=true]) || (View > View > @TextView[clickable=true][visibleToUser=true] - View > View >   Image[text="66c29cff8e9f4a2aaf3f1b67b944daac"]) || (View > TextView[text^="活动未开始" || text^="已参加过本次活动"] + View > View > Image[clickable=true][visibleToUser=true]) || (WebView[text^="湘约工行"] > View > View > View > View > @TextView[clickable=true][visibleToUser=true] - View > View > TextView[text="目前活动权益已领完"]) || (WebView > View > View > View > View > @TextView[clickable=true][visibleToUser=true] - View > TextView[text="立即前往"]) || (View > TextView[text="Blocked by Sentinel"] + View + TextView[clickable=true][visibleToUser=true]) || (View > View > TextView[text^="奖品已领完"] + TextView[text="确定"][clickable=true][visibleToUser=true]) || (View > View > TextView[text="活动9:00开始"] + TextView[text="确定"][clickable=true][visibleToUser=true]) || (View >  View > View > TextView[text="来晚了，奖励派完了"] + View + TextView[clickable=true][visibleToUser=true]) || (TextView[text^="今日名额已尽" || text="今日名额已尽，明日九点开放。"] < View + View + TextView[clickable=true][visibleToUser=true])',
+            '(View > View > TextView[text^="来晚啦"] + View + TextView[clickable=true][visibleToUser=true]) || (View > TextView[text="该商品已售罄"] + TextView[text="我知道了"][clickable=true][visibleToUser=true]) || (View > View > @TextView[clickable=true][visibleToUser=true] - View > View >   Image[text="66c29cff8e9f4a2aaf3f1b67b944daac"]) || (View > TextView[text^="活动未开始" || text^="已参加过本次活动"] + View > View > Image[clickable=true][visibleToUser=true]) || (WebView[text^="湘约工行"] > View > View > View > View > @TextView[clickable=true][visibleToUser=true] - View > View > TextView[text="目前活动权益已领完"]) || (WebView > View > View > View > View > @TextView[clickable=true][visibleToUser=true] - View > TextView[text="立即前往"]) || (View > TextView[text="Blocked by Sentinel"] + View + TextView[clickable=true][visibleToUser=true]) || (View > View > TextView[text^="奖品已领完"] + TextView[text="确定"][clickable=true][visibleToUser=true]) || (View > View > TextView[text="活动9:00开始"] + TextView[text="确定"][clickable=true][visibleToUser=true]) || (View >  View > View > TextView[text="来晚了，奖励派完了"] + View + TextView[clickable=true][visibleToUser=true]) || (TextView[text^="今日名额已尽" || text="今日名额已尽，明日九点开放。"] < View + View + TextView[clickable=true][visibleToUser=true])',
           ],
         },
       ],

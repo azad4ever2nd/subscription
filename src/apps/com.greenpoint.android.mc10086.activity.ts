@@ -36,7 +36,7 @@ export default defineGkdApp({
     {
       key: 3,
       name: '弹窗',
-      desc: '260904,fastQuery=true,clickable=true',
+      desc: '260904,fastQuery=true,clickable=true，添加 周三活动',
       rules: [
         {
           resetMatch: 'match',
@@ -45,7 +45,7 @@ export default defineGkdApp({
           fastQuery: true,
           forcedTime: 2000,
           matches: [
-            '([vid="close_btn"][desc="关闭"]) || (ViewGroup[vid="cl_pop"] > ImageView[vid="img_close"][clickable=true][visibleToUser=true]) || (ImageView[vid="ad_image"][desc="广告"] <n RelativeLayout + ImageView[vid="close_btn"][desc="关闭"][clickable=true][visibleToUser=true]) || (LinearLayout > @ImageView[vid="close_btn"][desc="关闭"][clickable=true][visibleToUser=true] - RelativeLayout > ImageView[vid="ad_image"][desc="广告"])',
+            '(LinearLayout > @ImageView[vid="close_btn"][desc="关闭"][clickable=true][visibleToUser=true] - RelativeLayout > ImageView[vid="ad_image"][desc="广告bak"]) || (ViewGroup[vid="cl_pop"] > ImageView[vid="img_close"][clickable=true][visibleToUser=true]) || (ImageView[vid="ad_image"][desc="广告"] <n RelativeLayout + ImageView[vid="close_btn"][desc="关闭"][clickable=true][visibleToUser=true])',
           ],
           activityIds: ['com.mc10086.cmcc.view.tabs.AppTabFragment'],
         },
@@ -54,7 +54,7 @@ export default defineGkdApp({
     {
       key: 4,
       name: '周三活动，弹窗',
-      desc: '260621',
+      desc: 'D,260621',
       rules: [
         {
           resetMatch: 'match',
