@@ -616,7 +616,7 @@ export default defineGkdApp({
             'com.alipay.mobile.nebulax.xriver.activity.XRiverActivity',
             'com.alipay.mobile.nebulax.xriver.activity.XRiverActivity$App01',
             'com.alipay.mobile.nebulax.xriver.activity.XRiverActivity$App02',
-			'com.alipay.mobile.beehive.cityselect.ui.SelectCityActivity_',
+            'com.alipay.mobile.beehive.cityselect.ui.SelectCityActivity_',
           ],
           matches:
             '(@[id="com.alipay.mobile.antui:id/btn_close"][desc="取消"] + [id="com.alipay.mobile.antui:id/title_txt_1" || id="com.alipay.mobile.antui:id/title_txt_2"][text*="地理位置" || text="支付宝本地服务"]) || (@[id="com.alipay.mobile.antui:id/btn_close"][desc="取消"] + [id="com.alipay.mobile.antui:id/title_txt_1"][text*="地理位置" || text="支付宝本地服务"])',

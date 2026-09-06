@@ -298,12 +298,12 @@ export default defineGkdApp({
       rules: [
         {
           anyMatches: [
-			'(TextView[text^="浏览" || text^="访问" || text^="查看"] +2 TextView[text="去完成"][clickable=true][visibleToUser=true])',
-			'(TextView[text^="浏览" || text^="访问" || text^="查看"][text*="超过" && text$="秒"] +2 TextView[text="去完成"][clickable=true][visibleToUser=true])',
-			'(TextView[text^="浏览" || text^="访问" || text^="查看"][text*="超过" && text$="秒"] +2 TextView[text="去完成"][clickable=false][visibleToUser=true])',
-			'(TextView[text^="浏览" || text^="访问" || text^="查看"][text*="超过" && text$="秒"] <n View +2 TextView[text="去完成"][clickable=true][visibleToUser=true])',
-			'(TextView[text^="浏览" || text^="访问" || text^="查看"][text*="超过" && text$="秒"] <n View +2 TextView[text="去完成"][clickable=false][visibleToUser=true])',
-			'([text="恭喜您签到成功"] +n [text="我知道了"])',
+            '(TextView[text^="浏览" || text^="访问" || text^="查看"] +2 TextView[text="去完成"][clickable=true][visibleToUser=true])',
+            '(TextView[text^="浏览" || text^="访问" || text^="查看"][text*="超过" && text$="秒"] +2 TextView[text="去完成"][clickable=true][visibleToUser=true])',
+            '(TextView[text^="浏览" || text^="访问" || text^="查看"][text*="超过" && text$="秒"] +2 TextView[text="去完成"][clickable=false][visibleToUser=true])',
+            '(TextView[text^="浏览" || text^="访问" || text^="查看"][text*="超过" && text$="秒"] <n View +2 TextView[text="去完成"][clickable=true][visibleToUser=true])',
+            '(TextView[text^="浏览" || text^="访问" || text^="查看"][text*="超过" && text$="秒"] <n View +2 TextView[text="去完成"][clickable=false][visibleToUser=true])',
+            '([text="恭喜您签到成功"] +n [text="我知道了"])',
           ],
           resetMatch: 'match',
           activityIds: 'com.bankcomm.module.biz.webcontainer.BCMHtml5Activity',
