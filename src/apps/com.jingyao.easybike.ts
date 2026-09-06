@@ -70,15 +70,14 @@ export default defineGkdApp({
     {
       key: 5,
       name: '哈啰还不知道您在哪里',
-      desc: '260904，添加 消息通知',
+      desc: '260906，添加 消息通知',
       rules: [
         {
           resetMatch: 'match',
           fastQuery: true,
           activityIds: 'com.hellobike.atlas.business.portal.PortalActivity',
           matches: [
-            '[vid="title_tv"][text="哈啰还不知道您在哪里"] +2 @[vid="sign_out_tv"][text="暂不开启"] + [vid="agreement_tv"][text="快速开启定位"]',
-            'TextView[text="开启消息通知"] < FrameLayout +n FrameLayout > LinearLayout > Button[text="取消"][clickable=true][visibleToUser=true]',
+            '([vid="title_tv"][text="哈啰还不知道您在哪里"] +2 @[vid="sign_out_tv"][text="暂不开启"] + [vid="agreement_tv"][text="快速开启定位"]) || (TextView[text="开启消息通知"] < FrameLayout +n FrameLayout > LinearLayout > Button[text="取消"][clickable=true][visibleToUser=true])',
           ],
         },
       ],

@@ -118,12 +118,7 @@ export default defineGkdApp({
       rules: [
         {
           matches: [
-            '([text$="金币"] < View +2 TextView[clickable=true])',
-            '([text^="您已完成" && text$="任务"] < * + TextView[clickable=true])',
-            '(View > @TextView - View > TextView[text^="您已完成" && text$="任务"])',
-            '(View > @TextView[clickable=false][visibleToUser=true] + TextView[text="可在【金币明细】查看"])',
-            '(View > TextView[text="10金币"] + TextView[text="1次抽奖机会"] + TextView + TextView[clickable=false][visibleToUser=true])',
-            '@TextView[clickable=true][visibleToUser=true] < View + View > View > TextView[text="很遗憾，您未中奖"] +n TextView[text="谢谢参与"]',
+            '([text$="金币"] < View +2 TextView[clickable=true]) || ([text^="您已完成" && text$="任务"] < * + TextView[clickable=true]) || (View > @TextView - View > TextView[text^="您已完成" && text$="任务"]) || (View > @TextView[clickable=false][visibleToUser=true] + TextView[text="可在【金币明细】查看"]) || (View > TextView[text="10金币"] + TextView[text="1次抽奖机会"] + TextView + TextView[clickable=false][visibleToUser=true]) || (@TextView[clickable=true][visibleToUser=true] < View + View > View > TextView[text="很遗憾，您未中奖"] +n TextView[text="谢谢参与"])',
           ],
           action: 'clickCenter',
           resetMatch: 'match',

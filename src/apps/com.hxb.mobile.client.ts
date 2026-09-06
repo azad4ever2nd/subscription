@@ -114,8 +114,7 @@ export default defineGkdApp({
           resetMatch: 'match',
           activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
           matches: [
-            '(WebView[text="签到赢立减金"] > View > View > View > Image + View[clickable=true][visibleToUser=true])',
-            '(WebView[text="签到赢立减金"] > View > View > View >  View > @View[clickable=true][visibleToUser=true]  - View > View[text*="恭喜你完成产品浏览" || text*="微信红包"])',
+            '(WebView[text="签到赢立减金"] > View > View > View > Image + View[clickable=true][visibleToUser=true]) || (WebView[text="签到赢立减金"] > View > View > View >  View > @View[clickable=true][visibleToUser=true]  - View > View[text*="恭喜你完成产品浏览" || text*="微信红包"])',
           ],
         },
       ],

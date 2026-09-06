@@ -107,8 +107,7 @@ export default defineGkdApp({
             'com.cmvideo.capability.remote_web.WebProcessActivity',
           ],
           matches: [
-            'View > TextView[text="获取验证码"][clickable=false][visibleToUser=true]',
-            'View[id="verfyDiv"] > @View[id="smsBtn"][clickable=true][desc="获取验证码"] > TextView[text="获取验证码"]',
+            '(View > TextView[text="获取验证码"][clickable=false][visibleToUser=true]) || (View[id="verfyDiv"] > @View[id="smsBtn"][clickable=true][desc="获取验证码"] > TextView[text="获取验证码"])',
           ],
         },
       ],

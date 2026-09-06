@@ -41,9 +41,7 @@ export default defineGkdApp({
           actionCd: 0,
           activityIds: 'com.jd.lib.ttt.page.TTTMultiPageActivity',
           matches: [
-            '(View > TextView[text*="蛋" && text*="15"] +3  TextView[clickable=true][text="领券抢"])',
-            '(TextView[text^="券后¥"] - TextView[text*="蛋"] - TextView < View + TextView[text="领券抢"][clickable=true])',
-            '@TextView[text="领券抢"][clickable=true][visibleToUser=true] - View > TextView[text="15枚鲜蛋"] + TextView[text^="券后"]',
+            '(View > TextView[text*="蛋" && text*="15"] +3  TextView[clickable=true][text="领券抢"]) || (TextView[text^="券后¥"] - TextView[text*="蛋"] - TextView < View + TextView[text="领券抢"][clickable=true]) || (@TextView[text="领券抢"][clickable=true][visibleToUser=true] - View > TextView[text="15枚鲜蛋"] + TextView[text^="券后"])',
           ],
         },
       ],
@@ -58,9 +56,7 @@ export default defineGkdApp({
           actionCd: 0,
           activityIds: 'com.jd.lib.ttt.page.TTTMultiPageActivity',
           matches: [
-            '(View > TextView[text*="纸" && text*="12"] +3  TextView[clickable=true][text="领券抢"])',
-            '(TextView[text^="券后¥"] - TextView[text*="卷纸"] - TextView < View + TextView[text="领券抢"][clickable=true])',
-            '@TextView[text="领券抢"][clickable=true][visibleToUser=true] - View > TextView[text="12卷纸"] + TextView[text^="券后"]',
+            '(View > TextView[text*="纸" && text*="12"] +3  TextView[clickable=true][text="领券抢"]) || (TextView[text^="券后¥"] - TextView[text*="卷纸"] - TextView < View + TextView[text="领券抢"][clickable=true]) || (@TextView[text="领券抢"][clickable=true][visibleToUser=true] - View > TextView[text="12卷纸"] + TextView[text^="券后"])',
           ],
         },
       ],
@@ -129,8 +125,7 @@ export default defineGkdApp({
       rules: [
         {
           matches: [
-            '([vid="bv"][text*="定位"] +n * > [vid="br"][text="取消"])',
-            'View > View > View > @View[clickable=true][visibleToUser=true] > Image[text="关闭"]',
+            '([vid="bv"][text*="定位"] +n * > [vid="br"][text="取消"]) || (View > View > View > @View[clickable=true][visibleToUser=true] > Image[text="关闭"])',
           ],
           resetMatch: 'match',
           activityIds: ['com.jingdong.app.mall.WebActivity'],

@@ -176,10 +176,7 @@ export default defineGkdApp({
           forcedTime: 5000,
           action: 'clickCenter',
           matches: [
-            'View > View > @View[clickable=true][visibleToUser=true] > TextView[text="我要抽奖"]',
-            'WebView >n View > Button[text="去加自选" || text="去添加" || text="加自选"][clickable=true][visibleToUser=true]',
-            'WebView > View > View > View > View > Button[text="加自选"][clickable=true][visibleToUser=true]',
-            'WebView > View >  View >  View > Button[text="加自选"][clickable=true][visibleToUser=true]',
+            '(View > View > @View[clickable=true][visibleToUser=true] > TextView[text="我要抽奖"]) || (WebView >n View > Button[text="去加自选" || text="去添加" || text="加自选"][clickable=true][visibleToUser=true]) || (WebView > View > View > View > View > Button[text="加自选"][clickable=true][visibleToUser=true]) || (WebView > View >  View >  View > Button[text="加自选"][clickable=true][visibleToUser=true])',
           ],
           activityIds:
             'cmb.pb.app.h5container.webviewcontainer.PBWebContainerActivity',
@@ -267,8 +264,7 @@ export default defineGkdApp({
           activityIds:
             'cmb.pb.app.h5container.webviewcontainer.PBWebContainerActivity',
           matches: [
-            'View > @TextView[clickable=false][visibleToUser=true] + TextView[text="同步到动态"]',
-            'WebView[text="讨论区"] >n View >  @TextView[clickable=true][visibleToUser=true] +  TextView[text="同步到动态"]',
+            '(View > @TextView[clickable=false][visibleToUser=true] + TextView[text="同步到动态"]) || (WebView[text="讨论区"] >n View >  @TextView[clickable=true][visibleToUser=true] +  TextView[text="同步到动态"])',
           ],
         },
       ],
@@ -324,10 +320,7 @@ export default defineGkdApp({
           activityIds:
             'cmb.pb.app.h5container.webviewcontainer.PBWebContainerActivity',
           matches: [
-            '(WebView >n View > Button[text="微信好友"][clickable=true][visibleToUser=true])',
-            '(WebView > View > View > View > View > View > Button[clickable=true][visibleToUser=true][text="微信好友"])',
-            '(WebView > View > View > View > View > View > View > Button[text="分享海报"] + Button[text="微信好友"][clickable=true][visibleToUser=true])',
-          ],
+            '(WebView >n View > Button[text="微信好友"][clickable=true][visibleToUser=true]) || (WebView > View > View > View > View > View > Button[clickable=true][visibleToUser=true][text="微信好友"]) || (WebView > View > View > View > View > View > View > Button[text="分享海报"] + Button[text="微信好友"][clickable=true][visibleToUser=true])',          ],
         },
       ],
     },

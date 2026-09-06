@@ -52,7 +52,6 @@ export default defineGkdApp({
           matches: [
             '[text*="位置"] <<n [id="android:id/contentPanel"] + [id="android:id/buttonPanel"] [id="android:id/button1"]',
           ],
-
           fastQuery: true,
           resetMatch: 'match',
           activityIds: ['io.dcloud.PandoraEntryActivity'],
