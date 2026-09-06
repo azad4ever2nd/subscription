@@ -320,7 +320,8 @@ export default defineGkdApp({
           activityIds:
             'cmb.pb.app.h5container.webviewcontainer.PBWebContainerActivity',
           matches: [
-            '(WebView >n View > Button[text="微信好友"][clickable=true][visibleToUser=true]) || (WebView > View > View > View > View > View > Button[clickable=true][visibleToUser=true][text="微信好友"]) || (WebView > View > View > View > View > View > View > Button[text="分享海报"] + Button[text="微信好友"][clickable=true][visibleToUser=true])',          ],
+            '(WebView >n View > Button[text="微信好友"][clickable=true][visibleToUser=true]) || (WebView > View > View > View > View > View > Button[clickable=true][visibleToUser=true][text="微信好友"]) || (WebView > View > View > View > View > View > View > Button[text="分享海报"] + Button[text="微信好友"][clickable=true][visibleToUser=true])',
+          ],
         },
       ],
     },
