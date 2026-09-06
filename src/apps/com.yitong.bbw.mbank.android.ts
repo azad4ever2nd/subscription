@@ -24,7 +24,7 @@ export default defineGkdApp({
     {
       key: 2,
       name: '签到成功，确定',
-      desc: '260813',
+      desc: '260905',
       rules: [
         {
           resetMatch: 'match',
