@@ -125,7 +125,7 @@ export default defineGkdApp({
     {
       key: 10,
       name: 'PDD半价助力，智能直达说明',
-      desc: '260703，',
+      desc: '260906，',
       rules: [
         {
           resetMatch: 'match',
@@ -133,7 +133,7 @@ export default defineGkdApp({
           action: 'clickCenter',
           activityIds: 'mark.via.Shell',
           matches:
-            '(Dialog[text="智能直达说明"] > View > Button[clickable=true][visibleToUser=true][text="开启高效体验"]) || (Dialog[text="智能直达说明"] > Button[clickable=true][visibleToUser=true][text="开启高效体验"])',
+            '(View > @View[desc^="立即进入"][clickable=true][visibleToUser=true] > TextView[text^="立即进入"]) || (Dialog[text="提交失败"] > View > Button[text="OK"][clickable=true][visibleToUser=true]) || (Dialog[text="站点公告"] > TextView[text="站点公告"] +n View > Button[text="我知道了"][clickable=true][visibleToUser=true]) || (Dialog[text="智能直达说明"] > View > Button[clickable=true][visibleToUser=true][text="开启高效体验"]) || (Dialog[text="智能直达说明"] > Button[clickable=true][visibleToUser=true][text="开启高效体验"])',
         },
       ],
     },

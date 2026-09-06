@@ -294,11 +294,16 @@ export default defineGkdApp({
     {
       key: 21,
       name: '能量签到完成',
-      desc: '260905，添加每周在线互动',
+      desc: '260906，多行规则改用anyMatches测试，添加每周在线互动',
       rules: [
         {
-          matches: [
-            '(TextView[text^="浏览" || text^="访问" || text^="查看"][text*="超过" && text$="秒"] +2 TextView[text="去完成"][clickable=false][visibleToUser=true]) || (TextView[text^="浏览" || text^="访问" || text^="查看"][text*="超过" && text$="秒"] <n View +2 TextView[text="去完成"][clickable=true][visibleToUser=true]) || ([text="恭喜您签到成功"] +n [text="我知道了"])',
+          anyMatches: [
+			'(TextView[text^="浏览" || text^="访问" || text^="查看"] +2 TextView[text="去完成"][clickable=true][visibleToUser=true])',
+			'(TextView[text^="浏览" || text^="访问" || text^="查看"][text*="超过" && text$="秒"] +2 TextView[text="去完成"][clickable=true][visibleToUser=true])',
+			'(TextView[text^="浏览" || text^="访问" || text^="查看"][text*="超过" && text$="秒"] +2 TextView[text="去完成"][clickable=false][visibleToUser=true])',
+			'(TextView[text^="浏览" || text^="访问" || text^="查看"][text*="超过" && text$="秒"] <n View +2 TextView[text="去完成"][clickable=true][visibleToUser=true])',
+			'(TextView[text^="浏览" || text^="访问" || text^="查看"][text*="超过" && text$="秒"] <n View +2 TextView[text="去完成"][clickable=false][visibleToUser=true])',
+			'([text="恭喜您签到成功"] +n [text="我知道了"])',
           ],
           resetMatch: 'match',
           activityIds: 'com.bankcomm.module.biz.webcontainer.BCMHtml5Activity',
