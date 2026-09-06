@@ -167,8 +167,10 @@ export default defineGkdApp({
       rules: [
         {
           resetMatch: 'match',
-          activityIds: 'com.taobao.android.tbabilitykit.pop.StdPopContainerActivity',
-          matches: 'View > View > Image[text="O1CN018F6Hlq1LXZWiBKDOs_!!6000000001309-2-tps-72-72.png_90x90q50.jpg_"][clickable=false][visibleToUser=true]',
+          activityIds:
+            'com.taobao.android.tbabilitykit.pop.StdPopContainerActivity',
+          matches:
+            'View > View > Image[text="O1CN018F6Hlq1LXZWiBKDOs_!!6000000001309-2-tps-72-72.png_90x90q50.jpg_"][clickable=false][visibleToUser=true]',
         },
       ],
     },

@@ -26,15 +26,15 @@ export default defineGkdApp({
         {
           resetMatch: 'match',
           activityIds: 'com.tencent.mm.plugin.webview.ui.tools.MMWebViewUI',
-		  excludeMatches:[
-		  'View > View > TextView[text="权益领取中，请稍后"]',
-		  'View > View >  TextView[text="权益领取成功"] +2 Button[text="我知道了"][clickable=true][visibleToUser=true]',
-		  ],
-          matches:[
+          excludeMatches: [
+            'View > View > TextView[text="权益领取中，请稍后"]',
+            'View > View >  TextView[text="权益领取成功"] +2 Button[text="我知道了"][clickable=true][visibleToUser=true]',
+          ],
+          matches: [
             '( @[text="继续访问"] +n * > [desc="申请恢复访问"]) || (@[text="批量上传"] + [text*="知道了"])',
-			'([text="操作提示"] + [text="上传成功，是否继续上传？"] + * > [text="取消"])',
-			'View > TextView[text^="微信红包" && text$="元"] +n View > Button[text="立即领取"][clickable=true][visibleToUser=true]',
-			],
+            '([text="操作提示"] + [text="上传成功，是否继续上传？"] + * > [text="取消"])',
+            'View > TextView[text^="微信红包" && text$="元"] +n View > Button[text="立即领取"][clickable=true][visibleToUser=true]',
+          ],
         },
       ],
     },
@@ -419,11 +419,11 @@ export default defineGkdApp({
             'com.tencent.mm.plugin.appbrand.ui.AppBrandUI03',
             'com.tencent.mm.plugin.appbrand.ui.AppBrandUI04',
           ],
-          matches:[
+          matches: [
             'View > TextView[text="抢购成功消耗1000积分"] + TextView[text="抢购不成功不消耗积分"] + TextView[text="立即抢购"]',
-			'WebView > View > View > TextView[text="抢购成功消耗1000积分"] + TextView[text="抢购不成功不消耗积分"] + TextView[text="立即抢购"]',
-			'WebView > View > View > TextView[text="抢购成功消耗1000积分"] + TextView[text="抢购不成功不消耗积分"] + TextView[text="立即抢购"][clickable=false][visibleToUser=true]',
-			],
+            'WebView > View > View > TextView[text="抢购成功消耗1000积分"] + TextView[text="抢购不成功不消耗积分"] + TextView[text="立即抢购"]',
+            'WebView > View > View > TextView[text="抢购成功消耗1000积分"] + TextView[text="抢购不成功不消耗积分"] + TextView[text="立即抢购"][clickable=false][visibleToUser=true]',
+          ],
         },
       ],
     },
@@ -436,11 +436,11 @@ export default defineGkdApp({
           resetMatch: 'match',
           actionCdKey: 4,
           order: -1,
-		  excludeMatches:[
-			'WebView > View > View > TextView[text="访问人数过多，请稍后再试"] + TextView[text="我知道了"]',
-			'View > View >  TextView[text="商品已被秒完"] + TextView[text="我知道了"]',
-			'WebView > View > View > TextView[text^="服务异常" || text="访问人数过多，请稍后再试"] + TextView[text="我知道了"]',
-			],
+          excludeMatches: [
+            'WebView > View > View > TextView[text="访问人数过多，请稍后再试"] + TextView[text="我知道了"]',
+            'View > View >  TextView[text="商品已被秒完"] + TextView[text="我知道了"]',
+            'WebView > View > View > TextView[text^="服务异常" || text="访问人数过多，请稍后再试"] + TextView[text="我知道了"]',
+          ],
           activityIds: [
             'com.tencent.mm.plugin.appbrand.ui.AppBrandUI0',
             'com.tencent.mm.plugin.appbrand.ui.AppBrandUI1',
@@ -453,10 +453,10 @@ export default defineGkdApp({
             'com.tencent.mm.plugin.appbrand.ui.AppBrandUI03',
             'com.tencent.mm.plugin.appbrand.ui.AppBrandUI04',
           ],
-          matches:[
+          matches: [
             'WebView > View > TextView[text="总计：¥0"] + TextView[text="确认支付"]',
-			'WebView > View > TextView[text="总计：¥0"] + TextView[text="确认支付"][clickable=false][visibleToUser=true]',
-			],
+            'WebView > View > TextView[text="总计：¥0"] + TextView[text="确认支付"][clickable=false][visibleToUser=true]',
+          ],
         },
       ],
     },
@@ -481,10 +481,10 @@ export default defineGkdApp({
             'com.tencent.mm.plugin.appbrand.ui.AppBrandUI03',
             'com.tencent.mm.plugin.appbrand.ui.AppBrandUI04',
           ],
-          matches:[
-			'WebView > View > View > TextView[text^="服务异常" || text="访问人数过多，请稍后再试"] + TextView[text="我知道了"]',
+          matches: [
+            'WebView > View > View > TextView[text^="服务异常" || text="访问人数过多，请稍后再试"] + TextView[text="我知道了"]',
             'WebView > View > View > TextView[text^="服务异常" || text="访问人数过多，请稍后再试"] + TextView[text="我知道了"][clickable=false][visibleToUser=true]',
-			],
+          ],
         },
       ],
     },
@@ -1278,18 +1278,18 @@ export default defineGkdApp({
             'com.tencent.mm.plugin.appbrand.ui.AppBrandUI03',
             'com.tencent.mm.plugin.appbrand.ui.AppBrandUI04',
           ],
-          matches:[
-			'View > TextView[text="该商品已售罄"] + TextView[text="我知道了"][clickable=true][visibleToUser=true]',
-			'View > View > @TextView[clickable=true][visibleToUser=true] - View > View >   Image[text="66c29cff8e9f4a2aaf3f1b67b944daac"]',
+          matches: [
+            'View > TextView[text="该商品已售罄"] + TextView[text="我知道了"][clickable=true][visibleToUser=true]',
+            'View > View > @TextView[clickable=true][visibleToUser=true] - View > View >   Image[text="66c29cff8e9f4a2aaf3f1b67b944daac"]',
             '(View > TextView[text^="活动未开始" || text^="已参加过本次活动"] + View > View > Image[clickable=true][visibleToUser=true])',
-			'(WebView[text^="湘约工行"] > View > View > View > View > @TextView[clickable=true][visibleToUser=true] - View > View > TextView[text="目前活动权益已领完"])',
-			'(WebView > View > View > View > View > @TextView[clickable=true][visibleToUser=true] - View > TextView[text="立即前往"])',
-			'(View > TextView[text="Blocked by Sentinel"] + View + TextView[clickable=true][visibleToUser=true])',
-			'View > View > TextView[text^="奖品已领完"] + TextView[text="确定"][clickable=true][visibleToUser=true]',
-			'View > View > TextView[text="活动9:00开始"] + TextView[text="确定"][clickable=true][visibleToUser=true]',
-			'View >  View > View > TextView[text="来晚了，奖励派完了"] + View + TextView[clickable=true][visibleToUser=true]',
-			'TextView[text^="今日名额已尽" || text="今日名额已尽，明日九点开放。"] < View + View + TextView[clickable=true][visibleToUser=true]',
-		],
+            '(WebView[text^="湘约工行"] > View > View > View > View > @TextView[clickable=true][visibleToUser=true] - View > View > TextView[text="目前活动权益已领完"])',
+            '(WebView > View > View > View > View > @TextView[clickable=true][visibleToUser=true] - View > TextView[text="立即前往"])',
+            '(View > TextView[text="Blocked by Sentinel"] + View + TextView[clickable=true][visibleToUser=true])',
+            'View > View > TextView[text^="奖品已领完"] + TextView[text="确定"][clickable=true][visibleToUser=true]',
+            'View > View > TextView[text="活动9:00开始"] + TextView[text="确定"][clickable=true][visibleToUser=true]',
+            'View >  View > View > TextView[text="来晚了，奖励派完了"] + View + TextView[clickable=true][visibleToUser=true]',
+            'TextView[text^="今日名额已尽" || text="今日名额已尽，明日九点开放。"] < View + View + TextView[clickable=true][visibleToUser=true]',
+          ],
         },
       ],
     },
@@ -1458,8 +1458,9 @@ export default defineGkdApp({
       rules: [
         {
           resetMatch: 'match',
-		  action:'back',
-          matches: 'View > View > TextView[text="商品已被秒完"] + TextView[text="我知道了"]',
+          action: 'back',
+          matches:
+            'View > View > TextView[text="商品已被秒完"] + TextView[text="我知道了"]',
           activityIds: [
             'com.tencent.mm.plugin.appbrand.ui.AppBrandUI0',
             'com.tencent.mm.plugin.appbrand.ui.AppBrandUI1',

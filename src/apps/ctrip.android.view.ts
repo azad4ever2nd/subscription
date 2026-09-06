@@ -123,7 +123,8 @@ export default defineGkdApp({
         {
           resetMatch: 'match',
           activityIds: 'ctrip.android.view.h5v2.view.H5Container',
-          matches: 'WebView[text="携程会员签到"] > View > View > View > @Image[clickable=true][visibleToUser=true] + Image[text="头图"] + View > TextView[text="继续退出"][clickable=true][visibleToUser=true] + TextView[text="提醒我"]',
+          matches:
+            'WebView[text="携程会员签到"] > View > View > View > @Image[clickable=true][visibleToUser=true] + Image[text="头图"] + View > TextView[text="继续退出"][clickable=true][visibleToUser=true] + TextView[text="提醒我"]',
         },
       ],
     },

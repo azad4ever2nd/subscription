@@ -109,7 +109,7 @@ export default defineGkdApp({
       rules: [
         {
           forcedTime: 3000,
-		  matchTime:3000,
+          matchTime: 3000,
           matches: [
             'ViewGroup > ImageView[vid="privilegeClose"][clickable=true][visibleToUser=true]',
           ],

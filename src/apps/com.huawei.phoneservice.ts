@@ -123,9 +123,9 @@ export default defineGkdApp({
         {
           matches: [
             '([text^="签到成功"] + [text="我知道了"])',
-			'([text="恭喜您获得经验值奖励"] +n * [text="我知道了"])',
-			'([text^="恭喜您获取经验值"] +2 @* >3 [text="我知道了"])',
-			'View > View > TextView[text="报名成功"] + View > View > TextView[text="我知道了"][clickable=true]',
+            '([text="恭喜您获得经验值奖励"] +n * [text="我知道了"])',
+            '([text^="恭喜您获取经验值"] +2 @* >3 [text="我知道了"])',
+            'View > View > TextView[text="报名成功"] + View > View > TextView[text="我知道了"][clickable=true]',
           ],
           resetMatch: 'match',
           actionCd: 500,

@@ -40,11 +40,11 @@ export default defineGkdApp({
           resetMatch: 'match',
           actionCd: 0,
           activityIds: 'com.jd.lib.ttt.page.TTTMultiPageActivity',
-          matches:[
+          matches: [
             '(View > TextView[text*="蛋" && text*="15"] +3  TextView[clickable=true][text="领券抢"])',
-			'(TextView[text^="券后¥"] - TextView[text*="蛋"] - TextView < View + TextView[text="领券抢"][clickable=true])',
-			'@TextView[text="领券抢"][clickable=true][visibleToUser=true] - View > TextView[text="15枚鲜蛋"] + TextView[text^="券后"]',
-			],
+            '(TextView[text^="券后¥"] - TextView[text*="蛋"] - TextView < View + TextView[text="领券抢"][clickable=true])',
+            '@TextView[text="领券抢"][clickable=true][visibleToUser=true] - View > TextView[text="15枚鲜蛋"] + TextView[text^="券后"]',
+          ],
         },
       ],
     },
@@ -57,11 +57,11 @@ export default defineGkdApp({
           resetMatch: 'match',
           actionCd: 0,
           activityIds: 'com.jd.lib.ttt.page.TTTMultiPageActivity',
-          matches:[
+          matches: [
             '(View > TextView[text*="纸" && text*="12"] +3  TextView[clickable=true][text="领券抢"])',
-			'(TextView[text^="券后¥"] - TextView[text*="卷纸"] - TextView < View + TextView[text="领券抢"][clickable=true])',
-			'@TextView[text="领券抢"][clickable=true][visibleToUser=true] - View > TextView[text="12卷纸"] + TextView[text^="券后"]',
-			],
+            '(TextView[text^="券后¥"] - TextView[text*="卷纸"] - TextView < View + TextView[text="领券抢"][clickable=true])',
+            '@TextView[text="领券抢"][clickable=true][visibleToUser=true] - View > TextView[text="12卷纸"] + TextView[text^="券后"]',
+          ],
         },
       ],
     },
