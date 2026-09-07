@@ -25,11 +25,13 @@ export default defineGkdApp({
       desc: '260907',
       rules: [
         {
-          matches: ['(Image -2 * > [text="提醒我抢购)"]) || (TextView[text="提醒我抢购"] < View + TextView[text^="设置提醒后"] + Image[clickable=true][visibleToUser=true])'],
+          matches: [
+            '(Image -2 * > [text="提醒我抢购)"]) || (TextView[text="提醒我抢购"] < View + TextView[text^="设置提醒后"] + Image[clickable=true][visibleToUser=true])',
+          ],
           resetMatch: 'match',
-		  forcedTime:2000,
-		  matchTime:2000,
-		  action: 'clickCenter',
+          forcedTime: 2000,
+          matchTime: 2000,
+          action: 'clickCenter',
           activityIds: ['com.jd.lib.ttt.page.TTTMultiPageActivity'],
         },
       ],

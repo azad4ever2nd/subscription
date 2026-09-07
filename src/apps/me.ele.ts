@@ -42,7 +42,8 @@ export default defineGkdApp({
           activityIds: 'me.ele.application.ui.Launcher.LauncherActivity',
           matchTime: 3000,
           forcedTime: 3000,
-		  excludeMatches:'(ViewGroup[vid="id_magex_mist_view"] > ViewGroup > ImageView[clickable=true][visibleToUser=true] + TextView[text.length=11])',
+          excludeMatches:
+            '(ViewGroup[vid="id_magex_mist_view"] > ViewGroup > ImageView[clickable=true][visibleToUser=true] + TextView[text.length=11])',
           matches: [
             '(ViewGroup[vid="id_magex_mist_view"] > ViewGroup > ViewGroup > ImageView[clickable=true][visibleToUser=true]) || (ViewGroup[vid="id_magex_mist_view"] > ViewGroup > ImageView[clickable=true][visibleToUser=true])',
           ],

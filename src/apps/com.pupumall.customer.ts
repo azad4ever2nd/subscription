@@ -54,7 +54,8 @@ export default defineGkdApp({
         {
           resetMatch: 'match',
           activityIds: 'com.pupumall.customer.activity.SplashActivity',
-          matches: 'ViewGroup[childCount=2] + ViewGroup[clickable=true][visibleToUser=true] > TextView[text.length=1]',
+          matches:
+            'ViewGroup[childCount=2] + ViewGroup[clickable=true][visibleToUser=true] > TextView[text.length=1]',
         },
       ],
     },
@@ -67,7 +68,8 @@ export default defineGkdApp({
           resetMatch: 'match',
           fastQuery: true,
           activityIds: 'com.pupumall.customer.activity.SplashActivity',
-          matches: 'ViewGroup[childCount=2] + ViewGroup[clickable=true][visibleToUser=true] > TextView[text=""][text.length=1]',
+          matches:
+            'ViewGroup[childCount=2] + ViewGroup[clickable=true][visibleToUser=true] > TextView[text=""][text.length=1]',
         },
       ],
     },

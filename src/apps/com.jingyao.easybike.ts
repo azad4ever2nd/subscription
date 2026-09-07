@@ -169,8 +169,8 @@ export default defineGkdApp({
       rules: [
         {
           resetMatch: 'match',
-		  matchTime:2000,
-		  forcedTime:2000,
+          matchTime: 2000,
+          forcedTime: 2000,
           activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
           matches:
             '([text="签到"]) || ([text="会员日日有惊喜"] +n * > Button[text="签到"]) || (View > View >  @TextView[text="签到"][clickable=true][visibleToUser=true] - View > TextView[text="今天签到可领" || text="奖励金"])',
@@ -185,14 +185,14 @@ export default defineGkdApp({
         {
           resetMatch: 'match',
           matchRoot: true,
-		  matchTime:2000,
-		  forcedTime:2000,
+          matchTime: 2000,
+          forcedTime: 2000,
           activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
-          anyMatches:[
+          anyMatches: [
             '([text="请点击下方按钮，立即签到"] + * [text="签到"])',
-			'([text="签到"])',
-			'View > View >  @TextView[text="签到"][clickable=true][visibleToUser=true] - View > TextView[text="今天签到可领" || text="奖励金"]',
-			],
+            '([text="签到"])',
+            'View > View >  @TextView[text="签到"][clickable=true][visibleToUser=true] - View > TextView[text="今天签到可领" || text="奖励金"]',
+          ],
         },
       ],
     },
@@ -203,11 +203,12 @@ export default defineGkdApp({
       rules: [
         {
           resetMatch: 'match',
-		  matchTime:2000,
-		  forcedTime:2000,
-          actionCd:3000,
+          matchTime: 2000,
+          forcedTime: 2000,
+          actionCd: 3000,
           activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
-          matches: '(@*[clickable=true] > *[childCount=2] > [text="今日签到"]) || (View > TextView[text="我的奖励金"] +n View > View >  @View[clickable=true][visibleToUser=true] > View > TextView[text="今日签到"])',
+          matches:
+            '(@*[clickable=true] > *[childCount=2] > [text="今日签到"]) || (View > TextView[text="我的奖励金"] +n View > View >  @View[clickable=true][visibleToUser=true] > View > TextView[text="今日签到"])',
         },
       ],
     },
@@ -341,10 +342,10 @@ export default defineGkdApp({
         {
           activityIds:
             'com.hellobike.moped.platform.offline.web.OhoRealmWebActivity',
-          anyMatches:[
+          anyMatches: [
             'TextView[text="我的奖励金"] +n View > View > @View[clickable=false][visibleToUser=true] > TextView + TextView[text="今日签到"]',
-			'TextView[text="我的奖励金"] +n View > View > @View[clickable=true][visibleToUser=true] > View >  TextView + TextView[text="今日签到"]',
-			],
+            'TextView[text="我的奖励金"] +n View > View > @View[clickable=true][visibleToUser=true] > View >  TextView + TextView[text="今日签到"]',
+          ],
         },
       ],
     },
