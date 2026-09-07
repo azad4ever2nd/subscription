@@ -362,9 +362,9 @@ export default defineGkdApp({
           activityIds:
             'com.cebbank.mobile.cemb.ui.activity.mobilePayment.MobilePaymentWebActivity',
           anyMatches: [
-			'View > TextView[text="去兑换"] + View',
-			'TextView[text="已成功领取啦"] +n TextView[text="去兑换"]  + View > TextView[text.length=1][clickable=false][visibleToUser=true',
-			],
+            'View > TextView[text="去兑换"] + View',
+            'TextView[text="已成功领取啦"] +n TextView[text="去兑换"]  + View > TextView[text.length=1][clickable=false][visibleToUser=true',
+          ],
         },
       ],
     },

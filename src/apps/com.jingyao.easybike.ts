@@ -172,11 +172,11 @@ export default defineGkdApp({
           matchTime: 2000,
           forcedTime: 2000,
           activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
-          anyMatches:[
+          anyMatches: [
             '([text="签到"])',
-			'(View > View >  @TextView[text="签到"][clickable=true][visibleToUser=true] - View > TextView[text="今天签到可领" || text="奖励金"])',
-			'TextView[text="我的奖励金"] +n View >n View >  TextView[text="签到"][clickable=true][visibleToUser=true]',
-			],
+            '(View > View >  @TextView[text="签到"][clickable=true][visibleToUser=true] - View > TextView[text="今天签到可领" || text="奖励金"])',
+            'TextView[text="我的奖励金"] +n View >n View >  TextView[text="签到"][clickable=true][visibleToUser=true]',
+          ],
         },
       ],
     },
@@ -195,7 +195,7 @@ export default defineGkdApp({
             '([text="请点击下方按钮，立即签到"] + * [text="签到"])',
             '([text="签到"])',
             'View > View >  @TextView[text="签到"][clickable=true][visibleToUser=true] - View > TextView[text="今天签到可领" || text="奖励金"]',
-			'TextView[text="我的奖励金"] +n View >n View >  TextView[text="签到"][clickable=true][visibleToUser=true]',
+            'TextView[text="我的奖励金"] +n View >n View >  TextView[text="签到"][clickable=true][visibleToUser=true]',
           ],
         },
       ],
@@ -211,10 +211,10 @@ export default defineGkdApp({
           forcedTime: 2000,
           actionCd: 3000,
           activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
-          anyMatches:[
+          anyMatches: [
             '(@*[clickable=true] > *[childCount=2] > [text="今日签到"])',
-			'(View > TextView[text="我的奖励金"] +n View > View >  @View[clickable=true][visibleToUser=true] > View > TextView[text="今日签到"])',
-			],
+            '(View > TextView[text="我的奖励金"] +n View > View >  @View[clickable=true][visibleToUser=true] > View > TextView[text="今日签到"])',
+          ],
         },
       ],
     },
@@ -363,10 +363,10 @@ export default defineGkdApp({
         {
           activityIds:
             'com.hellobike.moped.platform.offline.web.OhoRealmWebActivity',
-          anyMatches:[
+          anyMatches: [
             'TextView[text="我的奖励金"] +n View > View > TextView[index=parent.childCount.minus(1)][clickable=false][visibleToUser=true][text="签到"]',
-			'TextView[text="我的奖励金"] +n View >n View >  TextView[text="签到"][clickable=true][visibleToUser=true]',
-			],
+            'TextView[text="我的奖励金"] +n View >n View >  TextView[text="签到"][clickable=true][visibleToUser=true]',
+          ],
         },
       ],
     },
@@ -377,13 +377,13 @@ export default defineGkdApp({
       rules: [
         {
           resetMatch: 'match',
-		  action:'clickCenter',
+          action: 'clickCenter',
           activityIds:
             'com.hellobike.moped.platform.offline.web.OhoRealmWebActivity',
-          anyMatches:[
+          anyMatches: [
             'TextView[text="我的奖励金"] +n View > View > @TextView[clickable=false][visibleToUser=true][text.length=0] +n TextView[text="明日再来"]',
-			'TextView[text="我的奖励金"] +n View >n View > @TextView[clickable=true][visibleToUser=true] +n TextView[text="明日再来"][clickable=true][visibleToUser=true]',
-			],
+            'TextView[text="我的奖励金"] +n View >n View > @TextView[clickable=true][visibleToUser=true] +n TextView[text="明日再来"][clickable=true][visibleToUser=true]',
+          ],
         },
       ],
     },
@@ -397,10 +397,10 @@ export default defineGkdApp({
           resetMatch: 'match',
           activityIds:
             'com.hellobike.moped.platform.offline.web.OhoRealmWebActivity',
-          anyMatches:[
+          anyMatches: [
             'TextView[text="我的奖励金"] +n View > View > TextView[clickable=false][visibleToUser=true][text="知道了"]',
-			'TextView[text="我的奖励金"] +n View >n View > TextView[clickable=true][visibleToUser=true][text="知道了"]',
-			],
+            'TextView[text="我的奖励金"] +n View >n View > TextView[clickable=true][visibleToUser=true][text="知道了"]',
+          ],
         },
       ],
     },
@@ -526,7 +526,8 @@ export default defineGkdApp({
           },
           activityIds:
             'com.hellobike.flutter.platform.android.flutterboost.FlutterHostFragmentActivity',
-          matches: 'ImageView[desc="临时锁车"] + @View[visibleToUser=true] +n  View[desc="按住滑块，拖到右边还车"]',
+          matches:
+            'ImageView[desc="临时锁车"] + @View[visibleToUser=true] +n  View[desc="按住滑块，拖到右边还车"]',
         },
       ],
     },
