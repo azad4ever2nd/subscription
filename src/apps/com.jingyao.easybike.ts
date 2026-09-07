@@ -270,7 +270,7 @@ export default defineGkdApp({
       rules: [
         {
           resetMatch: 'match',
-          actionMaximum: 1,an
+          actionMaximum: 1,
           activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
           matches:
             '@View[clickable=true] TextView + [text="单单返"][parent.childCount=2]',

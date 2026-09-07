@@ -37,7 +37,7 @@ export default defineGkdApp({
       key: 3,
       name: '弹窗，天降红包，X掉',
       desc: '260907,fastquery=false,clickable=true，排除头像误点',
-      rules: 
+      rules: [
         {
           activityIds: 'me.ele.application.ui.Launcher.LauncherActivity',
           matchTime: 3000,
