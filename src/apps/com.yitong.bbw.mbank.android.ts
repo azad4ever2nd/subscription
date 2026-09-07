@@ -13,8 +13,7 @@ export default defineGkdApp({
           resetMatch: 'app',
           matchDelay: 3000,
           forcedTime: 5000,
-          actionCd: 5000,
-          actionMaximum: 1,
+          actionCd: 3000,
           activityIds: 'com.yitong.mobile.biz.h5.container.WebViewActivity',
           matches:
             'WebView[text="每日签到"] > View > View > TextView[id="submit"][clickable=false][visibleToUser=true][text="立即签到"]',

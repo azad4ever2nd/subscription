@@ -205,7 +205,7 @@ export default defineGkdApp({
       rules: [
         {
           resetMatch: 'match',
-          actionCd: 100,
+          actionCd: 500,
           action: 'clickCenter',
           activityIds: 'com.jd.lib.ordercenter.taro.OrderListActivityTaro',
           matches:
