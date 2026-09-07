@@ -164,42 +164,50 @@ export default defineGkdApp({
     },
     {
       key: 11,
-      name: '签到',
-      desc: '260513',
+      name: '弹窗，签到',
+      desc: '260907',
       rules: [
         {
           resetMatch: 'match',
+		  matchTime:2000,
+		  forcedTime:2000,
           activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
           matches:
-            '([text="会员日日有惊喜"] +n * > Button[text="签到"]) || ([text="签到"])',
+            '([text="签到"]) || ([text="会员日日有惊喜"] +n * > Button[text="签到"]) || (View > View >  @TextView[text="签到"][clickable=true][visibleToUser=true] - View > TextView[text="今天签到可领" || text="奖励金"])',
         },
       ],
     },
     {
       key: 12,
-      name: '奖励金页面，签到',
-      desc: '260513，测试matchRoot',
+      name: '弹窗，签到2',
+      desc: '260907，测试matchRoot',
       rules: [
         {
           resetMatch: 'match',
-          actionMaximum: 1,
           matchRoot: true,
+		  matchTime:2000,
+		  forcedTime:2000,
           activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
-          matches:
-            '([text="请点击下方按钮，立即签到"] + * [text="签到"]) || ([text="签到"])',
+          anyMatches:[
+            '([text="请点击下方按钮，立即签到"] + * [text="签到"])',
+			'([text="签到"])',
+			'View > View >  @TextView[text="签到"][clickable=true][visibleToUser=true] - View > TextView[text="今天签到可领" || text="奖励金"]',
+			],
         },
       ],
     },
     {
       key: 13,
       name: '奖励金页面，上方，今日签到',
-      desc: '260513',
+      desc: '260907',
       rules: [
         {
           resetMatch: 'match',
-          actionMaximum: 1,
+		  matchTime:2000,
+		  forcedTime:2000,
+          actionCd:3000,
           activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
-          matches: '@*[clickable=true] > *[childCount=2] > [text="今日签到"]',
+          matches: '(@*[clickable=true] > *[childCount=2] > [text="今日签到"]) || (View > TextView[text="我的奖励金"] +n View > View >  @View[clickable=true][visibleToUser=true] > View > TextView[text="今日签到"])',
         },
       ],
     },
@@ -218,7 +226,7 @@ export default defineGkdApp({
     },
     {
       key: 15,
-      name: '领奖页面，签到完成，明日再来，X掉',
+      name: '弹窗，领奖页面，签到完成，明日再来，X掉',
       desc: '260416',
       rules: [
         {
@@ -262,7 +270,7 @@ export default defineGkdApp({
       rules: [
         {
           resetMatch: 'match',
-          actionMaximum: 1,
+          actionMaximum: 1,an
           activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
           matches:
             '@View[clickable=true] TextView + [text="单单返"][parent.childCount=2]',
@@ -328,20 +336,22 @@ export default defineGkdApp({
     {
       key: 23,
       name: '奖励金，今日签到',
-      desc: '260806',
+      desc: 'D,260907',
       rules: [
         {
           activityIds:
             'com.hellobike.moped.platform.offline.web.OhoRealmWebActivity',
-          matches:
+          anyMatches:[
             'TextView[text="我的奖励金"] +n View > View > @View[clickable=false][visibleToUser=true] > TextView + TextView[text="今日签到"]',
+			'TextView[text="我的奖励金"] +n View > View > @View[clickable=true][visibleToUser=true] > View >  TextView + TextView[text="今日签到"]',
+			],
         },
       ],
     },
     {
       key: 24,
       name: '奖励金，弹窗，签到',
-      desc: '260806',
+      desc: 'D,260806',
       rules: [
         {
           activityIds:
@@ -353,7 +363,7 @@ export default defineGkdApp({
     },
     {
       key: 25,
-      name: '奖励金，签到后弹窗，明日再来，X掉',
+      name: '弹窗,签到后，明日再来，X掉',
       desc: '260806',
       rules: [
         {
@@ -367,7 +377,7 @@ export default defineGkdApp({
     },
     {
       key: 26,
-      name: '奖金金，每日单单返，知道了',
+      name: '弹窗，奖金金，每日单单返，知道了',
       desc: '260806',
       rules: [
         {

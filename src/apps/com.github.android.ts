@@ -93,12 +93,12 @@ export default defineGkdApp({
     {
       key: 7,
       name: '下滑刷新',
-      desc: '260813',
+      desc: '260906',
       rules: [
         {
           resetMatch: 'match',
           preKeys: [4],
-          actionMaximum: 1,
+          actionMaximum: 3,
           action: 'swipe',
           swipeArg: {
             start: {
@@ -109,7 +109,7 @@ export default defineGkdApp({
               x: 510,
               y: 1645,
             },
-            duration: 800, //滑动时长
+            duration: 1000, //滑动时长
           },
           activityIds: 'com.github.android.main.MainActivity',
           matches:

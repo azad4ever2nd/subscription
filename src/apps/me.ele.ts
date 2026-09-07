@@ -36,12 +36,13 @@ export default defineGkdApp({
     {
       key: 3,
       name: '弹窗，天降红包，X掉',
-      desc: '260905,fastquery=false,clickable=true',
-      rules: [
+      desc: '260907,fastquery=false,clickable=true，排除头像误点',
+      rules: 
         {
           activityIds: 'me.ele.application.ui.Launcher.LauncherActivity',
           matchTime: 3000,
           forcedTime: 3000,
+		  excludeMatches:'(ViewGroup[vid="id_magex_mist_view"] > ViewGroup > ImageView[clickable=true][visibleToUser=true] + TextView[text.length=11])',
           matches: [
             '(ViewGroup[vid="id_magex_mist_view"] > ViewGroup > ViewGroup > ImageView[clickable=true][visibleToUser=true]) || (ViewGroup[vid="id_magex_mist_view"] > ViewGroup > ImageView[clickable=true][visibleToUser=true])',
           ],
@@ -151,7 +152,7 @@ export default defineGkdApp({
     {
       key: 11,
       name: '弹窗，单单返现金，X掉',
-      desc: '260904',
+      desc: '260907',
       rules: [
         {
           activityIds:
@@ -160,7 +161,7 @@ export default defineGkdApp({
           matchTime: 2000,
           forcedTime: 2000,
           matches:
-            'ViewGroup[vid="id_magex_mist_view"] > ViewGroup > ViewGroup > ImageView[clickable=true][visibleToUser=true]',
+            '(ViewGroup[vid="id_magex_mist_view"] > ViewGroup > ViewGroup > ImageView[clickable=true][visibleToUser=true]) || (ViewGroup[vid="id_magex_mist_view"] > ViewGroup > ImageView[clickable=true][visibleToUser=true])',
         },
       ],
     },

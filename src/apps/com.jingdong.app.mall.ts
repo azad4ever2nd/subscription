@@ -22,11 +22,14 @@ export default defineGkdApp({
     {
       key: 2,
       name: '黑五预约',
-      desc: 'D',
+      desc: '260907',
       rules: [
         {
-          matches: ['Image -2 * > [text="提醒我抢购"]'],
+          matches: ['(Image -2 * > [text="提醒我抢购)"]) || (TextView[text="提醒我抢购"] < View + TextView[text^="设置提醒后"] + Image[clickable=true][visibleToUser=true])'],
           resetMatch: 'match',
+		  forceTime:2000,
+		  matchTime:2000,
+		  action: 'clickCenter',
           activityIds: ['com.jd.lib.ttt.page.TTTMultiPageActivity'],
         },
       ],

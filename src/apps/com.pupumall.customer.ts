@@ -48,6 +48,31 @@ export default defineGkdApp({
     },
     {
       key: 4,
+      name: '弹窗，天降福利',
+      desc: '260907',
+      rules: [
+        {
+          resetMatch: 'match',
+          activityIds: 'com.pupumall.customer.activity.SplashActivity',
+          matches: 'ViewGroup[childCount=2] + ViewGroup[clickable=true][visibleToUser=true] > TextView[text.length=1]',
+        },
+      ],
+    },
+    {
+      key: 5,
+      name: '弹窗，天降福利2',
+      desc: '260907，fastquery=true',
+      rules: [
+        {
+          resetMatch: 'match',
+          fastQuery: true,
+          activityIds: 'com.pupumall.customer.activity.SplashActivity',
+          matches: 'ViewGroup[childCount=2] + ViewGroup[clickable=true][visibleToUser=true] > TextView[text=""][text.length=1]',
+        },
+      ],
+    },
+    {
+      key: 6,
       name: '残忍离开',
       desc: '251222',
       rules: [
@@ -59,7 +84,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 5,
+      key: 7,
       name: '订单列表，删除未付款的订单',
       desc: '260511',
       rules: [
@@ -71,7 +96,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 6,
+      key: 8,
       name: '删除订单弹窗，确认',
       desc: '260511',
       rules: [

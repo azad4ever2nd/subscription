@@ -38,12 +38,13 @@ export default defineGkdApp({
     {
       key: 3,
       name: '立减金兑换，复制',
-      desc: '260830',
+      desc: '260907',
       rules: [
         {
           resetMatch: 'match',
           activityIds: 'com.yitong.mobile.biz.h5.container.WebViewActivity',
-          actionCd: 8000,
+          matchTime:3000,
+		  forcedTime:3000,
           matches:
             'View > View[text="卡号："] +2 TextView[text="复制"][clickable=false][visibleToUser=true]',
           actionMaximum: 1,
@@ -57,6 +58,7 @@ export default defineGkdApp({
       rules: [
         {
           resetMatch: 'match',
+		  preKeys:[3],
           activityIds: 'com.yitong.mobile.biz.h5.container.WebViewActivity',
           matches:
             'View > TextView[text="复制成功"] + View > Button[text="确定"][clickable=true][visibleToUser=true]',
@@ -70,7 +72,7 @@ export default defineGkdApp({
       rules: [
         {
           resetMatch: 'match',
-          actionCd: 5000,
+		  preKeys:[4],
           actionMaximum: 1,
           excludeMatches: [
             'View > TextView[text="复制成功"] + View > Button[text="确定"][clickable=true][visibleToUser=true]',

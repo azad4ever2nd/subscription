@@ -1326,7 +1326,7 @@ export default defineGkdApp({
     {
       key: 65,
       name: '粤工会滑块验证',
-      desc: '260808',
+      desc: '260907',
       rules: [
         {
           action: 'swipe',
@@ -1336,13 +1336,13 @@ export default defineGkdApp({
           swipeArg: {
             start: {
               x: 'left',
-              y: 'top',
+              y: 'top+height/2',
             },
             end: {
-              x: 'parent.right-width',
-              y: 'top',
+              x: 'right',
+              y: 'top+height/2',
             },
-            duration: 2000,
+            duration: 1000,
           },
           activityIds: [
             'com.tencent.mm.plugin.appbrand.ui.AppBrandUI0',
@@ -1459,6 +1459,31 @@ export default defineGkdApp({
     },
     {
       key: 70,
+      name: '北部湾立减金',
+      desc: '260907，',
+      rules: [
+        {
+          resetMatch: 'match',
+          activityIds: [
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI0',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI1',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI2',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI3',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI4',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI00',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI01',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI02',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI03',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI04',
+          ],
+          matches: [
+            '(WebView > View > View > TextView[text="微信支付立减金"] +n Button[text=" 立即领取"][clickable=true][visibleToUser=true]) || (View >  TextView[text=" 请确认是否领取到微信 "] +n TextView[text="确认"][clickable=true][visibleToUser=true]) || (WebView > View > View > TextView[text^=" 兑换成功！"] +  TextView[text="订单详情"][clickable=true][visibleToUser=true])',
+          ],
+        },
+      ],
+    },
+    {
+      key: 71,
       name: '自动登录该设备',
       desc: '260804',
       rules: [
