@@ -519,7 +519,7 @@ export default defineGkdApp({
               y: 'top+height/2',
             },
             end: {
-              x: 'right'
+              x: 'right',
               y: 'top+height/2',
             },
             duration: 1000, //滑动时长
