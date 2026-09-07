@@ -263,8 +263,10 @@ export default defineGkdApp({
           action: 'click',
           activityIds:
             'cmb.pb.app.h5container.webviewcontainer.PBWebContainerActivity',
-          matches: [
-            '(View > @TextView[clickable=false][visibleToUser=true] + TextView[text="同步到动态"]) || (WebView[text="讨论区"] >n View >  @TextView[clickable=true][visibleToUser=true] +  TextView[text="同步到动态"])',
+          anyMatches: [
+			'(View > Button[text="关闭"] +n TextView[text="同步到动态"][clickable=true][visibleToUser=true]',
+			'(View > @TextView[clickable=false][visibleToUser=true] + TextView[text="同步到动态"])',
+			'(WebView[text="讨论区"] >n View >  @TextView[clickable=true][visibleToUser=true] +  TextView[text="同步到动态"])',
           ],
         },
       ],

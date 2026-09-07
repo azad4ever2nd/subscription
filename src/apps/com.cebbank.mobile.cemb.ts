@@ -355,13 +355,16 @@ export default defineGkdApp({
     {
       key: 25,
       name: '权益，去兑换，X掉',
-      desc: '260610',
+      desc: '260907',
       rules: [
         {
           resetMatch: 'match',
           activityIds:
             'com.cebbank.mobile.cemb.ui.activity.mobilePayment.MobilePaymentWebActivity',
-          matches: 'View > TextView[text="去兑换"] + View',
+          anyMatches: [
+			'View > TextView[text="去兑换"] + View',
+			'TextView[text="已成功领取啦"] +n TextView[text="去兑换"]  + View > TextView[text.length=1][clickable=false][visibleToUser=true',
+			],
         },
       ],
     },
