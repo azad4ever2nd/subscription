@@ -13,7 +13,7 @@ export default defineGkdApp({
           resetMatch: 'match',
           actionCd: 2000,
           activityIds: 'com.tencent.mm.plugin.webview.ui.tools.MMWebViewUI',
-          anyMatches:[
+          anyMatches: [
             '(View[id="weixin-btn"] @View[clickable=true] > Image[text="goBtn"])',
             '(View > View > [text="手机号登录/注册"] + [text="打开交行APP领奖"])',
             '(WebView[text="华夏银行"] >n [text="立即打开"])',
@@ -27,7 +27,7 @@ export default defineGkdApp({
             '([id="app"] [text="打开小程序"])',
             '([id="launch-btn" || id="wx-launch-btn"] >n [id="btn_mywechat" || id="wechat-btn" ][text="立即打开"])',
             '([id="launch-app-btn"] >n Button[text="打开"])',
-			],
+          ],
         },
       ],
     },
@@ -90,10 +90,10 @@ export default defineGkdApp({
           actionCdKey: 4,
           action: 'clickCenter',
           activityIds: 'com.tencent.mm.plugin.webview.ui.tools.MMWebViewUI',
-          anyMatches:[
+          anyMatches: [
             '(WebView > View > View > View > CheckBox[clickable=true][checked=false])',
             '(WebView[text*="建行社保卡"] > View > View > View > CheckBox[clickable=true][checked=false])',
-			],
+          ],
         },
       ],
     },
@@ -120,10 +120,10 @@ export default defineGkdApp({
           resetMatch: 'match',
           actionCdKey: 4,
           activityIds: 'com.tencent.mm.plugin.webview.ui.tools.MMWebViewUI',
-          anyMatches:[
+          anyMatches: [
             '(WebView[text*="建行社保卡"] > View > View > @Image[visibleToUser=true][clickable=true][text="NWJ6tc6mwaKQfgbADXAJPIxaVNUQJguwpoNgAy0x2ew8SgXab+AzNTubJfuAmp7HtQL5K8AARxBdk+5zMOgAAAAASUVORK5CYII="] - View > View > TextView[text^="尊敬的客户"])',
             '(WebView[text*="建行社保卡"] > View > Dialog > View > Button[text="好的"])',
-			],
+          ],
         },
       ],
     },
@@ -163,10 +163,10 @@ export default defineGkdApp({
           resetMatch: 'match',
           actionCdKey: 4,
           activityIds: 'com.tencent.mm.plugin.webview.ui.tools.MMWebViewUI',
-          anyMatches:[
+          anyMatches: [
             '(View[childCount=3] > @[text="确认"] + [text^="请及时兑换，每月15号刷新"])',
             '(@[text="确认"] + [text^="请及时兑换，每月15号刷新"])',
-			],
+          ],
         },
       ],
     },
@@ -180,10 +180,10 @@ export default defineGkdApp({
           action: 'back',
           actionCd: 2000,
           activityIds: 'com.tencent.mm.plugin.webview.ui.tools.MMWebViewUI',
-          anyMatches:[
+          anyMatches: [
             '([text="绑卡有礼"] [text^="X" && text$="我的碎片"] + [text="碎片 + 0.1"] + [text*="-" && text*=":"])',
             '(WebView[text="绑卡有礼"] > View > TextView[text*="我的碎片 (仅显示近三个月记录)"][clickable=false][visibleToUser=true])',
-			],
+          ],
         },
       ],
     },
@@ -214,7 +214,7 @@ export default defineGkdApp({
           anyMatches: [
             '(WebView[text="闲鱼"] <<n * + * [desc="更多信息"])',
             '(View > TextView[clickable=true][visibleToUser=true] + View > Button[text="我知道了"][clickable=true][visibleToUser=true])',
-			],
+          ],
         },
       ],
     },
@@ -342,12 +342,12 @@ export default defineGkdApp({
           actionCd: 0,
           activityIds:
             'com.tencent.mm.plugin.brandservice.ui.timeline.preload.ui.TmplWebViewMMUI',
-          anyMatches:[
+          anyMatches: [
             '([id="js_link_dialog_body"][text*="打开"] + * > [id="js_link_dialog_ok"][text="允许"])',
             '([text="get_prize_title.dc05dc4a"] +n * > [text="立即前往"])',
             '([id="js_minipro_dialog_head"][text="即将打开小程序"] <<n * +n * > [id="js_minipro_dialog_ok"][text="允许"])',
             '([text^="即将"] <<n * + * [vid="mm_alert_cancel_btn"][text="取消"] +n [vid="mm_alert_ok_btn"][text="确认跳转" || text="允许"])',
-			],
+          ],
         },
       ],
     },
@@ -392,10 +392,10 @@ export default defineGkdApp({
             'com.tencent.mm.plugin.flutter.ui.MMFlutterViewActivity',
             'com.tencent.mm.plugin.profile.ui.ContactInfoUI',
           ],
-          anyMatches:[
+          anyMatches: [
             '(*[childCount=1] > [text="不再关注"])',
             '([text^="不再关注" && text$="你将不再收到其下发的消息"] <<n * + * [vid="mm_alert_ok_btn"])',
-			],
+          ],
         },
       ],
     },
@@ -532,10 +532,10 @@ export default defineGkdApp({
             'com.tencent.mm.plugin.appbrand.ui.AppBrandUI03',
             'com.tencent.mm.plugin.appbrand.ui.AppBrandUI04',
           ],
-          anyMatches:[
+          anyMatches: [
             '([text="stocked"] + [text$="借记卡"] + [text="微信立减金"] + *)',
             '([text^="今日已领" && text!$="100%"] < * + [text$="借记卡"] + [text="微信立减金"] + *)',
-			],
+          ],
         },
       ],
     },
@@ -657,10 +657,10 @@ export default defineGkdApp({
             'com.tencent.mm.plugin.appbrand.ui.AppBrandUI03',
             'com.tencent.mm.plugin.appbrand.ui.AppBrandUI04',
           ],
-          anyMatches:[
+          anyMatches: [
             '([text="微信提现免费券"] <<n * + * [text="1金币兑换"])',
             '([text="祝你每天好运气"] +3 * >2 [text="1金币抽提现券"])',
-			],
+          ],
         },
       ],
     },
@@ -708,11 +708,11 @@ export default defineGkdApp({
             'com.tencent.mm.plugin.appbrand.ui.AppBrandUI03',
             'com.tencent.mm.plugin.appbrand.ui.AppBrandUI04',
           ],
-          anyMatches:[
+          anyMatches: [
             '([text="已收下1"] + [text="7天后可再参与"] <<n * + * >n [desc="关闭"] )',
             '([text="确认使用1金币兑换吗？"] <<n * + * >n [vid="mm_alert_ok_btn"][text="确认兑换"])',
             '([text="立即收下"] + @[text="今日24点前可领"])',
-			],
+          ],
         },
       ],
     },
@@ -809,11 +809,11 @@ export default defineGkdApp({
             'com.tencent.mm.plugin.appbrand.ui.AppBrandUI03',
             'com.tencent.mm.plugin.appbrand.ui.AppBrandUI04',
           ],
-          anyMatches:[
+          anyMatches: [
             '(*[childCount=8] >n @[text="我已阅读并同意"] + [text^="《沪上阿姨"])',
             '(*[childCount=9] >n @[text.length=1] + [text="我已阅读并同意"] + [text^="《沪上阿姨"])',
             '([vid="mm_alert_cancel_btn"][text="不同意"] +n [vid="mm_alert_ok_btn"][text="同意协议"])',
-			],
+          ],
         },
       ],
     },
@@ -873,12 +873,12 @@ export default defineGkdApp({
       rules: [
         {
           resetMatch: 'match',
-          anyMatches:[
+          anyMatches: [
             '(Dialog [text*="即将打开第三方"] + * > [text="允许"])',
             '([text="get_prize_title.dc05dc4a"] +n * > [text="立即前往"])',
             '([id="js_minipro_dialog_head"][text="即将打开小程序"] <<n * +n * > [id="js_minipro_dialog_ok"][text="允许"])',
             '([text^="即将"] <<n  * + * >n [vid="mm_alert_cancel_btn"][text="取消"] +n [vid="mm_alert_ok_btn"][text="确认跳转" || text="允许"])',
-			],
+          ],
           fastQuery: true,
           actionCd: 800,
           activityIds: [
@@ -921,7 +921,7 @@ export default defineGkdApp({
             'com.tencent.mm.plugin.appbrand.ui.AppBrandUI03',
             'com.tencent.mm.plugin.appbrand.ui.AppBrandUI04',
           ],
-          anyMatches:[
+          anyMatches: [
             '(WebView [text="领取奖励bak"])',
             '([text^="成功领取奖励" || text="成功开始模拟"] <<n FrameLayout + * >n [desc="关闭bak"][childCount=1])',
             '([text^="成功领取奖励"] <<n FrameLayout + * >n [desc="关闭bak"])',
@@ -929,7 +929,7 @@ export default defineGkdApp({
             '(View[childCount=3] > * + [text$="元理财金"] + *)',
             '(View[childCount=3][clickable=true] > [text$="元理财金"] + *)',
             '(View > @View > TextView + TextView[text$="元理财金"] + TextView[clickable=true])',
-			],
+          ],
         },
       ],
     },
@@ -1051,10 +1051,10 @@ export default defineGkdApp({
             'com.tencent.mm.plugin.appbrand.ui.AppBrandUI03',
             'com.tencent.mm.plugin.appbrand.ui.AppBrandUI04',
           ],
-          anyMatches:[
+          anyMatches: [
             '([text="更多精彩"] + @* +n [text="女职工服务"] +n [text="阵地服务"])',
             '(@Image < View + Image + TextView[text^="恭喜你完成"] + TextView[text="取消"] + TextView[text="查看积分"])',
-			],
+          ],
         },
       ],
     },
@@ -1202,11 +1202,11 @@ export default defineGkdApp({
           ],
           actionMaximum: 5,
           resetMatch: 'match',
-          anyMatches:[
+          anyMatches: [
             '([text="17dde62e88314a499c524c9666c878785335466675"])',
             '(WebView > View > View > View > View > Image[clickable=true][visibleToUser=true][text="30b2664f811b49268daf0884b451bd741055117292" || text="17dde62e88314a499c524c9666c878785335466675"])',
             '([text="奖励派送中，稍后送达～"] <n * + * > *[clickable=true])',
-			],
+          ],
         },
       ],
     },
@@ -1229,10 +1229,10 @@ export default defineGkdApp({
             'com.tencent.mm.plugin.appbrand.ui.AppBrandUI03',
             'com.tencent.mm.plugin.appbrand.ui.AppBrandUI04',
           ],
-          anyMatches:[
+          anyMatches: [
             '([text^="消耗" && text$="阳光值参与抽奖？"] +n [text="取消"] + [id="onSureReward"][text="确定"])',
             '([text="谢谢您的参与"] +n [text="确定"])',
-			],
+          ],
         },
       ],
     },
@@ -1281,10 +1281,10 @@ export default defineGkdApp({
             'com.tencent.mm.plugin.appbrand.ui.AppBrandUI03',
             'com.tencent.mm.plugin.appbrand.ui.AppBrandUI04',
           ],
-          anyMatches:[
+          anyMatches: [
             '([text="1.08元"] + [text="云网点打卡"] <<n * + * > Button[text*="立即领取"])',
             '(TextView[text="云网点"] <n View <n View + View > Button[text="立即领取"][clickable=true][visibleToUser=true])',
-			],
+          ],
         },
       ],
     },
