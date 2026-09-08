@@ -35,10 +35,14 @@ export default defineGkdApp({
     {
       key: 3,
       name: '新版本',
-      desc: '260112',
+      desc: '260908',
       rules: [
         {
-          matches: ['[vid="tv_title"][text*="新版本"] + [vid="tv_cancel"]'],
+          matches: [
+			'[vid="tv_title"][text*="新版本"] + [vid="tv_cancel"]',
+			'[vid="tv_title"][text*="新版本"] + [vid="tv_cancel"][clickable=true][visibleToUser=true]',
+		  ],
+		  action:'clickCenter',
           fastQuery: true,
           resetMatch: 'match',
           activityIds: ['com.wacai365.HomeActivity'],

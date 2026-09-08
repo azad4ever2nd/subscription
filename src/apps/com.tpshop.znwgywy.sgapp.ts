@@ -11,7 +11,7 @@ export default defineGkdApp({
         {
           resetMatch: 'match',
           activityIds: 'tool.seagull.v.ui.MainActivity',
-          matches:
+          anyMatches:
             'LinearLayout > Button[clickable=true][visibleToUser=true][text="立刻出发！"]',
         },
       ],
@@ -25,8 +25,10 @@ export default defineGkdApp({
           resetMatch: 'match',
           fastQuery: true,
           activityIds: 'tool.seagull.v.ui.MainActivity',
-          matches:
-            '([text^="请关闭 获取运动方向权限 和 快应用权限" || text*="付费订阅版"] <<n * + * [id="android:id/button1"][text="确定"]) || (ScrollView > LinearLayout > Button[text="确定"][id="android:id/button1"][clickable=true][visibleToUser=true])',
+          anyMatches:[
+            '([text^="请关闭 获取运动方向权限 和 快应用权限" || text*="付费订阅版"] <<n * + * [id="android:id/button1"][text="确定"])',
+            '(ScrollView > LinearLayout > Button[text="确定"][id="android:id/button1"][clickable=true][visibleToUser=true])',
+			],
         },
       ],
     },
@@ -39,7 +41,7 @@ export default defineGkdApp({
           resetMatch: 'match',
           fastQuery: true,
           activityIds: 'tool.seagull.v.ui.MainActivity',
-          matches:
+          anyMatches:
             '[text*="广告签到"] <<n * + * [id="android:id/button2"] + [id="android:id/button1"]',
         },
       ],
@@ -53,7 +55,7 @@ export default defineGkdApp({
           resetMatch: 'match',
           actionCd: 0,
           activityIds: 'tool.seagull.v.ui.MainActivity',
-          matches:
+          anyMatches:
             'TextView[vid="checkin_button"][text^="已签"] + FrameLayout > FrameLayout > FrameLayout > FrameLayout > FrameLayout > FrameLayout[childCount=1] > View[clickable=false]',
         },
       ],
@@ -66,7 +68,7 @@ export default defineGkdApp({
         {
           resetMatch: 'match',
           activityIds: 'tool.seagull.v.ui.MainActivity',
-          matches:
+          anyMatches:
             'TextView[text="签到"] + FrameLayout > FrameLayout > FrameLayout > FrameLayout > FrameLayout > LinearLayout +2 ImageView - FrameLayout[childCount=1] > View',
         },
       ],
@@ -79,7 +81,7 @@ export default defineGkdApp({
         {
           resetMatch: 'match',
           activityIds: 'tool.seagull.v.ui.MainActivity',
-          matches:
+          anyMatches:
             'ImageView[vid="vpnSwitchButton"] +n ScrollView > FrameLayout > FrameLayout > FrameLayout > FrameLayout > FrameLayout > FrameLayout[childCount=1] > View',
         },
       ],
@@ -92,7 +94,7 @@ export default defineGkdApp({
         {
           resetMatch: 'match',
           activityIds: 'tool.seagull.v.ui.MainActivity',
-          matches:
+          anyMatches:
             'TextView[vid="checkin_button"][text^="已签"] + FrameLayout[vid="banner_container"] > FrameLayout > FrameLayout > FrameLayout > LinearLayout[childCount=3] > FrameLayout[childCount=3] > @FrameLayout[clickable=false][visibleToUser=true] > ImageView',
         },
       ],
@@ -105,7 +107,7 @@ export default defineGkdApp({
         {
           resetMatch: 'match',
           activityIds: 'tool.seagull.v.ui.MainActivity',
-          matches:
+          anyMatches:
             'FrameLayout > TextView[id="com.zj.zk.allmodules:id/wm_pop_pic_close"][clickable=true][visibleToUser=true]',
         },
       ],
@@ -118,7 +120,7 @@ export default defineGkdApp({
         {
           resetMatch: 'match',
           activityIds: 'tool.seagull.v.ui.MainActivity',
-          matches:
+          anyMatches:
             'ImageView[vid="vpnSwitchButton"][desc="连接"] + FrameLayout + ScrollView > FrameLayout > FrameLayout > FrameLayout > FrameLayout > FrameLayout > FrameLayout[childCount=1] > View',
         },
       ],
@@ -131,7 +133,7 @@ export default defineGkdApp({
         {
           resetMatch: 'match',
           activityIds: 'tool.seagull.v.ui.MainActivity',
-          matches:
+          anyMatches:
             '[vid="server_list_banner_ad"] >7 LinearLayout + ImageView + FrameLayout > View[parent.childCount=1]',
         },
       ],
@@ -144,7 +146,7 @@ export default defineGkdApp({
         {
           resetMatch: 'match',
           activityIds: 'tool.seagull.v.ui.MainActivity',
-          matches:
+          anyMatches:
             'FrameLayout[vid="server_list_banner_ad"] > RelativeLayout > FrameLayout > RelativeLayout > RelativeLayout > ImageView[clickable=true]',
         },
       ],
@@ -157,7 +159,7 @@ export default defineGkdApp({
         {
           resetMatch: 'match',
           activityIds: 'tool.seagull.v.ui.MainActivity',
-          matches:
+          anyMatches:
             'FrameLayout[vid="server_list_banner_ad"] FrameLayout > ImageView - FrameLayout[childCount=1] > View',
         },
       ],
@@ -170,7 +172,7 @@ export default defineGkdApp({
         {
           resetMatch: 'match',
           activityIds: 'tool.seagull.v.ui.MainActivity',
-          matches:
+          anyMatches:
             'ScrollView[vid="banner_scroll"] > FrameLayout >5 ImageView - FrameLayout > View',
         },
       ],
@@ -184,7 +186,7 @@ export default defineGkdApp({
           resetMatch: 'match',
           fastQuery: true,
           activityIds: 'tool.seagull.v.ui.MainActivity',
-          matches:
+          anyMatches:
             'RelativeLayout > RelativeLayout > TextView[text="X"][clickable=true]',
         },
       ],
@@ -197,7 +199,7 @@ export default defineGkdApp({
         {
           resetMatch: 'match',
           activityIds: 'tool.seagull.v.ui.MainActivity',
-          matches:
+          anyMatches:
             'ImageView[vid="vpnSwitchButton"][desc="停止"] +2 ScrollView > FrameLayout > FrameLayout > FrameLayout > FrameLayout > LinearLayout > FrameLayout[childCount=3] > FrameLayout[index=2] > ImageView',
         },
       ],
@@ -210,7 +212,7 @@ export default defineGkdApp({
         {
           resetMatch: 'match',
           activityIds: 'tool.seagull.v.ui.MainActivity',
-          matches:
+          anyMatches:
             'ImageView[vid="vpnSwitchButton"][desc="停止"] +n ScrollView > FrameLayout > FrameLayout > FrameLayout > FrameLayout > FrameLayout > ImageView + FrameLayout[childCount=1] > View',
         },
       ],
@@ -223,7 +225,7 @@ export default defineGkdApp({
         {
           resetMatch: 'match',
           activityIds: 'tool.seagull.v.ui.MainActivity',
-          matches:
+          anyMatches:
             'FrameLayout > LinearLayout +2 ImageView - FrameLayout > View[clickable=false][visibleToUser=true]',
         },
       ],
@@ -237,7 +239,7 @@ export default defineGkdApp({
           resetMatch: 'match',
           fastQuery: true,
           activityIds: 'tool.seagull.v.ui.MainActivity',
-          matches:
+          anyMatches:
             'TextView[text="签到"] < LinearLayout < LinearLayout +2 ScrollView > LinearLayout > Button[id="android:id/button1"][clickable=true][visibleToUser=true][text="确认"]',
         },
       ],
@@ -251,7 +253,7 @@ export default defineGkdApp({
           resetMatch: 'match',
           activityIds:
             'com.sigmob.sdk.base.common.PortraitTransparentAdActivity',
-          matches: 'View > View > View > TextView[id="close_btn"]',
+          anyMatches: 'View > View > View > TextView[id="close_btn"]',
         },
       ],
     },
@@ -264,7 +266,7 @@ export default defineGkdApp({
           fastQuery: true,
           resetMatch: 'match',
           activityIds: 'com.windmill.sdk.widget.InterstitialView_4012003',
-          matches:
+          anyMatches:
             '(@*[clickable=true] > [text="关闭"]) || (@*[clickable=true] > [vid="tobid_interstitial_skip_text"][text="关闭"]) || (@[vid="tobid_interstitial_skip_ll"][clickable=true] > [text="关闭"])',
         },
       ],
@@ -277,7 +279,7 @@ export default defineGkdApp({
         {
           resetMatch: 'match',
           activityIds: 'com.sigmob.sdk.base.common.PortraitAdActivity',
-          matches: '[text="奖励已下发"] + [text="跳过"]',
+          anyMatches: '[text="奖励已下发"] + [text="跳过"]',
         },
       ],
     },
@@ -290,7 +292,7 @@ export default defineGkdApp({
           resetMatch: 'match',
           activityIds:
             'com.sigmob.sdk.base.common.PortraitTransparentAdActivity',
-          matches: '[text="反馈"] + [id="close_btn"]',
+          anyMatches: '[text="反馈"] + [id="close_btn"]',
         },
       ],
     },
@@ -303,7 +305,7 @@ export default defineGkdApp({
           resetMatch: 'match',
           activityIds:
             'com.sigmob.sdk.base.common.PortraitTransparentAdActivity',
-          matches: '[id="close_btn"][text="跳过"]',
+          anyMatches: '[id="close_btn"][text="跳过"]',
         },
       ],
     },
@@ -317,7 +319,7 @@ export default defineGkdApp({
           resetMatch: 'match',
           actionMaximum: 1,
           activityIds: 'com.qq.e.ads.PortraitADActivity',
-          matches:
+          anyMatches:
             '[text="点击广告，即可获得奖励"] <<n * + * [text="点击广告拿奖励"]',
         },
       ],
@@ -330,7 +332,7 @@ export default defineGkdApp({
         {
           resetMatch: 'match',
           activityIds: 'com.qq.e.ads.PortraitADActivity',
-          matches: '[text="恭喜获得奖励！"] < * + *[clickable=true]',
+          anyMatches: '[text="恭喜获得奖励！"] < * + *[clickable=true]',
         },
       ],
     },
@@ -343,7 +345,7 @@ export default defineGkdApp({
           resetMatch: 'match',
           action: 'clickCenter',
           activityIds: 'com.qq.e.ads.PortraitADActivity',
-          matches:
+          anyMatches:
             '([text="恭喜获得奖励"] < FrameLayout < FrameLayout < FrameLayout + FrameLayout > FrameLayout > FrameLayout ImageView)',
         },
       ],
@@ -356,7 +358,20 @@ export default defineGkdApp({
         {
           resetMatch: 'match',
           activityIds: 'com.qq.e.ads.PortraitADActivity',
-          matches: '[text="恭喜获得奖励"] < * +n *[childCount=1] > *',
+          anyMatches: '[text="恭喜获得奖励"] < * +n *[childCount=1] > *',
+        },
+      ],
+    },
+    {
+      key: 28,
+      name: '弹窗，连接后新版浮动广告，关闭',
+      desc: '260908',
+      rules: [
+        {
+          resetMatch: 'match',
+          fastQuery: true,
+          activityIds: 'com.windmill.sdk.widget.InterstitialView_4012001',
+          matches: 'RelativeLayout[vid="tobid_interstitial_ad_detail"] LinearLayout[clickable=true][visibleToUser=true] > TextView[text="关闭"]',
         },
       ],
     },

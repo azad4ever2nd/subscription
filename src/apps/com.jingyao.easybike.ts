@@ -132,14 +132,14 @@ export default defineGkdApp({
     },
     {
       key: 9,
-      name: '系统定位服务已关闭',
+      name: '弹窗，系统定位服务已关闭，取消',
       desc: '260904，添加matchroo测试，添加打开定位服务，,添加IDS,消息通知 com.hellobike.business.hitch.common.home.HLPHHomeActivity',
       rules: [
         {
           fastQuery: true,
           resetMatch: 'match',
           action: 'clickCenter',
-          matchTime: 3000,
+          actionCd:100,
           forcedTime: 3000,
           matchRoot: false,
           activityIds: [
