@@ -100,6 +100,7 @@ export default defineGkdApp({
           preKeys: [4],
           actionMaximum: 3,
           action: 'swipe',
+		  actionCd:3000,
           swipeArg: {
             start: {
               x: 510,
