@@ -10,7 +10,7 @@ export default defineGkdApp({
       rules: [
         {
           resetMatch: 'match',
-		  action:clickCenter',
+		  action:'clickCenter',
           forcedTime: 2000,
 		  matchTime:2000,
           activityIds:

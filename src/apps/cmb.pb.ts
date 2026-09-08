@@ -180,7 +180,7 @@ export default defineGkdApp({
             '(WebView >n View > Button[text="去加自选" || text="去添加" || text="加自选"][clickable=true][visibleToUser=true])',
             '(WebView > View > View > View > View > Button[text="加自选"][clickable=true][visibleToUser=true])',
             '(WebView > View >  View >  View > Button[text="加自选"][clickable=true][visibleToUser=true])',
-          ],          ],
+          ], 
           activityIds:
             'cmb.pb.app.h5container.webviewcontainer.PBWebContainerActivity',
         },
@@ -359,7 +359,7 @@ export default defineGkdApp({
           action: 'clickCenter',
           activityIds:
             'cmb.pb.app.h5container.webviewcontainer.PBWebContainerActivity',
-          anyMatches:{
+          anyMatches:[
             '(@Button + [text*="恭喜"] +n [text="返回"])',
             '(@Button + [text^="恭喜"] +n [text="立即查看"])',
             '(View > View > View > @Button[clickable=true][visibleToUser=true] + TextView[text*="恭喜"] +n TextView[text="返回"])',
