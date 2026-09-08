@@ -30,11 +30,11 @@ export default defineGkdApp({
           fastQuery: true,
           activityIds:
             'ctrip.android.publicproduct.home.business.activity.CtripHomeActivity',
-          anyMatches:[
+          anyMatches: [
             '(@[vid="a"][clickable=true] < * + *[vid="a"] [text="立刻领取"])',
             '(RelativeLayout > RelativeLayout[vid="a"] - RelativeLayout > ImageView[vid="a"])',
             '(@ImageView[clickable=true][visibleToUser=true][vid="a"] < RelativeLayout + RelativeLayout >n ImageView[desc="广告素材"])',
-			],
+          ],
         },
       ],
     },
@@ -60,12 +60,12 @@ export default defineGkdApp({
           actionMaximum: 1,
           resetMatch: 'match',
           activityIds: 'ctrip.android.view.h5v2.view.H5Container',
-          anyMatches:[
+          anyMatches: [
             '(WebView >(8,10) View > TextView[id="signBtnInModal"][text="立即签到"][clickable=true][visibleToUser=true])',
             '([id="NotificationModal"] +2 * [id="signBtnInModal"][text="立即签到"])',
             '(View > View > View > TextView[id="signBtnInModal"][clickable=false][text="立即签到"])',
-			],
-		},
+          ],
+        },
       ],
     },
     {
@@ -77,11 +77,11 @@ export default defineGkdApp({
           resetMatch: 'match',
           preKeys: [4],
           activityIds: 'ctrip.android.view.h5v2.view.H5Container',
-          anyMatches:[
+          anyMatches: [
             '([id="popup_bg-id"] <n * +n TextView[text=""][childCount=0][clickable=true][visibleToUser=true])',
             '([id="popup_bg-id"] <<n * +n TextView[text=""][childCount=0][visibleToUser=true])',
-			],
-		},
+          ],
+        },
       ],
     },
     {

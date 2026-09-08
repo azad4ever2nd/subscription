@@ -180,7 +180,7 @@ export default defineGkdApp({
             '(WebView >n View > Button[text="去加自选" || text="去添加" || text="加自选"][clickable=true][visibleToUser=true])',
             '(WebView > View > View > View > View > Button[text="加自选"][clickable=true][visibleToUser=true])',
             '(WebView > View >  View >  View > Button[text="加自选"][clickable=true][visibleToUser=true])',
-          ], 
+          ],
           activityIds:
             'cmb.pb.app.h5container.webviewcontainer.PBWebContainerActivity',
         },
@@ -199,10 +199,10 @@ export default defineGkdApp({
           resetMatch: 'match',
           activityIds:
             'cmb.pb.app.h5container.webviewcontainer.PBWebContainerActivity',
-          anyMatches:[
+          anyMatches: [
             '(WebView > View > View > View > View > Button[text="自选"][clickable=true][visibleToUser=true])',
-			'View[id="FundDetailBody"] > View > View > @Button[text="自选"][clickable=true][visibleToUser=true] +n Button[text="定投" || text="购买"]',
-			],
+            'View[id="FundDetailBody"] > View > View > @Button[text="自选"][clickable=true][visibleToUser=true] +n Button[text="定投" || text="购买"]',
+          ],
         },
       ],
     },
@@ -216,7 +216,7 @@ export default defineGkdApp({
           action: 'click',
           matchDelay: 1000,
           forcedTime: 3000,
-		  matchTime:3000,
+          matchTime: 3000,
           activityIds:
             'cmb.pb.app.h5container.webviewcontainer.PBWebContainerActivity',
           anyMatches:
@@ -359,13 +359,13 @@ export default defineGkdApp({
           action: 'clickCenter',
           activityIds:
             'cmb.pb.app.h5container.webviewcontainer.PBWebContainerActivity',
-          anyMatches:[
+          anyMatches: [
             '(@Button + [text*="恭喜"] +n [text="返回"])',
             '(@Button + [text^="恭喜"] +n [text="立即查看"])',
             '(View > View > View > @Button[clickable=true][visibleToUser=true] + TextView[text*="恭喜"] +n TextView[text="返回"])',
             '(View > View > View > @Button[clickable=true][visibleToUser=true] + TextView[text^="恭喜"] +n TextView[text="立即查看"])',
-			],
-		},
+          ],
+        },
       ],
     },
     {
@@ -378,12 +378,12 @@ export default defineGkdApp({
           action: 'clickCenter',
           activityIds:
             'cmb.pb.app.h5container.webviewcontainer.PBWebContainerActivity',
-          anyMatches:[
+          anyMatches: [
             '([text="待提现红包"] + [text="一键提现"])',
             '(WebView > View > View > TextView[text="待提现红包"] + Button[clickable=true][visibleToUser=true][text="一键提现"])',
             '([text="确认提现到账户"])',
-			],
-		},
+          ],
+        },
       ],
     },
     {
@@ -598,7 +598,8 @@ export default defineGkdApp({
           preKeys: [35],
           activityIds:
             'cmb.pb.app.h5container.webviewcontainer.PBWebContainerActivity',
-          anyMatches: '[text="同步解除您的自选自建分组"] <n * + * > [text="确定"]',
+          anyMatches:
+            '[text="同步解除您的自选自建分组"] <n * + * > [text="确定"]',
         },
       ],
     },
@@ -683,7 +684,8 @@ export default defineGkdApp({
       rules: [
         {
           actionCdKey: 1,
-          anyMatches: '[text="（周三5折）必胜客50元代金券"] +6 [text*="立即抢购"]',
+          anyMatches:
+            '[text="（周三5折）必胜客50元代金券"] +6 [text*="立即抢购"]',
           resetMatch: 'match',
           activityIds:
             'cmb.pb.app.h5container.webviewcontainer.PBWebContainerActivity',
@@ -696,7 +698,8 @@ export default defineGkdApp({
       desc: 'D',
       rules: [
         {
-          anyMatches: '[text="（周三5折）喜茶20元代金券"] +6 [text*="立即抢购"]',
+          anyMatches:
+            '[text="（周三5折）喜茶20元代金券"] +6 [text*="立即抢购"]',
           actionCdKey: 1,
           resetMatch: 'match',
           activityIds:
@@ -710,7 +713,8 @@ export default defineGkdApp({
       desc: 'D',
       rules: [
         {
-          anyMatches: '[text="（周三5折）肯德基20元代金券"] +6 [text*="立即抢购"]',
+          anyMatches:
+            '[text="（周三5折）肯德基20元代金券"] +6 [text*="立即抢购"]',
           actionCd: 0,
           resetMatch: 'match',
           activityIds:

@@ -28,7 +28,8 @@ export default defineGkdApp({
           resetMatch: 'match',
           activityIds:
             'com.hellobike.flutter.platform.android.flutterboost.FlutterHostFragmentActivity',
-          anyMatches: '[desc="骑行卡" || desc="主题卡"] <n * +n [desc="确认开锁"]',
+          anyMatches:
+            '[desc="骑行卡" || desc="主题卡"] <n * +n [desc="确认开锁"]',
         },
       ],
     },
@@ -123,10 +124,10 @@ export default defineGkdApp({
           actionCd: 0,
           fastQuery: true,
           activityIds: 'com.hellobike.atlas.business.portal.PortalActivity',
-          anyMatches:[
+          anyMatches: [
             '(FrameLayout > LinearLayout > LinearLayout[vid="hbDialogLayout"] + View + ImageView[vid="actionDialogClose"])',
             '(LinearLayout > FrameLayout[vid="creativeContainer"] + ImageView[vid="actionDialogClose"][clickable=true][visibleToUser=true])',
-			],
+          ],
         },
       ],
     },
@@ -139,17 +140,17 @@ export default defineGkdApp({
           fastQuery: true,
           resetMatch: 'match',
           action: 'clickCenter',
-          actionCd:100,
+          actionCd: 100,
           forcedTime: 3000,
           matchRoot: false,
           activityIds: [
             'com.hellobike.atlas.business.portal.PortalActivity',
             'com.hellobike.business.hitch.common.home.HLPHHomeActivity',
           ],
-          anyMatches:[
+          anyMatches: [
             '([text^="请打开定位服务"] <<n * +n * [text="取消"][clickable=true][visibleToUser=true])',
             '(TextView[text^="请打开定位服务"] < FrameLayout + FrameLayout[id="com.jingyao.easybike:id/bottomContainer"] > LinearLayout > Button[text="取消"][clickable=true][visibleToUser=true])',
-			],
+          ],
         },
       ],
     },
@@ -270,10 +271,10 @@ export default defineGkdApp({
           resetMatch: 'match',
           action: 'clickCenter',
           activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
-          anyMatches:[
+          anyMatches: [
             '([text="会员单单返"] + [text="领奖励"])',
             '(View > View > View > TextView[text*="奖励金"] + View + TextView[text="知道了bak"][clickable=true])',
-			],
+          ],
         },
       ],
     },
@@ -312,10 +313,10 @@ export default defineGkdApp({
         {
           resetMatch: 'match',
           activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
-          anyMatches:[
+          anyMatches: [
             '(@TextView[clickable=true] + [text="新人首单，兑免费骑车"])',
             '(View > View > TextView[text^="兑换" || text=" 单车1.5元券"] +2 @TextView[text="再想想"][clickable=true][visibleToUser=true] + TextView[text="确认兑换"])',
-			],
+          ],
         },
       ],
     },
@@ -438,11 +439,11 @@ export default defineGkdApp({
           actionMaximum: 10,
           activityIds:
             'com.hellobike.moped.platform.offline.web.OhoRealmWebActivity',
-          anyMatches:[
+          anyMatches: [
             '(@View > [text="碳积分"] + * + [text="去领取"])',
             '(Image[text="ea6cf0c3c8f6483c9dbbe484a2ea60e3_icon_green_c"] < View + TextView + View > TextView[text="去领取"])',
             '(View > View > View > TextView - @View > Image[text="aab668b57491499e89ee4a5b766bcf77_35"])',
-			],
+          ],
         },
       ],
     },

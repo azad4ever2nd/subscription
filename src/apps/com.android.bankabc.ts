@@ -194,7 +194,8 @@ export default defineGkdApp({
         {
           resetMatch: 'match',
           activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
-          matches: 'View > @Button[text="获取验证码"][clickable=true][visibleToUser=true] + View[text^="验证码发送至手机号 "]',
+          matches:
+            'View > @Button[text="获取验证码"][clickable=true][visibleToUser=true] + View[text^="验证码发送至手机号 "]',
         },
       ],
     },

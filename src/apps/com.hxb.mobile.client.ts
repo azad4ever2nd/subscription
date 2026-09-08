@@ -97,7 +97,7 @@ export default defineGkdApp({
           resetMatch: 'match',
           matchTime: 3000,
           forcedTime: 3000,
-		  action:'clickCenter',
+          action: 'clickCenter',
           activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
           anyMatches:
             'View[text^="恭喜您抽中"] < View + View[clickable=true][visibleToUser=true]',
