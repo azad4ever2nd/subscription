@@ -93,10 +93,10 @@ export default defineGkdApp({
           action: 'clickCenter',
           activityIds:
             'cmb.pb.app.h5container.webviewcontainer.PBWebContainerActivity',
-          anyMatches:[
+          anyMatches: [
             '(TextView[text$="基金体验金"] < View +(1,3) View[id="useBtn"] > Button[text="立即使用"][clickable=true])',
             '(WebView[text="券详情"] > View > View > View > View > Button[text="立即使用"][clickable=true][visibleToUser=true])',
-			],
+          ],
         },
       ],
     },
@@ -112,11 +112,11 @@ export default defineGkdApp({
             'TextView[text="请输入取款密码"] < View +n View > Button[text="确定"][clickable=true][visibleToUser=true]',
           activityIds:
             'cmb.pb.app.h5container.webviewcontainer.PBWebContainerActivity',
-          anyMatches:[
+          anyMatches: [
             '([text="收益奖励发放方式"] >n [text="我已阅读"])',
             '([text="recommend.f43217f6"] < View + [text="我已阅读"])',
             '(WebView[text="收益奖励发放方式"] > View > View > @TextView[clickable=false] + TextView[text^="已阅读并同意"] + View + Button[text="提交"][clickable=true][visibleToUser=true])',
-			],
+          ],
         },
       ],
     },
@@ -131,10 +131,10 @@ export default defineGkdApp({
           preKeys: [7],
           activityIds:
             'cmb.pb.app.h5container.webviewcontainer.PBWebContainerActivity',
-          anyMatches:[
+          anyMatches: [
             '([text$="可点击"] + [text="发放到银行卡"])',
             '(WebView[text="收益奖励发放方式"] > View > View > TextView + TextView[text="发放到银行卡"][clickable=false])',
-			],
+          ],
         },
       ],
     },
@@ -178,10 +178,10 @@ export default defineGkdApp({
       rules: [
         {
           resetMatch: 'match',
-          matchDelay: 1000,		  
+          matchDelay: 1000,
           matchTime: 3000,
           forcedTime: 3000,
-		  actionCd:500,
+          actionCd: 500,
           action: 'clickCenter',
           anyMatches: [
             '(View > View > @View[clickable=true][visibleToUser=true] > TextView[text="我要抽奖"])',
@@ -424,10 +424,10 @@ export default defineGkdApp({
           actionMaximum: 1,
           activityIds:
             'cmb.pb.app.h5container.webviewcontainer.PBWebContainerActivity',
-          anyMatches:[
+          anyMatches: [
             '(Button[text="管理"])',
             '(WebView[text="定投详情"] > View > View > Button[clickable=true][visibleToUser=true][text="管理"])',
-			],
+          ],
         },
       ],
     },
@@ -453,10 +453,10 @@ export default defineGkdApp({
       desc: '260804，添加 终止定投计划确定',
       rules: [
         {
-          anyMatches:[
+          anyMatches: [
             '([text="确定不再关注？"] < * + [text="取消"] + [text="确定"])',
             '([text="确定终止该定投计划吗？"] +n * > [text="确定"])',
-			],
+          ],
           resetMatch: 'match',
           activityIds:
             'cmb.pb.app.h5container.webviewcontainer.PBWebContainerActivity',
@@ -537,10 +537,10 @@ export default defineGkdApp({
           action: 'clickCenter',
           activityIds:
             'cmb.pb.app.h5container.webviewcontainer.PBWebContainerActivity',
-          anyMatches:[
+          anyMatches: [
             '([text$="定投确认"] < * +n [text="确认继续定投"])',
             '(Dialog > @Button[clickable=true][visibleToUser=true][text="确认继续定投"] - TextView - View > View[text="超风险及高风险产品定投确认"])',
-			],
+          ],
         },
       ],
     },
@@ -569,10 +569,10 @@ export default defineGkdApp({
             'cmb.pb.app.h5container.webviewcontainer.PBWebContainerActivity',
           actionMaximum: 1,
           resetMatch: 'match',
-          anyMatches:[
+          anyMatches: [
             '(@*[clickable=false][checked=false] + [text="全选"])',
             '(@*[clickable=true][checked=false] + [text="全选"])',
-			],
+          ],
         },
       ],
     },
@@ -628,11 +628,11 @@ export default defineGkdApp({
       desc: '251120，动态text',
       rules: [
         {
-          anyMatches:[
+          anyMatches: [
             '([text$="秒后关闭"] +n @TextView + [text="广告"])',
             '([vid="alertTitle"] +n * > [vid="buttonNegative"][text="拒绝"])',
             '([text="1762179375715243693"] + Image)',
-			],
+          ],
           resetMatch: 'match',
           activityIds:
             'cmb.pb.app.h5container.webviewcontainer.PBWebContainerActivity',
@@ -782,10 +782,10 @@ export default defineGkdApp({
         {
           resetMatch: 'match',
           fastQuery: true,
-          anyMatches:[
+          anyMatches: [
             '([vid="title"][text="开启消息通知"] + [vid="close_btn"])',
             '(FrameLayout > ViewGroup > RelativeLayout > TextView[vid="title"][text="开启消息通知"] + ImageView[vid="close_btn"][clickable=true][visibleToUser=true])',
-			],
+          ],
           activityIds: [
             'cmb.pb.app.mainframe.container.PBMainActivity',
             'com.cmb.zh.ui.mbank.im.activitys.messagecenter.MessageCenterActivity',
