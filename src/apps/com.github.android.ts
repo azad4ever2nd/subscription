@@ -103,7 +103,7 @@ export default defineGkdApp({
           swipeArg: {
             start: {
               x: 510,
-              y: 390,
+              y: 500,
             },
             end: {
               x: 510,
