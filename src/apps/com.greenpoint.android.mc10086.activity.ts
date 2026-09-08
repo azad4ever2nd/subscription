@@ -28,10 +28,10 @@ export default defineGkdApp({
           forcedTime: 3000,
           resetMatch: 'match',
           activityIds: 'com.mc10086.cmcc.view.tabs.AppTabFragment',
-          anyMatches:[
+          anyMatches: [
             '(@[text="暂不更新"] + [text="立即体验"])',
             '(LinearLayout > @Button[vid="dialog_btn1"][clickable=true][text="暂不更新"] + Button[vid="dialog_btn2"][visibleToUser=true][text="立即体验"])',
-			],
+          ],
         },
       ],
     },

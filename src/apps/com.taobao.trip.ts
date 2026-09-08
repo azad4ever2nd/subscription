@@ -30,12 +30,12 @@ export default defineGkdApp({
           resetMatch: 'match',
           action: 'clickCenter',
           activityIds: 'fliggyx.android.unicorn.ActWebviewActivity',
-          anyMatches:[
-		    '@View[clickable=false][visibleToUser=true] > TextView + TextView[text="连签"] +n TextView[text="里程"]',
+          anyMatches: [
+            '@View[clickable=false][visibleToUser=true] > TextView + TextView[text="连签"] +n TextView[text="里程"]',
             '(View > View > View > View > @TextView[clickable=true][visibleToUser=true] + TextView[text*="连签"])',
             '(View > View > @TextView[clickable=true][visibleToUser=true] + TextView[text^="已连签"] + TextView[text*="保持连签"])',
-			],
-		},
+          ],
+        },
       ],
     },
     {

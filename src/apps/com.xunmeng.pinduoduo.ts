@@ -13,10 +13,10 @@ export default defineGkdApp({
           actionMaximum: 15,
           order: -1,
           resetMatch: 'match',
-          anyMatches:[
+          anyMatches: [
             '(@View[childCount=4][clickable=true][visibleToUser=true] > TextView[text="无门槛券"] + View[text="100"] + TextView[text="积分兑换"])',
             '(@View[clickable=false][visibleToUser=true][childCount=4] > TextView[text="无门槛券"] +  View[text="100"] +  TextView[text="积分兑换"])',
-			],
+          ],
           activityIds: ['com.xunmeng.pinduoduo.activity.NewPageActivity'],
         },
       ],
@@ -27,10 +27,10 @@ export default defineGkdApp({
       desc: '260905',
       rules: [
         {
-          anyMatches:[
+          anyMatches: [
             '(TextView[text*="百亿补贴无门槛券" || text$="无门槛券"] <n View + TextView[text="确认兑换"][clickable=false][visibleToUser=true])',
             '(TextView[text="元"] - TextView[text="5"] < View < View + TextView[text="确认兑换"][clickable=false][visibleToUser=true])',
-			],
+          ],
           actionCd: 10,
           resetMatch: 'match',
           order: -2,
@@ -75,10 +75,10 @@ export default defineGkdApp({
           resetMatch: 'match',
           action: 'clickCenter',
           activityIds: 'com.xunmeng.pinduoduo.activity.NewPageActivity',
-          anyMatches:[
+          anyMatches: [
             '([text="限时抽神券"] +n [text="无门槛券"] + * [text="立即抽奖"])',
             '(TextView[text="限时抽神券"] -2 TextView[text="无门槛券"] + View >3 TextView[text="立即抽奖"])',
-			],
+          ],
         },
       ],
     },
@@ -91,10 +91,10 @@ export default defineGkdApp({
           resetMatch: 'match',
           actionCd: 1500,
           activityIds: 'com.xunmeng.pinduoduo.activity.NewPageActivity',
-          anyMatches:[
+          anyMatches: [
             '([text^="邀请你加入队伍"] < *  +n @*[visibleToUser=true] > [text="立即加入抽福袋"])',
             '([text^="邀请你加入队伍"] +n @*[clickable=true][visibleToUser=true] > [text="立即加入抽福袋"])',
-			],
+          ],
         },
       ],
     },
@@ -104,12 +104,12 @@ export default defineGkdApp({
       desc: '260905,整合打卡布局有变，打卡成功，@View >n [text="打卡"]',
       rules: [
         {
-          anyMatches:[
+          anyMatches: [
             '([text="打卡送积分"] +n [text="打卡"])',
             '(View > [text="+"] + TextView + * + [text="打卡"])',
             '(@[text="抽奖"] - View > Image[text="webp"])',
             '([text*="打卡成功"] +4 *)',
-			],
+          ],
           actionMaximum: 2,
           resetMatch: 'match',
           activityIds: ['com.xunmeng.pinduoduo.activity.NewPageActivity'],
@@ -165,13 +165,13 @@ export default defineGkdApp({
           resetMatch: 'match',
           actionCd: 300,
           activityIds: 'com.xunmeng.pinduoduo.activity.NewPageActivity',
-          anyMatches:[
+          anyMatches: [
             '(@Button[text="关闭按钮"] +n [text^="还差1人" || text^="拼单已发起"])',
             '([vid="pdd"] < @[vid="pdd"] + [vid="pdd"] > [text="评价拍摄"])',
             '(TextView[text="继续编辑"] <<n ViewGroup +n @ViewGroup[clickable=true])',
             '(TextView[text="继续编辑"] < FrameLayout < ViewGroup + @ViewGroup[clickable=true] > FrameLayout > TextView[text="退出"])',
             '(TextView[text="继续编辑"] < FrameLayout + @FrameLayout[clickable=true][visibleToUser=true] > TextView[text="放弃打款"])',
-			]
+          ],
         },
       ],
     },
@@ -195,11 +195,11 @@ export default defineGkdApp({
       desc: '260905，',
       rules: [
         {
-          anyMatches:[
+          anyMatches: [
             '(@Button[text="关闭按钮"] +n [text^="还差1人" || text^="拼单已发起"])',
             '([text="邀请好友拼单"] + [text="去首页逛逛"])',
             '([text="继续编辑"] <<n *[clickable=true] + @*[clickable=true] >n [text="放弃领券"])',
-			],
+          ],
           actionCd: 300,
           fastQuery: true,
           resetMatch: 'match',
