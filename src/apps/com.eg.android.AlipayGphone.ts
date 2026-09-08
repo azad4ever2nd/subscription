@@ -164,7 +164,7 @@ export default defineGkdApp({
             '(View > TextView[text="开启推送服务"] + @View[clickable=false][visibleToUser=true] > TextView[text.length=1])',
             '(View > @Image[clickable=false][visibleToUser=true][text="关闭弹窗"] + View > View > View > Image[text="original?hm_biz=mybank_fund"])',
             '(@Image < View + View Button[text="同意协议并分期"])',
-			'View > View > TextView[text="支付宝"] + TextView[text="邀请你"] + TextView[text="跳过"][clickable=true][visibleToUser=true]',
+            'View > View > TextView[text="支付宝"] + TextView[text="邀请你"] + TextView[text="跳过"][clickable=true][visibleToUser=true]',
             '(View > @Image[text="关闭弹窗"] + View > View > TextView[text="立即更换"])',
             '(@Image < View + View > TextView[text="开通信用卡借款享一站式服务"])',
             '(@Image[clickable=false][visibleToUser=true] < View + View > TextView[text="开通信用卡借款享一站式服务"])',
