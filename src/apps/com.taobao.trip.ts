@@ -9,7 +9,7 @@ export default defineGkdApp({
       desc: '260225,',
       rules: [
         {
-          matches: [
+          anyMatches: [
             '([text="今日签到"] <<n *[depth=19] + * > *[index=1]) || (@* > * + * > [text="今日签到" || text="门票订购"])',
           ],
           actionCd: 0,
@@ -22,7 +22,7 @@ export default defineGkdApp({
     {
       key: 2,
       name: '签到成功',
-      desc: '260829，第一K40，第二nova7，两台手机而成不同，改布局，漏签，动态，只能通过关键信息 (@*[clickable=true][visibleToUser=true] + [text^="已连签" && text$="累计获得"] +n [text="里程"]) || (@*[clickable=true][visibleToUser=true] + [text="连签"] +2 [text="日可领"] +2 [text="里程"]) || ',
+      desc: '260908，第一K40，第二nova7，两台手机而成不同，改布局，漏签，动态，只能通过关键信息 (@*[clickable=true][visibleToUser=true] + [text^="已连签" && text$="累计获得"] +n [text="里程"]) || (@*[clickable=true][visibleToUser=true] + [text="连签"] +2 [text="日可领"] +2 [text="里程"]) || ',
       rules: [
         {
           actionMaximum: 3,
@@ -30,9 +30,12 @@ export default defineGkdApp({
           resetMatch: 'match',
           action: 'clickCenter',
           activityIds: 'fliggyx.android.unicorn.ActWebviewActivity',
-          matches:
-            '(View > View > View > View > @TextView[clickable=true][visibleToUser=true] + TextView[text*="连签"]) || (View > View > @TextView[clickable=true][visibleToUser=true] + TextView[text^="已连签"] + TextView[text*="保持连签"])',
-        },
+          anyMatches:[
+		    '@View[clickable=false][visibleToUser=true] > TextView + TextView[text="连签"] +n TextView[text="里程"]',
+            '(View > View > View > View > @TextView[clickable=true][visibleToUser=true] + TextView[text*="连签"])',
+            '(View > View > @TextView[clickable=true][visibleToUser=true] + TextView[text^="已连签"] + TextView[text*="保持连签"])',
+			],
+		},
       ],
     },
     {
@@ -41,7 +44,7 @@ export default defineGkdApp({
       desc: '260101',
       rules: [
         {
-          matches: [
+          anyMatches: [
             '@* > [text="O1CN01EmIdr51vV7c1P87T9_!!6000000006177-2-tps-750-178.png_790x10000.jpg_"]',
           ],
           actionCd: 0,
@@ -57,7 +60,7 @@ export default defineGkdApp({
       desc: '260306',
       rules: [
         {
-          matches: ['[text="体验调研"] + @TextView + * [text="提交反馈"]'],
+          anyMatches: ['[text="体验调研"] + @TextView + * [text="提交反馈"]'],
           resetMatch: 'match',
           activityIds: ['fliggyx.android.unicorn.ActWebviewActivity'],
         },
@@ -69,7 +72,7 @@ export default defineGkdApp({
       desc: '260328，增加IDS，[text="O1CN01ypsdCy1Q7zBKRuXQ9_!!6000000001930-2-tps-62-62.png_110x10000"]',
       rules: [
         {
-          matches: [
+          anyMatches: [
             '@* + [text^="打开通知" || text="仅打开重要通知，关闭营销打扰"] <<n * +n [text="立即打开"]',
           ],
           resetMatch: 'match',
@@ -86,7 +89,7 @@ export default defineGkdApp({
       desc: '260313',
       rules: [
         {
-          matches: [
+          anyMatches: [
             '([text^="O1CN01TD5wn71Ptmtb9GAxE_!!6000000001899-2-tps-60-60"]) || ([text^="O1CN01EmIdr51vV7c1P87T9_!!6000000006177-2-tps-750-178"])',
           ],
           resetMatch: 'match',
@@ -104,7 +107,7 @@ export default defineGkdApp({
       desc: '260406，添加IDS，[vid="fliggy_update_content_layout"] + ',
       rules: [
         {
-          matches: ['[vid="fliggy_update_cancel_btn"]'],
+          anyMatches: ['[vid="fliggy_update_cancel_btn"]'],
           fastQuery: true,
           resetMatch: 'match',
           activityIds: [

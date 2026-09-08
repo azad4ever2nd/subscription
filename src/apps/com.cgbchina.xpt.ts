@@ -6,14 +6,16 @@ export default defineGkdApp({
     {
       key: 1,
       name: '带不再提示的弹窗，X掉',
-      desc: '260831',
+      desc: '260908',
       rules: [
         {
           resetMatch: 'match',
+		  action:clickCenter',
           forcedTime: 2000,
+		  matchTime:2000,
           activityIds:
             'com.cgb.mobilebank.sit.launcher.module.main.activity.IndexActivity',
-          matches:
+          anyMatches:
             'View > @ImageView[clickable=true][visibleToUser=true] + ImageView + ImageView[desc=" 不再提示"]',
         },
       ],
@@ -28,7 +30,7 @@ export default defineGkdApp({
           matchDelay: 1000,
           activityIds:
             'com.cgb.mobilebank.sit.launcher.module.main.activity.IndexActivity',
-          matches:
+          anyMatches:
             'TextView[text*="新版本"] < LinearLayout +n LinearLayout > TextView[clickable=true][visibleToUser=true][vid="tv_left"][text="稍后再说"]',
         },
       ],
@@ -45,7 +47,7 @@ export default defineGkdApp({
             'com.cgb.mobilebank.sit.launcher.module.main.activity.IndexActivity',
             'com.alipay.mobile.nebulacore.ui.H5Activity',
           ],
-          matches: '@[vid="ad_table_close"] + [vid="ad_table_view_base"]',
+          anyMatches: '@[vid="ad_table_close"] + [vid="ad_table_view_base"]',
         },
       ],
     },
@@ -57,7 +59,7 @@ export default defineGkdApp({
         {
           resetMatch: 'match',
           activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
-          matches:
+          anyMatches:
             'WebView[text="手机银行天天领福利"] > View > View > Image + View + @Image[clickable=true][visibleToUser=true] + Image[text="prizeDialogBtn.13fe7a56"] + View',
         },
       ],
@@ -70,7 +72,7 @@ export default defineGkdApp({
         {
           resetMatch: 'match',
           activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
-          matches:
+          anyMatches:
             'View[text="0"] < View < View - View > @Image[clickable=true][visibleToUser=true] + View',
         },
       ],
@@ -83,7 +85,7 @@ export default defineGkdApp({
         {
           resetMatch: 'match',
           activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
-          matches:
+          anyMatches:
             '(View[text="1"] < View < View - View > @Image[clickable=true][visibleToUser=true][text.length=0] + View[text^="已连续签到"]) || (View[text="1"] < View < View +(6,10) View > View > Image[clickable=true][visibleToUser=true][text="20260629113116910808676207755"]) || (View[text="1"] < View < View - View > View[text="提醒我签到"] +3 Image[clickable=true][visibleToUser=true])',
         },
       ],
@@ -96,7 +98,7 @@ export default defineGkdApp({
         {
           resetMatch: 'match',
           activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
-          matches:
+          anyMatches:
             'View > View > View[text="恭喜您完成任务"] + Button[clickable=true][visibleToUser=true][text="去领奖"]',
         },
       ],
@@ -109,7 +111,7 @@ export default defineGkdApp({
         {
           resetMatch: 'match',
           activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
-          matches:
+          anyMatches:
             'View[text="1"] < View < View - View > View > View[id="luckDraw"] + @View[clickable=true][visibleToUser=true] > Image[text.length=0]',
         },
       ],
@@ -122,7 +124,7 @@ export default defineGkdApp({
         {
           resetMatch: 'match',
           activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
-          matches:
+          anyMatches:
             'Dialog > View[text="温馨提示"] + View[text^="抽奖一次消耗您的8积分"] + View > Button[clickable=true][visibleToUser=true][text="确认 "]',
         },
       ],
@@ -135,7 +137,7 @@ export default defineGkdApp({
         {
           resetMatch: 'match',
           activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
-          matches:
+          anyMatches:
             '(View > Image + Image[text="noPrizeDialogBtn.e21b1317"][clickable=true]) || (View > Image + Image[text="prizeDialogBtn.cf846fd8"][clickable=true])',
         },
       ],
@@ -149,7 +151,7 @@ export default defineGkdApp({
           resetMatch: 'match',
           fastQuery: true,
           activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
-          matches:
+          anyMatches:
             '[vid="tv_title"] +n [vid="tip"][text^="广发银行不承担影娱充值产品"] + * > [vid="tv_right"][text="确定"]',
         },
       ],
@@ -164,7 +166,7 @@ export default defineGkdApp({
           fastQuery: true,
           activityIds:
             'com.cgb.mobilebank.android.login.module.login.activity.LoginActivityV2',
-          matches:
+          anyMatches:
             'LinearLayout > TextView[text="不同意"] +n TextView[text="同意并继续"][clickable=true][visibleToUser=true]',
         },
       ],

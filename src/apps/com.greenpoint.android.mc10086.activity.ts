@@ -13,7 +13,7 @@ export default defineGkdApp({
           resetMatch: 'app',
           fastQuery: true,
           forcedTime: 3000,
-          matches: ['@[vid="iv_top_close"] + [vid="rl_top_bg"]'],
+          anyMatches: ['@[vid="iv_top_close"] + [vid="rl_top_bg"]'],
           activityIds: ['com.mc10086.cmcc.view.tabs.AppTabFragment'],
         },
       ],
@@ -25,11 +25,13 @@ export default defineGkdApp({
       rules: [
         {
           fastQuery: true,
-          forcedTime: 1500,
+          forcedTime: 3000,
           resetMatch: 'match',
           activityIds: 'com.mc10086.cmcc.view.tabs.AppTabFragment',
-          matches:
-            '(@[text="暂不更新"] + [text="立即体验"]) || (LinearLayout > @Button[vid="dialog_btn1"][clickable=true][text="暂不更新"] + Button[vid="dialog_btn2"][visibleToUser=true][text="立即体验"])',
+          anyMatches:[
+            '(@[text="暂不更新"] + [text="立即体验"])',
+            '(LinearLayout > @Button[vid="dialog_btn1"][clickable=true][text="暂不更新"] + Button[vid="dialog_btn2"][visibleToUser=true][text="立即体验"])',
+			],
         },
       ],
     },
@@ -43,9 +45,11 @@ export default defineGkdApp({
           action: 'clickCenter',
           matchTime: 2000,
           fastQuery: true,
-          forcedTime: 2000,
-          matches: [
-            '(LinearLayout > @ImageView[vid="close_btn"][desc="关闭"][clickable=true][visibleToUser=true] - RelativeLayout > ImageView[vid="ad_image"][desc="广告bak"]) || (ViewGroup[vid="cl_pop"] > ImageView[vid="img_close"][clickable=true][visibleToUser=true]) || (ImageView[vid="ad_image"][desc="广告"] <n RelativeLayout + ImageView[vid="close_btn"][desc="关闭"][clickable=true][visibleToUser=true])',
+          forcedTime: 3000,
+          anyMatches: [
+            '(LinearLayout > @ImageView[vid="close_btn"][desc="关闭"][clickable=true][visibleToUser=true] - RelativeLayout > ImageView[vid="ad_image"][desc="广告bak"])',
+            '(ViewGroup[vid="cl_pop"] > ImageView[vid="img_close"][clickable=true][visibleToUser=true])',
+            '(ImageView[vid="ad_image"][desc="广告"] <n RelativeLayout + ImageView[vid="close_btn"][desc="关闭"][clickable=true][visibleToUser=true])',
           ],
           activityIds: ['com.mc10086.cmcc.view.tabs.AppTabFragment'],
         },
@@ -59,9 +63,9 @@ export default defineGkdApp({
         {
           resetMatch: 'match',
           fastQuery: true,
-          forcedTime: 1500,
+          forcedTime: 3000,
           activityIds: 'com.mc10086.cmcc.view.tabs.AppTabFragment',
-          matches:
+          anyMatches:
             'ImageView[vid="ad_image"][desc="广告"] < RelativeLayout + ImageView[vid="close_btn"][desc="关闭"][clickable=true][visibleToUser=true]',
         },
       ],
@@ -73,7 +77,7 @@ export default defineGkdApp({
       rules: [
         {
           resetMatch: 'match',
-          matches: ['[text="恭喜您获得"] +3 [text="开心收下"] + TextView'],
+          anyMatches: ['[text="恭喜您获得"] +3 [text="开心收下"] + TextView'],
           activityIds: ['com.cmccit.webview.ac.CommonHtml5Activity'],
         },
       ],
@@ -86,7 +90,7 @@ export default defineGkdApp({
         {
           actionMaximum: 1,
           resetMatch: 'activity',
-          matches: ['[desc="获取验证码"]'],
+          anyMatches: ['[desc="获取验证码"]'],
           activityIds: ['com.cmccit.webview.ac.CommonHtml5Activity'],
         },
       ],
@@ -98,7 +102,7 @@ export default defineGkdApp({
       rules: [
         {
           resetMatch: 'match',
-          matches: [
+          anyMatches: [
             '([text="兑换成功"] + Image) || (@* +2 * > [text="恭喜获得"]) || ([text="兑换中"] < * +n [text="我知道了"])',
           ],
           activityIds: ['com.cmccit.webview.ac.CommonHtml5Activity'],
@@ -115,7 +119,7 @@ export default defineGkdApp({
           actionMaximum: 1,
           fastQuery: true,
           activityIds: 'com.mc10086.cmcc.view.tabs.AppTabFragment',
-          matches:
+          anyMatches:
             'ViewGroup > TextView[text="签到有礼"][clickable=false][visibleToUser=true]',
         },
       ],
@@ -128,7 +132,7 @@ export default defineGkdApp({
         {
           resetMatch: 'match',
           activityIds: 'com.cmccit.webview.ac.CommonHtml5Activity',
-          matches:
+          anyMatches:
             '[text="累计签到奖励"] +n [text="去使用"] + *[clickable=true]',
         },
       ],
@@ -139,7 +143,7 @@ export default defineGkdApp({
       desc: '260831',
       rules: [
         {
-          matches: [
+          anyMatches: [
             'TextView[text^="累签" && text$="次"] <<n View + View > TextView[index=0][clickable=true][visibleToUser=true]',
           ],
           actionMaximum: 1,

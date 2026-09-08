@@ -12,7 +12,7 @@ export default defineGkdApp({
         {
           activityIds:
             'com.hellobike.flutter.platform.android.flutterboost.FlutterHostFragmentActivity',
-          matches:
+          anyMatches:
             'View > View[desc^="请打开定位服务"] +2 View[desc="取消"][clickable=true]',
           resetMatch: 'match',
           actionCd: 0,
@@ -28,7 +28,7 @@ export default defineGkdApp({
           resetMatch: 'match',
           activityIds:
             'com.hellobike.flutter.platform.android.flutterboost.FlutterHostFragmentActivity',
-          matches: '[desc="骑行卡" || desc="主题卡"] <n * +n [desc="确认开锁"]',
+          anyMatches: '[desc="骑行卡" || desc="主题卡"] <n * +n [desc="确认开锁"]',
         },
       ],
     },
@@ -45,7 +45,7 @@ export default defineGkdApp({
           matchTime: 3000,
           activityIds:
             'com.hellobike.flutter.platform.android.flutterboost.FlutterHostFragmentActivity',
-          matches:
+          anyMatches:
             '(LinearLayout > FrameLayout[vid="creativeContainer"] + ImageView[vid="actionDialogClose"][clickable=true][visibleToUser=true])',
         },
       ],
@@ -62,7 +62,7 @@ export default defineGkdApp({
             'com.hellobike.flutter.platform.android.flutterboost.FlutterHostFragmentActivity',
             'com.hellobike.atlas.business.portal.PortalActivity',
           ],
-          matches:
+          anyMatches:
             '[vid="alertTitle"][text*="权限"] <<n * +n * [id="android:id/button2"][text="稍后再说"]',
         },
       ],
@@ -76,8 +76,9 @@ export default defineGkdApp({
           resetMatch: 'match',
           fastQuery: true,
           activityIds: 'com.hellobike.atlas.business.portal.PortalActivity',
-          matches: [
-            '([vid="title_tv"][text="哈啰还不知道您在哪里"] +2 @[vid="sign_out_tv"][text="暂不开启"] + [vid="agreement_tv"][text="快速开启定位"]) || (TextView[text="开启消息通知"] < FrameLayout +n FrameLayout > LinearLayout > Button[text="取消"][clickable=true][visibleToUser=true])',
+          anyMatches: [
+            '([vid="title_tv"][text="哈啰还不知道您在哪里"] +2 @[vid="sign_out_tv"][text="暂不开启"] + [vid="agreement_tv"][text="快速开启定位"])',
+            '(TextView[text="开启消息通知"] < FrameLayout +n FrameLayout > LinearLayout > Button[text="取消"][clickable=true][visibleToUser=true])',
           ],
         },
       ],
@@ -91,7 +92,7 @@ export default defineGkdApp({
           resetMatch: 'match',
           fastQuery: true,
           activityIds: 'com.hellobike.atlas.business.portal.PortalActivity',
-          matches:
+          anyMatches:
             '[text="单车"] - [text^="+"] - ImageView <<n * +n * >2 [text="领取"]',
         },
       ],
@@ -106,7 +107,7 @@ export default defineGkdApp({
           resetMatch: 'app',
           actionMaximum: 1,
           activityIds: 'com.hellobike.atlas.business.portal.PortalActivity',
-          matches:
+          anyMatches:
             '(@ViewGroup[clickable=true] [text="奖励金"]) || (ViewGroup > ViewGroup > @ViewGroup[clickable=true] > ViewGroup > TextView[text="奖励金"])',
         },
       ],
@@ -122,8 +123,10 @@ export default defineGkdApp({
           actionCd: 0,
           fastQuery: true,
           activityIds: 'com.hellobike.atlas.business.portal.PortalActivity',
-          matches:
-            '(FrameLayout > LinearLayout > LinearLayout[vid="hbDialogLayout"] + View + ImageView[vid="actionDialogClose"]) || (LinearLayout > FrameLayout[vid="creativeContainer"] + ImageView[vid="actionDialogClose"][clickable=true][visibleToUser=true])',
+          anyMatches:[
+            '(FrameLayout > LinearLayout > LinearLayout[vid="hbDialogLayout"] + View + ImageView[vid="actionDialogClose"])',
+            '(LinearLayout > FrameLayout[vid="creativeContainer"] + ImageView[vid="actionDialogClose"][clickable=true][visibleToUser=true])',
+			],
         },
       ],
     },
@@ -143,8 +146,10 @@ export default defineGkdApp({
             'com.hellobike.atlas.business.portal.PortalActivity',
             'com.hellobike.business.hitch.common.home.HLPHHomeActivity',
           ],
-          matches:
-            '([text^="请打开定位服务"] <<n * +n * [text="取消"][clickable=true][visibleToUser=true]) || (TextView[text^="请打开定位服务"] < FrameLayout + FrameLayout[id="com.jingyao.easybike:id/bottomContainer"] > LinearLayout > Button[text="取消"][clickable=true][visibleToUser=true])',
+          anyMatches:[
+            '([text^="请打开定位服务"] <<n * +n * [text="取消"][clickable=true][visibleToUser=true])',
+            '(TextView[text^="请打开定位服务"] < FrameLayout + FrameLayout[id="com.jingyao.easybike:id/bottomContainer"] > LinearLayout > Button[text="取消"][clickable=true][visibleToUser=true])',
+			],
         },
       ],
     },
@@ -158,7 +163,7 @@ export default defineGkdApp({
           action: 'back',
           fastQuery: true,
           activityIds: 'com.hellobike.hitch.business.homenew.HitchHomeActivity',
-          matches: '[vid="tvPushTip"] + [vid="ivIcon"] + [vid="tvOpen"]',
+          anyMatches: '[vid="tvPushTip"] + [vid="ivIcon"] + [vid="tvOpen"]',
         },
       ],
     },
@@ -227,7 +232,7 @@ export default defineGkdApp({
           resetMatch: 'match',
           fastQuery: true,
           activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
-          matches: '[vid="ivTopBg"] +n [vid="ivClose"]',
+          anyMatches: '[vid="ivTopBg"] +n [vid="ivClose"]',
         },
       ],
     },
@@ -240,7 +245,7 @@ export default defineGkdApp({
           resetMatch: 'match',
           actionMaximum: 1,
           activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
-          matches: '@TextView[clickable=true] +n [text="明日再来"]',
+          anyMatches: '@TextView[clickable=true] +n [text="明日再来"]',
         },
       ],
     },
@@ -252,7 +257,7 @@ export default defineGkdApp({
         {
           resetMatch: 'match',
           activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
-          matches: 'Image < * - [text$="0碳积分"] < View + View > TextView',
+          anyMatches: 'Image < * - [text$="0碳积分"] < View + View > TextView',
         },
       ],
     },
@@ -265,8 +270,10 @@ export default defineGkdApp({
           resetMatch: 'match',
           action: 'clickCenter',
           activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
-          matches:
-            '([text="会员单单返"] + [text="领奖励"]) || (View > View > View > TextView[text*="奖励金"] + View + TextView[text="知道了"][clickable=true])',
+          anyMatches:[
+            '([text="会员单单返"] + [text="领奖励"])',
+            '(View > View > View > TextView[text*="奖励金"] + View + TextView[text="知道了bak"][clickable=true])',
+			],
         },
       ],
     },
@@ -279,7 +286,7 @@ export default defineGkdApp({
           resetMatch: 'match',
           actionMaximum: 1,
           activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
-          matches:
+          anyMatches:
             '@View[clickable=true] TextView + [text="单单返"][parent.childCount=2]',
         },
       ],
@@ -293,7 +300,7 @@ export default defineGkdApp({
           fastQuery: true,
           resetMatch: 'match',
           activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
-          matches: '[vid="paySubmitTv"][text="立即支付¥0.01"]',
+          anyMatches: '[vid="paySubmitTv"][text="立即支付¥0.01"]',
         },
       ],
     },
@@ -305,8 +312,10 @@ export default defineGkdApp({
         {
           resetMatch: 'match',
           activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
-          matches:
-            '(@TextView[clickable=true] + [text="新人首单，兑免费骑车"]) || (View > View > TextView[text^="兑换" || text=" 单车1.5元券"] +2 @TextView[text="再想想"][clickable=true][visibleToUser=true] + TextView[text="确认兑换"])',
+          anyMatches:[
+            '(@TextView[clickable=true] + [text="新人首单，兑免费骑车"])',
+            '(View > View > TextView[text^="兑换" || text=" 单车1.5元券"] +2 @TextView[text="再想想"][clickable=true][visibleToUser=true] + TextView[text="确认兑换"])',]
+			],
         },
       ],
     },
@@ -320,7 +329,7 @@ export default defineGkdApp({
           actionMaximum: 1,
           activityIds:
             'com.hellobike.moped.platform.offline.web.OhoRealmWebActivity',
-          matches:
+          anyMatches:
             '[text="请打开系统定位开关后用车"] <n * + @*[clickable=true] +n [text="去开启"]',
         },
       ],
@@ -335,7 +344,7 @@ export default defineGkdApp({
           action: 'clickCenter',
           activityIds:
             'com.hellobike.moped.platform.offline.web.OhoRealmWebActivity',
-          matches:
+          anyMatches:
             'View[id="monad-return-ball"] > @View[clickable=true][visibleToUser=true] > TextView[text="奖励金"] - TextView - View > Image[text="c628086d6b3a4923907c57bc4326aa13_mask"]',
         },
       ],
@@ -414,7 +423,7 @@ export default defineGkdApp({
           resetMatch: 'match',
           activityIds:
             'com.hellobike.moped.platform.offline.web.OhoRealmWebActivity',
-          matches:
+          anyMatches:
             '([text^="骑行领碳积分"] + * > [text="一键收碳"]) || (View > View > View > TextView[text="一键收碳"])',
         },
       ],
@@ -429,8 +438,11 @@ export default defineGkdApp({
           actionMaximum: 10,
           activityIds:
             'com.hellobike.moped.platform.offline.web.OhoRealmWebActivity',
-          matches:
-            '(@View > [text="碳积分"] + * + [text="去领取"]) || (Image[text="ea6cf0c3c8f6483c9dbbe484a2ea60e3_icon_green_c"] < View + TextView + View > TextView[text="去领取"]) || (View > View > View > TextView - @View > Image[text="aab668b57491499e89ee4a5b766bcf77_35"])',
+          anyMatches:[
+            '(@View > [text="碳积分"] + * + [text="去领取"])',
+            '(Image[text="ea6cf0c3c8f6483c9dbbe484a2ea60e3_icon_green_c"] < View + TextView + View > TextView[text="去领取"])',
+            '(View > View > View > TextView - @View > Image[text="aab668b57491499e89ee4a5b766bcf77_35"])',
+			],
         },
       ],
     },
@@ -443,7 +455,7 @@ export default defineGkdApp({
           resetMatch: 'match',
           activityIds:
             'com.hellobike.moped.platform.offline.web.OhoRealmWebActivity',
-          matches: '@View Image[text="aab668b57491499e89ee4a5b766bcf77_35"]',
+          anyMatches: '@View Image[text="aab668b57491499e89ee4a5b766bcf77_35"]',
         },
       ],
     },
@@ -457,7 +469,7 @@ export default defineGkdApp({
           fastQuery: true,
           activityIds:
             'com.hellobike.moped.platform.offline.web.OhoRealmWebActivity',
-          matches:
+          anyMatches:
             '[vid="pay_inner_title"][text="付款金额"] + [vid="pay_close_iv"]',
         },
       ],
@@ -471,7 +483,7 @@ export default defineGkdApp({
           resetMatch: 'match',
           activityIds:
             'com.hellobike.moped.platform.offline.web.OhoRealmWebActivity',
-          matches:
+          anyMatches:
             '([text="gENrrooPRRSKS2nmR644j"]) || ([text="有故障"] + [text="没故障"])',
         },
       ],
@@ -487,7 +499,7 @@ export default defineGkdApp({
             'com.hellobike.moped.platform.offline.web.OhoRealmWebActivity',
             'com.alipay.mobile.nebulacore.ui.H5Activity',
           ],
-          matches:
+          anyMatches:
             '[text="单车30天不限次卡" || text="单车7天不限次卡"] + [text="秒杀价"] + [text="￥0.01" || text="￥1.99" || text="￥0.99"] +n [text^="仅剩"] + [text="quality,q_80"]',
         },
       ],
@@ -502,7 +514,7 @@ export default defineGkdApp({
           fastQuery: true,
           activityIds:
             'com.hellobike.ride.components.taskactivty.RideTaskDialogActivity',
-          matches: '[vid="iv_close"]',
+          anyMatches: '[vid="iv_close"]',
         },
       ],
     },
@@ -526,7 +538,7 @@ export default defineGkdApp({
           },
           activityIds:
             'com.hellobike.flutter.platform.android.flutterboost.FlutterHostFragmentActivity',
-          matches:
+          anyMatches:
             'ImageView[desc="临时锁车"] + @View[visibleToUser=true] +n  View[desc="按住滑块，拖到右边还车"]',
         },
       ],

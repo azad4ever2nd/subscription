@@ -188,6 +188,18 @@ export default defineGkdApp({
     },
     {
       key: 14,
+      name: '弹窗，获取验证码',
+      desc: '260908',
+      rules: [
+        {
+          resetMatch: 'match',
+          activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
+          matches: 'View > @Button[text="获取验证码"][clickable=true][visibleToUser=true] + View[text^="验证码发送至手机号 "]',
+        },
+      ],
+    },
+    {
+      key: 15,
       name: '开启消息通知',
       desc: '260726',
       rules: [

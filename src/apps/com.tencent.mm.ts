@@ -1326,13 +1326,13 @@ export default defineGkdApp({
     {
       key: 65,
       name: '粤工会滑块验证',
-      desc: '260907',
+      desc: '260908',
       rules: [
         {
           action: 'swipe',
           actionMaximum: 1,
           matches:
-            'View > TextView[text="滑动验证"] + TextView[text="关闭"] + View > TextView + TextView[text.length=0]',
+            'View > TextView[text="滑动验证"] + TextView[text="关闭"] + @View > TextView + TextView[text.length=0]',
           swipeArg: {
             start: {
               x: 'left',

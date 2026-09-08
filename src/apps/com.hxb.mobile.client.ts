@@ -10,7 +10,7 @@ export default defineGkdApp({
       desc: '',
       rules: [
         {
-          matches: ['[vid="rvMarketing"] +2 [vid="ivCloseCur"]'],
+          anyMatches: ['[vid="rvMarketing"] +2 [vid="ivCloseCur"]'],
           fastQuery: true,
           activityIds: 'com.yt.hxmb50.mainpages.ui.main.MainActivity',
         },
@@ -26,7 +26,7 @@ export default defineGkdApp({
           fastQuery: true,
           matchDelay: 500,
           activityIds: 'com.yt.hxmb50.mainpages.ui.main.MainActivity',
-          matches:
+          anyMatches:
             '(@[vid="dialog_update_tv_cancel"][text="下次再说"] + [vid="dialog_update_tv_update"][text="立即更新"]) || (LinearLayout > @TextView[vid="dialog_update_tv_cancel"][clickable=true][visibleToUser=true][text="下次再说"] + TextView[vid="dialog_update_tv_update"][text="立即更新"])',
         },
       ],
@@ -40,7 +40,7 @@ export default defineGkdApp({
           resetMatch: 'match',
           actionCd: 0,
           activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
-          matches:
+          anyMatches:
             '([text$="能量分"] +n * > [text="立即兑换"]) || (WebView[text="权益详情"] > View > View > View[text$="能量分"] +(1,2) View > Button[text="立即兑换"])',
         },
       ],
@@ -55,7 +55,7 @@ export default defineGkdApp({
           actionCd: 0,
           order: -1,
           activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
-          matches:
+          anyMatches:
             '([text*="是否确认兑换"] + * > [text="确认"]) || (View[text*="是否确认兑换"] + View > View[clickable=true][visibleToUser=true][text="确认"])',
         },
       ],
@@ -70,7 +70,7 @@ export default defineGkdApp({
           actionCd: 0,
           order: -2,
           activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
-          matches:
+          anyMatches:
             '([text="活动太火爆了，请稍后再试！"] + * > [text="知道了"]) || (Dialog > View[text*="活动太火爆了" || text*="权益已被抢完"] + View > Button[clickable=true][visibleToUser=true][text*="知道了"])',
         },
       ],
@@ -83,7 +83,7 @@ export default defineGkdApp({
         {
           resetMatch: 'match',
           activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
-          matches:
+          anyMatches:
             'WebView > View > View > View > View > View[text*="签到成功"] +n View[clickable=true][text="返回"] + @View[clickable=true] > Image',
         },
       ],
@@ -91,14 +91,15 @@ export default defineGkdApp({
     {
       key: 7,
       name: '恭喜抽中微信红包，浏览后领取',
-      desc: '260905',
+      desc: '260908',
       rules: [
         {
           resetMatch: 'match',
           matchTime: 3000,
           forcedTime: 3000,
+		  action:'clickCenter',
           activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
-          matches:
+          anyMatches:
             'View[text^="恭喜您抽中"] < View + View[clickable=true][visibleToUser=true]',
         },
       ],
@@ -106,15 +107,17 @@ export default defineGkdApp({
     {
       key: 8,
       name: '浏览后领取立减金',
-      desc: '260905',
+      desc: '260908',
       rules: [
         {
           matchTime: 3000,
           forcedTime: 3000,
           resetMatch: 'match',
           activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
-          matches: [
-            '(WebView[text="签到赢立减金"] > View > View > View > Image + View[clickable=true][visibleToUser=true]) || (WebView[text="签到赢立减金"] > View > View > View >  View > @View[clickable=true][visibleToUser=true]  - View > View[text*="恭喜你完成产品浏览" || text*="微信红包"])',
+          anyMatches: [
+            '(WebView[text="签到赢立减金"] > View > View > View > Image + View[clickable=true][visibleToUser=true])',
+            '(WebView[text="签到赢立减金"] > View > View > View >  View > @View[clickable=true][visibleToUser=true]  - View > View[text*="恭喜你完成产品浏览" || text*="微信红包"])',
+            '(Image[clickable=true][visibleToUser=true] < View[childCount=1] + Image[clickable=false] + View[text.length=0][clickable=true][visibleToUser=true])',
           ],
         },
       ],
@@ -128,7 +131,7 @@ export default defineGkdApp({
           resetMatch: 'match',
           fastQuery: true,
           activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
-          matches:
+          anyMatches:
             'LinearLayout +n LinearLayout > @LinearLayout[clickable=true][visibleToUser=true][vid="ll_no"] > TextView[text="知道了"]',
         },
       ],
@@ -142,7 +145,7 @@ export default defineGkdApp({
           resetMatch: 'match',
           actionMaximum: 1,
           activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
-          matches:
+          anyMatches:
             'View[text="券码："] < View + View[text="复制"][clickable=false][visibleToUser=true]',
         },
       ],

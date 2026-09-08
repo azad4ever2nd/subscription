@@ -9,7 +9,7 @@ export default defineGkdApp({
       desc: '新版本@[vid="a"][desc="关闭"] - * > [vid="a"][text*="新版本"] 整合 立即升级',
       rules: [
         {
-          matches: [
+          anyMatches: [
             '[vid="a"][text*="新版本" || text*="升级"] <<n * + [vid="a"][desc="关闭"]',
           ],
           actionMaximum: 2,
@@ -30,8 +30,11 @@ export default defineGkdApp({
           fastQuery: true,
           activityIds:
             'ctrip.android.publicproduct.home.business.activity.CtripHomeActivity',
-          matches:
-            '(@[vid="a"][clickable=true] < * + *[vid="a"] [text="立刻领取"]) || (RelativeLayout > RelativeLayout[vid="a"] - RelativeLayout > ImageView[vid="a"]) || (@ImageView[clickable=true][visibleToUser=true][vid="a"] < RelativeLayout + RelativeLayout >n ImageView[desc="广告素材"])',
+          anyMatches:[
+            '(@[vid="a"][clickable=true] < * + *[vid="a"] [text="立刻领取"])',
+            '(RelativeLayout > RelativeLayout[vid="a"] - RelativeLayout > ImageView[vid="a"])',
+            '(@ImageView[clickable=true][visibleToUser=true][vid="a"] < RelativeLayout + RelativeLayout >n ImageView[desc="广告素材"])',
+			],
         },
       ],
     },
@@ -41,7 +44,7 @@ export default defineGkdApp({
       desc: '260810',
       rules: [
         {
-          matches:
+          anyMatches:
             '([text="去开启"] < * + Image) || (View > @Image[clickable=false][visibleToUser=true] - View > TextView[text="去开启"])',
           resetMatch: 'match',
           activityIds: ['ctrip.android.view.h5v2.view.H5Container'],
@@ -57,9 +60,12 @@ export default defineGkdApp({
           actionMaximum: 1,
           resetMatch: 'match',
           activityIds: 'ctrip.android.view.h5v2.view.H5Container',
-          matches:
-            '(WebView >(8,10) View > TextView[id="signBtnInModal"][text="立即签到"][clickable=true][visibleToUser=true]) || ([id="NotificationModal"] +2 * [id="signBtnInModal"][text="立即签到"]) || (View > View > View > TextView[id="signBtnInModal"][clickable=false][text="立即签到"])',
-        },
+          anyMatches:[
+            '(WebView >(8,10) View > TextView[id="signBtnInModal"][text="立即签到"][clickable=true][visibleToUser=true])',
+            '([id="NotificationModal"] +2 * [id="signBtnInModal"][text="立即签到"])',
+            '(View > View > View > TextView[id="signBtnInModal"][clickable=false][text="立即签到"])',
+			],
+		},
       ],
     },
     {
@@ -71,9 +77,11 @@ export default defineGkdApp({
           resetMatch: 'match',
           preKeys: [4],
           activityIds: 'ctrip.android.view.h5v2.view.H5Container',
-          matches:
-            '([id="popup_bg-id"] <n * +n TextView[text=""][childCount=0][clickable=true][visibleToUser=true]) || ([id="popup_bg-id"] <<n * +n TextView[text=""][childCount=0][visibleToUser=true])',
-        },
+          anyMatches:[
+            '([id="popup_bg-id"] <n * +n TextView[text=""][childCount=0][clickable=true][visibleToUser=true])',
+            '([id="popup_bg-id"] <<n * +n TextView[text=""][childCount=0][visibleToUser=true])',
+			],
+		},
       ],
     },
     {
@@ -84,7 +92,7 @@ export default defineGkdApp({
         {
           resetMatch: 'match',
           activityIds: 'ctrip.android.view.h5v2.view.H5Container',
-          matches:
+          anyMatches:
             'View > Image + View + View > @[text="继续退出"] + [text="去淘宝闪购"]',
         },
       ],
@@ -97,7 +105,7 @@ export default defineGkdApp({
         {
           resetMatch: 'match',
           activityIds: 'ctrip.android.view.h5v2.view.H5Container',
-          matches: 'View > View > View > TextView[text="开心收下"]',
+          anyMatches: 'View > View > View > TextView[text="开心收下"]',
         },
       ],
     },
@@ -110,7 +118,7 @@ export default defineGkdApp({
           resetMatch: 'match',
           preKeys: [5],
           activityIds: 'ctrip.android.view.h5v2.view.H5Container',
-          matches:
+          anyMatches:
             'View > @View[clickable=false][visibleToUser=true] > TextView[text^="+"] + View > TextView[text="立即领取"]',
         },
       ],
@@ -123,7 +131,7 @@ export default defineGkdApp({
         {
           resetMatch: 'match',
           activityIds: 'ctrip.android.view.h5v2.view.H5Container',
-          matches:
+          anyMatches:
             'WebView[text="携程会员签到"] > View > View > View > @Image[clickable=true][visibleToUser=true] + Image[text="头图"] + View > TextView[text="继续退出"][clickable=true][visibleToUser=true] + TextView[text="提醒我"]',
         },
       ],
@@ -136,7 +144,7 @@ export default defineGkdApp({
         {
           resetMatch: 'match',
           activityIds: 'ctrip.android.reactnative.preloadv2.CRNBaseActivityV2',
-          matches: '[desc="一键领取"] <n * + @*[clickable=true] > ImageView',
+          anyMatches: '[desc="一键领取"] <n * + @*[clickable=true] > ImageView',
         },
       ],
     },
