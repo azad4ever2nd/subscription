@@ -135,11 +135,11 @@ export default defineGkdApp({
       desc: '260905，添加福袋，下单完成分享弹窗，先用后付资格，百亿补贴弹窗  || (View[childCount=4] > [text="webp"] +3 *',
       rules: [
         {
-          anyMatches:[
+          anyMatches: [
             '([text="关闭弹窗1"])',
             '(ImageView < @* - ViewGroup [text="支付成功"])',
             '([text="如何领取福袋奖励"] +n [text="去首页解锁"])',
-			],
+          ],
           resetMatch: 'match',
           activityIds: ['com.xunmeng.pinduoduo.activity.NewPageActivity'],
         },
@@ -481,8 +481,8 @@ export default defineGkdApp({
           activityIds: 'com.xunmeng.pinduoduo.activity.NewPageActivity',
           anyMatches: [
             '(View > View > View > TextView[text="如何解锁点亮?"] + TextView[text="去首页"][clickable=true][visibleToUser=true])',
-			'(View > View > View > TextView[text="如何解锁?" || text="如何解锁点亮?"] + TextView[text="去首页"][clickable=true][visibleToUser=true])',
-			'(View > View > View > TextView[text^="如何解锁"] + TextView[text="去首页"][clickable=true][visibleToUser=true])',
+            '(View > View > View > TextView[text="如何解锁?" || text="如何解锁点亮?"] + TextView[text="去首页"][clickable=true][visibleToUser=true])',
+            '(View > View > View > TextView[text^="如何解锁"] + TextView[text="去首页"][clickable=true][visibleToUser=true])',
           ],
         },
       ],
@@ -512,7 +512,7 @@ export default defineGkdApp({
           activityIds: 'com.xunmeng.pinduoduo.ui.activity.MainFrameActivity',
           anyMatches: [
             'ViewGroup[childCount=3] > ImageView + @ViewGroup[childCount=2][clickable=true] > ViewGroup[childCount=2] > ViewGroup[childCount=3] + ImageView[clickable=false][visibleToUser=true]',
-			'ViewGroup[childCount=3] > ImageView + ViewGroup[childCount=2][clickable=true] > ViewGroup[childCount=2] > ViewGroup[childCount=3] + ImageView[clickable=false][visibleToUser=true]',
+            'ViewGroup[childCount=3] > ImageView + ViewGroup[childCount=2][clickable=true] > ViewGroup[childCount=2] > ViewGroup[childCount=3] + ImageView[clickable=false][visibleToUser=true]',
           ],
         },
       ],

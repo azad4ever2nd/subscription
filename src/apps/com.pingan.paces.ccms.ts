@@ -67,12 +67,12 @@ export default defineGkdApp({
         {
           resetMatch: 'match',
           matchDelay: 500,
-		  forcedTime:3000,
+          forcedTime: 3000,
           activityIds: 'com.pingan.componet.hybrid.webUrl.WebUrlActivity',
-          anyMatches:[
+          anyMatches: [
             '(View > [text="恭喜您获得"] + [text$="橙长值"] + View > TextView[text="开心收下"])',
             '([text="恭喜您获得"] +(2,3) TextView[text=""][clickable=true][visibleToUser=true])',
-			],
+          ],
         },
       ],
     },

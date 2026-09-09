@@ -150,7 +150,7 @@ export default defineGkdApp({
           anyMatches: [
             '([text^="请打开定位服务"] <<n * +n * [text="取消"][clickable=true][visibleToUser=true])',
             '(TextView[text^="请打开定位服务"] < FrameLayout + FrameLayout[id="com.jingyao.easybike:id/bottomContainer"] > LinearLayout > Button[text="取消"][clickable=true][visibleToUser=true])',
-			'RelativeLayout > TextView[text="开启消息通知"] + TextView[vid="ivClose"][clickable=true][visibleToUser=true][text.length=1]',
+            'RelativeLayout > TextView[text="开启消息通知"] + TextView[vid="ivClose"][clickable=true][visibleToUser=true][text.length=1]',
           ],
         },
       ],
@@ -245,7 +245,7 @@ export default defineGkdApp({
       rules: [
         {
           resetMatch: 'match',
-		  forcedTime:3000,
+          forcedTime: 3000,
           activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
           anyMatches: '@TextView[clickable=true] +n [text="明日再来"]',
         },
@@ -319,7 +319,7 @@ export default defineGkdApp({
           anyMatches: [
             '(@TextView[clickable=true] + [text="新人首单，兑免费骑车"])',
             '(View > View > TextView[text^="兑换" || text=" 单车1.5元券"] +2 @TextView[text="再想想"][clickable=true][visibleToUser=true] + TextView[text="确认兑换"])',
-			'View > TextView[text="再想想"][clickable=true][visibleToUser=true] + TextView[text="确认兑换"]',
+            'View > TextView[text="再想想"][clickable=true][visibleToUser=true] + TextView[text="确认兑换"]',
           ],
         },
       ],

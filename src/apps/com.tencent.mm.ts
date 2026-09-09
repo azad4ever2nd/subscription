@@ -1334,7 +1334,7 @@ export default defineGkdApp({
             'com.tencent.mm.plugin.appbrand.ui.AppBrandUI04',
           ],
           anyMatches: [
-			'TextView[text="系统繁忙，请稍后再试。"] <<n View + View > @View[clickable=false][visibleToUser=true] > TextView[text="确定"]',
+            'TextView[text="系统繁忙，请稍后再试。"] <<n View + View > @View[clickable=false][visibleToUser=true] > TextView[text="确定"]',
             '(View > View > TextView[text^="来晚啦"] + View + TextView[clickable=true][visibleToUser=true])',
             '(View > TextView[text="该商品已售罄"] + TextView[text="我知道了"][clickable=true][visibleToUser=true])',
             '(View > View > @TextView[clickable=true][visibleToUser=true] - View > View >   Image[text="66c29cff8e9f4a2aaf3f1b67b944daac"])',

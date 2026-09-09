@@ -117,9 +117,10 @@ export default defineGkdApp({
       rules: [
         {
           resetMatch: 'match',
-		  actionCd:600,
+          actionCd: 600,
           activityIds: 'com.pupumall.webview.page.PuPuWebViewActivity',
-          matches: 'View > View > TextView[text^="系统繁忙" || text$="请稍后再试。"] + @View[clickable=true][visibleToUser=true] > TextView[text="确定"]',
+          matches:
+            'View > View > TextView[text^="系统繁忙" || text$="请稍后再试。"] + @View[clickable=true][visibleToUser=true] > TextView[text="确定"]',
         },
       ],
     },
@@ -130,9 +131,10 @@ export default defineGkdApp({
       rules: [
         {
           resetMatch: 'match',
-		  actionCd:6000,
+          actionCd: 6000,
           activityIds: 'com.pupumall.webview.page.PuPuWebViewActivity',
-          matches: 'View > TextView[text="支付方式"] +n @View[clickable=true][visibleToUser=true] > View > TextView[text="微信支付"]',
+          matches:
+            'View > TextView[text="支付方式"] +n @View[clickable=true][visibleToUser=true] > View > TextView[text="微信支付"]',
         },
       ],
     },

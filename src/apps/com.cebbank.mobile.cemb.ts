@@ -10,9 +10,9 @@ export default defineGkdApp({
       desc: '251118',
       rules: [
         {
-          anyMatches:[
+          anyMatches: [
             '[vid="dialog_tv_title"][text*="新版本"] +n * > @[vid="dialog_btn_negative"][text="不再提示"] +n [vid="dialog_btn_positive"][text="立即更新"]',
-            ],
+          ],
           fastQuery: true,
           resetMatch: 'match',
           activityIds: 'com.cebbank.mobile.cemb.ui.activity.SplashActivity',
@@ -40,12 +40,12 @@ export default defineGkdApp({
       desc: '260831，+3 childCount=2，签到按钮布局有变动，改规则',
       rules: [
         {
-          anyMatches:[
+          anyMatches: [
             '(@TextView[clickable=false][visibleToUser=true] < View + View > TextView[text="更多产品 >"])',
             '([id="mainContainer"] [text^="天天领金币" && text$="关注产品收益上涨可领翻倍金币"] +3 * > *[text=""][visibleToUser=true][index=parent.childCount.minus(1)])',
             '([text^="天天领金币"] +n *[text=""][clickable=true][visibleToUser=true][index=parent.childCount.minus(1)] + View[childCount=2])',
             '(WebView > View > View > View > TextView[text^="天天领金币"] +n View[childCount=2] > TextView[index=parent.childCount.minus(1)][text.length=0][clickable=false][visibleToUser=true])',
-            ],
+          ],
           actionMaximum: 1,
           resetMatch: 'match',
           activityIds:
@@ -60,11 +60,11 @@ export default defineGkdApp({
       rules: [
         {
           action: 'clickCenter',
-          anyMatches:[
+          anyMatches: [
             '([text="恭喜获得"] <n * + TextView[clickable=true])',
             '(View > TextView[text="恭喜获得"] +n TextView[index=parent.childCount.minus(1)])',
             '(View > TextView[text="恭喜获得"] +n TextView[text^="关注一只产品"] + TextView[index=parent.childCount.minus(1)])',
-            ],
+          ],
           resetMatch: 'match',
           activityIds:
             'com.cebbank.mobile.cemb.ui.activity.mobilePayment.MobilePaymentWebActivity',
@@ -146,10 +146,10 @@ export default defineGkdApp({
       desc: '251208，添加抽奖兑换弹窗',
       rules: [
         {
-          anyMatches:[
+          anyMatches: [
             '([id="1084"] >3 TextView)',
             '(View[childCount=4] > TextView[index=2] + @TextView -2 * > [text$="金币"])',
-            ],
+          ],
           resetMatch: 'match',
           activityIds:
             'com.cebbank.mobile.cemb.ui.activity.mobilePayment.MobilePaymentWebActivity',
@@ -176,11 +176,11 @@ export default defineGkdApp({
       desc: '260123，D,优先复制券码，然后再关闭',
       rules: [
         {
-          anyMatches:[
+          anyMatches: [
             '([text^="兑奖码:"] + * + TextView)',
             '([text="可在首页-[奖品]查看" || text="可在首页-[财气值明细]查看"] + TextView)',
             '([text="兑奖码:"] + * + TextView)',
-            ],
+          ],
           resetMatch: 'match',
           activityIds:
             'com.cebbank.mobile.cemb.ui.activity.mobilePayment.MobilePaymentWebActivity',
@@ -279,11 +279,11 @@ export default defineGkdApp({
           resetMatch: 'match',
           activityIds:
             'com.cebbank.mobile.cemb.ui.activity.mobilePayment.MobilePaymentWebActivity',
-          anyMatches:[
+          anyMatches: [
             '(View > TextView[text="抽福袋攒财气，有机会赢好礼"] + TextView)',
             '(View > View > TextView[text^="您还没有完成任务" || text*="完成任务"] + TextView[text="确定"][clickable=false][visibleToUser=true])',
             '(View > View > TextView[text="已成功领取啦"] +n TextView[text="去兑换"] + View > TextView[text.length=1][clickable=false][visibleToUser=true])',
-            ],
+          ],
         },
       ],
     },
@@ -297,11 +297,11 @@ export default defineGkdApp({
           actionCd: 8000,
           activityIds:
             'com.cebbank.mobile.cemb.ui.activity.mobilePayment.MobilePaymentWebActivity',
-          anyMatches:[
+          anyMatches: [
             '(TextView[text*="光彩礼遇社" || text^="兑换路径"] - View > TextView[text="兑奖码:"] + TextView[text.length>0] + TextView[text.length=0])',
             '(TextView[text*="元微信红包"] < View + @TextView[clickable=false][visibleToUser=true] + TextView[text*="光彩礼遇社" && text*="输入兑奖码领取红包"])',
             '(View > TextView[text^="兑奖码"] + @TextView[clickable=false][visibleToUser=true][text.length=0] + TextView[text*="光彩礼遇社" && text*="输入兑奖码领取红包"])',
-            ],
+          ],
         },
       ],
     },
@@ -313,10 +313,10 @@ export default defineGkdApp({
         {
           activityIds:
             'com.cebbank.mobile.cemb.ui.activity.mobilePayment.MobilePaymentWebActivity',
-          anyMatches:[
+          anyMatches: [
             '(TextView[text="兑奖码:"] < View + TextView[text^="兑换路径"] + @TextView + TextView[text="可在首页-[奖品]查看"])',
             '(View > TextView[text*="光彩礼遇社" && text*="输入兑奖码领取红包"] + @TextView[clickable=false][visibleToUser=true][text.length=0] + TextView[text.length=0])',
-            ],
+          ],
         },
       ],
     },
@@ -330,10 +330,10 @@ export default defineGkdApp({
           actionMaximum: 1,
           activityIds:
             'com.cebbank.mobile.cemb.ui.activity.mobilePayment.MobilePaymentWebActivity',
-          anyMatches:[
+          anyMatches: [
             '([text^="兑奖码"] +n @*[clickable=true] + [text^="搜索并关注微信公众号"])',
             '([text^="兑奖码"] + @*[clickable=true] + [text^="搜索并关注微信公众号"])',
-            ],
+          ],
         },
       ],
     },
@@ -347,10 +347,10 @@ export default defineGkdApp({
           preKeys: [21],
           activityIds:
             'com.cebbank.mobile.cemb.ui.activity.mobilePayment.MobilePaymentWebActivity',
-          anyMatches:[
+          anyMatches: [
             '([text^="搜索并关注微信公众号"] + *[clickable=true])',
             '(View > TextView[text*="光彩礼遇社" && text*="输入兑奖码领取红包"] + @TextView[clickable=false][visibleToUser=true][text.length=0] + TextView[text.length=0])',
-            ],
+          ],
         },
       ],
     },
@@ -363,10 +363,10 @@ export default defineGkdApp({
           resetMatch: 'match',
           activityIds:
             'com.cebbank.mobile.cemb.ui.activity.mobilePayment.MobilePaymentWebActivity',
-          anyMatches:[
+          anyMatches: [
             '(View > View > TextView[text="立即领取"][index=parent.childCount.minus(1)])',
             '(View TextView[text^="剩余"] + TextView[text="立即领取"])',
-            ],
+          ],
         },
       ],
     },
@@ -462,10 +462,10 @@ export default defineGkdApp({
       desc: '260812 添加 差一点就中奖，',
       rules: [
         {
-          anyMatches:[
+          anyMatches: [
             '([text="返回去抽奖"])',
             '(TextView[text="差一点就中奖啦"] <n View < View + View > @View[clickable=false][visibleToUser=true] > TextView[text.length=1])',
-            ],
+          ],
           resetMatch: 'match',
           activityIds: [
             'com.cebbank.mobile.cemb.ui.activity.mobilePayment.MobilePaymentWebActivity',
@@ -494,12 +494,12 @@ export default defineGkdApp({
       desc: '251218，测试改顺序加条件',
       rules: [
         {
-          anyMatches:[
+          anyMatches: [
             '([text="50402410517101596?Expires=1982914597&OSSAccessKeyId=LTAIrtWP6OVJGU8O&Signature=nLNU9WJ6CJB6mpJezAlOZHgXfMM%3D"] +3 [text="50401236411727914?Expires=1982913423&OSSAccessKeyId=LTAIrtWP6OVJGU8O&Signature=hh%2BtccKM77AWHCnPDJ471BiikgM%3D"])',
             '([text="微信立减券（3*2元）"] +n * >n [text*="立即购买"])',
             '([text="微信立减券（3*2元）"] +n [text*="立即购买"])',
             '([text="60854523261609372"] + * > [text!="剩余0%"])',
-            ],
+          ],
           resetMatch: 'match',
           activityIds:
             'com.cebbank.mobile.cemb.ui.activity.mobilePayment.MobilePaymentWebActivity',
@@ -512,10 +512,10 @@ export default defineGkdApp({
       desc: '251127,D,找有库存的点',
       rules: [
         {
-          anyMatches:[
+          anyMatches: [
             '([text="stocked"] + [text$="借记卡"] + [text="微信立减金"] + *)',
             '([text^="今日已领" && text!$="100%"] < * + [text$="借记卡"] + [text="微信立减金"] + *)',
-            ],
+          ],
           actionMaximum: 1,
           resetMatch: 'activity',
           activityIds:
@@ -529,10 +529,10 @@ export default defineGkdApp({
       desc: '251127，添加 立即兑换',
       rules: [
         {
-          anyMatches:[
+          anyMatches: [
             '([text="兑换确认"] +n * > [text="取消"] + [text="确认"])',
             '([text$="借记卡"] +n * > [text="立即兑换"])',
-            ],
+          ],
           resetMatch: 'match',
           activityIds:
             'com.cebbank.mobile.cemb.ui.activity.mobilePayment.MobilePaymentWebActivity',
@@ -761,14 +761,14 @@ export default defineGkdApp({
       desc: '260909，添加中奖了，差一点就中奖',
       rules: [
         {
-          anyMatches:[
+          anyMatches: [
             '(@View << * + * >2 [text="差一点就中奖啦"] + [text="继续抽奖"])',
             '(View > View > TextView[text="您已参加过活动啦"] + TextView[text="确定"][clickable=false][visibleToUser=true])',
             '([text="返回去抽奖"])',
             '(TextView[text="差一点就中奖啦"] <n View < View + View > @View[clickable=false][visibleToUser=true] > TextView[text.length=1])',
             '(TextView[text="恭喜您，中奖啦"] < View < View[id="compntWinningResult1"] + View > View > TextView[text.length=1][clickable=false][visibleToUser=true])',
             'TextView[text="恭喜您，中奖啦" || text="去兑换" || text="奖品可在「我的权益」中查看"] <<n View + View > @View[clickable=true][visibleToUser=true] > TextView[text.length=1]',
-			],
+          ],
           resetMatch: 'match',
           activityIds:
             'com.cebbank.mobile.cemb.ui.activity.mobilePayment.MobilePaymentWebNoSingleTopActivity',
