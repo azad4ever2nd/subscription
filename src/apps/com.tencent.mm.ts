@@ -40,7 +40,7 @@ export default defineGkdApp({
           resetMatch: 'match',
           activityIds: 'com.tencent.mm.plugin.webview.ui.tools.MMWebViewUI',
           excludeMatches: [
-            '(View > View > TextView[text="权益领取中，请稍后"]excludeMatches:)',
+            '(View > View > TextView[text="权益领取中，请稍后"][visibleToUser=true])',
             '(View > View >  TextView[text="权益领取成功"] +2 Button[text="我知道了"][clickable=true][visibleToUser=true])',
           ],
           anyMatches: [
