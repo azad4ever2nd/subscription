@@ -103,7 +103,7 @@ export default defineGkdApp({
         {
           resetMatch: 'match',
           preKeys: [4],
-          actionMaximum: 2,
+          actionMaximum: 1,
           action: 'swipe',
           actionCd: 3000,
           swipeArg: {
