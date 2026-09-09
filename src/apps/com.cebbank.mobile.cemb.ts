@@ -533,7 +533,6 @@ export default defineGkdApp({
             '([text="兑换确认"] +n * > [text="取消"] + [text="确认"])',
             '([text$="借记卡"] +n * > [text="立即兑换"])',
             ],
-			,
           resetMatch: 'match',
           activityIds:
             'com.cebbank.mobile.cemb.ui.activity.mobilePayment.MobilePaymentWebActivity',

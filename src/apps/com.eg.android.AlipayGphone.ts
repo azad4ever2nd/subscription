@@ -555,9 +555,10 @@ export default defineGkdApp({
           action: 'clickCenter',
           activityIds:
             'com.alipay.mobile.nebulax.xriver.activity.XRiverActivity',
-          anyMatches:
+          anyMatches:[
             'WebView > View > View > TextView[text^="抽奖机会"] + TextView[clickable=false][visibleToUser=true]',
 			'WebView > View > View > TextView[text^="抽奖机会"] + TextView[clickable=true][visibleToUser=true]',
+			],
         },
       ],
     },
