@@ -1416,7 +1416,7 @@ export default defineGkdApp({
             'View > TextView[text="滑动验证"] + TextView[text="关闭"] + @View > TextView + TextView[text.length=0]',
           swipeArg: {
             start: {
-              x: 'left',
+              x: 'left+60',
               y: 'top+height/2',
             },
             end: {
