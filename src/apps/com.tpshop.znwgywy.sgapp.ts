@@ -41,42 +41,47 @@ export default defineGkdApp({
           resetMatch: 'match',
           fastQuery: true,
           activityIds: 'tool.seagull.v.ui.MainActivity',
-          anyMatches:
+          anyMatches:[
             '[text*="广告签到"] <<n * + * [id="android:id/button2"] + [id="android:id/button1"]',
+			],
         },
       ],
     },
     {
       key: 4,
-      name: '签到后广告弹窗',
+      name: '弹窗，签到后广告，X掉',
       desc: '260704',
       rules: [
         {
           resetMatch: 'match',
           actionCd: 0,
           activityIds: 'tool.seagull.v.ui.MainActivity',
-          anyMatches:
+          anyMatches:[
             'TextView[vid="checkin_button"][text^="已签"] + FrameLayout > FrameLayout > FrameLayout > FrameLayout > FrameLayout > FrameLayout[childCount=1] > View[clickable=false]',
+			],
         },
       ],
     },
     {
       key: 5,
-      name: '签到页面广告弹窗，X掉',
+      name: '弹窗，签到页面广告弹窗1，未签到，X掉',
       desc: '260624',
       rules: [
         {
           resetMatch: 'match',
           activityIds: 'tool.seagull.v.ui.MainActivity',
-          anyMatches:
+          anyMatches:[
             'TextView[text="签到"] + FrameLayout > FrameLayout > FrameLayout > FrameLayout > FrameLayout > LinearLayout +2 ImageView - FrameLayout[childCount=1] > View',
+            'ImageView[vid="vpnSwitchButton"] +n ScrollView > FrameLayout > FrameLayout > FrameLayout > FrameLayout > FrameLayout > FrameLayout[childCount=1] > View',
+			],
+
         },
       ],
     },
     {
       key: 6,
-      name: '签到页面广告弹窗2，X掉',
-      desc: '260706，不管连接与否，匹配弹窗',
+      name: '弹窗，签到页面广告弹窗2，X掉',
+      desc: 'D,整合进5，260706，不管连接与否，匹配弹窗',
       rules: [
         {
           resetMatch: 'match',
@@ -88,7 +93,7 @@ export default defineGkdApp({
     },
     {
       key: 7,
-      name: '签到完广告弹窗，X掉',
+      name: '弹窗，签到完成后广告弹窗，X掉',
       desc: '260806',
       rules: [
         {
@@ -107,21 +112,23 @@ export default defineGkdApp({
         {
           resetMatch: 'match',
           activityIds: 'tool.seagull.v.ui.MainActivity',
-          anyMatches:
+          anyMatches:[
             'FrameLayout > TextView[id="com.zj.zk.allmodules:id/wm_pop_pic_close"][clickable=true][visibleToUser=true]',
+			],
         },
       ],
     },
     {
       key: 9,
-      name: '连接页面广告弹窗',
+      name: '弹窗，连接前广告弹窗',
       desc: '260625',
       rules: [
         {
           resetMatch: 'match',
           activityIds: 'tool.seagull.v.ui.MainActivity',
-          anyMatches:
+          anyMatches:[
             'ImageView[vid="vpnSwitchButton"][desc="连接"] + FrameLayout + ScrollView > FrameLayout > FrameLayout > FrameLayout > FrameLayout > FrameLayout > FrameLayout[childCount=1] > View',
+			],
         },
       ],
     },
@@ -133,15 +140,18 @@ export default defineGkdApp({
         {
           resetMatch: 'match',
           activityIds: 'tool.seagull.v.ui.MainActivity',
-          anyMatches:
+          anyMatches:[
             '[vid="server_list_banner_ad"] >7 LinearLayout + ImageView + FrameLayout > View[parent.childCount=1]',
+            'FrameLayout[vid="server_list_banner_ad"] > RelativeLayout > FrameLayout > RelativeLayout > RelativeLayout > ImageView[clickable=true]',
+            'FrameLayout[vid="server_list_banner_ad"] FrameLayout > ImageView - FrameLayout[childCount=1] > View',
+			],
         },
       ],
     },
     {
       key: 11,
       name: '服务器列表广告2',
-      desc: '260625',
+      desc: 'D,整合进10，260625',
       rules: [
         {
           resetMatch: 'match',
@@ -154,7 +164,7 @@ export default defineGkdApp({
     {
       key: 12,
       name: '服务器列表广告3',
-      desc: '260702',
+      desc: 'D,整合进10，260702',
       rules: [
         {
           resetMatch: 'match',
@@ -166,7 +176,7 @@ export default defineGkdApp({
     },
     {
       key: 13,
-      name: '连接后广告窗',
+      name: '弹窗，连接后广告弹窗',
       desc: '260615',
       rules: [
         {
@@ -174,13 +184,18 @@ export default defineGkdApp({
           activityIds: 'tool.seagull.v.ui.MainActivity',
           anyMatches:
             'ScrollView[vid="banner_scroll"] > FrameLayout >5 ImageView - FrameLayout > View',
+			'RelativeLayout > RelativeLayout > TextView[text="X"][clickable=true]',
+			'ImageView[vid="vpnSwitchButton"][desc="停止"] +2 ScrollView > FrameLayout > FrameLayout > FrameLayout > FrameLayout > LinearLayout > FrameLayout[childCount=3] > FrameLayout[index=2] > ImageView',
+			'ImageView[vid="vpnSwitchButton"][desc="停止"] +n ScrollView > FrameLayout > FrameLayout > FrameLayout > FrameLayout > FrameLayout > ImageView + FrameLayout[childCount=1] > View',
+			'FrameLayout > LinearLayout +2 ImageView - FrameLayout > View[clickable=false][visibleToUser=true]',
+
         },
       ],
     },
     {
       key: 14,
-      name: '连接后广告窗3',
-      desc: '260621',
+      name: '弹窗，连接后广告弹窗2',
+      desc: 'D,整合进13，260621',
       rules: [
         {
           resetMatch: 'match',
@@ -193,8 +208,8 @@ export default defineGkdApp({
     },
     {
       key: 15,
-      name: '连接后广告弹窗4',
-      desc: '20260628',
+      name: '弹窗，连接后广告弹窗3',
+      desc: 'D,整合进13，20260628',
       rules: [
         {
           resetMatch: 'match',
@@ -206,8 +221,8 @@ export default defineGkdApp({
     },
     {
       key: 16,
-      name: '连接后广告弹窗5',
-      desc: '260703',
+      name: '弹窗，连接后广告弹窗4',
+      desc: 'D,整合进13，260703',
       rules: [
         {
           resetMatch: 'match',
@@ -219,8 +234,8 @@ export default defineGkdApp({
     },
     {
       key: 17,
-      name: '连接后广告弹窗6',
-      desc: '260719，有提示 摇动或点击跳转至详情页或第三方应用',
+      name: '弹窗，连接后广告弹窗5',
+      desc: 'D,整合进13，260719，有提示 摇动或点击跳转至详情页或第三方应用',
       rules: [
         {
           resetMatch: 'match',
@@ -259,71 +274,46 @@ export default defineGkdApp({
     },
     {
       key: 20,
-      name: '连接后广告窗2',
+      name: '弹窗，连接后广告窗2',
       desc: '260616',
       rules: [
         {
           resetMatch: 'match',
-          activityIds:
-            'com.sigmob.sdk.base.common.PortraitTransparentAdActivity',
-          anyMatches: 'View > View > View > TextView[id="close_btn"]',
+          activityIds:'com.sigmob.sdk.base.common.PortraitTransparentAdActivity',
+          anyMatches: [
+			'View > View > View > TextView[id="close_btn"]',
+			'[id="close_btn"][text="跳过"]',
+			],
         },
       ],
     },
     {
       key: 21,
-      name: '广告1，关闭',
-      desc: '260513',
+      name: '弹窗，连接后广告窗3，跳过',
+      desc: 'D，整合到20，260511',
       rules: [
         {
-          fastQuery: true,
           resetMatch: 'match',
-          activityIds: 'com.windmill.sdk.widget.InterstitialView_4012003',
-          anyMatches:
-            '(@*[clickable=true] > [text="关闭"]) || (@*[clickable=true] > [vid="tobid_interstitial_skip_text"][text="关闭"]) || (@[vid="tobid_interstitial_skip_ll"][clickable=true] > [text="关闭"])',
+          activityIds:'com.sigmob.sdk.base.common.PortraitTransparentAdActivity',
+          anyMatches: '[id="close_btn"][text="跳过"]',
         },
       ],
     },
+
     {
       key: 22,
-      name: '奖励已下发，跳过',
-      desc: '260510',
-      rules: [
-        {
-          resetMatch: 'match',
-          activityIds: 'com.sigmob.sdk.base.common.PortraitAdActivity',
-          anyMatches: '[text="奖励已下发"] + [text="跳过"]',
-        },
-      ],
-    },
-    {
-      key: 23,
       name: '反馈，close_btn',
       desc: '260510',
       rules: [
         {
           resetMatch: 'match',
-          activityIds:
-            'com.sigmob.sdk.base.common.PortraitTransparentAdActivity',
+          activityIds:'com.sigmob.sdk.base.common.PortraitTransparentAdActivity',
           anyMatches: '[text="反馈"] + [id="close_btn"]',
         },
       ],
     },
     {
-      key: 24,
-      name: '签到完广告弹窗，跳过',
-      desc: '260511',
-      rules: [
-        {
-          resetMatch: 'match',
-          activityIds:
-            'com.sigmob.sdk.base.common.PortraitTransparentAdActivity',
-          anyMatches: '[id="close_btn"][text="跳过"]',
-        },
-      ],
-    },
-    {
-      key: 25,
+      key: 23,
       name: '点击广告拿奖励',
       desc: '260531',
       rules: [
@@ -332,39 +322,44 @@ export default defineGkdApp({
           resetMatch: 'match',
           actionMaximum: 1,
           activityIds: 'com.qq.e.ads.PortraitADActivity',
-          anyMatches:
+          anyMatches:[
             '[text="点击广告，即可获得奖励"] <<n * + * [text="点击广告拿奖励"]',
+			],
         },
       ],
     },
     {
-      key: 26,
+      key: 24,
       name: '恭喜获得奖励2',
       desc: '260526',
       rules: [
         {
           resetMatch: 'match',
           activityIds: 'com.qq.e.ads.PortraitADActivity',
-          anyMatches: '[text="恭喜获得奖励！"] < * + *[clickable=true]',
+          anyMatches: [
+			'[text="恭喜获得奖励！"] < * + *[clickable=true]',
+            '([text="恭喜获得奖励"] < FrameLayout < FrameLayout < FrameLayout + FrameLayout > FrameLayout > FrameLayout ImageView)',
+			],
         },
       ],
     },
     {
-      key: 27,
+      key: 25,
       name: '恭喜获得奖励3',
-      desc: '260607',
+      desc: 'D，整合到24，260607',
       rules: [
         {
           resetMatch: 'match',
           action: 'clickCenter',
           activityIds: 'com.qq.e.ads.PortraitADActivity',
-          anyMatches:
+          anyMatches:[
             '([text="恭喜获得奖励"] < FrameLayout < FrameLayout < FrameLayout + FrameLayout > FrameLayout > FrameLayout ImageView)',
+			],
         },
       ],
     },
     {
-      key: 28,
+      key: 26,
       name: '签到点击广告后，X掉',
       desc: '260507',
       rules: [
@@ -376,7 +371,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 29,
+      key: 27,
       name: '弹窗，连接后新版浮动广告，关闭',
       desc: '260908',
       rules: [
@@ -386,6 +381,37 @@ export default defineGkdApp({
           activityIds: 'com.windmill.sdk.widget.InterstitialView_4012001',
           matches:
             'RelativeLayout[vid="tobid_interstitial_ad_detail"] LinearLayout[clickable=true][visibleToUser=true] > TextView[text="关闭"]',
+        },
+      ],
+    },
+    {
+      key: 28,
+      name: '弹窗，连接后新版浮动广告2，关闭',
+      desc: '260513',
+      rules: [
+        {
+          fastQuery: true,
+          resetMatch: 'match',
+          activityIds: 'com.windmill.sdk.widget.InterstitialView_4012003',
+          anyMatches:[
+            '(@*[clickable=true] > [text="关闭"])',
+            '(@*[clickable=true] > [vid="tobid_interstitial_skip_text"][text="关闭"])',
+            '(@[vid="tobid_interstitial_skip_ll"][clickable=true] > [text="关闭"])',
+            ],
+        },
+      ],
+    },
+    {
+      key: 29,
+      name: '奖励已下发，跳过',
+      desc: '260510',
+      rules: [
+        {
+          resetMatch: 'match',
+          activityIds: 'com.sigmob.sdk.base.common.PortraitAdActivity',
+          anyMatches: [
+			'[text="奖励已下发"] + [text="跳过"]',
+			],
         },
       ],
     },
