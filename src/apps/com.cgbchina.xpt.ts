@@ -85,11 +85,11 @@ export default defineGkdApp({
         {
           resetMatch: 'match',
           activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
-          anyMatches:[
+          anyMatches: [
             '(View[text="1"] < View < View - View > @Image[clickable=true][visibleToUser=true][text.length=0] + View[text^="已连续签到"])',
             '(View[text="1"] < View < View +(6,10) View > View > Image[clickable=true][visibleToUser=true][text="20260629113116910808676207755"])',
             '(View[text="1"] < View < View - View > View[text="提醒我签到"] +3 Image[clickable=true][visibleToUser=true])',
-            ],
+          ],
         },
       ],
     },
@@ -140,10 +140,10 @@ export default defineGkdApp({
         {
           resetMatch: 'match',
           activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
-          anyMatches:[
+          anyMatches: [
             '(View > Image + Image[text="noPrizeDialogBtn.e21b1317"][clickable=true])',
             '(View > Image + Image[text="prizeDialogBtn.cf846fd8"][clickable=true])',
-            ],
+          ],
         },
       ],
     },

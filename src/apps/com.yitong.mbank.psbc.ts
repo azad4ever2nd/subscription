@@ -107,10 +107,10 @@ export default defineGkdApp({
       desc: '260103',
       rules: [
         {
-          anyMatches:[
+          anyMatches: [
             '(@[vid="tv_cancel"] + [vid="mContent"][text*="好评"])',
             '(TextView[text="温馨提示"] < RelativeLayout +n LinearLayout > TextView[clickable=true][visibleToUser=true][text="下次再说"])',
-            ],
+          ],
           fastQuery: true,
           resetMatch: 'match',
           activityIds: ['com.alipay.mobile.nebulacore.ui.H5Activity'],
@@ -125,10 +125,10 @@ export default defineGkdApp({
         {
           activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
           resetMatch: 'match',
-          anyMatches:[
+          anyMatches: [
             '(@*[clickable=true] [text="返回活动" || text="返回权益专区"])',
             '(@View[clickable=false][visibleToUser=true] > TextView + TextView[text="返回活动"])',
-            ],
+          ],
         },
       ],
     },

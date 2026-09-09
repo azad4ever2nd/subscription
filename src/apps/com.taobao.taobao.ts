@@ -23,11 +23,11 @@ export default defineGkdApp({
       rules: [
         {
           resetMatch: 'app',
-          anyMatches:[
+          anyMatches: [
             '(@[text="O1CN01eVP9R729P4urD3Wq4_!!6000000008059-2-tps-112-112"] +n [text="去开启"])',
             '([vid="poplayer_native_state_id"] + [desc="关闭按钮"])',
             '([desc="关闭浮条"] - * > * +2 *)',
-            ],
+          ],
           activityIds: [
             'com.taobao.tao.welcome.Welcome',
             'com.alibaba.android.ultron.vfw.weex2.highPerformance.widget.UltronTradeHybridActivity',
@@ -55,7 +55,7 @@ export default defineGkdApp({
       desc: '260210，改变规则排序，添加弹窗，领奖,(Image < * + * >n [text^="添加"] +n * > [text$="元宝" && text^="立即领"]) || ',
       rules: [
         {
-          anyMatches:[
+          anyMatches: [
             '([id="SIGN_IN_AREA_ID"] [text="立即签到"])',
             '([text="继续领钱"] < * + * >n [text="点击领取"])',
             '([id="SIGN_IN_AREA_ID"] > [text="继续领钱"] + * >n [text="点击领取"])',
@@ -69,7 +69,7 @@ export default defineGkdApp({
             '(@[text^="O1CN01JfbGY21lIcW06JOti_!!6000000004796-2-tps-64-64"] - * > [text="我知道了"])',
             '(@[text="O1CN01zH3VkM1KrtQhLlTqz_!!6000000001218-2-tps-56-56.png_q50.jpg_"] + [text="做任务赚元宝"] + * >n [text="点击领元宝(1/1)"])',
             '([text="去赚元宝"] <<n * + View > [text^="O1CN01UVlufl1CzCsp8oehQ_!!6000000000151-2-gg_dtc.png_q50"])',
-            ],
+          ],
           resetMatch: 'match',
           activityIds: [
             'com.taobao.themis.container.app.TMSActivity',
@@ -111,11 +111,11 @@ export default defineGkdApp({
       desc: '251123,添加升级提示',
       rules: [
         {
-          anyMatches:[
+          anyMatches: [
             '([id="receivedAward"] > * + *)',
             '([vid="update_contentDialog_v2"] > [vid="update_imageview_cancel_v2"])',
-            ],
-			
+          ],
+
           resetMatch: 'match',
           activityIds: 'com.taobao.themis.container.app.TMSActivity',
         },
@@ -174,11 +174,11 @@ export default defineGkdApp({
           fastQuery: true,
           matchTime: 3000,
           activityIds: 'com.alipay.android.msp.ui.views.MspContainerActivity',
-          anyMatches:[
+          anyMatches: [
             '([text="淘宝 推荐你"] <<n * +n @* > [text="关闭"])',
             '(@[text="关闭"] <<n * +n * [text="同意协议并开通"])',
             '(@* > [text="关闭"] <<n * +n * [text="同意协议并开通"])',
-            ],
+          ],
         },
       ],
     },

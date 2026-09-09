@@ -39,12 +39,12 @@ export default defineGkdApp({
           action: 'clickCenter',
           resetMatch: 'match',
           activityIds: 'com.tongcheng.android.module.webapp.WebViewActivity',
-          anyMatches:[
+          anyMatches: [
             '(@View[clickable=true] > Image[text="close_icon"])',
             '(Image < View + @View[clickable=true] > [text="close_icon"])',
             '(TextView[text="广告"] +n @View[clickable=true] > Image[text="close_icon"])',
             '(View > TextView[text="广告"] +n View[clickable=false] > Image[text="close_icon"][clickable=false][visibleToUser=true])',
-            ],
+          ],
         },
       ],
     },
@@ -169,10 +169,10 @@ export default defineGkdApp({
         {
           resetMatch: 'match',
           activityIds: 'com.tongcheng.android.module.webapp.WebViewActivity',
-          anyMatches:[
+          anyMatches: [
             '(View > View > @TextView[text="残忍离开"][clickable=false][visibleToUser=true] + TextView)',
             '(View > TextView[text="酒店权益已到账"] +n View > Image[text*="close"][clickable=false][visibleToUser=true])',
-            ],
+          ],
         },
       ],
     },
@@ -189,12 +189,12 @@ export default defineGkdApp({
             'com.tongcheng.android.TongchengMainActivity',
             'com.tongcheng.android.LoadingActivity',
           ],
-          anyMatches:[
+          anyMatches: [
             '([vid="top_iv" || vid="flADLayout" || vid="flContainer"] + [vid="iv_close" ])',
             '([vid="top_iv" || vid="flADLayout" || vid="flContainer"] + [vid="ivClose"])',
             '(LinearLayout > FrameLayout[vid="flADLayout"] + ImageView[vid="ivClose"])',
             '(@ImageView[clickable=true][visibleToUser=true][vid="iv_close"] - ImageView[vid="top_iv"] < FrameLayout + LinearLayout > TextView[text*="好评"])',
-            ],
+          ],
         },
       ],
     },
@@ -207,9 +207,9 @@ export default defineGkdApp({
           fastQuery: true,
           action: 'clickCenter',
           activityIds: 'com.elong.android.flutter.TCELFlutterBoostActivity',
-          anyMatches:[
+          anyMatches: [
             'LinearLayout > TextView[vid="tv_dialog_title"][text*="定位"] +n LinearLayout > @TextView[vid="btn_dialog_left"][text="稍后开启"][clickable=true][visibleToUser=true] + TextView[text="去设置"][clickable=true]',
-            ],
+          ],
         },
       ],
     },

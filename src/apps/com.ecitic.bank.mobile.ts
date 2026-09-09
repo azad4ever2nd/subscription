@@ -14,12 +14,12 @@ export default defineGkdApp({
           actionMaximum: 4,
           action: 'clickCenter',
           activityIds: 'com.ecitic.bank.mobile.ui.MainActivity',
-          anyMatches:[
+          anyMatches: [
             '([text="去签到，按钮1"])',
             '(View > View > TextView[text="会员专属活动1"] + Image)',
             '(View > TextView[text="会员专属活动1"] + View >10 Button[text="立即签到1"][clickable=true][visibleToUser=true])',
             '(View > View > View > View > View > View > Button[text="立即签到"][clickable=true][visibleToUser=true])',
-            ],
+          ],
         },
       ],
     },
@@ -33,10 +33,10 @@ export default defineGkdApp({
           fastQuery: true,
           forcedTime: 3000,
           activityIds: 'com.ecitic.bank.mobile.ui.MainActivity',
-          anyMatches:[
+          anyMatches: [
             '(LinearLayout > @Button[vid="alert_cancel"][text="取消"][clickable=true][visibleToUser=true] + Button[vid="alert_confirm"][text="立即开启"])',
             '(TextView[text="开启消息通知"] < FrameLayout +n LinearLayout > Button[vid="alert_cancel"][text="取消"][clickable=true][visibleToUser=true])',
-            ],
+          ],
         },
       ],
     },
@@ -111,10 +111,10 @@ export default defineGkdApp({
           resetMatch: 'match',
           activityIds:
             'com.ecitic.bank.mobile.ui.webview.CordovaExternalWebViewActivity',
-          anyMatches:[
+          anyMatches: [
             '(View > View + Button[clickable=true][visibleToUser=true][text="我知道了"])',
             '(View > @Button[clickable=true][text="我知道了"] - View > TextView[text.length=1][clickable=false])',
-            ],
+          ],
         },
       ],
     },
@@ -127,10 +127,10 @@ export default defineGkdApp({
           resetMatch: 'match',
           activityIds:
             'com.ecitic.bank.mobile.ui.webview.CordovaExternalWebViewActivity',
-          anyMatches:[
+          anyMatches: [
             '(View > TextView[text="恭喜中奖"] +n Button[clickable=true][visibleToUser=true][text="确定"])',
             '(View > View > View > TextView[text="领取成功"] +n Button[clickable=true][visibleToUser=true][text="确定"])',
-            ],
+          ],
         },
       ],
     },

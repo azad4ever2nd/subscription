@@ -95,11 +95,11 @@ export default defineGkdApp({
             'com.unionpay.liteapp.app.UPLiteAppActivity3',
             'com.unionpay.liteapp.app.UPLiteAppActivity4',
           ],
-          anyMatches:[
+          anyMatches: [
             '([vid="tv_dialog_title"][text="开启手机定位服务"] < * +n * > [vid="btn_cancel"])',
             '(TextView[vid="tv_dialog_title"][text="开启手机定位服务"] < LinearLayout +n LinearLayout > TextView[vid="btn_cancel"][clickable=true])',
             '(LinearLayout > TextView[vid="tv_dialog_info"][text*="开启定位服务"] + LinearLayout > @TextView[vid="btn_cancel"][clickable=true][visibleToUser=true][text*="取消" || text="取 消"] + TextView[vid="btn_ok"])',
-            ],
+          ],
         },
       ],
     },
@@ -136,7 +136,7 @@ export default defineGkdApp({
             'com.unionpay.liteapp.app.UPLiteAppActivity3',
             'com.unionpay.liteapp.app.UPLiteAppActivity4',
           ],
-          anyMatches:[
+          anyMatches: [
             '([text="请前往“会员中心”查看"] -n [text="查看积点攻略"] - [text*="立减券" || text="积点"] <n * + *)',
             '(@* - * > [text="立减券"] + [text="去查看"] +n [text$="使用有效"])',
             '(@TextView - * > [text="积点"] + [text="去查看"] + [text="请前往“会员中心”查看"])',
@@ -146,7 +146,7 @@ export default defineGkdApp({
             '([text*="立减券" || text="积点"] + [text="开心收下"])',
             '([text="浦发立减券"] + [text="去查看"] <n * + TextView)',
             '([text="去查看"] + [text="票券有效期7*24小时"] + View)',
-            ],
+          ],
         },
       ],
     },
@@ -277,10 +277,10 @@ export default defineGkdApp({
             'com.unionpay.liteapp.app.UPLiteAppActivity3',
             'com.unionpay.liteapp.app.UPLiteAppActivity4',
           ],
-          anyMatches:[
+          anyMatches: [
             '(View > TextView[text="￥ 0"] + TextView[text="预估到手价"] + TextView[text^="达到限购次数"])',
             '(View > TextView[text="￥ 0"] + TextView[text="预估到手价"] + TextView[text^="已抢光"])',
-            ],
+          ],
           action: 'back',
         },
       ],

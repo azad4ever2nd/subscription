@@ -20,12 +20,12 @@ export default defineGkdApp({
             'com.pikcloud.xpan.xpan.main.MainTabActivity',
             'com.pikcloud.download.DownloadTaskListActivity',
           ],
-          anyMatches:[
+          anyMatches: [
             '([vid="iv_close"])',
             '([vid="watch_ad"][text="免费试用"])',
             '([vid="cl_operation"] + [vid="close"])',
             '(ViewGroup > TextView[vid="dlg_title"][text*="删除" || text*="清除"] +n ViewGroup > LinearLayout > TextView[vid="dlg_confirm_btn"][text="确认"])',
-            ],
+          ],
         },
       ],
     },
@@ -38,7 +38,7 @@ export default defineGkdApp({
           anyMatches: [
             '([id="app-interstitial-slot"] + * Button)',
             '([id="close-button"] > [text="关闭广告并继续打开应用"] + *)',
-			],
+          ],
           resetMatch: 'match',
           activityIds: ['com.google.android.gms.ads.AdActivity'],
         },

@@ -42,10 +42,7 @@ export default defineGkdApp({
       desc: '251207,添加弹窗',
       rules: [
         {
-          anyMatches: [
-		  '([text="点击签到"])',
-            '([id="lottery_close"])',
-			],
+          anyMatches: ['([text="点击签到"])', '([id="lottery_close"])'],
           resetMatch: 'match',
           activityIds: ['com.newland.app.webcore.CustomPageFlowActivity'],
         },

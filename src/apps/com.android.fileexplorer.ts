@@ -12,7 +12,7 @@ export default defineGkdApp({
         {
           resetMatch: 'match',
           fastQuery: true,
-		  actionMaximum:1,
+          actionMaximum: 1,
           activityIds:
             'com.android.fileexplorer.activity.ServerControlActivity',
           matches:

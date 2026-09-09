@@ -56,10 +56,10 @@ export default defineGkdApp({
           resetMatch: 'match',
           fastQuery: true,
           activityIds: 'com.unicom.wopay.app.MainActivity',
-          anyMatches:[
+          anyMatches: [
             '([vid="positiveButton"] + [vid="negativeButton"][text="下次再说"])',
             '(LinearLayout > Button[vid="positiveButton"] + Button[vid="negativeButton"][clickable=true][visibleToUser=true][text="下次再说"])',
-            ],
+          ],
         },
       ],
     },

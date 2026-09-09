@@ -16,11 +16,10 @@ export default defineGkdApp({
             'com.icbc.activity.main.MainActivity',
             'com.icbc.oisc.UI.mainPage.OISCMainActivity',
           ],
-          anyMatches:[
+          anyMatches: [
             '([vid="dialog"] + [vid="img_close"][desc="关闭"])',
             '([vid="close_iv"])',
-            ],
-			
+          ],
         },
       ],
     },
@@ -51,11 +50,11 @@ export default defineGkdApp({
           actionMaximum: 300,
           action: 'clickCenter',
           activityIds: 'com.icbc.activity.web.ICBCWebView',
-          anyMatches:[
+          anyMatches: [
             '([id="app"] > [id="viewWrapper"] >n [text=" 立即领取"])',
             '([text="详情"] + * + [text$="元优惠券"] + Button[text*="立即领取"])',
             '(View > TextView[text*="优惠券"] +n Button[clickable=true][visibleToUser=true][text="立即领取"])',
-            ],
+          ],
         },
       ],
     },
@@ -69,11 +68,11 @@ export default defineGkdApp({
           actionCdKey: 2,
           action: 'clickCenter',
           activityIds: 'com.icbc.activity.web.ICBCWebView',
-          anyMatches:[
+          anyMatches: [
             '([text*="活动太火爆，请稍后再试"] + [text="我知道了"])',
             '([text="刷新重试"])',
             '(View > TextView[text*="最大参与次数" || text*="活动太火爆" || text$="请稍后再试"] + Button[clickable=true][visibleToUser=true][text="我知道了"])',
-            ],
+          ],
         },
       ],
     },
@@ -87,12 +86,12 @@ export default defineGkdApp({
           action: 'clickCenter',
           actionMaximum: 3,
           activityIds: 'com.icbc.activity.web.ICBCWebView',
-          anyMatches:[
+          anyMatches: [
             '([text="商品已领完"])',
             '([text="已领完"])',
             '([text="商品已抢完"] + [text="我知道了"])',
             '(WebView > View > TextView[text="商品已抢完"] + Button[clickable=true][visibleToUser=true][text="我知道了"])',
-            ],
+          ],
         },
       ],
     },
@@ -103,10 +102,10 @@ export default defineGkdApp({
       rules: [
         {
           resetMatch: 'match',
-          anyMatches:[
+          anyMatches: [
             '(@*[parent.childCount=3] <<n * + * > [text="拆盲盒剩余次数：1次"])',
             '(@TextView[clickable=false][visibleToUser=true] <2 View < View + View > TextView[text="拆盲盒剩余次数：1次"])',
-            ],
+          ],
           activityIds: 'com.icbc.activity.web.ICBCWebView',
         },
       ],
@@ -132,10 +131,10 @@ export default defineGkdApp({
       rules: [
         {
           action: 'back',
-          anyMatches:[
+          anyMatches: [
             '([text^="来的太晚啦"] + [text="知道了"])',
             '(View > View > View > View > TextView[text="拆盲盒剩余次数：0次1"])',
-            ],
+          ],
           resetMatch: 'match',
           activityIds: 'com.icbc.activity.web.ICBCWebView',
         },
@@ -150,7 +149,7 @@ export default defineGkdApp({
           resetMatch: 'match',
           action: 'clickCenter',
           activityIds: 'com.icbc.activity.web.ICBCWebView',
-          anyMatches:[
+          anyMatches: [
             '([text="很遗憾，未中奖"] + [text="关闭"])',
             '([text="微信立减金" || text="支付宝红包"] + [text="立即领取"] + [text="关闭"])',
             '([text="恭喜中奖了"] <<n * + * > [text="关闭"])',
@@ -161,7 +160,7 @@ export default defineGkdApp({
             '(Dialog > TextView[text*="日前领取" || text$="过期未领将失效"] + Button[text="立即领取"])',
             '(Dialog > View > Button[text="完成"])',
             '( (View > View > @Button[clickable=true][text="关闭"] + TextView[text="恭喜获得"]))',
-            ],
+          ],
         },
       ],
     },
@@ -251,10 +250,10 @@ export default defineGkdApp({
         {
           actionMaximum: 1,
           resetMatch: 'match',
-          anyMatches:[
+          anyMatches: [
             '([text^="前往微信再浇一次"] + Image)',
             '((View > TextView[text^="前往微信再浇一次"] + Image))',
-            ],
+          ],
           activityIds: [
             'com.icbc.activity.web.ICBCWebView',
             'com.tencent.mm.plugin.base.stub.WXBizEntryActivity',

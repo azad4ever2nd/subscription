@@ -15,12 +15,12 @@ export default defineGkdApp({
           matchDelay: 500,
           forcedTime: 3000,
           activityIds: 'com.chinatelecom.bestpayclient.ui.MainActivity',
-          anyMatches:[
+          anyMatches: [
             '([vid="msg_notification_open_title"] +n [vid="msg_notification_skip_btn"][text="跳过"])',
             '([vid="iv_dialog_bg"] +n [vid="iv_dialog_close"])',
             '(RelativeLayout + ImageView[vid="iv_dialog_close_one"][clickable=true])',
             '(RelativeLayout > LinearLayout > ImageView[vid="iv_sky_close"][clickable=true][visibleToUser=true])',
-            ],
+          ],
         },
       ],
     },
@@ -74,10 +74,10 @@ export default defineGkdApp({
           resetMatch: 'match',
           fastQuery: true,
           activityIds: 'com.mpaas.mriver.integration.MriverActivityBase$Main',
-          anyMatches:[
+          anyMatches: [
             '(* + [vid="ivVerticalClose"])',
             '(FrameLayout[vid="dialogMxView"] > RelativeLayout > LinearLayout > ImageView[vid="ivLandscapeClose"])',
-            ],
+          ],
         },
       ],
     },
@@ -90,11 +90,11 @@ export default defineGkdApp({
           resetMatch: 'match',
           actionMaximum: 1,
           activityIds: 'com.mpaas.mriver.integration.MriverActivityBase$Main',
-          anyMatches:[
+          anyMatches: [
             '([text="可在能量商城兑换好礼"] + [text="立即领取"])',
             '(TextView[text="绿色能量"] <n View < View <n View + View > TextView[clickable=true][visibleToUser=true][text="立即领取"])',
             '(WebView > WebView > View > View > TextView[text$="绿色能量"] +2 TextView[text="立即领取"][clickable=false][visibleToUser=true])',
-            ],
+          ],
         },
       ],
     },

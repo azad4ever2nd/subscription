@@ -1005,10 +1005,10 @@ export default defineGkdApp({
             'com.tencent.mm.plugin.appbrand.ui.AppBrandUI03',
             'com.tencent.mm.plugin.appbrand.ui.AppBrandUI04',
           ],
-          anyMatches:[
+          anyMatches: [
             '([text="42元购50元屈臣氏代金券"] < * +n * [text="提交"])',
             '([text="42元购50元屈臣氏代金券"] < * + * > [text="抢购"])',
-            ],
+          ],
         },
       ],
     },

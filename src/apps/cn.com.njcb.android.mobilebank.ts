@@ -161,10 +161,10 @@ export default defineGkdApp({
           action: 'clickCenter',
           forcedTime: 2000,
           activityIds: 'com.njcb.mobile.h5biz.H5ContainerActivity',
-          anyMatches:[
+          anyMatches: [
             '([text="今日不再显示"] < * + *[clickable=true])',
             '(View > @TextView - View > TextView[text="今日不再显示"])',
-            ],
+          ],
         },
       ],
     },
@@ -190,12 +190,12 @@ export default defineGkdApp({
           action: 'clickCenter',
           resetMatch: 'match',
           activityIds: 'com.njcb.mobile.h5biz.H5ContainerActivity',
-          anyMatches:[
+          anyMatches: [
             '([text="签到成功"] + TextView + TextView[text="确定bak"])',
             '([text="活动已结束"] + * > [desc="知道了"])',
             '([text="活动已结束"] + [text="确定" || text="知道了"])',
             '(WebView > View > View > View > View > View > TextView[text="签到成功"] + TextView + TextView[text="确定"])',
-            ],
+          ],
         },
       ],
     },

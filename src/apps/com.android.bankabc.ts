@@ -13,10 +13,10 @@ export default defineGkdApp({
           resetMatch: 'match',
           fastQuery: true,
           activityIds: 'com.android.bankabc.MainActivity',
-          anyMatches:[
+          anyMatches: [
             '([vid="iv_notification_reminder_dialog"] + [vid="iv_notification_reminder_dialog_close"][desc="进入掌银首页"])',
             '(ViewGroup > ImageView[vid="iv_notification_reminder_dialog"] + ImageView[vid="iv_notification_reminder_dialog_close"][clickable=true][visibleToUser=true][desc="进入掌银首页"])',
-            ],
+          ],
         },
       ],
     },
@@ -31,10 +31,10 @@ export default defineGkdApp({
           matchTime: 3000,
           forcedTime: 3000,
           activityIds: 'com.android.bankabc.MainActivity',
-          anyMatches:[
+          anyMatches: [
             '([vid="tv_title"][text*="位置"] +3 * [vid="tv_cancel"][text="取消"])',
             '(LinearLayout > TextView[vid="tv_title"][text="允许获取位置信息"] +n LinearLayout > TextView[vid="tv_cancel"][clickable=true][visibleToUser=true][text="取消"])',
-            ],
+          ],
         },
       ],
     },
@@ -47,10 +47,10 @@ export default defineGkdApp({
           resetMatch: 'app',
           fastQuery: true,
           activityIds: 'com.android.bankabc.MainActivity',
-          anyMatches:[
+          anyMatches: [
             '(TextView[text*="退出应用"] +n TextView[vid="tv_sure"][text="确认"])',
             '(ViewGroup > TextView[vid="tv_content"][text*="退出应用"] +n TextView[vid="tv_sure"][clickable=true][visibleToUser=true][text="确认"])',
-            ],
+          ],
         },
       ],
     },
@@ -78,10 +78,10 @@ export default defineGkdApp({
           resetMatch: 'match',
           actionCd: 250,
           activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
-          anyMatches:[
+          anyMatches: [
             '(WebView[text="茶影优惠享"] View[text="立即购买"][clickable=true])',
             '(WebView[text="茶影优惠享"] > View > View > View > View > View[clickable=true][visibleToUser=true][text="立即购买"])',
-            ],
+          ],
         },
       ],
     },
@@ -94,10 +94,10 @@ export default defineGkdApp({
           resetMatch: 'match',
           actionCd: 0,
           activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
-          anyMatches:[
+          anyMatches: [
             '([text="茶影优惠享"] [text="提交订单"][clickable=true])',
             '(WebView > View > View > View > View > Button[clickable=true][visibleToUser=true][text="提交订单"])',
-            ],
+          ],
         },
       ],
     },
@@ -123,10 +123,10 @@ export default defineGkdApp({
           resetMatch: 'match',
           action: 'clickCenter',
           activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
-          anyMatches:[
+          anyMatches: [
             '([id="auth-main"] > [text="拒绝"] + [text="同意授权"])',
             '(View > View + Button[text="拒绝"] + Button[clickable=true][visibleToUser=true][text="同意授权"])',
-            ],
+          ],
         },
       ],
     },
@@ -170,10 +170,10 @@ export default defineGkdApp({
           actionMaximum: 1,
           resetMatch: 'app',
           activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
-          anyMatches:[
+          anyMatches: [
             '([id="beanAnswer"] > [text="a4613c7a03ec4aa1a32a00446de323ea9900032820260227bak"])',
             '(WebView[text="小豆乐园首页"] > View > View > View > @View[clickable=true][visibleToUser=true][id="beanAnswer"] > Image[text="a4613c7a03ec4aa1a32a00446de323ea9900032820260227"])',
-            ],
+          ],
         },
       ],
     },
@@ -225,10 +225,10 @@ export default defineGkdApp({
           resetMatch: 'match',
           fastQuery: true,
           activityIds: 'abc.feinno.uilibrary.activitys.PublicListActivity',
-          anyMatches:[
+          anyMatches: [
             '([vid="dialog_notification_imageView"] +n [vid="dialog_notification_close"])',
             '(FrameLayout > LinearLayout > ImageView[vid="dialog_notification_imageView"] +n ImageView[clickable=true][visibleToUser=true][vid="dialog_notification_close"])',
-            ],
+          ],
         },
       ],
     },

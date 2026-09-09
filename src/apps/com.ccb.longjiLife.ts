@@ -12,11 +12,11 @@ export default defineGkdApp({
           actionCd: 100,
           resetMatch: 'match',
           activityIds: 'com.ccb.longjiLife.MainActivity',
-          anyMatches:[
+          anyMatches: [
             ' ([text="签到成功"] +n [text="知道了"])',
             '(View > TextView +n TextView[text="知道了"][clickable=false])',
             '(View > View > TextView[text="签到成功"] +3 TextView[text="确定领取"] + TextView)',
-            ],
+          ],
         },
       ],
     },
@@ -145,13 +145,13 @@ export default defineGkdApp({
         {
           actionCd: 100,
           resetMatch: 'match',
-          anyMatches:[
+          anyMatches: [
             '[text="身份信息验证"] +n CheckBox[checked=false] || ([text="身份信息验证"] +n [text="loginBtn.f302f730"])',
             '([text="温馨提示"] + * > [text="好的"])',
             '([text*="活动期间每周三15:00起开放报名领券入口"] <<n * + [text="NWJ6tc6mwaKQfgbADXAJPIxaVNUQJguwpoNgAy0x2ew8SgXab+AzNTubJfuAmp7HtQL5K8AARxBdk+5zMOgAAAAASUVORK5CYII="])',
             '([text="温馨提示"] + [text*="报名人数已满" || text="今日报名人数已满，您可下个领券日再来~" || text^="活动期间每周三"] + * > [text="好的"])',
-            ],
-			activityIds: 'com.ccb.cloudmerchant.view.WebViewActivity',
+          ],
+          activityIds: 'com.ccb.cloudmerchant.view.WebViewActivity',
         },
       ],
     },
@@ -194,10 +194,10 @@ export default defineGkdApp({
           actionCd: 0,
           action: 'clickCenter',
           activityIds: 'com.ccb.cloudmerchant.view.WebViewActivity',
-          anyMatches:[
+          anyMatches: [
             '(WebView > View > View > View > CheckBox[checked=false][visibleToUser=true])',
             '(WebView[text*="建行社保卡"] > View > View > View > CheckBox[checked=false][visibleToUser=true])',
-            ],
+          ],
         },
       ],
     },
@@ -226,10 +226,10 @@ export default defineGkdApp({
           actionCd: 0,
           action: 'clickCenter',
           activityIds: 'com.ccb.cloudmerchant.view.WebViewActivity',
-          anyMatches:[
+          anyMatches: [
             '(WebView[text*="建行社保卡"] > View > View > @Image[visibleToUser=true][clickable=true][text="NWJ6tc6mwaKQfgbADXAJPIxaVNUQJguwpoNgAy0x2ew8SgXab+AzNTubJfuAmp7HtQL5K8AARxBdk+5zMOgAAAAASUVORK5CYII="] - View > View > TextView[text^="尊敬的客户"])',
             '(WebView[text*="建行社保卡"] > View > Dialog > View > Button[text="好的"])',
-            ],
+          ],
         },
       ],
     },

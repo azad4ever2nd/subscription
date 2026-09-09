@@ -39,17 +39,17 @@ export default defineGkdApp({
         {
           matchRoot: false,
           matchDelay: 1000,
-		  forcedTime:3000,
-		  matchTime:3000,
+          forcedTime: 3000,
+          matchTime: 3000,
           actionCd: 300,
           resetMatch: 'match',
           activityIds: 'com.cmbc.cc.mbank.module.web.activity.WebViewActivity',
-          anyMatches:[
+          anyMatches: [
             '([text*="定位"] + [text="我知道了"])',
             '(Dialog > TextView[text="提示"] + TextView + Button[clickable=true][visibleToUser=true][text="我知道了"])',
             '(WebView[text="惠买单"] > View > View > Dialog > TextView[text="提示"] + TextView + Button[clickable=true][visibleToUser=true][text="我知道了"])',
-            ],
-       },
+          ],
+        },
       ],
     },
     {

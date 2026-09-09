@@ -62,10 +62,10 @@ export default defineGkdApp({
           resetMatch: 'match',
           actionCd: 0,
           activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
-          anyMatches:[
+          anyMatches: [
             '(@[text="确认购买"] + [text="提醒我"])',
             '(WebView > View > View > View > Button[clickable=true][visibleToUser=true][text="确认购买"] + Button[text="提醒我"])',
-            ],
+          ],
         },
       ],
     },
@@ -79,10 +79,10 @@ export default defineGkdApp({
           fastQuery: true,
           actionCd: 0,
           activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
-          anyMatches:[
+          anyMatches: [
             '([vid="dialog_content"][text*="优惠券不在销售时间内"] < * +n * > [vid="dialog_button_positive"][text="确认"])',
             '(TextView[vid="dialog_content"][text*="优惠券不在销售时间内"] < ScrollView +n LinearLayout > TextView[vid="dialog_button_positive"][clickable=true][visibleToUser=true][text="确认"])',
-            ],
+          ],
         },
       ],
     },
@@ -96,10 +96,10 @@ export default defineGkdApp({
           resetMatch: 'match',
           actionCd: 0,
           activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
-          anyMatches:[
+          anyMatches: [
             '([vid="dialog_content"][text*="仅可购买1张" || text^="每个用户每月仅可购买2张" || text^="每个用户每日仅可购买1张" ] <<n * +n * > [vid="dialog_button_negative"][text="取消"])',
             '(TextView[vid="dialog_content"][text*="仅可购买1张" || text^="每个用户每月仅可购买2张" || text^="每个用户每日仅可购买1张" ] < ScrollView +n LinearLayout > @TextView[vid="dialog_button_negative"][clickable=true][visibleToUser=true][text="取消"] +2 TextView[text="查看订单"])',
-            ],
+          ],
         },
       ],
     },

@@ -70,11 +70,10 @@ export default defineGkdApp({
           actionCd: 0,
           resetMatch: 'match',
           activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
-          anyMatches:[
+          anyMatches: [
             '([text="5折"] +n @* > [text="立即购买" || text="立即抢购"])',
             '([text="5折"] +n [text="立即购买" || text="立即抢购"])',
-            ],
-			
+          ],
         },
       ],
     },
@@ -160,10 +159,10 @@ export default defineGkdApp({
           actionMaximum: 1,
           actionCd: 0,
           activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
-          anyMatches:[
+          anyMatches: [
             '([text="开通小额免密支付"] + [text="暂不开通"])',
             '([text="分期还账单"] + [text="暂不办理"])',
-            ],
+          ],
         },
       ],
     },

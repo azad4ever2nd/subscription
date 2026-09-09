@@ -29,10 +29,10 @@ export default defineGkdApp({
           resetMatch: 'match',
           activityIds:
             'com.chinamobile.mcloud.client.component.web.H5WebViewMainActivity',
-          anyMatches:[
+          anyMatches: [
             '([text="去领取"] -2 [text="立即领奖"])',
             '(WebView > View > View > View > TextView[text="立即领奖"])',
-            ],
+          ],
         },
       ],
     },
@@ -46,7 +46,7 @@ export default defineGkdApp({
           actionCd: 350,
           activityIds:
             'com.chinamobile.mcloud.client.component.web.H5WebViewMainActivity',
-          anyMatches:[
+          anyMatches: [
             '(View > Image[text="+SOMf8vIwWVqABk0AAAAASUVORK5CYII=1"])',
             '(TextView[text="移动云盘体验评价"] < View + Image[clickable=false][visibleToUser=true][text="wMHmBwYPo98SAAAAABJRU5ErkJggg=="])',
             '([text="立即前往"] <3 View + Image[text="+SOMf8vIwWVqABk0AAAAASUVORK5CYII="])',
@@ -54,7 +54,7 @@ export default defineGkdApp({
             '(TextView[text*="转存成功"] < View + Image[text="+SOMf8vIwWVqABk0AAAAASUVORK5CYII="])',
             '(Dialog > View > View > TextView[text="知道啦"] + Image[clickable=false][visibleToUser=true][text="wMHmBwYPo98SAAAAABJRU5ErkJggg=="])',
             '([text="我知道了"] <n View + Image[text="+SOMf8vIwWVqABk0AAAAASUVORK5CYII="][clickable=false][visibleToUser=true])',
-            ],
+          ],
         },
       ],
     },

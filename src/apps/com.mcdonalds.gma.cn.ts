@@ -70,10 +70,10 @@ export default defineGkdApp({
           fastQuery: false,
           actionCd: 500,
           activityIds: 'com.mcdonalds.gma.cn.activity.MainActivity',
-          anyMatches:[
+          anyMatches: [
             '(ViewGroup > TextView[vid="bottom_dialog_title"][text="开启通知权限"] + @ImageView[clickable=true][visibleToUser=true][vid="bottom_dialog_button_close"] +n TextView[vid="bottom_dialog_button_confirm"][text="去开启"])',
             '(ViewGroup > TextView[vid="bottom_dialog_title"][text="开启通知权限"] +n ImageView[clickable=true][visibleToUser=true][vid="bottom_dialog_button_close"][desc="关闭"])',
-            ],
+          ],
         },
       ],
     },
@@ -85,10 +85,10 @@ export default defineGkdApp({
         {
           resetMatch: 'match',
           activityIds: 'com.mcdonalds.gma.cn.activity.MainActivity',
-          anyMatches:[
+          anyMatches: [
             '(TextView[vid="tv_title"][text*="无法获取位置信息"] +n LinearLayout > TextView[clickable=true][visibleToUser=true][vid="tv_cancel"][text="取消"])',
             '(TextView[vid="tv_info"][text*="定位服务"] +n LinearLayout > TextView[clickable=true][visibleToUser=true][vid="tv_cancel"][text="取消"])',
-            ],
+          ],
         },
       ],
     },
@@ -159,11 +159,11 @@ export default defineGkdApp({
       desc: '260808，添加奖牌领取，开启通知权限',
       rules: [
         {
-          anyMatches:[
+          anyMatches: [
             '([vid="iv_dialog"] + [vid="v_cancel"])',
             '(ViewGroup > TextView[vid="bottom_dialog_title"][text="开启通知权限"] +n ImageView[clickable=true][visibleToUser=true][vid="bottom_dialog_button_close"][desc="关闭"])',
             '(ViewGroup > TextView[clickable=true][visibleToUser=true][vid="tv_badge_dialog_save"][clickable=true][visibleToUser=true][text="开心收下"] + TextView + ImageView[vid="tv_badge_dialog_close"])',
-            ],
+          ],
           actionCd: 300,
           fastQuery: true,
           resetMatch: 'match',

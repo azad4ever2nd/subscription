@@ -14,12 +14,12 @@ export default defineGkdApp({
           forcedTime: 2000,
           resetMatch: 'match',
           activityIds: 'com.jd.lib.ttt.page.TTTMultiPageActivity',
-          anyMatches:[
+          anyMatches: [
             '([id="SignButton"][childCount=1])',
             '([id="homeSignButton"] > [text="签到领豆"])',
             '(View > View[id="signView_main_portal"] > View[text*="京豆"])',
             '(View > [id="homeSignButton"] > TextView[text="签到领京豆"])',
-            ],
+          ],
         },
       ],
     },
@@ -84,10 +84,10 @@ export default defineGkdApp({
           resetMatch: 'match',
           matchTime: 1000,
           activityIds: 'com.jd.lib.ttt.page.TTTMultiPageActivity',
-          anyMatches:[
+          anyMatches: [
             '(@TextView - View > [text="¥"] + [text="4.90"] + [text="黑五价"])',
             '(View[childCount=2] > View[childCount=3] > View[childCount=7] + @TextView[clickable=true] + TextView)',
-            ],
+          ],
         },
       ],
     },
@@ -247,11 +247,11 @@ export default defineGkdApp({
           resetMatch: 'match',
           fastQuery: true,
           activityIds: 'com.jingdong.app.mall.MainFrameActivity',
-          anyMatches:[
+          anyMatches: [
             '([text*="开启消息通知"] <<n * + [desc="关闭"])',
             '(@[id="com.jd.lib.message.feature:id/h7"] > [id="com.jd.lib.message.feature:id/h6"])',
             '(Button[text="去开启通知"] <n LinearLayout + ImageView[desc="关闭"])',
-            ],
+          ],
         },
       ],
     },

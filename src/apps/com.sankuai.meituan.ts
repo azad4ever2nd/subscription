@@ -52,10 +52,10 @@ export default defineGkdApp({
           resetMatch: 'match',
           fastQuery: true,
           activityIds: 'com.meituan.android.mrn.container.MRNBaseActivity',
-          anyMatches:[
+          anyMatches: [
             '([text="确认退出评价吗？"] +n * > [text="退出评价"])',
             '(ViewGroup > ViewGroup > @ViewGroup > TextView[text="点击复制"])',
-            ],
+          ],
         },
       ],
     },
@@ -72,11 +72,11 @@ export default defineGkdApp({
             'com.meituan.android.mrn.container.MRNBaseActivity',
             'com.meituan.android.mrn.container.MRNStandardActivity',
           ],
-          anyMatches:[
+          anyMatches: [
             '([text="定位服务授权"] +n * @*[clickable=true] [text="暂不开启"])',
             '(TextView[text="定位服务授权"] +n ViewGroup > @ViewGroup[clickable=true] > TextView[text="暂不开启"])',
             '(TextView[text="定位服务授权"] +n ViewGroup > ViewGroup > @ViewGroup[clickable=true] > TextView[text="暂不开启"])',
-            ],
+          ],
         },
       ],
     },
@@ -130,10 +130,10 @@ export default defineGkdApp({
           resetMatch: 'match',
           actionMaximum: 1,
           activityIds: 'com.meituan.android.mrn.container.MRNStandardActivity',
-          anyMatches:[
+          anyMatches: [
             '(ViewGroup > @ViewGroup[clickable=true][visibleToUser=true] + TextView[text^="我已阅读并同意"])',
             '(ViewGroup > @ViewGroup[clickable=true][visibleToUser=true] + TextView[text^="我已阅读并同意"] + ViewGroup > TextView[text="《用户授权协议》"])',
-            ],
+          ],
         },
       ],
     },
@@ -158,10 +158,10 @@ export default defineGkdApp({
           resetMatch: 'match',
           fastQuery: true,
           activityIds: 'com.dianping.live.live.mrn.MLiveMRNActivity',
-          anyMatches:[
+          anyMatches: [
             '(ViewGroup > TextView[text="领亲密度" || text="去逛逛"])',
             '(@ViewGroup[clickable=true][visibleToUser=true] > TextView[text="领亲密度" || text="去逛逛"])',
-            ],
+          ],
         },
       ],
     },
@@ -192,11 +192,11 @@ export default defineGkdApp({
             'com.dianping.live.live.mrn.MLiveMRNActivity',
             'com.dianping.live.live.mrn.square.MLiveSquareV2Activity',
           ],
-          anyMatches:[
+          anyMatches: [
             '([text="80" || text="50" || text="60"] + [text="元"] +n *[clickable=true] > [text="领券"][visibleToUser=true])',
             '(TextView[text="80" || text="50" || text="60"] + TextView[text="元"] +n ViewGroup[clickable=true] > TextView[text="领券"][visibleToUser=true])',
             '(HorizontalScrollView > ViewGroup > ViewGroup > ViewGroup > ViewGroup > TextView[text="80" || text="50" || text="60"] + TextView[text="元"] +2 @ViewGroup[clickable=true] > TextView[text="领券"][visibleToUser=true])',
-            ],
+          ],
         },
       ],
     },
@@ -214,11 +214,11 @@ export default defineGkdApp({
             'com.dianping.live.live.mrn.MLiveMRNActivity',
             'com.dianping.live.live.mrn.square.MLiveSquareV2Activity',
           ],
-          anyMatches:[
+          anyMatches: [
             '([text="80" || text="50" || text="60"] + [text="元"] +n *[clickable=true] > [text="立即领取"][visibleToUser=true])',
             '(TextView[text="80" || text="50" || text="60"] + TextView[text="元"] +n ViewGroup[clickable=true] > TextView[text="立即领取"][visibleToUser=true])',
             '(HorizontalScrollView > ViewGroup > ViewGroup > ViewGroup > TextView[text="80" || text="50" || text="60"] + TextView[text="元"] +2 @ViewGroup[clickable=true] > TextView[text="立即领取"][visibleToUser=true])',
-            ],
+          ],
         },
       ],
     },
@@ -286,10 +286,10 @@ export default defineGkdApp({
           resetMatch: 'match',
           actionCd: 0,
           activityIds: 'com.sankuai.titans.adapter.mtapp.KNBWebViewActivity',
-          anyMatches:[
+          anyMatches: [
             '(View > Image[text="f905330e6eb51af9eb75b55a4370b7c070746"] + View >n Image)',
             '(Image[text="f905330e6eb51af9eb75b55a4370b7c070746"] < View + View > View > View > Image)',
-            ],
+          ],
         },
       ],
     },

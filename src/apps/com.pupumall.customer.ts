@@ -13,10 +13,10 @@ export default defineGkdApp({
           fastQuery: true,
           matchDelay: 500,
           activityIds: 'com.pupumall.customer.activity.SplashActivity',
-          anyMatches:[
+          anyMatches: [
             '([vid="tv_update_now"][text="立即更新"] <<n * + [vid="iv_close"])',
             '(FrameLayout > LinearLayout > FrameLayout > LinearLayout > @ImageView[clickable=true][visibleToUser=true][vid="iv_close"] - ViewGroup > TextView[vid="tv_upgrade_now"][text="立即更新"])',
-            ],
+          ],
         },
       ],
     },

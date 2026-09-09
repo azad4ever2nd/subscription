@@ -26,10 +26,10 @@ export default defineGkdApp({
           fastQuery: true,
           matchDelay: 500,
           activityIds: 'com.yt.hxmb50.mainpages.ui.main.MainActivity',
-          anyMatches:[
+          anyMatches: [
             '(@[vid="dialog_update_tv_cancel"][text="下次再说"] + [vid="dialog_update_tv_update"][text="立即更新"])',
             '(LinearLayout > @TextView[vid="dialog_update_tv_cancel"][clickable=true][visibleToUser=true][text="下次再说"] + TextView[vid="dialog_update_tv_update"][text="立即更新"])',
-            ],
+          ],
         },
       ],
     },
@@ -42,10 +42,10 @@ export default defineGkdApp({
           resetMatch: 'match',
           actionCd: 0,
           activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
-          anyMatches:[
+          anyMatches: [
             '([text$="能量分"] +n * > [text="立即兑换"])',
             '(WebView[text="权益详情"] > View > View > View[text$="能量分"] +(1,2) View > Button[text="立即兑换"])',
-            ],
+          ],
         },
       ],
     },
@@ -59,10 +59,10 @@ export default defineGkdApp({
           actionCd: 0,
           order: -1,
           activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
-          anyMatches:[
+          anyMatches: [
             '([text*="是否确认兑换"] + * > [text="确认"])',
             '(View[text*="是否确认兑换"] + View > View[clickable=true][visibleToUser=true][text="确认"])',
-            ],
+          ],
         },
       ],
     },
@@ -76,10 +76,10 @@ export default defineGkdApp({
           actionCd: 0,
           order: -2,
           activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
-          anyMatches:[
+          anyMatches: [
             '([text="活动太火爆了，请稍后再试！"] + * > [text="知道了"])',
             '(Dialog > View[text*="活动太火爆了" || text*="权益已被抢完"] + View > Button[clickable=true][visibleToUser=true][text*="知道了"])',
-            ],
+          ],
         },
       ],
     },
