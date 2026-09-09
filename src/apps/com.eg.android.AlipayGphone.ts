@@ -627,6 +627,7 @@ export default defineGkdApp({
             'com.alipay.mobile.nebulax.xriver.activity.XRiverActivity$App04',
           ],
           anyMatches: [
+            '@TextView[clickable=false][visibleToUser=true] - View > View > View > View > View > TextView[text="首购特惠"]',
             'View[childCount=2] > @TextView[clickable=false][visibleToUser=true] - View > View > View >n TextView[text="去使用"] - View',
             '(TextView[text="立即抽免单"][clickable=false][visibleToUser=true] < View < View + TextView[text.length=0][clickable=false][visibleToUser=true])',
             '(View > View > TextView[text="立即抽"][clickable=false][visibleToUser=true])',
