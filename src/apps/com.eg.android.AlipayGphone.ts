@@ -548,7 +548,7 @@ export default defineGkdApp({
     {
       key: 32,
       name: '银行卡抽奖',
-      desc: '260719',
+      desc: '260909',
       rules: [
         {
           resetMatch: 'match',
@@ -557,6 +557,7 @@ export default defineGkdApp({
             'com.alipay.mobile.nebulax.xriver.activity.XRiverActivity',
           anyMatches:
             'WebView > View > View > TextView[text^="抽奖机会"] + TextView[clickable=false][visibleToUser=true]',
+			'WebView > View > View > TextView[text^="抽奖机会"] + TextView[clickable=true][visibleToUser=true]',
         },
       ],
     },

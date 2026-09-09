@@ -135,8 +135,11 @@ export default defineGkdApp({
       desc: '260905，添加福袋，下单完成分享弹窗，先用后付资格，百亿补贴弹窗  || (View[childCount=4] > [text="webp"] +3 *',
       rules: [
         {
-          anyMatches:
-            '([text="关闭弹窗1"]) || (ImageView < @* - ViewGroup [text="支付成功"]) || ([text="如何领取福袋奖励"] +n [text="去首页解锁"])',
+          anyMatches:[
+            '([text="关闭弹窗1"])',
+            '(ImageView < @* - ViewGroup [text="支付成功"])',
+            '([text="如何领取福袋奖励"] +n [text="去首页解锁"])',
+			],
           resetMatch: 'match',
           activityIds: ['com.xunmeng.pinduoduo.activity.NewPageActivity'],
         },
@@ -217,7 +220,8 @@ export default defineGkdApp({
           resetMatch: 'match',
           activityIds: 'com.xunmeng.pinduoduo.activity.NewPageActivity',
           anyMatches: [
-            '([text="邀请好友抽福袋"] <n * + TextView[childCount=0]) || (View > @TextView[index=parent.childCount.minus(1)] - View > TextView[text="邀请好友抽福袋"])',
+            '([text="邀请好友抽福袋"] <n * + TextView[childCount=0])',
+            '(View > @TextView[index=parent.childCount.minus(1)] - View > TextView[text="邀请好友抽福袋"])',
           ],
         },
       ],
@@ -305,8 +309,8 @@ export default defineGkdApp({
     },
     {
       key: 20,
-      name: '如何解锁，去首页',
-      desc: '260904',
+      name: '如何解锁，去首页1',
+      desc: '260904,clickable=false',
       rules: [
         {
           resetMatch: 'match',
@@ -375,7 +379,8 @@ export default defineGkdApp({
           actionCd: 300,
           activityIds: 'com.xunmeng.pinduoduo.activity.NewPageMaskActivity',
           anyMatches: [
-            '([text="暂时放弃"] <<n @* + [text="继续支付"]) || ([text="暂时放弃"] <<n @*[clickable=true] + [text="继续支付"])',
+            '([text="暂时放弃"] <<n @* + [text="继续支付"])',
+            '([text="暂时放弃"] <<n @*[clickable=true] + [text="继续支付"])',
           ],
         },
       ],
@@ -468,7 +473,7 @@ export default defineGkdApp({
     {
       key: 30,
       name: '如何解锁，去首页2',
-      desc: '260904,clickable=true',
+      desc: '260909,clickable=true',
       rules: [
         {
           resetMatch: 'match',
@@ -476,6 +481,8 @@ export default defineGkdApp({
           activityIds: 'com.xunmeng.pinduoduo.activity.NewPageActivity',
           anyMatches: [
             '(View > View > View > TextView[text="如何解锁点亮?"] + TextView[text="去首页"][clickable=true][visibleToUser=true])',
+			'(View > View > View > TextView[text="如何解锁?" || text="如何解锁点亮?"] + TextView[text="去首页"][clickable=true][visibleToUser=true])',
+			'(View > View > View > TextView[text^="如何解锁"] + TextView[text="去首页"][clickable=true][visibleToUser=true])',
           ],
         },
       ],
@@ -498,13 +505,14 @@ export default defineGkdApp({
     {
       key: 32,
       name: '百亿补贴消费券天天抢，点击领取消费券（激活）',
-      desc: '260814',
+      desc: '260909',
       rules: [
         {
           resetMatch: 'match',
           activityIds: 'com.xunmeng.pinduoduo.ui.activity.MainFrameActivity',
           anyMatches: [
             'ViewGroup[childCount=3] > ImageView + @ViewGroup[childCount=2][clickable=true] > ViewGroup[childCount=2] > ViewGroup[childCount=3] + ImageView[clickable=false][visibleToUser=true]',
+			'ViewGroup[childCount=3] > ImageView + ViewGroup[childCount=2][clickable=true] > ViewGroup[childCount=2] > ViewGroup[childCount=3] + ImageView[clickable=false][visibleToUser=true]',
           ],
         },
       ],

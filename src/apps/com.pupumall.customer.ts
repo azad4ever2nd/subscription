@@ -110,5 +110,31 @@ export default defineGkdApp({
         },
       ],
     },
+    {
+      key: 9,
+      name: '弹窗，确认订单，去支付',
+      desc: '260909',
+      rules: [
+        {
+          resetMatch: 'match',
+		  actionCd:600,
+          activityIds: 'com.pupumall.webview.page.PuPuWebViewActivity',
+          matches: 'View > View > TextView[text^="系统繁忙" || text$="请稍后再试。"] + @View[clickable=true][visibleToUser=true] > TextView[text="确定"]',
+        },
+      ],
+    },
+    {
+      key: 10,
+      name: '确认订单，勾选 微信支付',
+      desc: '260909',
+      rules: [
+        {
+          resetMatch: 'match',
+		  actionCd:6000,
+          activityIds: 'com.pupumall.webview.page.PuPuWebViewActivity',
+          matches: 'View > TextView[text="支付方式"] +n @View[clickable=true][visibleToUser=true] > View > TextView[text="微信支付"]',
+        },
+      ],
+    },
   ],
 });

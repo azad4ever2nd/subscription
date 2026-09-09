@@ -246,6 +246,18 @@ export default defineGkdApp({
     },
     {
       key: 19,
+      name: '连接后下方广告',
+      desc: '260909',
+      rules: [
+        {
+          resetMatch: 'match',
+          activityIds: 'tool.seagull.v.ui.MainActivity',
+          matches: 'FrameLayout[vid="banner_container"] LinearLayout > FrameLayout > FrameLayout[childCount=1] > View[clickable=false][visibleToUser=true]',
+        },
+      ],
+    },
+    {
+      key: 20,
       name: '连接后广告窗2',
       desc: '260616',
       rules: [
@@ -258,7 +270,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 20,
+      key: 21,
       name: '广告1，关闭',
       desc: '260513',
       rules: [
@@ -272,7 +284,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 21,
+      key: 22,
       name: '奖励已下发，跳过',
       desc: '260510',
       rules: [
@@ -284,7 +296,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 22,
+      key: 23,
       name: '反馈，close_btn',
       desc: '260510',
       rules: [
@@ -297,7 +309,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 23,
+      key: 24,
       name: '签到完广告弹窗，跳过',
       desc: '260511',
       rules: [
@@ -310,7 +322,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 24,
+      key: 25,
       name: '点击广告拿奖励',
       desc: '260531',
       rules: [
@@ -325,7 +337,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 25,
+      key: 26,
       name: '恭喜获得奖励2',
       desc: '260526',
       rules: [
@@ -337,7 +349,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 26,
+      key: 27,
       name: '恭喜获得奖励3',
       desc: '260607',
       rules: [
@@ -351,7 +363,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 27,
+      key: 28,
       name: '签到点击广告后，X掉',
       desc: '260507',
       rules: [
@@ -363,7 +375,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 28,
+      key: 29,
       name: '弹窗，连接后新版浮动广告，关闭',
       desc: '260908',
       rules: [

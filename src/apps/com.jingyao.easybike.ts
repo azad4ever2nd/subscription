@@ -121,7 +121,7 @@ export default defineGkdApp({
         {
           resetMatch: 'match',
           matchDelay: 1000,
-          actionCd: 0,
+          actionCd: 500,
           fastQuery: true,
           activityIds: 'com.hellobike.atlas.business.portal.PortalActivity',
           anyMatches: [
@@ -244,7 +244,7 @@ export default defineGkdApp({
       rules: [
         {
           resetMatch: 'match',
-          actionMaximum: 1,
+		  forcedTime:3000,
           activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
           anyMatches: '@TextView[clickable=true] +n [text="明日再来"]',
         },
@@ -264,8 +264,8 @@ export default defineGkdApp({
     },
     {
       key: 17,
-      name: '领奖励',
-      desc: '260616， ([text="在App任意完成以下订单，回来领奖励金"] +n [text="知道了"]) || clik无反应就clickCenter',
+      name: '弹窗，每日单单返奖励金，知道了',
+      desc: '260909， ([text="在App任意完成以下订单，回来领奖励金"] +n [text="知道了"]) || clik无反应就clickCenter',
       rules: [
         {
           resetMatch: 'match',
@@ -274,6 +274,8 @@ export default defineGkdApp({
           anyMatches: [
             '([text="会员单单返"] + [text="领奖励"])',
             '(View > View > View > TextView[text*="奖励金"] + View + TextView[text="知道了bak"][clickable=true])',
+            'TextView[text="我的奖励金"] +n View > View > TextView[clickable=false][visibleToUser=true][text="知道了"]',
+            'TextView[text="我的奖励金"] +n View >n View > TextView[clickable=true][visibleToUser=true][text="知道了"]',
           ],
         },
       ],
@@ -308,7 +310,7 @@ export default defineGkdApp({
     {
       key: 20,
       name: '新人首单，X',
-      desc: '260811，添加 兑换取消',
+      desc: '260909，添加 兑换取消',
       rules: [
         {
           resetMatch: 'match',
@@ -316,6 +318,7 @@ export default defineGkdApp({
           anyMatches: [
             '(@TextView[clickable=true] + [text="新人首单，兑免费骑车"])',
             '(View > View > TextView[text^="兑换" || text=" 单车1.5元券"] +2 @TextView[text="再想想"][clickable=true][visibleToUser=true] + TextView[text="确认兑换"])',
+			'View > TextView[text="再想想"][clickable=true][visibleToUser=true] + TextView[text="确认兑换"]',
           ],
         },
       ],
@@ -399,7 +402,7 @@ export default defineGkdApp({
     },
     {
       key: 26,
-      name: '弹窗，每日单单返奖励金，知道了',
+      name: '弹窗，每日单单返奖励金，知道了2',
       desc: '260907,clickable=true',
       rules: [
         {
