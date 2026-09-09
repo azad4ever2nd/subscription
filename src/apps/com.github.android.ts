@@ -98,7 +98,7 @@ export default defineGkdApp({
         {
           resetMatch: 'match',
           preKeys: [4],
-          actionMaximum: 3,
+          actionMaximum: 2,
           action: 'swipe',
           actionCd: 3000,
           swipeArg: {
@@ -110,7 +110,7 @@ export default defineGkdApp({
               x: 510,
               y: 1645,
             },
-            duration: 1000, //滑动时长
+            duration: 800, //滑动时长
           },
           activityIds: 'com.github.android.main.MainActivity',
           matches:
