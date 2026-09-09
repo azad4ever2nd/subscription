@@ -82,8 +82,11 @@ export default defineGkdApp({
           resetMatch: 'match',
           actionCd: 0,
           activityIds: 'com.bankcomm.maidanba.activity.WebViewActivity',
-          matches:
-            '(@[id="copy"][text*="立即购买"] <<n * - * [text="最红星期五"]) || (View > View > Button[id="copy"][clickable=true][visibleToUser=true]) || (WebView > View > View > View > View > Button[id="copy"][clickable=true][visibleToUser=true][text=" 立即购买"])',
+          anyMatches:[
+            '(@[id="copy"][text*="立即购买"] <<n * - * [text="最红星期五"])',
+            '(View > View > Button[id="copy"][clickable=true][visibleToUser=true])',
+            '(WebView > View > View > View > View > Button[id="copy"][clickable=true][visibleToUser=true][text=" 立即购买"])',
+            ],
         },
       ],
     },
@@ -107,8 +110,9 @@ export default defineGkdApp({
       desc: '260313',
       rules: [
         {
-          matches: [
-            '([text="消耗100买单币抽奖一次"] < * + * > [text="确定"]) || ([text="恭喜抽中"] +n [text="收下"])',
+          anyMatches: [
+            '([text="消耗100买单币抽奖一次"] < * + * > [text="确定"])',
+            '([text="恭喜抽中"] +n [text="收下"])',
           ],
           resetMatch: 'match',
           activityIds: ['com.bankcomm.maidanba.activity.WebViewActivity'],
@@ -136,8 +140,11 @@ export default defineGkdApp({
           fastQuery: true,
           resetMatch: 'match',
           activityIds: 'com.bankcomm.maidanba.activity.WebViewActivity',
-          matches:
-            '(@* + [text="开启消息通知"] +n [text="去开启"]) || (View > @TextView + TextView[text="开启消息通知"])',
+          anyMatches:[
+            '(@* + [text="开启消息通知"] +n [text="去开启"])',
+            '(View > @TextView + TextView[text="开启消息通知"])',
+            ],
+			
         },
       ],
     },

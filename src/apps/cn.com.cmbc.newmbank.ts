@@ -52,8 +52,9 @@ export default defineGkdApp({
       desc: '251206,整合浏览任务完成',
       rules: [
         {
-          matches: [
-            '([text="4Sf0Hfm7X8Ar14i2VC1FrsAAAAASUVORK5CYII="] <<n * + * > [text="wG3E8rLbFftjgAAAABJRU5ErkJggg=="]) || ([vid="tv_countdown_over"][text*="任务完成"])',
+          anyMatches: [
+            '([text="4Sf0Hfm7X8Ar14i2VC1FrsAAAAASUVORK5CYII="] <<n * + * > [text="wG3E8rLbFftjgAAAABJRU5ErkJggg=="])',
+            '([vid="tv_countdown_over"][text*="任务完成"])',
           ],
           activityIds: ['cn.com.cmbc.newmbank.activity.WebViewActivity'],
         },

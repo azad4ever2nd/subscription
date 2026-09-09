@@ -10,8 +10,9 @@ export default defineGkdApp({
       desc: '260208',
       rules: [
         {
-          matches: [
-            '([vid="0_resource_name_obfuscated"] > [vid="0_resource_name_obfuscated"]) || ([vid="mDescTextView"] <<n * +n [vid="mNegativeImageView"])',
+          anyMatches: [
+            '([vid="0_resource_name_obfuscated"] > [vid="0_resource_name_obfuscated"])',
+            '([vid="mDescTextView"] <<n * +n [vid="mNegativeImageView"])',
           ],
           resetMatch: 'match',
           activityIds: [
@@ -55,8 +56,9 @@ export default defineGkdApp({
       desc: '260213',
       rules: [
         {
-          matches: [
-            '([vid="guide"] [vid="close"]) || ([vid="guideSnackBar"] [vid="closeButton"])',
+          anyMatches: [
+            '([vid="guide"] [vid="close"])',
+            '([vid="guideSnackBar"] [vid="closeButton"])',
           ],
           fastQuery: true,
           resetMatch: 'match',

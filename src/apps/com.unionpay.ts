@@ -95,8 +95,11 @@ export default defineGkdApp({
             'com.unionpay.liteapp.app.UPLiteAppActivity3',
             'com.unionpay.liteapp.app.UPLiteAppActivity4',
           ],
-          matches:
-            '([vid="tv_dialog_title"][text="开启手机定位服务"] < * +n * > [vid="btn_cancel"]) || (TextView[vid="tv_dialog_title"][text="开启手机定位服务"] < LinearLayout +n LinearLayout > TextView[vid="btn_cancel"][clickable=true]) || (LinearLayout > TextView[vid="tv_dialog_info"][text*="开启定位服务"] + LinearLayout > @TextView[vid="btn_cancel"][clickable=true][visibleToUser=true][text*="取消" || text="取 消"] + TextView[vid="btn_ok"])',
+          anyMatches:[
+            '([vid="tv_dialog_title"][text="开启手机定位服务"] < * +n * > [vid="btn_cancel"])',
+            '(TextView[vid="tv_dialog_title"][text="开启手机定位服务"] < LinearLayout +n LinearLayout > TextView[vid="btn_cancel"][clickable=true])',
+            '(LinearLayout > TextView[vid="tv_dialog_info"][text*="开启定位服务"] + LinearLayout > @TextView[vid="btn_cancel"][clickable=true][visibleToUser=true][text*="取消" || text="取 消"] + TextView[vid="btn_ok"])',
+            ],
         },
       ],
     },
@@ -133,8 +136,17 @@ export default defineGkdApp({
             'com.unionpay.liteapp.app.UPLiteAppActivity3',
             'com.unionpay.liteapp.app.UPLiteAppActivity4',
           ],
-          matches:
-            '([text="请前往“会员中心”查看"] -n [text="查看积点攻略"] - [text*="立减券" || text="积点"] <n * + *) || (@* - * > [text="立减券"] + [text="去查看"] +n [text$="使用有效"]) || (@TextView - * > [text="积点"] + [text="去查看"] + [text="请前往“会员中心”查看"]) || ([text*="立减券" || text="积点"] +n [text="请前往“会员中心”查看"] + *) || ([text*="立减券" || text="积点"] + [text="查看积点攻略"] +n [text="请前往“会员中心”查看"] <n * + *) || (TextView[text="去查看"] +n TextView[text$="使用有效"] + View) || ([text*="立减券" || text="积点"] + [text="开心收下"]) || ([text="浦发立减券"] + [text="去查看"] <n * + TextView) || ([text="去查看"] + [text="票券有效期7*24小时"] + View)',
+          anyMatches:[
+            '([text="请前往“会员中心”查看"] -n [text="查看积点攻略"] - [text*="立减券" || text="积点"] <n * + *)',
+            '(@* - * > [text="立减券"] + [text="去查看"] +n [text$="使用有效"])',
+            '(@TextView - * > [text="积点"] + [text="去查看"] + [text="请前往“会员中心”查看"])',
+            '([text*="立减券" || text="积点"] +n [text="请前往“会员中心”查看"] + *)',
+            '([text*="立减券" || text="积点"] + [text="查看积点攻略"] +n [text="请前往“会员中心”查看"] <n * + *)',
+            '(TextView[text="去查看"] +n TextView[text$="使用有效"] + View)',
+            '([text*="立减券" || text="积点"] + [text="开心收下"])',
+            '([text="浦发立减券"] + [text="去查看"] <n * + TextView)',
+            '([text="去查看"] + [text="票券有效期7*24小时"] + View)',
+            ],
         },
       ],
     },
@@ -225,8 +237,9 @@ export default defineGkdApp({
             'com.unionpay.liteapp.app.UPLiteAppActivity3',
             'com.unionpay.liteapp.app.UPLiteAppActivity4',
           ],
-          matches: [
-            '(View > TextView[text="谢谢参与"] + TextView[text="知道了"] + Image[text="scMOOk4eCwfO2MXMA57klCN2cRQucR4ZsJPAuCw81thJPT6XbjhgNwMbAPAiq3hLBd4o0iqaRfxjmM16IkusKLl+YfM7Etm+Ty3VgYWWEXAiV2i27uIq4pB4BzRbd4E7E7rliWqX2owOgTfotu7ixoDIHLqtu8gZ0bOGbusuava4MINu6y4yXiB00G3dhaOYZNNnmzbM9KtMQWIKT9PBMB1JSzIwpSFTArSkXlPSt1w3povOcsWaLndLWWEpaCyllKmIs5SPlsLVUDJbinVLm2BtUOytkb0pM7WDP+PVKWG1cGJeAAAAAElFTkSuQmCC"][clickable=false]) || (WebView[text="幸运扭蛋机"] > View > View > View > TextView[text="您离中奖还差一点点"] + TextView[text="知道了"] + Image[text="scMOOk4eCwfO2MXMA57klCN2cRQucR4ZsJPAuCw81thJPT6XbjhgNwMbAPAiq3hLBd4o0iqaRfxjmM16IkusKLl+YfM7Etm+Ty3VgYWWEXAiV2i27uIq4pB4BzRbd4E7E7rliWqX2owOgTfotu7ixoDIHLqtu8gZ0bOGbusuava4MINu6y4yXiB00G3dhaOYZNNnmzbM9KtMQWIKT9PBMB1JSzIwpSFTArSkXlPSt1w3povOcsWaLndLWWEpaCyllKmIs5SPlsLVUDJbinVLm2BtUOytkb0pM7WDP+PVKWG1cGJeAAAAAElFTkSuQmCC"])',
+          anyMatches: [
+            '(View > TextView[text="谢谢参与"] + TextView[text="知道了"] + Image[text="scMOOk4eCwfO2MXMA57klCN2cRQucR4ZsJPAuCw81thJPT6XbjhgNwMbAPAiq3hLBd4o0iqaRfxjmM16IkusKLl+YfM7Etm+Ty3VgYWWEXAiV2i27uIq4pB4BzRbd4E7E7rliWqX2owOgTfotu7ixoDIHLqtu8gZ0bOGbusuava4MINu6y4yXiB00G3dhaOYZNNnmzbM9KtMQWIKT9PBMB1JSzIwpSFTArSkXlPSt1w3povOcsWaLndLWWEpaCyllKmIs5SPlsLVUDJbinVLm2BtUOytkb0pM7WDP+PVKWG1cGJeAAAAAElFTkSuQmCC"][clickable=false])',
+            '(WebView[text="幸运扭蛋机"] > View > View > View > TextView[text="您离中奖还差一点点"] + TextView[text="知道了"] + Image[text="scMOOk4eCwfO2MXMA57klCN2cRQucR4ZsJPAuCw81thJPT6XbjhgNwMbAPAiq3hLBd4o0iqaRfxjmM16IkusKLl+YfM7Etm+Ty3VgYWWEXAiV2i27uIq4pB4BzRbd4E7E7rliWqX2owOgTfotu7ixoDIHLqtu8gZ0bOGbusuava4MINu6y4yXiB00G3dhaOYZNNnmzbM9KtMQWIKT9PBMB1JSzIwpSFTArSkXlPSt1w3povOcsWaLndLWWEpaCyllKmIs5SPlsLVUDJbinVLm2BtUOytkb0pM7WDP+PVKWG1cGJeAAAAAElFTkSuQmCC"])',
           ],
         },
       ],
@@ -264,8 +277,10 @@ export default defineGkdApp({
             'com.unionpay.liteapp.app.UPLiteAppActivity3',
             'com.unionpay.liteapp.app.UPLiteAppActivity4',
           ],
-          matches:
-            '(View > TextView[text="￥ 0"] + TextView[text="预估到手价"] + TextView[text^="达到限购次数"]) || (View > TextView[text="￥ 0"] + TextView[text="预估到手价"] + TextView[text^="已抢光"])',
+          anyMatches:[
+            '(View > TextView[text="￥ 0"] + TextView[text="预估到手价"] + TextView[text^="达到限购次数"])',
+            '(View > TextView[text="￥ 0"] + TextView[text="预估到手价"] + TextView[text^="已抢光"])',
+            ],
           action: 'back',
         },
       ],

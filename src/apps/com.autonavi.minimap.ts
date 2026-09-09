@@ -10,8 +10,9 @@ export default defineGkdApp({
       desc: '260127',
       rules: [
         {
-          matches: [
-            '(@[vid="iv_close"] + * >n [vid="button_ensure"][text*="立即升级"]) || ([vid="update_viewpager"] + [vid="iv_close"])',
+          anyMatches: [
+            '(@[vid="iv_close"] + * >n [vid="button_ensure"][text*="立即升级"])',
+            '([vid="update_viewpager"] + [vid="iv_close"])',
           ],
           fastQuery: true,
           resetMatch: 'match',

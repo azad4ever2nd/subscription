@@ -76,8 +76,10 @@ export default defineGkdApp({
           resetMatch: 'match',
           actionMaximum: 1,
           activityIds: 'mark.via.Shell',
-          matches:
-            '([text="浏览器"] + View > [id="sacs_close"][text="继续"]) || (View > TextView[text="当前浏览器"] + TextView[clickable=false][visibleToUser=true][text="继续"])',
+          anyMatches:[
+            '([text="浏览器"] + View > [id="sacs_close"][text="继续"])',
+            '(View > TextView[text="当前浏览器"] + TextView[clickable=false][visibleToUser=true][text="继续"])',
+            ],
         },
       ],
     },
@@ -117,8 +119,10 @@ export default defineGkdApp({
           actionCd: 500,
           activityIds: 'mark.via.Shell',
           action: 'clickCenter',
-          matches:
-            '(Dialog[text="暂无可用码"] > View > Button[clickable=true][visibleToUser=true][text="好的"]) || (Dialog[text="暂无可用码"] > Button[clickable=true][visibleToUser=true][text="好的"])',
+          anyMatches:[
+            '(Dialog[text="暂无可用码"] > View > Button[clickable=true][visibleToUser=true][text="好的"])',
+            '(Dialog[text="暂无可用码"] > Button[clickable=true][visibleToUser=true][text="好的"])',
+            ],
         },
       ],
     },
@@ -132,8 +136,16 @@ export default defineGkdApp({
           actionCd: 500,
           action: 'clickCenter',
           activityIds: 'mark.via.Shell',
-          matches:
-            '(View > @View[desc^="立即进入"][clickable=true][visibleToUser=true] > TextView[text^="立即进入"]) || (Dialog[text="提交失败"] > View > Button[text="OK"][clickable=true][visibleToUser=true]) || (Dialog[text="站点公告"] > Button[text="我知道了"][clickable=true][visibleToUser=true]) || (Dialog[text="站点公告"] > TextView[text="站点公告"] +n View > Button[text="我知道了"][clickable=true][visibleToUser=true]) || (Dialog[text="智能直达说明"] > View > Button[clickable=true][visibleToUser=true][text="开启高效体验"]) || (Dialog[text="暂无可用码"] > View > Button[clickable=true][visibleToUser=true][text="好的"]) || (Dialog[text="智能直达说明"] > Button[clickable=true][visibleToUser=true][text="开启高效体验"]) || (Dialog[text="暂无可用码"] > Button[clickable=true][visibleToUser=true][text="好的"])',
+          anyMatches:[
+            '(View > @View[desc^="立即进入"][clickable=true][visibleToUser=true] > TextView[text^="立即进入"])',
+            '(Dialog[text="提交失败"] > View > Button[text="OK"][clickable=true][visibleToUser=true])',
+            '(Dialog[text="站点公告"] > Button[text="我知道了"][clickable=true][visibleToUser=true])',
+            '(Dialog[text="站点公告"] > TextView[text="站点公告"] +n View > Button[text="我知道了"][clickable=true][visibleToUser=true])',
+            '(Dialog[text="智能直达说明"] > View > Button[clickable=true][visibleToUser=true][text="开启高效体验"])',
+            '(Dialog[text="暂无可用码"] > View > Button[clickable=true][visibleToUser=true][text="好的"])',
+            '(Dialog[text="智能直达说明"] > Button[clickable=true][visibleToUser=true][text="开启高效体验"])',
+            '(Dialog[text="暂无可用码"] > Button[clickable=true][visibleToUser=true][text="好的"])',
+            ],
         },
       ],
     },

@@ -20,8 +20,12 @@ export default defineGkdApp({
             'com.pikcloud.xpan.xpan.main.MainTabActivity',
             'com.pikcloud.download.DownloadTaskListActivity',
           ],
-          matches:
-            '([vid="iv_close"]) || ([vid="watch_ad"][text="免费试用"]) || ([vid="cl_operation"] + [vid="close"]) ||(ViewGroup > TextView[vid="dlg_title"][text*="删除" || text*="清除"] +n ViewGroup > LinearLayout > TextView[vid="dlg_confirm_btn"][text="确认"])',
+          anyMatches:[
+            '([vid="iv_close"])',
+            '([vid="watch_ad"][text="免费试用"])',
+            '([vid="cl_operation"] + [vid="close"])',
+            '(ViewGroup > TextView[vid="dlg_title"][text*="删除" || text*="清除"] +n ViewGroup > LinearLayout > TextView[vid="dlg_confirm_btn"][text="确认"])',
+            ],
         },
       ],
     },
@@ -31,9 +35,10 @@ export default defineGkdApp({
       desc: '251123',
       rules: [
         {
-          matches: [
-            '([id="app-interstitial-slot"] + * Button) || ([id="close-button"] > [text="关闭广告并继续打开应用"] + *)',
-          ],
+          anyMatches: [
+            '([id="app-interstitial-slot"] + * Button)',
+            '([id="close-button"] > [text="关闭广告并继续打开应用"] + *)',
+			],
           resetMatch: 'match',
           activityIds: ['com.google.android.gms.ads.AdActivity'],
         },
@@ -80,7 +85,7 @@ export default defineGkdApp({
       rules: [
         {
           resetMatch: 'match',
-          actionCd: 2000,
+          actionCd: 4000,
           activityIds: 'com.pikcloud.xpan.clipboard.ClipboardAddUrlActivity',
           matches:
             'ViewGroup[vid="cl_add_url_dialog"] > TextView[text="识别到剪贴板链接"] +n TextView[clickable=true][visibleToUser=true][vid="add"][text="高速云下载"]',

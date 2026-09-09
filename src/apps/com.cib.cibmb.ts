@@ -10,7 +10,7 @@ export default defineGkdApp({
       desc: '260831',
       rules: [
         {
-          matches: [
+          anyMatches: [
             '[vid="adv_alert"] > [vid="ivClose"][desc="关闭"]',
             'ViewGroup[vid="adv_alert"] > ImageView + ImageView[vid="ivClose"][desc="关闭"][clickable=true][visibleToUser=true]',
           ],
@@ -42,7 +42,10 @@ export default defineGkdApp({
       desc: '251207,添加弹窗',
       rules: [
         {
-          matches: ['([text="点击签到"]) || ([id="lottery_close"])'],
+          anyMatches: [
+		  '([text="点击签到"])',
+            '([id="lottery_close"])',
+			],
           resetMatch: 'match',
           activityIds: ['com.newland.app.webcore.CustomPageFlowActivity'],
         },
@@ -54,8 +57,9 @@ export default defineGkdApp({
       desc: '260108，D,添加红包雨',
       rules: [
         {
-          matches: [
-            '([id="pop-my-prize"] > *[index=parent.childCount.minus(1)]) || (WebView [text^="恭喜您答对" && text$="题"] + TextView)',
+          anyMatches: [
+            '([id="pop-my-prize"] > *[index=parent.childCount.minus(1)])',
+            '(WebView [text^="恭喜您答对" && text$="题"] + TextView)',
           ],
           resetMatch: 'match',
           activityIds: ['com.newland.app.webcore.CustomPageFlowActivity'],

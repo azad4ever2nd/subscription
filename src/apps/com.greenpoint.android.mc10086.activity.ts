@@ -103,7 +103,9 @@ export default defineGkdApp({
         {
           resetMatch: 'match',
           anyMatches: [
-            '([text="兑换成功"] + Image) || (@* +2 * > [text="恭喜获得"]) || ([text="兑换中"] < * +n [text="我知道了"])',
+            '([text="兑换成功"] + Image)',
+            '(@* +2 * > [text="恭喜获得"])',
+            '([text="兑换中"] < * +n [text="我知道了"])',
           ],
           activityIds: ['com.cmccit.webview.ac.CommonHtml5Activity'],
         },

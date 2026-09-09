@@ -27,8 +27,11 @@ export default defineGkdApp({
           resetMatch: 'match',
           actionCd: 0,
           activityIds: 'com.ccb.framework.ui.widget.webview.CcbWebViewActivity',
-          matches:
-            '([text="身份信息验证"] +n CheckBox[checked=false]) || (CheckBox[checked=true] + CheckBox[checked=true] + [text="loginBtn.f302f730"]) || ([text="温馨提示"] +n * > Button[text="好的"])',
+          anyMatches:[
+            '([text="身份信息验证"] +n CheckBox[checked=false])',
+            '(CheckBox[checked=true] + CheckBox[checked=true] + [text="loginBtn.f302f730"])',
+            '([text="温馨提示"] +n * > Button[text="好的"])',
+            ],
         },
       ],
     },
@@ -113,8 +116,12 @@ export default defineGkdApp({
           actionMaximum: 4,
           activityIds:
             'com.nantian.iBank.ui.activity.container.ProgramSingleWindowActivity',
-          matches:
-            '([text="签到有礼楼层"] +n @View[clickable=false][childCount=1] + [text="今天"]) || ([text="签到有礼楼层"] +n @View[clickable=true][childCount=1] + [text="今天"]) || (TextView[text^="+" && text$="0"] < @View[childCount=1] + TextView[text="今天"]) || (@View[childCount=1] + TextView[text="今天"])',
+          anyMatches:[
+            '([text="签到有礼楼层"] +n @View[clickable=false][childCount=1] + [text="今天"])',
+            '([text="签到有礼楼层"] +n @View[clickable=true][childCount=1] + [text="今天"])',
+            '(TextView[text^="+" && text$="0"] < @View[childCount=1] + TextView[text="今天"])',
+            '(@View[childCount=1] + TextView[text="今天"])',
+            ],
         },
       ],
     },
@@ -139,8 +146,10 @@ export default defineGkdApp({
       desc: '260322，添加 火爆了',
       rules: [
         {
-          matches:
-            '([id="app"] > [text="我的礼包 按钮"] + [id="scroll"][childCount=1] [index=1]) || ([text="活动火爆，请稍候再试！"] + [text="知道了"] + [text="关闭 按钮"])',
+          anyMatches:[
+            '([id="app"] > [text="我的礼包 按钮"] + [id="scroll"][childCount=1] [index=1])',
+            '([text="活动火爆，请稍候再试！"] + [text="知道了"] + [text="关闭 按钮"])',
+            ],
           resetMatch: 'match',
           activityIds:
             'com.nantian.iBank.ui.activity.container.ProgramSingleWindowActivity',
@@ -219,8 +228,10 @@ export default defineGkdApp({
           forcedTime: 2000,
           activityIds:
             'com.nantian.iBank.ui.activity.container.ProgramSingleWindowActivity',
-          matches:
-            '(@TextView[clickable=false][visibleToUser=true][text="复制并粘贴"] - TextView[text^="本人已阅读风险揭示"] < View + View > EditText[text.length=0]) || (@TextView[text="复制并粘贴"][clickable=false][visibleToUser=true] <n View + View > EditText[text.length=0])',
+          anyMatches:[
+            '(@TextView[clickable=false][visibleToUser=true][text="复制并粘贴"] - TextView[text^="本人已阅读风险揭示"] < View + View > EditText[text.length=0])',
+            '(@TextView[text="复制并粘贴"][clickable=false][visibleToUser=true] <n View + View > EditText[text.length=0])',
+            ],
         },
       ],
     },

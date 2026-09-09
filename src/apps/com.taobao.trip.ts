@@ -10,7 +10,8 @@ export default defineGkdApp({
       rules: [
         {
           anyMatches: [
-            '([text="今日签到"] <<n *[depth=19] + * > *[index=1]) || (@* > * + * > [text="今日签到" || text="门票订购"])',
+            '([text="今日签到"] <<n *[depth=19] + * > *[index=1])',
+            '(@* > * + * > [text="今日签到" || text="门票订购"])',
           ],
           actionCd: 0,
           actionMaximum: 2,
@@ -90,7 +91,8 @@ export default defineGkdApp({
       rules: [
         {
           anyMatches: [
-            '([text^="O1CN01TD5wn71Ptmtb9GAxE_!!6000000001899-2-tps-60-60"]) || ([text^="O1CN01EmIdr51vV7c1P87T9_!!6000000006177-2-tps-750-178"])',
+            '([text^="O1CN01TD5wn71Ptmtb9GAxE_!!6000000001899-2-tps-60-60"])',
+            '([text^="O1CN01EmIdr51vV7c1P87T9_!!6000000006177-2-tps-750-178"])',
           ],
           resetMatch: 'match',
           activityIds: [

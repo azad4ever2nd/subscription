@@ -29,8 +29,10 @@ export default defineGkdApp({
           resetMatch: 'match',
           activityIds:
             'com.chinamobile.mcloud.client.component.web.H5WebViewMainActivity',
-          matches:
-            '([text="去领取"] -2 [text="立即领奖"]) || (WebView > View > View > View > TextView[text="立即领奖"])',
+          anyMatches:[
+            '([text="去领取"] -2 [text="立即领奖"])',
+            '(WebView > View > View > View > TextView[text="立即领奖"])',
+            ],
         },
       ],
     },
@@ -44,8 +46,15 @@ export default defineGkdApp({
           actionCd: 350,
           activityIds:
             'com.chinamobile.mcloud.client.component.web.H5WebViewMainActivity',
-          matches:
-            '(View > Image[text="+SOMf8vIwWVqABk0AAAAASUVORK5CYII=1"]) || (TextView[text="移动云盘体验评价"] < View + Image[clickable=false][visibleToUser=true][text="wMHmBwYPo98SAAAAABJRU5ErkJggg=="]) || ([text="立即前往"] <3 View + Image[text="+SOMf8vIwWVqABk0AAAAASUVORK5CYII="]) || (TextView[text="订购结果"] < View + Image[text="+SOMf8vIwWVqABk0AAAAASUVORK5CYII="]) || (TextView[text*="转存成功"] < View + Image[text="+SOMf8vIwWVqABk0AAAAASUVORK5CYII="]) || (Dialog > View > View > TextView[text="知道啦"] + Image[clickable=false][visibleToUser=true][text="wMHmBwYPo98SAAAAABJRU5ErkJggg=="]) || ([text="我知道了"] <n View + Image[text="+SOMf8vIwWVqABk0AAAAASUVORK5CYII="][clickable=false][visibleToUser=true])',
+          anyMatches:[
+            '(View > Image[text="+SOMf8vIwWVqABk0AAAAASUVORK5CYII=1"])',
+            '(TextView[text="移动云盘体验评价"] < View + Image[clickable=false][visibleToUser=true][text="wMHmBwYPo98SAAAAABJRU5ErkJggg=="])',
+            '([text="立即前往"] <3 View + Image[text="+SOMf8vIwWVqABk0AAAAASUVORK5CYII="])',
+            '(TextView[text="订购结果"] < View + Image[text="+SOMf8vIwWVqABk0AAAAASUVORK5CYII="])',
+            '(TextView[text*="转存成功"] < View + Image[text="+SOMf8vIwWVqABk0AAAAASUVORK5CYII="])',
+            '(Dialog > View > View > TextView[text="知道啦"] + Image[clickable=false][visibleToUser=true][text="wMHmBwYPo98SAAAAABJRU5ErkJggg=="])',
+            '([text="我知道了"] <n View + Image[text="+SOMf8vIwWVqABk0AAAAASUVORK5CYII="][clickable=false][visibleToUser=true])',
+            ],
         },
       ],
     },
@@ -55,8 +64,10 @@ export default defineGkdApp({
       desc: '',
       rules: [
         {
-          matches: [
-            '([text="移动云盘云朵中心"] [text="喜茶"] + [text*="券"] + * + *) || ([text="移动云盘云朵中心"] [text="蜜雪冰城"] + [text*="券"] + * + *) || ([text="移动云盘云朵中心"] [text="霸王茶姬" ] + [text*="券"] + * + *)',
+          anyMatches: [
+            '([text="移动云盘云朵中心"] [text="喜茶"] + [text*="券"] + * + *)',
+            '([text="移动云盘云朵中心"] [text="蜜雪冰城"] + [text*="券"] + * + *)',
+            '([text="移动云盘云朵中心"] [text="霸王茶姬" ] + [text*="券"] + * + *)',
           ],
           resetMatch: 'match',
           activityIds: [
@@ -205,8 +216,9 @@ export default defineGkdApp({
       desc: '251118，增加开启通知',
       rules: [
         {
-          matches: [
-            '([vid="rl_container"] + [vid="iv_close"]) || (@[vid="btn_push_notice_close_dialog"] + * > [vid="tv_header_title"][text="开启中国移动云盘通知"])',
+          anyMatches: [
+            '([vid="rl_container"] + [vid="iv_close"])',
+            '(@[vid="btn_push_notice_close_dialog"] + * > [vid="tv_header_title"][text="开启中国移动云盘通知"])',
           ],
           fastQuery: true,
           resetMatch: 'match',

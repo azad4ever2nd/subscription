@@ -10,8 +10,10 @@ export default defineGkdApp({
       desc: '251127，整合立即签到，签到成功，去签到，',
       rules: [
         {
-          matches: [
-            '([text="立即签到"]) || (@View - View >2 [text="签到成功"]) || ([text="20240711bb0ad1ae88fe4256b4d31f889471965a"])',
+          anyMatches: [
+            '([text="立即签到"])',
+            '(@View - View >2 [text="签到成功"])',
+            '([text="20240711bb0ad1ae88fe4256b4d31f889471965a"])',
           ],
           resetMatch: 'match',
           activityIds: ['com.alipay.mobile.nebulacore.ui.H5Activity'],

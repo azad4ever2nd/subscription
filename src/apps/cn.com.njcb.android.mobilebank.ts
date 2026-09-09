@@ -125,8 +125,10 @@ export default defineGkdApp({
       desc: '260309,matchDelay是延迟匹配，而不是匹配后休眠指定时间',
       rules: [
         {
-          matches: [
-            '(@* + [text="1每日签到"]) || (@*[clickable=true][childCount=2] > [text="10"] + [text="每日签到"]) || ([text="恭喜您签到成功"] + [text="我知道了"])',
+          anyMatches: [
+            '(@* + [text="1每日签到"])',
+            '(@*[clickable=true][childCount=2] > [text="10"] + [text="每日签到"])',
+            '([text="恭喜您签到成功"] + [text="我知道了"])',
           ],
           matchDelay: 3000,
           resetMatch: 'match',
@@ -159,8 +161,10 @@ export default defineGkdApp({
           action: 'clickCenter',
           forcedTime: 2000,
           activityIds: 'com.njcb.mobile.h5biz.H5ContainerActivity',
-          matches:
-            '([text="今日不再显示"] < * + *[clickable=true]) || (View > @TextView - View > TextView[text="今日不再显示"])',
+          anyMatches:[
+            '([text="今日不再显示"] < * + *[clickable=true])',
+            '(View > @TextView - View > TextView[text="今日不再显示"])',
+            ],
         },
       ],
     },
@@ -186,8 +190,12 @@ export default defineGkdApp({
           action: 'clickCenter',
           resetMatch: 'match',
           activityIds: 'com.njcb.mobile.h5biz.H5ContainerActivity',
-          matches:
-            '([text="签到成功"] + TextView + TextView[text="确定bak"]) || ([text="活动已结束"] + * > [desc="知道了"]) || ([text="活动已结束"] + [text="确定" || text="知道了"]) || (WebView > View > View > View > View > View > TextView[text="签到成功"] + TextView + TextView[text="确定"])',
+          anyMatches:[
+            '([text="签到成功"] + TextView + TextView[text="确定bak"])',
+            '([text="活动已结束"] + * > [desc="知道了"])',
+            '([text="活动已结束"] + [text="确定" || text="知道了"])',
+            '(WebView > View > View > View > View > View > TextView[text="签到成功"] + TextView + TextView[text="确定"])',
+            ],
         },
       ],
     },
@@ -198,8 +206,9 @@ export default defineGkdApp({
       rules: [
         {
           action: 'back',
-          matches: [
-            '([text="活动已结束" || text="活动暂未开始" || text="当前商品已抢完bak" || text^="人太多了"] + * > [text="好的" || text="确定" || text="知道了" || desc="知道了"]) || ([text="活动已结束" || text="活动暂未开始" || text="当前商品已抢完bak" || text^="人太多了"] +n [text="好的" ||  text="确定" || text="知道了" || desc="知道了"])',
+          anyMatches: [
+            '([text="活动已结束" || text="活动暂未开始" || text="当前商品已抢完bak" || text^="人太多了"] + * > [text="好的" || text="确定" || text="知道了" || desc="知道了"])',
+            '([text="活动已结束" || text="活动暂未开始" || text="当前商品已抢完bak" || text^="人太多了"] +n [text="好的" ||  text="确定" || text="知道了" || desc="知道了"])',
           ],
           resetMatch: 'match',
           activityIds: ['com.njcb.mobile.h5biz.H5ContainerActivity'],

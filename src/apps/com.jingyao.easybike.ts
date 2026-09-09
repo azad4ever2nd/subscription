@@ -108,8 +108,10 @@ export default defineGkdApp({
           resetMatch: 'app',
           actionMaximum: 1,
           activityIds: 'com.hellobike.atlas.business.portal.PortalActivity',
-          anyMatches:
-            '(@ViewGroup[clickable=true] [text="奖励金"]) || (ViewGroup > ViewGroup > @ViewGroup[clickable=true] > ViewGroup > TextView[text="奖励金"])',
+          anyMatches:[
+            '(@ViewGroup[clickable=true] [text="奖励金"])',
+            '(ViewGroup > ViewGroup > @ViewGroup[clickable=true] > ViewGroup > TextView[text="奖励金"])',
+            ],
         },
       ],
     },
@@ -488,8 +490,11 @@ export default defineGkdApp({
           resetMatch: 'match',
           activityIds:
             'com.hellobike.moped.platform.offline.web.OhoRealmWebActivity',
-          anyMatches:
-            '([text="gENrrooPRRSKS2nmR644j"]) || ([text="有故障"] + [text="没故障"])',
+          anyMatches:[
+            '([text="gENrrooPRRSKS2nmR644j"])',
+            '([text="有故障"] + [text="没故障"])',
+            ],
+			
         },
       ],
     },

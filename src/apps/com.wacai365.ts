@@ -12,8 +12,10 @@ export default defineGkdApp({
           resetMatch: 'match',
           fastQuery: true,
           activityIds: 'com.wacai365.LicenseActivity',
-          matches:
-            '([vid="agreement_tips"][text*="个人信息保护政策"] <<n * + * [vid="txt_right"][text="已阅读同意bak"]) || (TextView[text*="个人信息"] < LinearLayout + LinearLayout > LinearLayout > TextView[vid="txt_right"][text="已阅读同意"])',
+          anyMatches:[
+            '([vid="agreement_tips"][text*="个人信息保护政策"] <<n * + * [vid="txt_right"][text="已阅读同意bak"])',
+            '(TextView[text*="个人信息"] < LinearLayout + LinearLayout > LinearLayout > TextView[vid="txt_right"][text="已阅读同意"])',
+            ],
         },
       ],
     },
@@ -38,7 +40,7 @@ export default defineGkdApp({
       desc: '260908',
       rules: [
         {
-          matches: [
+          anyMatches: [
             '[vid="tv_title"][text*="新版本"] + [vid="tv_cancel"]',
             '[vid="tv_title"][text*="新版本"] + [vid="tv_cancel"][clickable=true][visibleToUser=true]',
           ],

@@ -14,8 +14,12 @@ export default defineGkdApp({
           forcedTime: 2000,
           resetMatch: 'match',
           activityIds: 'com.jd.lib.ttt.page.TTTMultiPageActivity',
-          matches:
-            '([id="SignButton"][childCount=1]) || ([id="homeSignButton"] > [text="签到领豆"]) || (View > View[id="signView_main_portal"] > View[text*="京豆"]) || (View > [id="homeSignButton"] > TextView[text="签到领京豆"])',
+          anyMatches:[
+            '([id="SignButton"][childCount=1])',
+            '([id="homeSignButton"] > [text="签到领豆"])',
+            '(View > View[id="signView_main_portal"] > View[text*="京豆"])',
+            '(View > [id="homeSignButton"] > TextView[text="签到领京豆"])',
+            ],
         },
       ],
     },
@@ -25,8 +29,9 @@ export default defineGkdApp({
       desc: '260907',
       rules: [
         {
-          matches: [
-            '(Image -2 * > [text="提醒我抢购)"]) || (TextView[text="提醒我抢购"] < View + TextView[text^="设置提醒后"] + Image[clickable=true][visibleToUser=true])',
+          anyMatches: [
+            '(Image -2 * > [text="提醒我抢购)"])',
+            '(TextView[text="提醒我抢购"] < View + TextView[text^="设置提醒后"] + Image[clickable=true][visibleToUser=true])',
           ],
           resetMatch: 'match',
           forcedTime: 2000,
@@ -45,8 +50,10 @@ export default defineGkdApp({
           resetMatch: 'match',
           actionCd: 0,
           activityIds: 'com.jd.lib.ttt.page.TTTMultiPageActivity',
-          matches: [
-            '(View > TextView[text*="蛋" && text*="15"] +3  TextView[clickable=true][text="领券抢"]) || (TextView[text^="券后¥"] - TextView[text*="蛋"] - TextView < View + TextView[text="领券抢"][clickable=true]) || (@TextView[text="领券抢"][clickable=true][visibleToUser=true] - View > TextView[text="15枚鲜蛋"] + TextView[text^="券后"])',
+          anyMatches: [
+            '(View > TextView[text*="蛋" && text*="15"] +3  TextView[clickable=true][text="领券抢"])',
+            '(TextView[text^="券后¥"] - TextView[text*="蛋"] - TextView < View + TextView[text="领券抢"][clickable=true])',
+            '(@TextView[text="领券抢"][clickable=true][visibleToUser=true] - View > TextView[text="15枚鲜蛋"] + TextView[text^="券后"])',
           ],
         },
       ],
@@ -60,8 +67,10 @@ export default defineGkdApp({
           resetMatch: 'match',
           actionCd: 0,
           activityIds: 'com.jd.lib.ttt.page.TTTMultiPageActivity',
-          matches: [
-            '(View > TextView[text*="纸" && text*="12"] +3  TextView[clickable=true][text="领券抢"]) || (TextView[text^="券后¥"] - TextView[text*="卷纸"] - TextView < View + TextView[text="领券抢"][clickable=true]) || (@TextView[text="领券抢"][clickable=true][visibleToUser=true] - View > TextView[text="12卷纸"] + TextView[text^="券后"])',
+          anyMatches: [
+            '(View > TextView[text*="纸" && text*="12"] +3  TextView[clickable=true][text="领券抢"])',
+            '(TextView[text^="券后¥"] - TextView[text*="卷纸"] - TextView < View + TextView[text="领券抢"][clickable=true])',
+            '(@TextView[text="领券抢"][clickable=true][visibleToUser=true] - View > TextView[text="12卷纸"] + TextView[text^="券后"])',
           ],
         },
       ],
@@ -75,8 +84,10 @@ export default defineGkdApp({
           resetMatch: 'match',
           matchTime: 1000,
           activityIds: 'com.jd.lib.ttt.page.TTTMultiPageActivity',
-          matches:
-            '(@TextView - View > [text="¥"] + [text="4.90"] + [text="黑五价"]) || (View[childCount=2] > View[childCount=3] > View[childCount=7] + @TextView[clickable=true] + TextView)',
+          anyMatches:[
+            '(@TextView - View > [text="¥"] + [text="4.90"] + [text="黑五价"])',
+            '(View[childCount=2] > View[childCount=3] > View[childCount=7] + @TextView[clickable=true] + TextView)',
+            ],
         },
       ],
     },
@@ -129,8 +140,9 @@ export default defineGkdApp({
       desc: '260831，添加 金条额度更新',
       rules: [
         {
-          matches: [
-            '([vid="bv"][text*="定位"] +n * > [vid="br"][text="取消"]) || (View > View > View > @View[clickable=true][visibleToUser=true] > Image[text="关闭"])',
+          anyMatches: [
+            '([vid="bv"][text*="定位"] +n * > [vid="br"][text="取消"])',
+            '(View > View > View > @View[clickable=true][visibleToUser=true] > Image[text="关闭"])',
           ],
           resetMatch: 'match',
           activityIds: ['com.jingdong.app.mall.WebActivity'],
@@ -235,8 +247,11 @@ export default defineGkdApp({
           resetMatch: 'match',
           fastQuery: true,
           activityIds: 'com.jingdong.app.mall.MainFrameActivity',
-          matches:
-            '([text*="开启消息通知"] <<n * + [desc="关闭"]) || (@[id="com.jd.lib.message.feature:id/h7"] > [id="com.jd.lib.message.feature:id/h6"]) || (Button[text="去开启通知"] <n LinearLayout + ImageView[desc="关闭"])',
+          anyMatches:[
+            '([text*="开启消息通知"] <<n * + [desc="关闭"])',
+            '(@[id="com.jd.lib.message.feature:id/h7"] > [id="com.jd.lib.message.feature:id/h6"])',
+            '(Button[text="去开启通知"] <n LinearLayout + ImageView[desc="关闭"])',
+            ],
         },
       ],
     },

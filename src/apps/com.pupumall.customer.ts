@@ -13,8 +13,10 @@ export default defineGkdApp({
           fastQuery: true,
           matchDelay: 500,
           activityIds: 'com.pupumall.customer.activity.SplashActivity',
-          matches:
-            '([vid="tv_update_now"][text="立即更新"] <<n * + [vid="iv_close"]) || (FrameLayout > LinearLayout > FrameLayout > LinearLayout > @ImageView[clickable=true][visibleToUser=true][vid="iv_close"] - ViewGroup > TextView[vid="tv_upgrade_now"][text="立即更新"])',
+          anyMatches:[
+            '([vid="tv_update_now"][text="立即更新"] <<n * + [vid="iv_close"])',
+            '(FrameLayout > LinearLayout > FrameLayout > LinearLayout > @ImageView[clickable=true][visibleToUser=true][vid="iv_close"] - ViewGroup > TextView[vid="tv_upgrade_now"][text="立即更新"])',
+            ],
         },
       ],
     },
@@ -24,8 +26,11 @@ export default defineGkdApp({
       desc: '260810，添加 开启通知，',
       rules: [
         {
-          matches: [
-            '([vid="iv_ad"] + [vid="iv_close"]) || ([id="app"] [text^="此图片未加标签"]) || ([id="J-webglCanvas"] - View >2 Image) || (ViewGroup > TextView[text="尚未开启系统通知"] +(3,4) TextView[vid="btn_close"][text="跳过"][clickable=true][visibleToUser=true])',
+          anyMatches: [
+            '([vid="iv_ad"] + [vid="iv_close"])',
+            '([id="app"] [text^="此图片未加标签"])',
+            '([id="J-webglCanvas"] - View >2 Image)',
+            '(ViewGroup > TextView[text="尚未开启系统通知"] +(3,4) TextView[vid="btn_close"][text="跳过"][clickable=true][visibleToUser=true])',
           ],
           fastQuery: true,
           resetMatch: 'match',

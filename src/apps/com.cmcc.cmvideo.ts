@@ -107,7 +107,8 @@ export default defineGkdApp({
             'com.cmvideo.capability.remote_web.WebProcessActivity',
           ],
           matches: [
-            '(View > TextView[text="获取验证码"][clickable=false][visibleToUser=true]) || (View[id="verfyDiv"] > @View[id="smsBtn"][clickable=true][desc="获取验证码"] > TextView[text="获取验证码"])',
+            '(View > TextView[text="获取验证码"][clickable=false][visibleToUser=true])',
+            '(View[id="verfyDiv"] > @View[id="smsBtn"][clickable=true][desc="获取验证码"] > TextView[text="获取验证码"])',
           ],
         },
       ],
@@ -123,8 +124,11 @@ export default defineGkdApp({
             'com.quickjs.android.example.RNFragmentActivity',
             'com.cmvideo.capability.remote_web.WebProcessActivity',
           ],
-          matches:
-            '(@View > View > View > Image[text="1O7GDU9LRD8A8" || text="1O7GDU9LPCKHS" || text="1O7GE0VDLVO51" || text="1O7GEIFC0TJFP"]) || (@View > View > View > Image[text="1O7GEIFBFRPLK" || text="1O7GEIFC0TJFP" || text="1O7GE0VC9N7O0" || text="1O7GC3SARU1RQ" || text="1O7GDU9N7V7LU" || text="1O7GDU9H2A5TQ" || text="1O7GL9PTD3DCA" || text="1O7GE0VD20609" || text="1O7GEIFC0TJFP" || text="1O7GEIFBVUQCO"]) || (View[clickable=true][visibleToUser=true] > View > Image[text="1O7GDU9H0PKEV"])',
+          anyMatches:[
+            '(@View > View > View > Image[text="1O7GDU9LRD8A8" || text="1O7GDU9LPCKHS" || text="1O7GE0VDLVO51" || text="1O7GEIFC0TJFP"])',
+            '(@View > View > View > Image[text="1O7GEIFBFRPLK" || text="1O7GEIFC0TJFP" || text="1O7GE0VC9N7O0" || text="1O7GC3SARU1RQ" || text="1O7GDU9N7V7LU" || text="1O7GDU9H2A5TQ" || text="1O7GL9PTD3DCA" || text="1O7GE0VD20609" || text="1O7GEIFC0TJFP" || text="1O7GEIFBVUQCO"])',
+            '(View[clickable=true][visibleToUser=true] > View > Image[text="1O7GDU9H0PKEV"])',
+            ],
         },
       ],
     },
@@ -168,8 +172,10 @@ export default defineGkdApp({
           action: 'clickCenter',
           activityIds:
             'com.cmcc.cmvideo.main.application.CompatibleMainActivity',
-          matches:
-            '(FrameLayout > ViewGroup > FrameLayout[vid="close_bg_single"] > ImageView[vid="iv_close_single"][clickable=true][visibleToUser=true]) || (ViewGroup + FrameLayout[childCount=2] > FrameLayout[vid="h5_content_container"] + ImageView[clickable=true][visibleToUser=true])',
+          anyMatches:[
+            '(FrameLayout > ViewGroup > FrameLayout[vid="close_bg_single"] > ImageView[vid="iv_close_single"][clickable=true][visibleToUser=true])',
+            '(ViewGroup + FrameLayout[childCount=2] > FrameLayout[vid="h5_content_container"] + ImageView[clickable=true][visibleToUser=true])',
+            ],
         },
       ],
     },
@@ -183,8 +189,10 @@ export default defineGkdApp({
           fastQuery: true,
           activityIds:
             'com.cmcc.cmvideo.main.application.CompatibleMainActivity',
-          matches:
-            '([vid="tv_title"][text="更新提示"] +4 [vid="btn_ok"][text="同意并继续"]) || (ViewGroup > TextView[text="更新提示" || text*="用户服务协议" || text*="隐私政策"] +n TextView + TextView[vid="btn_ok"][clickable=true][visibleToUser=true])',
+          anyMatches:[
+            '([vid="tv_title"][text="更新提示"] +4 [vid="btn_ok"][text="同意并继续"])',
+            '(ViewGroup > TextView[text="更新提示" || text*="用户服务协议" || text*="隐私政策"] +n TextView + TextView[vid="btn_ok"][clickable=true][visibleToUser=true])',
+            ],
         },
       ],
     },

@@ -12,8 +12,11 @@ export default defineGkdApp({
           resetMatch: 'match',
           fastQuery: true,
           activityIds: 'com.miui.tsmclient.ui.TransferOutIntroActivity',
-          matches:
-            '([vid="nextpay_transfer_out_ll_protocols"][desc^="同意"][checked=false]) || (@[vid="nextpay_transfer_out_chk_contracts"][checked=false] + [vid="transfer_out_intro_tv_protocols"][text^="同意"]) || ([vid="nextpay_transfer_out_chk_contracts"][checkable=true] < * + [vid="nextpay_transfer_out_btn_accept"][text="确定移出"])',
+          anyMatches:[
+            '([vid="nextpay_transfer_out_ll_protocols"][desc^="同意"][checked=false])',
+            '(@[vid="nextpay_transfer_out_chk_contracts"][checked=false] + [vid="transfer_out_intro_tv_protocols"][text^="同意"])',
+            '([vid="nextpay_transfer_out_chk_contracts"][checkable=true] < * + [vid="nextpay_transfer_out_btn_accept"][text="确定移出"])',
+            ],
         },
       ],
     },
@@ -27,8 +30,9 @@ export default defineGkdApp({
           fastQuery: true,
           forcedTime: 1500,
           activityIds: 'com.miui.tsmclient.ui.result.TransitResultActivity',
-          matches:
+          anyMatches:[
             'TextView[text="移出成功" || text="移入成功"] < LinearLayout <n RelativeLayout < ScrollView + LinearLayout > Button[text="完成"][clickable=true][visibleToUser=true]',
+            ],
         },
       ],
     },

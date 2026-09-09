@@ -10,8 +10,9 @@ export default defineGkdApp({
       desc: '260305',
       rules: [
         {
-          matches: [
-            '([id="android:id/button1"][text="确认"]) || ([id="android:id/message"][text*="广告签到" && text*="金币(登录)或者VIP流量(未登录)"] <<n * + * [id="android:id/button1"][text="确认"])',
+          anyMatches: [
+            '([id="android:id/button1"][text="确认"])',
+            '([id="android:id/message"][text*="广告签到" && text*="金币(登录)或者VIP流量(未登录)"] <<n * + * [id="android:id/button1"][text="确认"])',
           ],
           fastQuery: true,
           resetMatch: 'match',
@@ -26,8 +27,11 @@ export default defineGkdApp({
       rules: [
         {
           action: 'clickCenter',
-          matches: [
-            '(@[id="close-button"] > [text="关闭广告并继续打开应用" || text="继续使用应用"] + View) || ([text="Close" || text="关闭"][clickable=true]) || ([id="dismiss-button"])|| (@*[clickable=true] > [text="Close"])',
+          anyMatches: [
+            '(@[id="close-button"] > [text="关闭广告并继续打开应用" || text="继续使用应用"] + View)',
+            '([text="Close" || text="关闭"][clickable=true])',
+            '([id="dismiss-button"])',
+            '(@*[clickable=true] > [text="Close"])',
           ],
           actionCd: 100,
           resetMatch: 'match',

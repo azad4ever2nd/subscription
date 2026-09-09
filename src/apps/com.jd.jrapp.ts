@@ -10,7 +10,7 @@ export default defineGkdApp({
       desc: '260831',
       rules: [
         {
-          matches: [
+          anyMatches: [
             '[vid="tv_title"][text*="新版本"] <<n * + [vid="ib_close"]',
             '@ImageButton[vid="ib_close"][clickable=true][visibleToUser=true] + FrameLayout TextView[vid="tv_main_title"][text^="发现新版本"]',
           ],

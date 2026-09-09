@@ -10,8 +10,9 @@ export default defineGkdApp({
       desc: '260120,添加风险提示',
       rules: [
         {
-          matches: [
-            '([vid="dlg_home_annc_title"][text*="风险提示"] +n * [text="关闭"]) || ([vid="dlg_home_annc_buttons"] > [text="关闭"])',
+          anyMatches: [
+            '([vid="dlg_home_annc_title"][text*="风险提示"] +n * [text="关闭"])',
+            '([vid="dlg_home_annc_buttons"] > [text="关闭"])',
           ],
           fastQuery: true,
           resetMatch: 'match',
@@ -175,8 +176,9 @@ export default defineGkdApp({
       desc: '260116，添加阅读协议',
       rules: [
         {
-          matches: [
-            '([vid="confirmBtn"][clickable=true][text="立即签署协议"]) || (@[vid="protocolLayout"] > [vid="protocolUnread"])',
+          anyMatches: [
+            '([vid="confirmBtn"][clickable=true][text="立即签署协议"])',
+            '(@[vid="protocolLayout"] > [vid="protocolUnread"])',
           ],
           fastQuery: true,
           resetMatch: 'match',

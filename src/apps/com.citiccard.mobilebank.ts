@@ -53,9 +53,11 @@ export default defineGkdApp({
           order: -2,
           action: 'clickCenter',
           resetMatch: 'match',
-          matches:
-            '([text="当前剩余领取次数 1"] + * TextView[text="5 元"] + TextView[text="立即领取"]) || (TextView[text="当前剩余领取次数 1"] + View > View > View > View > View > View > TextView[text="5 元"] + TextView[clickable=false][visibleToUser=true][text="立即领取"])',
-          activityIds: 'com.citiccard.mobilebank.web.webpage.CommonWebPage',
+          anyMatches:[
+            '([text="当前剩余领取次数 1"] + * TextView[text="5 元"] + TextView[text="立即领取"])',
+            '(TextView[text="当前剩余领取次数 1"] + View > View > View > View > View > View > TextView[text="5 元"] + TextView[clickable=false][visibleToUser=true][text="立即领取"])',
+            ],
+			activityIds: 'com.citiccard.mobilebank.web.webpage.CommonWebPage',
         },
       ],
     },
@@ -69,9 +71,11 @@ export default defineGkdApp({
           resetMatch: 'match',
           order: -1,
           action: 'clickCenter',
-          matches:
-            '([text="当前剩余领取次数 1"] + * TextView[text="2 元"] + TextView[text="立即领取"]) || (TextView[text="当前剩余领取次数 1"] + View > View > View > View > View > View > TextView[text="2 元"] + TextView[clickable=false][visibleToUser=true][text="立即领取"])',
-          activityIds: 'com.citiccard.mobilebank.web.webpage.CommonWebPage',
+          anyMatches:[
+            '([text="当前剩余领取次数 1"] + * TextView[text="2 元"] + TextView[text="立即领取"])',
+            '(TextView[text="当前剩余领取次数 1"] + View > View > View > View > View > View > TextView[text="2 元"] + TextView[clickable=false][visibleToUser=true][text="立即领取"])',
+            ],
+         activityIds: 'com.citiccard.mobilebank.web.webpage.CommonWebPage',
         },
       ],
     },
@@ -85,8 +89,10 @@ export default defineGkdApp({
           actionCd: 0,
           action: 'clickCenter',
           activityIds: 'com.citiccard.mobilebank.web.webpage.CommonWebPage',
-          matches:
-            '([text="当前剩余领取次数 1"] + * TextView[text="1.5 元"] + TextView[text="立即领取"]) || (TextView[text="当前剩余领取次数 1"] + View > View > View > View > View > View > TextView[text="1.5 元"] + TextView[clickable=false][visibleToUser=true][text="立即领取"])',
+          anyMatches:[
+            '([text="当前剩余领取次数 1"] + * TextView[text="1.5 元"] + TextView[text="立即领取"])',
+            '(TextView[text="当前剩余领取次数 1"] + View > View > View > View > View > View > TextView[text="1.5 元"] + TextView[clickable=false][visibleToUser=true][text="立即领取"])',
+            ],
         },
       ],
     },
@@ -138,8 +144,10 @@ export default defineGkdApp({
           resetMatch: 'match',
           actionCd: 0,
           activityIds: 'com.citiccard.mobilebank.web.webpage.CommonWebPage',
-          matches:
-            '(@Image[clickable=false][visibleToUser=true][text="0OtyvnGzoNS+5EoIAAAAASUVORK5CYII=bak"] +n TextView[text$="电子账单" || text="动卡空间自助还款"]) || (ListView > View > @Image[clickable=false][visibleToUser=true][text="VK8fr6+sLwGnB552X3pvyv71EBhCUCcrVq1euHOf09gevPFGYnvp1uJmTJr399ksvPdXrcL8DlWgBfyVLJ3IAAAAASUVORK5CYII="] + TextView[text^="绿色"])',
+          anyMatches:[
+            '(@Image[clickable=false][visibleToUser=true][text="0OtyvnGzoNS+5EoIAAAAASUVORK5CYII=bak"] +n TextView[text$="电子账单" || text="动卡空间自助还款"])',
+            '(ListView > View > @Image[clickable=false][visibleToUser=true][text="VK8fr6+sLwGnB552X3pvyv71EBhCUCcrVq1euHOf09gevPFGYnvp1uJmTJr399ksvPdXrcL8DlWgBfyVLJ3IAAAAASUVORK5CYII="] + TextView[text^="绿色"])',
+            ],
         },
       ],
     },
@@ -153,8 +161,12 @@ export default defineGkdApp({
           resetMatch: 'match',
           action: 'clickCenter',
           actionCd: 500,
-          matches:
-            '(TextView[text*="三叶草不足"]  < View <n View + Image[text="wN856FOtsI2bwAAAABJRU5ErkJggg=="][clickable=false][visibleToUser=true]) || ([text="恭喜你"] +3 [text="开心收下"]) || (* - * > [text="9b4b1bdec2d54f369d23adfb8099d075"]) || (View > View > View > TextView[text="恭喜你"] +3 Button[clickable=true][visibleToUser=true][text="开心收下"])',
+          anyMatches:[
+            '(TextView[text*="三叶草不足"]  < View <n View + Image[text="wN856FOtsI2bwAAAABJRU5ErkJggg=="][clickable=false][visibleToUser=true])',
+            '([text="恭喜你"] +3 [text="开心收下"])',
+            '(* - * > [text="9b4b1bdec2d54f369d23adfb8099d075"])',
+            '(View > View > View > TextView[text="恭喜你"] +3 Button[clickable=true][visibleToUser=true][text="开心收下"])',
+            ],
         },
       ],
     },
@@ -280,8 +292,10 @@ export default defineGkdApp({
           fastQuery: true,
           activityIds:
             'com.citiccard.mobilebank.newconfig.appconstruct.TabsAppHomeActivity',
-          matches:
-            '([vid="dialog"] + [vid="cancelArea"]) || (FrameLayout > RelativeLayout > ImageView[vid="dialog"] + ImageView[vid="cancelArea"][clickable=true])',
+          anyMatches:[
+            '([vid="dialog"] + [vid="cancelArea"])',
+            '(FrameLayout > RelativeLayout > ImageView[vid="dialog"] + ImageView[vid="cancelArea"][clickable=true])',
+            ],
         },
       ],
     },

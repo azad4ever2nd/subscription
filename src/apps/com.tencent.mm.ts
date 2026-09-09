@@ -40,7 +40,8 @@ export default defineGkdApp({
           resetMatch: 'match',
           activityIds: 'com.tencent.mm.plugin.webview.ui.tools.MMWebViewUI',
           excludeMatches: [
-            '(View > View > TextView[text="权益领取中，请稍后"]) || (View > View >  TextView[text="权益领取成功"] +2 Button[text="我知道了"][clickable=true][visibleToUser=true])',
+            '(View > View > TextView[text="权益领取中，请稍后"]excludeMatches:)',
+            '(View > View >  TextView[text="权益领取成功"] +2 Button[text="我知道了"][clickable=true][visibleToUser=true])',
           ],
           anyMatches: [
             '(@[text="继续访问"] +n * > [desc="申请恢复访问"])',
@@ -464,7 +465,9 @@ export default defineGkdApp({
           actionCdKey: 4,
           order: -1,
           excludeMatches: [
-            '(WebView > View > View > TextView[text="访问人数过多，请稍后再试"] + TextView[text="我知道了"]) || (View > View >  TextView[text="商品已被秒完"] + TextView[text="我知道了"]) || (WebView > View > View > TextView[text^="服务异常" || text="访问人数过多，请稍后再试"] + TextView[text="我知道了"])',
+            '(WebView > View > View > TextView[text="访问人数过多，请稍后再试"] + TextView[text="我知道了"][visibleToUser=true])',
+            '(View > View >  TextView[text="商品已被秒完"] + TextView[text="我知道了"][visibleToUser=true])',
+            '(WebView > View > View > TextView[text^="服务异常" || text="访问人数过多，请稍后再试"] + TextView[text="我知道了"][visibleToUser=true])',
           ],
           activityIds: [
             'com.tencent.mm.plugin.appbrand.ui.AppBrandUI0',
@@ -609,7 +612,7 @@ export default defineGkdApp({
             'com.tencent.mm.plugin.appbrand.ui.AppBrandUI04',
           ],
           excludeMatches:
-            'TextView[text="兑换成功"] < View + View > View > TextView[text="微信提现免费券"]',
+            'TextView[text="兑换成功"] < View + View > View > TextView[text="微信提现免费券"][visibleToUser=true]',
           matches: ['([text="兑换成功"])'],
         },
       ],
@@ -1002,8 +1005,10 @@ export default defineGkdApp({
             'com.tencent.mm.plugin.appbrand.ui.AppBrandUI03',
             'com.tencent.mm.plugin.appbrand.ui.AppBrandUI04',
           ],
-          matches:
-            '([text="42元购50元屈臣氏代金券"] < * +n * [text="提交"]) || ([text="42元购50元屈臣氏代金券"] < * + * > [text="抢购"])',
+          anyMatches:[
+            '([text="42元购50元屈臣氏代金券"] < * +n * [text="提交"])',
+            '([text="42元购50元屈臣氏代金券"] < * + * > [text="抢购"])',
+            ],
         },
       ],
     },

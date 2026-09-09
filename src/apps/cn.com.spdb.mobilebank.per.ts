@@ -37,8 +37,10 @@ export default defineGkdApp({
       desc: '260202',
       rules: [
         {
-          matches: [
-            '([text^="交易确认"] [text="确定"]) || ([text="交易确认"] <<n * + * [text="确定"]) || ([text*="确定要终止定投计划吗"] [text="终止投资"])',
+          anyMatches: [
+            '([text^="交易确认"] [text="确定"])',
+            '([text="交易确认"] <<n * + * [text="确定"])',
+            '([text*="确定要终止定投计划吗"] [text="终止投资"])',
           ],
           resetMatch: 'match',
           activityIds:

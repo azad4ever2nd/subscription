@@ -27,8 +27,11 @@ export default defineGkdApp({
           resetMatch: 'match',
           fastQuery: true,
           activityIds: 'com.cmbchina.ccd.pluto.cmbActivity.CMBRootActivityV2',
-          matches:
-            '([vid="tv_ad_label" || vid="img_cf_view_close"] + [vid="img_cf_view_close"]) || ([vid="tv_title"] <<n * + [vid="iv_close"]) || ([vid="img_cf_view_close"])',
+          anyMatches:[
+            '([vid="tv_ad_label" || vid="img_cf_view_close"] + [vid="img_cf_view_close"])',
+            '([vid="tv_title"] <<n * + [vid="iv_close"])',
+            '([vid="img_cf_view_close"])',
+            ],
         },
       ],
     },
