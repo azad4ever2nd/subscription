@@ -182,13 +182,13 @@ export default defineGkdApp({
         {
           resetMatch: 'match',
           activityIds: 'tool.seagull.v.ui.MainActivity',
-          anyMatches:
+          anyMatches:[
             'ScrollView[vid="banner_scroll"] > FrameLayout >5 ImageView - FrameLayout > View',
 			'RelativeLayout > RelativeLayout > TextView[text="X"][clickable=true]',
 			'ImageView[vid="vpnSwitchButton"][desc="停止"] +2 ScrollView > FrameLayout > FrameLayout > FrameLayout > FrameLayout > LinearLayout > FrameLayout[childCount=3] > FrameLayout[index=2] > ImageView',
 			'ImageView[vid="vpnSwitchButton"][desc="停止"] +n ScrollView > FrameLayout > FrameLayout > FrameLayout > FrameLayout > FrameLayout > ImageView + FrameLayout[childCount=1] > View',
 			'FrameLayout > LinearLayout +2 ImageView - FrameLayout > View[clickable=false][visibleToUser=true]',
-
+			],
         },
       ],
     },
