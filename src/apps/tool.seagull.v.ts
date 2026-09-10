@@ -49,9 +49,10 @@ export default defineGkdApp({
           actionCd: 100,
           fastQuery: true,
           activityIds: 'tool.seagull.v.ui.MainActivity',
-          anyMatches:
+          anyMatches:[
             '[text^="海鸥极速版"] <<n * + * [id="android:id/button1"][text="确定"]',
 			'[text^="请关闭 获取运动方向权限 和 快应用权限" || text*="付费订阅"] <<n * + * [id="android:id/button1"][text="确定"]',
+			],
         },
       ],
     },
