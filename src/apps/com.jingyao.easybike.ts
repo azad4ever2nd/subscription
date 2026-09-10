@@ -58,7 +58,7 @@ export default defineGkdApp({
         {
           resetMatch: 'match',
           fastQuery: true,
-		  forceTime:3000,
+		  forcedTime:3000,
           activityIds: [
             'com.hellobike.flutter.platform.android.flutterboost.FlutterHostFragmentActivity',
             'com.hellobike.atlas.business.portal.PortalActivity',
