@@ -126,7 +126,9 @@ export default defineGkdApp({
       key: 8,
       name: '基金财富月历，任务完成开心收下',
       desc: '260910 添加 葫芦抽奖，兑换确认',
+      rules: [
         {
+
           anyMatches: [
             '([text$="金币"] < View +2 TextView[clickable=true])',
             '([text^="您已完成" && text$="任务"] < * + TextView[clickable=true][visibleToUser=true])',
@@ -136,7 +138,6 @@ export default defineGkdApp({
             '(View > TextView[text="10金币"] + TextView[text="1次抽奖机会"] + TextView + TextView[clickable=false][visibleToUser=true])',
             '(@TextView[clickable=true][visibleToUser=true] < View + View > View > TextView[text="很遗憾，您未中奖"] +n TextView[text="谢谢参与"])',
           ],
-		  forcedTime:5000,
           action: 'clickCenter',
           resetMatch: 'match',
           activityIds:
