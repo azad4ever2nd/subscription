@@ -630,7 +630,7 @@ export default defineGkdApp({
             '@TextView[clickable=false][visibleToUser=true] - View > View > View > View > View > TextView[text="首购特惠"]',
             'View[childCount=2] > @TextView[clickable=false][visibleToUser=true] - View > View > View >n TextView[text="去使用"] - View',
             '(TextView[text="立即抽免单"][clickable=false][visibleToUser=true] < View < View + TextView[text.length=0][clickable=false][visibleToUser=true])',
-            '(View > View > TextView[text="立即抽"][clickable=false][visibleToUser=true])',
+            '(View > View > TextView[text="立即抽-bak闪购抽奖"][clickable=false][visibleToUser=true])',
             '(View > @TextView[text="领取签到奖励"][clickable=false][visibleToUser=true] + View > Image + TextView[text.length>0])',
             '(View > @Image[clickable=false][visibleToUser=true] +2 TextView[text="去处理"] + TextView[text="暂不处理"])',
             '(@TextView <n * + [text="取消"] + [text="立即添加"])',

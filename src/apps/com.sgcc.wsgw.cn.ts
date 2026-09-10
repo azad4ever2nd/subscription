@@ -32,7 +32,7 @@ export default defineGkdApp({
     {
       key: 3,
       name: '签到',
-      desc: '260810，测试matchDelay,time,添加补签成功[text="知道啦"] < * + * > Image',
+      desc: '260910，测试matchDelay,time,添加补签成功[text="知道啦"] < * + * > Image',
       rules: [
         {
           actionCd: 0,
@@ -48,6 +48,7 @@ export default defineGkdApp({
             '(View > TextView[text="补签成功"] +3 TextView[clickable=false][text.length=0])',
             '(View > View > TextView[text="签到成功"] + TextView[text^="恭喜您获得" && text$="签到金"] + TextView[text.length=0][clickable=false][visibleToUser=true])',
             '(View > View > TextView[text="签到成功"] + TextView[text^="恭喜您获得" && text$="签到金"] +n View > Image[clickable=false][visibleToUser=true])',
+			'(View > View > TextView[text="签到成功"] + TextView[text^="恭喜您获得" && text$="签到金"] + TextView[clickable=true][visibleToUser=true])',
           ],
         },
       ],
@@ -60,7 +61,6 @@ export default defineGkdApp({
         {
           resetMatch: 'match',
           actionCd: 0,
-          matchTime: 10000,
           forcedTime: 10000,
           activityIds: 'com.sgcc.wsgw.mainbundle.ElectricTitleActivity',
           anyMatches: [
@@ -79,7 +79,6 @@ export default defineGkdApp({
           matches: ['[text="签到功能升级公告"] +2 * > Image'],
           fastQuery: true,
           actionCd: 0,
-          matchTime: 10000,
           forcedTime: 10000,
           resetMatch: 'match',
           activityIds: ['com.sgcc.wsgw.mainbundle.ElectricTitleActivity'],
@@ -89,16 +88,17 @@ export default defineGkdApp({
     {
       key: 6,
       name: '签到多少天抽奖',
-      desc: '260831',
+      desc: '260910',
       rules: [
         {
           resetMatch: 'match',
-          forcedTime: 5000,
-          matchTime: 10000,
+		  matchDelay:1000,
+          forcedTime: 10000,
           activityIds: 'com.sgcc.wsgw.mainbundle.ElectricTitleActivity',
           anyMatches: [
             '(WebView > View > View > View > View > View > TextView[text^="抽中" && text$="个签到金"] + TextView[clickable=false][visibleToUser=true])',
             '(View > View > TextView[text^="抽中" && text$="个签到金"] + TextView[text.length=0][clickable=false][visibleToUser=true] )',
+			'(View > View > TextView[text^="抽中" && text$="签到金"] + TextView[clickable=true][visibleToUser=true])',
           ],
         },
       ],
@@ -152,7 +152,6 @@ export default defineGkdApp({
         {
           resetMatch: 'match',
           matchDelay: 1000,
-          matchTime: 10000,
           forcedTime: 10000,
           actionCd: 0,
           activityIds: 'com.sgcc.wsgw.rnbundle.activity.MyReactActivity',
@@ -168,7 +167,6 @@ export default defineGkdApp({
         {
           resetMatch: 'match',
           matchDelay: 1000,
-          matchTime: 10000,
           forcedTime: 10000,
           fastQuery: true,
           actionCd: 0,

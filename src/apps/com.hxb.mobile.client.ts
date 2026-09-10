@@ -99,11 +99,10 @@ export default defineGkdApp({
     {
       key: 7,
       name: '恭喜抽中微信红包，浏览后领取',
-      desc: '260908',
+      desc: '260910',
       rules: [
         {
           resetMatch: 'match',
-          matchTime: 3000,
           forcedTime: 3000,
           action: 'clickCenter',
           activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
@@ -115,17 +114,16 @@ export default defineGkdApp({
     {
       key: 8,
       name: '浏览后领取立减金',
-      desc: '260908',
+      desc: '260910',
       rules: [
         {
-          matchTime: 3000,
           forcedTime: 3000,
           resetMatch: 'match',
           activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
           anyMatches: [
-            '(WebView[text="签到赢立减金"] > View > View > View > Image + View[clickable=true][visibleToUser=true])',
-            '(WebView[text="签到赢立减金"] > View > View > View >  View > @View[clickable=true][visibleToUser=true]  - View > View[text*="恭喜你完成产品浏览" || text*="微信红包"])',
-            '(Image[clickable=true][visibleToUser=true] < View[childCount=1] + Image[clickable=false] + View[text.length=0][clickable=true][visibleToUser=true])',
+		    'View[text^="恭喜您抽中"] < View + View[clickable=true][visibleToUser=true]',
+		    'WebView[text="签到赢立减金"] > View > View > View > @View[text.length=0][clickable=true][visibleToUser=true] - Image - View > Image',
+			'(WebView[text="签到赢立减金"] > View > View > View >  View > @View[clickable=true][visibleToUser=true]  - View > View[text*="恭喜你完成产品浏览"])',
           ],
         },
       ],
@@ -147,10 +145,11 @@ export default defineGkdApp({
     {
       key: 10,
       name: '券码，复制',
-      desc: '260807',
+      desc: '260910',
       rules: [
         {
           resetMatch: 'match',
+		  forcedTime:3000,
           actionMaximum: 1,
           activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
           anyMatches:

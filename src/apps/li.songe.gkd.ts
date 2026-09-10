@@ -17,14 +17,30 @@ export default defineGkdApp({
     },
     {
       key: 2,
-      name: '删除当前快照，确定',
-      desc: '260908',
+      name: '删除当前快照，确定，老版本用',
+      desc: '260910',
       rules: [
         {
           resetMatch: 'match',
-          forcedTime: 3000,
-          matchTime: 3000,
-          actionCd: 100,
+          actionCd: 500,
+          anyMatches: [
+            '([text="确定删除当前快照吗?"] +n @* > [text="确定"])',
+			'View > TextView[text="删除快照"] + TextView[text="确定删除当前快照吗?"] +n @View[clickable=true][visibleToUser=true] > TextView[text="确定"] + Button',
+          ],
+          activityIds: ['li.songe.gkd.MainActivity'],
+        },
+      ],
+    },
+    {
+      key: 3,
+      name: '删除当前快照，确定，新版本用',
+      desc: '2609010',
+      rules: [
+        {
+          resetMatch: 'match',
+          forcedTime:3000,
+		  matchTime:3000,
+          actionCd: 300,
           action: 'clickCenter',
           anyMatches: [
             '([text="确定删除当前快照吗?"] +n @* > [text="确定"])',
@@ -35,7 +51,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 3,
+      key: 4,
       name: '删除所有快照，取消',
       desc: '260312',
       rules: [
@@ -48,7 +64,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 4,
+      key: 5,
       name: '确定删除所有触发记录，取消',
       desc: '260329',
       rules: [
@@ -61,7 +77,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 5,
+      key: 6,
       name: '加载失败点击重试',
       desc: '260813',
       rules: [
@@ -76,7 +92,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 6,
+      key: 7,
       name: '规则保存到下载',
       desc: '251117，避免在其他菜单中点击',
       rules: [
@@ -90,7 +106,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 7,
+      key: 8,
       name: '应用规则自动开启',
       desc: '260814，慎开',
       rules: [

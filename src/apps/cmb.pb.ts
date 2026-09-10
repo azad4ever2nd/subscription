@@ -179,7 +179,6 @@ export default defineGkdApp({
         {
           resetMatch: 'match',
           matchDelay: 1000,
-          matchTime: 3000,
           forcedTime: 3000,
           actionCd: 500,
           action: 'clickCenter',
@@ -203,7 +202,6 @@ export default defineGkdApp({
           action: 'clickCenter',
           matchDelay: 1000,
           forcedTime: 3000,
-          matchTime: 3000,
           resetMatch: 'match',
           activityIds:
             'cmb.pb.app.h5container.webviewcontainer.PBWebContainerActivity',
@@ -224,7 +222,6 @@ export default defineGkdApp({
           action: 'click',
           matchDelay: 1000,
           forcedTime: 3000,
-          matchTime: 3000,
           activityIds:
             'cmb.pb.app.h5container.webviewcontainer.PBWebContainerActivity',
           anyMatches:
@@ -311,8 +308,7 @@ export default defineGkdApp({
             '([text="分享招财号文章"] +n * > [text="去分享"])',
           ],
           action: 'clickCenter',
-          matchDelay: 500,
-          matchTime: 3000,
+          matchDelay: 1000,
           forcedTime: 3000,
           resetMatch: 'match',
           activityIds:
@@ -328,8 +324,7 @@ export default defineGkdApp({
         {
           resetMatch: 'match',
           actionMaximum: 1,
-          matchDelay: 500,
-          matchTime: 3000,
+          matchDelay: 1000,
           forcedTime: 3000,
           action: 'clickCenter',
           activityIds:
@@ -352,7 +347,6 @@ export default defineGkdApp({
           actionMaximum: 1,
           action: 'click',
           forcedTime: 3000,
-          matchTime: 3000,
           activityIds:
             'cmb.pb.app.h5container.webviewcontainer.PBWebContainerActivity',
           anyMatches:

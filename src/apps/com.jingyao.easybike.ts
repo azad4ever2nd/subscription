@@ -43,7 +43,6 @@ export default defineGkdApp({
           order: -1,
           resetMatch: 'match',
           forcedTime: 3000,
-          matchTime: 3000,
           activityIds:
             'com.hellobike.flutter.platform.android.flutterboost.FlutterHostFragmentActivity',
           anyMatches:
@@ -59,6 +58,7 @@ export default defineGkdApp({
         {
           resetMatch: 'match',
           fastQuery: true,
+		  forceTime:3000,
           activityIds: [
             'com.hellobike.flutter.platform.android.flutterboost.FlutterHostFragmentActivity',
             'com.hellobike.atlas.business.portal.PortalActivity',
@@ -123,6 +123,7 @@ export default defineGkdApp({
         {
           resetMatch: 'match',
           matchDelay: 1000,
+		  forcedTime:3000,
           actionCd: 500,
           fastQuery: true,
           activityIds: 'com.hellobike.atlas.business.portal.PortalActivity',
@@ -178,8 +179,7 @@ export default defineGkdApp({
       rules: [
         {
           resetMatch: 'match',
-          matchTime: 2000,
-          forcedTime: 2000,
+          forcedTime: 3000,
           activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
           anyMatches: [
             '([text="签到"])',
@@ -197,7 +197,6 @@ export default defineGkdApp({
         {
           resetMatch: 'match',
           matchRoot: true,
-          matchTime: 2000,
           forcedTime: 2000,
           activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
           anyMatches: [
@@ -216,7 +215,6 @@ export default defineGkdApp({
       rules: [
         {
           resetMatch: 'match',
-          matchTime: 2000,
           forcedTime: 2000,
           actionCd: 3000,
           activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
@@ -243,13 +241,18 @@ export default defineGkdApp({
     {
       key: 15,
       name: '弹窗，领奖页面，签到完成，明日再来，X掉',
-      desc: '260416',
+      desc: '260910',
       rules: [
         {
           resetMatch: 'match',
           forcedTime: 3000,
           activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
-          anyMatches: '@TextView[clickable=true] +n [text="明日再来"]',
+          anyMatches: [
+			'@TextView[clickable=true] +n [text="明日再来"]',
+            'TextView[text="我的奖励金"] +n View > View > @TextView[clickable=false][visibleToUser=true][text.length=0] +n TextView[text="明日再来"]',
+            'TextView[text="我的奖励金"] +n View >n View > @TextView[clickable=true][visibleToUser=true] +n TextView[text="明日再来"][clickable=true][visibleToUser=true]',
+			],
+			
         },
       ],
     },
@@ -268,11 +271,12 @@ export default defineGkdApp({
     {
       key: 17,
       name: '弹窗，每日单单返奖励金，知道了',
-      desc: '260909， ([text="在App任意完成以下订单，回来领奖励金"] +n [text="知道了"]) || clik无反应就clickCenter',
+      desc: '260910，clik无反应就clickCenter',
       rules: [
         {
           resetMatch: 'match',
           action: 'clickCenter',
+		  forcedTime:3000,
           activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
           anyMatches: [
             '([text="会员单单返"] + [text="领奖励"])',
@@ -389,7 +393,7 @@ export default defineGkdApp({
     {
       key: 25,
       name: '弹窗,明日再来，X掉',
-      desc: '260907',
+      desc: '260910',
       rules: [
         {
           resetMatch: 'match',

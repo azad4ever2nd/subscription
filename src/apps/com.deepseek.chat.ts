@@ -30,5 +30,17 @@ export default defineGkdApp({
         },
       ],
     },
+    {
+      key: 3,
+      name: '弹窗，发现新版本，取消',
+      desc: '260910',
+      rules: [
+        {
+          resetMatch: 'match',
+          activityIds: 'com.deepseek.chat.MainActivity',
+          matches: 'TextView[text="发现新版本"] +n @View[clickable=true][visibleToUser=true] > TextView[text="取消"]',
+        },
+      ],
+    },
   ],
 });

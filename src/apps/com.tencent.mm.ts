@@ -136,6 +136,7 @@ export default defineGkdApp({
         {
           resetMatch: 'match',
           activityIds: 'com.tencent.mm.plugin.webview.ui.tools.MMWebViewUI',
+		  actionMaximum:5,
           matches:
             'TextView[text="达标1万元"] + View > View > @TextView[text="抽奖"][clickable=false][visibleToUser=true] + View[text!*="0"]',
         },

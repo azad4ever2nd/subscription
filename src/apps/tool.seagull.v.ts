@@ -41,16 +41,17 @@ export default defineGkdApp({
     },
     {
       key: 3,
-      name: '极速版弹窗，确定',
-      desc: '260513',
+      name: '弹窗，极速版，确定',
+      desc: '260910，添加 付费订阅',
       rules: [
         {
           resetMatch: 'match',
           actionCd: 100,
           fastQuery: true,
           activityIds: 'tool.seagull.v.ui.MainActivity',
-          matches:
+          anyMatches:
             '[text^="海鸥极速版"] <<n * + * [id="android:id/button1"][text="确定"]',
+			'[text^="请关闭 获取运动方向权限 和 快应用权限" || text*="付费订阅"] <<n * + * [id="android:id/button1"][text="确定"]',
         },
       ],
     },

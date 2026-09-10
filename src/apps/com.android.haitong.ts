@@ -116,7 +116,6 @@ export default defineGkdApp({
         {
           resetMatch: 'match',
           action: 'clickCenter',
-          matchTime: 3000,
           forcedTime: 3000,
           activityIds: [
             'com.gtja.trade.newstock.view.NewAppointMainActivity',
@@ -132,12 +131,12 @@ export default defineGkdApp({
     {
       key: 9,
       name: '预约打新，第二步，符合预约时间后，确认',
-      desc: '260909，要求预约时间在14:30，[text="已选中 "] + [text!="0"] <n * + [text="确认"][clickable=false]',
+      desc: '260910，要求预约时间在14:30，[text="已选中 "] + [text!="0"] <n * + [text="确认"][clickable=false]',
       rules: [
         {
           resetMatch: 'match',
           preKeys: [8],
-          matchTime: 3000,
+		  action: 'clickCenter',
           forcedTime: 3000,
           activityIds: [
             'com.gtja.trade.newstock.view.NewAppointMainActivity',
@@ -157,7 +156,6 @@ export default defineGkdApp({
         {
           resetMatch: 'match',
           preKeys: [9],
-          matchTime: 3000,
           forcedTime: 3000,
           action: 'clickCenter',
           activityIds: [
