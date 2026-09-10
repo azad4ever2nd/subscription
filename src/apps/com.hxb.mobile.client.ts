@@ -121,9 +121,9 @@ export default defineGkdApp({
           resetMatch: 'match',
           activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
           anyMatches: [
-		    'View[text^="恭喜您抽中"] < View + View[clickable=true][visibleToUser=true]',
-		    'WebView[text="签到赢立减金"] > View > View > View > @View[text.length=0][clickable=true][visibleToUser=true] - Image - View > Image',
-			'(WebView[text="签到赢立减金"] > View > View > View >  View > @View[clickable=true][visibleToUser=true]  - View > View[text*="恭喜你完成产品浏览"])',
+            'View[text^="恭喜您抽中"] < View + View[clickable=true][visibleToUser=true]',
+            'WebView[text="签到赢立减金"] > View > View > View > @View[text.length=0][clickable=true][visibleToUser=true] - Image - View > Image',
+            '(WebView[text="签到赢立减金"] > View > View > View >  View > @View[clickable=true][visibleToUser=true]  - View > View[text*="恭喜你完成产品浏览"])',
           ],
         },
       ],
@@ -149,7 +149,7 @@ export default defineGkdApp({
       rules: [
         {
           resetMatch: 'match',
-		  forcedTime:3000,
+          forcedTime: 3000,
           actionMaximum: 1,
           activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
           anyMatches:

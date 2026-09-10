@@ -38,7 +38,8 @@ export default defineGkdApp({
         {
           resetMatch: 'match',
           activityIds: 'com.deepseek.chat.MainActivity',
-          matches: 'TextView[text="发现新版本"] +n @View[clickable=true][visibleToUser=true] > TextView[text="取消"]',
+          matches:
+            'TextView[text="发现新版本"] +n @View[clickable=true][visibleToUser=true] > TextView[text="取消"]',
         },
       ],
     },

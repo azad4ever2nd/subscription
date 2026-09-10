@@ -136,7 +136,7 @@ export default defineGkdApp({
         {
           resetMatch: 'match',
           preKeys: [8],
-		  action: 'clickCenter',
+          action: 'clickCenter',
           forcedTime: 3000,
           activityIds: [
             'com.gtja.trade.newstock.view.NewAppointMainActivity',

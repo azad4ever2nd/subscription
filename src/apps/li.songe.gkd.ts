@@ -25,7 +25,7 @@ export default defineGkdApp({
           actionCd: 500,
           anyMatches: [
             '([text="确定删除当前快照吗?"] +n @* > [text="确定"])',
-			'View > TextView[text="删除快照"] + TextView[text="确定删除当前快照吗?"] +n @View[clickable=true][visibleToUser=true] > TextView[text="确定"] + Button',
+            'View > TextView[text="删除快照"] + TextView[text="确定删除当前快照吗?"] +n @View[clickable=true][visibleToUser=true] > TextView[text="确定"] + Button',
           ],
           activityIds: ['li.songe.gkd.MainActivity'],
         },
@@ -38,8 +38,8 @@ export default defineGkdApp({
       rules: [
         {
           resetMatch: 'match',
-          forcedTime:3000,
-		  matchTime:3000,
+          forcedTime: 3000,
+          matchTime: 3000,
           actionCd: 300,
           action: 'clickCenter',
           anyMatches: [

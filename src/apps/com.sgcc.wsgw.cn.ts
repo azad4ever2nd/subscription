@@ -48,7 +48,7 @@ export default defineGkdApp({
             '(View > TextView[text="补签成功"] +3 TextView[clickable=false][text.length=0])',
             '(View > View > TextView[text="签到成功"] + TextView[text^="恭喜您获得" && text$="签到金"] + TextView[text.length=0][clickable=false][visibleToUser=true])',
             '(View > View > TextView[text="签到成功"] + TextView[text^="恭喜您获得" && text$="签到金"] +n View > Image[clickable=false][visibleToUser=true])',
-			'(View > View > TextView[text="签到成功"] + TextView[text^="恭喜您获得" && text$="签到金"] + TextView[clickable=true][visibleToUser=true])',
+            '(View > View > TextView[text="签到成功"] + TextView[text^="恭喜您获得" && text$="签到金"] + TextView[clickable=true][visibleToUser=true])',
           ],
         },
       ],
@@ -92,13 +92,13 @@ export default defineGkdApp({
       rules: [
         {
           resetMatch: 'match',
-		  matchDelay:1000,
+          matchDelay: 1000,
           forcedTime: 10000,
           activityIds: 'com.sgcc.wsgw.mainbundle.ElectricTitleActivity',
           anyMatches: [
             '(WebView > View > View > View > View > View > TextView[text^="抽中" && text$="个签到金"] + TextView[clickable=false][visibleToUser=true])',
             '(View > View > TextView[text^="抽中" && text$="个签到金"] + TextView[text.length=0][clickable=false][visibleToUser=true] )',
-			'(View > View > TextView[text^="抽中" && text$="签到金"] + TextView[clickable=true][visibleToUser=true])',
+            '(View > View > TextView[text^="抽中" && text$="签到金"] + TextView[clickable=true][visibleToUser=true])',
           ],
         },
       ],

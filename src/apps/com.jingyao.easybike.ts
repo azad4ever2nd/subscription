@@ -58,7 +58,7 @@ export default defineGkdApp({
         {
           resetMatch: 'match',
           fastQuery: true,
-		  forcedTime:3000,
+          forcedTime: 3000,
           activityIds: [
             'com.hellobike.flutter.platform.android.flutterboost.FlutterHostFragmentActivity',
             'com.hellobike.atlas.business.portal.PortalActivity',
@@ -123,7 +123,7 @@ export default defineGkdApp({
         {
           resetMatch: 'match',
           matchDelay: 1000,
-		  forcedTime:3000,
+          forcedTime: 3000,
           actionCd: 500,
           fastQuery: true,
           activityIds: 'com.hellobike.atlas.business.portal.PortalActivity',
@@ -248,11 +248,10 @@ export default defineGkdApp({
           forcedTime: 3000,
           activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
           anyMatches: [
-			'@TextView[clickable=true] +n [text="明日再来"]',
+            '@TextView[clickable=true] +n [text="明日再来"]',
             'TextView[text="我的奖励金"] +n View > View > @TextView[clickable=false][visibleToUser=true][text.length=0] +n TextView[text="明日再来"]',
             'TextView[text="我的奖励金"] +n View >n View > @TextView[clickable=true][visibleToUser=true] +n TextView[text="明日再来"][clickable=true][visibleToUser=true]',
-			],
-			
+          ],
         },
       ],
     },
@@ -276,7 +275,7 @@ export default defineGkdApp({
         {
           resetMatch: 'match',
           action: 'clickCenter',
-		  forcedTime:3000,
+          forcedTime: 3000,
           activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
           anyMatches: [
             '([text="会员单单返"] + [text="领奖励"])',

@@ -266,10 +266,10 @@ export default defineGkdApp({
         {
           resetMatch: 'match',
           activityIds: 'tool.seagull.v.ui.MainActivity',
-          anyMatches:[
+          anyMatches: [
             'FrameLayout[vid="banner_container"] LinearLayout > FrameLayout > FrameLayout[childCount=1] > View[clickable=false][visibleToUser=true]',
-			'ScrollView[vid="banner_scroll"] >n RelativeLayout[childCount=2] > ImageView + ImageView[clickable=true][visibleToUser=true]',
-			],
+            'ScrollView[vid="banner_scroll"] >n RelativeLayout[childCount=2] > ImageView + ImageView[clickable=true][visibleToUser=true]',
+          ],
         },
       ],
     },
