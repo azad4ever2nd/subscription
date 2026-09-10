@@ -163,7 +163,8 @@ export default defineGkdApp({
           order: -3,
           forcedTime: 1000,
           activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
-          matches: 'WebView[text="积分商城兑换"] > View > View > View > View > View > Button[text="兑换"][clickable=true][visibleToUser=true]',
+          matches:
+            'WebView[text="积分商城兑换"] > View > View > View > View > View > Button[text="兑换"][clickable=true][visibleToUser=true]',
         },
       ],
     },

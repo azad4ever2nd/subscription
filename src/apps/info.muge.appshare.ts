@@ -27,9 +27,10 @@ export default defineGkdApp({
         {
           resetMatch: 'match',
           action: 'clickCenter',
-		  forcedTime:2000,
+          forcedTime: 2000,
           activityIds: 'info.muge.appshare.MainActivity',
-          matches: 'View > ScrollView > ImageView[desc="签到成功"] +n @View[clickable=true][visibleToUser=true] > TextView[text="我知道了"] + Button',
+          matches:
+            'View > ScrollView > ImageView[desc="签到成功"] +n @View[clickable=true][visibleToUser=true] > TextView[text="我知道了"] + Button',
         },
       ],
     },
@@ -41,9 +42,10 @@ export default defineGkdApp({
         {
           resetMatch: 'match',
           action: 'clickCenter',
-		  forcedTime:2000,
+          forcedTime: 2000,
           activityIds: 'info.muge.appshare.MainActivity',
-          matches: 'View > ScrollView > ImageView[desc="签到成功"] +n @View[clickable=true][visibleToUser=true] > TextView[text="我知道了"] + Button',
+          matches:
+            'View > ScrollView > ImageView[desc="签到成功"] +n @View[clickable=true][visibleToUser=true] > TextView[text="我知道了"] + Button',
         },
       ],
     },
