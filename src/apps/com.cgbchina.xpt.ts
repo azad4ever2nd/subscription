@@ -12,7 +12,7 @@ export default defineGkdApp({
           resetMatch: 'match',
           action: 'clickCenter',
           forcedTime: 5000,
-		  matchDelay:1500,
+          matchDelay: 1500,
           activityIds:
             'com.cgb.mobilebank.sit.launcher.module.main.activity.IndexActivity',
           anyMatches:

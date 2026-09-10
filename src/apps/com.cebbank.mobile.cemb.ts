@@ -96,10 +96,10 @@ export default defineGkdApp({
           action: 'clickCenter',
           activityIds:
             'com.cebbank.mobile.cemb.ui.activity.mobilePayment.MobilePaymentWebActivity',
-          anyMatches:[
+          anyMatches: [
             '(WebView > View > View > View > View > TextView[text="每周"] +2 TextView[text="(0/1)"] +(3,5) TextView[text.length=0][clickable=false][visibleToUser=true])',
-			'(WebView > View > View > View > View > TextView[text="每周"] +2 TextView[text="(0/1)"] +(3,5) TextView[text.length=0][clickable=true][visibleToUser=true])',
-			],
+            '(WebView > View > View > View > View > TextView[text="每周"] +2 TextView[text="(0/1)"] +(3,5) TextView[text.length=0][clickable=true][visibleToUser=true])',
+          ],
         },
       ],
     },
@@ -115,10 +115,10 @@ export default defineGkdApp({
           action: 'clickCenter',
           activityIds:
             'com.cebbank.mobile.cemb.ui.activity.mobilePayment.MobilePaymentWebActivity',
-          anyMatches:[
+          anyMatches: [
             '(WebView > View > View > View > View > TextView[text="参与话题讨论"] +(3,5) TextView[text.length=0][clickable=false][visibleToUser=true])',
-			'(WebView > View > View > View > View > TextView[text="参与话题讨论"] +(3,5) TextView[text.length=0][clickable=true][visibleToUser=true])',
-			],
+            '(WebView > View > View > View > View > TextView[text="参与话题讨论"] +(3,5) TextView[text.length=0][clickable=true][visibleToUser=true])',
+          ],
         },
       ],
     },
@@ -128,13 +128,12 @@ export default defineGkdApp({
       desc: '260910 添加 葫芦抽奖，兑换确认',
       rules: [
         {
-
           anyMatches: [
             '([text$="金币"] < View +2 TextView[clickable=true])',
             '([text^="您已完成" && text$="任务"] < * + TextView[clickable=true][visibleToUser=true])',
             '(View > @TextView - View > TextView[text^="您已完成" && text$="任务"])',
             '(View > @TextView[clickable=false][visibleToUser=true] + TextView[text="可在【金币明细】查看"])',
-			'TextView[text="可在【金币明细】查看"] - @TextView[clickable=true][visibleToUser=true] - View > TextView[text$="金币"]',
+            'TextView[text="可在【金币明细】查看"] - @TextView[clickable=true][visibleToUser=true] - View > TextView[text$="金币"]',
             '(View > TextView[text="10金币"] + TextView[text="1次抽奖机会"] + TextView + TextView[clickable=false][visibleToUser=true])',
             '(@TextView[clickable=true][visibleToUser=true] < View + View > View > TextView[text="很遗憾，您未中奖"] +n TextView[text="谢谢参与"])',
           ],
@@ -240,9 +239,9 @@ export default defineGkdApp({
       desc: '260128',
       rules: [
         {
-          anyMatches:[
+          anyMatches: [
             '[vid="dialog_tv_title"] +n [vid="dialog_tv_msg"][text="最多添加20个自选产品"] <<n * + * > [vid="dialog_btn_mid"][text="确定"]',
-			],
+          ],
           fastQuery: true,
           resetMatch: 'match',
           activityIds: 'com.cebbank.mobile.cemb.ui.activity.WebActivity',
