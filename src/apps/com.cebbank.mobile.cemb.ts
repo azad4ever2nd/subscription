@@ -74,7 +74,7 @@ export default defineGkdApp({
     {
       key: 5,
       name: '基金财富月历，每日任务，1个',
-      desc: '260212',
+      desc: 'D,260212',
       rules: [
         {
           matches: '([text="每日"] + [text="阅读产品文章"] +3 TextView)',
@@ -89,16 +89,17 @@ export default defineGkdApp({
     {
       key: 6,
       name: '基金财富月历，每周任务',
-      desc: '260831，([text="每周"] +2 TextView[text="(0/1)"] +3 TextView) || ([text="每周"] + [text="指定产品加自选" || text="浏览指定专区"] + [text="(0/1)"] +3 TextView)',
+      desc: '260910，([text="每周"] +2 TextView[text="(0/1)"] +3 TextView) || ([text="每周"] + [text="指定产品加自选" || text="浏览指定专区"] + [text="(0/1)"] +3 TextView)',
       rules: [
         {
-          actionCd: 3000,
-          actionDelay: 1000,
+          actionCd: 4000,
           action: 'clickCenter',
           activityIds:
             'com.cebbank.mobile.cemb.ui.activity.mobilePayment.MobilePaymentWebActivity',
-          matches:
+          anyMatches:
             '(WebView > View > View > View > View > TextView[text="每周"] +2 TextView[text="(0/1)"] +(3,5) TextView[text.length=0][clickable=false][visibleToUser=true])',
+			'(WebView > View > View > View > View > TextView[text="每周"] +2 TextView[text="(0/1)"] +(3,5) TextView[text.length=0][clickable=true][visibleToUser=true])',
+			],
         },
       ],
     },
@@ -114,25 +115,28 @@ export default defineGkdApp({
           action: 'clickCenter',
           activityIds:
             'com.cebbank.mobile.cemb.ui.activity.mobilePayment.MobilePaymentWebActivity',
-          matches:
+          anyMatches:[
             '(WebView > View > View > View > View > TextView[text="参与话题讨论"] +(3,5) TextView[text.length=0][clickable=false][visibleToUser=true])',
+			'(WebView > View > View > View > View > TextView[text="参与话题讨论"] +(3,5) TextView[text.length=0][clickable=true][visibleToUser=true])',
+			],
         },
       ],
     },
     {
       key: 8,
       name: '基金财富月历，任务完成开心收下',
-      desc: '260905 添加 兑换确认 原([text^="您已完成"] <<3 * + TextView) || ([text^="您已完成"] < * - [text^="+"] <<n View + TextView) || ([text^="微信立减金将在5个工作日内发放"] + TextView) || ([text="恭喜获得"] +n [text="产品涨跌情况将在财富日历中展示~"] +n TextView[clickable=true][index=parent.childCount.minus(1)])',
-      rules: [
+      desc: '260910 添加 葫芦抽奖，兑换确认',
         {
           anyMatches: [
             '([text$="金币"] < View +2 TextView[clickable=true])',
-            '([text^="您已完成" && text$="任务"] < * + TextView[clickable=true])',
+            '([text^="您已完成" && text$="任务"] < * + TextView[clickable=true][visibleToUser=true])',
             '(View > @TextView - View > TextView[text^="您已完成" && text$="任务"])',
             '(View > @TextView[clickable=false][visibleToUser=true] + TextView[text="可在【金币明细】查看"])',
+			'TextView[text="可在【金币明细】查看"] - @TextView[clickable=true][visibleToUser=true] - View > TextView[text$="金币"]',
             '(View > TextView[text="10金币"] + TextView[text="1次抽奖机会"] + TextView + TextView[clickable=false][visibleToUser=true])',
             '(@TextView[clickable=true][visibleToUser=true] < View + View > View > TextView[text="很遗憾，您未中奖"] +n TextView[text="谢谢参与"])',
           ],
+		  forcedTime:5000,
           action: 'clickCenter',
           resetMatch: 'match',
           activityIds:
@@ -173,7 +177,7 @@ export default defineGkdApp({
     {
       key: 11,
       name: '基金财富节，领取提示',
-      desc: '260123，D,优先复制券码，然后再关闭',
+      desc: 'D,260123，优先复制券码，然后再关闭',
       rules: [
         {
           anyMatches: [
@@ -190,7 +194,7 @@ export default defineGkdApp({
     {
       key: 12,
       name: '基金财富节，完成任务后去领取',
-      desc: '260123，D,先占位，明天再补规则',
+      desc: 'D,260123，先占位，明天再补规则',
       rules: [
         {
           matches:
@@ -235,8 +239,9 @@ export default defineGkdApp({
       desc: '260128',
       rules: [
         {
-          matches:
+          anyMatches:[
             '[vid="dialog_tv_title"] +n [vid="dialog_tv_msg"][text="最多添加20个自选产品"] <<n * + * > [vid="dialog_btn_mid"][text="确定"]',
+			],
           fastQuery: true,
           resetMatch: 'match',
           activityIds: 'com.cebbank.mobile.cemb.ui.activity.WebActivity',
