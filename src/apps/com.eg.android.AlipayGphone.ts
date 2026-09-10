@@ -263,13 +263,14 @@ export default defineGkdApp({
     {
       key: 14,
       name: '任务完成，返回领奖',
-      desc: '260905，fastQuery=false,clickable=true，添加返回，',
+      desc: '260910，fastQuery=false,clickable=true，添加返回，',
       rules: [
         {
           action: 'clickCenter',
           anyMatches: [
             '(@View > [text="任务完成"] + [text="返回会场" || text="返回领奖>"])',
             '(@View[clickable=true] >n [text="任务完成"] + [text="返回会场" || text="返回领奖>"])',
+			'@TextView[clickable=false][visibleToUser=true] - View > View > View >  View >  View > View >  TextView[text="0"] + TextView[text=".1"] + TextView[text="元升级"]',
           ],
           resetMatch: 'match',
           activityIds: [
@@ -721,6 +722,8 @@ export default defineGkdApp({
             'com.alipay.mobile.nebulax.xriver.activity.XRiverActivity',
             'com.alipay.mobile.nebulax.xriver.activity.XRiverActivity$App01',
             'com.alipay.mobile.nebulax.xriver.activity.XRiverActivity$App02',
+            'com.alipay.mobile.nebulax.xriver.activity.XRiverActivity$App03',
+            'com.alipay.mobile.nebulax.xriver.activity.XRiverActivity$App04',
             'com.alipay.mobile.beehive.cityselect.ui.SelectCityActivity_',
           ],
           anyMatches: [
