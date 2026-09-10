@@ -88,8 +88,8 @@ export default defineGkdApp({
     },
     {
       key: 7,
-      name: '周四秒杀活动，立即兑换',
-      desc: '260702',
+      name: '周四秒杀活动，第一步，立即兑换',
+      desc: 'D,260910',
       rules: [
         {
           resetMatch: 'match',
@@ -97,13 +97,13 @@ export default defineGkdApp({
           actionCd: 0,
           activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
           matches:
-            'WebView > View > View > View > View > View > Button[text="立即兑换"][clickable=true]',
+            'WebView > View > View > View > View > View > Button[text="立即兑换"][clickable=true][visibleToUser=true]',
         },
       ],
     },
     {
       key: 8,
-      name: '周四秒杀活动尚未开始，确认',
+      name: '弹窗，周四秒杀活动尚未开始，确认',
       desc: '260702',
       rules: [
         {
@@ -111,16 +111,16 @@ export default defineGkdApp({
           action: 'clickCenter',
           activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
           anyMatches: [
-            'View > TextView[text="活动尚未开始\\n"] + View > Button[text=" 确认"][clickable=true]',
-            'View > TextView[text^="活动尚未开始"] + View > Button[text=" 确认"][clickable=true]',
+            'View > TextView[text="活动尚未开始\\n"] + View > Button[text=" 确认"][clickable=true][visibleToUser=true]',
+            'View > TextView[text^="活动尚未开始"] + View > Button[text=" 确认"][clickable=true][visibleToUser=true]',
           ],
         },
       ],
     },
     {
       key: 9,
-      name: '周四秒杀活动，提交订单',
-      desc: '260813',
+      name: '周四秒杀活动，第二步，提交订单',
+      desc: '260910',
       rules: [
         {
           resetMatch: 'match',
@@ -130,29 +130,45 @@ export default defineGkdApp({
           forcedTime: 2000,
           activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
           matches:
-            'WebView[text="提交订单"] > View > View > Button[clickable=true][visibleToUser=true][text="提交订单"]',
+            'WebView[text="提交订单"] > View > View > Button[text="提交订单"][clickable=true][visibleToUser=true]',
         },
       ],
     },
     {
       key: 10,
-      name: '周四秒杀活动，提交订单，确认支付',
-      desc: '260813',
+      name: '弹窗，周四秒杀活动，第三步，提交订单后 确认',
+      desc: '260910',
       rules: [
         {
           resetMatch: 'match',
           action: 'clickCenter',
-          actionCd: 0,
+          actionCd: 300,
           order: -2,
-          forcedTime: 2000,
+          forcedTime: 1000,
           activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
           matches:
-            'Dialog > TextView[text="去支付？"] + View > Button[clickable=true][visibleToUser=true][text="确认"]',
+            'Dialog > TextView[text="去支付？"] + View > Button[text="确认"][clickable=true][visibleToUser=true]',
         },
       ],
     },
     {
       key: 11,
+      name: '周四秒杀活动，第四步，兑换',
+      desc: '260910',
+      rules: [
+        {
+          resetMatch: 'match',
+          action: 'clickCenter',
+          actionCd: 300,
+          order: -3,
+          forcedTime: 1000,
+          activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
+          matches: 'WebView[text="积分商城兑换"] > View > View > View > View > View > Button[text="兑换"][clickable=true][visibleToUser=true]',
+        },
+      ],
+    },
+    {
+      key: 12,
       name: '弹窗，协议更新，确定',
       desc: '260831',
       rules: [

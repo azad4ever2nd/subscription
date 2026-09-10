@@ -19,5 +19,33 @@ export default defineGkdApp({
         },
       ],
     },
+    {
+      key: 2,
+      name: '签到',
+      desc: '260910，先占位，再补规则',
+      rules: [
+        {
+          resetMatch: 'match',
+          action: 'clickCenter',
+		  forcedTime:2000,
+          activityIds: 'info.muge.appshare.MainActivity',
+          matches: 'View > ScrollView > ImageView[desc="签到成功"] +n @View[clickable=true][visibleToUser=true] > TextView[text="我知道了"] + Button',
+        },
+      ],
+    },
+    {
+      key: 3,
+      name: '弹窗，签到成功，知道了',
+      desc: '260910',
+      rules: [
+        {
+          resetMatch: 'match',
+          action: 'clickCenter',
+		  forcedTime:2000,
+          activityIds: 'info.muge.appshare.MainActivity',
+          matches: 'View > ScrollView > ImageView[desc="签到成功"] +n @View[clickable=true][visibleToUser=true] > TextView[text="我知道了"] + Button',
+        },
+      ],
+    },
   ],
 });
