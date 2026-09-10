@@ -96,7 +96,7 @@ export default defineGkdApp({
           action: 'clickCenter',
           activityIds:
             'com.cebbank.mobile.cemb.ui.activity.mobilePayment.MobilePaymentWebActivity',
-          anyMatches:
+          anyMatches:[
             '(WebView > View > View > View > View > TextView[text="每周"] +2 TextView[text="(0/1)"] +(3,5) TextView[text.length=0][clickable=false][visibleToUser=true])',
 			'(WebView > View > View > View > View > TextView[text="每周"] +2 TextView[text="(0/1)"] +(3,5) TextView[text.length=0][clickable=true][visibleToUser=true])',
 			],
