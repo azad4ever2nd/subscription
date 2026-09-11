@@ -129,7 +129,7 @@ export default defineGkdApp({
       rules: [
         {
           anyMatches: [
-			'View[childCount=4] >  TextView[clickable=true][visibleToUser=true] + TextView[clickable=true][visibleToUser=true][index=parent.childCount.minus(1)]',
+            'View[childCount=4] >  TextView[clickable=true][visibleToUser=true] + TextView[clickable=true][visibleToUser=true][index=parent.childCount.minus(1)]',
             '([text$="金币"] < View +2 TextView[clickable=true])',
             '([text^="您已完成" && text$="任务"] < * + TextView[clickable=true][visibleToUser=true])',
             '(View > @TextView - View > TextView[text^="您已完成" && text$="任务"])',
@@ -338,7 +338,7 @@ export default defineGkdApp({
             'com.cebbank.mobile.cemb.ui.activity.mobilePayment.MobilePaymentWebActivity',
           anyMatches: [
             '([text^="兑奖码"] +n @*[clickable=true] + [text^="搜索并关注微信公众号"])',
-			'([text^="兑奖码"] +n @TextView[clickable=true][visibleToUser=true] + [text^="搜索并关注微信公众号"])',
+            '([text^="兑奖码"] +n @TextView[clickable=true][visibleToUser=true] + [text^="搜索并关注微信公众号"])',
             '([text^="兑奖码"] + @TextView[clickable=true][visibleToUser=true] + [text^="搜索并关注微信公众号"])',
           ],
         },
@@ -356,7 +356,7 @@ export default defineGkdApp({
             'com.cebbank.mobile.cemb.ui.activity.mobilePayment.MobilePaymentWebActivity',
           anyMatches: [
             '([text^="搜索并关注微信公众号"] + *[clickable=true])',
-			'([text^="搜索并关注微信公众号"] + TextView[clickable=true][visibleToUser=true])',
+            '([text^="搜索并关注微信公众号"] + TextView[clickable=true][visibleToUser=true])',
             '(View > TextView[text*="光彩礼遇社" && text*="输入兑奖码领取红包"] + @TextView[clickable=false][visibleToUser=true][text.length=0] + TextView[text.length=0])',
           ],
         },

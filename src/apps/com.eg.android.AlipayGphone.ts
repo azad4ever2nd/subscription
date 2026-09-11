@@ -268,7 +268,7 @@ export default defineGkdApp({
         {
           action: 'clickCenter',
           anyMatches: [
-			'TextView[text="暂不离开"] < View + View >  TextView[text="直接退出"][clickable=false][visibleToUser=true]',
+            'TextView[text="暂不离开"] < View + View >  TextView[text="直接退出"][clickable=false][visibleToUser=true]',
             '(@View > [text="任务完成"] + [text="返回会场" || text="返回领奖>"])',
             '(@View[clickable=true] >n [text="任务完成"] + [text="返回会场" || text="返回领奖>"])',
             '@TextView[clickable=false][visibleToUser=true] - View > View > View >  View >  View > View >  TextView[text="0"] + TextView[text=".1"] + TextView[text="元升级"]',

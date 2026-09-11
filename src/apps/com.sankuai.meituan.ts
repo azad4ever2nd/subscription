@@ -161,7 +161,7 @@ export default defineGkdApp({
           anyMatches: [
             '(ViewGroup > TextView[text="领亲密度" || text="去逛逛"])',
             '(@ViewGroup[clickable=true][visibleToUser=true] > TextView[text="领亲密度" || text="去逛逛"])',
-			'ViewGroup[childCount=9] > ImageView + @ImageView[clickable=false][visibleToUser=true] + ViewGroup > TextView[text="直播间限时优惠"]',
+            'ViewGroup[childCount=9] > ImageView + @ImageView[clickable=false][visibleToUser=true] + ViewGroup > TextView[text="直播间限时优惠"]',
           ],
         },
       ],

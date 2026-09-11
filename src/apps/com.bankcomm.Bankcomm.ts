@@ -544,7 +544,7 @@ export default defineGkdApp({
             '(View > Image[text="countdown-fulfilled-bg.f65a2ea"][visibleToUser=true])',
             '(View > Image[clickable=false][text="gthEFTB6uRQ36UPWtwD"][visibleToUser=true])',
             '(WebView > @View[clickable=false][visibleToUser=true] > Image[text="gthEFTB6uRQ36UPWtwD"])',
-			'WebView > View > Image[text="countdown-fulfilled-bg.f65a2ea"][clickable=true][visibleToUser=true] + Image[text="uYGtPZQreNFJUHiJFsH0akOlpQOFendaucAAAAASUVORK5CYII="]',
+            'WebView > View > Image[text="countdown-fulfilled-bg.f65a2ea"][clickable=true][visibleToUser=true] + Image[text="uYGtPZQreNFJUHiJFsH0akOlpQOFendaucAAAAASUVORK5CYII="]',
           ],
         },
       ],
