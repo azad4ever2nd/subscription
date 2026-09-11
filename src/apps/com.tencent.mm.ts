@@ -459,7 +459,7 @@ export default defineGkdApp({
     {
       key: 29,
       name: '深工积分兑换，确认支付',
-      desc: '260905',
+      desc: '260911',
       rules: [
         {
           resetMatch: 'match',
@@ -469,6 +469,7 @@ export default defineGkdApp({
             '(WebView > View > View > TextView[text="访问人数过多，请稍后再试"] + TextView[text="我知道了"][visibleToUser=true])',
             '(View > View >  TextView[text="商品已被秒完"] + TextView[text="我知道了"][visibleToUser=true])',
             '(WebView > View > View > TextView[text^="服务异常" || text="访问人数过多，请稍后再试"] + TextView[text="我知道了"][visibleToUser=true])',
+			'View > View > TextView[text="抢购订单排队中，请勿关闭页面。"][clickable=false][visibleToUser=true]',
           ],
           activityIds: [
             'com.tencent.mm.plugin.appbrand.ui.AppBrandUI0',
@@ -563,7 +564,11 @@ export default defineGkdApp({
             'com.tencent.mm.plugin.appbrand.ui.AppBrandUI03',
             'com.tencent.mm.plugin.appbrand.ui.AppBrandUI04',
           ],
-          matches: '([text$="借记卡"] +n * > [text="立即兑换"])',
+          anyMatches: [
+			'([text$="借记卡"] +n * > [text="立即兑换"])',
+			'WebView >n View > TextView[text$="借记卡"] +n View > TextView[text="立即兑换"][clickable=false][visibleToUser=true]',
+			'WebView > View > View > View > TextView[text$="借记卡"] +n View > TextView[text="立即兑换"][clickable=false][visibleToUser=true]',
+			],
         },
       ],
     },

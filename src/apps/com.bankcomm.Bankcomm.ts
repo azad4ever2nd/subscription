@@ -528,12 +528,12 @@ export default defineGkdApp({
     {
       key: 37,
       name: '浏览任务完成',
-      desc: '260910，添加新布局，添加权限弹窗，直播间ids',
+      desc: '260911，添加新布局，添加权限弹窗，直播间ids',
       rules: [
         {
           action: 'back',
           resetMatch: 'match',
-          forcedTime: 5000,
+          forcedTime: 12000,
           activityIds: [
             'com.bankcomm.module.biz.bcmvideo.BCMVerticalVideoActivity',
             'com.bankcomm.module.biz.webcontainer.BCMHtml5Activity',
@@ -542,8 +542,9 @@ export default defineGkdApp({
             '([id="android:id/message"][text*="权限"] <<n * + [id="android:id/buttonPanel"] [id="android:id/button2"][text="否"] + [id="android:id/button1"][text="是"])',
             '([text="Pyi3KQBzgJA1F+Xm7MrWYA0HQqTcq4GrAAAAAASUVORK5CYII="])',
             '(View > Image[text="countdown-fulfilled-bg.f65a2ea"][visibleToUser=true])',
-            '(View > Image[clickable=false][text="gthEFTB6uRQ36UPWtwD"])',
+            '(View > Image[clickable=false][text="gthEFTB6uRQ36UPWtwD"][visibleToUser=true])',
             '(WebView > @View[clickable=false][visibleToUser=true] > Image[text="gthEFTB6uRQ36UPWtwD"])',
+			'WebView > View > Image[text="countdown-fulfilled-bg.f65a2ea"][clickable=true][visibleToUser=true] + Image[text="uYGtPZQreNFJUHiJFsH0akOlpQOFendaucAAAAASUVORK5CYII="]',
           ],
         },
       ],

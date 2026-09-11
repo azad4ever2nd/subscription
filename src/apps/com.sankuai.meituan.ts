@@ -152,7 +152,7 @@ export default defineGkdApp({
     {
       key: 11,
       name: '直播间任务，领亲密度，去逛逛',
-      desc: '260807',
+      desc: '260911，增加 惊喜券弹窗',
       rules: [
         {
           resetMatch: 'match',
@@ -161,6 +161,7 @@ export default defineGkdApp({
           anyMatches: [
             '(ViewGroup > TextView[text="领亲密度" || text="去逛逛"])',
             '(@ViewGroup[clickable=true][visibleToUser=true] > TextView[text="领亲密度" || text="去逛逛"])',
+			'ViewGroup[childCount=9] > ImageView + @ImageView[clickable=false][visibleToUser=true] + ViewGroup > TextView[text="直播间限时优惠"]',
           ],
         },
       ],
