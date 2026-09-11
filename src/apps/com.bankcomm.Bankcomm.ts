@@ -303,7 +303,7 @@ export default defineGkdApp({
     {
       key: 21,
       name: '能量签到完成',
-      desc: '260906，多行规则改用anyMatches测试，添加每周在线互动',
+      desc: '260910，多行规则改用anyMatches测试，添加每周在线互动',
       rules: [
         {
           anyMatches: [
@@ -312,6 +312,7 @@ export default defineGkdApp({
             '(TextView[text^="浏览" || text^="访问" || text^="查看"][text*="超过" && text$="秒"] +2 TextView[text="去完成"][clickable=false][visibleToUser=true])',
             '(TextView[text^="浏览" || text^="访问" || text^="查看"][text*="超过" && text$="秒"] <n View +2 TextView[text="去完成"][clickable=true][visibleToUser=true])',
             '(TextView[text^="浏览" || text^="访问" || text^="查看"][text*="超过" && text$="秒"] <n View +2 TextView[text="去完成"][clickable=false][visibleToUser=true])',
+			'WebView > View > TextView[text^="您已完成该任务" || text*="欢迎继续浏览"] + @Image[text="取消"][clickable=true][visibleToUser=true] + Image[text="继续浏览"]',
             '([text="恭喜您签到成功"] +n [text="我知道了"])',
           ],
           resetMatch: 'match',
@@ -527,11 +528,12 @@ export default defineGkdApp({
     {
       key: 37,
       name: '浏览任务完成',
-      desc: '260905，添加新布局，添加权限弹窗，直播间ids',
+      desc: '260910，添加新布局，添加权限弹窗，直播间ids',
       rules: [
         {
           action: 'back',
           resetMatch: 'match',
+		  forcedTime:5000,
           activityIds: [
             'com.bankcomm.module.biz.bcmvideo.BCMVerticalVideoActivity',
             'com.bankcomm.module.biz.webcontainer.BCMHtml5Activity',
@@ -539,7 +541,7 @@ export default defineGkdApp({
           anyMatches: [
             '([id="android:id/message"][text*="权限"] <<n * + [id="android:id/buttonPanel"] [id="android:id/button2"][text="否"] + [id="android:id/button1"][text="是"])',
             '([text="Pyi3KQBzgJA1F+Xm7MrWYA0HQqTcq4GrAAAAAASUVORK5CYII="])',
-            '(View > Image[text="countdown-fulfilled-bg.f65a2ea"])',
+            '(View > Image[text="countdown-fulfilled-bg.f65a2ea"][visibleToUser=true])',
             '(View > Image[clickable=false][text="gthEFTB6uRQ36UPWtwD"])',
             '(WebView > @View[clickable=false][visibleToUser=true] > Image[text="gthEFTB6uRQ36UPWtwD"])',
           ],

@@ -149,5 +149,18 @@ export default defineGkdApp({
         },
       ],
     },
+    {
+      key: 11,
+      name: '安装应用，稍后再说',
+      desc: '260911',
+      rules: [
+        {
+          resetMatch: 'match',
+          action: 'clickCenter',
+          activityIds: 'mark.via.Shell',
+          matches: 'View > TextView[text^="安装应用"] + Button[id="installButton"][text="安装应用"] + Button[text="稍后再说"][clickable=true][visibleToUser=true]',
+        },
+      ],
+    },
   ],
 });

@@ -13,7 +13,7 @@ export default defineGkdApp({
           resetMatch: 'match',
           forcedTime: 3000,
           action: 'clickCenter',
-          actionCd: 3000,
+          actionCd: 10000,
           activityIds: 'com.magnet.rainbowmagnet.MainActivity',
           anyMatches: [
             'View >  @View[desc="复制链接"][clickable=true][visibleToUser=true] + View[desc="收藏链接"]',

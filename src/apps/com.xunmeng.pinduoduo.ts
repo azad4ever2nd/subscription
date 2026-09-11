@@ -506,11 +506,14 @@ export default defineGkdApp({
     {
       key: 32,
       name: '百亿补贴消费券天天抢，点击领取消费券（激活）',
-      desc: '260909',
+      desc: '260911，添加 Ids ',
       rules: [
         {
           resetMatch: 'match',
-          activityIds: 'com.xunmeng.pinduoduo.ui.activity.MainFrameActivity',
+          activityIds: [
+			'com.xunmeng.pinduoduo.ui.activity.MainFrameActivity',
+			'com.xunmeng.pinduoduo.ui.activity.HomeActivity',
+			],
           anyMatches: [
             'ViewGroup[childCount=3] > ImageView + @ViewGroup[childCount=2][clickable=true] > ViewGroup[childCount=2] > ViewGroup[childCount=3] + ImageView[clickable=false][visibleToUser=true]',
             'ViewGroup[childCount=3] > ImageView + ViewGroup[childCount=2][clickable=true] > ViewGroup[childCount=2] > ViewGroup[childCount=3] + ImageView[clickable=false][visibleToUser=true]',

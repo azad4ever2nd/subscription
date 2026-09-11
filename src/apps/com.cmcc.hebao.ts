@@ -6,15 +6,19 @@ export default defineGkdApp({
   groups: [
     {
       key: 1,
-      name: '开启消息通知',
-      desc: '260423，测试action',
+      name: '弹窗，开启消息通知，X掉',
+      desc: '260911',
       rules: [
         {
           resetMatch: 'match',
           fastQuery: true,
+		  forcedTime:3000,
           action: 'clickCenter',
           activityIds: 'com.cmcc.wallet.mocam.activity.home.WalletHomeActivity',
-          matches: '[vid="activityImg"] + [vid="closeImg"]',
+          anyMatches: [
+			'[vid="activityImg"] + [vid="closeImg"]',
+			'RelativeLayout > ImageView[vid="activityImg"] + ImageView[vid="closeImg"][clickable=true][visibleToUser=true]',
+			],
         },
       ],
     },

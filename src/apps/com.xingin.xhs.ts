@@ -6,6 +6,19 @@ export default defineGkdApp({
   groups: [
     {
       key: 1,
+      name: '弹窗，打开通知，X掉',
+      desc: '260911，fastQuery=true,clickable=true',
+      rules: [
+        {
+          resetMatch: 'match',
+          fastQuery: true,
+          activityIds: 'com.xingin.authorization.NotificationAuthorizationTranslucentActivity',
+          matches: 'FrameLayout > @ImageView[vid="mNegativeImageView"][clickable=true][visibleToUser=true] - LinearLayout > TextView[text^="打开通知"][vid="mDescTextView"] + TextView[text="确认"][vid="mPositiveTextView"]',
+        },
+      ],
+    },
+    {
+      key: 2,
       name: '打开通知',
       desc: '260208',
       rules: [
@@ -22,7 +35,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 2,
+      key: 3,
       name: '发送通知，拒绝',
       desc: '260629',
       rules: [
@@ -37,7 +50,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 3,
+      key: 4,
       name: '开启通知',
       desc: '260209',
       rules: [
@@ -51,7 +64,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 4,
+      key: 5,
       name: '关注推送弹窗',
       desc: '260213',
       rules: [
@@ -67,7 +80,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 5,
+      key: 6,
       name: '删除全部搜索历史，确认',
       desc: '260213',
       rules: [
