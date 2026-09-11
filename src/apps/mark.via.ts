@@ -158,7 +158,8 @@ export default defineGkdApp({
           resetMatch: 'match',
           action: 'clickCenter',
           activityIds: 'mark.via.Shell',
-          matches: 'View > TextView[text^="安装应用"] + Button[id="installButton"][text="安装应用"] + Button[text="稍后再说"][clickable=true][visibleToUser=true]',
+          matches:
+            'View > TextView[text^="安装应用"] + Button[id="installButton"][text="安装应用"] + Button[text="稍后再说"][clickable=true][visibleToUser=true]',
         },
       ],
     },

@@ -12,8 +12,10 @@ export default defineGkdApp({
         {
           resetMatch: 'match',
           fastQuery: true,
-          activityIds: 'com.xingin.authorization.NotificationAuthorizationTranslucentActivity',
-          matches: 'FrameLayout > @ImageView[vid="mNegativeImageView"][clickable=true][visibleToUser=true] - LinearLayout > TextView[text^="打开通知"][vid="mDescTextView"] + TextView[text="确认"][vid="mPositiveTextView"]',
+          activityIds:
+            'com.xingin.authorization.NotificationAuthorizationTranslucentActivity',
+          matches:
+            'FrameLayout > @ImageView[vid="mNegativeImageView"][clickable=true][visibleToUser=true] - LinearLayout > TextView[text^="打开通知"][vid="mDescTextView"] + TextView[text="确认"][vid="mPositiveTextView"]',
         },
       ],
     },

@@ -12,13 +12,13 @@ export default defineGkdApp({
         {
           resetMatch: 'match',
           fastQuery: true,
-		  forcedTime:3000,
+          forcedTime: 3000,
           action: 'clickCenter',
           activityIds: 'com.cmcc.wallet.mocam.activity.home.WalletHomeActivity',
           anyMatches: [
-			'[vid="activityImg"] + [vid="closeImg"]',
-			'RelativeLayout > ImageView[vid="activityImg"] + ImageView[vid="closeImg"][clickable=true][visibleToUser=true]',
-			],
+            '[vid="activityImg"] + [vid="closeImg"]',
+            'RelativeLayout > ImageView[vid="activityImg"] + ImageView[vid="closeImg"][clickable=true][visibleToUser=true]',
+          ],
         },
       ],
     },

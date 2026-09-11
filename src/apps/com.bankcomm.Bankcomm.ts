@@ -312,7 +312,7 @@ export default defineGkdApp({
             '(TextView[text^="浏览" || text^="访问" || text^="查看"][text*="超过" && text$="秒"] +2 TextView[text="去完成"][clickable=false][visibleToUser=true])',
             '(TextView[text^="浏览" || text^="访问" || text^="查看"][text*="超过" && text$="秒"] <n View +2 TextView[text="去完成"][clickable=true][visibleToUser=true])',
             '(TextView[text^="浏览" || text^="访问" || text^="查看"][text*="超过" && text$="秒"] <n View +2 TextView[text="去完成"][clickable=false][visibleToUser=true])',
-			'WebView > View > TextView[text^="您已完成该任务" || text*="欢迎继续浏览"] + @Image[text="取消"][clickable=true][visibleToUser=true] + Image[text="继续浏览"]',
+            'WebView > View > TextView[text^="您已完成该任务" || text*="欢迎继续浏览"] + @Image[text="取消"][clickable=true][visibleToUser=true] + Image[text="继续浏览"]',
             '([text="恭喜您签到成功"] +n [text="我知道了"])',
           ],
           resetMatch: 'match',
@@ -533,7 +533,7 @@ export default defineGkdApp({
         {
           action: 'back',
           resetMatch: 'match',
-		  forcedTime:5000,
+          forcedTime: 5000,
           activityIds: [
             'com.bankcomm.module.biz.bcmvideo.BCMVerticalVideoActivity',
             'com.bankcomm.module.biz.webcontainer.BCMHtml5Activity',

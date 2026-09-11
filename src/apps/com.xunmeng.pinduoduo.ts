@@ -511,9 +511,9 @@ export default defineGkdApp({
         {
           resetMatch: 'match',
           activityIds: [
-			'com.xunmeng.pinduoduo.ui.activity.MainFrameActivity',
-			'com.xunmeng.pinduoduo.ui.activity.HomeActivity',
-			],
+            'com.xunmeng.pinduoduo.ui.activity.MainFrameActivity',
+            'com.xunmeng.pinduoduo.ui.activity.HomeActivity',
+          ],
           anyMatches: [
             'ViewGroup[childCount=3] > ImageView + @ViewGroup[childCount=2][clickable=true] > ViewGroup[childCount=2] > ViewGroup[childCount=3] + ImageView[clickable=false][visibleToUser=true]',
             'ViewGroup[childCount=3] > ImageView + ViewGroup[childCount=2][clickable=true] > ViewGroup[childCount=2] > ViewGroup[childCount=3] + ImageView[clickable=false][visibleToUser=true]',
