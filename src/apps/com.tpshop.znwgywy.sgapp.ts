@@ -127,7 +127,7 @@ export default defineGkdApp({
           activityIds: 'tool.seagull.v.ui.MainActivity',
           anyMatches: [
             'ImageView[vid="vpnSwitchButton"][desc="连接"] + FrameLayout + ScrollView > FrameLayout > FrameLayout > FrameLayout > FrameLayout > FrameLayout > FrameLayout[childCount=1] > View',
-			'ImageView[vid="vpnSwitchButton"][desc="连接"] +n ScrollView >n  FrameLayout[childCount=1] > ImageView[clickable=false][visibleToUser=true]',
+            'ImageView[vid="vpnSwitchButton"][desc="连接"] +n ScrollView >n  FrameLayout[childCount=1] > ImageView[clickable=false][visibleToUser=true]',
           ],
         },
       ],
@@ -143,8 +143,7 @@ export default defineGkdApp({
           anyMatches: [
             'FrameLayout[vid="server_list_banner_ad"] > RelativeLayout > FrameLayout > RelativeLayout > RelativeLayout > ImageView[clickable=true][text="-bak"]',
             'FrameLayout[vid="server_list_banner_ad"] FrameLayout > ImageView - FrameLayout[childCount=1] > View[text="-bak"]',
-			'[vid="server_list_banner_ad"] >n LinearLayout + ImageView + FrameLayout > View[parent.childCount=1][clickable=false][visibleToUser=true]',
-
+            '[vid="server_list_banner_ad"] >n LinearLayout + ImageView + FrameLayout > View[parent.childCount=1][clickable=false][visibleToUser=true]',
           ],
         },
       ],
