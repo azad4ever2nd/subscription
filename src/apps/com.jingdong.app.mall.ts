@@ -80,7 +80,7 @@ export default defineGkdApp({
       rules: [
         {
           resetMatch: 'match',
-          forccedTime:3000,
+          forcedTime:3000,
           activityIds: 'com.jd.lib.ttt.page.TTTMultiPageActivity',
           anyMatches: [
             '(@TextView - View > [text="¥"] + [text="4.90"] + [text="黑五价"])',
