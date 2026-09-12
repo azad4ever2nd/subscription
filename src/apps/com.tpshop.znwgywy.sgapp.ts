@@ -120,13 +120,14 @@ export default defineGkdApp({
     {
       key: 9,
       name: '弹窗，连接前广告弹窗',
-      desc: '260625',
+      desc: '260912',
       rules: [
         {
           resetMatch: 'match',
           activityIds: 'tool.seagull.v.ui.MainActivity',
           anyMatches: [
             'ImageView[vid="vpnSwitchButton"][desc="连接"] + FrameLayout + ScrollView > FrameLayout > FrameLayout > FrameLayout > FrameLayout > FrameLayout > FrameLayout[childCount=1] > View',
+			'ImageView[vid="vpnSwitchButton"][desc="连接"] +n ScrollView >n  FrameLayout[childCount=1] > ImageView[clickable=false][visibleToUser=true]',
           ],
         },
       ],
@@ -134,15 +135,16 @@ export default defineGkdApp({
     {
       key: 10,
       name: '服务器列表广告1',
-      desc: '260625',
+      desc: '260912',
       rules: [
         {
           resetMatch: 'match',
           activityIds: 'tool.seagull.v.ui.MainActivity',
           anyMatches: [
-            '[vid="server_list_banner_ad"] >7 LinearLayout + ImageView + FrameLayout > View[parent.childCount=1]',
-            'FrameLayout[vid="server_list_banner_ad"] > RelativeLayout > FrameLayout > RelativeLayout > RelativeLayout > ImageView[clickable=true]',
-            'FrameLayout[vid="server_list_banner_ad"] FrameLayout > ImageView - FrameLayout[childCount=1] > View',
+            'FrameLayout[vid="server_list_banner_ad"] > RelativeLayout > FrameLayout > RelativeLayout > RelativeLayout > ImageView[clickable=true][text="-bak"]',
+            'FrameLayout[vid="server_list_banner_ad"] FrameLayout > ImageView - FrameLayout[childCount=1] > View[text="-bak"]',
+			'[vid="server_list_banner_ad"] >n LinearLayout + ImageView + FrameLayout > View[parent.childCount=1][clickable=false][visibleToUser=true]',
+
           ],
         },
       ],
