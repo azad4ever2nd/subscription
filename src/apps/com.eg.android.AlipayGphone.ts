@@ -263,7 +263,7 @@ export default defineGkdApp({
     {
       key: 14,
       name: '任务完成，返回领奖',
-      desc: '260911，fastQuery=false,clickable=true，添加返回，',
+      desc: '260912，fastQuery=false,clickable=true，添加返回，',
       rules: [
         {
           action: 'clickCenter',
@@ -271,7 +271,6 @@ export default defineGkdApp({
             'TextView[text="暂不离开"] < View + View >  TextView[text="直接退出"][clickable=false][visibleToUser=true]',
             '(@View > [text="任务完成"] + [text="返回会场" || text="返回领奖>"])',
             '(@View[clickable=true] >n [text="任务完成"] + [text="返回会场" || text="返回领奖>"])',
-            '@TextView[clickable=false][visibleToUser=true] - View > View > View >  View >  View > View >  TextView[text="0"] + TextView[text=".1"] + TextView[text="元升级"]',
           ],
           resetMatch: 'match',
           activityIds: [
@@ -618,7 +617,7 @@ export default defineGkdApp({
     {
       key: 35,
       name: '添加神券到首页，X掉',
-      desc: '260909，添加闪购小程序，没有fastquery，没有clickable=true，添加到首页，添加 生活缴费',
+      desc: '260912，添加 闪购签到，闪购小程序，没有fastquery，没有clickable=true，添加到首页，添加 生活缴费',
       rules: [
         {
           resetMatch: 'match',
@@ -641,6 +640,8 @@ export default defineGkdApp({
             '(@TextView[clickable=false][visibleToUser=true]  -  View > View > TextView[text="购物爆红包"] + TextView[text="今天23:59到期"])',
             '([text^="完成"] <<n View + View > TextView[text="领取奖励"][clickable=false][visibleToUser=true])',
             '(TextView[text="开心收下"] <<n View + TextView[text.length=0][clickable=false][visibleToUser=true])',
+			'@TextView[clickable=false][visibleToUser=true] - View > View > View >  View >  View > View >  TextView[text="0"] + TextView[text=".1"] + TextView[text="元升级"]',
+			'View > View > View + TextView[text="去签到"][clickable=false][visibleToUser=true]',
           ],
         },
       ],
