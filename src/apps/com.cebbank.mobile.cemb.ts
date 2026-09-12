@@ -139,7 +139,7 @@ export default defineGkdApp({
             '(@TextView[clickable=true][visibleToUser=true] < View + View > View > TextView[text="很遗憾，您未中奖"] +n TextView[text="谢谢参与"])',
           ],
           action: 'clickCenter',
-		  forcedTime:3000,
+          forcedTime: 3000,
           resetMatch: 'match',
           activityIds:
             'com.cebbank.mobile.cemb.ui.activity.mobilePayment.MobilePaymentWebActivity',

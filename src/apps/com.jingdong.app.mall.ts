@@ -29,9 +29,7 @@ export default defineGkdApp({
       desc: '260907',
       rules: [
         {
-          anyMatches: [
-            '(Image -2 * > [text="提醒我抢购)"])',
-          ],
+          anyMatches: ['(Image -2 * > [text="提醒我抢购)"])'],
           resetMatch: 'match',
           forcedTime: 2000,
           action: 'clickCenter',
@@ -80,12 +78,12 @@ export default defineGkdApp({
       rules: [
         {
           resetMatch: 'match',
-          forcedTime:3000,
+          forcedTime: 3000,
           activityIds: 'com.jd.lib.ttt.page.TTTMultiPageActivity',
           anyMatches: [
             '(@TextView - View > [text="¥"] + [text="4.90"] + [text="黑五价"])',
             '(View[childCount=2] > View[childCount=3] > View[childCount=7] + @TextView[clickable=true] + TextView)',
-			'TextView - @TextView[clickable=true][visibleToUser=true] - View > TextView[text="黑五价"] -n View > View + TextView[text="1/8"]',
+            'TextView - @TextView[clickable=true][visibleToUser=true] - View > TextView[text="黑五价"] -n View > View + TextView[text="1/8"]',
             '(TextView[text="提醒我抢购"] < View + TextView[text^="设置提醒后"] + Image[clickable=true][visibleToUser=true])',
           ],
         },

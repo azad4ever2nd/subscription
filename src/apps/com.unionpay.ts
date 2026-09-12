@@ -373,9 +373,9 @@ export default defineGkdApp({
             'com.unionpay.liteapp.app.UPLiteAppActivity3',
             'com.unionpay.liteapp.app.UPLiteAppActivity4',
           ],
-          anyMatches:[
+          anyMatches: [
             'View > View > View > Button[text="剩余 0次 抽奖机会"][clickable=true][visibleToUser=true]',
-			],
+          ],
           action: 'back',
         },
       ],

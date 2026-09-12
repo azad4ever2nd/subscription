@@ -236,7 +236,7 @@ export default defineGkdApp({
       rules: [
         {
           resetMatch: 'match',
-		  forcedTime:3000,
+          forcedTime: 3000,
           activityIds:
             'cmb.pb.app.h5container.webviewcontainer.PBWebContainerActivity',
           anyMatches: 'TextView[text="添加自选成功"][visibleToUser=true]',
@@ -380,14 +380,14 @@ export default defineGkdApp({
       rules: [
         {
           resetMatch: 'match',
-		  matchDelay:1000,
-		  forcedTime:3000,
+          matchDelay: 1000,
+          forcedTime: 3000,
           action: 'clickCenter',
           activityIds:
             'cmb.pb.app.h5container.webviewcontainer.PBWebContainerActivity',
           anyMatches: [
             '([text="待提现红包"] + [text="一键提现"])',
-			'WebView > View > View > TextView[text="待提现红包"] + Button[text="一键提现"][clickable=true][visibleToUser=true]',
+            'WebView > View > View > TextView[text="待提现红包"] + Button[text="一键提现"][clickable=true][visibleToUser=true]',
             '([text="确认提现到账户"])',
           ],
         },
@@ -401,7 +401,7 @@ export default defineGkdApp({
         {
           resetMatch: 'match',
           action: 'clickCenter',
-		  forcedTime:3000,
+          forcedTime: 3000,
           activityIds:
             'cmb.pb.app.h5container.webviewcontainer.PBWebContainerActivity',
           anyMatches:
@@ -644,7 +644,7 @@ export default defineGkdApp({
           anyMatches:
             '[text="（周三5折）必胜客50元代金券"] +n * > [text*="立即抢购"]',
           actionCdKey: 1,
-		  forcedTime:3000,
+          forcedTime: 3000,
           resetMatch: 'match',
           activityIds:
             'cmb.pb.app.h5container.webviewcontainer.PBWebContainerActivity',
@@ -659,7 +659,7 @@ export default defineGkdApp({
         {
           anyMatches:
             '[text="（周三5折）喜茶20元代金券"] +n * > [text*="立即抢购"]',
-		  forcedTime:3000,
+          forcedTime: 3000,
           actionCdKey: 1,
           resetMatch: 'match',
           activityIds:
@@ -675,7 +675,7 @@ export default defineGkdApp({
         {
           anyMatches:
             '[text="（周三5折）肯德基20元代金券"] +n * > [text*="立即抢购"]',
-		  forcedTime:3000,
+          forcedTime: 3000,
           actionCdKey: 1,
           resetMatch: 'match',
           activityIds:
@@ -690,7 +690,7 @@ export default defineGkdApp({
       rules: [
         {
           actionCdKey: 1,
-		  forcedTime:3000,
+          forcedTime: 3000,
           anyMatches:
             '[text="（周三5折）哈根达斯50元代金券"] +n * > [text*="立即抢购"]',
           resetMatch: 'match',
@@ -706,7 +706,7 @@ export default defineGkdApp({
       rules: [
         {
           actionCdKey: 1,
-		  forcedTime:3000,
+          forcedTime: 3000,
           anyMatches:
             '[text="（周三5折）必胜客50元代金券"] +6 [text*="立即抢购"]',
           resetMatch: 'match',
@@ -723,7 +723,7 @@ export default defineGkdApp({
         {
           anyMatches:
             '[text="（周三5折）喜茶20元代金券"] +6 [text*="立即抢购"]',
-		  forcedTime:3000,
+          forcedTime: 3000,
           actionCdKey: 1,
           resetMatch: 'match',
           activityIds:
@@ -737,7 +737,7 @@ export default defineGkdApp({
       desc: 'D',
       rules: [
         {
-		  forcedTime:3000,
+          forcedTime: 3000,
           anyMatches:
             '[text="（周三5折）肯德基20元代金券"] +6 [text*="立即抢购"]',
           actionCdKey: 1,
@@ -754,7 +754,7 @@ export default defineGkdApp({
       rules: [
         {
           actionCdKey: 1,
-		  forcedTime:3000,
+          forcedTime: 3000,
           anyMatches:
             '[text="（周三5折）哈根达斯50元代金券"] +6 [text*="立即抢购"]',
           resetMatch: 'match',
@@ -805,7 +805,7 @@ export default defineGkdApp({
         {
           resetMatch: 'match',
           actionMaximum: 1,
-		  forcedTime:3000,
+          forcedTime: 3000,
           action: 'click',
           activityIds: 'com.pb.livestream.NewLiveStreamListActivity',
           anyMatches:

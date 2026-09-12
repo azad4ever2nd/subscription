@@ -59,7 +59,8 @@ export default defineGkdApp({
           action: 'clickCenter',
           forcedTime: 2000,
           activityIds: 'info.muge.appshare.MainActivity',
-          matches: 'ScrollView > TextView[text="公告通知"] +n @View[clickable=true][visibleToUser=true] > TextView[text="收到"] + Button',
+          matches:
+            'ScrollView > TextView[text="公告通知"] +n @View[clickable=true][visibleToUser=true] > TextView[text="收到"] + Button',
         },
       ],
     },

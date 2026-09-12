@@ -12,10 +12,10 @@ export default defineGkdApp({
         {
           anyMatches: [
             '([vid="message"][text*="打开" || text^="当前网站请求打开"] <<n * + * > [id="android:id/button1"][text="允许"])',
-			'(TextView[vid="message"][text*="打开" || text^="当前网站请求打开"] <<n ScrollView + LinearLayout > [id="android:id/button1"][text="允许"][clickable=true][visibleToUser=true])',
+            '(TextView[vid="message"][text*="打开" || text^="当前网站请求打开"] <<n ScrollView + LinearLayout > [id="android:id/button1"][text="允许"][clickable=true][visibleToUser=true])',
           ],
           fastQuery: true,
-		  forcedTime:5000,
+          forcedTime: 5000,
           resetMatch: 'match',
           activityIds: ['com.android.browser.BrowserActivity'],
         },

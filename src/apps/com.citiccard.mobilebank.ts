@@ -24,7 +24,7 @@ export default defineGkdApp({
       rules: [
         {
           matchDelay: 1000,
-		  forcedTime:3000,
+          forcedTime: 3000,
           matches: ['[vid="dialog"] + [vid="cancelArea"]'],
           fastQuery: true,
           resetMatch: 'match',

@@ -1266,10 +1266,9 @@ export default defineGkdApp({
             'com.tencent.mm.plugin.appbrand.ui.AppBrandUI03',
             'com.tencent.mm.plugin.appbrand.ui.AppBrandUI04',
           ],
-          anyMatches:[
+          anyMatches: [
             '[text="该活动尚未开始"] + [text="敬请期待"] <<n * + * [desc="关闭"][clickable=true]',
-			],
-
+          ],
         },
       ],
     },
@@ -1348,8 +1347,8 @@ export default defineGkdApp({
           ],
           anyMatches: [
             'TextView[text="系统繁忙，请稍后再试。"] <<n View + View > @View[clickable=false][visibleToUser=true] > TextView[text="确定"]',
-			'TextView[text^="已参与"] < View +2 @TextView[clickable=true][visibleToUser=true] - View > TextView[text="确认"]',
-			'TextView[text^="奖励已发送" || text$="可前往【我的奖品】查看提取"] < View +2 @TextView[clickable=true][visibleToUser=true] - View > TextView[text="立即使用"]',
+            'TextView[text^="已参与"] < View +2 @TextView[clickable=true][visibleToUser=true] - View > TextView[text="确认"]',
+            'TextView[text^="奖励已发送" || text$="可前往【我的奖品】查看提取"] < View +2 @TextView[clickable=true][visibleToUser=true] - View > TextView[text="立即使用"]',
             '(View > View > TextView[text^="来晚啦"] + View + TextView[clickable=true][visibleToUser=true])',
             '(View > TextView[text="该商品已售罄"] + TextView[text="我知道了"][clickable=true][visibleToUser=true])',
             '(View > View > @TextView[clickable=true][visibleToUser=true] - View > View >   Image[text="66c29cff8e9f4a2aaf3f1b67b944daac"])',
@@ -1595,8 +1594,8 @@ export default defineGkdApp({
             'com.tencent.mm.plugin.appbrand.ui.AppBrandUI04',
           ],
           anyMatches: [
-			'WebView >  TextView[text*="联通" || text*="移动" || text*="电信"] + TextView[text$="0元"] + @TextView[text="立即充值"][clickable=false][visibleToUser=true] + TextView[text="更多推荐"]',
-			'View > TextView[text="微信提现免费券"] +(3,4) TextView[text="过期提醒我"][clickable=false][visibleToUser=true]',
+            'WebView >  TextView[text*="联通" || text*="移动" || text*="电信"] + TextView[text$="0元"] + @TextView[text="立即充值"][clickable=false][visibleToUser=true] + TextView[text="更多推荐"]',
+            'View > TextView[text="微信提现免费券"] +(3,4) TextView[text="过期提醒我"][clickable=false][visibleToUser=true]',
           ],
         },
       ],
