@@ -20,10 +20,11 @@ export default defineGkdApp({
     {
       key: 2,
       name: '分期弹窗',
-      desc: '260308',
+      desc: '260912',
       rules: [
         {
           matchDelay: 1000,
+		  forcedTime:3000,
           matches: ['[vid="dialog"] + [vid="cancelArea"]'],
           fastQuery: true,
           resetMatch: 'match',
@@ -288,13 +289,13 @@ export default defineGkdApp({
         {
           resetMatch: 'match',
           matchDelay: 3000,
-          forcedTime: 3000,
+          forcedTime: 5000,
           fastQuery: true,
           activityIds:
             'com.citiccard.mobilebank.newconfig.appconstruct.TabsAppHomeActivity',
           anyMatches: [
             '([vid="dialog"] + [vid="cancelArea"])',
-            '(FrameLayout > RelativeLayout > ImageView[vid="dialog"] + ImageView[vid="cancelArea"][clickable=true])',
+            '(FrameLayout > RelativeLayout > ImageView[vid="dialog"] + ImageView[vid="cancelArea"][clickable=true][visibleToUser=true])',
           ],
         },
       ],

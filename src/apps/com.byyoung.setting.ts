@@ -13,7 +13,7 @@ export default defineGkdApp({
           fastQuery: true,
           activityIds: 'com.byyoung.setting.HomePage.activitys.MainActivity',
           matches:
-            'ScrollView > LinearLayout > Button[id="android:id/button3"][text="待会更新"]',
+            'ScrollView > LinearLayout > Button[id="android:id/button3"][text="待会更新"][clickable=true][visibleToUser=true]',
         },
       ],
     },

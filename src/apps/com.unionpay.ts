@@ -362,6 +362,26 @@ export default defineGkdApp({
     },
     {
       key: 21,
+      name: '幸运扭蛋机，0次抽奖机会，返回',
+      desc: '260912',
+      rules: [
+        {
+          resetMatch: 'match',
+          activityIds: [
+            'com.unionpay.liteapp.app.UPLiteAppActivity1',
+            'com.unionpay.liteapp.app.UPLiteAppActivity2',
+            'com.unionpay.liteapp.app.UPLiteAppActivity3',
+            'com.unionpay.liteapp.app.UPLiteAppActivity4',
+          ],
+          anyMatches:
+            'View > View > View > Button[text="剩余 0次 抽奖机会"][clickable=true][visibleToUser=true]',
+			],
+          action: 'back',
+        },
+      ],
+    },
+    {
+      key: 22,
       name: '无界卡每月一次星巴克，去领取',
       desc: '260131',
       rules: [
@@ -375,7 +395,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 22,
+      key: 23,
       name: '加载失败，刷新',
       desc: '260813',
       rules: [

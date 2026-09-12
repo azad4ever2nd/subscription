@@ -179,10 +179,10 @@ export default defineGkdApp({
     {
       key: 13,
       name: '给评价',
-      desc: '260726，添加 IDS，添加弹窗',
+      desc: '260912，添加 IDS，添加弹窗',
       rules: [
         {
-          matchTime: 1500,
+          forcedTime:3000,
           fastQuery: true,
           resetMatch: 'match',
           activityIds: [
@@ -192,6 +192,7 @@ export default defineGkdApp({
           anyMatches: [
             '([vid="top_iv" || vid="flADLayout" || vid="flContainer"] + [vid="iv_close" ])',
             '([vid="top_iv" || vid="flADLayout" || vid="flContainer"] + [vid="ivClose"])',
+			'LinearLayout > ImageView[vid="second_close"][clickable=true][visibleToUser=true]',
             '(LinearLayout > FrameLayout[vid="flADLayout"] + ImageView[vid="ivClose"])',
             '(@ImageView[clickable=true][visibleToUser=true][vid="iv_close"] - ImageView[vid="top_iv"] < FrameLayout + LinearLayout > TextView[text*="好评"])',
           ],

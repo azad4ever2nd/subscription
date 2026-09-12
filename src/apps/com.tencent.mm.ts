@@ -493,7 +493,7 @@ export default defineGkdApp({
     {
       key: 30,
       name: '深工积分兑换，人数过多，我知道了',
-      desc: '260905',
+      desc: '260912',
       rules: [
         {
           resetMatch: 'match',
@@ -511,7 +511,7 @@ export default defineGkdApp({
             'com.tencent.mm.plugin.appbrand.ui.AppBrandUI03',
             'com.tencent.mm.plugin.appbrand.ui.AppBrandUI04',
           ],
-          matches: [
+          anyMatches: [
             '(WebView > View > View > TextView[text^="服务异常" || text="访问人数过多，请稍后再试"] + TextView[text="我知道了"])',
             '(WebView > View > View > TextView[text^="服务异常" || text="访问人数过多，请稍后再试"] + TextView[text="我知道了"][clickable=false][visibleToUser=true])',
           ],
@@ -1266,8 +1266,10 @@ export default defineGkdApp({
             'com.tencent.mm.plugin.appbrand.ui.AppBrandUI03',
             'com.tencent.mm.plugin.appbrand.ui.AppBrandUI04',
           ],
-          matches:
+          anyMatches:[
             '[text="该活动尚未开始"] + [text="敬请期待"] <<n * + * [desc="关闭"][clickable=true]',
+			],
+
         },
       ],
     },
@@ -1327,7 +1329,7 @@ export default defineGkdApp({
     {
       key: 62,
       name: '活动未开始，我知道了',
-      desc: '260909，添加 朴朴，动卡空间，内蒙工行，贵阳工行，工行余姚，湘约工行，贵州工行，已参加过',
+      desc: '260909，添加 宁波，朴朴，动卡空间，内蒙工行，贵阳工行，工行余姚，湘约工行，贵州工行，已参加过',
       rules: [
         {
           resetMatch: 'match',
@@ -1346,6 +1348,8 @@ export default defineGkdApp({
           ],
           anyMatches: [
             'TextView[text="系统繁忙，请稍后再试。"] <<n View + View > @View[clickable=false][visibleToUser=true] > TextView[text="确定"]',
+			'TextView[text^="已参与"] < View +2 @TextView[clickable=true][visibleToUser=true] - View > TextView[text="确认"]',
+			'TextView[text^="奖励已发送" || text$="可前往【我的奖品】查看提取"] < View +2 @TextView[clickable=true][visibleToUser=true] - View > TextView[text="立即使用"]',
             '(View > View > TextView[text^="来晚啦"] + View + TextView[clickable=true][visibleToUser=true])',
             '(View > TextView[text="该商品已售罄"] + TextView[text="我知道了"][clickable=true][visibleToUser=true])',
             '(View > View > @TextView[clickable=true][visibleToUser=true] - View > View >   Image[text="66c29cff8e9f4a2aaf3f1b67b944daac"])',
@@ -1573,6 +1577,32 @@ export default defineGkdApp({
     },
     {
       key: 71,
+      name: '微信话费充值，第一步',
+      desc: '260912，添加 金币兑换后过期提醒我',
+      rules: [
+        {
+          resetMatch: 'match',
+          activityIds: [
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI0',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI1',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI2',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI3',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI4',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI00',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI01',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI02',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI03',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI04',
+          ],
+          anyMatches: [
+			'WebView >  TextView[text*="联通" || text*="移动" || text*="电信"] + TextView[text$="0元"] + @TextView[text="立即充值"][clickable=false][visibleToUser=true] + TextView[text="更多推荐"]',
+			'View > TextView[text="微信提现免费券"] +(3,4) TextView[text="过期提醒我"][clickable=false][visibleToUser=true]',
+          ],
+        },
+      ],
+    },
+    {
+      key: 72,
       name: '自动登录该设备',
       desc: '260804',
       rules: [

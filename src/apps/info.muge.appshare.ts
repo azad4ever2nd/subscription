@@ -22,7 +22,7 @@ export default defineGkdApp({
     {
       key: 2,
       name: '签到',
-      desc: '260910，先占位，再补规则',
+      desc: '260912',
       rules: [
         {
           resetMatch: 'match',
@@ -30,7 +30,7 @@ export default defineGkdApp({
           forcedTime: 2000,
           activityIds: 'info.muge.appshare.MainActivity',
           matches:
-            'View > ScrollView > ImageView[desc="签到成功"] +n @View[clickable=true][visibleToUser=true] > TextView[text="我知道了"] + Button',
+            'View > View > @View[clickable=true][visibleToUser=true] > TextView[text="签到"] + Button',
         },
       ],
     },
@@ -46,6 +46,20 @@ export default defineGkdApp({
           activityIds: 'info.muge.appshare.MainActivity',
           matches:
             'View > ScrollView > ImageView[desc="签到成功"] +n @View[clickable=true][visibleToUser=true] > TextView[text="我知道了"] + Button',
+        },
+      ],
+    },
+    {
+      key: 4,
+      name: '弹窗，公告，收到',
+      desc: '260912',
+      rules: [
+        {
+          resetMatch: 'match',
+          action: 'clickCenter',
+          forcedTime: 2000,
+          activityIds: 'info.muge.appshare.MainActivity',
+          matches: 'ScrollView > TextView[text="公告通知"] +n @View[clickable=true][visibleToUser=true] > TextView[text="收到"] + Button',
         },
       ],
     },

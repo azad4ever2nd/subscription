@@ -7,11 +7,11 @@ export default defineGkdApp({
     {
       key: 1,
       name: '复制链接',
-      desc: '260908',
+      desc: '260912',
       rules: [
         {
           resetMatch: 'match',
-          forcedTime: 3000,
+          forcedTime: 5000,
           action: 'clickCenter',
           actionCd: 10000,
           activityIds: 'com.magnet.rainbowmagnet.MainActivity',
