@@ -367,8 +367,8 @@ export default defineGkdApp({
       rules: [
         {
           resetMatch: 'match',
-		  actionDelay:3000,
-		  actionCd:2000,
+          actionDelay: 3000,
+          actionCd: 2000,
           activityIds: [
             'com.unionpay.liteapp.app.UPLiteAppActivity1',
             'com.unionpay.liteapp.app.UPLiteAppActivity2',

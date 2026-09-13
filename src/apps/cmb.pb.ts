@@ -185,7 +185,7 @@ export default defineGkdApp({
           anyMatches: [
             '(View > View > @View[clickable=true][visibleToUser=true] > TextView[text="我要抽奖"])',
             '(WebView >n View > Button[text="去加自选" || text="去添加" || text="加自选"][clickable=true][visibleToUser=true])',
-			'WebView > View > View > View > Button[text="去添加"][clickable=true][visibleToUser=true]',
+            'WebView > View > View > View > Button[text="去添加"][clickable=true][visibleToUser=true]',
             '(WebView > View > View > View > View > Button[text="加自选"][clickable=true][visibleToUser=true])',
             '(WebView > View >  View >  View > Button[text="加自选"][clickable=true][visibleToUser=true])',
           ],

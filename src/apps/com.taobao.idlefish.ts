@@ -123,10 +123,10 @@ export default defineGkdApp({
           forcedTime: 3000,
           activityIds:
             'com.idlefish.flutterbridge.flutterboost.boost.FishFlutterBoostActivity',
-          anyMatches:[
+          anyMatches: [
             'View > View > View > ImageView[desc="确定删除本条记录吗？"] > Button[desc="取消"] + Button[desc="确认"][clickable=true][visibleToUser=true]',
-			'View > View > View > View[desc="删除该条历史？"] + View[desc="取消"] + View[desc="确定"][clickable=false][visibleToUser=true]',
-			],
+            'View > View > View > View[desc="删除该条历史？"] + View[desc="取消"] + View[desc="确定"][clickable=false][visibleToUser=true]',
+          ],
         },
       ],
     },
@@ -309,12 +309,14 @@ export default defineGkdApp({
         {
           fastQuery: true,
           resetMatch: 'match',
-          activityIds: 'com.taobao.idlefish.maincontainer.activity.MainActivity',
-          matches: 'TextView[text^="不开启定位、定位权限"][vid="tv_alert"] <<n LinearLayout + FrameLayout LinearLayout > @Button[text="取消"][vid="left_btn"][clickable=true][visibleToUser=true] + Button[text="去开启"][vid="right_btn"]',
+          activityIds:
+            'com.taobao.idlefish.maincontainer.activity.MainActivity',
+          matches:
+            'TextView[text^="不开启定位、定位权限"][vid="tv_alert"] <<n LinearLayout + FrameLayout LinearLayout > @Button[text="取消"][vid="left_btn"][clickable=true][visibleToUser=true] + Button[text="去开启"][vid="right_btn"]',
         },
       ],
     },
-	
+
     {
       key: 22,
       name: '立即支付',

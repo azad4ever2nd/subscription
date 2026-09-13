@@ -63,10 +63,10 @@ export default defineGkdApp({
             'com.hellobike.flutter.platform.android.flutterboost.FlutterHostFragmentActivity',
             'com.hellobike.atlas.business.portal.PortalActivity',
           ],
-          anyMatches:[
+          anyMatches: [
             '[vid="alertTitle"][text*="权限"] <<n * +n * [id="android:id/button2"][text="稍后再说"]',
-			'TextView[text^="位置权限已关闭"] <<n FrameLayout + ScrollView > LinearLayout > @Button[text="稍后再说"][id="android:id/button2"][clickable=true][visibleToUser=true] + Button[text="去授权"][id="android:id/button1"][clickable=true][visibleToUser=true]',
-			],
+            'TextView[text^="位置权限已关闭"] <<n FrameLayout + ScrollView > LinearLayout > @Button[text="稍后再说"][id="android:id/button2"][clickable=true][visibleToUser=true] + Button[text="去授权"][id="android:id/button1"][clickable=true][visibleToUser=true]',
+          ],
         },
       ],
     },

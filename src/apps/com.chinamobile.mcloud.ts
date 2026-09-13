@@ -130,10 +130,10 @@ export default defineGkdApp({
           resetMatch: 'match',
           activityIds:
             'com.chinamobile.mcloud.client.component.web.H5WebViewMainActivity',
-          anyMatches:[
+          anyMatches: [
             'WebView[text="移动云盘云朵中心"] > View > View > View > View > @TextView[clickable=false][visibleToUser=true][text.length=0] -n View > View > TextView[text="完成任务"]',
-			'WebView > View > View > View > View > TextView[text="奖品"] +n View > TextView[text^="+" && text$="可领取"][clickable=true][visibleToUser=true]',
-			],
+            'WebView > View > View > View > View > TextView[text="奖品"] +n View > TextView[text^="+" && text$="可领取"][clickable=true][visibleToUser=true]',
+          ],
         },
       ],
     },
