@@ -266,7 +266,7 @@ export default defineGkdApp({
     {
       key: 17,
       name: '基金财富月历，抽奖，谢谢参与',
-      desc: '260423',
+      desc: 'D,260423，规则30为主',
       rules: [
         {
           resetMatch: 'match',
@@ -468,7 +468,7 @@ export default defineGkdApp({
     {
       key: 30,
       name: '金知了兑换抽奖',
-      desc: '260812 添加 差一点就中奖，',
+      desc: '260913 添加 差一点就中奖，',
       rules: [
         {
           anyMatches: [
