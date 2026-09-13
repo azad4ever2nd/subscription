@@ -174,7 +174,7 @@ export default defineGkdApp({
     {
       key: 11,
       name: '抽奖领任务页面，加自选 任务',
-      desc: '260908，clickable=true',
+      desc: '260913，clickable=true',
       rules: [
         {
           resetMatch: 'match',
@@ -185,6 +185,7 @@ export default defineGkdApp({
           anyMatches: [
             '(View > View > @View[clickable=true][visibleToUser=true] > TextView[text="我要抽奖"])',
             '(WebView >n View > Button[text="去加自选" || text="去添加" || text="加自选"][clickable=true][visibleToUser=true])',
+			'WebView > View > View > View > Button[text="去添加"][clickable=true][visibleToUser=true]',
             '(WebView > View > View > View > View > Button[text="加自选"][clickable=true][visibleToUser=true])',
             '(WebView > View >  View >  View > Button[text="加自选"][clickable=true][visibleToUser=true])',
           ],

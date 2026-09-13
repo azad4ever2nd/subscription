@@ -499,7 +499,7 @@ export default defineGkdApp({
     {
       key: 29,
       name: '神券抽奖，立即领取',
-      desc: '260726，添加 关闭',
+      desc: '260913，添加 明日再来，关闭',
       rules: [
         {
           resetMatch: 'match',
@@ -510,6 +510,7 @@ export default defineGkdApp({
             '(@TextView[clickable=false][text="立即领取"] <n View + Button[clickable=true][visibleToUser=true][text="关闭"])',
             '(TextView[text="去下单"] <n View + Button[clickable=true][visibleToUser=true][text="关闭"])',
             '(Dialog > View > View > Button[text="关闭"] - View > View > TextView[clickable=false][visibleToUser=true][text="继续领"])',
+			'Dialog > View > View > Button[text="关闭"][clickable=true][visibleToUser=true]',
           ],
         },
       ],
@@ -617,7 +618,7 @@ export default defineGkdApp({
     {
       key: 35,
       name: '添加神券到首页，X掉',
-      desc: '260912，添加 闪购签到，闪购小程序，没有fastquery，没有clickable=true，添加到首页，添加 生活缴费',
+      desc: '260913，添加 超级吃货卡体验版，闪购签到，闪购小程序，没有fastquery，没有clickable=true，添加到首页，添加 生活缴费',
       rules: [
         {
           resetMatch: 'match',
@@ -641,6 +642,7 @@ export default defineGkdApp({
             '([text^="完成"] <<n View + View > TextView[text="领取奖励"][clickable=false][visibleToUser=true])',
             '(TextView[text="开心收下"] <<n View + TextView[text.length=0][clickable=false][visibleToUser=true])',
             '@TextView[clickable=false][visibleToUser=true] - View > View > View >  View >  View > View >  TextView[text="0"] + TextView[text=".1"] + TextView[text="元升级"]',
+			'View > @TextView - View >5 TextView[text="开心收下"]',
             'View > View > View + TextView[text="去签到"][clickable=false][visibleToUser=true]',
           ],
         },
@@ -760,8 +762,8 @@ export default defineGkdApp({
     },
     {
       key: 42,
-      name: '团购申请发送消息，取消 或 不再询问',
-      desc: '260723',
+      name: '弹窗，团购申请发送消息，取消 或 不再询问',
+      desc: '260913,添加 暂不订阅',
       rules: [
         {
           resetMatch: 'match',
@@ -771,7 +773,22 @@ export default defineGkdApp({
           anyMatches: [
             '(LinearLayout > TextView[text="发送以下消息"] +n LinearLayout > Button[clickable=true][visibleToUser=true][id="com.alipay.android.phone.product_msgboxbase:id/negativeBtn"][text="取消"] + Button[text="好的"])',
             '(LinearLayout > TextView[id="com.alipay.android.phone.product_msgboxbase:id/pluginTitle"][text="发送以下消息"] +n FrameLayout > TextView[id="com.alipay.android.phone.product_msgboxbase:id/rejectTxtBtn"][clickable=true][visibleToUser=true])',
+			'LinearLayout > TextView +n LinearLayout > @Button[text="暂不订阅"][id="com.alipay.android.phone.product_msgboxbase:id/negativeBtn"][clickable=true][visibleToUser=true] + Button[text="好的"][clickable=true][visibleToUser=true]',
+
           ],
+        },
+      ],
+    },
+    {
+      key: 43,
+      name: '弹窗，开启地理位置权限，X掉',
+      desc: '260913',
+      rules: [
+        {
+          resetMatch: 'match',
+          fastQuery: true,
+          activityIds: 'com.alipay.mobile.beehive.poiselect.ui.PoiSelectActivity_',
+          matches: 'TextView[text*="开启位置权限" || text="开启地理位置权限"] -n @FrameLayout[id="com.alipay.mobile.antui:id/btn_close"][desc="取消"][clickable=true][visibleToUser=true] <<n ScrollView + FrameLayout > LinearLayout > Button[text="确定"][id="com.alipay.mobile.antui:id/buttomButtonView"][clickable=true][visibleToUser=true]',
         },
       ],
     },

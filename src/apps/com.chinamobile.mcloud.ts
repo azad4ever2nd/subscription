@@ -124,14 +124,16 @@ export default defineGkdApp({
     {
       key: 8,
       name: '我的云朵，领云朵',
-      desc: '260719',
+      desc: '260913，添加 可领取',
       rules: [
         {
           resetMatch: 'match',
           activityIds:
             'com.chinamobile.mcloud.client.component.web.H5WebViewMainActivity',
-          matches:
+          anyMatches:[
             'WebView[text="移动云盘云朵中心"] > View > View > View > View > @TextView[clickable=false][visibleToUser=true][text.length=0] -n View > View > TextView[text="完成任务"]',
+			'WebView > View > View > View > View > TextView[text="奖品"] +n View > TextView[text^="+" && text$="可领取"][clickable=true][visibleToUser=true]',
+			],
         },
       ],
     },

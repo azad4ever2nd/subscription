@@ -363,10 +363,12 @@ export default defineGkdApp({
     {
       key: 21,
       name: '幸运扭蛋机，0次抽奖机会，返回',
-      desc: '260912',
+      desc: '260913',
       rules: [
         {
           resetMatch: 'match',
+		  actionDelay:3000,
+		  actionCd:2000,
           activityIds: [
             'com.unionpay.liteapp.app.UPLiteAppActivity1',
             'com.unionpay.liteapp.app.UPLiteAppActivity2',

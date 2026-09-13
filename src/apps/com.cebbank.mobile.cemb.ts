@@ -125,7 +125,7 @@ export default defineGkdApp({
     {
       key: 8,
       name: '基金财富月历，任务完成开心收下',
-      desc: '260911 添加 葫芦抽奖，兑换确认',
+      desc: '260913 添加 葫芦抽奖，兑换确认',
       rules: [
         {
           anyMatches: [
@@ -134,9 +134,9 @@ export default defineGkdApp({
             '([text^="您已完成" && text$="任务"] < * + TextView[clickable=true][visibleToUser=true])',
             '(View > @TextView - View > TextView[text^="您已完成" && text$="任务"])',
             '(View > @TextView[clickable=false][visibleToUser=true] + TextView[text="可在【金币明细】查看"])',
+			'WebView > View > View > View > TextView[clickable=true][visibleToUser=true][text.length=0] + TextView[text="可在【金币明细】查看"] + TextView[text.length=0][clickable=true][visibleToUser=true]',
             'TextView[text="可在【金币明细】查看"] - @TextView[clickable=true][visibleToUser=true] - View > TextView[text$="金币"]',
             '(View > TextView[text="10金币"] + TextView[text="1次抽奖机会"] + TextView + TextView[clickable=false][visibleToUser=true])',
-            '(@TextView[clickable=true][visibleToUser=true] < View + View > View > TextView[text="很遗憾，您未中奖"] +n TextView[text="谢谢参与"])',
           ],
           action: 'clickCenter',
           forcedTime: 3000,
@@ -474,6 +474,8 @@ export default defineGkdApp({
           anyMatches: [
             '([text="返回去抽奖"])',
             '(TextView[text="差一点就中奖啦"] <n View < View + View > @View[clickable=false][visibleToUser=true] > TextView[text.length=1])',
+            '(@TextView[clickable=true][visibleToUser=true] < View + View > View > TextView[text="很遗憾，您未中奖"] +n TextView[text="谢谢参与"])',
+			'View > View > View > @TextView[clickable=true][visibleToUser=true] - View > TextView[text="很遗憾，差一点就中奖了"]',
           ],
           resetMatch: 'match',
           activityIds: [

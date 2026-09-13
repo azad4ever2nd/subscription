@@ -120,14 +120,14 @@ export default defineGkdApp({
     {
       key: 9,
       name: '弹窗，连接前广告弹窗',
-      desc: '260912',
+      desc: '260913',
       rules: [
         {
           resetMatch: 'match',
           activityIds: 'tool.seagull.v.ui.MainActivity',
           anyMatches: [
             'ImageView[vid="vpnSwitchButton"][desc="连接"] + FrameLayout + ScrollView > FrameLayout > FrameLayout > FrameLayout > FrameLayout > FrameLayout > FrameLayout[childCount=1] > View',
-            'ImageView[vid="vpnSwitchButton"][desc="连接"] +n ScrollView >n  FrameLayout[childCount=1] > ImageView[clickable=false][visibleToUser=true]',
+            'ImageView[vid="vpnSwitchButton"][desc="连接"] +n ScrollView >n  FrameLayout[childCount=1][index=parent.childCount.minus(1)] > ImageView[clickable=false][visibleToUser=true]',
           ],
         },
       ],

@@ -115,17 +115,18 @@ export default defineGkdApp({
     },
     {
       key: 8,
-      name: '确定删除本条记录吗？确认',
-      desc: '260814',
+      name: '弹窗，确定删除本条记录吗？确认',
+      desc: '2600913，添加 删除该条历史',
       rules: [
         {
           resetMatch: 'match',
-          forcedTime: 2000,
-          actionCd: 2000,
+          forcedTime: 3000,
           activityIds:
             'com.idlefish.flutterbridge.flutterboost.boost.FishFlutterBoostActivity',
-          matches:
+          anyMatches:[
             'View > View > View > ImageView[desc="确定删除本条记录吗？"] > Button[desc="取消"] + Button[desc="确认"][clickable=true][visibleToUser=true]',
+			'View > View > View > View[desc="删除该条历史？"] + View[desc="取消"] + View[desc="确定"][clickable=false][visibleToUser=true]',
+			],
         },
       ],
     },
@@ -302,6 +303,20 @@ export default defineGkdApp({
     },
     {
       key: 21,
+      name: '弹窗，不给定位权限无法推荐最合适的宝贝，取消',
+      desc: '260913',
+      rules: [
+        {
+          fastQuery: true,
+          resetMatch: 'match',
+          activityIds: 'com.taobao.idlefish.maincontainer.activity.MainActivity',
+          matches: 'TextView[text^="不开启定位、定位权限"][vid="tv_alert"] <<n LinearLayout + FrameLayout LinearLayout > @Button[text="取消"][vid="left_btn"][clickable=true][visibleToUser=true] + Button[text="去开启"][vid="right_btn"]',
+        },
+      ],
+    },
+	
+    {
+      key: 22,
       name: '立即支付',
       desc: '251203',
       rules: [
