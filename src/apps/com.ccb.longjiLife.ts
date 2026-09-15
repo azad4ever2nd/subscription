@@ -6,11 +6,12 @@ export default defineGkdApp({
     {
       key: 1,
       name: '每日签到，成功了',
-      desc: '260705,添加首页签到成功, ([text="签到成功"] < * + TextView) || (@[text="知道了"] <n * + TextView) ||',
+      desc: '260915,添加首页签到成功, ([text="签到成功"] < * + TextView) || (@[text="知道了"] <n * + TextView) ||',
       rules: [
         {
           actionCd: 100,
           resetMatch: 'match',
+		  excludeMatches:'View > View > [text="7天签到礼包"]',
           activityIds: 'com.ccb.longjiLife.MainActivity',
           anyMatches: [
             ' ([text="签到成功"] +n [text="知道了"])',
