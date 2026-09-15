@@ -182,7 +182,11 @@ export default defineGkdApp({
           forcedTime: 3000,
           actionCd: 800,
           action: 'clickCenter',
-          excludeMatches: ['TextView[text="1／1"]', '[text="完成1／1"]'],
+          excludeMatches: [
+			'TextView[text="1／1"]', 
+			'[text="完成1／1"]',
+			'TextView[text="生活缴费"][vid="tvMainTitle"]',
+			],
           anyMatches: [
             '(View > View > @View[clickable=true][visibleToUser=true] > TextView[text="我要抽奖"])',
             '(WebView >n View > Button[text="去加自选" || text="去添加" || text="加自选"][clickable=true][visibleToUser=true])',
@@ -219,13 +223,18 @@ export default defineGkdApp({
     {
       key: 13,
       name: '基金页面下方，加自选2',
-      desc: '260812，clickable=false',
+      desc: '260915，clickable=false',
       rules: [
         {
           resetMatch: 'match',
           action: 'click',
           matchDelay: 1000,
           forcedTime: 3000,
+          excludeMatches: [
+			'TextView[text="1／1"]', 
+			'[text="完成1／1"]',
+			'TextView[text="生活缴费"][vid="tvMainTitle"]',
+			],
           activityIds:
             'cmb.pb.app.h5container.webviewcontainer.PBWebContainerActivity',
           anyMatches:
