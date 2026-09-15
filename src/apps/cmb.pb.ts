@@ -799,10 +799,10 @@ export default defineGkdApp({
 		  action:'clickCenter',
           activityIds:
             'cmb.pb.app.h5container.webviewcontainer.PBWebContainerActivity',
-          anyMatches:
+          anyMatches:[
             'View > View > View > View > EditText[text="发布了投票"] + * + Image[text="图片"][clickable=true][visibleToUser=true]',
 			'View > View > TextView[text="发布"] +n EditText[text="发布了投票"] + View[id="vote-edit"] + Image[text="图片"][clickable=true][visibleToUser=true]',
-
+			],
         },
       ],
     },

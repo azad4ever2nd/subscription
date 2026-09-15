@@ -789,10 +789,11 @@ export default defineGkdApp({
           fastQuery: true,
           activityIds:
             'com.alipay.mobile.beehive.poiselect.ui.PoiSelectActivity_',
-          matches:
+          anyMatches:[
             'TextView[text*="开启位置权限" || text="开启地理位置权限"] -n @FrameLayout[id="com.alipay.mobile.antui:id/btn_close"][desc="取消"][clickable=true][visibleToUser=true] <<n ScrollView + FrameLayout > LinearLayout > Button[text="确定"][id="com.alipay.mobile.antui:id/buttomButtonView"][clickable=true][visibleToUser=true]',
             '(@[id="com.alipay.mobile.antui:id/btn_close"][desc="取消"] + [id="com.alipay.mobile.antui:id/title_txt_1" || id="com.alipay.mobile.antui:id/title_txt_2"][text*="地理位置" || text="支付宝本地服务"])',
             '(@[id="com.alipay.mobile.antui:id/btn_close"][desc="取消"] + [id="com.alipay.mobile.antui:id/title_txt_1"][text*="地理位置" || text="支付宝本地服务"])',
+			],
 
         },
       ],
