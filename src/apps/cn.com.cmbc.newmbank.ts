@@ -20,15 +20,17 @@ export default defineGkdApp({
     {
       key: 2,
       name: '打开消息通知',
-      desc: '251130',
+      desc: '260915',
       rules: [
         {
-          matches: [
-            '[vid="tv_alert_msg_cancel"] - [vid="tv_alert_msg_confirm"][text="立即开启"] <n * + [vid="iv_alert_msg_close"]',
-          ],
           fastQuery: true,
           resetMatch: 'match',
-          activityIds: ['cn.com.cmbc.newmbank.activity.MainActivity'],
+		  matchDelay:1000,
+		  forcedTime:3000,
+          activityIds: 'cn.com.cmbc.newmbank.activity.MainActivity',
+          anyMatches: [
+			'TextView[text="下次再说"][vid="tv_alert_msg_cancel"] -n TextView[text^="为了用卡安全" || text*="请打开消息通知"] <n LinearLayout + ImageView[vid="iv_alert_msg_close"][clickable=true][visibleToUser=true]',
+			],
         },
       ],
     },
