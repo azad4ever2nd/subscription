@@ -23,10 +23,11 @@ export default defineGkdApp({
     {
       key: 2,
       name: '签到成功奖励弹窗，',
-      desc: '260218',
+      desc: '260915',
       rules: [
         {
           resetMatch: 'match',
+		  excludeMatches:'View > View > [text="7天签到礼包"]',
           matches:
             '[text="签到成功"] + [text^="奖励8选1" || text$="领取"] +n [text="确定领取"] + TextView[index=parent.childCount.minus(1)]',
           activityIds: 'com.ccb.longjiLife.MainActivity',

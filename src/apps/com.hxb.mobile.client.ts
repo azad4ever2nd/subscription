@@ -25,6 +25,7 @@ export default defineGkdApp({
           resetMatch: 'match',
           fastQuery: true,
           matchDelay: 500,
+		  forcedTime:5000,
           activityIds: 'com.yt.hxmb50.mainpages.ui.main.MainActivity',
           anyMatches: [
             '(@[vid="dialog_update_tv_cancel"][text="下次再说"] + [vid="dialog_update_tv_update"][text="立即更新"])',
@@ -114,14 +115,14 @@ export default defineGkdApp({
     {
       key: 8,
       name: '浏览后领取立减金',
-      desc: '260910',
+      desc: '260915',
       rules: [
         {
-          forcedTime: 3000,
+          forcedTime: 9000,
           resetMatch: 'match',
           activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
           anyMatches: [
-            'View[text^="恭喜您抽中"] < View + View[clickable=true][visibleToUser=true]',
+			'View[text^="恭喜你完成产品浏览"] < View + View[clickable=true][visibleToUser=true]',
             'WebView[text="签到赢立减金"] > View > View > View > @View[text.length=0][clickable=true][visibleToUser=true] - Image - View > Image',
             '(WebView[text="签到赢立减金"] > View > View > View >  View > @View[clickable=true][visibleToUser=true]  - View > View[text*="恭喜你完成产品浏览"])',
           ],
