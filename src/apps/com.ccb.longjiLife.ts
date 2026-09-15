@@ -11,7 +11,7 @@ export default defineGkdApp({
         {
           actionCd: 100,
           resetMatch: 'match',
-		  excludeMatches:'View > View > [text="7天签到礼包"]',
+          excludeMatches: 'View > View > [text="7天签到礼包"]',
           activityIds: 'com.ccb.longjiLife.MainActivity',
           anyMatches: [
             ' ([text="签到成功"] +n [text="知道了"])',
@@ -28,7 +28,7 @@ export default defineGkdApp({
       rules: [
         {
           resetMatch: 'match',
-		  excludeMatches:'View > View > [text="7天签到礼包"]',
+          excludeMatches: 'View > View > [text="7天签到礼包"]',
           matches:
             '[text="签到成功"] + [text^="奖励8选1" || text$="领取"] +n [text="确定领取"] + TextView[index=parent.childCount.minus(1)]',
           activityIds: 'com.ccb.longjiLife.MainActivity',

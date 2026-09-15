@@ -938,7 +938,7 @@ export default defineGkdApp({
             '(View[childCount=3] > * + [text$="元理财金"] + *)',
             '(View[childCount=3][clickable=true] > [text$="元理财金"] + *)',
             '(View > @View > TextView + TextView[text$="元理财金"] + TextView[clickable=true])',
-			'WebView @View[clickable=true][visibleToUser=true] > TextView[text^="最高" && text$="元理财金"] + TextView[text="领取理财金"]',
+            'WebView @View[clickable=true][visibleToUser=true] > TextView[text^="最高" && text$="元理财金"] + TextView[text="领取理财金"]',
           ],
         },
       ],
