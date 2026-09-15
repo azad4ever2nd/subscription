@@ -25,12 +25,12 @@ export default defineGkdApp({
         {
           fastQuery: true,
           resetMatch: 'match',
-		  matchDelay:1000,
-		  forcedTime:3000,
+          matchDelay: 1000,
+          forcedTime: 3000,
           activityIds: 'cn.com.cmbc.newmbank.activity.MainActivity',
           anyMatches: [
-			'TextView[text="下次再说"][vid="tv_alert_msg_cancel"] -n TextView[text^="为了用卡安全" || text*="请打开消息通知"] <n LinearLayout + ImageView[vid="iv_alert_msg_close"][clickable=true][visibleToUser=true]',
-			],
+            'TextView[text="下次再说"][vid="tv_alert_msg_cancel"] -n TextView[text^="为了用卡安全" || text*="请打开消息通知"] <n LinearLayout + ImageView[vid="iv_alert_msg_close"][clickable=true][visibleToUser=true]',
+          ],
         },
       ],
     },
