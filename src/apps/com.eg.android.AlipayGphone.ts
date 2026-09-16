@@ -124,10 +124,11 @@ export default defineGkdApp({
     {
       key: 8,
       name: '放弃付款',
-      desc: '260908，fastquery,clickable=false',
+      desc: '260916，fastquery,clickable=false',
       rules: [
         {
           resetMatch: 'match',
+		  forcedTime:3000,
           fastQuery: true,
           activityIds: 'com.alipay.android.msp.ui.views.MspContainerActivity',
           anyMatches: [
