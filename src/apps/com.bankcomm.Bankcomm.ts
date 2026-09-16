@@ -95,28 +95,31 @@ export default defineGkdApp({
     {
       key: 7,
       name: '领券中心,信用卡专享好券，刷卡金',
-      desc: '260803，[clickable=true][visibleToUser=true]',
+      desc: '260916，[clickable=true][visibleToUser=true]',
       rules: [
         {
           resetMatch: 'match',
           actionCd: 0,
           order: -10,
-          actionMaximum: 1,
+          actionMaximum: 3,
+		  forcedTime:2000,
           activityIds: 'com.bankcomm.module.biz.webcontainer.BCMHtml5Activity',
-          matches:
+          anyMatches:[
             '(Image[text="ACIM_20260728000180_20260728174629048"] <<n View + View > View[index=0] Image[text="立即领取"])',
+			],
         },
       ],
     },
     {
       key: 8,
       name: '领券中心,信用卡专享好券，还款红包',
-      desc: '260803',
+      desc: '260916',
       rules: [
         {
           resetMatch: 'match',
           actionCd: 0,
-          actionMaximum: 1,
+		  forcedTime:2000,
+          actionMaximum: 3,
           activityIds: 'com.bankcomm.module.biz.webcontainer.BCMHtml5Activity',
           matches:
             '(Image[text="ACIM_20260728000180_20260728174629048"] <<n View + View > View[index=1] Image[text="立即领取"])',

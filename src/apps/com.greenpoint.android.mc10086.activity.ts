@@ -154,5 +154,19 @@ export default defineGkdApp({
         },
       ],
     },
+    {
+      key: 11,
+      name: '88话费，9/30结束',
+      desc: '260916',
+      rules: [
+        {
+          resetMatch: 'match',
+		  actionCd:0,
+		  actionMaximum:8,
+          activityIds: 'com.cmccit.webview.ac.CommonHtml5Activity',
+          matches: 'View > @View[clickable=true][visibleToUser=true] > Image[text="mgrupload.b73a69f81dff4d188a65b8f87bc993e220260806"] + Image[text="407e285ed39c4423a167f7d7a18c507820250618"]',
+        },
+      ],
+    },
   ],
 });

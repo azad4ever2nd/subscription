@@ -161,8 +161,61 @@ export default defineGkdApp({
         },
       ],
     },
+
     {
       key: 12,
+      name: '理财，一键输入',
+      desc: '260916',
+      rules: [
+        {
+          resetMatch: 'match',
+		  forcedTime:3000,
+          activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
+          matches: 'View > @View[text="一键输入"][clickable=true][visibleToUser=true] - View > View > EditText[text.length=0] + View[text="0/34"]',
+        },
+      ],
+    },
+    {
+      key: 13,
+      name: '理财，自主购买[ChangeMe]规则名称-2026-09-16 08:49:51',
+      desc: '260916',
+      rules: [
+        {
+          resetMatch: 'match',
+		  forcedTime:3000,
+          activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
+          matches: 'WebView > View > @Button[text="自主购买"][clickable=true][visibleToUser=true] - View > View > View > View > EditText[text.length>0]',
+        },
+      ],
+    },
+    {
+      key: 14,
+      name: '理财，本人已阅读并同意',
+      desc: '260916',
+      rules: [
+        {
+          resetMatch: 'match',
+		  forcedTime:3000,
+          activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
+          matches: 'View > @CheckBox[checked=false][clickable=true][visibleToUser=true] + View > View[text="本人已阅读并同意"]',
+        },
+      ],
+    },
+    {
+      key: 15,
+      name: '理财，本人已阅读并同意，转入',
+      desc: '260916',
+      rules: [
+        {
+          resetMatch: 'match',
+		  forcedTime:3000,
+          activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
+          matches: 'View > @Button[text="同意协议并转入"][clickable=true][visibleToUser=true] -n View > CheckBox[checked=true][clickable=true][visibleToUser=true]',
+        },
+      ],
+    },
+    {
+      key: 16,
       name: '弹窗，隐私政策更新提示，同意',
       desc: '260904',
       rules: [

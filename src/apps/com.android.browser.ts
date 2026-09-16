@@ -151,5 +151,17 @@ export default defineGkdApp({
         },
       ],
     },
+    {
+      key: 12,
+      name: '打开光大银行',
+      desc: '260916',
+      rules: [
+        {
+          resetMatch: 'match',
+          activityIds: 'com.android.browser.BrowserActivity',
+          matches: 'WebView[text="中国光大银行"] >(3,4) View[id="other-btn"][clickable=true][visibleToUser=true] > Image[text="goBtn"]',
+        },
+      ],
+    },
   ],
 });

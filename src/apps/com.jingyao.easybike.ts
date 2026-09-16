@@ -535,13 +535,13 @@ export default defineGkdApp({
     {
       key: 34,
       name: '拖住滑块，还车',
-      desc: '260907，测试，不建议打开避免误还车',
+      desc: '260916，测试，不建议打开避免误还车',
       rules: [
         {
           action: 'swipe',
           swipeArg: {
             start: {
-              x: 'left',
+              x: 'left+65',
               y: 'top+height/2',
             },
             end: {
@@ -553,7 +553,7 @@ export default defineGkdApp({
           activityIds:
             'com.hellobike.flutter.platform.android.flutterboost.FlutterHostFragmentActivity',
           anyMatches:
-            'ImageView[desc="临时锁车"] + @View[visibleToUser=true] +n  View[desc="按住滑块，拖到右边还车"]',
+            'View > @View[clickable=false][visibleToUser=true] + ImageView +(2,3) View[desc="按住滑块，拖到右边还车"]',
         },
       ],
     },

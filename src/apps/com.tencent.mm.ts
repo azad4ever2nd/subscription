@@ -914,7 +914,7 @@ export default defineGkdApp({
     {
       key: 46,
       name: '腾讯理财通，领取奖励',
-      desc: '260915,添加抢理财金，整合领取与返回，体验完成，',
+      desc: '260916,添加抢理财金，整合领取与返回，体验完成，',
       rules: [
         {
           resetMatch: 'match',
@@ -931,9 +931,10 @@ export default defineGkdApp({
             'com.tencent.mm.plugin.appbrand.ui.AppBrandUI04',
           ],
           anyMatches: [
-            '(WebView [text="领取奖励bak"])',
             '([text^="成功领取奖励" || text="成功开始模拟"] <<n FrameLayout + * >n [desc="关闭bak"][childCount=1])',
             '([text^="成功领取奖励"] <<n FrameLayout + * >n [desc="关闭bak"])',
+            '(WebView [text="领取奖励bak"])',
+			'WebView >n View > Button[text="领取奖励"][clickable=true][visibleToUser=true]',
             '(View[childCount=2] > [text$="元理财金"] + *)',
             '(View[childCount=3] > * + [text$="元理财金"] + *)',
             '(View[childCount=3][clickable=true] > [text$="元理财金"] + *)',
@@ -1393,7 +1394,7 @@ export default defineGkdApp({
     {
       key: 64,
       name: '粤工会，登陆',
-      desc: '260812',
+      desc: '260916，添加 参与抽奖',
       rules: [
         {
           resetMatch: 'match',
@@ -1409,8 +1410,10 @@ export default defineGkdApp({
             'com.tencent.mm.plugin.appbrand.ui.AppBrandUI03',
             'com.tencent.mm.plugin.appbrand.ui.AppBrandUI04',
           ],
-          matches:
+          anyMatches:[
             'WebView > TextView[text*="请先登录账号"] + TextView[text*="登录后可享受平台提供的服务"] +n View > Button[text="登录"][clickable=true][visibleToUser=true]',
+			'View > View > View > @TextView[text="点击参与今日抽奖"][clickable=false][visibleToUser=true] + TextView[text="查看我的中奖记录 >"]',
+			],
         },
       ],
     },

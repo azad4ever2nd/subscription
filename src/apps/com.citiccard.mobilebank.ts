@@ -155,7 +155,7 @@ export default defineGkdApp({
     {
       key: 11,
       name: '合成三叶草',
-      desc: '260814,增加三叶草不足，三叶草清零抽奖提示',
+      desc: '260916,增加三叶草不足，三叶草清零抽奖提示',
       rules: [
         {
           activityIds: 'com.citiccard.mobilebank.web.webpage.CommonWebPage',
@@ -164,6 +164,7 @@ export default defineGkdApp({
           actionCd: 500,
           anyMatches: [
             '(TextView[text*="三叶草不足"]  < View <n View + Image[text="wN856FOtsI2bwAAAABJRU5ErkJggg=="][clickable=false][visibleToUser=true])',
+			'(TextView[text*="三叶草不足"]  < View <n View + Image[text="wN856FOtsI2bwAAAABJRU5ErkJggg=="][clickable=true][visibleToUser=true])',
             '([text="恭喜你"] +3 [text="开心收下"])',
             '(* - * > [text="9b4b1bdec2d54f369d23adfb8099d075"])',
             '(View > View > View > TextView[text="恭喜你"] +3 Button[clickable=true][visibleToUser=true][text="开心收下"])',
@@ -214,6 +215,20 @@ export default defineGkdApp({
     },
     {
       key: 15,
+      name: '用户登陆，同意协议',
+      desc: '260916',
+      rules: [
+        {
+          resetMatch: 'match',
+		  forcedTime:3000,
+		  actionMaximum:1,
+          activityIds: 'com.citiccard.mobilebank.web.webpage.CommonWebPage',
+          matches: 'WebView[text="用户登录"] > View > @View[clickable=true][visibleToUser=true] > TextView[text="我已阅读上述内容并同意"] + TextView[text="《用户信息授权协议》"]',
+        },
+      ],
+    },
+    {
+      key: 16,
       name: '易百信息技术申请获取，授权并登录',
       desc: '260417',
       rules: [
@@ -225,7 +240,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 16,
+      key: 17,
       name: '365权益兑换还没开始，我知道了',
       desc: '260704',
       rules: [
@@ -238,7 +253,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 17,
+      key: 18,
       name: '弹窗，推荐有礼，X掉',
       desc: '260904',
       rules: [
@@ -251,12 +266,11 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 18,
+      key: 19,
       name: '弹窗，不在抢兑时间，我知道了',
       desc: '260905',
       rules: [
         {
-          matchTime: 3000,
           forcedTime: 3000,
           resetMatch: 'match',
           activityIds: 'com.citiccard.mobilebank.web.webpage.CommonWebPage',
@@ -266,7 +280,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 19,
+      key: 20,
       name: '系统检测到VPN，继续使用',
       desc: '260704',
       rules: [
@@ -282,7 +296,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 20,
+      key: 21,
       name: '首页弹窗广告',
       desc: '260808，延长等待时间，取消matchTime，添加分期弹窗',
       rules: [

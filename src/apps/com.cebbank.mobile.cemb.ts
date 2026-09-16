@@ -125,21 +125,20 @@ export default defineGkdApp({
     {
       key: 8,
       name: '基金财富月历，任务完成开心收下',
-      desc: '260913 添加 葫芦抽奖，兑换确认',
+      desc: '260916 添加 葫芦抽奖，兑换确认',
       rules: [
         {
           anyMatches: [
-            'View[childCount=4] >  TextView[clickable=true][visibleToUser=true] + TextView[clickable=true][visibleToUser=true][index=parent.childCount.minus(1)]',
+            'WebView > View > View > View > TextView[clickable=true][visibleToUser=true][text.length=0] + TextView[text="可在【金币明细】查看"] + TextView[text.length=0][clickable=true][visibleToUser=true]',
+		    'View[childCount=4] >  TextView[clickable=true][visibleToUser=true] + TextView[clickable=true][visibleToUser=true][index=parent.childCount.minus(1)]',
             '([text$="金币"] < View +2 TextView[clickable=true])',
             '([text^="您已完成" && text$="任务"] < * + TextView[clickable=true][visibleToUser=true])',
             '(View > @TextView - View > TextView[text^="您已完成" && text$="任务"])',
-            '(View > @TextView[clickable=false][visibleToUser=true] + TextView[text="可在【金币明细】查看"])',
-            'WebView > View > View > View > TextView[clickable=true][visibleToUser=true][text.length=0] + TextView[text="可在【金币明细】查看"] + TextView[text.length=0][clickable=true][visibleToUser=true]',
             'TextView[text="可在【金币明细】查看"] - @TextView[clickable=true][visibleToUser=true] - View > TextView[text$="金币"]',
             '(View > TextView[text="10金币"] + TextView[text="1次抽奖机会"] + TextView + TextView[clickable=false][visibleToUser=true])',
           ],
           action: 'clickCenter',
-          forcedTime: 3000,
+          forcedTime: 10000,
           resetMatch: 'match',
           activityIds:
             'com.cebbank.mobile.cemb.ui.activity.mobilePayment.MobilePaymentWebActivity',

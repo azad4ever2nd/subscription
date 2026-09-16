@@ -26,5 +26,18 @@ export default defineGkdApp({
         },
       ],
     },
+    {
+      key: 2,
+      name: '弹窗，移动',
+      desc: '260916',
+      rules: [
+        {
+          resetMatch: 'match',
+          fastQuery: true,
+          activityIds: 'com.miui.gallery.ui.addtoalbum.AddToAlbumPageActivity',
+          matches: 'ScrollView > ViewGroup > ListView > @TextView[text="移动"][id="android:id/text1"][clickable=true][visibleToUser=true] + TextView[text="复制"][id="android:id/text1"]',
+        },
+      ],
+    },	
   ],
 });
