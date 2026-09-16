@@ -934,7 +934,7 @@ export default defineGkdApp({
             '([text^="成功领取奖励" || text="成功开始模拟"] <<n FrameLayout + * >n [desc="关闭bak"][childCount=1])',
             '([text^="成功领取奖励"] <<n FrameLayout + * >n [desc="关闭bak"])',
             '(WebView [text="领取奖励bak"])',
-			'WebView >n View > Button[text="领取奖励"][clickable=true][visibleToUser=true]',
+            'WebView >n View > Button[text="领取奖励"][clickable=true][visibleToUser=true]',
             '(View[childCount=2] > [text$="元理财金"] + *)',
             '(View[childCount=3] > * + [text$="元理财金"] + *)',
             '(View[childCount=3][clickable=true] > [text$="元理财金"] + *)',
@@ -1410,10 +1410,10 @@ export default defineGkdApp({
             'com.tencent.mm.plugin.appbrand.ui.AppBrandUI03',
             'com.tencent.mm.plugin.appbrand.ui.AppBrandUI04',
           ],
-          anyMatches:[
+          anyMatches: [
             'WebView > TextView[text*="请先登录账号"] + TextView[text*="登录后可享受平台提供的服务"] +n View > Button[text="登录"][clickable=true][visibleToUser=true]',
-			'View > View > View > @TextView[text="点击参与今日抽奖"][clickable=false][visibleToUser=true] + TextView[text="查看我的中奖记录 >"]',
-			],
+            'View > View > View > @TextView[text="点击参与今日抽奖"][clickable=false][visibleToUser=true] + TextView[text="查看我的中奖记录 >"]',
+          ],
         },
       ],
     },

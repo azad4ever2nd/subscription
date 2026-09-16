@@ -482,7 +482,7 @@ export default defineGkdApp({
           activityIds: 'com.xunmeng.pinduoduo.activity.NewPageActivity',
           anyMatches: [
             '(View > View > View > TextView[text="如何解锁点亮?"] + TextView[text="去首页"][clickable=true][visibleToUser=true])',
-			'View > View > View > TextView[text="恭喜获得专属惊喜券"] + TextView[text*="已成功点亮" || text$="明日可继续点亮"] +(3,4)  Image[text="webp"][clickable=true][visibleToUser=true]',
+            'View > View > View > TextView[text="恭喜获得专属惊喜券"] + TextView[text*="已成功点亮" || text$="明日可继续点亮"] +(3,4)  Image[text="webp"][clickable=true][visibleToUser=true]',
             '(View > View > View > TextView[text="如何解锁?" || text="如何解锁点亮?"] + TextView[text="去首页"][clickable=true][visibleToUser=true])',
             '(View > View > View > TextView[text^="如何解锁"] + TextView[text="去首页"][clickable=true][visibleToUser=true])',
             'View > View > View > TextView[text^="浏览商品10秒" || text$="即可点亮1次"] +n TextView[text^="去看看"][clickable=true][visibleToUser=true]',

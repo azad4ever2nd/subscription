@@ -164,7 +164,7 @@ export default defineGkdApp({
           actionCd: 500,
           anyMatches: [
             '(TextView[text*="三叶草不足"]  < View <n View + Image[text="wN856FOtsI2bwAAAABJRU5ErkJggg=="][clickable=false][visibleToUser=true])',
-			'(TextView[text*="三叶草不足"]  < View <n View + Image[text="wN856FOtsI2bwAAAABJRU5ErkJggg=="][clickable=true][visibleToUser=true])',
+            '(TextView[text*="三叶草不足"]  < View <n View + Image[text="wN856FOtsI2bwAAAABJRU5ErkJggg=="][clickable=true][visibleToUser=true])',
             '([text="恭喜你"] +3 [text="开心收下"])',
             '(* - * > [text="9b4b1bdec2d54f369d23adfb8099d075"])',
             '(View > View > View > TextView[text="恭喜你"] +3 Button[clickable=true][visibleToUser=true][text="开心收下"])',
@@ -220,10 +220,11 @@ export default defineGkdApp({
       rules: [
         {
           resetMatch: 'match',
-		  forcedTime:3000,
-		  actionMaximum:1,
+          forcedTime: 3000,
+          actionMaximum: 1,
           activityIds: 'com.citiccard.mobilebank.web.webpage.CommonWebPage',
-          matches: 'WebView[text="用户登录"] > View > @View[clickable=true][visibleToUser=true] > TextView[text="我已阅读上述内容并同意"] + TextView[text="《用户信息授权协议》"]',
+          matches:
+            'WebView[text="用户登录"] > View > @View[clickable=true][visibleToUser=true] > TextView[text="我已阅读上述内容并同意"] + TextView[text="《用户信息授权协议》"]',
         },
       ],
     },

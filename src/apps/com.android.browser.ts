@@ -159,7 +159,8 @@ export default defineGkdApp({
         {
           resetMatch: 'match',
           activityIds: 'com.android.browser.BrowserActivity',
-          matches: 'WebView[text="中国光大银行"] >(3,4) View[id="other-btn"][clickable=true][visibleToUser=true] > Image[text="goBtn"]',
+          matches:
+            'WebView[text="中国光大银行"] >(3,4) View[id="other-btn"][clickable=true][visibleToUser=true] > Image[text="goBtn"]',
         },
       ],
     },
