@@ -177,7 +177,7 @@ export default defineGkdApp({
     },
     {
       key: 13,
-      name: '理财，自主购买[ChangeMe]规则名称-2026-09-16 08:49:51',
+      name: '理财，自主购买',
       desc: '260916',
       rules: [
         {
