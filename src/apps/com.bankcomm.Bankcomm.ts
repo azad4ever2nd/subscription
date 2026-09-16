@@ -102,11 +102,11 @@ export default defineGkdApp({
           actionCd: 0,
           order: -10,
           actionMaximum: 3,
-		  forcedTime:2000,
+          forcedTime: 2000,
           activityIds: 'com.bankcomm.module.biz.webcontainer.BCMHtml5Activity',
-          anyMatches:[
+          anyMatches: [
             '(Image[text="ACIM_20260728000180_20260728174629048"] <<n View + View > View[index=0] Image[text="立即领取"])',
-			],
+          ],
         },
       ],
     },
@@ -118,7 +118,7 @@ export default defineGkdApp({
         {
           resetMatch: 'match',
           actionCd: 0,
-		  forcedTime:2000,
+          forcedTime: 2000,
           actionMaximum: 3,
           activityIds: 'com.bankcomm.module.biz.webcontainer.BCMHtml5Activity',
           matches:

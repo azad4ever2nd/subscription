@@ -35,9 +35,10 @@ export default defineGkdApp({
           resetMatch: 'match',
           fastQuery: true,
           activityIds: 'com.miui.gallery.ui.addtoalbum.AddToAlbumPageActivity',
-          matches: 'ScrollView > ViewGroup > ListView > @TextView[text="移动"][id="android:id/text1"][clickable=true][visibleToUser=true] + TextView[text="复制"][id="android:id/text1"]',
+          matches:
+            'ScrollView > ViewGroup > ListView > @TextView[text="移动"][id="android:id/text1"][clickable=true][visibleToUser=true] + TextView[text="复制"][id="android:id/text1"]',
         },
       ],
-    },	
+    },
   ],
 });

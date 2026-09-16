@@ -169,9 +169,10 @@ export default defineGkdApp({
       rules: [
         {
           resetMatch: 'match',
-		  forcedTime:3000,
+          forcedTime: 3000,
           activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
-          matches: 'View > @View[text="一键输入"][clickable=true][visibleToUser=true] - View > View > EditText[text.length=0] + View[text="0/34"]',
+          matches:
+            'View > @View[text="一键输入"][clickable=true][visibleToUser=true] - View > View > EditText[text.length=0] + View[text="0/34"]',
         },
       ],
     },
@@ -182,9 +183,10 @@ export default defineGkdApp({
       rules: [
         {
           resetMatch: 'match',
-		  forcedTime:3000,
+          forcedTime: 3000,
           activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
-          matches: 'WebView > View > @Button[text="自主购买"][clickable=true][visibleToUser=true] - View > View > View > View > EditText[text.length>0]',
+          matches:
+            'WebView > View > @Button[text="自主购买"][clickable=true][visibleToUser=true] - View > View > View > View > EditText[text.length>0]',
         },
       ],
     },
@@ -195,9 +197,10 @@ export default defineGkdApp({
       rules: [
         {
           resetMatch: 'match',
-		  forcedTime:3000,
+          forcedTime: 3000,
           activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
-          matches: 'View > @CheckBox[checked=false][clickable=true][visibleToUser=true] + View > View[text="本人已阅读并同意"]',
+          matches:
+            'View > @CheckBox[checked=false][clickable=true][visibleToUser=true] + View > View[text="本人已阅读并同意"]',
         },
       ],
     },
@@ -208,9 +211,10 @@ export default defineGkdApp({
       rules: [
         {
           resetMatch: 'match',
-		  forcedTime:3000,
+          forcedTime: 3000,
           activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
-          matches: 'View > @Button[text="同意协议并转入"][clickable=true][visibleToUser=true] -n View > CheckBox[checked=true][clickable=true][visibleToUser=true]',
+          matches:
+            'View > @Button[text="同意协议并转入"][clickable=true][visibleToUser=true] -n View > CheckBox[checked=true][clickable=true][visibleToUser=true]',
         },
       ],
     },

@@ -130,7 +130,7 @@ export default defineGkdApp({
         {
           anyMatches: [
             'WebView > View > View > View > TextView[clickable=true][visibleToUser=true][text.length=0] + TextView[text="可在【金币明细】查看"] + TextView[text.length=0][clickable=true][visibleToUser=true]',
-		    'View[childCount=4] >  TextView[clickable=true][visibleToUser=true] + TextView[clickable=true][visibleToUser=true][index=parent.childCount.minus(1)]',
+            'View[childCount=4] >  TextView[clickable=true][visibleToUser=true] + TextView[clickable=true][visibleToUser=true][index=parent.childCount.minus(1)]',
             '([text$="金币"] < View +2 TextView[clickable=true])',
             '([text^="您已完成" && text$="任务"] < * + TextView[clickable=true][visibleToUser=true])',
             '(View > @TextView - View > TextView[text^="您已完成" && text$="任务"])',
