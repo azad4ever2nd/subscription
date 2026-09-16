@@ -550,10 +550,10 @@ export default defineGkdApp({
             },
             duration: 1000, //滑动时长
           },
-          activityIds:[
+          activityIds: [
             'com.hellobike.flutter.platform.android.flutterboost.FlutterHostFragmentActivity',
-			'com.hellobike.moped.platform.flutter.activity.OhoRidingBoostActivity',
-			],
+            'com.hellobike.moped.platform.flutter.activity.OhoRidingBoostActivity',
+          ],
           anyMatches:
             'View > @View[clickable=false][visibleToUser=true] + ImageView +(2,3) View[desc="按住滑块，拖到右边还车"]',
         },

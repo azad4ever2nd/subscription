@@ -37,7 +37,7 @@ export default defineGkdApp({
         {
           resetMatch: 'match',
           actionCd: 500,
-		  forcedTime: 3000,
+          forcedTime: 3000,
           anyMatches: [
             '([text="确定删除当前快照吗?"] +n @* > [text="确定"])',
             'View > TextView[text="删除快照"] + TextView[text="确定删除当前快照吗?"] +n @View[clickable=true][visibleToUser=true] > TextView[text="确定"] + Button',
@@ -53,9 +53,10 @@ export default defineGkdApp({
       rules: [
         {
           resetMatch: 'match',
-		  forcedTime: 3000,
+          forcedTime: 3000,
           activityIds: 'li.songe.gkd.MainActivity',
-          matches: 'View > View > View[childCount=2] > TextView[text="导入备份"] + TextView[text="导出备份"]',
+          matches:
+            'View > View > View[childCount=2] > TextView[text="导入备份"] + TextView[text="导出备份"]',
         },
       ],
     },
@@ -66,9 +67,10 @@ export default defineGkdApp({
       rules: [
         {
           resetMatch: 'match',
-		  forcedTime: 3000,
+          forcedTime: 3000,
           activityIds: 'li.songe.gkd.MainActivity',
-          matches: 'View > View > View[childCount=3] > TextView[text="分享到其他应用"] + @TextView[text="保存到下载"][clickable=true][visibleToUser=true] + TextView[text="生成链接(需科学上网)"]',
+          matches:
+            'View > View > View[childCount=3] > TextView[text="分享到其他应用"] + @TextView[text="保存到下载"][clickable=true][visibleToUser=true] + TextView[text="生成链接(需科学上网)"]',
         },
       ],
     },
@@ -112,10 +114,11 @@ export default defineGkdApp({
       rules: [
         {
           resetMatch: 'match',
-		  action: 'clickCenter',
+          action: 'clickCenter',
           forcedTime: 3000,
           activityIds: 'li.songe.gkd.MainActivity',
-          matches: 'View > View > View[childCount=2] > TextView[text="导入备份"] + TextView[text="导出备份"]',
+          matches:
+            'View > View > View[childCount=2] > TextView[text="导入备份"] + TextView[text="导出备份"]',
         },
       ],
     },
@@ -126,10 +129,11 @@ export default defineGkdApp({
       rules: [
         {
           resetMatch: 'match',
-		  action: 'clickCenter',
+          action: 'clickCenter',
           forcedTime: 3000,
           activityIds: 'li.songe.gkd.MainActivity',
-          matches: 'View > View > View[childCount=3] > TextView[text="分享到其他应用"] + @TextView[text="保存到下载"][clickable=true][visibleToUser=true] + TextView[text="生成链接(需科学上网)"]',
+          matches:
+            'View > View > View[childCount=3] > TextView[text="分享到其他应用"] + @TextView[text="保存到下载"][clickable=true][visibleToUser=true] + TextView[text="生成链接(需科学上网)"]',
         },
       ],
     },
@@ -159,7 +163,6 @@ export default defineGkdApp({
         },
       ],
     },
-
 
     {
       key: 12,

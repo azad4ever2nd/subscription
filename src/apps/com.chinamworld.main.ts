@@ -242,9 +242,11 @@ export default defineGkdApp({
       rules: [
         {
           resetMatch: 'match',
-		  forcedTime:3000,
-          activityIds: 'com.nantian.iBank.ui.activity.container.ProgramSingleWindowActivity',
-          matches: 'EditText[text.length=0] < View - View > TextView[text^="本人已阅读风险揭示"] + TextView[text="复制并粘贴"][clickable=true][visibleToUser=true]',
+          forcedTime: 3000,
+          activityIds:
+            'com.nantian.iBank.ui.activity.container.ProgramSingleWindowActivity',
+          matches:
+            'EditText[text.length=0] < View - View > TextView[text^="本人已阅读风险揭示"] + TextView[text="复制并粘贴"][clickable=true][visibleToUser=true]',
         },
       ],
     },
@@ -254,11 +256,13 @@ export default defineGkdApp({
       desc: '260916',
       rules: [
         {
-          activityIds: 'com.nantian.iBank.ui.activity.container.ProgramSingleWindowActivity',
+          activityIds:
+            'com.nantian.iBank.ui.activity.container.ProgramSingleWindowActivity',
           resetMatch: 'match',
-		  preKeys:[16],
-		  actionMaximum:1,
-          matches: 'View > TextView + TextView[text="本人已认真阅读并同意以上内容"][clickable=true][visibleToUser=true]',
+          preKeys: [16],
+          actionMaximum: 1,
+          matches:
+            'View > TextView + TextView[text="本人已认真阅读并同意以上内容"][clickable=true][visibleToUser=true]',
         },
       ],
     },
@@ -268,10 +272,12 @@ export default defineGkdApp({
       desc: '260916',
       rules: [
         {
-		  preKeys:[17],
+          preKeys: [17],
           resetMatch: 'match',
-          activityIds: 'com.nantian.iBank.ui.activity.container.ProgramSingleWindowActivity',
-          matches: 'View > View > View > TextView[text="确定"][index=parent.childCount.minus(1)]',
+          activityIds:
+            'com.nantian.iBank.ui.activity.container.ProgramSingleWindowActivity',
+          matches:
+            'View > View > View > TextView[text="确定"][index=parent.childCount.minus(1)]',
         },
       ],
     },
@@ -282,8 +288,10 @@ export default defineGkdApp({
       rules: [
         {
           resetMatch: 'match',
-          activityIds: 'com.nantian.iBank.ui.activity.container.ProgramSingleWindowActivity',
-          matches: 'View > @TextView[text="确定"][clickable=true][visibleToUser=true] -n View > TextView[text="交易确认"]',
+          activityIds:
+            'com.nantian.iBank.ui.activity.container.ProgramSingleWindowActivity',
+          matches:
+            'View > @TextView[text="确定"][clickable=true][visibleToUser=true] -n View > TextView[text="交易确认"]',
         },
       ],
     },
@@ -293,10 +301,12 @@ export default defineGkdApp({
       desc: '260916',
       rules: [
         {
-          activityIds: 'com.nantian.iBank.ui.activity.container.ProgramSingleWindowActivity',
-		  actionMaximum:1,
-		  resetMatch: 'match',
-          matches: 'View > @TextView[clickable=true][visibleToUser=true] + View > TextView[text="本人已认真阅读并同意"]',
+          activityIds:
+            'com.nantian.iBank.ui.activity.container.ProgramSingleWindowActivity',
+          actionMaximum: 1,
+          resetMatch: 'match',
+          matches:
+            'View > @TextView[clickable=true][visibleToUser=true] + View > TextView[text="本人已认真阅读并同意"]',
         },
       ],
     },
@@ -306,10 +316,12 @@ export default defineGkdApp({
       desc: '260916',
       rules: [
         {
-		  resetMatch: 'match',
-		  preKeys:[20],
-          activityIds: 'com.nantian.iBank.ui.activity.container.ProgramSingleWindowActivity',
-          matches: 'WebView > View > View > View > Button[text="下一步"][clickable=true][focusable=true][visibleToUser=true]',
+          resetMatch: 'match',
+          preKeys: [20],
+          activityIds:
+            'com.nantian.iBank.ui.activity.container.ProgramSingleWindowActivity',
+          matches:
+            'WebView > View > View > View > Button[text="下一步"][clickable=true][focusable=true][visibleToUser=true]',
         },
       ],
     },
@@ -319,13 +331,13 @@ export default defineGkdApp({
       desc: '260916',
       rules: [
         {
-		  resetMatch: 'match',
-          activityIds: 'com.nantian.iBank.ui.activity.container.ProgramSingleWindowActivity',
-          matches: 'View > View > View > Button[text="确定"][clickable=true][focusable=true][visibleToUser=true]',
+          resetMatch: 'match',
+          activityIds:
+            'com.nantian.iBank.ui.activity.container.ProgramSingleWindowActivity',
+          matches:
+            'View > View > View > Button[text="确定"][clickable=true][focusable=true][visibleToUser=true]',
         },
       ],
     },
   ],
 });
-
-
