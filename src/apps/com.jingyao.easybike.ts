@@ -42,7 +42,7 @@ export default defineGkdApp({
           fastQuery: true,
           order: -1,
           resetMatch: 'match',
-          forcedTime: 3000,
+          forcedTime: 5000,
           activityIds:
             'com.hellobike.flutter.platform.android.flutterboost.FlutterHostFragmentActivity',
           anyMatches:
@@ -125,7 +125,7 @@ export default defineGkdApp({
         {
           resetMatch: 'match',
           matchDelay: 1000,
-          forcedTime: 3000,
+          forcedTime: 5000,
           actionCd: 500,
           fastQuery: true,
           activityIds: 'com.hellobike.atlas.business.portal.PortalActivity',
@@ -550,8 +550,10 @@ export default defineGkdApp({
             },
             duration: 1000, //滑动时长
           },
-          activityIds:
+          activityIds:[
             'com.hellobike.flutter.platform.android.flutterboost.FlutterHostFragmentActivity',
+			'com.hellobike.moped.platform.flutter.activity.OhoRidingBoostActivity',
+			],
           anyMatches:
             'View > @View[clickable=false][visibleToUser=true] + ImageView +(2,3) View[desc="按住滑块，拖到右边还车"]',
         },

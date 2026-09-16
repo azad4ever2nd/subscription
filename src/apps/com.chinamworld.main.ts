@@ -235,5 +235,97 @@ export default defineGkdApp({
         },
       ],
     },
+    {
+      key: 16,
+      name: '理财，风险提示及协议确认，复制并粘贴',
+      desc: 260916ChangeMe]本规则由GKD网页端审查工具生成',
+      rules: [
+        {
+          resetMatch: 'match',
+		  forcedTime:3000,
+          activityIds: 'com.nantian.iBank.ui.activity.container.ProgramSingleWindowActivity',
+          matches: 'EditText[text.length=0] < View - View > TextView[text^="本人已阅读风险揭示"] + TextView[text="复制并粘贴"][clickable=true][visibleToUser=true]',
+        },
+      ],
+    },
+    {
+      key: 17,
+      name: '理财，风险提示及协议确认，勾选本人已认真阅读并同意以上内容',
+      desc: '260916',
+      rules: [
+        {
+          activityIds: 'com.nantian.iBank.ui.activity.container.ProgramSingleWindowActivity',
+          resetMatch: 'match',
+		  preKeys:[16],
+		  actionMaximum:1,
+          matches: 'View > TextView + TextView[text="本人已认真阅读并同意以上内容"][clickable=true][visibleToUser=true]',
+        },
+      ],
+    },
+    {
+      key: 18,
+      name: '理财，风险提示及协议确认，复制并粘贴，勾选同意，确定',
+      desc: '',
+      rules: [260916
+        {
+		  preKeys:[17],
+          resetMatch: 'match',
+          activityIds: 'com.nantian.iBank.ui.activity.container.ProgramSingleWindowActivity',
+          matches: 'View > View > View > TextView[text="确定"][index=parent.childCount.minus(1)]',
+        },
+      ],
+    },
+    {
+      key: 19,
+      name: '理财，交易确认，确定',
+      desc: '260916',
+      rules: [
+        {
+          resetMatch: 'match',
+          activityIds: 'com.nantian.iBank.ui.activity.container.ProgramSingleWindowActivity',
+          matches: 'View > @TextView[text="确定"][clickable=true][visibleToUser=true] -n View > TextView[text="交易确认"]',
+        },
+      ],
+    },
+    {
+      key: 20,
+      name: '速盈，勾选 本人已认真阅读并同意',
+      desc: '260916',
+      rules: [
+        {
+          activityIds: 'com.nantian.iBank.ui.activity.container.ProgramSingleWindowActivity',
+		  actionMaximum:1,
+		  resetMatch: 'match',
+          matches: 'View > @TextView[clickable=true][visibleToUser=true] + View > TextView[text="本人已认真阅读并同意"]',
+        },
+      ],
+    },
+    {
+      key: 21,
+      name: '速盈，本人已认真阅读并同意，下一步',
+      desc: '260916',
+      rules: [
+        {
+		  resetMatch: 'match',
+		  preKeys:[20],
+          activityIds: 'com.nantian.iBank.ui.activity.container.ProgramSingleWindowActivity',
+          matches: 'WebView > View > View > View > Button[text="下一步"][clickable=true][focusable=true][visibleToUser=true]',
+        },
+      ],
+    },
+    {
+      key: 22,
+      name: '速盈，交易确认，确定',
+      desc: '260916',
+      rules: [
+        {
+		  resetMatch: 'match',
+          activityIds: 'com.nantian.iBank.ui.activity.container.ProgramSingleWindowActivity',
+          matches: 'View > View > View > Button[text="确定"][clickable=true][focusable=true][visibleToUser=true]',
+        },
+      ],
+    },
   ],
 });
+
+
