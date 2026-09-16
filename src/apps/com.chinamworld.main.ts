@@ -238,7 +238,7 @@ export default defineGkdApp({
     {
       key: 16,
       name: '理财，风险提示及协议确认，复制并粘贴',
-      desc: 260916ChangeMe]本规则由GKD网页端审查工具生成',
+      desc: '260916',
       rules: [
         {
           resetMatch: 'match',
