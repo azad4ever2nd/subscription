@@ -265,8 +265,8 @@ export default defineGkdApp({
     {
       key: 18,
       name: '理财，风险提示及协议确认，复制并粘贴，勾选同意，确定',
-      desc: '',
-      rules: [260916
+      desc: '260916',
+      rules: [
         {
 		  preKeys:[17],
           resetMatch: 'match',
