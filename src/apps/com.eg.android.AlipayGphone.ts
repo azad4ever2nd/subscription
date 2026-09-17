@@ -212,7 +212,7 @@ export default defineGkdApp({
         },
       ],
     },
-    {
+   {
       key: 11,
       name: '弹窗，获取你的位置信息，拒绝',
       desc: '260905,fastQuery=true,clickable=true',
@@ -441,17 +441,20 @@ export default defineGkdApp({
     {
       key: 25,
       name: '本次没有中奖，知道了，关闭',
-      desc: '260702，添加 入会领，下单 ，去看看',
+      desc: '260917，添加 卡包管理， 入会领，下单 ，去看看',
       rules: [
         {
           resetMatch: 'match',
-          actionCd: 0,
+          actionCd: 300,
           activityIds:
             'com.alipay.mobile.nebulax.xriver.activity.XRiverActivity',
           anyMatches: [
             '(Button[clickable=true][text="知道了"] <n View <n View < View + Button[clickable=true][visibleToUser=true][text="关闭"])',
             '(Button[text="去完成"] <n View -n TextView[text*="下单"] <n View <n View + Button[clickable=true][visibleToUser=true][text="关闭"])',
             '(Button[clickable=true][text="入会领"] < View <n View <n View + Button[clickable=true][visibleToUser=true][text="关闭"])',
+			'View > @CheckBox[clickable=true][checked=false][visibleToUser=true] + View > View > TextView[text="满200元可用"] +2 TextView[text="话费满减券"]',
+			'View > @CheckBox[checked=false][visibleToUser=true] + View > View > TextView[text="优酷视频"]',
+			'View > @CheckBox[checked=false][visibleToUser=true] + View > View > TextView[text="飞猪旅行"]',
           ],
         },
       ],
@@ -619,7 +622,7 @@ export default defineGkdApp({
     {
       key: 35,
       name: '添加神券到首页，X掉',
-      desc: '260913，添加 超级吃货卡体验版，闪购签到，闪购小程序，没有fastquery，没有clickable=true，添加到首页，添加 生活缴费',
+      desc: '260917，fastquery=false,clickable=false,添加 超级吃货卡体验版，闪购签到，闪购小程序，添加到首页，添加 生活缴费',
       rules: [
         {
           resetMatch: 'match',
@@ -631,6 +634,7 @@ export default defineGkdApp({
           ],
           anyMatches: [
             '@TextView[clickable=false][visibleToUser=true] - View > View > View > View > View > TextView[text="首购特惠"]',
+			'Image[id="meb24ise8obdb"] < View[id^="meb23wkfgkptj"] < View + View > View > Image[clickable=false][visibleToUser=true]',
             'View[childCount=2] > @TextView[clickable=false][visibleToUser=true] - View > View > View >n TextView[text="去使用"] - View',
             '(TextView[text="立即抽免单"][clickable=false][visibleToUser=true] < View < View + TextView[text.length=0][clickable=false][visibleToUser=true])',
             '(View > View > TextView[text="立即抽-bak闪购抽奖"][clickable=false][visibleToUser=true])',

@@ -847,5 +847,22 @@ export default defineGkdApp({
         },
       ],
     },
+    {
+      key: 50,
+      name: '弹窗，月月领好好，继续做任务 或 X掉',
+      desc: '260917',
+      rules: [
+        {
+          resetMatch: 'match',
+          forcedTime: 3000,
+		  actionCd:800,
+          activityIds: 'com.pb.tpstore.PBAppletWebViewActivity',
+          anyMatches: [
+			'View > View > Button[text="关闭"][clickable=true][visibleToUser=true] -n TextView[text^="+" && text$="00"] +n View > Button[text="继续做任务"][clickable=true][visibleToUser=true]',
+			'View > View > Button[text="关闭"][clickable=true][visibleToUser=true] - @Button[text="继续做任务"][clickable=true][visibleToUser=true] -n TextView[text^="+" && text$="00"]',
+			],
+        },
+      ],
+    },
   ],
 });

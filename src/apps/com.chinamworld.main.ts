@@ -298,7 +298,7 @@ export default defineGkdApp({
     {
       key: 20,
       name: '速盈，勾选 本人已认真阅读并同意',
-      desc: '260916',
+      desc: '260917，测试看看执行顺序，保第2条',
       rules: [
         {
           activityIds:
@@ -307,6 +307,7 @@ export default defineGkdApp({
           resetMatch: 'match',
           matches:
             'View > @TextView[clickable=true][visibleToUser=true] + View > TextView[text="本人已认真阅读并同意"]',
+			'View > @TextView[clickable=true][visibleToUser=true] + View > TextView[text="本人已认真阅读并同意以上内容"]',
         },
       ],
     },

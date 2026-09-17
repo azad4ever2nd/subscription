@@ -95,17 +95,19 @@ export default defineGkdApp({
     {
       key: 7,
       name: '领券中心,信用卡专享好券，刷卡金',
-      desc: '260916，[clickable=true][visibleToUser=true]',
+      desc: '260917，[clickable=true][visibleToUser=true]',
       rules: [
         {
           resetMatch: 'match',
           actionCd: 0,
-          order: -10,
-          actionMaximum: 3,
+          order: -30,
+		  matchDelay:1000,
+          actionMaximum: 10,
           forcedTime: 2000,
           activityIds: 'com.bankcomm.module.biz.webcontainer.BCMHtml5Activity',
           anyMatches: [
             '(Image[text="ACIM_20260728000180_20260728174629048"] <<n View + View > View[index=0] Image[text="立即领取"])',
+			'(Image[text="ACIM_20260728000180_20260728174629048"] <<n View + View > View[index=0] Image[text="立即领取"][clickable=true])',
           ],
         },
       ],
@@ -297,7 +299,6 @@ export default defineGkdApp({
             '(Dialog > View > @Button[clickable=true][visibleToUser=true][text="我知道了"] + Button[text="赚更多能量"])',
           ],
           actionMaximum: 3,
-          matchDelay: 1000,
           resetMatch: 'match',
           activityIds: 'com.bankcomm.module.biz.webcontainer.BCMHtml5Activity',
         },
