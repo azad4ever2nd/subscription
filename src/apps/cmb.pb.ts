@@ -279,7 +279,7 @@ export default defineGkdApp({
       rules: [
         {
           resetMatch: 'match',
-		  forcedTime:3000,
+          forcedTime: 3000,
           actionMaximum: 1,
           action: 'click',
           activityIds:
@@ -301,7 +301,7 @@ export default defineGkdApp({
         {
           resetMatch: 'match',
           actionMaximum: 1,
-		  forcedTime:3000,
+          forcedTime: 3000,
           action: 'clickCenter',
           activityIds:
             'cmb.pb.app.h5container.webviewcontainer.PBWebContainerActivity',
@@ -789,7 +789,7 @@ export default defineGkdApp({
         {
           resetMatch: 'match',
           actionMaximum: 1,
-		  forcedTime:3000,
+          forcedTime: 3000,
           activityIds:
             'cmb.pb.app.h5container.webviewcontainer.PBWebContainerActivity',
           anyMatches:
@@ -805,7 +805,7 @@ export default defineGkdApp({
         {
           resetMatch: 'match',
           actionMaximum: 1,
-		  forcedTime:3000,
+          forcedTime: 3000,
           action: 'clickCenter',
           activityIds:
             'cmb.pb.app.h5container.webviewcontainer.PBWebContainerActivity',

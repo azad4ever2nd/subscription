@@ -48,7 +48,7 @@ export default defineGkdApp({
             '(@[text="批量上传"] + [text*="知道了"])',
             '([text="操作提示"] + [text="上传成功，是否继续上传？"] + * > [text="取消"])',
             '(View > TextView[text^="微信红包" && text$="元"] +n View > Button[text="立即领取"][clickable=true][visibleToUser=true])',
-			'@TextView[clickable=true][visibleToUser=true] - View > TextView[text="谢谢参与"] +n View[desc="我知道了"] > TextView[text="我知道了"]',
+            '@TextView[clickable=true][visibleToUser=true] - View > TextView[text="谢谢参与"] +n View[desc="我知道了"] > TextView[text="我知道了"]',
           ],
         },
       ],
