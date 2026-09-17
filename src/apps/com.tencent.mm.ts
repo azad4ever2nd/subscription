@@ -7,11 +7,11 @@ export default defineGkdApp({
     {
       key: 1,
       name: '立即打开',
-      desc: '260616，增加光大，交行，华夏，邮储，交行，小程序跳转，民生，工行，翼支付，浦发，建云闪付，行，农行,原规则[id="app"] >2 [text="立即打开"]',
+      desc: '260917，增加光大，交行，华夏，邮储，交行，小程序跳转，民生，工行，翼支付，浦发，建云闪付，行，农行,原规则[id="app"] >2 [text="立即打开"]',
       rules: [
         {
           resetMatch: 'match',
-          actionCd: 2000,
+          actionCd: 3000,
           activityIds: 'com.tencent.mm.plugin.webview.ui.tools.MMWebViewUI',
           anyMatches: [
             '(View[id="weixin-btn"] @View[clickable=true] > Image[text="goBtn"])',
@@ -34,7 +34,7 @@ export default defineGkdApp({
     {
       key: 2,
       name: '糖的报单',
-      desc: '260905，添加华夏红包领取，继续访问，知道了，是否继续上传',
+      desc: '260917，添加 中信抽奖，华夏红包领取，继续访问，知道了，是否继续上传',
       rules: [
         {
           resetMatch: 'match',
@@ -48,6 +48,7 @@ export default defineGkdApp({
             '(@[text="批量上传"] + [text*="知道了"])',
             '([text="操作提示"] + [text="上传成功，是否继续上传？"] + * > [text="取消"])',
             '(View > TextView[text^="微信红包" && text$="元"] +n View > Button[text="立即领取"][clickable=true][visibleToUser=true])',
+			'@TextView[clickable=true][visibleToUser=true] - View > TextView[text="谢谢参与"] +n View[desc="我知道了"] > TextView[text="我知道了"]',
           ],
         },
       ],
