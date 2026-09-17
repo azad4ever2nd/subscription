@@ -169,5 +169,20 @@ export default defineGkdApp({
         },
       ],
     },
+    {
+      key: 12,
+      name: '弹窗，未中奖，知道了或X掉',
+      desc: '260917',
+      rules: [
+        {
+          resetMatch: 'match',
+		  forcedTime:3000,
+          activityIds: 'com.cmccit.webview.ac.CommonHtml5Activity',
+          matches: 'WebView > View > Dialog > View > Button[text="我知道了"] + Button[text="关闭弹窗"][clickable=true][visibleToUser=true]',
+        },
+      ],
+    },
+  ],
+}
   ],
 });

@@ -275,10 +275,11 @@ export default defineGkdApp({
     {
       key: 16,
       name: '讨论，取消勾选 同步到动态',
-      desc: '260915，clickable=false',
+      desc: '260917，clickable=false',
       rules: [
         {
           resetMatch: 'match',
+		  foredTime:3000,
           actionMaximum: 1,
           action: 'click',
           activityIds:
@@ -295,11 +296,12 @@ export default defineGkdApp({
     {
       key: 17,
       name: '讨论，取消勾选 同步到动态2',
-      desc: '260915，clickable=true',
+      desc: '260917，clickable=true',
       rules: [
         {
           resetMatch: 'match',
           actionMaximum: 1,
+		  forcedTime:3000,
           action: 'clickCenter',
           activityIds:
             'cmb.pb.app.h5container.webviewcontainer.PBWebContainerActivity',
@@ -782,11 +784,12 @@ export default defineGkdApp({
     {
       key: 46,
       name: '讨论，关闭投票',
-      desc: '260813,clickable=false',
+      desc: '260817,clickable=false',
       rules: [
         {
           resetMatch: 'match',
           actionMaximum: 1,
+		  forcedTime:3000,
           activityIds:
             'cmb.pb.app.h5container.webviewcontainer.PBWebContainerActivity',
           anyMatches:
@@ -797,11 +800,12 @@ export default defineGkdApp({
     {
       key: 47,
       name: '讨论，关闭投票2',
-      desc: '260915，clickable=true',
+      desc: '260917，clickable=true',
       rules: [
         {
           resetMatch: 'match',
           actionMaximum: 1,
+		  forcedTime:3000,
           action: 'clickCenter',
           activityIds:
             'cmb.pb.app.h5container.webviewcontainer.PBWebContainerActivity',
