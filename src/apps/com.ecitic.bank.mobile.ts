@@ -140,12 +140,13 @@ export default defineGkdApp({
       desc: '260917',
       rules: [
         {
-
           resetMatch: 'match',
-		  actionCd:300,
-		  action: 'clickCenter',
-          activityIds: 'com.ecitic.bank.mobile.ui.webview.CordovaExternalWebViewActivity',
-          matches: 'TextView[text="您还剩1次兑换机会"] < View +n View[childCount=1] > TextView[text=""][clickable=true][visibleToUser=true]',
+          actionCd: 300,
+          action: 'clickCenter',
+          activityIds:
+            'com.ecitic.bank.mobile.ui.webview.CordovaExternalWebViewActivity',
+          matches:
+            'TextView[text="您还剩1次兑换机会"] < View +n View[childCount=1] > TextView[text=""][clickable=true][visibleToUser=true]',
         },
       ],
     },

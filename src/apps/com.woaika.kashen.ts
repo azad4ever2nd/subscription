@@ -13,7 +13,8 @@ export default defineGkdApp({
           resetMatch: 'match',
           fastQuery: true,
           activityIds: 'com.woaika.kashen.ui.LauncherActivity',
-          matches: 'LinearLayout > TextView[text^="需以下权限"] + * +n TextView[text="知道了"][vid="tvPermissionDescDialogConfirm"]',
+          matches:
+            'LinearLayout > TextView[text^="需以下权限"] + * +n TextView[text="知道了"][vid="tvPermissionDescDialogConfirm"]',
         },
       ],
     },

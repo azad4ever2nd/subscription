@@ -305,10 +305,10 @@ export default defineGkdApp({
             'com.nantian.iBank.ui.activity.container.ProgramSingleWindowActivity',
           actionMaximum: 1,
           resetMatch: 'match',
-          anyMatches:[
+          anyMatches: [
             'View > @TextView[clickable=true][visibleToUser=true] + View > TextView[text="本人已认真阅读并同意"]',
-			'View > @TextView[clickable=true][visibleToUser=true] + View > TextView[text="本人已认真阅读并同意以上内容"]',
-			],
+            'View > @TextView[clickable=true][visibleToUser=true] + View > TextView[text="本人已认真阅读并同意以上内容"]',
+          ],
         },
       ],
     },
