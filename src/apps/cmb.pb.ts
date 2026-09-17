@@ -279,7 +279,7 @@ export default defineGkdApp({
       rules: [
         {
           resetMatch: 'match',
-		  foredTime:3000,
+		  forcedTime:3000,
           actionMaximum: 1,
           action: 'click',
           activityIds:
