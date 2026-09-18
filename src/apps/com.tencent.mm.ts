@@ -140,7 +140,7 @@ export default defineGkdApp({
           actionCd: 2000,
           anyMatches: [
             'TextView[text="达标1万元"] + View > View > @TextView[text="抽奖"][clickable=false][visibleToUser=true] + View[text!*="0"]',
-            'WebView > View > TextView[text="金额达标抽好礼"] + TextView[达标1万元] + View > @View[clickable=true][visibleToUser=true] > TextView[text="抽奖"] + View[text!="0次"]',
+            'WebView > View > TextView[text="金额达标抽好礼"] + TextView[text="达标1万元"] + View > @View[clickable=true][visibleToUser=true] > TextView[text="抽奖"] + View[text!="0次"]',
           ],
         },
       ],
