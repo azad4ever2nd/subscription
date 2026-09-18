@@ -6,7 +6,7 @@ export default defineGkdApp({
     {
       key: 1,
       name: '积分兑无门槛5元',
-      desc: '260918',
+      desc: '260918,',
       rules: [
         {
           actionCd: 0,
