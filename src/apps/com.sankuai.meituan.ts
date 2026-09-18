@@ -110,7 +110,7 @@ export default defineGkdApp({
     {
       key: 8,
       name: '0元购立即团购',
-      desc: '251121，D',
+      desc: 'D,251121',
       rules: [
         {
           resetMatch: 'match',

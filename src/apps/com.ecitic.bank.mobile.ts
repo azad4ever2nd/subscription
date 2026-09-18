@@ -142,6 +142,23 @@ export default defineGkdApp({
         {
           resetMatch: 'match',
           actionCd: 300,
+		  actionMaximum:1,
+          action: 'clickCenter',
+          activityIds:
+            'com.ecitic.bank.mobile.ui.webview.CordovaExternalWebViewActivity',
+          matches:
+            'TextView[text="您还剩1次兑换机会"] < View +n View[childCount=1] > TextView[text=""][clickable=true][visibleToUser=true]',
+        },
+      ],
+    },
+    {
+      key: 9,
+      name: '红会员一万达标抢券2',
+      desc: '260917',
+      rules: [
+        {
+          resetMatch: 'match',
+          actionCd: 300,
           action: 'clickCenter',
           activityIds:
             'com.ecitic.bank.mobile.ui.webview.CordovaExternalWebViewActivity',

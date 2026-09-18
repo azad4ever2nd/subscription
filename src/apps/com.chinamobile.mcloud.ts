@@ -39,7 +39,7 @@ export default defineGkdApp({
     {
       key: 3,
       name: '领奖完成',
-      desc: '260831，添加 弹窗，云朵领取成功',
+      desc: '260918，添加 弹窗，云朵领取成功',
       rules: [
         {
           resetMatch: 'match',
@@ -54,6 +54,7 @@ export default defineGkdApp({
             '(TextView[text*="转存成功"] < View + Image[text="+SOMf8vIwWVqABk0AAAAASUVORK5CYII="])',
             '(Dialog > View > View > TextView[text="知道啦"] + Image[clickable=false][visibleToUser=true][text="wMHmBwYPo98SAAAAABJRU5ErkJggg=="])',
             '([text="我知道了"] <n View + Image[text="+SOMf8vIwWVqABk0AAAAASUVORK5CYII="][clickable=false][visibleToUser=true])',
+			'View > @Image[text="+SOMf8vIwWVqABk0AAAAASUVORK5CYII="][clickable=true][visibleToUser=true] - View > TextView[text="我知道了"]',
           ],
         },
       ],

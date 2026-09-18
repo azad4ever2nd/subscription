@@ -38,14 +38,14 @@ export default defineGkdApp({
     {
       key: 3,
       name: '弹窗',
-      desc: '260904,fastQuery=true,clickable=true，添加 周三活动',
+      desc: '260918,fastQuery=true,clickable=true，添加 周三活动',
       rules: [
         {
           resetMatch: 'match',
           action: 'clickCenter',
-          matchTime: 2000,
+		  matchDelay:1000,
           fastQuery: true,
-          forcedTime: 3000,
+          forcedTime: 4000,
           anyMatches: [
             '(LinearLayout > @ImageView[vid="close_btn"][desc="关闭"][clickable=true][visibleToUser=true] - RelativeLayout > ImageView[vid="ad_image"][desc="广告bak"])',
             '(ViewGroup[vid="cl_pop"] > ImageView[vid="img_close"][clickable=true][visibleToUser=true])',
