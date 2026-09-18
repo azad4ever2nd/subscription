@@ -43,7 +43,7 @@ export default defineGkdApp({
         {
           resetMatch: 'match',
           action: 'clickCenter',
-		  matchDelay:1000,
+          matchDelay: 1000,
           fastQuery: true,
           forcedTime: 4000,
           anyMatches: [

@@ -142,7 +142,7 @@ export default defineGkdApp({
         {
           resetMatch: 'match',
           actionCd: 300,
-		  actionMaximum:1,
+          actionMaximum: 1,
           action: 'clickCenter',
           activityIds:
             'com.ecitic.bank.mobile.ui.webview.CordovaExternalWebViewActivity',

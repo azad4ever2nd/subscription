@@ -54,7 +54,7 @@ export default defineGkdApp({
             '(TextView[text*="转存成功"] < View + Image[text="+SOMf8vIwWVqABk0AAAAASUVORK5CYII="])',
             '(Dialog > View > View > TextView[text="知道啦"] + Image[clickable=false][visibleToUser=true][text="wMHmBwYPo98SAAAAABJRU5ErkJggg=="])',
             '([text="我知道了"] <n View + Image[text="+SOMf8vIwWVqABk0AAAAASUVORK5CYII="][clickable=false][visibleToUser=true])',
-			'View > @Image[text="+SOMf8vIwWVqABk0AAAAASUVORK5CYII="][clickable=true][visibleToUser=true] - View > TextView[text="我知道了"]',
+            'View > @Image[text="+SOMf8vIwWVqABk0AAAAASUVORK5CYII="][clickable=true][visibleToUser=true] - View > TextView[text="我知道了"]',
           ],
         },
       ],

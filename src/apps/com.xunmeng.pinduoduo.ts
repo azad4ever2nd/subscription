@@ -78,7 +78,7 @@ export default defineGkdApp({
           anyMatches: [
             '([text="限时抽神券"] +n [text="无门槛券"] + * [text="立即抽奖"])',
             '(TextView[text="限时抽神券"] -2 TextView[text="无门槛券"] + View >3 TextView[text="立即抽奖"])',
-			'View >  TextView[text="12点抢最高16元无门槛券"] + @View[clickable=true][visibleToUser=true] > TextView[text="立即抽奖"]',
+            'View >  TextView[text="12点抢最高16元无门槛券"] + @View[clickable=true][visibleToUser=true] > TextView[text="立即抽奖"]',
           ],
         },
       ],
@@ -484,7 +484,7 @@ export default defineGkdApp({
           anyMatches: [
             '(View > View > View > TextView[text="如何解锁点亮?"] + TextView[text="去首页"][clickable=true][visibleToUser=true])',
             'View > View > View > TextView[text="恭喜获得专属惊喜券"] + TextView[text*="已成功点亮" || text$="明日可继续点亮"] +(3,4)  Image[text="webp"][clickable=true][visibleToUser=true]',
-			'View > @View[clickable=true][visibleToUser=true] + TextView[text="进入消费券活动页领券"]',
+            'View > @View[clickable=true][visibleToUser=true] + TextView[text="进入消费券活动页领券"]',
             '(View > View > View > TextView[text="如何解锁?" || text="如何解锁点亮?"] + TextView[text="去首页"][clickable=true][visibleToUser=true])',
             '(View > View > View > TextView[text^="如何解锁"] + TextView[text="去首页"][clickable=true][visibleToUser=true])',
             'View > View > View > TextView[text^="浏览商品10秒" || text$="即可点亮1次"] +n TextView[text^="去看看"][clickable=true][visibleToUser=true]',

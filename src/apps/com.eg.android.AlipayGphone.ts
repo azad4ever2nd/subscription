@@ -465,12 +465,12 @@ export default defineGkdApp({
           resetMatch: 'match',
           activityIds:
             'com.alipay.mobile.nebulax.xriver.activity.XRiverActivity',
-          anyMatches:[
+          anyMatches: [
             '@Button[clickable=true][text="开心收下"] <n View < View + Button[clickable=true][visibleToUser=true][text="关闭"]',
             'View > @CheckBox[clickable=true][checked=false][visibleToUser=true] + View > View > TextView[text="满200元可用"] +2 TextView[text="话费满减券"]',
             'View > @CheckBox[checked=false][visibleToUser=true] + View > View > TextView[text="优酷视频"]',
             'View > @CheckBox[checked=false][visibleToUser=true] + View > View > TextView[text="飞猪旅行"]',
-			],
+          ],
         },
       ],
     },
@@ -627,7 +627,7 @@ export default defineGkdApp({
       rules: [
         {
           resetMatch: 'match',
-		  forcedTime:3000,
+          forcedTime: 3000,
           activityIds: [
             'com.alipay.mobile.nebulax.xriver.activity.XRiverActivity$App01',
             'com.alipay.mobile.nebulax.xriver.activity.XRiverActivity$App02',
