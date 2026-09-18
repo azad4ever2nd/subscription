@@ -1484,6 +1484,8 @@ export default defineGkdApp({
     },
     {
       key: 66,
+	  name:'粤工会滑块验证',
+	  desc:'260908',
       rules: [
         {
           action: 'swipe',
