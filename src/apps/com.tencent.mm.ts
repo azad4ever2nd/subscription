@@ -175,7 +175,7 @@ export default defineGkdApp({
           activityIds: 'com.tencent.mm.plugin.webview.ui.tools.MMWebViewUI',
 		  excludeMatches:[
 			'TextView[text="达标1万元"] + View > View > @TextView[text="抽奖"][clickable=false] + View[text!*="0"]',
-			'WebView > View > TextView[text="金额达标抽好礼"] + TextView[达标1万元] + View > @View[clickable=true] > TextView[text="抽奖"] + View[text!="0次"]',
+			'WebView > View > TextView[text="金额达标抽好礼"] + TextView[text="达标1万元"] + View > @View[clickable=true] > TextView[text="抽奖"] + View[text!="0次"]',
 			'TextView[text="连续达标有豪礼"] +n TextView[text^="绑卡交易满"] + @View[clickable=true] > TextView[text="抽奖"] + View[text!="0次"]',
 			],
           matches:
