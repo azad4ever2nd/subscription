@@ -11,6 +11,7 @@ export default defineGkdApp({
         {
           actionCd: 10,
           actionMaximum: 15,
+		  forcedTime:2000,
           order: -1,
           resetMatch: 'match',
           anyMatches: [
@@ -31,7 +32,8 @@ export default defineGkdApp({
             '(TextView[text*="百亿补贴无门槛券" || text$="无门槛券"] <n View + TextView[text="确认兑换"][clickable=false][visibleToUser=true])',
             '(TextView[text="元"] - TextView[text="5"] < View < View + TextView[text="确认兑换"][clickable=false][visibleToUser=true])',
           ],
-          actionCd: 10,
+          actionCd: 100,
+		  forcedTime:2000,
           resetMatch: 'match',
           order: -2,
           activityIds: ['com.xunmeng.pinduoduo.activity.NewPageActivity'],

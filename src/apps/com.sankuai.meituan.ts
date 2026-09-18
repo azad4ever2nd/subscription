@@ -62,7 +62,7 @@ export default defineGkdApp({
     {
       key: 5,
       name: '定位服务授权，暂不开启',
-      desc: '260706，D，添加IDS',
+      desc: 'D，260706，添加IDS',
       rules: [
         {
           fastQuery: true,
@@ -97,7 +97,7 @@ export default defineGkdApp({
     {
       key: 7,
       name: '0元购提交',
-      desc: '251121',
+      desc: 'D,251121',
       rules: [
         {
           resetMatch: 'match',
@@ -367,7 +367,7 @@ export default defineGkdApp({
     {
       key: 25,
       name: '0元购提交订单',
-      desc: '251118，暂时先不添加，避免下单地址没有选好。',
+      desc: 'D,251118，暂时先不添加，避免下单地址没有选好。',
       rules: [
         {
           resetMatch: 'match',
@@ -397,7 +397,7 @@ export default defineGkdApp({
     {
       key: 27,
       name: '美妙三八',
-      desc: '260305',
+      desc: 'D,260305',
       rules: [
         {
           resetMatch: 'match',

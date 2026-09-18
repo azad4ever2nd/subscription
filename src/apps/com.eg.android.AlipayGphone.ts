@@ -459,7 +459,7 @@ export default defineGkdApp({
     {
       key: 26,
       name: '中奖了，开心收下',
-      desc: '260918',
+      desc: '260918，添加 卡包管理 优酷飞猪话费',
       rules: [
         {
           resetMatch: 'match',
