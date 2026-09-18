@@ -68,7 +68,7 @@ export default defineGkdApp({
     {
       key: 5,
       name: '百亿补贴无门槛抽奖',
-      desc: '260905',
+      desc: '260918',
       rules: [
         {
           actionMaximum: 15,
@@ -78,6 +78,7 @@ export default defineGkdApp({
           anyMatches: [
             '([text="限时抽神券"] +n [text="无门槛券"] + * [text="立即抽奖"])',
             '(TextView[text="限时抽神券"] -2 TextView[text="无门槛券"] + View >3 TextView[text="立即抽奖"])',
+			'View >  TextView[text="12点抢最高16元无门槛券"] + @View[clickable=true][visibleToUser=true] > TextView[text="立即抽奖"]',
           ],
         },
       ],
