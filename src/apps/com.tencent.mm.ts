@@ -132,7 +132,7 @@ export default defineGkdApp({
     {
       key: 8,
       name: '湖北邮政e权益，达标1万元，抽奖',
-      desc: '260918,
+      desc: '260918',
       rules: [
         {
           resetMatch: 'match',
