@@ -137,7 +137,7 @@ export default defineGkdApp({
     {
       key: 9,
       name: '红会员一万达标抢券',
-      desc: '260917',
+      desc: '260917，限1次',
       rules: [
         {
           resetMatch: 'match',
@@ -152,9 +152,9 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 9,
+      key: 10,
       name: '红会员一万达标抢券2',
-      desc: '260917',
+      desc: '260917，不限',
       rules: [
         {
           resetMatch: 'match',
@@ -168,7 +168,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 10,
+      key: 11,
       name: '抽奖，弹窗',
       desc: '251208，D',
       rules: [
