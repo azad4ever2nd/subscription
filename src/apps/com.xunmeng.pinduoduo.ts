@@ -6,12 +6,12 @@ export default defineGkdApp({
     {
       key: 1,
       name: '积分兑无门槛5元',
-      desc: '260905',
+      desc: '260918',
       rules: [
         {
-          actionCd: 10,
+          actionCd: 0,
           actionMaximum: 15,
-          forcedTime: 2000,
+          forcedTime: 800,
           order: -1,
           resetMatch: 'match',
           anyMatches: [
@@ -25,15 +25,15 @@ export default defineGkdApp({
     {
       key: 2,
       name: '积分兑无门槛券确认兑换',
-      desc: '260905',
+      desc: '260917',
       rules: [
         {
           anyMatches: [
             '(TextView[text*="百亿补贴无门槛券" || text$="无门槛券"] <n View + TextView[text="确认兑换"][clickable=false][visibleToUser=true])',
             '(TextView[text="元"] - TextView[text="5"] < View < View + TextView[text="确认兑换"][clickable=false][visibleToUser=true])',
           ],
-          actionCd: 100,
-          forcedTime: 2000,
+          actionCd: 0,
+          forcedTime: 1500,
           resetMatch: 'match',
           order: -2,
           activityIds: ['com.xunmeng.pinduoduo.activity.NewPageActivity'],
