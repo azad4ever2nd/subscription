@@ -98,7 +98,7 @@ export default defineGkdApp({
     {
       key: 7,
       name: '删除全部搜索历史，确认',
-      desc: '260213',
+      desc: '260213，',
       rules: [
         {
           matches: [
