@@ -196,7 +196,7 @@ export default defineGkdApp({
           resetMatch: 'match',
           fastQuery: true,
           actionCd: 100,
-		  forccedTime:3000,
+		  forcedTime:3000,
           activityIds: 'com.alipay.android.msp.ui.views.MspContainerActivity',
           anyMatches: [
             '(TextView[text="拼多多 推荐你"] <n FrameLayout +n @FrameLayout[checked=false][clickable=true][visibleToUser=true] > TextView[text="关闭"])',
