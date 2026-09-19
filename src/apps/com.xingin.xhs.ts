@@ -93,7 +93,7 @@ export default defineGkdApp({
           matches: 'ViewGroup > TextView[text="未成年人模式"][vid="kidsModeMinorTitleTv"] + ImageView[desc="关闭"][vid="kidsModeMinorCloseIv"][clickable=true][visibleToUser=true] +n TextView[text="不再提醒"][vid="kidsModeMinorNoRemindBtn"][clickable=true][visibleToUser=true]',
         },
       ],
-    }
+    },
     {
       key: 7,
       name: '删除全部搜索历史，确认',
