@@ -584,7 +584,7 @@ export default defineGkdApp({
         {
           resetMatch: 'match',
           actionCd: 700,
-		  forcedTime:3000,
+          forcedTime: 3000,
           activityIds: [
             'com.tencent.mm.plugin.appbrand.ui.AppBrandUI0',
             'com.tencent.mm.plugin.appbrand.ui.AppBrandUI1',
@@ -598,7 +598,8 @@ export default defineGkdApp({
             'com.tencent.mm.plugin.appbrand.ui.AppBrandUI04',
             'com.tencent.mm.plugin.appbrand.ui.AppBrandPluginUI',
           ],
-		  excludeMatches:'([text="兑换确认"] +n * > [text="取消"] + [text="确认"])',
+          excludeMatches:
+            '([text="兑换确认"] +n * > [text="取消"] + [text="确认"])',
           anyMatches: [
             '([text$="借记卡"] +n * > [text="立即兑换"])',
             'WebView >n View > TextView[text$="借记卡"] +n View > TextView[text="立即兑换"][clickable=false][visibleToUser=true]',
@@ -615,7 +616,7 @@ export default defineGkdApp({
         {
           resetMatch: 'match',
           actionCd: 300,
-		  forcedTime:3000,
+          forcedTime: 3000,
           action: 'clickCenter',
           activityIds: [
             'com.tencent.mm.plugin.appbrand.ui.AppBrandUI0',
@@ -668,7 +669,7 @@ export default defineGkdApp({
       rules: [
         {
           resetMatch: 'match',
-		  forcedTime:3000,
+          forcedTime: 3000,
           activityIds: [
             'com.tencent.mm.plugin.appbrand.ui.AppBrandUI0',
             'com.tencent.mm.plugin.appbrand.ui.AppBrandUI1',
@@ -1416,8 +1417,8 @@ export default defineGkdApp({
           ],
           anyMatches: [
             'TextView[text="系统繁忙，请稍后再试。"] <<n View + View > @View[clickable=false][visibleToUser=true] > TextView[text="确定"]',
-			'View > View > @TextView[clickable=true][visibleToUser=true] -n View > View > TextView[text="恭喜您获得"]',
-			'View > View >  @TextView[clickable=true][visibleToUser=true] -n View >  TextView[text^="您的领取机会已用完"]',
+            'View > View > @TextView[clickable=true][visibleToUser=true] -n View > View > TextView[text="恭喜您获得"]',
+            'View > View >  @TextView[clickable=true][visibleToUser=true] -n View >  TextView[text^="您的领取机会已用完"]',
             'TextView[text^="已参与"] < View +2 @TextView[clickable=true][visibleToUser=true] - View > TextView[text="确认"]',
             'TextView[text^="奖励已发送" || text$="可前往【我的奖品】查看提取"] < View +2 @TextView[clickable=true][visibleToUser=true] - View > TextView[text="立即使用"]',
             '(View > View > TextView[text^="来晚啦"] + View + TextView[clickable=true][visibleToUser=true])',

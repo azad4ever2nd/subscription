@@ -178,10 +178,10 @@ export default defineGkdApp({
           resetMatch: 'match',
           forcedTime: 3000,
           activityIds: 'com.cmccit.webview.ac.CommonHtml5Activity',
-          anyMatches:[
+          anyMatches: [
             'WebView > View > Dialog > View > Button[text="我知道了"] + Button[text="关闭弹窗"][clickable=true][visibleToUser=true]',
-			'View[id="Yr27cX0-SIYI5zV-8k2S"] > View > View > @TextView[text.length=0][clickable=true][visibleToUser=true] - View > TextView[text.length=0][clickable=true][visibleToUser=true]',
-			],
+            'View[id="Yr27cX0-SIYI5zV-8k2S"] > View > View > @TextView[text.length=0][clickable=true][visibleToUser=true] - View > TextView[text.length=0][clickable=true][visibleToUser=true]',
+          ],
         },
       ],
     },
@@ -193,7 +193,8 @@ export default defineGkdApp({
         {
           resetMatch: 'match',
           activityIds: 'com.cmccit.webview.ac.CommonHtml5Activity',
-          matches: 'Image[text="图片跳转"] < View - View > View > Image[text="1661757057966_336135"][clickable=false][visibleToUser=true]',
+          matches:
+            'Image[text="图片跳转"] < View - View > View > Image[text="1661757057966_336135"][clickable=false][visibleToUser=true]',
         },
       ],
     },

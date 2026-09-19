@@ -90,7 +90,8 @@ export default defineGkdApp({
           resetMatch: 'match',
           fastQuery: true,
           activityIds: 'com.xingin.xhs.index.v2.IndexActivityV2',
-          matches: 'ViewGroup > TextView[text="未成年人模式"][vid="kidsModeMinorTitleTv"] + ImageView[desc="关闭"][vid="kidsModeMinorCloseIv"][clickable=true][visibleToUser=true] +n TextView[text="不再提醒"][vid="kidsModeMinorNoRemindBtn"][clickable=true][visibleToUser=true]',
+          matches:
+            'ViewGroup > TextView[text="未成年人模式"][vid="kidsModeMinorTitleTv"] + ImageView[desc="关闭"][vid="kidsModeMinorCloseIv"][clickable=true][visibleToUser=true] +n TextView[text="不再提醒"][vid="kidsModeMinorNoRemindBtn"][clickable=true][visibleToUser=true]',
         },
       ],
     },

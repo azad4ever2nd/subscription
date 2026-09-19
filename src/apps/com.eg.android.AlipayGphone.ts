@@ -145,7 +145,7 @@ export default defineGkdApp({
         {
           resetMatch: 'match',
           actionCd: 100,
-		  forcedTime:3000,
+          forcedTime: 3000,
           activityIds:
             'com.alipay.mobile.nebulax.xriver.activity.XRiverActivity',
           anyMatches: [
@@ -196,7 +196,7 @@ export default defineGkdApp({
           resetMatch: 'match',
           fastQuery: true,
           actionCd: 100,
-		  forcedTime:3000,
+          forcedTime: 3000,
           activityIds: 'com.alipay.android.msp.ui.views.MspContainerActivity',
           anyMatches: [
             '(TextView[text="拼多多 推荐你"] <n FrameLayout +n @FrameLayout[checked=false][clickable=true][visibleToUser=true] > TextView[text="关闭"])',
@@ -270,12 +270,12 @@ export default defineGkdApp({
       rules: [
         {
           action: 'clickCenter',
-		  forcedTime:3000,
+          forcedTime: 3000,
           anyMatches: [
             'TextView[text="暂不离开"] < View + View >  TextView[text="直接退出"][clickable=false][visibleToUser=true]',
             '(@View > [text="任务完成"] + [text="返回会场" || text="返回领奖>"])',
             '(@View[clickable=true] >n [text="任务完成"] + [text="返回会场" || text="返回领奖>"])',
-			'View > View > @Image[text="关闭弹窗"][clickable=true][visibleToUser=true] + View TextView[text="去买入"]',
+            'View > View > @Image[text="关闭弹窗"][clickable=true][visibleToUser=true] + View TextView[text="去买入"]',
           ],
           resetMatch: 'match',
           activityIds: [

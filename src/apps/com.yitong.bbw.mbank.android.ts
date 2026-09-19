@@ -42,9 +42,10 @@ export default defineGkdApp({
         {
           resetMatch: 'match',
           action: 'clickCenter',
-		  forcedTime:3000,
+          forcedTime: 3000,
           activityIds: 'com.yitong.mobile.biz.h5.container.WebViewActivity',
-          matches: '@View[id="portal2"][clickable=true][visibleToUser=true] > View > View[id="pop"] > TextView[text="可去\\"我的奖品\\"兑换"]',
+          matches:
+            '@View[id="portal2"][clickable=true][visibleToUser=true] > View > View[id="pop"] > TextView[text="可去\\"我的奖品\\"兑换"]',
         },
       ],
     },
