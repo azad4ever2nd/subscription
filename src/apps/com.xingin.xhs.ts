@@ -83,6 +83,19 @@ export default defineGkdApp({
     },
     {
       key: 6,
+      name: '弹窗，未成人模式，关闭 或 不再提醒',
+      desc: '260919',
+      rules: [
+        {
+          resetMatch: 'match',
+          fastQuery: true,
+          activityIds: 'com.xingin.xhs.index.v2.IndexActivityV2',
+          matches: 'ViewGroup > TextView[text="未成年人模式"][vid="kidsModeMinorTitleTv"] + ImageView[desc="关闭"][vid="kidsModeMinorCloseIv"][clickable=true][visibleToUser=true] +n TextView[text="不再提醒"][vid="kidsModeMinorNoRemindBtn"][clickable=true][visibleToUser=true]',
+        },
+      ],
+    }
+    {
+      key: 7,
       name: '删除全部搜索历史，确认',
       desc: '260213',
       rules: [

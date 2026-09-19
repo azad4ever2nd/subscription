@@ -579,11 +579,12 @@ export default defineGkdApp({
     {
       key: 33,
       name: '阳光兑换1，立即兑换',
-      desc: '251127，|| ([text="兑换确认"] +n * > [text="取消"] + [text="确认"])',
+      desc: '260919，|| ([text="兑换确认"] +n * > [text="取消"] + [text="确认"])',
       rules: [
         {
           resetMatch: 'match',
-          actionCdKey: 4,
+          actionCd: 700,
+		  forcedTime:3000,
           activityIds: [
             'com.tencent.mm.plugin.appbrand.ui.AppBrandUI0',
             'com.tencent.mm.plugin.appbrand.ui.AppBrandUI1',
@@ -597,6 +598,7 @@ export default defineGkdApp({
             'com.tencent.mm.plugin.appbrand.ui.AppBrandUI04',
             'com.tencent.mm.plugin.appbrand.ui.AppBrandPluginUI',
           ],
+		  excludeMatches:'([text="兑换确认"] +n * > [text="取消"] + [text="确认"])',
           anyMatches: [
             '([text$="借记卡"] +n * > [text="立即兑换"])',
             'WebView >n View > TextView[text$="借记卡"] +n View > TextView[text="立即兑换"][clickable=false][visibleToUser=true]',
@@ -608,11 +610,12 @@ export default defineGkdApp({
     {
       key: 34,
       name: '阳光兑换2，确认兑换',
-      desc: '251202，',
+      desc: '260919，',
       rules: [
         {
           resetMatch: 'match',
-          actionCdKey: 4,
+          actionCd: 300,
+		  forcedTime:3000,
           action: 'clickCenter',
           activityIds: [
             'com.tencent.mm.plugin.appbrand.ui.AppBrandUI0',
@@ -665,6 +668,7 @@ export default defineGkdApp({
       rules: [
         {
           resetMatch: 'match',
+		  forcedTime:3000,
           activityIds: [
             'com.tencent.mm.plugin.appbrand.ui.AppBrandUI0',
             'com.tencent.mm.plugin.appbrand.ui.AppBrandUI1',
@@ -1392,7 +1396,7 @@ export default defineGkdApp({
     {
       key: 63,
       name: '活动未开始，我知道了',
-      desc: '260909，添加 宁波，朴朴，动卡空间，内蒙工行，贵阳工行，工行余姚，湘约工行，贵州工行，已参加过',
+      desc: '260919，添加 宁波，朴朴，动卡空间，内蒙工行，贵阳工行，工行余姚，湘约工行，贵州工行，已参加过',
       rules: [
         {
           resetMatch: 'match',
@@ -1412,6 +1416,8 @@ export default defineGkdApp({
           ],
           anyMatches: [
             'TextView[text="系统繁忙，请稍后再试。"] <<n View + View > @View[clickable=false][visibleToUser=true] > TextView[text="确定"]',
+			'View > View > @TextView[clickable=true][visibleToUser=true] -n View > View > TextView[text="恭喜您获得"]',
+			'View > View >  @TextView[clickable=true][visibleToUser=true] -n View >  TextView[text^="您的领取机会已用完"]',
             'TextView[text^="已参与"] < View +2 @TextView[clickable=true][visibleToUser=true] - View > TextView[text="确认"]',
             'TextView[text^="奖励已发送" || text$="可前往【我的奖品】查看提取"] < View +2 @TextView[clickable=true][visibleToUser=true] - View > TextView[text="立即使用"]',
             '(View > View > TextView[text^="来晚啦"] + View + TextView[clickable=true][visibleToUser=true])',

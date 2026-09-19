@@ -172,14 +172,28 @@ export default defineGkdApp({
     {
       key: 12,
       name: '弹窗，未中奖，知道了或X掉',
-      desc: '260917',
+      desc: '260919',
       rules: [
         {
           resetMatch: 'match',
           forcedTime: 3000,
           activityIds: 'com.cmccit.webview.ac.CommonHtml5Activity',
-          matches:
+          anyMatches:[
             'WebView > View > Dialog > View > Button[text="我知道了"] + Button[text="关闭弹窗"][clickable=true][visibleToUser=true]',
+			'View[id="Yr27cX0-SIYI5zV-8k2S"] > View > View > @TextView[text.length=0][clickable=true][visibleToUser=true] - View > TextView[text.length=0][clickable=true][visibleToUser=true]',
+			],
+        },
+      ],
+    },
+    {
+      key: 13,
+      name: '弹窗，周三活动2，X掉，',
+      desc: '260919 fastquery=false,clickable=false',
+      rules: [
+        {
+          resetMatch: 'match',
+          activityIds: 'com.cmccit.webview.ac.CommonHtml5Activity',
+          matches: 'Image[text="图片跳转"] < View - View > View > Image[text="1661757057966_336135"][clickable=false][visibleToUser=true]',
         },
       ],
     },

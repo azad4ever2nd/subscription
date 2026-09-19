@@ -140,11 +140,12 @@ export default defineGkdApp({
     {
       key: 9,
       name: '弹窗2，与分期有关，X掉',
-      desc: '260909，替换规则3，添加 签到成功，开通碰一下，推送服务，查询账单，返回领奖，到桌面，银行卡抽奖，升级月利宝',
+      desc: '260919，替换规则3，添加 签到成功，开通碰一下，推送服务，查询账单，返回领奖，到桌面，银行卡抽奖，升级月利宝',
       rules: [
         {
           resetMatch: 'match',
           actionCd: 100,
+		  forcedTime:3000,
           activityIds:
             'com.alipay.mobile.nebulax.xriver.activity.XRiverActivity',
           anyMatches: [
@@ -195,6 +196,7 @@ export default defineGkdApp({
           resetMatch: 'match',
           fastQuery: true,
           actionCd: 100,
+		  forccedTime:3000,
           activityIds: 'com.alipay.android.msp.ui.views.MspContainerActivity',
           anyMatches: [
             '(TextView[text="拼多多 推荐你"] <n FrameLayout +n @FrameLayout[checked=false][clickable=true][visibleToUser=true] > TextView[text="关闭"])',
@@ -264,14 +266,16 @@ export default defineGkdApp({
     {
       key: 14,
       name: '任务完成，返回领奖',
-      desc: '260912，fastQuery=false,clickable=true，添加返回，',
+      desc: '260919，fastQuery=false,clickable=true，添加返回，',
       rules: [
         {
           action: 'clickCenter',
+		  forcedTime:3000,
           anyMatches: [
             'TextView[text="暂不离开"] < View + View >  TextView[text="直接退出"][clickable=false][visibleToUser=true]',
             '(@View > [text="任务完成"] + [text="返回会场" || text="返回领奖>"])',
             '(@View[clickable=true] >n [text="任务完成"] + [text="返回会场" || text="返回领奖>"])',
+			'View > View > @Image[text="关闭弹窗"][clickable=true][visibleToUser=true] + View TextView[text="去买入"]',
           ],
           resetMatch: 'match',
           activityIds: [

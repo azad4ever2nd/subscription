@@ -36,6 +36,20 @@ export default defineGkdApp({
     },
     {
       key: 3,
+      name: '弹窗，签到成功获得立减金，X掉',
+      desc: '260919',
+      rules: [
+        {
+          resetMatch: 'match',
+          action: 'clickCenter',
+		  forcedTime:3000,
+          activityIds: 'com.yitong.mobile.biz.h5.container.WebViewActivity',
+          matches: '@View[id="portal2"][clickable=true][visibleToUser=true] > View > View[id="pop"] > TextView[text="可去\\"我的奖品\\"兑换"]',
+        },
+      ],
+    },
+    {
+      key: 4,
       name: '立减金兑换，复制',
       desc: '260907',
       rules: [
@@ -51,7 +65,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 4,
+      key: 5,
       name: '弹窗，复制成功，确定',
       desc: '260830',
       rules: [
@@ -65,7 +79,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 5,
+      key: 6,
       name: '立减金兑换，立即兑换',
       desc: '260830，',
       rules: [
@@ -83,7 +97,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 6,
+      key: 7,
       name: '弹窗，立减金兑换，同意前往',
       desc: '260830',
       rules: [

@@ -88,6 +88,7 @@ export default defineGkdApp({
         {
           resetMatch: 'match',
           fastQuery: true,
+		  foredTime:3000,
           activityIds: [
             'com.unionpay.activity.react.UPActivityReactNative',
             'com.unionpay.liteapp.app.UPLiteAppActivity1',

@@ -18,5 +18,18 @@ export default defineGkdApp({
         },
       ],
     },
+    {
+      key: 2,
+      name: '弹窗，发送通知，不允许',
+      desc: '260919',
+      rules: [
+        {
+          resetMatch: 'match',
+          fastQuery: true,
+          activityIds: 'com.achievo.vipshop.activity.LodingActivity',
+          matches: 'FrameLayout > ViewGroup > TextView[vid="tv_title"][text$="发送通知"] + * + @TextView[text="不允许"][vid="button_left"][clickable=true][visibleToUser=true] + TextView[text="允许"][vid="button_right"]',
+        },
+      ],
+    },
   ],
 });
