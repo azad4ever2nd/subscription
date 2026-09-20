@@ -89,7 +89,7 @@ export default defineGkdApp({
     {
       key: 6,
       name: '话费光大100-10',
-      desc: '260608，布局有变，针对卡点的指定银行的优惠，根据需要添加银行和金额',
+      desc: '260608，fastQuery=true,clickable=true,布局有变，针对卡点的指定银行的优惠，根据需要添加银行和金额',
       rules: [
         {
           fastQuery: true,
@@ -107,7 +107,7 @@ export default defineGkdApp({
     {
       key: 7,
       name: '指定银行还款优惠，确认付款',
-      desc: '260608，增加新布局，针对卡点的指定银行的固定还款优惠，根据需要添加银行和金额',
+      desc: '260608，fastQuery=true,clickable=true,增加新布局，针对卡点的指定银行的固定还款优惠，根据需要添加银行和金额',
       rules: [
         {
           resetMatch: 'match',
@@ -123,13 +123,11 @@ export default defineGkdApp({
     },
     {
       key: 8,
-      name: '放弃付款',
+      name: '占位，放弃付款',
       desc: '260916，fastquery=false,clickable=false',
       rules: [
         {
           resetMatch: 'match',
-          forcedTime: 3000,
-          fastQuery: true,
           activityIds: 'com.alipay.android.msp.ui.views.MspContainerActivity',
           anyMatches: [
             '@TextView[text="放弃"][clickable=false][visibleToUser=true] < FrameLayout + FrameLayout > TextView[text="继续付款"]',
@@ -140,7 +138,7 @@ export default defineGkdApp({
     {
       key: 9,
       name: '弹窗2，与分期有关，X掉',
-      desc: '260919，替换规则3，添加 签到成功，开通碰一下，推送服务，查询账单，返回领奖，到桌面，银行卡抽奖，升级月利宝',
+      desc: '260920，替换规则3，添加 签到成功，开通碰一下，推送服务，查询账单，返回领奖，到桌面，银行卡抽奖，升级月利宝',
       rules: [
         {
           resetMatch: 'match',
@@ -149,6 +147,7 @@ export default defineGkdApp({
           activityIds:
             'com.alipay.mobile.nebulax.xriver.activity.XRiverActivity',
           anyMatches: [
+            'View >  View > View > TextView[text="到支付宝首页"] +n TextView[text="取消"][clickable=false][visibleToUser=true]',
             'View > TextView[text="签到成功"] +n TextView[text="去完成"] + TextView[text.length=0][clickable=false][visibleToUser=true]',
             '(@TextView[clickable=true][visibleToUser=true] - View > TextView[text="体验金领取成功"] +n TextView[text="立即攒下"])',
             '(View > View > @Button[text="关闭"][clickable=true][visibleToUser=true] +n Button[text="去添加银行卡"])',
@@ -190,7 +189,7 @@ export default defineGkdApp({
     {
       key: 10,
       name: '推荐开通花呗',
-      desc: '260916，添加 支付宝推荐你，关闭PDD免密付款，添加放弃还款，推荐习惯，([text^="支付宝推荐" || text^="支付宝  推荐"] < * +n * > [text="关闭"]) ||',
+      desc: '260920，fastQuery=true,clickable=true,添加 支付宝推荐你，关闭PDD免密付款，添加放弃还款，推荐习惯，([text^="支付宝推荐" || text^="支付宝  推荐"] < * +n * > [text="关闭"]) ||',
       rules: [
         {
           resetMatch: 'match',
@@ -199,13 +198,14 @@ export default defineGkdApp({
           forcedTime: 3000,
           activityIds: 'com.alipay.android.msp.ui.views.MspContainerActivity',
           anyMatches: [
-            '(TextView[text="拼多多 推荐你"] <n FrameLayout +n @FrameLayout[checked=false][clickable=true][visibleToUser=true] > TextView[text="关闭"])',
             '([text="支付宝"] + [text="邀请你" || text="推荐你"] + [text="跳过"])',
             '([text="是否放弃本次付款？"] <<n * +n * [text="放弃"])',
             '([text^="支付宝推荐" || text^="支付宝  推荐"] <<n * +n * > [text="关闭"])',
-            '(FrameLayout > TextView[text*="免密快捷支付"] + FrameLayout > CheckBox[clickable=true][checkable=true])',
             '([id="com.alipay.mobile.antui:id/message"][text="是否放弃本次付款？" || text*="是否放弃付款"] <<n * + * [id="com.alipay.mobile.antui:id/cancel"][text="放弃"])',
+            '(TextView[text="拼多多 推荐你"] <n FrameLayout +n @FrameLayout[checked=false][clickable=true][visibleToUser=true] > TextView[text="关闭"])',
             'TextView[id="com.alipay.mobile.antui:id/message"][text="是否放弃本次付款？"] <<n LinearLayout  + LinearLayout > @Button[id="com.alipay.mobile.antui:id/btn_cancel"][text="放弃"][clickable=true][visibleToUser=true] + Button[text="继续付款"][id="com.alipay.mobile.antui:id/btn_ensure"]',
+            'TextView[text="放弃"][clickable=false][visibleToUser=true] < @FrameLayout[clickable=true][visibleToUser=true] + FrameLayout > TextView[text="继续付款"]',
+            '(FrameLayout > TextView[text*="免密快捷支付"] + FrameLayout > CheckBox[clickable=true][checkable=true])',
             '(View > View > TextView[text="支付宝"] + TextView[text="邀请你"] + TextView[clickable=false][visibleToUser=true][text="跳过"])',
             '(TextView[text="支付宝推荐你"] < FrameLayout +n @FrameLayout[clickable=true][visibleToUser=true] > TextView[text="关闭"])',
             '(TextView[text="支付宝推荐你"] < FrameLayout  +n FrameLayout > TextView[text="关闭"][clickable=false][visibleToUser=true])',
@@ -465,10 +465,11 @@ export default defineGkdApp({
     {
       key: 26,
       name: '中奖了，开心收下',
-      desc: '260918，添加 卡包管理 优酷飞猪话费',
+      desc: '260920，添加 卡包管理 优酷飞猪话费',
       rules: [
         {
           resetMatch: 'match',
+          action: 'clickCenter',
           activityIds:
             'com.alipay.mobile.nebulax.xriver.activity.XRiverActivity',
           anyMatches: [
@@ -629,7 +630,7 @@ export default defineGkdApp({
     {
       key: 35,
       name: '添加神券到首页，X掉',
-      desc: '260919，fastquery=false,clickable=false,添加 闪购0.1，超级吃货卡体验版，闪购签到，闪购小程序，添加到首页，添加 生活缴费',
+      desc: '260920，fastquery=false,clickable=false,添加 闪购0.1，超级吃货卡体验版，闪购签到，闪购小程序，添加到首页，添加 生活缴费',
       rules: [
         {
           resetMatch: 'match',
@@ -641,6 +642,7 @@ export default defineGkdApp({
             'com.alipay.mobile.nebulax.xriver.activity.XRiverActivity$App04',
           ],
           anyMatches: [
+            '@TextView[clickable=false][visibleToUser=true] - View >n  TextView[text="下次再来" || text="继续攒星"]',
             '@TextView[clickable=false][visibleToUser=true] - View > View > View > View > View > TextView[text="首购特惠"]',
             'Image[id="meb24ise8obdb"] < View[id^="meb23wkfgkptj"] < View + View > View > Image[clickable=false][visibleToUser=true]',
             'View[childCount=2] > @TextView[clickable=false][visibleToUser=true] - View > View > View >n TextView[text="去使用"] - View',

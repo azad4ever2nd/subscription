@@ -230,13 +230,17 @@ export default defineGkdApp({
     {
       key: 14,
       name: '签到奖励弹窗',
-      desc: '',
+      desc: '260920,fastQuery=true,clickable=true',
       rules: [
         {
           resetMatch: 'match',
           fastQuery: true,
+          action: 'clickCenter',
           activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
-          anyMatches: '[vid="ivTopBg"] +n [vid="ivClose"]',
+          anyMatches: [
+            '[vid="ivTopBg"] +n [vid="ivClose"]',
+            'RelativeLayout > RelativeLayout[vid="rlDialogContent"] + ImageView[vid="ivClose"][clickable=true][visibleToUser=true]',
+          ],
         },
       ],
     },
@@ -411,7 +415,7 @@ export default defineGkdApp({
     {
       key: 26,
       name: '弹窗，每日单单返奖励金，知道了2',
-      desc: '260907,clickable=true',
+      desc: '260920,fastQuery=false,clickable=true，添加 弹窗知道了',
       rules: [
         {
           action: 'clickCenter',
@@ -421,6 +425,7 @@ export default defineGkdApp({
           anyMatches: [
             'TextView[text="我的奖励金"] +n View > View > TextView[clickable=false][visibleToUser=true][text="知道了"]',
             'TextView[text="我的奖励金"] +n View >n View > TextView[clickable=true][visibleToUser=true][text="知道了"]',
+            'View > View > View > TextView[text="我知道了"][clickable=true][visibleToUser=true]',
           ],
         },
       ],
@@ -556,6 +561,33 @@ export default defineGkdApp({
           ],
           anyMatches:
             'View > @View[clickable=false][visibleToUser=true] + ImageView +(2,3) View[desc="按住滑块，拖到右边还车"]',
+        },
+      ],
+    },
+    {
+      key: 35,
+      name: '弹窗，卡情况介绍，X掉',
+      desc: '260920',
+      rules: [
+        {
+          resetMatch: 'match',
+          action: 'clickCenter',
+          activityIds: 'com.hellobike.bundlelibrary.web.WebActivity',
+          matches:
+            'View > View[childCount=5] > @TextView[clickable=true][visibleToUser=true] + TextView + TextView[text^="限量" && text$="张"]',
+        },
+      ],
+    },
+    {
+      key: 36,
+      name: '0.1秒杀7天不限次周卡',
+      desc: '260920',
+      rules: [
+        {
+          resetMatch: 'match',
+          activityIds: 'com.hellobike.bundlelibrary.web.WebActivity',
+          matches:
+            'View > TextView[text="单车7天不限次卡"] + TextView[text="秒杀价"] +n TextView[text!="已售罄" && text^="仅剩"] + Image[text="quality,q_80"][clickable=false][visibleToUser=true]',
         },
       ],
     },
