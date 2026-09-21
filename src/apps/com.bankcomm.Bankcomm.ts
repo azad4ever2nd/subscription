@@ -320,6 +320,7 @@ export default defineGkdApp({
             '([text="恭喜您签到成功"] +n [text="我知道了"])',
           ],
           resetMatch: 'match',
+          actionCd: 8500,
           activityIds: 'com.bankcomm.module.biz.webcontainer.BCMHtml5Activity',
         },
       ],
@@ -544,6 +545,20 @@ export default defineGkdApp({
       ],
     },
     {
+      key: 1,
+      name: '赎回份额，全部',
+      desc: '260921',
+      rules: [
+        {
+          resetMatch: 'match',
+          actionMaximum: 1,
+          activityIds: 'com.bankcomm.module.biz.webcontainer.BCMHtml5Activity',
+          matches:
+            'View > TextView[text="赎回份额"] +n ListView > @View[clickable=true][visibleToUser=true] > TextView[text="全部"]',
+        },
+      ],
+    },
+    {
       key: 38,
       name: '周五最红半价，必胜客，已售罄',
       desc: '260807',
@@ -561,7 +576,7 @@ export default defineGkdApp({
     {
       key: 39,
       name: '浏览任务完成',
-      desc: '260911，添加新布局，添加权限弹窗，直播间ids',
+      desc: '260921，添加新布局，添加权限弹窗，直播间ids',
       rules: [
         {
           action: 'back',
@@ -575,6 +590,7 @@ export default defineGkdApp({
             '([id="android:id/message"][text*="权限"] <<n * + [id="android:id/buttonPanel"] [id="android:id/button2"][text="否"] + [id="android:id/button1"][text="是"])',
             '([text="Pyi3KQBzgJA1F+Xm7MrWYA0HQqTcq4GrAAAAAASUVORK5CYII="])',
             '(View > Image[text="countdown-fulfilled-bg.f65a2ea"][visibleToUser=true])',
+            '(View > Image[clickable=true][text="gthEFTB6uRQ36UPWtwD"][visibleToUser=true])',
             '(View > Image[clickable=false][text="gthEFTB6uRQ36UPWtwD"][visibleToUser=true])',
             '(WebView > @View[clickable=false][visibleToUser=true] > Image[text="gthEFTB6uRQ36UPWtwD"])',
             'WebView > View > Image[text="countdown-fulfilled-bg.f65a2ea"][clickable=true][visibleToUser=true] + Image[text="uYGtPZQreNFJUHiJFsH0akOlpQOFendaucAAAAASUVORK5CYII="]',
@@ -585,7 +601,7 @@ export default defineGkdApp({
     {
       key: 40,
       name: '浏览任务完成2',
-      desc: '260829，D,占位，取消back，添加新布局，添加权限弹窗，直播间ids',
+      desc: 'D,占位，260829，取消back，添加新布局，添加权限弹窗，直播间ids',
       rules: [
         {
           resetMatch: 'match',

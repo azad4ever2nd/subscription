@@ -213,13 +213,18 @@ export default defineGkdApp({
     {
       key: 13,
       name: '奖励金页面，上方，今日签到1',
-      desc: '260907',
+      desc: '260921',
       rules: [
         {
           resetMatch: 'match',
           forcedTime: 2000,
           actionCd: 3000,
           activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
+          excludeMatches: [
+            'TextView[text="我的奖励金"] +n View >n View > TextView[visibleToUser=true][text="知道了"]',
+            'TextView[text="我的奖励金"] +n View >n View > TextView[visibleToUser=true] +n TextView[text="明日再来"][visibleToUser=true]',
+            'TextView[text="我的奖励金"] +n View >n View >  TextView[text="签到"][visibleToUser=true]',
+          ],
           anyMatches: [
             '(@*[clickable=true] > *[childCount=2] > [text="今日签到"])',
             '(View > TextView[text="我的奖励金"] +n View > View >  @View[clickable=true][visibleToUser=true] > View > TextView[text="今日签到"])',
@@ -368,11 +373,18 @@ export default defineGkdApp({
     {
       key: 23,
       name: '奖励金页面，上方，今日签到2',
-      desc: '260907，与13相比，activityId不同',
+      desc: '260921，与13相比，activityId不同',
       rules: [
         {
+          resetMatch: 'match',
           activityIds:
             'com.hellobike.moped.platform.offline.web.OhoRealmWebActivity',
+          excludeMatches: [
+            'TextView[text="我的奖励金"] +n View >n View > TextView[visibleToUser=true][text="知道了"]',
+            'TextView[text="我的奖励金"] +n View >n View > TextView[visibleToUser=true] +n TextView[text="明日再来"][visibleToUser=true]',
+            'TextView[text="我的奖励金"] +n View >n View >  TextView[text="签到"][visibleToUser=true]',
+            'View > View > TextView[text="任意完成以下订单，回来领奖励金"] +n TextView[text="知道了"][visibleToUser=true]',
+          ],
           anyMatches: [
             'TextView[text="我的奖励金"] +n View > View > @View[clickable=false][visibleToUser=true] > TextView + TextView[text="今日签到"]',
             'TextView[text="我的奖励金"] +n View > View > @View[clickable=true][visibleToUser=true] > View >  TextView + TextView[text="今日签到"]',
@@ -386,6 +398,7 @@ export default defineGkdApp({
       desc: 'D,260806',
       rules: [
         {
+          resetMatch: 'match',
           activityIds:
             'com.hellobike.moped.platform.offline.web.OhoRealmWebActivity',
           anyMatches: [
@@ -415,7 +428,7 @@ export default defineGkdApp({
     {
       key: 26,
       name: '弹窗，每日单单返奖励金，知道了2',
-      desc: '260920,fastQuery=false,clickable=true，添加 弹窗知道了',
+      desc: '260921,fastQuery=false,clickable=true，添加 弹窗知道了',
       rules: [
         {
           action: 'clickCenter',
@@ -426,6 +439,7 @@ export default defineGkdApp({
             'TextView[text="我的奖励金"] +n View > View > TextView[clickable=false][visibleToUser=true][text="知道了"]',
             'TextView[text="我的奖励金"] +n View >n View > TextView[clickable=true][visibleToUser=true][text="知道了"]',
             'View > View > View > TextView[text="我知道了"][clickable=true][visibleToUser=true]',
+            'View > View > TextView[text="任意完成以下订单，回来领奖励金"] +n TextView[text="知道了"][clickable=true][visibleToUser=true]',
           ],
         },
       ],
@@ -543,6 +557,7 @@ export default defineGkdApp({
       desc: '260916，测试，不建议打开避免误还车',
       rules: [
         {
+          resetMatch: 'match',
           action: 'swipe',
           swipeArg: {
             start: {

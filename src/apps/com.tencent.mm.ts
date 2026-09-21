@@ -1484,13 +1484,40 @@ export default defineGkdApp({
           ],
           anyMatches: [
             'WebView > TextView[text*="请先登录账号"] + TextView[text*="登录后可享受平台提供的服务"] +n View > Button[text="登录"][clickable=true][visibleToUser=true]',
-            'View > View > View > @TextView[text="点击参与今日抽奖"][clickable=false][visibleToUser=true] + TextView[text="查看我的中奖记录 >"]',
           ],
         },
       ],
     },
     {
       key: 66,
+      name: '粤工会，参与抽奖',
+      desc: '260921',
+      rules: [
+        {
+          resetMatch: 'match',
+          actionMaximum: 1,
+          activityIds: [
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI0',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI1',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI2',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI3',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI4',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI00',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI01',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI02',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI03',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI04',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandPluginUI',
+          ],
+          anyMatches: [
+            'View > View > View > @TextView[text="点击参与今日抽奖"][clickable=false][visibleToUser=true] + TextView[text="查看我的中奖记录 >"]',
+            'View > @View[clickable=false][visibleToUser=true] > TextView[text="查看我的中奖记录 >"]',
+          ],
+        },
+      ],
+    },
+    {
+      key: 67,
       name: '粤工会滑块验证',
       desc: '260908',
       rules: [
@@ -1527,7 +1554,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 67,
+      key: 68,
       name: '粤工会，成功参与今日抽奖，确定',
       desc: '260810',
       rules: [
@@ -1552,7 +1579,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 68,
+      key: 69,
       name: '瑞幸，一键换购，X掉',
       desc: '260810',
       rules: [
@@ -1577,7 +1604,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 69,
+      key: 70,
       name: '瑞幸，更改优惠',
       desc: '260810',
       rules: [
@@ -1603,7 +1630,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 70,
+      key: 71,
       name: '深工周五秒杀，弹窗，商品已被秒完，返回',
       desc: '260810,action=back',
       rules: [
@@ -1629,7 +1656,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 71,
+      key: 72,
       name: '北部湾立减金',
       desc: '260907，',
       rules: [
@@ -1657,9 +1684,9 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 72,
+      key: 73,
       name: '微信话费充值，第一步',
-      desc: '260912，添加 金币兑换后过期提醒我',
+      desc: '260921，添加 金币兑换后过期提醒我',
       rules: [
         {
           resetMatch: 'match',
@@ -1678,13 +1705,14 @@ export default defineGkdApp({
           ],
           anyMatches: [
             'WebView >  TextView[text*="联通" || text*="移动" || text*="电信"] + TextView[text$="0元"] + @TextView[text="立即充值"][clickable=false][visibleToUser=true] + TextView[text="更多推荐"]',
+            'WebView >  TextView[text*="联通" || text*="移动" || text*="电信"] + TextView[text$="0"]  + TextView[text$="元"] + @TextView[text="立即充值"][clickable=false][visibleToUser=true]',
             'View > TextView[text="微信提现免费券"] +(3,4) TextView[text="过期提醒我"][clickable=false][visibleToUser=true]',
           ],
         },
       ],
     },
     {
-      key: 73,
+      key: 74,
       name: '自动登录该设备',
       desc: '260804',
       rules: [

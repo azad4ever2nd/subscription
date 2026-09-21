@@ -314,7 +314,7 @@ export default defineGkdApp({
     {
       key: 20,
       name: '如何解锁，去首页1',
-      desc: '260920,clickable=false，添加 神券',
+      desc: '260921,clickable=false，添加 神券',
       rules: [
         {
           resetMatch: 'match',
@@ -326,6 +326,7 @@ export default defineGkdApp({
             '(View > View > View > TextView[text*="浏览商品10秒"] +n TextView[clickable=false][visibleToUser=true][text^="去看看"])',
             'TextView[text="海量商品可用"] - TextView < View +n TextView[index=parent.childCount.minus(1)][clickable=false][visibleToUser=true]',
             'View >  TextView[text*="点抢最高16元无门槛券"] + @View[clickable=false][visibleToUser=true] > TextView[text="立即抽奖"]',
+            'View > @View[clickable=false][visibleToUser=true] + TextView[text="进入消费券活动页领券"]',
           ],
         },
       ],

@@ -218,6 +218,55 @@ export default defineGkdApp({
     },
     {
       key: 15,
+      name: '省钱月卡,拼手气抽价格',
+      desc: '260921',
+      rules: [
+        {
+          resetMatch: 'match',
+          actionMaximum: 1,
+          action: 'clickCenter',
+          activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
+          anyMatches: [
+            'WebView > @View[clickable=true][visibleToUser=true] + View[text="更多优惠"]',
+          ],
+        },
+      ],
+    },
+    {
+      key: 16,
+      name: '省钱月卡,开盲盒抽价格',
+      desc: '260921',
+      rules: [
+        {
+          resetMatch: 'match',
+          actionMaximum: 1,
+          preKeys: [15],
+          action: 'clickCenter',
+          activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
+          matches:
+            'WebView > View[text="更多优惠"] +3 View >  View[clickable=false][visibleToUser=true] + @View[clickable=true][visibleToUser=true] + View[clickable=true][visibleToUser=true]',
+        },
+      ],
+    },
+    {
+      key: 17,
+      name: '弹窗，省钱月卡，仅限受邀用户，确定',
+      desc: '260921',
+      rules: [
+        {
+          resetMatch: 'match',
+          actionMaximum: 1,
+          action: 'clickCenter',
+          preKeys: [16],
+          activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
+          matches:
+            'WebView > View > View[text="本活动仅限受邀客户参与"] + View[text="确定"][clickable=true][visibleToUser=true]',
+        },
+      ],
+    },
+
+    {
+      key: 18,
       name: '开启消息通知',
       desc: '260726',
       rules: [
