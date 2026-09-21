@@ -545,7 +545,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 1,
+      key: 38,
       name: '赎回份额，全部',
       desc: '260921',
       rules: [
@@ -559,7 +559,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 38,
+      key: 39,
       name: '周五最红半价，必胜客，已售罄',
       desc: '260807',
       rules: [
@@ -574,7 +574,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 39,
+      key: 40,
       name: '浏览任务完成',
       desc: '260921，添加新布局，添加权限弹窗，直播间ids',
       rules: [
@@ -599,7 +599,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 40,
+      key: 41,
       name: '浏览任务完成2',
       desc: 'D,占位，260829，取消back，添加新布局，添加权限弹窗，直播间ids',
       rules: [
@@ -620,7 +620,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 41,
+      key: 42,
       name: '直播间限时福袋',
       desc: '260717',
       rules: [
@@ -635,7 +635,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 42,
+      key: 43,
       name: '系统定位权限未开启,暂不开启',
       desc: '251207,',
       rules: [
@@ -650,7 +650,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 43,
+      key: 44,
       name: '领券中心，1分购，外面等',
       desc: '2600508，可以指定抢什么券，朴朴，移动，联通，美团，闪购，',
       rules: [
@@ -665,7 +665,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 44,
+      key: 45,
       name: '领券中心，1分购，里面等，立即抢购',
       desc: '260508',
       rules: [
@@ -678,7 +678,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 45,
+      key: 46,
       name: '领券中心，1分购，达到限购次数，返回',
       desc: '260327',
       rules: [
@@ -692,7 +692,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 46,
+      key: 47,
       name: '领券中心，1分购，里面等2',
       desc: '260608，不分品种，无actionMaximum限制',
       rules: [
