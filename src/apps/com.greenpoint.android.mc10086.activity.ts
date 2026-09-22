@@ -98,7 +98,7 @@ export default defineGkdApp({
     {
       key: 7,
       name: '兑换成功',
-      desc: '260920，添加兑换中，签到成功领奖',
+      desc: '260304，添加兑换中，签到成功领奖',
       rules: [
         {
           resetMatch: 'match',
@@ -106,7 +106,6 @@ export default defineGkdApp({
             '([text="兑换成功"] + Image)',
             '(@* +2 * > [text="恭喜获得"])',
             '([text="兑换中"] < * +n [text="我知道了"])',
-            'View[id="sueecss_dlalog"] > View > View > Image[clickable=true][visibleToUser=true]',
           ],
           activityIds: ['com.cmccit.webview.ac.CommonHtml5Activity'],
         },
@@ -158,10 +157,12 @@ export default defineGkdApp({
     {
       key: 11,
       name: '88话费，9/30结束',
-      desc: '260920',
+      desc: '260916',
       rules: [
         {
           resetMatch: 'match',
+          actionCd: 0,
+          actionMaximum: 8,
           activityIds: 'com.cmccit.webview.ac.CommonHtml5Activity',
           matches:
             'View > @View[clickable=true][visibleToUser=true] > Image[text="mgrupload.b73a69f81dff4d188a65b8f87bc993e220260806"] + Image[text="407e285ed39c4423a167f7d7a18c507820250618"]',
@@ -171,7 +172,7 @@ export default defineGkdApp({
     {
       key: 12,
       name: '弹窗，未中奖，知道了或X掉',
-      desc: '260920，添加 刷新重试',
+      desc: '260919',
       rules: [
         {
           resetMatch: 'match',
@@ -180,7 +181,6 @@ export default defineGkdApp({
           anyMatches: [
             'WebView > View > Dialog > View > Button[text="我知道了"] + Button[text="关闭弹窗"][clickable=true][visibleToUser=true]',
             'View[id="Yr27cX0-SIYI5zV-8k2S"] > View > View > @TextView[text.length=0][clickable=true][visibleToUser=true] - View > TextView[text.length=0][clickable=true][visibleToUser=true]',
-            '[text^="您有" && text$="次刮卡机会"] <<n View + View > TextView[clickable=true][visibleToUser=true] - View > TextView[text=""][clickable=true][visibleToUser=true]',
           ],
         },
       ],

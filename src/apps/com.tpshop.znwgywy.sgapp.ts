@@ -135,15 +135,14 @@ export default defineGkdApp({
     {
       key: 10,
       name: '服务器列表广告1',
-      desc: '260912',
+      desc: '260922',
       rules: [
         {
           resetMatch: 'match',
           activityIds: 'tool.seagull.v.ui.MainActivity',
           anyMatches: [
-            'FrameLayout[vid="server_list_banner_ad"] > RelativeLayout > FrameLayout > RelativeLayout > RelativeLayout > ImageView[clickable=true][text="-bak"]',
-            'FrameLayout[vid="server_list_banner_ad"] FrameLayout > ImageView - FrameLayout[childCount=1] > View[text="-bak"]',
-            '[vid="server_list_banner_ad"] >n LinearLayout + ImageView + FrameLayout > View[parent.childCount=1][clickable=false][visibleToUser=true]',
+            'FrameLayout[vid="server_list_banner_ad"] >n LinearLayout + ImageView + FrameLayout > View[parent.childCount=1][clickable=false][visibleToUser=true]',
+            'FrameLayout[vid="server_list_banner_ad"] >n RelativeLayout > ImageView[parent.childCount=2][clickable=true][visibleToUser=true][index=parent.childCount.minus(1)]',
           ],
         },
       ],

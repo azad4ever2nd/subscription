@@ -139,14 +139,15 @@ export default defineGkdApp({
     {
       key: 10,
       name: '绿色能量',
-      desc: '260727,添加自助还款，电子账单，运动和支付',
+      desc: '260922,添加自助还款，电子账单，运动和支付',
       rules: [
         {
           resetMatch: 'match',
-          actionCd: 0,
+          actionCd: 500,
           activityIds: 'com.citiccard.mobilebank.web.webpage.CommonWebPage',
           anyMatches: [
             '(@Image[clickable=false][visibleToUser=true][text="0OtyvnGzoNS+5EoIAAAAASUVORK5CYII=bak"] +n TextView[text$="电子账单" || text="动卡空间自助还款"])',
+            '(ListView > @View[clickable=true][visibleToUser=true] > Image[clickable=false][visibleToUser=true][text="0OtyvnGzoNS+5EoIAAAAASUVORK5CYII="] +n TextView[text$="电子账单" || text="动卡空间自助还款"])',
             '(ListView > View > @Image[clickable=false][visibleToUser=true][text="VK8fr6+sLwGnB552X3pvyv71EBhCUCcrVq1euHOf09gevPFGYnvp1uJmTJr399ksvPdXrcL8DlWgBfyVLJ3IAAAAASUVORK5CYII="] + TextView[text^="绿色"])',
           ],
         },

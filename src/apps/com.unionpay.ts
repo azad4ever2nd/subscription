@@ -126,7 +126,7 @@ export default defineGkdApp({
     {
       key: 8,
       name: '幸运扭蛋机 开心收下',
-      desc: '260920，添加 刷新 修复积点BUG，text$="到账后7*24小时内使用有效"',
+      desc: '260621，修复积点BUG，text$="到账后7*24小时内使用有效"',
       rules: [
         {
           resetMatch: 'match',
@@ -138,7 +138,6 @@ export default defineGkdApp({
             'com.unionpay.liteapp.app.UPLiteAppActivity4',
           ],
           anyMatches: [
-            'Dialog > View > Button[text="关闭"][clickable=true] + Button[text="刷新重试"][clickable=true][visibleToUser=true]',
             '([text="请前往“会员中心”查看"] -n [text="查看积点攻略"] - [text*="立减券" || text="积点"] <n * + *)',
             '(@* - * > [text="立减券"] + [text="去查看"] +n [text$="使用有效"])',
             '(@TextView - * > [text="积点"] + [text="去查看"] + [text="请前往“会员中心”查看"])',

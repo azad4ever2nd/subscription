@@ -421,11 +421,13 @@ export default defineGkdApp({
     {
       key: 29,
       name: '抽奖弹窗，关闭',
-      desc: '260228',
+      desc: '260922',
       rules: [
         {
-          matches:
+          anyMatches: [
             '[text="恭喜获得"] +n Image[clickable=true][index=parent.childCount.minus(1)]',
+            'View > @Image[index=parent.childCount.minus(1)][clickable=true][visibleToUser=true] -n View > TextView[text="恭喜获得"]',
+          ],
           resetMatch: 'match',
           activityIds: 'com.bankcomm.module.biz.webcontainer.BCMHtml5Activity',
         },

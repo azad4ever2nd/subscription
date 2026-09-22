@@ -88,7 +88,7 @@ export default defineGkdApp({
     {
       key: 6,
       name: '签到多少天抽奖',
-      desc: '260910',
+      desc: '260922',
       rules: [
         {
           resetMatch: 'match',
@@ -98,6 +98,7 @@ export default defineGkdApp({
           anyMatches: [
             '(WebView > View > View > View > View > View > TextView[text^="抽中" && text$="个签到金"] + TextView[clickable=false][visibleToUser=true])',
             '(View > View > TextView[text^="抽中" && text$="个签到金"] + TextView[text.length=0][clickable=false][visibleToUser=true] )',
+            '(WebView > View > View > View > View > View > TextView[text^="抽中" && text$="个签到金"] + TextView[clickable=true][visibleToUser=true])',
             '(View > View > TextView[text^="抽中" && text$="签到金"] + TextView[clickable=true][visibleToUser=true])',
           ],
         },
