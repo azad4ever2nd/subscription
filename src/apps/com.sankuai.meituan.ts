@@ -152,12 +152,15 @@ export default defineGkdApp({
     {
       key: 11,
       name: '直播间任务，领亲密度，去逛逛',
-      desc: '260911，增加 惊喜券弹窗',
+      desc: '260924，增加 IDS，惊喜券弹窗',
       rules: [
         {
           resetMatch: 'match',
           fastQuery: true,
-          activityIds: 'com.dianping.live.live.mrn.MLiveMRNActivity',
+          activityIds: [
+            'com.dianping.live.live.mrn.MLiveMRNActivity',
+            'com.dianping.live.live.mrn.square.MLiveSquareV2Activity',
+          ],
           anyMatches: [
             '(ViewGroup > TextView[text="领亲密度" || text="去逛逛"])',
             '(@ViewGroup[clickable=true][visibleToUser=true] > TextView[text="领亲密度" || text="去逛逛"])',

@@ -1433,6 +1433,7 @@ export default defineGkdApp({
             '(View > TextView[text="Blocked by Sentinel"] + View + TextView[clickable=true][visibleToUser=true])',
             '(View > View > TextView[text^="奖品已领完"] + TextView[text="确定"][clickable=true][visibleToUser=true])',
             '(View > View > TextView[text="活动9:00开始"] + TextView[text="确定"][clickable=true][visibleToUser=true])',
+            '(View > View > TextView[text^="活动将于" && text$="开始"] + TextView[text="确定"][clickable=true][visibleToUser=true])',
             '(View >  View > View > TextView[text="来晚了，奖励派完了"] + View + TextView[clickable=true][visibleToUser=true])',
             '(TextView[text^="今日名额已尽" || text="今日名额已尽，明日九点开放。"] < View + View + TextView[clickable=true][visibleToUser=true])',
           ],
