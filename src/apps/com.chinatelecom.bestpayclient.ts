@@ -7,12 +7,12 @@ export default defineGkdApp({
     {
       key: 1,
       name: '开启消息通知',
-      desc: '260831，添加弹窗',
+      desc: '260920，添加弹窗',
       rules: [
         {
           resetMatch: 'match',
           fastQuery: true,
-          matchDelay: 500,
+          matchDelay: 1000,
           forcedTime: 3000,
           activityIds: 'com.chinatelecom.bestpayclient.ui.MainActivity',
           anyMatches: [

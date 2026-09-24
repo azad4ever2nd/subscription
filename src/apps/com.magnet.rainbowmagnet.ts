@@ -16,7 +16,7 @@ export default defineGkdApp({
           actionCd: 10000,
           activityIds: 'com.magnet.rainbowmagnet.MainActivity',
           anyMatches: [
-            'View > View > @View[clickable=true][visibleToUser=true][desc="复制链接"] + View[desc="收藏链接"]',
+            'View > View > @View[desc="复制链接"][clickable=true][visibleToUser=true] + View[desc="收藏链接"]',
           ],
         },
       ],

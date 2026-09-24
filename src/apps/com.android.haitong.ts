@@ -21,15 +21,17 @@ export default defineGkdApp({
     {
       key: 2,
       name: '弹窗',
-      desc: '260829，排除新股弹窗，添加弹窗下载君弘app',
+      desc: '260921，排除新股弹窗，添加弹窗下载君弘app',
       rules: [
         {
           resetMatch: 'match',
+          forcedTime: 3000,
           activityIds: 'cn.htsec.SecurityHome',
           excludeMatches:
             'LinearLayout > TextView[text="请关注"] + TextView[text="《新股申购风险提示》"]',
-          matches:
+          anyMatches: [
             '(LinearLayout[vid="pushinfodlg_msgarea"] > ImageView[clickable=true][visibleToUser=true][index=parent.childCount.minus(1)])',
+          ],
         },
       ],
     },
@@ -67,15 +69,17 @@ export default defineGkdApp({
     {
       key: 5,
       name: '关于国泰海通君弘APP版本升级的通知，关闭"',
-      desc: '260702',
+      desc: '260921，添加 打新',
       rules: [
         {
           resetMatch: 'match',
           fastQuery: true,
+          forcedTime: 3000,
           activityIds: 'cn.htsec.SecurityHome',
           anyMatches: [
             '([vid="pushinfodlg_btn1"] +n [vid="pushinfodlg_btn2"][text="关闭"])',
             '(LinearLayout > TextView[vid="pushinfodlg_btn1"] +n TextView[vid="pushinfodlg_btn2"][clickable=true][visibleToUser=true][text="关闭"])',
+            'LinearLayout[vid="pushinfodlg_tvbtnsarea"] >  @TextView[id="com.android.haitong:id/pushinfodlg_btn1"][text="关闭"] + View + TextView[vid="pushinfodlg_btn2"][text="一键打新"]',
           ],
         },
       ],
@@ -173,7 +177,7 @@ export default defineGkdApp({
     {
       key: 11,
       name: '预约打新完成，完成',
-      desc: '260909',
+      desc: '260921',
       rules: [
         {
           resetMatch: 'match',
@@ -181,7 +185,7 @@ export default defineGkdApp({
           activityIds:
             'com.gtja.business.component.browser.webview.BrowserScreen',
           matches: [
-            '([text="退出"] + [text="智能打新"] + [text="完成bak"])',
+            '([text="退出"] + [text="智能打新"] + [text="完成"])',
             '(WebView[text="可转债申购"] > View > View > Image[clickable=false][visibleToUser=true][text="退出"] +n TextView[clickable=false][visibleToUser=true][text="完成"])',
             '(WebView > View > View > Image[text="退出"] + TextView + TextView[text="完成"][clickable=true][visibleToUser=true])',
           ],
