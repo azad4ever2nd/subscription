@@ -174,13 +174,12 @@ export default defineGkdApp({
     {
       key: 11,
       name: '抽奖领任务页面，加自选 任务',
-      desc: '260922，clickable=true',
+      desc: '260924，clickable=true',
       rules: [
         {
           resetMatch: 'match',
           matchDelay: 1000,
           forcedTime: 3000,
-          actionCd: 800,
           action: 'clickCenter',
           excludeMatches: [
             'TextView[text="1／1"]',
@@ -192,9 +191,12 @@ export default defineGkdApp({
             '(WebView > View > View > View > View > Button[text="加自选"][clickable=true][visibleToUser=true])',
             '(WebView > View >  View >  View > Button[text="加自选"][clickable=true][visibleToUser=true])',
             '(View > View > @View[clickable=true][visibleToUser=true] > TextView[text="我要抽奖"])',
+            'View > @View[clickable=true][visibleToUser=true] > TextView[text="参与抽奖"]',
             '(WebView >n View > Button[text="去加自选" || text="去添加" || text="加自选"][clickable=true][visibleToUser=true])',
             'TextView[text="0／1"] <n View +n Button[text="加自选"][clickable=true][visibleToUser=true]',
+            'TextView[text="0／1"] <n View + View > Button[text="加自选"][clickable=true][visibleToUser=true]',
             'View > View > TextView[text="完成0／1"] +n View > Button[text="加自选"][clickable=true][visibleToUser=true]',
+            'View > View > @Button[text="加自选"][clickable=true] -n View > TextView[text="0／1"]',
           ],
           activityIds:
             'cmb.pb.app.h5container.webviewcontainer.PBWebContainerActivity',

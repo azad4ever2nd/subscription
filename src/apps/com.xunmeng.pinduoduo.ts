@@ -70,7 +70,7 @@ export default defineGkdApp({
     {
       key: 5,
       name: '百亿补贴无门槛抽奖',
-      desc: '260918，fastQuery=false,clickable=true',
+      desc: '260924，fastQuery=false,clickable=true',
       rules: [
         {
           actionMaximum: 15,
@@ -78,6 +78,7 @@ export default defineGkdApp({
           action: 'clickCenter',
           activityIds: 'com.xunmeng.pinduoduo.activity.NewPageActivity',
           anyMatches: [
+            'TextView[text="放弃优惠并退出"] < FrameLayout <<n ViewGroup + @ViewGroup[clickable=true][visibleToUser=true] > ViewGroup > ImageView',
             '([text="限时抽神券"] +n [text="无门槛券"] + * [text="立即抽奖"])',
             '(TextView[text="限时抽神券"] -2 TextView[text="无门槛券"] + View >3 TextView[text="立即抽奖"])',
             'View >  TextView[text$="元无门槛券"] + @View[clickable=true][visibleToUser=true] > TextView[text="立即抽奖"]',
@@ -314,13 +315,14 @@ export default defineGkdApp({
     {
       key: 20,
       name: '如何解锁，去首页1',
-      desc: '260921,clickable=false，添加 神券',
+      desc: '260924,clickable=false，添加 神券',
       rules: [
         {
           resetMatch: 'match',
           action: 'click',
           activityIds: 'com.xunmeng.pinduoduo.activity.NewPageActivity',
           anyMatches: [
+            'TextView[id="sticky_Yf2L"] + View > View > View >  Image[text="800x9999%3E"][clickable=false][visibleToUser=true]',
             '(View > TextView[text="解锁消费券"] + TextView + TextView[clickable=false][visibleToUser=true][text="去首页领券"])',
             '(View > TextView[text="如何解锁?" || text="如何解锁点亮?"] + TextView[clickable=false][text="去首页"])',
             '(View > View > View > TextView[text*="浏览商品10秒"] +n TextView[clickable=false][visibleToUser=true][text^="去看看"])',

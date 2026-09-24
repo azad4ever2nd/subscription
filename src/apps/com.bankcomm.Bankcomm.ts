@@ -328,7 +328,7 @@ export default defineGkdApp({
     {
       key: 22,
       name: '感谢订阅，知道了',
-      desc: '260601',
+      desc: '260924，添加 安全盾',
       rules: [
         {
           resetMatch: 'match',
@@ -336,6 +336,7 @@ export default defineGkdApp({
           anyMatches: [
             '([text="感谢您的订阅"] <<n * + * > [text="知道了"])',
             '(TextView[text*="订阅"] <n View < View + View > @Button[clickable=true][visibleToUser=true][text="知道了"] + Button[text="去查看"])',
+            'View > View > @Button[text="稍后再说"][clickable=true][visibleToUser=true] + Button[text="前往安装"]',
           ],
         },
       ],

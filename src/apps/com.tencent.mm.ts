@@ -186,16 +186,16 @@ export default defineGkdApp({
     {
       key: 11,
       name: '湖北邮政e权益，抽奖弹窗，确认',
-      desc: '260218',
+      desc: '260924，添加 绑定提示',
       rules: [
         {
           resetMatch: 'match',
-          actionCd: 2000,
           activityIds: 'com.tencent.mm.plugin.webview.ui.tools.MMWebViewUI',
           anyMatches: [
             '(View[childCount=3] > @[text="确认"] + [text^="请及时兑换，每月15号刷新"])',
             '(@[text="确认"] + [text^="请及时兑换，每月15号刷新"])',
             'View > @TextView[text="确认"][clickable=true][visibleToUser=true] + TextView[text="请及时兑换，每月15号刷新，过期失效"]',
+            'WebView[text="绑卡有礼"] > Dialog > TextView[text="兑换成功"] + View > Button[text="确认"][clickable=true][visibleToUser=true]',
           ],
         },
       ],
@@ -965,7 +965,7 @@ export default defineGkdApp({
     {
       key: 47,
       name: '腾讯理财通，领取奖励',
-      desc: '260916,添加抢理财金，整合领取与返回，体验完成，',
+      desc: '260924,添加 大家盈，抢理财金，整合领取与返回，体验完成，',
       rules: [
         {
           resetMatch: 'match',
@@ -992,6 +992,7 @@ export default defineGkdApp({
             '(View[childCount=3][clickable=true] > [text$="元理财金"] + *)',
             '(View > @View > TextView + TextView[text$="元理财金"] + TextView[clickable=true])',
             'WebView @View[clickable=true][visibleToUser=true] > TextView[text^="最高" && text$="元理财金"] + TextView[text="领取理财金"]',
+            '@View[clickable=true][visibleToUser=true] > View > View > Image[text="3ead67a7aa048b8658fe73f53b677f60"] +n TextView[text="抢"]',
           ],
         },
       ],
@@ -1397,7 +1398,7 @@ export default defineGkdApp({
     {
       key: 63,
       name: '活动未开始，我知道了',
-      desc: '260919，添加 宁波，朴朴，动卡空间，内蒙工行，贵阳工行，工行余姚，湘约工行，贵州工行，已参加过',
+      desc: '260924，添加 红色打卡，宁波，朴朴，动卡空间，内蒙工行，贵阳工行，工行余姚，湘约工行，贵州工行，已参加过',
       rules: [
         {
           resetMatch: 'match',
@@ -1416,6 +1417,8 @@ export default defineGkdApp({
             'com.tencent.mm.plugin.appbrand.ui.AppBrandPluginUI',
           ],
           anyMatches: [
+            'View > @TextView[clickable=true][visibleToUser=true] - View > View > Image[text="ac327e12fc2c48ee92771714b590d29b"]',
+            'View > View > TextView[text="每人1次参与机会"] + TextView[text="确定"][clickable=true][visibleToUser=true]',
             'TextView[text="系统繁忙，请稍后再试。"] <<n View + View > @View[clickable=false][visibleToUser=true] > TextView[text="确定"]',
             'View > View > @TextView[clickable=true][visibleToUser=true] -n View > View > TextView[text="恭喜您获得"]',
             'View > View >  @TextView[clickable=true][visibleToUser=true] -n View >  TextView[text^="您的领取机会已用完"]',

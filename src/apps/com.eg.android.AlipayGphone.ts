@@ -140,7 +140,7 @@ export default defineGkdApp({
     {
       key: 9,
       name: '弹窗2，与分期有关，X掉',
-      desc: '260920，替换规则3，添加 签到成功，开通碰一下，推送服务，查询账单，返回领奖，到桌面，银行卡抽奖，升级月利宝',
+      desc: '260924，替换规则3，添加 签到成功，开通碰一下，推送服务，查询账单，返回领奖，到桌面，银行卡抽奖，升级月利宝',
       rules: [
         {
           resetMatch: 'match',
@@ -150,6 +150,7 @@ export default defineGkdApp({
             'com.alipay.mobile.nebulax.xriver.activity.XRiverActivity',
           anyMatches: [
             'View >  View > View > TextView[text="到支付宝首页"] +n TextView[text="取消"][clickable=false][visibleToUser=true]',
+            '@TextView[clickable=false][visibleToUser=true] - View > Button[text="我知道了"]',
             'View > TextView[text="签到成功"] +n TextView[text="去完成"] + TextView[text.length=0][clickable=false][visibleToUser=true]',
             '(@TextView[clickable=true][visibleToUser=true] - View > TextView[text="体验金领取成功"] +n TextView[text="立即攒下"])',
             '(View > View > @Button[text="关闭"][clickable=true][visibleToUser=true] +n Button[text="去添加银行卡"])',
@@ -633,7 +634,7 @@ export default defineGkdApp({
     {
       key: 35,
       name: '添加神券到首页，X掉',
-      desc: '260922，fastquery=false,clickable=false,添加 闪购0.1，超级吃货卡体验版，闪购签到，闪购小程序，添加到首页，添加 生活缴费',
+      desc: '260924，fastquery=false,clickable=false,添加 闪购0.1，超级吃货卡体验版，闪购签到，闪购小程序，添加到首页，添加 生活缴费',
       rules: [
         {
           resetMatch: 'match',
@@ -646,6 +647,8 @@ export default defineGkdApp({
           ],
           anyMatches: [
             '@TextView[clickable=false][visibleToUser=true] - View >n  TextView[text="下次再来" || text="继续攒星"]',
+            'View[childCount=2] > @TextView[clickable=false][visibleToUser=true][text.length=0] -  View >n TextView[text="元升级"][visibleToUser=true]',
+            '@TextView[clickable=false][visibleToUser=true] - View > View > View >  View >  View > View >  TextView[text="0"] + TextView[text=".1"] + TextView[text="元升级"]',
             '@TextView[clickable=false][visibleToUser=true] - View > View > View > View > View > TextView[text="首购特惠"]',
             'Image[id="meb24ise8obdb"] < View[id^="meb23wkfgkptj"] < View + View > View > Image[clickable=false][visibleToUser=true]',
             'View[childCount=2] > @TextView[clickable=false][visibleToUser=true] - View > View > View >n TextView[text="去使用"] - View',
@@ -658,11 +661,11 @@ export default defineGkdApp({
             '(@TextView[clickable=false][visibleToUser=true] <2 View + TextView[text="取消"] + TextView[text="立即添加"])',
             '(@TextView[clickable=false][visibleToUser=true]  -  View > View > TextView[text="购物爆红包"] + TextView[text="今天23:59到期"])',
             '([text^="完成"] <<n View + View > TextView[text="领取奖励"][clickable=false][visibleToUser=true])',
-            '(TextView[text="开心收下"] <<n View + TextView[text.length=0][clickable=false][visibleToUser=true])',
-            '@TextView[clickable=false][visibleToUser=true] - View > View > View >  View >  View > View >  TextView[text="0"] + TextView[text=".1"] + TextView[text="元升级"]',
             '@TextView[clickable=false][visibleToUser=true] - View > View > View >  View > View > TextView[text="去使用"]',
             'View > @TextView - View >5 TextView[text="开心收下"]',
             'View[childCount=2] > @TextView[clickable=false][visibleToUser=true] - View TextView[text="开心收下"]',
+            'TextView[text="开心收下"] <<n View + TextView[text.length=0][clickable=false][visibleToUser=true]',
+            '@Image[clickable=false][visibleToUser=true] < View - View > View > TextView[text="开心收下"]',
             'View > View > View + TextView[text="去签到"][clickable=false][visibleToUser=true]',
             'TextView[text="刷新"][visibleToUser=true]',
             'TextView[text="0.1"] - TextView[text="¥"] < View +n @TextView[text="先囤后送"][clickable=false][visibleToUser=true] + TextView[text="过期自动退"]',

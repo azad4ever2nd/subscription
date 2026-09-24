@@ -39,11 +39,12 @@ export default defineGkdApp({
     {
       key: 3,
       name: '开启消息通知',
-      desc: '',
+      desc: '260924',
       rules: [
         {
-          matches: [
+          anyMatches: [
             '[vid="view_dialog_other_container"] [vid="view_alert_cancel"]',
+            'RelativeLayout[vid="view_dialog_other_container"] >n ImageView[vid="view_alert_cancel"][clickable=true][visibleToUser=true]',
           ],
           fastQuery: true,
           activityIds: ['com.unionpay.activity.UPActivityMain'],
