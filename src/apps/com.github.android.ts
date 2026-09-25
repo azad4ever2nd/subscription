@@ -98,14 +98,14 @@ export default defineGkdApp({
     {
       key: 7,
       name: '下滑刷新',
-      desc: '260906',
+      desc: '260925',
       rules: [
         {
           resetMatch: 'match',
           preKeys: [4],
-          actionMaximum: 1,
+          actionMaximum: 2,
           action: 'swipe',
-          actionCd: 3000,
+          actionCd: 5000,
           swipeArg: {
             start: {
               x: 510,
