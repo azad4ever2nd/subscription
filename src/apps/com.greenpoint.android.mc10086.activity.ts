@@ -25,6 +25,7 @@ export default defineGkdApp({
       rules: [
         {
           fastQuery: true,
+          matchDelay: 1000,
           forcedTime: 3000,
           resetMatch: 'match',
           activityIds: 'com.mc10086.cmcc.view.tabs.AppTabFragment',

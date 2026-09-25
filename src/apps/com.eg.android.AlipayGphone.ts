@@ -149,6 +149,7 @@ export default defineGkdApp({
           activityIds:
             'com.alipay.mobile.nebulax.xriver.activity.XRiverActivity',
           anyMatches: [
+            'RelativeLayout > TextView[id="com.alipay.mobile.antui:id/title_txt_1"][text="开启地理位置权限"] - @FrameLayout[desc="取消"][id="com.alipay.mobile.antui:id/btn_close"][clickable=true][visibleToUser=true] > TextView[desc="取消"]',
             '@TextView[clickable=true][visibleToUser=true] - View > TextView[text="查看可升级产品"]',
             '@TextView[text=""][clickable=true][visibleToUser=true] < View + Button[text="一键升级"]',
             'View > View > @Image[text="关闭弹窗"][clickable=true][visibleToUser=true] + Image[clickable=true][visibleToUser=true]',
@@ -330,45 +331,52 @@ export default defineGkdApp({
     {
       key: 17,
       name: '迪士尼梦享券，500-60',
-      desc: '260508，区别在于可抢时childCount=4',
+      desc: '260925，区别在于可抢时childCount=4',
       rules: [
         {
           resetMatch: 'match',
           actionMaximum: 500,
           activityIds:
             'com.alipay.mobile.nebulax.xriver.activity.XRiverActivity',
-          anyMatches:
+          anyMatches: [
             'View[childCount=4] > [text="60元"] + [text="乐园门票消费券"] + [text="满500可用"] + *',
+            'View > View  > View[childCount=4] > TextView[text="60元"] +3  TextView[text.length=0][visibleToUser=true]',
+          ],
         },
       ],
     },
     {
       key: 18,
       name: '迪士尼梦享券，1000-120',
-      desc: '260508，区别在于可抢时childCount=4',
+      desc: '260925，区别在于可抢时childCount=4，新旧版本clickable不同',
       rules: [
         {
           resetMatch: 'match',
           actionMaximum: 500,
           activityIds:
             'com.alipay.mobile.nebulax.xriver.activity.XRiverActivity',
-          anyMatches:
+          anyMatches: [
             'View[childCount=4] > [text="120元"] + [text="乐园门票消费券"] + [text="满1000可用"] + *',
+            'View > View  > View[childCount=4] > TextView[text="120元"] +3  TextView[text.length=0][clickable=false][visibleToUser=true]',
+            'View > View  > View[childCount=4] > TextView[text="120元"] +3  TextView[text.length=0][clickable=true][visibleToUser=true]',
+          ],
         },
       ],
     },
     {
       key: 19,
       name: '迪士尼梦享券，2000-200',
-      desc: '260508，区别在于可抢时childCount=4',
+      desc: '260925，区别在于可抢时childCount=4',
       rules: [
         {
           resetMatch: 'match',
           actionMaximum: 500,
           activityIds:
             'com.alipay.mobile.nebulax.xriver.activity.XRiverActivity',
-          anyMatches:
+          anyMatches: [
             'View[childCount=4] > [text="200元"] + [text="乐园门票消费券"] + [text="满2000可用"] + *',
+            'View > View  > View[childCount=4] > TextView[text="200元"] +3  TextView[text.length=0][visibleToUser=true]',
+          ],
         },
       ],
     },

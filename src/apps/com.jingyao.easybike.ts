@@ -139,13 +139,13 @@ export default defineGkdApp({
     {
       key: 9,
       name: '弹窗，系统定位服务已关闭，取消',
-      desc: '260909，添加matchroo测试，添加打开定位服务，,添加IDS,消息通知 com.hellobike.business.hitch.common.home.HLPHHomeActivity',
+      desc: '260925，添加matchroo测试，添加打开定位服务，,添加IDS,消息通知 com.hellobike.business.hitch.common.home.HLPHHomeActivity',
       rules: [
         {
           fastQuery: true,
           resetMatch: 'match',
           action: 'clickCenter',
-          actionCd: 100,
+          actionCd: 500,
           forcedTime: 3000,
           matchRoot: false,
           activityIds: [
@@ -156,6 +156,7 @@ export default defineGkdApp({
             '([text^="请打开定位服务"] <<n * +n * [text="取消"][clickable=true][visibleToUser=true])',
             '(TextView[text^="请打开定位服务"] < FrameLayout + FrameLayout[id="com.jingyao.easybike:id/bottomContainer"] > LinearLayout > Button[text="取消"][clickable=true][visibleToUser=true])',
             'RelativeLayout > TextView[text="开启消息通知"] + TextView[vid="ivClose"][clickable=true][visibleToUser=true][text.length=1]',
+            'RelativeLayout > @ImageView[clickable=true][visibleToUser=true] + FrameLayout > TextView[text^="允许哈啰出行使用你的定位" || text$="定位服务"]',
           ],
         },
       ],
