@@ -50,14 +50,14 @@ export default defineGkdApp({
     {
       key: 4,
       name: '弹窗，签到后广告，X掉',
-      desc: '260704',
+      desc: '260925',
       rules: [
         {
           resetMatch: 'match',
-          actionCd: 0,
           activityIds: 'tool.seagull.v.ui.MainActivity',
           anyMatches: [
             'TextView[vid="checkin_button"][text^="已签"] + FrameLayout > FrameLayout > FrameLayout > FrameLayout > FrameLayout > FrameLayout[childCount=1] > View[clickable=false]',
+            'TextView[text^="已签"][vid="checkin_button"] + FrameLayout >n  RelativeLayout[childCount=2] > ImageView + ImageView[clickable=true][visibleToUser=true]',
           ],
         },
       ],
