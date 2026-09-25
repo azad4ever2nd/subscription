@@ -266,6 +266,45 @@ export default defineGkdApp({
     },
     {
       key: 18,
+      name: '弹窗，勾选 此服务后15日内不再提示',
+      desc: '260925',
+      rules: [
+        {
+          resetMatch: 'match',
+          activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
+          matches:
+            'Dialog > View > @CheckBox[text.length=1][checked=false][visibleToUser=true] + View[text="勾选此服务后15日内不再提示"]',
+        },
+      ],
+    },
+    {
+      key: 19,
+      name: '弹窗，勾选不再提示，知道了',
+      desc: '260925',
+      rules: [
+        {
+          resetMatch: 'match',
+          activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
+          matches:
+            'View[text="勾选此服务后15日内不再提示"] - CheckBox[checked=true][visibleToUser=true] < View + View > Button[text="退出"] + Button[text="知道了 "][clickable=true][visibleToUser=true]',
+        },
+      ],
+    },
+    {
+      key: 20,
+      name: '点击此处返回',
+      desc: '260925',
+      rules: [
+        {
+          resetMatch: 'match',
+          activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
+          matches:
+            'WebView > View > View > View[text="点击此处返回"][clickable=true][visibleToUser=true] + Image',
+        },
+      ],
+    },
+    {
+      key: 21,
       name: '开启消息通知',
       desc: '260726',
       rules: [

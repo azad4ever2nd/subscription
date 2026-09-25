@@ -140,7 +140,7 @@ export default defineGkdApp({
     {
       key: 9,
       name: '弹窗2，与分期有关，X掉',
-      desc: '260924，替换规则3，添加 签到成功，开通碰一下，推送服务，查询账单，返回领奖，到桌面，银行卡抽奖，升级月利宝',
+      desc: '260925，替换规则3，添加 签到成功，开通碰一下，推送服务，查询账单，返回领奖，到桌面，银行卡抽奖，升级月利宝',
       rules: [
         {
           resetMatch: 'match',
@@ -149,6 +149,10 @@ export default defineGkdApp({
           activityIds:
             'com.alipay.mobile.nebulax.xriver.activity.XRiverActivity',
           anyMatches: [
+            '@TextView[clickable=true][visibleToUser=true] - View > TextView[text="查看可升级产品"]',
+            '@TextView[text=""][clickable=true][visibleToUser=true] < View + Button[text="一键升级"]',
+            'View > View > @Image[text="关闭弹窗"][clickable=true][visibleToUser=true] + Image[clickable=true][visibleToUser=true]',
+            'View > @Image[text="关闭弹窗"][clickable=true][visibleToUser=true] +n View > TextView[text="仍要赎回"]',
             'View >  View > View > TextView[text="到支付宝首页"] +n TextView[text="取消"][clickable=false][visibleToUser=true]',
             '@TextView[clickable=false][visibleToUser=true] - View > Button[text="我知道了"]',
             'View > TextView[text="签到成功"] +n TextView[text="去完成"] + TextView[text.length=0][clickable=false][visibleToUser=true]',
@@ -469,7 +473,7 @@ export default defineGkdApp({
     {
       key: 26,
       name: '中奖了，开心收下',
-      desc: '260920，添加 卡包管理 优酷飞猪话费',
+      desc: '260925，新旧版本对于checkbox处理不同，添加 卡包管理 优酷飞猪话费',
       rules: [
         {
           resetMatch: 'match',
@@ -478,9 +482,12 @@ export default defineGkdApp({
             'com.alipay.mobile.nebulax.xriver.activity.XRiverActivity',
           anyMatches: [
             '@Button[clickable=true][text="开心收下"] <n View < View + Button[clickable=true][visibleToUser=true][text="关闭"]',
-            'View > @CheckBox[clickable=true][checked=false][visibleToUser=true] + View > View > TextView[text="满200元可用"] +2 TextView[text="话费满减券"]',
-            'View > @CheckBox[checked=false][visibleToUser=true] + View > View > TextView[text="优酷视频"]',
-            'View > @CheckBox[checked=false][visibleToUser=true] + View > View > TextView[text="飞猪旅行"]',
+            'View > @CheckBox[checked=false][visibleToUser=true] + View > View > TextView[text="满200元可用"] +2 TextView[text="话费满减券bak"]',
+            'View > @CheckBox[checked=false][visibleToUser=true] + View > View > TextView[text="优酷视频bak"]',
+            'View > @CheckBox[checked=false][visibleToUser=true] + View > View > TextView[text="飞猪旅行bak"]',
+            'View[childCount=0] < @CheckBox[checked=false][visibleToUser=true] + View > View > TextView[text="满200元可用"] +2 TextView[text="话费满减券"]',
+            'View[childCount=0] < @CheckBox[checked=false][visibleToUser=true] + View > View > TextView[text="优酷视频"]',
+            'View[childCount=0] < @CheckBox[checked=false][visibleToUser=true] + View > View > TextView[text="飞猪旅行"]',
           ],
         },
       ],

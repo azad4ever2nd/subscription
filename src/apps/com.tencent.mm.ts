@@ -965,7 +965,7 @@ export default defineGkdApp({
     {
       key: 47,
       name: '腾讯理财通，领取奖励',
-      desc: '260924,添加 大家盈，抢理财金，整合领取与返回，体验完成，',
+      desc: '260925,添加 大家盈，抢理财金，整合领取与返回，体验完成，',
       rules: [
         {
           resetMatch: 'match',
@@ -982,6 +982,8 @@ export default defineGkdApp({
             'com.tencent.mm.plugin.appbrand.ui.AppBrandUI04',
             'com.tencent.mm.plugin.appbrand.ui.AppBrandPluginUI',
           ],
+          excludeMatches:
+            'View > TextView[text^="晒出正收益" && text$="元理财金"] + TextView[text="详细规则"]',
           anyMatches: [
             '([text^="成功领取奖励" || text="成功开始模拟"] <<n FrameLayout + * >n [desc="关闭bak"][childCount=1])',
             '([text^="成功领取奖励"] <<n FrameLayout + * >n [desc="关闭bak"])',
@@ -1690,7 +1692,7 @@ export default defineGkdApp({
     {
       key: 73,
       name: '微信话费充值，第一步',
-      desc: '260921，添加 金币兑换后过期提醒我',
+      desc: '260925，排除立即支付，添加 金币兑换后过期提醒我',
       rules: [
         {
           resetMatch: 'match',
@@ -1706,6 +1708,10 @@ export default defineGkdApp({
             'com.tencent.mm.plugin.appbrand.ui.AppBrandUI03',
             'com.tencent.mm.plugin.appbrand.ui.AppBrandUI04',
             'com.tencent.mm.plugin.appbrand.ui.AppBrandPluginUI',
+          ],
+          excludeMatches: [
+            'WebView > Button[text="立即支付"][clickable=true][visibleToUser=true] + Button[text="取消"]',
+            'Button[text="立即支付"][clickable=true][visibleToUser=true] + Button[text="取消"]',
           ],
           anyMatches: [
             'WebView >  TextView[text*="联通" || text*="移动" || text*="电信"] + TextView[text$="0元"] + @TextView[text="立即充值"][clickable=false][visibleToUser=true] + TextView[text="更多推荐"]',

@@ -53,11 +53,13 @@ export default defineGkdApp({
     {
       key: 4,
       name: 'app评价，X掉',
-      desc: '260829',
+      desc: '260925',
       rules: [
         {
           resetMatch: 'match',
           fastQuery: true,
+          matchDelay: 1000,
+          forcedTime: 3000,
           activityIds: 'cn.htsec.SecurityHome',
           anyMatches: [
             '([text="您的每一个评价对我们都很重要" || text$="好用吗？"] <n * + [vid="close_btn"])',
@@ -177,10 +179,11 @@ export default defineGkdApp({
     {
       key: 11,
       name: '预约打新完成，完成',
-      desc: '260921',
+      desc: '260925',
       rules: [
         {
           resetMatch: 'match',
+          forcedTime: 3000,
           action: 'clickCenter',
           activityIds:
             'com.gtja.business.component.browser.webview.BrowserScreen',

@@ -300,14 +300,15 @@ export default defineGkdApp({
     {
       key: 18,
       name: '单单返',
-      desc: '260511，改进单单返BUG，数字TextView+单单返，图标Image+单单返，clik无反应就clickCenter',
+      desc: '260925，改进单单返BUG，数字TextView+单单返，图标Image+单单返，clik无反应就clickCenter',
       rules: [
         {
           resetMatch: 'match',
           actionMaximum: 1,
           activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
-          anyMatches:
-            '@View[clickable=true] TextView + [text="单单返"][parent.childCount=2]',
+          anyMatches: [
+            '@View[clickable=true] TextView + [text="单单返"][parent.childCount=2 || parent.childCount=3]',
+          ],
         },
       ],
     },
