@@ -41,13 +41,14 @@ export default defineGkdApp({
     {
       key: 3,
       name: '确认退出应用',
-      desc: '260702',
+      desc: '26026，测试过顺序，从左往后',
       rules: [
         {
           resetMatch: 'app',
           fastQuery: true,
           activityIds: 'com.android.bankabc.MainActivity',
           anyMatches: [
+            'ViewGroup > TextView[text*="退出应用"][vid="tv_content"] +2 TextView[text="取消"][vid="tv_cancel"][clickable=true][visibleToUser=true] +2 TextView[text="确认"][vid="tv_sure"][clickable=true][visibleToUser=true]',
             '(TextView[text*="退出应用"] +n TextView[vid="tv_sure"][text="确认"])',
             '(ViewGroup > TextView[vid="tv_content"][text*="退出应用"] +n TextView[vid="tv_sure"][clickable=true][visibleToUser=true][text="确认"])',
           ],
