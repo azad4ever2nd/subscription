@@ -56,11 +56,12 @@ export default defineGkdApp({
     {
       key: 4,
       name: '基金财富月历，签到成功',
-      desc: '260814',
+      desc: '260926，添加 活动到期提醒',
       rules: [
         {
           action: 'clickCenter',
           anyMatches: [
+            'View[id="mainContainer"] + TextView + View > View > View[childCount=2] > TextView[clickable=true][visibleToUser=true] + TextView[clickable=true][visibleToUser=true]',
             '([text="恭喜获得"] <n * + TextView[clickable=true])',
             '(View > TextView[text="恭喜获得"] +n TextView[index=parent.childCount.minus(1)])',
             '(View > TextView[text="恭喜获得"] +n TextView[text^="关注一只产品"] + TextView[index=parent.childCount.minus(1)])',

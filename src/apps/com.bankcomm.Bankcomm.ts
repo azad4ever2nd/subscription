@@ -9,6 +9,8 @@ export default defineGkdApp({
       desc: '251208，添加代理提醒',
       rules: [
         {
+          matchDelay: 1000,
+          forcedTime: 3000,
           anyMatches: [
             '([vid="popup_ad_image"] + [vid="popup_close"])',
             '([vid="bcm_alert_dialog_content"] + * > [vid="dialog_bottom_confirm_cancel"][text="继续使用"])',

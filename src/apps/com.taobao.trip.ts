@@ -6,12 +6,12 @@ export default defineGkdApp({
     {
       key: 1,
       name: '签到按钮',
-      desc: '260225,',
+      desc: '260926，测试顺序，如果小号签到没问题，就是从上到下',
       rules: [
         {
           anyMatches: [
-            '([text="今日签到"] <<n *[depth=19] + * > *[index=1])',
             '(@* > * + * > [text="今日签到" || text="门票订购"])',
+            '([text="今日签到"] <<n *[depth=19] + * > *[index=1])',
           ],
           actionCd: 0,
           actionMaximum: 2,

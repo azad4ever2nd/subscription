@@ -743,7 +743,7 @@ export default defineGkdApp({
     {
       key: 39,
       name: '金币抽提现券，立即收下',
-      desc: '260406，兑换提示',
+      desc: '260926，取消 关闭，兑换提示',
       rules: [
         {
           resetMatch: 'match',
@@ -762,8 +762,9 @@ export default defineGkdApp({
             'com.tencent.mm.plugin.appbrand.ui.AppBrandPluginUI',
           ],
           anyMatches: [
-            '([text="已收下1"] + [text="7天后可再参与"] <<n * + * >n [desc="关闭"] )',
+            '([text="已收下1"] + [text="7天后可再参与"] <<n * + * >n [desc="关闭-bak"] )',
             '([text="确认使用1金币兑换吗？"] <<n * + * >n [vid="mm_alert_ok_btn"][text="确认兑换"])',
+            'TextView[text^="确认使用1金币"]  <<n  LinearLayout + LinearLayout >n Button[text="确认兑换"][vid="mm_alert_ok_btn"]',
             '([text="立即收下"] + @[text="今日24点前可领"])',
           ],
         },
@@ -1400,11 +1401,12 @@ export default defineGkdApp({
     {
       key: 63,
       name: '活动未开始，我知道了',
-      desc: '260924，添加 红色打卡，宁波，朴朴，动卡空间，内蒙工行，贵阳工行，工行余姚，湘约工行，贵州工行，已参加过',
+      desc: '260926，添加 红色打卡，宁波，朴朴，动卡空间，内蒙工行，贵阳工行，工行余姚，湘约工行，贵州工行，已参加过',
       rules: [
         {
           resetMatch: 'match',
-          actionCd: 300,
+          actionCd: 500,
+          forcedTime: 3000,
           activityIds: [
             'com.tencent.mm.plugin.appbrand.ui.AppBrandUI0',
             'com.tencent.mm.plugin.appbrand.ui.AppBrandUI1',
@@ -1731,6 +1733,20 @@ export default defineGkdApp({
           activityIds: 'com.tencent.mm.plugin.webwx.ui.ExtDeviceWXLoginUI',
           matches:
             'RelativeLayout > TextView[text="登录 Windows 微信"] + CheckBox[desc="同步最近的消息"] + CheckBox[desc="自动登录该设备"] + LinearLayout > Button[clickable=true][visibleToUser=true][text="登录"]',
+        },
+      ],
+    },
+    {
+      key: 75,
+      name: '同程抢单，慎用',
+      desc: '260926',
+      rules: [
+        {
+          activityIds: 'com.tencent.mm..ui.LauncherUI',
+          actionCd: 3000,
+          resetMatch: 'match',
+          matches:
+            'TextView[text*="同程来一个" || text*="收同程广东"] < * - TextView[text="车头-那年盛夏电影票" || text="hua"] < LinearLayout[childCount=4] <<n RelativeLayout[index=parent.childCount.minus(1)] <n RecyclerView <<n FrameLayout + FrameLayout >n RelativeLayout > Button[text="发送"][clickable=true][visibleToUser=true]',
         },
       ],
     },

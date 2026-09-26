@@ -70,8 +70,8 @@ export default defineGkdApp({
     },
     {
       key: 5,
-      name: '关于国泰海通君弘APP版本升级的通知，关闭"',
-      desc: '260921，添加 打新',
+      name: '弹窗，关于国泰海通君弘APP版本升级的通知，关闭"',
+      desc: '260926，添加 暂停服务公告，打新',
       rules: [
         {
           resetMatch: 'match',
@@ -80,6 +80,7 @@ export default defineGkdApp({
           activityIds: 'cn.htsec.SecurityHome',
           anyMatches: [
             '([vid="pushinfodlg_btn1"] +n [vid="pushinfodlg_btn2"][text="关闭"])',
+            'TextView[text$="告知书"] < LinearLayout +n FrameLayout > LinearLayout > TextView[text="我知道了"][vid="pushinfodlg_btn1"][clickable=true][visibleToUser=true]',
             '(LinearLayout > TextView[vid="pushinfodlg_btn1"] +n TextView[vid="pushinfodlg_btn2"][clickable=true][visibleToUser=true][text="关闭"])',
             'LinearLayout[vid="pushinfodlg_tvbtnsarea"] >  @TextView[id="com.android.haitong:id/pushinfodlg_btn1"][text="关闭"] + View + TextView[vid="pushinfodlg_btn2"][text="一键打新"]',
           ],
@@ -179,7 +180,7 @@ export default defineGkdApp({
     {
       key: 11,
       name: '预约打新完成，完成',
-      desc: '260925',
+      desc: '260926',
       rules: [
         {
           resetMatch: 'match',

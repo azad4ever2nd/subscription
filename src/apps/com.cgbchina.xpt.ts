@@ -23,15 +23,18 @@ export default defineGkdApp({
     {
       key: 2,
       name: '发现新版本，稍后再说',
-      desc: '260726',
+      desc: '260926',
       rules: [
         {
+          fastQuery: true,
           resetMatch: 'match',
           matchDelay: 1000,
           activityIds:
             'com.cgb.mobilebank.sit.launcher.module.main.activity.IndexActivity',
-          anyMatches:
-            'TextView[text*="新版本"] < LinearLayout +n LinearLayout > TextView[clickable=true][visibleToUser=true][vid="tv_left"][text="稍后再说"]',
+          anyMatches: [
+            'TextView[text*="新版本"] < LinearLayout +n LinearLayout > TextView[vid="tv_left"][text="稍后再说"][clickable=true][visibleToUser=true]',
+            'TextView[text*="新版本"] <n LinearLayout +n LinearLayout > TextView[vid="tv_left"][text="稍后再说" || text="暂不更新"][clickable=true][visibleToUser=true]',
+          ],
         },
       ],
     },

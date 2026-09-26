@@ -178,7 +178,7 @@ export default defineGkdApp({
     {
       key: 11,
       name: '弹窗，签到1',
-      desc: '260907',
+      desc: '260926',
       rules: [
         {
           resetMatch: 'match',
@@ -186,6 +186,7 @@ export default defineGkdApp({
           activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
           anyMatches: [
             '([text="签到"])',
+            '([text="请点击下方按钮，立即签到"] + * [text="签到"])',
             '(View > View >  @TextView[text="签到"][clickable=true][visibleToUser=true] - View > TextView[text="今天签到可领" || text="奖励金"])',
             'TextView[text="我的奖励金"] +n View >n View >  TextView[text="签到"][clickable=true][visibleToUser=true]',
           ],
@@ -195,16 +196,16 @@ export default defineGkdApp({
     {
       key: 12,
       name: '弹窗，签到2',
-      desc: '260907，测试matchRoot',
+      desc: '260926，测试matchRoot',
       rules: [
         {
           resetMatch: 'match',
           matchRoot: true,
-          forcedTime: 2000,
+          forcedTime: 3000,
           activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
           anyMatches: [
-            '([text="请点击下方按钮，立即签到"] + * [text="签到"])',
             '([text="签到"])',
+            '([text="请点击下方按钮，立即签到"] + * [text="签到"])',
             'View > View >  @TextView[text="签到"][clickable=true][visibleToUser=true] - View > TextView[text="今天签到可领" || text="奖励金"]',
             'TextView[text="我的奖励金"] +n View >n View >  TextView[text="签到"][clickable=true][visibleToUser=true]',
           ],
@@ -397,7 +398,7 @@ export default defineGkdApp({
     {
       key: 24,
       name: '弹窗，奖励金，签到',
-      desc: 'D,260806',
+      desc: '260806',
       rules: [
         {
           resetMatch: 'match',
