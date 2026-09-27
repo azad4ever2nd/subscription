@@ -117,8 +117,8 @@ export default defineGkdApp({
       rules: [
         {
           anyMatches: [
-            '[vid="dlg_home_annc_title"][text*="风险提示"] + * [text="关闭"]',
             'TextView[text="今日可申购"][vid="global_newstock_num"] + ScrollView[vid="global_newstock_scrollview"] > LinearLayout > LinearLayout > Button[text="取消"][clickable=true][visibleToUser=true][vid="global_newstock_cancel"]',
+            '[vid="dlg_home_annc_title"][text*="风险提示"] + * [text="关闭"]',
           ],
           fastQuery: true,
           resetMatch: 'match',

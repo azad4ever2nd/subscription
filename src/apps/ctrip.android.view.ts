@@ -31,9 +31,9 @@ export default defineGkdApp({
           activityIds:
             'ctrip.android.publicproduct.home.business.activity.CtripHomeActivity',
           anyMatches: [
-            '(@[vid="a"][clickable=true] < * + *[vid="a"] [text="立刻领取"])',
-            '(RelativeLayout > RelativeLayout[vid="a"] - RelativeLayout > ImageView[vid="a"])',
             '(@ImageView[clickable=true][visibleToUser=true][vid="a"] < RelativeLayout + RelativeLayout >n ImageView[desc="广告素材"])',
+            '(RelativeLayout > RelativeLayout[vid="a"] - RelativeLayout > ImageView[vid="a"])',
+            '(@[vid="a"][clickable=true] < * + *[vid="a"] [text="立刻领取"])',
           ],
         },
       ],
@@ -45,8 +45,8 @@ export default defineGkdApp({
       rules: [
         {
           anyMatches: [
-            '([text="去开启"] < * + Image)',
             '(View > @Image[clickable=false][visibleToUser=true] - View > TextView[text="去开启"])',
+            '([text="去开启"] < * + Image)',
           ],
           resetMatch: 'match',
           activityIds: ['ctrip.android.view.h5v2.view.H5Container'],
@@ -64,8 +64,8 @@ export default defineGkdApp({
           activityIds: 'ctrip.android.view.h5v2.view.H5Container',
           anyMatches: [
             '(WebView >(8,10) View > TextView[id="signBtnInModal"][text="立即签到"][clickable=true][visibleToUser=true])',
-            '([id="NotificationModal"] +2 * [id="signBtnInModal"][text="立即签到"])',
             '(View > View > View > TextView[id="signBtnInModal"][clickable=false][text="立即签到"])',
+            '([id="NotificationModal"] +2 * [id="signBtnInModal"][text="立即签到"])',
           ],
         },
       ],

@@ -30,8 +30,8 @@ export default defineGkdApp({
           resetMatch: 'match',
           activityIds: 'com.mc10086.cmcc.view.tabs.AppTabFragment',
           anyMatches: [
-            '(@[text="暂不更新"] + [text="立即体验"])',
             '(LinearLayout > @Button[vid="dialog_btn1"][clickable=true][text="暂不更新"] + Button[vid="dialog_btn2"][visibleToUser=true][text="立即体验"])',
+            '(@[text="暂不更新"] + [text="立即体验"])',
           ],
         },
       ],
@@ -49,8 +49,8 @@ export default defineGkdApp({
           forcedTime: 4000,
           anyMatches: [
             '(LinearLayout > @ImageView[vid="close_btn"][desc="关闭"][clickable=true][visibleToUser=true] - RelativeLayout > ImageView[vid="ad_image"][desc="广告bak"])',
-            '(ViewGroup[vid="cl_pop"] > ImageView[vid="img_close"][clickable=true][visibleToUser=true])',
             '(ImageView[vid="ad_image"][desc="广告"] <n RelativeLayout + ImageView[vid="close_btn"][desc="关闭"][clickable=true][visibleToUser=true])',
+            '(ViewGroup[vid="cl_pop"] > ImageView[vid="img_close"][clickable=true][visibleToUser=true])',
           ],
           activityIds: ['com.mc10086.cmcc.view.tabs.AppTabFragment'],
         },
@@ -104,10 +104,10 @@ export default defineGkdApp({
         {
           resetMatch: 'match',
           anyMatches: [
-            '([text="兑换成功"] + Image)',
-            '(@* +2 * > [text="恭喜获得"])',
-            '([text="兑换中"] < * +n [text="我知道了"])',
             'View[id="sueecss_dlalog"] > View > View > Image[clickable=true][visibleToUser=true]',
+            '([text="兑换成功"] + Image)',
+            '([text="兑换中"] < * +n [text="我知道了"])',
+            '(@* +2 * > [text="恭喜获得"])',
           ],
           activityIds: ['com.cmccit.webview.ac.CommonHtml5Activity'],
         },
@@ -179,9 +179,9 @@ export default defineGkdApp({
           forcedTime: 3000,
           activityIds: 'com.cmccit.webview.ac.CommonHtml5Activity',
           anyMatches: [
-            'WebView > View > Dialog > View > Button[text="我知道了"] + Button[text="关闭弹窗"][clickable=true][visibleToUser=true]',
-            'View[id="Yr27cX0-SIYI5zV-8k2S"] > View > View > @TextView[text.length=0][clickable=true][visibleToUser=true] - View > TextView[text.length=0][clickable=true][visibleToUser=true]',
             '[text^="您有" && text$="次刮卡机会"] <<n View + View > TextView[clickable=true][visibleToUser=true] - View > TextView[text=""][clickable=true][visibleToUser=true]',
+            'View[id="Yr27cX0-SIYI5zV-8k2S"] > View > View > @TextView[text.length=0][clickable=true][visibleToUser=true] - View > TextView[text.length=0][clickable=true][visibleToUser=true]',
+            'WebView > View > Dialog > View > Button[text="我知道了"] + Button[text="关闭弹窗"][clickable=true][visibleToUser=true]',
           ],
         },
       ],

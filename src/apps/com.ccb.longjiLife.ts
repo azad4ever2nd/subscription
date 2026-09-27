@@ -14,9 +14,9 @@ export default defineGkdApp({
           excludeMatches: 'View > View > [text="7天签到礼包"]',
           activityIds: 'com.ccb.longjiLife.MainActivity',
           anyMatches: [
-            ' ([text="签到成功"] +n [text="知道了"])',
-            '(View > TextView +n TextView[text="知道了"][clickable=false])',
             '(View > View > TextView[text="签到成功"] +3 TextView[text="确定领取"] + TextView)',
+            '(View > TextView +n TextView[text="知道了"][clickable=false])',
+            ' ([text="签到成功"] +n [text="知道了"])',
           ],
         },
       ],
@@ -149,9 +149,9 @@ export default defineGkdApp({
           resetMatch: 'match',
           anyMatches: [
             '[text="身份信息验证"] +n CheckBox[checked=false] || ([text="身份信息验证"] +n [text="loginBtn.f302f730"])',
-            '([text="温馨提示"] + * > [text="好的"])',
             '([text*="活动期间每周三15:00起开放报名领券入口"] <<n * + [text="NWJ6tc6mwaKQfgbADXAJPIxaVNUQJguwpoNgAy0x2ew8SgXab+AzNTubJfuAmp7HtQL5K8AARxBdk+5zMOgAAAAASUVORK5CYII="])',
             '([text="温馨提示"] + [text*="报名人数已满" || text="今日报名人数已满，您可下个领券日再来~" || text^="活动期间每周三"] + * > [text="好的"])',
+            '([text="温馨提示"] + * > [text="好的"])',
           ],
           activityIds: 'com.ccb.cloudmerchant.view.WebViewActivity',
         },
@@ -197,8 +197,8 @@ export default defineGkdApp({
           action: 'clickCenter',
           activityIds: 'com.ccb.cloudmerchant.view.WebViewActivity',
           anyMatches: [
-            '(WebView > View > View > View > CheckBox[checked=false][visibleToUser=true])',
             '(WebView[text*="建行社保卡"] > View > View > View > CheckBox[checked=false][visibleToUser=true])',
+            '(WebView > View > View > View > CheckBox[checked=false][visibleToUser=true])',
           ],
         },
       ],

@@ -126,9 +126,9 @@ export default defineGkdApp({
       rules: [
         {
           anyMatches: [
-            '(@* + [text="1每日签到"])',
-            '(@*[clickable=true][childCount=2] > [text="10"] + [text="每日签到"])',
             '([text="恭喜您签到成功"] + [text="我知道了"])',
+            '(@*[clickable=true][childCount=2] > [text="10"] + [text="每日签到"])',
+            '(@* + [text="1每日签到"])',
           ],
           matchDelay: 3000,
           resetMatch: 'match',
@@ -161,10 +161,7 @@ export default defineGkdApp({
           action: 'clickCenter',
           forcedTime: 2000,
           activityIds: 'com.njcb.mobile.h5biz.H5ContainerActivity',
-          anyMatches: [
-            '([text="今日不再显示"] < * + *[clickable=true])',
-            '(View > @TextView - View > TextView[text="今日不再显示"])',
-          ],
+          anyMatches: ['([text="今日不再显示"] < * + *[clickable=true])'],
         },
       ],
     },
@@ -191,10 +188,10 @@ export default defineGkdApp({
           resetMatch: 'match',
           activityIds: 'com.njcb.mobile.h5biz.H5ContainerActivity',
           anyMatches: [
-            '([text="签到成功"] + TextView + TextView[text="确定bak"])',
-            '([text="活动已结束"] + * > [desc="知道了"])',
-            '([text="活动已结束"] + [text="确定" || text="知道了"])',
             '(WebView > View > View > View > View > View > TextView[text="签到成功"] + TextView + TextView[text="确定"])',
+            '([text="活动已结束"] + [text="确定" || text="知道了"])',
+            '([text="活动已结束"] + * > [desc="知道了"])',
+            '([text="签到成功"] + TextView + TextView[text="确定bak"])',
           ],
         },
       ],

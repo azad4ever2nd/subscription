@@ -14,8 +14,10 @@ export default defineGkdApp({
           resetMatch: 'match',
           activityIds:
             'com.unicom.wopay.modules.h5module.ui.WopayWebViewActivity',
-          matches:
-            '([id="normal"] +3 *) || (WebView[text="立减金"] > View  > View  > View  > View > View[id="normal"] +3 TextView[clickable=false][visibleToUser=true] )',
+          anyMatches: [
+            '(WebView[text="立减金"] > View  > View  > View  > View > View[id="normal"] +3 TextView[clickable=false][visibleToUser=true])',
+            '([id="normal"] +3 *)',
+          ],
         },
       ],
     },
@@ -25,8 +27,9 @@ export default defineGkdApp({
       desc: '260225',
       rules: [
         {
-          matches: [
-            '([text="立减金"] [text^="立减金+"] + View + *) || (View[childCount=3] > [text^="立减金+" && text$="元"] +2 TextView)',
+          anyMatches: [
+            '(View[childCount=3] > [text^="立减金+" && text$="元"] +2 TextView)',
+            '([text="立减金"] [text^="立减金+"] + View + *)',
           ],
           actionCd: 0,
           resetMatch: 'match',
@@ -57,8 +60,8 @@ export default defineGkdApp({
           fastQuery: true,
           activityIds: 'com.unicom.wopay.app.MainActivity',
           anyMatches: [
-            '([vid="positiveButton"] + [vid="negativeButton"][text="下次再说"])',
             '(LinearLayout > Button[vid="positiveButton"] + Button[vid="negativeButton"][clickable=true][visibleToUser=true][text="下次再说"])',
+            '([vid="positiveButton"] + [vid="negativeButton"][text="下次再说"])',
           ],
         },
       ],

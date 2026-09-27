@@ -124,8 +124,8 @@ export default defineGkdApp({
           activityIds:
             'com.idlefish.flutterbridge.flutterboost.boost.FishFlutterBoostActivity',
           anyMatches: [
-            'View > View > View > ImageView[desc="确定删除本条记录吗？"] > Button[desc="取消"] + Button[desc="确认"][clickable=true][visibleToUser=true]',
             'View > View > View > View[desc="删除该条历史？"] + View[desc="取消"] + View[desc="确定"][clickable=false][visibleToUser=true]',
+            'View > View > View > ImageView[desc="确定删除本条记录吗？"] > Button[desc="取消"] + Button[desc="确认"][clickable=true][visibleToUser=true]',
           ],
         },
       ],

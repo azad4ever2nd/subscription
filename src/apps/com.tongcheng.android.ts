@@ -40,10 +40,10 @@ export default defineGkdApp({
           resetMatch: 'match',
           activityIds: 'com.tongcheng.android.module.webapp.WebViewActivity',
           anyMatches: [
-            '(@View[clickable=true] > Image[text="close_icon"])',
-            '(Image < View + @View[clickable=true] > [text="close_icon"])',
-            '(TextView[text="广告"] +n @View[clickable=true] > Image[text="close_icon"])',
             '(View > TextView[text="广告"] +n View[clickable=false] > Image[text="close_icon"][clickable=false][visibleToUser=true])',
+            '(TextView[text="广告"] +n @View[clickable=true] > Image[text="close_icon"])',
+            '(Image < View + @View[clickable=true] > [text="close_icon"])',
+            '(@View[clickable=true] > Image[text="close_icon"])',
           ],
         },
       ],

@@ -111,8 +111,8 @@ export default defineGkdApp({
           action: 'clickCenter',
           activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
           anyMatches: [
-            'View > TextView[text="活动尚未开始\\n"] + View > Button[text=" 确认"][clickable=true][visibleToUser=true]',
             'View > TextView[text^="活动尚未开始"] + View > Button[text=" 确认"][clickable=true][visibleToUser=true]',
+            'View > TextView[text="活动尚未开始\\n"] + View > Button[text=" 确认"][clickable=true][visibleToUser=true]',
           ],
         },
       ],

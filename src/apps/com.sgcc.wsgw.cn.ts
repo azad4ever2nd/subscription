@@ -45,10 +45,10 @@ export default defineGkdApp({
             'com.sgcc.wsgw.rnbundle.activity.HomeReactActivity',
           ],
           anyMatches: [
-            '(View > TextView[text="补签成功"] +3 TextView[clickable=false][text.length=0])',
-            '(View > View > TextView[text="签到成功"] + TextView[text^="恭喜您获得" && text$="签到金"] + TextView[text.length=0][clickable=false][visibleToUser=true])',
-            '(View > View > TextView[text="签到成功"] + TextView[text^="恭喜您获得" && text$="签到金"] +n View > Image[clickable=false][visibleToUser=true])',
             '(View > View > TextView[text="签到成功"] + TextView[text^="恭喜您获得" && text$="签到金"] + TextView[clickable=true][visibleToUser=true])',
+            '(View > View > TextView[text="签到成功"] + TextView[text^="恭喜您获得" && text$="签到金"] +n View > Image[clickable=false][visibleToUser=true])',
+            '(View > View > TextView[text="签到成功"] + TextView[text^="恭喜您获得" && text$="签到金"] + TextView[text.length=0][clickable=false][visibleToUser=true])',
+            '(View > TextView[text="补签成功"] +3 TextView[clickable=false][text.length=0])',
           ],
         },
       ],
@@ -64,8 +64,8 @@ export default defineGkdApp({
           forcedTime: 10000,
           activityIds: 'com.sgcc.wsgw.mainbundle.ElectricTitleActivity',
           anyMatches: [
-            '([text="立即查看"] < View + View > *)',
             '(TextView[text="立即查看"] < View + View > Image[clickable=false][visibleToUser=true])',
+            '([text="立即查看"] < View + View > *)',
           ],
         },
       ],
@@ -97,8 +97,8 @@ export default defineGkdApp({
           activityIds: 'com.sgcc.wsgw.mainbundle.ElectricTitleActivity',
           anyMatches: [
             '(WebView > View > View > View > View > View > TextView[text^="抽中" && text$="个签到金"] + TextView[clickable=false][visibleToUser=true])',
-            '(View > View > TextView[text^="抽中" && text$="个签到金"] + TextView[text.length=0][clickable=false][visibleToUser=true] )',
             '(WebView > View > View > View > View > View > TextView[text^="抽中" && text$="个签到金"] + TextView[clickable=true][visibleToUser=true])',
+            '(View > View > TextView[text^="抽中" && text$="个签到金"] + TextView[text.length=0][clickable=false][visibleToUser=true] )',
             '(View > View > TextView[text^="抽中" && text$="签到金"] + TextView[clickable=true][visibleToUser=true])',
           ],
         },

@@ -18,8 +18,8 @@ export default defineGkdApp({
             'com.huawei.myhuawei.ui.HwSplashActivity',
           ],
           anyMatches: [
-            '([id="android:id/alertTitle"][text="隐私声明变更通知"] <<n * +n * [id="android:id/button1"][text="同意"])',
             '(TextView[id="android:id/alertTitle"][text="隐私声明变更通知"] < LinearLayout < LinearLayout +n LinearLayout > LinearLayout > Button[id="android:id/button1"][clickable=true][visibleToUser=true][text="同意"])',
+            '([id="android:id/alertTitle"][text="隐私声明变更通知"] <<n * +n * [id="android:id/button1"][text="同意"])',
           ],
         },
       ],
@@ -78,8 +78,8 @@ export default defineGkdApp({
           fastQuery: true,
           activityIds: 'com.huawei.myhw.ui.HwHomeActivity',
           anyMatches: [
-            '([text="恭喜您获得经验值"] +2 * > [vid="bt_negative"][text="知道了"])',
             '(ViewGroup > TextView[vid="tv_title"][text="恭喜您获得经验值"] +2 LinearLayout > Button[vid="bt_negative"][clickable=true][visibleToUser=true][text="知道了"])',
+            '([text="恭喜您获得经验值"] +2 * > [vid="bt_negative"][text="知道了"])',
           ],
         },
       ],
@@ -117,11 +117,11 @@ export default defineGkdApp({
             'com.huawei.module.commonwebview.ui.CommonWebviewActivity',
           ],
           anyMatches: [
-            '(ListView > View > TextView[clickable=true][text="领奖励"])',
-            '(ViewGroup > TextView[vid="tv_tasks_type"][text="领奖励"])',
-            '([vid="tv_tasks_title"][text="我的任务"] + [vid="tv_tasks_more"][text="更多"])',
-            '(ViewGroup > TextView[clickable=true][vid="tv_tasks_type"][text="领奖励"])',
             '(View > TextView[text="领奖励"][clickable=true])',
+            '(ViewGroup > TextView[clickable=true][vid="tv_tasks_type"][text="领奖励"])',
+            '([vid="tv_tasks_title"][text="我的任务"] + [vid="tv_tasks_more"][text="更多"])',
+            '(ViewGroup > TextView[vid="tv_tasks_type"][text="领奖励"])',
+            '(ListView > View > TextView[clickable=true][text="领奖励"])',
           ],
         },
       ],
@@ -133,10 +133,10 @@ export default defineGkdApp({
       rules: [
         {
           anyMatches: [
-            '([text^="签到成功"] + [text="我知道了"])',
+            '(View > View > TextView[text="报名成功"] + View > View > TextView[text="我知道了"][clickable=true])',
             '([text="恭喜您获得经验值奖励"] +n * [text="我知道了"])',
             '([text^="恭喜您获取经验值"] +2 @* >3 [text="我知道了"])',
-            '(View > View > TextView[text="报名成功"] + View > View > TextView[text="我知道了"][clickable=true])',
+            '([text^="签到成功"] + [text="我知道了"])',
           ],
           resetMatch: 'match',
           actionCd: 500,

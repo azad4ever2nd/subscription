@@ -28,8 +28,8 @@ export default defineGkdApp({
           forcedTime: 5000,
           activityIds: 'com.yt.hxmb50.mainpages.ui.main.MainActivity',
           anyMatches: [
-            '(@[vid="dialog_update_tv_cancel"][text="下次再说"] + [vid="dialog_update_tv_update"][text="立即更新"])',
             '(LinearLayout > @TextView[vid="dialog_update_tv_cancel"][clickable=true][visibleToUser=true][text="下次再说"] + TextView[vid="dialog_update_tv_update"][text="立即更新"])',
+            '(@[vid="dialog_update_tv_cancel"][text="下次再说"] + [vid="dialog_update_tv_update"][text="立即更新"])',
           ],
         },
       ],
@@ -44,8 +44,8 @@ export default defineGkdApp({
           actionCd: 0,
           activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
           anyMatches: [
-            '([text$="能量分"] +n * > [text="立即兑换"])',
             '(WebView[text="权益详情"] > View > View > View[text$="能量分"] +(1,2) View > Button[text="立即兑换"])',
+            '([text$="能量分"] +n * > [text="立即兑换"])',
           ],
         },
       ],
@@ -61,8 +61,8 @@ export default defineGkdApp({
           order: -1,
           activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
           anyMatches: [
-            '([text*="是否确认兑换"] + * > [text="确认"])',
             '(View[text*="是否确认兑换"] + View > View[clickable=true][visibleToUser=true][text="确认"])',
+            '([text*="是否确认兑换"] + * > [text="确认"])',
           ],
         },
       ],
@@ -78,8 +78,8 @@ export default defineGkdApp({
           order: -2,
           activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
           anyMatches: [
-            '([text="活动太火爆了，请稍后再试！"] + * > [text="知道了"])',
             '(Dialog > View[text*="活动太火爆了" || text*="权益已被抢完"] + View > Button[clickable=true][visibleToUser=true][text*="知道了"])',
+            '([text="活动太火爆了，请稍后再试！"] + * > [text="知道了"])',
           ],
         },
       ],
@@ -122,9 +122,9 @@ export default defineGkdApp({
           resetMatch: 'match',
           activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
           anyMatches: [
-            'View[text^="恭喜你完成产品浏览"] < View + View[clickable=true][visibleToUser=true]',
-            'WebView[text="签到赢立减金"] > View > View > View > @View[text.length=0][clickable=true][visibleToUser=true] - Image - View > Image',
             '(WebView[text="签到赢立减金"] > View > View > View >  View > @View[clickable=true][visibleToUser=true]  - View > View[text*="恭喜你完成产品浏览"])',
+            'WebView[text="签到赢立减金"] > View > View > View > @View[text.length=0][clickable=true][visibleToUser=true] - Image - View > Image',
+            'View[text^="恭喜你完成产品浏览"] < View + View[clickable=true][visibleToUser=true]',
           ],
         },
       ],

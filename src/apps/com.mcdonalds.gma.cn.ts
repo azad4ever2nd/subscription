@@ -160,9 +160,9 @@ export default defineGkdApp({
       rules: [
         {
           anyMatches: [
-            '([vid="iv_dialog"] + [vid="v_cancel"])',
-            '(ViewGroup > TextView[vid="bottom_dialog_title"][text="开启通知权限"] +n ImageView[clickable=true][visibleToUser=true][vid="bottom_dialog_button_close"][desc="关闭"])',
             '(ViewGroup > TextView[clickable=true][visibleToUser=true][vid="tv_badge_dialog_save"][clickable=true][visibleToUser=true][text="开心收下"] + TextView + ImageView[vid="tv_badge_dialog_close"])',
+            '(ViewGroup > TextView[vid="bottom_dialog_title"][text="开启通知权限"] +n ImageView[clickable=true][visibleToUser=true][vid="bottom_dialog_button_close"][desc="关闭"])',
+            '([vid="iv_dialog"] + [vid="v_cancel"])',
           ],
           actionCd: 300,
           fastQuery: true,

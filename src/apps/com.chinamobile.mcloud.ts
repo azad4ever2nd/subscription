@@ -47,14 +47,14 @@ export default defineGkdApp({
           activityIds:
             'com.chinamobile.mcloud.client.component.web.H5WebViewMainActivity',
           anyMatches: [
-            '(View > Image[text="+SOMf8vIwWVqABk0AAAAASUVORK5CYII=1"])',
-            '(TextView[text="移动云盘体验评价"] < View + Image[clickable=false][visibleToUser=true][text="wMHmBwYPo98SAAAAABJRU5ErkJggg=="])',
-            '([text="立即前往"] <3 View + Image[text="+SOMf8vIwWVqABk0AAAAASUVORK5CYII="])',
-            '(TextView[text="订购结果"] < View + Image[text="+SOMf8vIwWVqABk0AAAAASUVORK5CYII="])',
-            '(TextView[text*="转存成功"] < View + Image[text="+SOMf8vIwWVqABk0AAAAASUVORK5CYII="])',
             '(Dialog > View > View > TextView[text="知道啦"] + Image[clickable=false][visibleToUser=true][text="wMHmBwYPo98SAAAAABJRU5ErkJggg=="])',
-            '([text="我知道了"] <n View + Image[text="+SOMf8vIwWVqABk0AAAAASUVORK5CYII="][clickable=false][visibleToUser=true])',
+            '(TextView[text="移动云盘体验评价"] < View + Image[clickable=false][visibleToUser=true][text="wMHmBwYPo98SAAAAABJRU5ErkJggg=="])',
             'View > @Image[text="+SOMf8vIwWVqABk0AAAAASUVORK5CYII="][clickable=true][visibleToUser=true] - View > TextView[text="我知道了"]',
+            '(TextView[text*="转存成功"] < View + Image[text="+SOMf8vIwWVqABk0AAAAASUVORK5CYII="])',
+            '(TextView[text="订购结果"] < View + Image[text="+SOMf8vIwWVqABk0AAAAASUVORK5CYII="])',
+            '([text="我知道了"] <n View + Image[text="+SOMf8vIwWVqABk0AAAAASUVORK5CYII="][clickable=false][visibleToUser=true])',
+            '([text="立即前往"] <3 View + Image[text="+SOMf8vIwWVqABk0AAAAASUVORK5CYII="])',
+            '(View > Image[text="+SOMf8vIwWVqABk0AAAAASUVORK5CYII=1"])',
           ],
         },
       ],
@@ -66,9 +66,9 @@ export default defineGkdApp({
       rules: [
         {
           anyMatches: [
+            '([text="移动云盘云朵中心"] [text="霸王茶姬" ] + [text*="券"] + * + *)',
             '([text="移动云盘云朵中心"] [text="喜茶"] + [text*="券"] + * + *)',
             '([text="移动云盘云朵中心"] [text="蜜雪冰城"] + [text*="券"] + * + *)',
-            '([text="移动云盘云朵中心"] [text="霸王茶姬" ] + [text*="券"] + * + *)',
           ],
           resetMatch: 'match',
           activityIds: [
@@ -132,8 +132,8 @@ export default defineGkdApp({
           activityIds:
             'com.chinamobile.mcloud.client.component.web.H5WebViewMainActivity',
           anyMatches: [
-            'WebView[text="移动云盘云朵中心"] > View > View > View > View > @TextView[clickable=false][visibleToUser=true][text.length=0] -n View > View > TextView[text="完成任务"]',
             'WebView > View > View > View > View > TextView[text="奖品"] +n View > TextView[text^="+" && text$="可领取"][clickable=true][visibleToUser=true]',
+            'WebView[text="移动云盘云朵中心"] > View > View > View > View > @TextView[clickable=false][visibleToUser=true][text.length=0] -n View > View > TextView[text="完成任务"]',
           ],
         },
       ],
@@ -220,8 +220,8 @@ export default defineGkdApp({
       rules: [
         {
           anyMatches: [
-            '([vid="rl_container"] + [vid="iv_close"])',
             '(@[vid="btn_push_notice_close_dialog"] + * > [vid="tv_header_title"][text="开启中国移动云盘通知"])',
+            '([vid="rl_container"] + [vid="iv_close"])',
           ],
           fastQuery: true,
           resetMatch: 'match',

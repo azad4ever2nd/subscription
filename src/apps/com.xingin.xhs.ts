@@ -54,11 +54,12 @@ export default defineGkdApp({
     {
       key: 4,
       name: '开启通知',
-      desc: '260209',
+      desc: '260927',
       rules: [
         {
-          matches: [
-            '([vid="0_resource_name_obfuscated"][text="开启"] + [vid="0_resource_name_obfuscated"]) || ([vid="notificationContentView"] + * > [vid="hintImageView"])',
+          anyMatches: [
+            '([vid="0_resource_name_obfuscated"][text="开启"] + [vid="0_resource_name_obfuscated"])',
+            '([vid="notificationContentView"] + * > [vid="hintImageView"])',
           ],
           resetMatch: 'match',
           activityIds: ['com.xingin.xhs.index.v2.IndexActivityV2'],
@@ -72,8 +73,8 @@ export default defineGkdApp({
       rules: [
         {
           anyMatches: [
-            '([vid="guide"] [vid="close"])',
             '([vid="guideSnackBar"] [vid="closeButton"])',
+            '([vid="guide"] [vid="close"])',
           ],
           fastQuery: true,
           resetMatch: 'match',

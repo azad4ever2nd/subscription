@@ -11,8 +11,8 @@ export default defineGkdApp({
       rules: [
         {
           anyMatches: [
-            '[vid="buttonPanel"] > [text="不了，谢谢"] + [text="立即开启"]',
             'LinearLayout > TextView[text="隐私政策更新"] +n TextView[text="同意"][clickable=true][visibleToUser=true]',
+            '[vid="buttonPanel"] > [text="不了，谢谢"] + [text="立即开启"]',
           ],
           fastQuery: true,
           resetMatch: 'match',

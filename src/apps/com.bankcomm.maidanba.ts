@@ -83,9 +83,9 @@ export default defineGkdApp({
           actionCd: 0,
           activityIds: 'com.bankcomm.maidanba.activity.WebViewActivity',
           anyMatches: [
+            '(WebView > View > View > View > View > Button[id="copy"][clickable=true][visibleToUser=true][text=" 立即购买"])',
             '(@[id="copy"][text*="立即购买"] <<n * - * [text="最红星期五"])',
             '(View > View > Button[id="copy"][clickable=true][visibleToUser=true])',
-            '(WebView > View > View > View > View > Button[id="copy"][clickable=true][visibleToUser=true][text=" 立即购买"])',
           ],
         },
       ],
@@ -141,8 +141,8 @@ export default defineGkdApp({
           resetMatch: 'match',
           activityIds: 'com.bankcomm.maidanba.activity.WebViewActivity',
           anyMatches: [
-            '(@* + [text="开启消息通知"] +n [text="去开启"])',
             '(View > @TextView + TextView[text="开启消息通知"])',
+            '(@* + [text="开启消息通知"] +n [text="去开启"])',
           ],
         },
       ],

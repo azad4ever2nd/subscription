@@ -77,8 +77,8 @@ export default defineGkdApp({
           actionMaximum: 1,
           activityIds: 'mark.via.Shell',
           anyMatches: [
-            '([text="浏览器"] + View > [id="sacs_close"][text="继续"])',
             '(View > TextView[text="当前浏览器"] + TextView[clickable=false][visibleToUser=true][text="继续"])',
+            '([text="浏览器"] + View > [id="sacs_close"][text="继续"])',
           ],
         },
       ],

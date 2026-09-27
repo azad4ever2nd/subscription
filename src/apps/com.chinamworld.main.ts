@@ -28,9 +28,9 @@ export default defineGkdApp({
           actionCd: 0,
           activityIds: 'com.ccb.framework.ui.widget.webview.CcbWebViewActivity',
           anyMatches: [
-            '([text="身份信息验证"] +n CheckBox[checked=false])',
             '(CheckBox[checked=true] + CheckBox[checked=true] + [text="loginBtn.f302f730"])',
             '([text="温馨提示"] +n * > Button[text="好的"])',
+            '([text="身份信息验证"] +n CheckBox[checked=false])',
           ],
         },
       ],
@@ -147,8 +147,8 @@ export default defineGkdApp({
       rules: [
         {
           anyMatches: [
-            '([id="app"] > [text="我的礼包 按钮"] + [id="scroll"][childCount=1] [index=1])',
             '([text="活动火爆，请稍候再试！"] + [text="知道了"] + [text="关闭 按钮"])',
+            '([id="app"] > [text="我的礼包 按钮"] + [id="scroll"][childCount=1] [index=1])',
           ],
           resetMatch: 'match',
           activityIds:
@@ -306,8 +306,8 @@ export default defineGkdApp({
           actionMaximum: 1,
           resetMatch: 'match',
           anyMatches: [
-            'View > @TextView[clickable=true][visibleToUser=true] + View > TextView[text="本人已认真阅读并同意"]',
             'View > @TextView[clickable=true][visibleToUser=true] + View > TextView[text="本人已认真阅读并同意以上内容"]',
+            'View > @TextView[clickable=true][visibleToUser=true] + View > TextView[text="本人已认真阅读并同意"]',
           ],
         },
       ],

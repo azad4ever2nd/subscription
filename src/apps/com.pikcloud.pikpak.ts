@@ -21,10 +21,10 @@ export default defineGkdApp({
             'com.pikcloud.download.DownloadTaskListActivity',
           ],
           anyMatches: [
-            '([vid="iv_close"])',
+            '(ViewGroup > TextView[vid="dlg_title"][text*="删除" || text*="清除"] +n ViewGroup > LinearLayout > TextView[vid="dlg_confirm_btn"][text="确认"])',
             '([vid="watch_ad"][text="免费试用"])',
             '([vid="cl_operation"] + [vid="close"])',
-            '(ViewGroup > TextView[vid="dlg_title"][text*="删除" || text*="清除"] +n ViewGroup > LinearLayout > TextView[vid="dlg_confirm_btn"][text="确认"])',
+            '([vid="iv_close"])',
           ],
         },
       ],

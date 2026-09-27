@@ -12,8 +12,12 @@ export default defineGkdApp({
         {
           resetMatch: 'match',
           activityIds: 'com.google.android.gms.ads.AdActivity',
-          matches:
-            '([id="mys-content"] View > Button) || ([id="mys-content"] [text="关闭"]) || ([id="app-interstitial-slot"] + * Button) || ([id="close-button"] > [text="关闭广告并继续打开应用"] + *)',
+          anyMatches: [
+            '[id="mys-content"] View > Button',
+            '[id="mys-content"] [text="关闭"]',
+            '[id="app-interstitial-slot"] + * Button',
+            '[id="close-button"] > [text="关闭广告并继续打开应用"] + *',
+          ],
         },
       ],
     },

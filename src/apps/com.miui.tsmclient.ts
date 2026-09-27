@@ -13,9 +13,9 @@ export default defineGkdApp({
           fastQuery: true,
           activityIds: 'com.miui.tsmclient.ui.TransferOutIntroActivity',
           anyMatches: [
-            '([vid="nextpay_transfer_out_ll_protocols"][desc^="同意"][checked=false])',
-            '(@[vid="nextpay_transfer_out_chk_contracts"][checked=false] + [vid="transfer_out_intro_tv_protocols"][text^="同意"])',
             '([vid="nextpay_transfer_out_chk_contracts"][checkable=true] < * + [vid="nextpay_transfer_out_btn_accept"][text="确定移出"])',
+            '(@[vid="nextpay_transfer_out_chk_contracts"][checked=false] + [vid="transfer_out_intro_tv_protocols"][text^="同意"])',
+            '([vid="nextpay_transfer_out_ll_protocols"][desc^="同意"][checked=false])',
           ],
         },
       ],

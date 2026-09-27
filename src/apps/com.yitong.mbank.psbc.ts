@@ -108,8 +108,8 @@ export default defineGkdApp({
       rules: [
         {
           anyMatches: [
-            '(@[vid="tv_cancel"] + [vid="mContent"][text*="好评"])',
             '(TextView[text="温馨提示"] < RelativeLayout +n LinearLayout > TextView[clickable=true][visibleToUser=true][text="下次再说"])',
+            '(@[vid="tv_cancel"] + [vid="mContent"][text*="好评"])',
           ],
           fastQuery: true,
           resetMatch: 'match',

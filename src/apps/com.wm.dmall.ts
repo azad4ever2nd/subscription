@@ -30,8 +30,8 @@ export default defineGkdApp({
           fastQuery: true,
           activityIds: 'com.wm.dmall.MainActivity',
           anyMatches: [
-            '([vid="update_title"] <<n * + [vid="close_btn"])',
             '(TextView[vid="update_title"] <n RelativeLayout < RelativeLayout + ImageView[vid="close_btn"][clickable=true][visibleToUser=true])',
+            '([vid="update_title"] <<n * + [vid="close_btn"])',
           ],
         },
       ],

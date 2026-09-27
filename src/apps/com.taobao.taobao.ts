@@ -56,19 +56,18 @@ export default defineGkdApp({
       rules: [
         {
           anyMatches: [
+            '([text="去赚元宝"] <<n * + View > [text^="O1CN01UVlufl1CzCsp8oehQ_!!6000000000151-2-gg_dtc.png_q50"])',
+            '(@[text="O1CN01zH3VkM1KrtQhLlTqz_!!6000000001218-2-tps-56-56.png_q50.jpg_"] + [text="做任务赚元宝"] + * >n [text="点击领元宝(1/1)"])',
+            '(@[text^="O1CN01JfbGY21lIcW06JOti_!!6000000004796-2-tps-64-64"] - * > [text="我知道了"])',
+            '([text*="立即领"] - [text="O1CN019BmmLi1GZKvUisx8l_!!6000000000636-2-tps-393-223.png_q50.jpg_"] - [text*="元宝"] <n * + [text="关闭"])',
+            '([id="SINGLE_ITEM_CASH_BACK_MAIN_ID" || id="MAJOR_HONGBAO_SEND_MODAL_MAIN"] + [text="关闭"])',
             '([id="SIGN_IN_AREA_ID"] [text="立即签到"])',
-            '([text="继续领钱"] < * + * >n [text="点击领取"])',
             '([id="SIGN_IN_AREA_ID"] > [text="继续领钱"] + * >n [text="点击领取"])',
+            '([text="继续领钱"] < * + * >n [text="点击领取"])',
             '([text="点击领元宝(0/1)"] +n [text="领取"])',
             '(Image < * + * >n [text^="添加"] +n * > [text$="元宝" && text^="立即领"])',
             '(@Image < * + * >n [text="去领元宝" || text="浏览商品30秒"])',
             '(Dialog >n [text="关闭"])',
-            '([id="SINGLE_ITEM_CASH_BACK_MAIN_ID" || id="MAJOR_HONGBAO_SEND_MODAL_MAIN"] + [text="关闭"])',
-            '([text="去领元宝" || text^="恭喜" ||text="现金立即到账" || text="返现" || text="去下单" || text="去领取" || text="去看看"] <<n * + [text="关闭"])',
-            '([text*="立即领"] - [text="O1CN019BmmLi1GZKvUisx8l_!!6000000000636-2-tps-393-223.png_q50.jpg_"] - [text*="元宝"] <n * + [text="关闭"])',
-            '(@[text^="O1CN01JfbGY21lIcW06JOti_!!6000000004796-2-tps-64-64"] - * > [text="我知道了"])',
-            '(@[text="O1CN01zH3VkM1KrtQhLlTqz_!!6000000001218-2-tps-56-56.png_q50.jpg_"] + [text="做任务赚元宝"] + * >n [text="点击领元宝(1/1)"])',
-            '([text="去赚元宝"] <<n * + View > [text^="O1CN01UVlufl1CzCsp8oehQ_!!6000000000151-2-gg_dtc.png_q50"])',
           ],
           resetMatch: 'match',
           activityIds: [
@@ -112,8 +111,8 @@ export default defineGkdApp({
       rules: [
         {
           anyMatches: [
-            '([id="receivedAward"] > * + *)',
             '([vid="update_contentDialog_v2"] > [vid="update_imageview_cancel_v2"])',
+            '([id="receivedAward"] > * + *)',
           ],
 
           resetMatch: 'match',
@@ -175,9 +174,9 @@ export default defineGkdApp({
           matchTime: 3000,
           activityIds: 'com.alipay.android.msp.ui.views.MspContainerActivity',
           anyMatches: [
-            '([text="淘宝 推荐你"] <<n * +n @* > [text="关闭"])',
-            '(@[text="关闭"] <<n * +n * [text="同意协议并开通"])',
             '(@* > [text="关闭"] <<n * +n * [text="同意协议并开通"])',
+            '(@[text="关闭"] <<n * +n * [text="同意协议并开通"])',
+            '([text="淘宝 推荐你"] <<n * +n @* > [text="关闭"])',
           ],
         },
       ],

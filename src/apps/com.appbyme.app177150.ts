@@ -12,11 +12,14 @@ export default defineGkdApp({
         {
           resetMatch: 'match',
           fastQuery: true,
-          forcedTime: 2000,
+          forcedTime: 3000,
           action: 'clickCenter',
           activityIds: 'net.duohuo.magappx.main.IndexTabActivity',
-          matches:
-            '([vid="iv_close_ad"]) || (ImageView[vid="iv_close_ad"][clickable=true][visibleToUser=true]) || (RelativeLayout > ImageView[vid="iv_close_ad"][clickable=true][visibleToUser=true])',
+          anyMatches: [
+            'RelativeLayout > ImageView[vid="iv_close_ad"][clickable=true][visibleToUser=true]',
+            'ImageView[vid="iv_close_ad"][clickable=true][visibleToUser=true]',
+            '[vid="iv_close_ad"]',
+          ],
         },
       ],
     },

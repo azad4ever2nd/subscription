@@ -10,13 +10,14 @@ export default defineGkdApp({
       desc: '260621',
       rules: [
         {
-          actionCd: 0,
           action: 'clickCenter',
           resetMatch: 'match',
           fastQuery: true,
           activityIds: 'com.tuniu.app.ui.homepage.MainFragmentActivity',
-          matches:
-            '([id="android:id/message"][text*="新版本" || text*="升级"] <<n * + * [id="android:id/button2"][text="取消"]) || (ScrollView > LinearLayout > @Button[clickable=true][text="取消"] + Button[text="更新"])',
+          anyMatches: [
+            '[id="android:id/message"][text*="新版本" || text*="升级"] <<n * + * [id="android:id/button2"][text="取消"]',
+            'ScrollView > LinearLayout > @Button[clickable=true][text="取消"] + Button[text="更新"]',
+          ],
         },
       ],
     },

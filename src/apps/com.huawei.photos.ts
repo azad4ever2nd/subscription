@@ -19,8 +19,10 @@ export default defineGkdApp({
             'com.huawei.gallery.app.GalleryMain',
             'com.huawei.gallery.app.SlotAlbumActivity',
           ],
-          matches:
-            '([id="android:id/message"][text*="是否清空"] <<n * + * [id="android:id/button1"][text="清空"]) || ([id="android:id/message"][text*="是否删除"] <<n * + * [id="android:id/button1"][text="永久删除" || text="删除"])',
+          anyMatches: [
+            '[id="android:id/message"][text*="是否清空"] <<n * + * [id="android:id/button1"][text="清空"]',
+            '[id="android:id/message"][text*="是否删除"] <<n * + * [id="android:id/button1"][text="永久删除" || text="删除"]',
+          ],
         },
       ],
     },
