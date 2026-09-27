@@ -62,8 +62,8 @@ export default defineGkdApp({
           forcedTime: 3000,
           activityIds: 'cn.htsec.SecurityHome',
           anyMatches: [
-            '([text="您的每一个评价对我们都很重要" || text$="好用吗？"] <n * + [vid="close_btn"])',
             '([text="您的每一个评价对我们都很重要" || text$="好用吗？"] <n LinearLayout + ImageView[vid="close_btn"][clickable=true][visibleToUser=true])',
+            '([text="您的每一个评价对我们都很重要" || text$="好用吗？"] <n * + [vid="close_btn"])',
           ],
         },
       ],
@@ -79,10 +79,10 @@ export default defineGkdApp({
           forcedTime: 3000,
           activityIds: 'cn.htsec.SecurityHome',
           anyMatches: [
-            '([vid="pushinfodlg_btn1"] +n [vid="pushinfodlg_btn2"][text="关闭"])',
+            'LinearLayout[vid="pushinfodlg_tvbtnsarea"] >  @TextView[id="com.android.haitong:id/pushinfodlg_btn1"][text="关闭"] + View + TextView[vid="pushinfodlg_btn2"][text="一键打新"]',
             'TextView[text$="告知书"] < LinearLayout +n FrameLayout > LinearLayout > TextView[text="我知道了"][vid="pushinfodlg_btn1"][clickable=true][visibleToUser=true]',
             '(LinearLayout > TextView[vid="pushinfodlg_btn1"] +n TextView[vid="pushinfodlg_btn2"][clickable=true][visibleToUser=true][text="关闭"])',
-            'LinearLayout[vid="pushinfodlg_tvbtnsarea"] >  @TextView[id="com.android.haitong:id/pushinfodlg_btn1"][text="关闭"] + View + TextView[vid="pushinfodlg_btn2"][text="一键打新"]',
+            '([vid="pushinfodlg_btn1"] +n [vid="pushinfodlg_btn2"][text="关闭"])',
           ],
         },
       ],
@@ -129,8 +129,8 @@ export default defineGkdApp({
             'com.gtja.business.component.browser.webview.BrowserScreen',
           ],
           anyMatches: [
-            '(View > View > @Button[text="全选"][clickable=true][visibleToUser=true] +n TextView[text="已选中 "] + TextView[text="0"] + TextView[text*="只"])',
             '(WebView[text="newstock"] > View > View > View > @Button[text="全选"][clickable=true][visibleToUser=true] + TextView[text="已选中 "] + TextView[text="0"])',
+            '(View > View > @Button[text="全选"][clickable=true][visibleToUser=true] +n TextView[text="已选中 "] + TextView[text="0"] + TextView[text*="只"])',
           ],
         },
       ],
@@ -170,9 +170,9 @@ export default defineGkdApp({
             'com.gtja.business.component.browser.webview.BrowserScreen',
           ],
           anyMatches: [
-            '(TextView[text^="打新存在破发亏损风险"] < View + View > @View[clickable=false][visibleToUser=true] > View[clickable=true][visibleToUser=true][desc="确认"] > TextView[text="确认"])',
-            '(View > TextView[text^="打新存在破发亏损风险"] +n TextView[text="取消"] + TextView[text="确认"][clickable=false][visibleToUser=true])',
             '(View > View > TextView[text^="打新存在破发亏损风险" || text="债券名称:"] +n TextView[text="确认"][clickable=true][visibleToUser=true])',
+            '(View > TextView[text^="打新存在破发亏损风险"] +n TextView[text="取消"] + TextView[text="确认"][clickable=false][visibleToUser=true])',
+            '(TextView[text^="打新存在破发亏损风险"] < View + View > @View[clickable=false][visibleToUser=true] > View[clickable=true][visibleToUser=true][desc="确认"] > TextView[text="确认"])',
           ],
         },
       ],
@@ -189,9 +189,9 @@ export default defineGkdApp({
           activityIds:
             'com.gtja.business.component.browser.webview.BrowserScreen',
           matches: [
-            '([text="退出"] + [text="智能打新"] + [text="完成"])',
-            '(WebView[text="可转债申购"] > View > View > Image[clickable=false][visibleToUser=true][text="退出"] +n TextView[clickable=false][visibleToUser=true][text="完成"])',
             '(WebView > View > View > Image[text="退出"] + TextView + TextView[text="完成"][clickable=true][visibleToUser=true])',
+            '(WebView[text="可转债申购"] > View > View > Image[clickable=false][visibleToUser=true][text="退出"] +n TextView[clickable=false][visibleToUser=true][text="完成"])',
+            '([text="退出"] + [text="智能打新"] + [text="完成"])',
           ],
         },
       ],

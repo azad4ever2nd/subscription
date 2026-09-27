@@ -27,10 +27,10 @@ export default defineGkdApp({
       rules: [
         {
           anyMatches: [
+            '(ViewGroup > TextView[text="尚未开启系统通知"] +(3,4) TextView[vid="btn_close"][text="跳过"][clickable=true][visibleToUser=true])',
             '([vid="iv_ad"] + [vid="iv_close"])',
             '([id="app"] [text^="此图片未加标签"])',
             '([id="J-webglCanvas"] - View >2 Image)',
-            '(ViewGroup > TextView[text="尚未开启系统通知"] +(3,4) TextView[vid="btn_close"][text="跳过"][clickable=true][visibleToUser=true])',
           ],
           fastQuery: true,
           resetMatch: 'match',
@@ -54,13 +54,13 @@ export default defineGkdApp({
     {
       key: 4,
       name: '弹窗，天降福利',
-      desc: '260907',
+      desc: '260927',
       rules: [
         {
           resetMatch: 'match',
           activityIds: 'com.pupumall.customer.activity.SplashActivity',
           matches:
-            'ViewGroup[childCount=2] + ViewGroup[clickable=true][visibleToUser=true] > TextView[text.length=1]',
+            'ViewGroup[childCount=2] + ViewGroup[clickable=true][visibleToUser=true] > TextView[text!="0"][text.length=1]',
         },
       ],
     },
@@ -93,11 +93,14 @@ export default defineGkdApp({
     {
       key: 7,
       name: '订单列表，删除未付款的订单',
-      desc: '260511',
+      desc: '260927',
       rules: [
         {
           resetMatch: 'match',
+          actionCd: 2000,
           activityIds: 'com.pupumall.webview.page.PuPuWebViewActivity',
+          excludeMatches:
+            '[text="确认删除这个订单？"] + [text="取消"] + [text="确认"]',
           matches: 'View[childCount=2] > [text="删除订单"][visibleToUser=true]',
         },
       ],

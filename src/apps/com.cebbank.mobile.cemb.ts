@@ -41,10 +41,10 @@ export default defineGkdApp({
       rules: [
         {
           anyMatches: [
+            '(WebView > View > View > View > TextView[text^="天天领金币"] +n View[childCount=2] > TextView[index=parent.childCount.minus(1)][text.length=0][clickable=false][visibleToUser=true])',
+            '([text^="天天领金币"] +n *[text=""][clickable=true][visibleToUser=true][index=parent.childCount.minus(1)] + View[childCount=2])',
             '(@TextView[clickable=false][visibleToUser=true] < View + View > TextView[text="更多产品 >"])',
             '([id="mainContainer"] [text^="天天领金币" && text$="关注产品收益上涨可领翻倍金币"] +3 * > *[text=""][visibleToUser=true][index=parent.childCount.minus(1)])',
-            '([text^="天天领金币"] +n *[text=""][clickable=true][visibleToUser=true][index=parent.childCount.minus(1)] + View[childCount=2])',
-            '(WebView > View > View > View > TextView[text^="天天领金币"] +n View[childCount=2] > TextView[index=parent.childCount.minus(1)][text.length=0][clickable=false][visibleToUser=true])',
           ],
           actionMaximum: 1,
           resetMatch: 'match',
@@ -62,9 +62,9 @@ export default defineGkdApp({
           action: 'clickCenter',
           anyMatches: [
             'View[id="mainContainer"] + TextView + View > View > View[childCount=2] > TextView[clickable=true][visibleToUser=true] + TextView[clickable=true][visibleToUser=true]',
-            '([text="恭喜获得"] <n * + TextView[clickable=true])',
-            '(View > TextView[text="恭喜获得"] +n TextView[index=parent.childCount.minus(1)])',
             '(View > TextView[text="恭喜获得"] +n TextView[text^="关注一只产品"] + TextView[index=parent.childCount.minus(1)])',
+            '(View > TextView[text="恭喜获得"] +n TextView[index=parent.childCount.minus(1)])',
+            '([text="恭喜获得"] <n * + TextView[clickable=true])',
           ],
           resetMatch: 'match',
           activityIds:
@@ -131,12 +131,12 @@ export default defineGkdApp({
         {
           anyMatches: [
             'WebView > View > View > View > TextView[clickable=true][visibleToUser=true][text.length=0] + TextView[text="可在【金币明细】查看"] + TextView[text.length=0][clickable=true][visibleToUser=true]',
+            'TextView[text="可在【金币明细】查看"] - @TextView[clickable=true][visibleToUser=true] - View > TextView[text$="金币"]',
+            '(View > @TextView - View > TextView[text^="您已完成" && text$="任务"])',
+            '([text^="您已完成" && text$="任务"] < * + TextView[clickable=true][visibleToUser=true])',
+            '(View > TextView[text="10金币"] + TextView[text="1次抽奖机会"] + TextView + TextView[clickable=false][visibleToUser=true])',
             'View[childCount=4] >  TextView[clickable=true][visibleToUser=true] + TextView[clickable=true][visibleToUser=true][index=parent.childCount.minus(1)]',
             '([text$="金币"] < View +2 TextView[clickable=true])',
-            '([text^="您已完成" && text$="任务"] < * + TextView[clickable=true][visibleToUser=true])',
-            '(View > @TextView - View > TextView[text^="您已完成" && text$="任务"])',
-            'TextView[text="可在【金币明细】查看"] - @TextView[clickable=true][visibleToUser=true] - View > TextView[text$="金币"]',
-            '(View > TextView[text="10金币"] + TextView[text="1次抽奖机会"] + TextView + TextView[clickable=false][visibleToUser=true])',
           ],
           action: 'clickCenter',
           forcedTime: 10000,
@@ -185,7 +185,6 @@ export default defineGkdApp({
           anyMatches: [
             '([text^="兑奖码:"] + * + TextView)',
             '([text="可在首页-[奖品]查看" || text="可在首页-[财气值明细]查看"] + TextView)',
-            '([text="兑奖码:"] + * + TextView)',
           ],
           resetMatch: 'match',
           activityIds:
@@ -287,9 +286,9 @@ export default defineGkdApp({
           activityIds:
             'com.cebbank.mobile.cemb.ui.activity.mobilePayment.MobilePaymentWebActivity',
           anyMatches: [
-            '(View > TextView[text="抽福袋攒财气，有机会赢好礼"] + TextView)',
-            '(View > View > TextView[text^="您还没有完成任务" || text*="完成任务"] + TextView[text="确定"][clickable=false][visibleToUser=true])',
             '(View > View > TextView[text="已成功领取啦"] +n TextView[text="去兑换"] + View > TextView[text.length=1][clickable=false][visibleToUser=true])',
+            '(View > View > TextView[text^="您还没有完成任务" || text*="完成任务"] + TextView[text="确定"][clickable=false][visibleToUser=true])',
+            '(View > TextView[text="抽福袋攒财气，有机会赢好礼"] + TextView)',
           ],
         },
       ],
@@ -305,9 +304,9 @@ export default defineGkdApp({
           activityIds:
             'com.cebbank.mobile.cemb.ui.activity.mobilePayment.MobilePaymentWebActivity',
           anyMatches: [
+            '(View > TextView[text^="兑奖码"] + @TextView[clickable=false][visibleToUser=true][text.length=0] + TextView[text*="光彩礼遇社" && text*="输入兑奖码领取红包"])',
             '(TextView[text*="光彩礼遇社" || text^="兑换路径"] - View > TextView[text="兑奖码:"] + TextView[text.length>0] + TextView[text.length=0])',
             '(TextView[text*="元微信红包"] < View + @TextView[clickable=false][visibleToUser=true] + TextView[text*="光彩礼遇社" && text*="输入兑奖码领取红包"])',
-            '(View > TextView[text^="兑奖码"] + @TextView[clickable=false][visibleToUser=true][text.length=0] + TextView[text*="光彩礼遇社" && text*="输入兑奖码领取红包"])',
           ],
         },
       ],
@@ -321,8 +320,8 @@ export default defineGkdApp({
           activityIds:
             'com.cebbank.mobile.cemb.ui.activity.mobilePayment.MobilePaymentWebActivity',
           anyMatches: [
-            '(TextView[text="兑奖码:"] < View + TextView[text^="兑换路径"] + @TextView + TextView[text="可在首页-[奖品]查看"])',
             '(View > TextView[text*="光彩礼遇社" && text*="输入兑奖码领取红包"] + @TextView[clickable=false][visibleToUser=true][text.length=0] + TextView[text.length=0])',
+            '(TextView[text="兑奖码:"] < View + TextView[text^="兑换路径"] + @TextView + TextView[text="可在首页-[奖品]查看"])',
           ],
         },
       ],
@@ -338,9 +337,9 @@ export default defineGkdApp({
           activityIds:
             'com.cebbank.mobile.cemb.ui.activity.mobilePayment.MobilePaymentWebActivity',
           anyMatches: [
-            '([text^="兑奖码"] +n @*[clickable=true] + [text^="搜索并关注微信公众号"])',
-            '([text^="兑奖码"] +n @TextView[clickable=true][visibleToUser=true] + [text^="搜索并关注微信公众号"])',
             '([text^="兑奖码"] + @TextView[clickable=true][visibleToUser=true] + [text^="搜索并关注微信公众号"])',
+            '([text^="兑奖码"] +n @TextView[clickable=true][visibleToUser=true] + [text^="搜索并关注微信公众号"])',
+            '([text^="兑奖码"] +n @*[clickable=true] + [text^="搜索并关注微信公众号"])',
           ],
         },
       ],
@@ -356,9 +355,9 @@ export default defineGkdApp({
           activityIds:
             'com.cebbank.mobile.cemb.ui.activity.mobilePayment.MobilePaymentWebActivity',
           anyMatches: [
-            '([text^="搜索并关注微信公众号"] + *[clickable=true])',
-            '([text^="搜索并关注微信公众号"] + TextView[clickable=true][visibleToUser=true])',
             '(View > TextView[text*="光彩礼遇社" && text*="输入兑奖码领取红包"] + @TextView[clickable=false][visibleToUser=true][text.length=0] + TextView[text.length=0])',
+            '([text^="搜索并关注微信公众号"] + TextView[clickable=true][visibleToUser=true])',
+            '([text^="搜索并关注微信公众号"] + *[clickable=true])',
           ],
         },
       ],
@@ -403,8 +402,8 @@ export default defineGkdApp({
           activityIds:
             'com.cebbank.mobile.cemb.ui.activity.mobilePayment.MobilePaymentWebActivity',
           anyMatches: [
-            'View > TextView[text="去兑换"] + View',
             'TextView[text="已成功领取啦"] +n TextView[text="去兑换"]  + View > TextView[text.length=1][clickable=false][visibleToUser=true]',
+            'View > TextView[text="去兑换"] + View',
           ],
         },
       ],
@@ -472,10 +471,10 @@ export default defineGkdApp({
       rules: [
         {
           anyMatches: [
-            '([text="返回去抽奖"])',
             '(TextView[text="差一点就中奖啦"] <n View < View + View > @View[clickable=false][visibleToUser=true] > TextView[text.length=1])',
             '(@TextView[clickable=true][visibleToUser=true] < View + View > View > TextView[text="很遗憾，您未中奖"] +n TextView[text="谢谢参与"])',
             'View > View > View > @TextView[clickable=true][visibleToUser=true] - View > TextView[text="很遗憾，差一点就中奖了"]',
+            '([text="返回去抽奖"])',
           ],
           resetMatch: 'match',
           activityIds: [
@@ -773,13 +772,13 @@ export default defineGkdApp({
       rules: [
         {
           anyMatches: [
-            '(@View << * + * >2 [text="差一点就中奖啦"] + [text="继续抽奖"])',
             'TextView[text="差一点就中奖啦"] <n View < View[id="compntWinningResult1"] + View > @View[clickable=true][visibleToUser=true] > TextView[text.length=1]',
-            '(View > View > TextView[text="您已参加过活动啦"] + TextView[text="确定"][clickable=false][visibleToUser=true])',
-            '([text="返回去抽奖"])',
-            '(TextView[text="差一点就中奖啦"] <n View < View + View > @View[clickable=false][visibleToUser=true] > TextView[text.length=1])',
-            '(TextView[text="恭喜您，中奖啦"] < View < View[id="compntWinningResult1"] + View > View > TextView[text.length=1][clickable=false][visibleToUser=true])',
+            'TextView[text="差一点就中奖啦"] <n View < View + View > @View[clickable=false][visibleToUser=true] > TextView[text.length=1]',
+            'TextView[text="恭喜您，中奖啦"] < View < View[id="compntWinningResult1"] + View > View > TextView[text.length=1][clickable=false][visibleToUser=true]',
             'TextView[text="恭喜您，中奖啦" || text="去兑换" || text="奖品可在「我的权益」中查看"] <<n View + View > @View[clickable=true][visibleToUser=true] > TextView[text.length=1]',
+            'View > View > TextView[text="您已参加过活动啦"] + TextView[text="确定"][clickable=false][visibleToUser=true]',
+            '[text="返回去抽奖"]',
+            '@View << * + * >2 [text="差一点就中奖啦"] + [text="继续抽奖"]',
           ],
           resetMatch: 'match',
           activityIds:

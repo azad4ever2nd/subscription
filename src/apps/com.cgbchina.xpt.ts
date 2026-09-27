@@ -32,7 +32,6 @@ export default defineGkdApp({
           activityIds:
             'com.cgb.mobilebank.sit.launcher.module.main.activity.IndexActivity',
           anyMatches: [
-            'TextView[text*="新版本"] < LinearLayout +n LinearLayout > TextView[vid="tv_left"][text="稍后再说"][clickable=true][visibleToUser=true]',
             'TextView[text*="新版本"] <n LinearLayout +n LinearLayout > TextView[vid="tv_left"][text="稍后再说" || text="暂不更新"][clickable=true][visibleToUser=true]',
           ],
         },
@@ -89,9 +88,9 @@ export default defineGkdApp({
           resetMatch: 'match',
           activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
           anyMatches: [
-            '(View[text="1"] < View < View - View > @Image[clickable=true][visibleToUser=true][text.length=0] + View[text^="已连续签到"])',
-            '(View[text="1"] < View < View +(6,10) View > View > Image[clickable=true][visibleToUser=true][text="20260629113116910808676207755"])',
             '(View[text="1"] < View < View - View > View[text="提醒我签到"] +3 Image[clickable=true][visibleToUser=true])',
+            '(View[text="1"] < View < View +(6,10) View > View > Image[clickable=true][visibleToUser=true][text="20260629113116910808676207755"])',
+            '(View[text="1"] < View < View - View > @Image[clickable=true][visibleToUser=true][text.length=0] + View[text^="已连续签到"])',
           ],
         },
       ],

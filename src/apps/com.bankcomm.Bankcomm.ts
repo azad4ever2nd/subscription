@@ -12,8 +12,8 @@ export default defineGkdApp({
           matchDelay: 1000,
           forcedTime: 3000,
           anyMatches: [
-            '([vid="popup_ad_image"] + [vid="popup_close"])',
             '([vid="bcm_alert_dialog_content"] + * > [vid="dialog_bottom_confirm_cancel"][text="继续使用"])',
+            '([vid="popup_ad_image"] + [vid="popup_close"])',
           ],
           fastQuery: true,
           resetMatch: 'match',
@@ -45,9 +45,9 @@ export default defineGkdApp({
           actionCd: 0,
           activityIds: 'com.bankcomm.module.biz.webcontainer.BCMHtml5Activity',
           anyMatches: [
-            '(@[id="copy"][text*="立即购买"] <<2 * - * [text="最红星期五"])',
-            '(View > View > Button[id="copy"][clickable=true][visibleToUser=true])',
             '(WebView > View > View > View > View > Button[id="copy"][clickable=true][visibleToUser=true][text=" 立即购买"])',
+            '(View > View > Button[id="copy"][clickable=true][visibleToUser=true])',
+            '(@[id="copy"][text*="立即购买"] <<2 * - * [text="最红星期五"])',
           ],
         },
       ],
@@ -108,8 +108,8 @@ export default defineGkdApp({
           forcedTime: 2000,
           activityIds: 'com.bankcomm.module.biz.webcontainer.BCMHtml5Activity',
           anyMatches: [
-            '(Image[text="ACIM_20260728000180_20260728174629048"] <<n View + View > View[index=0] Image[text="立即领取"])',
             '(Image[text="ACIM_20260728000180_20260728174629048"] <<n View + View > View[index=0] Image[text="立即领取"][clickable=true])',
+            '(Image[text="ACIM_20260728000180_20260728174629048"] <<n View + View > View[index=0] Image[text="立即领取"])',
           ],
         },
       ],
@@ -256,8 +256,8 @@ export default defineGkdApp({
           resetMatch: 'match',
           activityIds: 'com.bankcomm.module.biz.webcontainer.BCMHtml5Activity',
           anyMatches: [
-            '([id="dialogInnerDiv"][text^="哎呀" || text^="人数太多" || text*="次数上限" || text^="服务器在忙" || text$="请稍后再试" ] <<n * + * > [text="关闭"])',
             '(TextView[id="dialogInnerDiv"][text*="当前奖励已领完"] < View < View + View > Button[text="关闭"][clickable=true][visibleToUser=true])',
+            '([id="dialogInnerDiv"][text^="哎呀" || text^="人数太多" || text*="次数上限" || text^="服务器在忙" || text$="请稍后再试" ] <<n * + * > [text="关闭"])',
           ],
         },
       ],
@@ -322,7 +322,7 @@ export default defineGkdApp({
             '([text="恭喜您签到成功"] +n [text="我知道了"])',
           ],
           resetMatch: 'match',
-          actionCd: 8500,
+          actionCd: 10000,
           activityIds: 'com.bankcomm.module.biz.webcontainer.BCMHtml5Activity',
         },
       ],
@@ -336,9 +336,9 @@ export default defineGkdApp({
           resetMatch: 'match',
           activityIds: 'com.bankcomm.module.biz.webcontainer.BCMHtml5Activity',
           anyMatches: [
+            'View > View > @Button[text="稍后再说"][clickable=true][visibleToUser=true] + Button[text="前往安装"]',
             '([text="感谢您的订阅"] <<n * + * > [text="知道了"])',
             '(TextView[text*="订阅"] <n View < View + View > @Button[clickable=true][visibleToUser=true][text="知道了"] + Button[text="去查看"])',
-            'View > View > @Button[text="稍后再说"][clickable=true][visibleToUser=true] + Button[text="前往安装"]',
           ],
         },
       ],
@@ -413,9 +413,10 @@ export default defineGkdApp({
     {
       key: 28,
       name: '恭喜中奖了',
-      desc: '',
+      desc: '260927',
       rules: [
         {
+          resetMatch: 'match',
           matches: ['[text^="恭喜"] + TextView + Image + *'],
           activityIds: 'com.bankcomm.module.biz.webcontainer.BCMHtml5Activity',
         },
@@ -428,8 +429,8 @@ export default defineGkdApp({
       rules: [
         {
           anyMatches: [
-            '[text="恭喜获得"] +n Image[clickable=true][index=parent.childCount.minus(1)]',
             'View > @Image[index=parent.childCount.minus(1)][clickable=true][visibleToUser=true] -n View > TextView[text="恭喜获得"]',
+            '[text="恭喜获得"] +n Image[clickable=true][index=parent.childCount.minus(1)]',
           ],
           resetMatch: 'match',
           activityIds: 'com.bankcomm.module.biz.webcontainer.BCMHtml5Activity',
@@ -592,13 +593,14 @@ export default defineGkdApp({
             'com.bankcomm.module.biz.webcontainer.BCMHtml5Activity',
           ],
           anyMatches: [
+            'WebView > View > Image[text="countdown-fulfilled-bg.f65a2ea"][clickable=true][visibleToUser=true] + Image[text="uYGtPZQreNFJUHiJFsH0akOlpQOFendaucAAAAASUVORK5CYII="]',
+            '([text="countdown-fulfilled-bg.f65a2ea"])',
+            '(WebView > @View[clickable=false][visibleToUser=true] > Image[text="gthEFTB6uRQ36UPWtwD"])',
             '([id="android:id/message"][text*="权限"] <<n * + [id="android:id/buttonPanel"] [id="android:id/button2"][text="否"] + [id="android:id/button1"][text="是"])',
             '([text="Pyi3KQBzgJA1F+Xm7MrWYA0HQqTcq4GrAAAAAASUVORK5CYII="])',
             '(View > Image[text="countdown-fulfilled-bg.f65a2ea"][visibleToUser=true])',
             '(View > Image[clickable=true][text="gthEFTB6uRQ36UPWtwD"][visibleToUser=true])',
             '(View > Image[clickable=false][text="gthEFTB6uRQ36UPWtwD"][visibleToUser=true])',
-            '(WebView > @View[clickable=false][visibleToUser=true] > Image[text="gthEFTB6uRQ36UPWtwD"])',
-            'WebView > View > Image[text="countdown-fulfilled-bg.f65a2ea"][clickable=true][visibleToUser=true] + Image[text="uYGtPZQreNFJUHiJFsH0akOlpQOFendaucAAAAASUVORK5CYII="]',
           ],
         },
       ],
@@ -615,11 +617,11 @@ export default defineGkdApp({
             'com.bankcomm.module.biz.webcontainer.BCMHtml5Activity',
           ],
           anyMatches: [
-            '([id="android:id/message"][text*="权限"] <<n * + [id="android:id/buttonPanel"] [id="android:id/button2"][text="否"] + [id="android:id/button1"][text="是"])',
             '([text="Pyi3KQBzgJA1F+Xm7MrWYA0HQqTcq4GrAAAAAASUVORK5CYII="])',
             '([text="countdown-fulfilled-bg.f65a2ea"])',
-            '(View > Image[clickable=false][text="gthEFTB6uRQ36UPWtwD"])',
             '(WebView > @View[clickable=false][visibleToUser=true] > Image[text="gthEFTB6uRQ36UPWtwD"])',
+            '(View > Image[clickable=false][text="gthEFTB6uRQ36UPWtwD"])',
+            '([id="android:id/message"][text*="权限"] <<n * + [id="android:id/buttonPanel"] [id="android:id/button2"][text="否"] + [id="android:id/button1"][text="是"])',
           ],
         },
       ],
