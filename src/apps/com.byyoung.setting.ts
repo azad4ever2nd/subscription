@@ -11,6 +11,7 @@ export default defineGkdApp({
       rules: [
         {
           fastQuery: true,
+          forcedTime: 3000,
           activityIds: 'com.byyoung.setting.HomePage.activitys.MainActivity',
           matches:
             'ScrollView > LinearLayout > Button[id="android:id/button3"][text="待会更新"][clickable=true][visibleToUser=true]',

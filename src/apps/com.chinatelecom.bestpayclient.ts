@@ -7,19 +7,20 @@ export default defineGkdApp({
     {
       key: 1,
       name: '开启消息通知',
-      desc: '260920，添加弹窗',
+      desc: '260928，添加弹窗',
       rules: [
         {
           resetMatch: 'match',
           fastQuery: true,
           matchDelay: 1000,
-          forcedTime: 3000,
+          forcedTime: 5000,
           activityIds: 'com.chinatelecom.bestpayclient.ui.MainActivity',
           anyMatches: [
+            'ImageView[vid="iv_dialog_bg_one"] < RelativeLayout + ImageView[vid="iv_dialog_close_one"][clickable=true][visibleToUser=true]',
             '(RelativeLayout > LinearLayout > ImageView[vid="iv_sky_close"][clickable=true][visibleToUser=true])',
-            '(RelativeLayout + ImageView[vid="iv_dialog_close_one"][clickable=true])',
-            '([vid="iv_dialog_bg"] +n [vid="iv_dialog_close"])',
-            '([vid="msg_notification_open_title"] +n [vid="msg_notification_skip_btn"][text="跳过"])',
+            '([vid="iv_dialog_bg"] +n [vid="iv_dialog_close"][visibleToUser=true])',
+            '([vid="msg_notification_open_title"] +n [vid="msg_notification_skip_btn"][text="跳过"][visibleToUser=true])',
+            '(RelativeLayout + ImageView[vid="iv_dialog_close_one"][clickable=true][visibleToUser=true])',
           ],
         },
       ],

@@ -222,6 +222,34 @@ export default defineGkdApp({
     },
     {
       key: 16,
+      name: '智能金转出，同意协议并转出',
+      desc: '260928',
+      rules: [
+        {
+          resetMatch: 'match',
+          activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
+          excludeMatches:
+            'WebView > View > View > View > View > @Button[text="坚持赎回"][clickable=true][visibleToUser=true] + * + Button[text="取消赎回"]',
+          matches:
+            'WebView > View > Button[text="同意协议并转出"][clickable=true][visibleToUser=true]',
+        },
+      ],
+    },
+    {
+      key: 17,
+      name: '弹窗，智能金转出，同意协议并转出转出，坚持赎回',
+      desc: '260928',
+      rules: [
+        {
+          resetMatch: 'match',
+          activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
+          matches:
+            'WebView > View > View > View > View > @Button[text="坚持赎回"][clickable=true][visibleToUser=true] + * + Button[text="取消赎回"]',
+        },
+      ],
+    },
+    {
+      key: 18,
       name: '弹窗，隐私政策更新提示，同意',
       desc: '260904',
       rules: [
