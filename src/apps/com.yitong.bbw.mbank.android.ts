@@ -72,7 +72,7 @@ export default defineGkdApp({
       rules: [
         {
           resetMatch: 'match',
-          preKeys: [3],
+          preKeys: [4],
           activityIds: 'com.yitong.mobile.biz.h5.container.WebViewActivity',
           matches:
             'View > TextView[text="复制成功"] + View > Button[text="确定"][clickable=true][visibleToUser=true]',
@@ -86,7 +86,7 @@ export default defineGkdApp({
       rules: [
         {
           resetMatch: 'match',
-          preKeys: [4],
+          preKeys: [5],
           actionMaximum: 1,
           excludeMatches: [
             'View > TextView[text="复制成功"] + View > Button[text="确定"][clickable=true][visibleToUser=true]',
@@ -109,6 +109,19 @@ export default defineGkdApp({
           activityIds: 'com.yitong.mobile.biz.h5.container.WebViewActivity',
           matches:
             'ViewGroup > TextView[text="暂不前往"] + TextView[text="同意前往"][clickable=true][visibleToUser=true]',
+        },
+      ],
+    },
+    {
+      key: 8,
+      name: '兑换好礼，兑换',
+      desc: '260928',
+      rules: [
+        {
+          resetMatch: 'match',
+          activityIds: 'com.yitong.mobile.biz.h5.container.WebViewActivity',
+          matches:
+            'WebView[text="兑换好礼"] > @View[clickable=true][visibleToUser=true] > TextView[text^="微信立减金2.88元"] + TextView[text="兑换"]',
         },
       ],
     },

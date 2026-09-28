@@ -73,11 +73,12 @@ export default defineGkdApp({
     {
       key: 5,
       name: '哈啰还不知道您在哪里',
-      desc: '260906，添加 消息通知',
+      desc: '260928，添加 消息通知',
       rules: [
         {
           resetMatch: 'match',
           fastQuery: true,
+          actionCd: 300,
           activityIds: 'com.hellobike.atlas.business.portal.PortalActivity',
           anyMatches: [
             '([vid="title_tv"][text="哈啰还不知道您在哪里"] +2 @[vid="sign_out_tv"][text="暂不开启"] + [vid="agreement_tv"][text="快速开启定位"])',
@@ -139,13 +140,13 @@ export default defineGkdApp({
     {
       key: 9,
       name: '弹窗，系统定位服务已关闭，取消',
-      desc: '260925，添加matchroo测试，添加打开定位服务，,添加IDS,消息通知 com.hellobike.business.hitch.common.home.HLPHHomeActivity',
+      desc: '260928，添加matchroo测试，添加打开定位服务，,添加IDS,消息通知 com.hellobike.business.hitch.common.home.HLPHHomeActivity',
       rules: [
         {
           fastQuery: true,
           resetMatch: 'match',
           action: 'clickCenter',
-          actionCd: 500,
+          actionCd: 300,
           forcedTime: 3000,
           matchRoot: false,
           activityIds: [
@@ -345,25 +346,26 @@ export default defineGkdApp({
     {
       key: 21,
       name: '请打开系统定位开关后用车,X掉',
-      desc: '260416',
+      desc: '260928，测试日志反馈中经常达到上限',
       rules: [
         {
           resetMatch: 'match',
-          actionMaximum: 1,
           activityIds:
             'com.hellobike.moped.platform.offline.web.OhoRealmWebActivity',
           anyMatches:
-            '[text="请打开系统定位开关后用车"] <n * + @*[clickable=true] +n [text="去开启"]',
+            '[text="请打开系统定位开关后用车"] <n * + @*[clickable=true][visibleToUser=true] +n [text="去开启"]',
         },
       ],
     },
     {
       key: 22,
       name: '领行完领奖励金',
-      desc: '260904,clickable=true',
+      desc: '260928，测试限1次，clickable=true',
       rules: [
         {
           resetMatch: 'match',
+          actionCd: 500,
+          actionMaximum: 1,
           action: 'clickCenter',
           activityIds:
             'com.hellobike.moped.platform.offline.web.OhoRealmWebActivity',
@@ -397,10 +399,11 @@ export default defineGkdApp({
     {
       key: 24,
       name: '弹窗，奖励金，签到',
-      desc: '260806',
+      desc: '260928',
       rules: [
         {
           resetMatch: 'match',
+          actonCd: 700,
           activityIds:
             'com.hellobike.moped.platform.offline.web.OhoRealmWebActivity',
           anyMatches: [
@@ -413,11 +416,12 @@ export default defineGkdApp({
     {
       key: 25,
       name: '弹窗,明日再来，X掉',
-      desc: '260910',
+      desc: '260928',
       rules: [
         {
           resetMatch: 'match',
           action: 'clickCenter',
+          actionCd: 500,
           activityIds:
             'com.hellobike.moped.platform.offline.web.OhoRealmWebActivity',
           anyMatches: [
@@ -430,13 +434,19 @@ export default defineGkdApp({
     {
       key: 26,
       name: '弹窗，每日单单返奖励金，知道了2',
-      desc: '260921,fastQuery=false,clickable=true，添加 弹窗知道了',
+      desc: '260928，排除签到，明日再来，fastQuery=false,clickable=true，添加 弹窗知道了',
       rules: [
         {
           action: 'clickCenter',
           resetMatch: 'match',
           activityIds:
             'com.hellobike.moped.platform.offline.web.OhoRealmWebActivity',
+          excludeMatches: [
+            'TextView[text="我的奖励金"] +n View > View > TextView[index=parent.childCount.minus(1)][clickable=false][visibleToUser=true][text="签到"]',
+            'TextView[text="我的奖励金"] +n View >n View >  TextView[text="签到"][clickable=true][visibleToUser=true]',
+            'TextView[text="我的奖励金"] +n View >n View > @TextView[clickable=true][visibleToUser=true] +n TextView[text="明日再来"][clickable=true][visibleToUser=true]',
+            'TextView[text="我的奖励金"] +n View > View > @TextView[clickable=false][visibleToUser=true][text.length=0] +n TextView[text="明日再来"]',
+          ],
           anyMatches: [
             'TextView[text="我的奖励金"] +n View > View > TextView[clickable=false][visibleToUser=true][text="知道了"]',
             'TextView[text="我的奖励金"] +n View >n View > TextView[clickable=true][visibleToUser=true][text="知道了"]',

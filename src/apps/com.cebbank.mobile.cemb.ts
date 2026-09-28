@@ -126,10 +126,11 @@ export default defineGkdApp({
     {
       key: 8,
       name: '基金财富月历，任务完成开心收下',
-      desc: '260916 添加 葫芦抽奖，兑换确认',
+      desc: '260928 添加 葫芦抽奖，兑换确认',
       rules: [
         {
           anyMatches: [
+            'View > @TextView[clickable=true][visibleToUser=true][index=parent.childCount.minus(1)] -n View > TextView[text^="微信立减金将在5个工作日内发放" || text$="【光大银行app-我的-权益-我的活动】查看"]',
             'WebView > View > View > View > TextView[clickable=true][visibleToUser=true][text.length=0] + TextView[text="可在【金币明细】查看"] + TextView[text.length=0][clickable=true][visibleToUser=true]',
             'TextView[text="可在【金币明细】查看"] - @TextView[clickable=true][visibleToUser=true] - View > TextView[text$="金币"]',
             '(View > @TextView - View > TextView[text^="您已完成" && text$="任务"])',

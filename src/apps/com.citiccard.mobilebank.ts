@@ -257,13 +257,15 @@ export default defineGkdApp({
     {
       key: 18,
       name: '弹窗，推荐有礼，X掉',
-      desc: '260904',
+      desc: '260928',
       rules: [
         {
           resetMatch: 'match',
           activityIds: 'com.citiccard.mobilebank.web.webpage.CommonWebPage',
-          matches:
+          anyMatches: [
             'View > View > Image[text="1787731085779jlbPK"] + TextView[clickable=true][visibleToUser=true]',
+            'View > View > Image[text="202609221819185328"] + TextView[clickable=true][visibleToUser=true]',
+          ],
         },
       ],
     },

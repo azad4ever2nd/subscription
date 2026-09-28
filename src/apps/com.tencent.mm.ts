@@ -34,7 +34,7 @@ export default defineGkdApp({
     {
       key: 2,
       name: '糖的报单',
-      desc: '260917，添加 中信抽奖，华夏红包领取，继续访问，知道了，是否继续上传',
+      desc: '260928，添加 中信活动，中信抽奖，华夏红包领取，继续访问，知道了，是否继续上传',
       rules: [
         {
           resetMatch: 'match',
@@ -49,6 +49,7 @@ export default defineGkdApp({
             '(@[text="批量上传"] + [text*="知道了"])',
             '([text="操作提示"] + [text="上传成功，是否继续上传？"] + * > [text="取消"])',
             '(@[text="继续访问"] +n * > [desc="申请恢复访问"])',
+            'View[text="我的足迹"] + View > TextView[text.length=0][clickable=true][visibleToUser=true]',
           ],
         },
       ],
@@ -1398,7 +1399,7 @@ export default defineGkdApp({
     {
       key: 63,
       name: '活动未开始，我知道了',
-      desc: '260926，添加 红色打卡，宁波，朴朴，动卡空间，内蒙工行，贵阳工行，工行余姚，湘约工行，贵州工行，已参加过',
+      desc: '260928，添加 红色打卡，宁波，朴朴，动卡空间，内蒙工行，贵阳工行，工行余姚，湘约工行，贵州工行，已参加过',
       rules: [
         {
           resetMatch: 'match',
@@ -1424,6 +1425,7 @@ export default defineGkdApp({
             'View > TextView[text^="活动未开始" || text^="已参加过本次活动"] + View > View > Image[clickable=true][visibleToUser=true]',
             'View > TextView[text="Blocked by Sentinel"] + View + TextView[clickable=true][visibleToUser=true]',
             'View > View > @TextView[clickable=true][visibleToUser=true] - View > View >   Image[text="66c29cff8e9f4a2aaf3f1b67b944daac"]',
+            'View > View > @TextView[clickable=true][visibleToUser=true] - View > View >   Image[text="2821aa8f32d5477d85db2a4a119d06cd"]',
             'View > @TextView[clickable=true][visibleToUser=true] - View > View > Image[text="ac327e12fc2c48ee92771714b590d29b"]',
             'TextView[text="系统繁忙，请稍后再试。"] <<n View + View > @View[clickable=false][visibleToUser=true] > TextView[text="确定"]',
             'View > View > @TextView[clickable=true][visibleToUser=true] -n View > View > TextView[text="恭喜您获得"]',
@@ -1437,6 +1439,7 @@ export default defineGkdApp({
             'View > View >  @TextView[clickable=true][visibleToUser=true] -n View >  TextView[text^="您的领取机会已用完"]',
             'View > View > TextView[text="每人1次参与机会"] + TextView[text="确定"][clickable=true][visibleToUser=true]',
             'TextView[text^="已参与"] < View +2 @TextView[clickable=true][visibleToUser=true] - View > TextView[text="确认"]',
+            'View > View > TextView[text="很遗憾，此次未中奖，感谢您的参与"] + TextView[text="确定"][clickable=true][visibleToUser=true]',
           ],
         },
       ],

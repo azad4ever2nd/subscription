@@ -84,12 +84,13 @@ export default defineGkdApp({
     {
       key: 6,
       name: '开启定位',
-      desc: '260919，修复提示BUG，添加ids',
+      desc: '260928，修复提示BUG，添加ids',
       rules: [
         {
           resetMatch: 'match',
           fastQuery: true,
           forcedTime: 3000,
+          actionCd: 700,
           activityIds: [
             'com.unionpay.activity.react.UPActivityReactNative',
             'com.unionpay.liteapp.app.UPLiteAppActivity1',

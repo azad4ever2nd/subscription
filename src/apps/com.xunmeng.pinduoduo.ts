@@ -90,11 +90,11 @@ export default defineGkdApp({
     {
       key: 6,
       name: '邀请你加入队伍，立即加入抽福袋',
-      desc: '260905，2台手机布局不一样',
+      desc: '260928，2台手机布局不一样',
       rules: [
         {
           resetMatch: 'match',
-          actionCd: 1500,
+          actionCd: 1000,
           activityIds: 'com.xunmeng.pinduoduo.activity.NewPageActivity',
           anyMatches: [
             '([text^="邀请你加入队伍"] +n @*[clickable=true][visibleToUser=true] > [text="立即加入抽福袋"])',
@@ -442,10 +442,11 @@ export default defineGkdApp({
     {
       key: 28,
       name: '立即点亮',
-      desc: '260829',
+      desc: '260928',
       rules: [
         {
           resetMatch: 'match',
+          actioCd: 750,
           activityIds: 'com.xunmeng.pinduoduo.activity.NewPageActivity',
           anyMatches: [
             'View > View > TextView[text="立即点亮"][clickable=false][visibleToUser=true]',
@@ -456,10 +457,11 @@ export default defineGkdApp({
     {
       key: 29,
       name: '浏览当前页面10秒即可点亮',
-      desc: '260906',
+      desc: '260928',
       rules: [
         {
           resetMatch: 'match',
+          actionCd: 1500,
           action: 'swipe',
           swipeArg: {
             start: {
@@ -487,6 +489,7 @@ export default defineGkdApp({
         {
           resetMatch: 'match',
           action: 'clickCenter',
+          actionCd: 750,
           activityIds: 'com.xunmeng.pinduoduo.activity.NewPageActivity',
           anyMatches: [
             'View > View > View > TextView[text^="浏览商品10秒" || text$="即可点亮1次"] +n TextView[text^="去看看"][clickable=true][visibleToUser=true]',
