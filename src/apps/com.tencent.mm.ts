@@ -1499,11 +1499,12 @@ export default defineGkdApp({
     {
       key: 66,
       name: '粤工会，参与抽奖',
-      desc: '260921',
+      desc: '260928',
       rules: [
         {
           resetMatch: 'match',
-          actionMaximum: 1,
+          actionMaximum: 5,
+          actionCd: 1500,
           activityIds: [
             'com.tencent.mm.plugin.appbrand.ui.AppBrandUI0',
             'com.tencent.mm.plugin.appbrand.ui.AppBrandUI1',
