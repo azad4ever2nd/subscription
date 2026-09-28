@@ -403,7 +403,7 @@ export default defineGkdApp({
       rules: [
         {
           resetMatch: 'match',
-          actonCd: 700,
+          actionCd: 700,
           activityIds:
             'com.hellobike.moped.platform.offline.web.OhoRealmWebActivity',
           anyMatches: [

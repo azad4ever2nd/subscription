@@ -446,7 +446,7 @@ export default defineGkdApp({
       rules: [
         {
           resetMatch: 'match',
-          actioCd: 750,
+          actionCd: 750,
           activityIds: 'com.xunmeng.pinduoduo.activity.NewPageActivity',
           anyMatches: [
             'View > View > TextView[text="立即点亮"][clickable=false][visibleToUser=true]',
