@@ -100,10 +100,11 @@ export default defineGkdApp({
     {
       key: 7,
       name: '青少年模式',
-      desc: '',
+      desc: '260928',
       rules: [
         {
-          matches: [
+          anyMatches: [
+            'LinearLayout > TextView[vid="title"][text="青少年模式"] +3 TextView[vid="button"][text="我知道了"][clickable=true][visibleToUser=true]',
             '[vid="title"][text="青少年模式"] +3 [vid="button"][text="我知道了"]',
           ],
           fastQuery: true,
