@@ -46,6 +46,7 @@ export default defineGkdApp({
           anyMatches: [
             '(View > TextView[text^="微信红包" && text$="元"] +n View > Button[text="立即领取"][clickable=true][visibleToUser=true])',
             '@TextView[clickable=true][visibleToUser=true] - View > TextView[text="谢谢参与"] +n View[desc="我知道了"] > TextView[text="我知道了"]',
+            '@TextView[clickable=true][visibleToUser=true] - View > Image[text="80316b63-f34b-4ba7-bc99-527e68bd5cac"] + TextView[text^="恭喜你获得"] +n View[desc="查看我的礼品"] > TextView[text="查看我的礼品"]',
             '(@[text="批量上传"] + [text*="知道了"])',
             '([text="操作提示"] + [text="上传成功，是否继续上传？"] + * > [text="取消"])',
             '(@[text="继续访问"] +n * > [desc="申请恢复访问"])',

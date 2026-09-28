@@ -35,16 +35,20 @@ export default defineGkdApp({
     },
     {
       key: 3,
-      name: '弹窗，签到可得宝箱，立即去签到 或 X掉',
-      desc: '260927，1.立即收下，2.X掉',
+      name: '弹窗，签到获得宝箱，立即去签到 或 X掉',
+      desc: '260928，添加 立即开启，1.立即收下（立即开启），2.X掉',
       rules: [
         {
           resetMatch: 'match',
           fastQuery: true,
           activityIds: 'com.dianping.nova.picasso.DPPicassoBoxActivity',
           anyMatches: [
+            '@FrameLayout[clickable=true][visibleToUser=true] > ImageView + TextView[text="立即去签到" || text="立即开启"]',
+            '@ImageView[clickable=true][visibleToUser=true] - FrameLayout >n TextView[text="立即去签到" || text="立即开启"]',
             '@FrameLayout[clickable=true][visibleToUser=true] > ImageView + TextView[text="立即去签到"]',
+            '@FrameLayout[clickable=true][visibleToUser=true] > ImageView + TextView[text="立即开启"]',
             '@ImageView[clickable=true][visibleToUser=true] - FrameLayout >n TextView[text="立即去签到"]',
+            '@ImageView[clickable=true][visibleToUser=true] - FrameLayout >n TextView[text="立即开启"]',
           ],
         },
       ],
@@ -95,6 +99,36 @@ export default defineGkdApp({
     },
     {
       key: 7,
+      name: '弹窗，国庆免费签到，去看看 或 X掉',
+      desc: '260928，所有文本全是ImageView 1.去看看，2.X掉',
+      rules: [
+        {
+          resetMatch: 'match',
+          activityIds: 'com.dianping.nova.picasso.DPPicassoBoxActivity',
+          anyMatches: [
+            '@ImageView[clickable=true][visibleToUser=true][desc.length=0] - ImageView[desc.length=0] < FrameLayout[childCount=2] < FrameLayout + FrameLayout[childCount=1] > ImageView[clickable=true][visibleToUser=true]',
+            'ImageView[clickable=true][visibleToUser=true][desc.length=0] - ImageView[desc.length=0] < FrameLayout[childCount=2] < FrameLayout + FrameLayout[childCount=1] > ImageView[clickable=true][visibleToUser=true]',
+          ],
+        },
+      ],
+    },
+    {
+      key: 8,
+      name: '弹窗，在路上奖励等你解锁，我知道了 或 X掉',
+      desc: '260928，所有文本全是ImageView 1.我知道了，2.X掉',
+      rules: [
+        {
+          resetMatch: 'match',
+          activityIds: 'com.dianping.nova.picasso.DPPicassoBoxActivity',
+          anyMatches: [
+            'ImageView[clickable=true][visibleToUser=true][desc.length=0] - FrameLayout > ImageView + @FrameLayout[clickable=true][visibleToUser=true][childCount=1] > ImageView[desc.length=0]',
+            '@ImageView[clickable=true][visibleToUser=true][desc.length=0] - FrameLayout > ImageView + FrameLayout[clickable=true][visibleToUser=true][childCount=1] > ImageView[desc.length=0]',
+          ],
+        },
+      ],
+    },
+    {
+      key: 9,
       name: '弹窗，开启推送通知，X掉',
       desc: '260927',
       rules: [
