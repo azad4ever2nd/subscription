@@ -150,7 +150,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 9,
+      key: 10,
       name: '弹窗，开启推送通知，X掉',
       desc: '260927',
       rules: [
