@@ -168,7 +168,7 @@ export default defineGkdApp({
     {
       key: 11,
       name: '闪购支付后的弹窗',
-      desc: '260406,支付后推荐弹窗',
+      desc: '260929，添加放弃付款,支付后推荐弹窗',
       rules: [
         {
           resetMatch: 'match',
@@ -176,6 +176,7 @@ export default defineGkdApp({
           matchTime: 3000,
           activityIds: 'com.alipay.android.msp.ui.views.MspContainerActivity',
           anyMatches: [
+            'TextView[text="放弃"] < @FrameLayout[clickable=true][visibleToUser=true] + FrameLayout[clickable=true][visibleToUser=true] > TextView[text="继续付款"]',
             '(@* > [text="关闭"] <<n * +n * [text="同意协议并开通"])',
             '(@[text="关闭"] <<n * +n * [text="同意协议并开通"])',
             '([text="淘宝 推荐你"] <<n * +n @* > [text="关闭"])',
