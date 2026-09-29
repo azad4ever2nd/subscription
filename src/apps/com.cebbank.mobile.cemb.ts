@@ -43,6 +43,7 @@ export default defineGkdApp({
           anyMatches: [
             '(WebView > View > View > View > TextView[text^="天天领金币"] +n View[childCount=2] > TextView[index=parent.childCount.minus(1)][text.length=0][clickable=false][visibleToUser=true])',
             '([text^="天天领金币"] +n *[text=""][clickable=true][visibleToUser=true][index=parent.childCount.minus(1)] + View[childCount=2])',
+            '(@TextView[clickable=true][visibleToUser=true] <n View + View > TextView[text="更多产品 >"])',
             '(@TextView[clickable=false][visibleToUser=true] < View + View > TextView[text="更多产品 >"])',
             '([id="mainContainer"] [text^="天天领金币" && text$="关注产品收益上涨可领翻倍金币"] +3 * > *[text=""][visibleToUser=true][index=parent.childCount.minus(1)])',
           ],

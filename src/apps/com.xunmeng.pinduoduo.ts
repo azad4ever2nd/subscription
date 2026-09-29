@@ -315,13 +315,14 @@ export default defineGkdApp({
     {
       key: 20,
       name: '如何解锁，去首页1',
-      desc: '260924,clickable=false，添加 神券',
+      desc: '260929,clickable=false，添加 提前锁定，神券',
       rules: [
         {
           resetMatch: 'match',
           action: 'click',
           activityIds: 'com.xunmeng.pinduoduo.activity.NewPageActivity',
           anyMatches: [
+            '(View > View > View > View > TextView[text^="恭喜提前锁定"] +n TextView[text="开心收下"][clickable=false][visibleToUser=true])',
             '(View > TextView[text="如何解锁?" || text="如何解锁点亮?"] + TextView[clickable=false][text="去首页"])',
             'View >  TextView[text*="点抢最高16元无门槛券"] + @View[clickable=false][visibleToUser=true] > TextView[text="立即抽奖"]',
             'TextView[text="海量商品可用"] - TextView < View +n TextView[index=parent.childCount.minus(1)][clickable=false][visibleToUser=true]',
@@ -412,11 +413,12 @@ export default defineGkdApp({
     {
       key: 26,
       name: '提前锁定限时翻倍券，开心收下 或 X掉',
-      desc: '260908',
+      desc: '260929',
       rules: [
         {
           resetMatch: 'match',
           activityIds: 'com.xunmeng.pinduoduo.activity.NewPageActivity',
+          forcedTime: 3000,
           anyMatches: [
             '(View > View > View > View > TextView[text^="恭喜提前锁定"] +n TextView[text="开心收下"][clickable=true][visibleToUser=true])',
             '(View > View > View > View > TextView[clickable=false][text="开心收下"] + Image[clickable=false][visibleToUser=true][text="webp"])',
@@ -457,11 +459,10 @@ export default defineGkdApp({
     {
       key: 29,
       name: '浏览当前页面10秒即可点亮',
-      desc: '260928',
+      desc: '260929',
       rules: [
         {
           resetMatch: 'match',
-          actionCd: 1500,
           action: 'swipe',
           swipeArg: {
             start: {
@@ -472,7 +473,7 @@ export default defineGkdApp({
               x: 538,
               y: 1000,
             },
-            duration: 1000, //滑动时长
+            duration: 800, //滑动时长
           },
           activityIds: 'com.xunmeng.pinduoduo.activity.NewPageActivity',
           anyMatches: [

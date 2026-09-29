@@ -52,10 +52,12 @@ export default defineGkdApp({
     {
       key: 4,
       name: '签到红包',
-      desc: '260210，改变规则排序，添加弹窗，领奖,(Image < * + * >n [text^="添加"] +n * > [text$="元宝" && text^="立即领"]) || ',
+      desc: '260929，添加删除聊天，消息通知，弹窗，领奖',
       rules: [
         {
           anyMatches: [
+            'FrameLayout > FrameLayout > FrameLayout > View[desc="确认删除聊天吗？"] +n View[desc="删除"][clickable=true][visibleToUser=true]',
+            'View > View > View > @Image[text="O1CN01eVP9R729P4urD3Wq4_!!6000000008059-2-tps-112-112"][clickable=true][visibleToUser=true] + TextView[text*="消息通知"] +n TextView[text="去开启"]',
             '([text="去赚元宝"] <<n * + View > [text^="O1CN01UVlufl1CzCsp8oehQ_!!6000000000151-2-gg_dtc.png_q50"])',
             '(@[text="O1CN01zH3VkM1KrtQhLlTqz_!!6000000001218-2-tps-56-56.png_q50.jpg_"] + [text="做任务赚元宝"] + * >n [text="点击领元宝(1/1)"])',
             '(@[text^="O1CN01JfbGY21lIcW06JOti_!!6000000004796-2-tps-64-64"] - * > [text="我知道了"])',

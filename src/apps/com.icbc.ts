@@ -205,12 +205,17 @@ export default defineGkdApp({
     {
       key: 13,
       name: '弹窗，X掉',
-      desc: '260702',
+      desc: '260929，添加 勾选， 我知道了',
       rules: [
         {
           resetMatch: 'match',
+          action: 'clickCenter',
           activityIds: 'com.icbc.activity.web.ICBCWebView',
-          matches: 'View > Image +n @TextView - View > TextView[text="去许愿"]',
+          anyMatches: [
+            'View > Image +n @TextView - View > TextView[text="去许愿"]',
+            'View > @CheckBox[text*="我知道了"][clickable=true][visibleToUser=true][checked=false]',
+            'View > CheckBox[text*="我知道了"][clickable=true][visibleToUser=true][checked=true] + Button[text="我知道了"][clickable=true][visibleToUser=true]',
+          ],
         },
       ],
     },

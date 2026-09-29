@@ -184,6 +184,19 @@ export default defineGkdApp({
     },
     {
       key: 13,
+      name: '验证身份，获取验证码',
+      desc: '260929',
+      rules: [
+        {
+          resetMatch: 'match',
+          activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
+          matches:
+            'WebView[text="验证身份"] View > View[text="验证码"] +2 View > Button[text="获取"][clickable=true][visibleToUser=true]',
+        },
+      ],
+    },
+    {
+      key: 14,
       name: '打开定位，取消',
       desc: '260125',
       rules: [

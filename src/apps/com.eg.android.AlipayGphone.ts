@@ -757,11 +757,13 @@ export default defineGkdApp({
     {
       key: 40,
       name: '开启地理位置权限',
-      desc: '260915，增加IDS，[id="com.alipay.mobile.antui:id/title_txt_2"][text="开启位置权限并允许支付宝获取你的地理位置"]',
+      desc: '260929，增加IDS，[id="com.alipay.mobile.antui:id/title_txt_2"][text="开启位置权限并允许支付宝获取你的地理位置"]',
       rules: [
         {
           resetMatch: 'match',
           fastQuery: true,
+          matchDelay: 1000,
+          forcedTime: 3000,
           activityIds: [
             'com.alipay.mobile.beehive.cityselect.ui.CeilingHomeCitySelectActivity',
             'com.eg.android.AlipayGphone.AlipayLogin',

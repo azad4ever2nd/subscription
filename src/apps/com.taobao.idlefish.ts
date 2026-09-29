@@ -23,13 +23,15 @@ export default defineGkdApp({
     {
       key: 2,
       name: '首页弹窗',
-      desc: '260327',
+      desc: '260929，添加 无ID',
       rules: [
         {
-          matches: [
+          anyMatches: [
             '[text^="O1CN01mEcanQ1FdcvgegTFb_!!6000000000510-2-tps-96-96"]',
+            'ImageView[vid="fish_layer_js_native_window_background_view"] + RelativeLayout > FrameLayout[childCount=4] > * + View + ImageView + ImageView[clickable=true][visibleToUser=true]',
           ],
-          actionCd: 0,
+          matchDelay: 1000,
+          forcedTime: 3000,
           resetMatch: 'match',
           activityIds:
             'com.taobao.idlefish.maincontainer.activity.MainActivity',
