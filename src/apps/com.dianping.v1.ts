@@ -12,6 +12,7 @@ export default defineGkdApp({
         {
           resetMatch: 'match',
           fastQuery: true,
+          action: 'clickCenter',
           activityIds: 'com.dianping.v1.NovaMainActivity',
           matches:
             '@[vid="update_close_icon"] + [vid="update_title"][text*="新版本"]',
@@ -25,7 +26,7 @@ export default defineGkdApp({
       rules: [
         {
           resetMatch: 'match',
-          action: 'clickNode',
+          action: 'clickCenter',
           activityIds: 'com.dianping.nova.picasso.DPPicassoBoxActivity',
           anyMatches: [
             'TextView[text^="+" && text$="0"] <n FrameLayout <n FrameLayout + @FrameLayout[clickable=true] > ImageView[desc=""][clickable=false][visibleToUser=true]',
@@ -42,7 +43,7 @@ export default defineGkdApp({
         {
           resetMatch: 'match',
           fastQuery: true,
-          action: 'clickNode',
+          action: 'clickCenter',
           activityIds: 'com.dianping.nova.picasso.DPPicassoBoxActivity',
           anyMatches: [
             '@FrameLayout[clickable=true][visibleToUser=true] > ImageView + TextView[text="立即去签到" || text="立即开启"]',
@@ -62,7 +63,7 @@ export default defineGkdApp({
       desc: '260929，1.去领取，2.X掉',
       rules: [
         {
-          action: 'clickNode',
+          action: 'clickCenter',
           resetMatch: 'match',
           activityIds: 'com.dianping.nova.picasso.DPPicassoBoxActivity',
           anyMatches: [
@@ -78,7 +79,7 @@ export default defineGkdApp({
       desc: '260929，，1.立即领取，2.X掉',
       rules: [
         {
-          action: 'clickNode',
+          action: 'clickCenter',
           resetMatch: 'match',
           activityIds: 'com.dianping.nova.picasso.DPPicassoBoxActivity',
           anyMatches: [
@@ -107,7 +108,7 @@ export default defineGkdApp({
       desc: '260929，所有文本全是ImageView 1.去看看，2.X掉',
       rules: [
         {
-          action: 'clickNode',
+          action: 'clickCenter',
           resetMatch: 'match',
           activityIds: 'com.dianping.nova.picasso.DPPicassoBoxActivity',
           anyMatches: [
@@ -123,7 +124,7 @@ export default defineGkdApp({
       desc: '260929，所有文本全是ImageView 1.我知道了，2.X掉',
       rules: [
         {
-          action: 'clickNode',
+          action: 'clickCenter',
           resetMatch: 'match',
           activityIds: 'com.dianping.nova.picasso.DPPicassoBoxActivity',
           anyMatches: [
@@ -139,7 +140,7 @@ export default defineGkdApp({
       desc: '260929',
       rules: [
         {
-          action: 'clickNode',
+          action: 'clickCenter',
           resetMatch: 'match',
           activityIds: 'com.dianping.nova.picasso.DPPicassoBoxActivity',
           anyMatches: [
@@ -156,6 +157,7 @@ export default defineGkdApp({
       rules: [
         {
           resetMatch: 'match',
+          action: 'clickCenter',
           fastQuery: true,
           activityIds:
             'com.dianping.social.activity.UserProfilePicassoActivity',
