@@ -163,5 +163,21 @@ export default defineGkdApp({
         },
       ],
     },
+    {
+      key: 12,
+      name: '弹窗，我已阅读并关闭窗口',
+      desc: '260930，添加 小提示，确定',
+      rules: [
+        {
+          resetMatch: 'match',
+          action: 'clickCenter',
+          activityIds: '.Shell',
+          anyMatches: [
+            'View >  TextView[text="小提示"] +n View > @View[desc="确定"][clickable=true][visibleToUser=true] > TextView[text="确定"]',
+            'View > View > @View[desc="我已阅读并关闭窗口"][clickable=true][visibleToUser=true] > TextView[text="我已阅读并关闭窗口"]',
+          ],
+        },
+      ],
+    },
   ],
 });

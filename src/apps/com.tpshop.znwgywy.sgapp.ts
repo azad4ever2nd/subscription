@@ -418,5 +418,20 @@ export default defineGkdApp({
         },
       ],
     },
+    {
+      key: 30,
+      name: '弹窗，连接后广告弹窗6',
+      desc: '260930',
+      rules: [
+        {
+          resetMatch: 'match',
+          fastQuery: true,
+          activityIds:
+            'com.zj.adlib.base.activity.PortraitTransparentAdActivity',
+          matches:
+            'RelativeLayout > View[vid="zjad_interstitial_feedback_view"] + @LinearLayout[vid="zjad_interstitial_close_ll"][clickable=true][visibleToUser=true] > TextView[text="关闭"]',
+        },
+      ],
+    },
   ],
 });

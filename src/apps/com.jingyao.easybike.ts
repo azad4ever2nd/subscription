@@ -36,7 +36,7 @@ export default defineGkdApp({
     {
       key: 3,
       name: '骑车抽免单弹窗，',
-      desc: '260904',
+      desc: '260930，添加  管制公告',
       rules: [
         {
           fastQuery: true,
@@ -45,8 +45,10 @@ export default defineGkdApp({
           forcedTime: 5000,
           activityIds:
             'com.hellobike.flutter.platform.android.flutterboost.FlutterHostFragmentActivity',
-          anyMatches:
+          anyMatches: [
             '(LinearLayout > FrameLayout[vid="creativeContainer"] + ImageView[vid="actionDialogClose"][clickable=true][visibleToUser=true])',
+            'View > View[desc*="管制公告"] +n View[desc="不接受"] + View[desc="接受"][clickable=true][visibleToUser=true]',
+          ],
         },
       ],
     },

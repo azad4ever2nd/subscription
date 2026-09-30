@@ -175,6 +175,24 @@ export default defineGkdApp({
     },
     {
       key: 11,
+      name: '弹窗，订阅评友节通知，立即 或 X掉',
+      desc: '260930，1.订阅，2.X掉',
+      rules: [
+        {
+          action: 'clickCenter',
+          resetMatch: 'match',
+          forcedTime: 3000,
+          fastQuery: true,
+          activityIds: 'com.dianping.nova.picasso.DPPicassoBoxActivity',
+          anyMatches: [
+            'ImageView[clickable=true][visibleToUser=true] - TextView[text="订阅评友节通知"] < FrameLayout +n FrameLayout > TextView[text="立即订阅并开启通知权限"][clickable=true][visibleToUser=true]',
+            '@ImageView[clickable=true][visibleToUser=true] - TextView[text="订阅评友节通知"] < FrameLayout +n FrameLayout > TextView[text="立即订阅并开启通知权限"][clickable=true][visibleToUser=true]',
+          ],
+        },
+      ],
+    },
+    {
+      key: 12,
       name: '弹窗，开启推送通知，X掉',
       desc: '260927',
       rules: [

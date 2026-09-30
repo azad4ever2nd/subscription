@@ -463,7 +463,7 @@ export default defineGkdApp({
     {
       key: 29,
       name: '深工积分兑换，立即抢购',
-      desc: '260918',
+      desc: '260930',
       rules: [
         {
           resetMatch: 'match',
@@ -481,8 +481,12 @@ export default defineGkdApp({
             'com.tencent.mm.plugin.appbrand.ui.AppBrandUI04',
             'com.tencent.mm.plugin.appbrand.ui.AppBrandPluginUI',
           ],
+          excludeMatches:
+            'WebView > View > TextView[text^="总计："] + TextView[text="确认支付"][visibleToUser=true]',
           anyMatches: [
             '(View > TextView[text="抢购成功消耗1000积分"] + TextView[text="抢购不成功不消耗积分"] + TextView[text="立即抢购"][visibleToUser=true])',
+            'WebView > View > View > @TextView[text="立即抢购"][visibleToUser=true] - View > TextView[text="购买成功消耗200积分，不消耗抢购权益"] + TextView[text="仅限特定人群购买"]',
+            'WebView > View > View > @TextView[text="立即抢购"][visibleToUser=true] - View > TextView[text="购买成功消耗200积分，不消耗抢购权益"]',
             '(WebView > View > View > TextView[text="抢购成功消耗1000积分"] + TextView[text="抢购不成功不消耗积分"] + TextView[text="立即抢购"][visibleToUser=true])',
             '(WebView > View > View > TextView[text="抢购成功消耗1000积分"] + TextView[text="抢购不成功不消耗积分"] + TextView[text="立即抢购"][clickable=false][visibleToUser=true])',
           ],
@@ -492,14 +496,14 @@ export default defineGkdApp({
     {
       key: 30,
       name: '深工积分兑换，确认支付',
-      desc: '260911',
+      desc: '260930，添加  1元购',
       rules: [
         {
           resetMatch: 'match',
           actionCdKey: 700,
           order: -1,
           excludeMatches: [
-            'View > View > TextView[text^="服务异常" || text="访问人数过多，请稍后再试" || text="商品已被秒完"] + TextView[text="我知道了"][visibleToUser=true]',
+            'View > View > TextView[text^="服务异常" || text="访问人数过多，请稍后再试" || text="商品已被秒完" || text="商品已售罄"] + TextView[text="我知道了"][visibleToUser=true]',
             'View > View > TextView[text="抢购订单排队中，请勿关闭页面。"][visibleToUser=true]',
           ],
           activityIds: [
@@ -517,7 +521,9 @@ export default defineGkdApp({
           ],
           anyMatches: [
             '(WebView > View > TextView[text="总计：¥0"] + TextView[text="确认支付"][visibleToUser=true])',
+            'WebView > View > TextView[text^="总计："] + TextView[text="确认支付"][visibleToUser=true]',
             '(WebView > View > TextView[text="总计：¥0"] + TextView[text="确认支付"][clickable=false][visibleToUser=true])',
+            'WebView > View > TextView[text^="总计："] + TextView[text="确认支付"][clickable=false][visibleToUser=true]',
           ],
         },
       ],
@@ -525,7 +531,7 @@ export default defineGkdApp({
     {
       key: 31,
       name: '深工积分兑换，人数过多，我知道了',
-      desc: '260912',
+      desc: '260930',
       rules: [
         {
           resetMatch: 'match',
@@ -545,8 +551,8 @@ export default defineGkdApp({
             'com.tencent.mm.plugin.appbrand.ui.AppBrandPluginUI',
           ],
           anyMatches: [
-            '(WebView > View > View > TextView[text^="服务异常" || text="访问人数过多，请稍后再试"] + TextView[text="我知道了"][visibleToUser=true])',
-            '(WebView > View > View > TextView[text^="服务异常" || text="访问人数过多，请稍后再试"] + TextView[text="我知道了"][clickable=false][visibleToUser=true])',
+            'View > View > TextView[text^="服务异常" || text="访问人数过多，请稍后再试" || text="商品已被秒完" || text="商品已售罄"] + TextView[text="我知道了"][visibleToUser=true]',
+            'View > View > TextView[text^="服务异常" || text="访问人数过多，请稍后再试" || text="商品已被秒完" || text="商品已售罄"] + TextView[text="我知道了"][clickable=false][visibleToUser=true]',
           ],
         },
       ],
