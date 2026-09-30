@@ -68,7 +68,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 6,
+      key: 5,
       name: '弹窗2',
       desc: '260406',
       rules: [
