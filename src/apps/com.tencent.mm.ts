@@ -1288,7 +1288,7 @@ export default defineGkdApp({
           anyMatches: [
             '(WebView > View > View > View > View > Image[clickable=true][visibleToUser=true][text="30b2664f811b49268daf0884b451bd741055117292" || text="17dde62e88314a499c524c9666c878785335466675"])',
             'TextView[text="奖励派送中，稍后送达～"] <n  View + View > Image[clickable=true][visibleToUser=true]',
-            'TextView[text="前往手机银行APP再浇一次,\n解锁更多奖励!"] <n  View + View > Image[clickable=true][visibleToUser=true]',
+            'TextView[text^="前往手机银行APP再浇一次"] <n  View + View > Image[clickable=true][visibleToUser=true]',
             'TextView[text^="解锁奖励" && text$="豆"] <n  View + View > Image[clickable=true][visibleToUser=true]',
             '([text="奖励派送中，稍后送达～"] <n * + * > *[clickable=true])',
             '([text="17dde62e88314a499c524c9666c878785335466675"])',
