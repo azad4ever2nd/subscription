@@ -42,6 +42,20 @@ export default defineGkdApp({
     },
     {
       key: 3,
+      name: '弹窗，广告',
+      desc: '260930',
+      rules: [
+        {
+          resetMatch: 'match',
+          forcedTime: 3000,
+          activityIds: '.ui.MainActivity',
+          matches:
+            'Dialog > View > View > View > View + TextView[clickable=true][visibleToUser=true]',
+        },
+      ],
+    },
+    {
+      key: 4,
       name: '开启通知',
       desc: '260131',
       rules: [
@@ -54,7 +68,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 4,
+      key: 6,
       name: '弹窗2',
       desc: '260406',
       rules: [
@@ -67,7 +81,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 5,
+      key: 6,
       name: '支付成功，弹窗',
       desc: '260810',
       rules: [
@@ -83,7 +97,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 6,
+      key: 7,
       name: '绿色能量，立即领取',
       desc: '260810',
       rules: [

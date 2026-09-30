@@ -7,15 +7,12 @@ export default defineGkdApp({
     {
       key: 1,
       name: '广告弹窗',
-      desc: '整合新的弹窗',
+      desc: '260930',
       rules: [
         {
           fastQuery: true,
           resetMatch: 'app',
-          activityIds: [
-            'com.icbc.activity.main.MainActivity',
-            'com.icbc.oisc.UI.mainPage.OISCMainActivity',
-          ],
+          activityIds: ['com.icbc.activity.main.MainActivity'],
           anyMatches: [
             '([vid="dialog"] + [vid="img_close"][desc="关闭"])',
             '([vid="close_iv"])',
@@ -326,6 +323,20 @@ export default defineGkdApp({
           fastQuery: true,
           resetMatch: 'match',
           activityIds: 'com.ebdp.share.ui.ShareActivity',
+        },
+      ],
+    },
+    {
+      key: 21,
+      name: '弹窗，开启推送通知，X掉',
+      desc: '260930',
+      rules: [
+        {
+          fastQuery: true,
+          action: 'clickCenter',
+          activityIds: '.oisc.UI.mainPage.OISCMainActivity',
+          matches:
+            'TextView[text="开启推送通知"] < LinearLayout < LinearLayout + ImageView[vid="close_iv"][clickable=true][visibleToUser=true]',
         },
       ],
     },

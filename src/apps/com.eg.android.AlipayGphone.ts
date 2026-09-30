@@ -649,7 +649,7 @@ export default defineGkdApp({
     {
       key: 35,
       name: '添加神券到首页，X掉',
-      desc: '260928，fastquery=false,clickable=false,添加 闪购0.1，超级吃货卡体验版，闪购签到，闪购小程序，添加到首页，添加 生活缴费',
+      desc: '260930，fastquery=false,clickable=false,添加 闪购0.1，超级吃货卡体验版，闪购签到，闪购小程序，添加到首页，添加 生活缴费',
       rules: [
         {
           resetMatch: 'match',
@@ -661,6 +661,7 @@ export default defineGkdApp({
             'com.alipay.mobile.nebulax.xriver.activity.XRiverActivity$App04',
           ],
           anyMatches: [
+            'TextView[text="开心收下"] <<n View + View > View > Image[clickable=false][visibleToUser=true]',
             '@Image[clickable=false][visibleToUser=true] < View - View > View > TextView[text="开心收下"]',
             'View > @TextView - View >5 TextView[text="开心收下"]',
             'View[childCount=2] > @TextView[clickable=false][visibleToUser=true] - View > View > View >n TextView[text="去使用"] - View',

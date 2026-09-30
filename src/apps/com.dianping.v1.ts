@@ -27,6 +27,7 @@ export default defineGkdApp({
         {
           resetMatch: 'match',
           action: 'clickCenter',
+          forcedTime: 3000,
           activityIds: 'com.dianping.nova.picasso.DPPicassoBoxActivity',
           anyMatches: [
             'TextView[text^="+" && text$="0"] <n FrameLayout <n FrameLayout + @FrameLayout[clickable=true] > ImageView[desc=""][clickable=false][visibleToUser=true]',
@@ -38,11 +39,12 @@ export default defineGkdApp({
     {
       key: 3,
       name: '弹窗，签到获得宝箱，立即去签到 或 X掉',
-      desc: '260929，添加 立即开启，1.立即收下（立即开启），2.X掉',
+      desc: '260930，添加 立即开启，1.立即收下（立即开启），2.X掉',
       rules: [
         {
           resetMatch: 'match',
           fastQuery: true,
+          forcedTime: 3000,
           action: 'clickCenter',
           activityIds: 'com.dianping.nova.picasso.DPPicassoBoxActivity',
           anyMatches: [
@@ -60,11 +62,12 @@ export default defineGkdApp({
     {
       key: 4,
       name: '弹窗，是否放弃天降评友好礼，领取 或 X掉',
-      desc: '260929，1.去领取，2.X掉',
+      desc: '260930，1.去领取，2.X掉',
       rules: [
         {
           action: 'clickCenter',
           resetMatch: 'match',
+          forcedTime: 3000,
           activityIds: 'com.dianping.nova.picasso.DPPicassoBoxActivity',
           anyMatches: [
             'FrameLayout > TextView[text="是否放弃天降评友好礼?"] +n  @FrameLayout[clickable=true][visibleToUser=true] > TextView[text="去领取"]',
@@ -76,7 +79,7 @@ export default defineGkdApp({
     {
       key: 5,
       name: '弹窗，天降评友好礼，立即领取 或 X掉',
-      desc: '260929，，1.立即领取，2.X掉',
+      desc: '260930，1.立即领取，2.X掉',
       rules: [
         {
           action: 'clickCenter',
@@ -105,11 +108,12 @@ export default defineGkdApp({
     {
       key: 7,
       name: '弹窗，国庆免费签到，去看看 或 X掉',
-      desc: '260929，所有文本全是ImageView 1.去看看，2.X掉',
+      desc: '260930，所有文本全是ImageView 1.去看看，2.X掉',
       rules: [
         {
           action: 'clickCenter',
           resetMatch: 'match',
+          forcedTime: 3000,
           activityIds: 'com.dianping.nova.picasso.DPPicassoBoxActivity',
           anyMatches: [
             '@ImageView[clickable=true][visibleToUser=true][desc.length=0] - ImageView[desc.length=0] < FrameLayout[childCount=2] < FrameLayout + FrameLayout[childCount=1] > ImageView[clickable=true][visibleToUser=true]',
@@ -121,11 +125,12 @@ export default defineGkdApp({
     {
       key: 8,
       name: '弹窗，在路上奖励等你解锁，我知道了 或 X掉',
-      desc: '260929，所有文本全是ImageView 1.我知道了，2.X掉',
+      desc: '260930，所有文本全是ImageView 1.我知道了，2.X掉',
       rules: [
         {
           action: 'clickCenter',
           resetMatch: 'match',
+          forcedTime: 3000,
           activityIds: 'com.dianping.nova.picasso.DPPicassoBoxActivity',
           anyMatches: [
             'ImageView[clickable=true][visibleToUser=true][desc.length=0] - FrameLayout > ImageView + @FrameLayout[clickable=true][visibleToUser=true][childCount=1] > ImageView[desc.length=0]',
@@ -137,12 +142,13 @@ export default defineGkdApp({
     {
       key: 9,
       name: '弹窗，集周边，我知道了 或 X掉',
-      desc: '260929',
+      desc: '260930',
       rules: [
         {
           action: 'clickCenter',
           resetMatch: 'match',
           activityIds: 'com.dianping.nova.picasso.DPPicassoBoxActivity',
+          forcedTime: 3000,
           anyMatches: [
             'FrameLayout > FrameLayout > FrameLayout[childCount=3] > ImageView[desc.length=0] + @ImageView[clickable=true][visibleToUser=true][desc.length=0] + ImageView[clickable=true][visibleToUser=true][desc.length=0]',
             'FrameLayout > FrameLayout > FrameLayout[childCount=3] > ImageView[desc.length=0] + ImageView[clickable=true][visibleToUser=true][desc.length=0] + ImageView[clickable=true][visibleToUser=true][desc.length=0]',
@@ -152,6 +158,23 @@ export default defineGkdApp({
     },
     {
       key: 10,
+      name: '弹窗，写评论换大餐，X掉 或 去写评价',
+      desc: '260930',
+      rules: [
+        {
+          action: 'clickCenter',
+          resetMatch: 'match',
+          forcedTime: 3000,
+          activityIds: 'com.dianping.nova.picasso.DPPicassoBoxActivity',
+          anyMatches: [
+            'ImageView[clickable=false][visibleToUser=true] < FrameLayout[clickable=true][visibleToUser=true] + ImageView[clickable=true][visibleToUser=true]',
+            'ImageView[clickable=false][visibleToUser=true] < @FrameLayout[clickable=true][visibleToUser=true] + ImageView[clickable=true][visibleToUser=true]',
+          ],
+        },
+      ],
+    },
+    {
+      key: 11,
       name: '弹窗，开启推送通知，X掉',
       desc: '260927',
       rules: [

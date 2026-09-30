@@ -34,16 +34,19 @@ export default defineGkdApp({
     {
       key: 2,
       name: '糖的报单',
-      desc: '260928，添加 中信活动，中信抽奖，华夏红包领取，继续访问，知道了，是否继续上传',
+      desc: '260930，添加 中信活动，中信抽奖，华夏红包领取，继续访问，知道了，是否继续上传',
       rules: [
         {
           resetMatch: 'match',
           activityIds: 'com.tencent.mm.plugin.webview.ui.tools.MMWebViewUI',
+          actionCd: 700,
           excludeMatches: [
             '(View > View > TextView[text="权益领取中，请稍后"][visibleToUser=true])',
             '(View > View >  TextView[text="权益领取成功"] +2 Button[text="我知道了"][clickable=true][visibleToUser=true])',
           ],
           anyMatches: [
+            'View > TextView[text="小提示"] + View + View > @View[desc="确定"][clickable=true][visibleToUser=true] > TextView[text="确定"]',
+            'View > View > @View[desc="我已阅读并关闭窗口"][clickable=true][visibleToUser=true] > TextView[text="我已阅读并关闭窗口"]',
             '(View > TextView[text^="微信红包" && text$="元"] +n View > Button[text="立即领取"][clickable=true][visibleToUser=true])',
             '@TextView[clickable=true][visibleToUser=true] - View > TextView[text="谢谢参与"] +n View[desc="我知道了"] > TextView[text="我知道了"]',
             '@TextView[clickable=true][visibleToUser=true] - View > Image[text="80316b63-f34b-4ba7-bc99-527e68bd5cac"] + TextView[text^="恭喜你获得"] +n View[desc="查看我的礼品"] > TextView[text="查看我的礼品"]',
@@ -1263,7 +1266,7 @@ export default defineGkdApp({
     {
       key: 58,
       name: '工行浇水',
-      desc: '260904，延时要考虑弹窗',
+      desc: '260930，延时要考虑弹窗',
       rules: [
         {
           activityIds: [
@@ -1280,9 +1283,13 @@ export default defineGkdApp({
             'com.tencent.mm.plugin.appbrand.ui.AppBrandPluginUI',
           ],
           actionMaximum: 5,
+          actionCd: 2000,
           resetMatch: 'match',
           anyMatches: [
             '(WebView > View > View > View > View > Image[clickable=true][visibleToUser=true][text="30b2664f811b49268daf0884b451bd741055117292" || text="17dde62e88314a499c524c9666c878785335466675"])',
+            'TextView[text="奖励派送中，稍后送达～"] <n  View + View > Image[clickable=true][visibleToUser=true]',
+            'TextView[text="前往手机银行APP再浇一次,\n解锁更多奖励!"] <n  View + View > Image[clickable=true][visibleToUser=true]',
+            'TextView[text^="解锁奖励" && text$="豆"] <n  View + View > Image[clickable=true][visibleToUser=true]',
             '([text="奖励派送中，稍后送达～"] <n * + * > *[clickable=true])',
             '([text="17dde62e88314a499c524c9666c878785335466675"])',
           ],
