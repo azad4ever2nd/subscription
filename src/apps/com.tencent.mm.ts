@@ -531,7 +531,7 @@ export default defineGkdApp({
     {
       key: 31,
       name: '深工积分兑换，人数过多，我知道了',
-      desc: '260930',
+      desc: '261001',
       rules: [
         {
           resetMatch: 'match',
@@ -551,8 +551,8 @@ export default defineGkdApp({
             'com.tencent.mm.plugin.appbrand.ui.AppBrandPluginUI',
           ],
           anyMatches: [
-            'View > View > TextView[text^="服务异常" || text="访问人数过多，请稍后再试" || text="商品已被秒完" || text="商品已售罄"] + TextView[text="我知道了"][visibleToUser=true]',
-            'View > View > TextView[text^="服务异常" || text="访问人数过多，请稍后再试" || text="商品已被秒完" || text="商品已售罄"] + TextView[text="我知道了"][clickable=false][visibleToUser=true]',
+            'View > View > TextView[text^="服务异常" || text="访问人数过多，请稍后再试"] + TextView[text="我知道了"][visibleToUser=true]',
+            'View > View > TextView[text^="服务异常" || text="访问人数过多，请稍后再试"] + TextView[text="我知道了"][clickable=false][visibleToUser=true]',
           ],
         },
       ],
@@ -1413,7 +1413,7 @@ export default defineGkdApp({
     {
       key: 63,
       name: '活动未开始，我知道了',
-      desc: '260929，添加 红色打卡，宁波，朴朴，动卡空间，内蒙工行，贵阳工行，工行余姚，湘约工行，贵州工行，已参加过',
+      desc: '261001，添加 红色打卡，宁波，朴朴，动卡空间，内蒙工行，贵阳工行，工行余姚，湘约工行，贵州工行，已参加过',
       rules: [
         {
           resetMatch: 'match',
@@ -1456,6 +1456,8 @@ export default defineGkdApp({
             'TextView[text^="已参与"] < View +2 @TextView[clickable=true][visibleToUser=true] - View > TextView[text="确认"]',
             '@TextView[clickable=true][visibleToUser=true] - TextView[clickable=true][visibleToUser=true] - View >n  TextView[text^="已参与"]',
             'View > View > TextView[text="很遗憾，此次未中奖，感谢您的参与"] + TextView[text="确定"][clickable=true][visibleToUser=true]',
+            'View > TextView[text="很遗憾未中奖" || text="感谢您的参与"] +n View > TextView[text="我知道了"][clickable=false][visibleToUser=true]',
+            'Dialog > TextView[text="领取成功"] +n Button[text="确定"][clickable=true][visibleToUser=true]',
           ],
         },
       ],
@@ -1657,13 +1659,13 @@ export default defineGkdApp({
     {
       key: 71,
       name: '深工周五秒杀，弹窗，商品已被秒完，返回',
-      desc: '260810,action=back',
+      desc: '261001,action=back',
       rules: [
         {
           resetMatch: 'match',
           action: 'back',
           matches:
-            'View > View > TextView[text="商品已被秒完"] + TextView[text="我知道了"]',
+            'View > View > TextView[text="商品已被秒完" || text="商品已售罄"] + TextView[text="我知道了"][visibleToUser=true]',
           activityIds: [
             'com.tencent.mm.plugin.appbrand.ui.AppBrandUI0',
             'com.tencent.mm.plugin.appbrand.ui.AppBrandUI1',

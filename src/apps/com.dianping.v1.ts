@@ -27,7 +27,7 @@ export default defineGkdApp({
         {
           resetMatch: 'match',
           action: 'clickCenter',
-          forcedTime: 3000,
+          forcedTime: 6000,
           activityIds: 'com.dianping.nova.picasso.DPPicassoBoxActivity',
           anyMatches: [
             'TextView[text^="+" && text$="0"] <n FrameLayout <n FrameLayout + @FrameLayout[clickable=true] > ImageView[desc=""][clickable=false][visibleToUser=true]',
@@ -193,6 +193,23 @@ export default defineGkdApp({
     },
     {
       key: 12,
+      name: '弹窗，确认退出吗，我知道了 或 X掉',
+      desc: '261001，1.我知道了，2.退出，无ID，无文字',
+      rules: [
+        {
+          action: 'clickCenter',
+          resetMatch: 'match',
+          forcedTime: 3000,
+          activityIds: 'com.dianping.nova.picasso.DPPicassoBoxActivity',
+          anyMatches: [
+            'FrameLayout[childCount=2] > ImageView[clickable=true][visibleToUser=true] - FrameLayout[childCount=2] > ImageView[clickable=false][visibleToUser=true] + TextView[clickable=true][visibleToUser=true]',
+            'FrameLayout[childCount=2] > @ImageView[clickable=true][visibleToUser=true] - FrameLayout[childCount=2] > ImageView[clickable=false][visibleToUser=true] + TextView[clickable=true][visibleToUser=true]',
+          ],
+        },
+      ],
+    },
+    {
+      key: 13,
       name: '弹窗，开启推送通知，X掉',
       desc: '260927',
       rules: [

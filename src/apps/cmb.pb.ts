@@ -816,6 +816,22 @@ export default defineGkdApp({
     },
     {
       key: 48,
+      name: '风险提示，同意',
+      desc: '261001',
+      rules: [
+        {
+          resetMatch: 'match',
+          forcedTime: 3000,
+          action: 'clickCenter',
+          activityIds:
+            '.app.h5container.webviewcontainer.PBWebContainerActivity',
+          matches:
+            'CheckBox[checked=false] < @View[clickable=true][visibleToUser=true] + TextView[text^="同意风险提示"]',
+        },
+      ],
+    },
+    {
+      key: 49,
       name: '开启消息通知',
       desc: '260814,增加IDS',
       rules: [
@@ -834,7 +850,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 49,
+      key: 50,
       name: '资讯分享任务，微信好友',
       desc: '260706，clickable=false',
       rules: [
@@ -850,7 +866,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 50,
+      key: 51,
       name: '弹窗，月月领好好，继续做任务 或 X掉',
       desc: '260917',
       rules: [

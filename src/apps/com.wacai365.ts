@@ -113,11 +113,10 @@ export default defineGkdApp({
     {
       key: 8,
       name: '开通会员，关闭',
-      desc: '260905',
+      desc: '261001',
       rules: [
         {
-          forcedTime: 3000,
-          matchTime: 3000,
+          forcedTime: 5000,
           matches: [
             'ViewGroup > ImageView[vid="privilegeClose"][clickable=true][visibleToUser=true]',
           ],
