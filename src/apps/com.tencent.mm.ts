@@ -1272,7 +1272,7 @@ export default defineGkdApp({
     {
       key: 58,
       name: '工行浇水',
-      desc: '260930，延时要考虑弹窗',
+      desc: '261001，延时要考虑弹窗',
       rules: [
         {
           activityIds: [
@@ -1292,12 +1292,11 @@ export default defineGkdApp({
           actionCd: 2000,
           resetMatch: 'match',
           anyMatches: [
-            '(WebView > View > View > View > View > Image[clickable=true][visibleToUser=true][text="30b2664f811b49268daf0884b451bd741055117292" || text="17dde62e88314a499c524c9666c878785335466675"])',
+            'View > View > View > Image[text="1dc48713f1dd45c19c4252895a3314510231280296"][clickable=true][visibleToUser=true]',
             'TextView[text="奖励派送中，稍后送达～"] <n  View + View > Image[clickable=true][visibleToUser=true]',
             'TextView[text^="前往手机银行APP再浇一次"] <n  View + View > Image[clickable=true][visibleToUser=true]',
             'TextView[text^="解锁奖励" && text$="豆"] <n  View + View > Image[clickable=true][visibleToUser=true]',
             '([text="奖励派送中，稍后送达～"] <n * + * > *[clickable=true])',
-            '([text="17dde62e88314a499c524c9666c878785335466675"])',
           ],
         },
       ],
@@ -1332,7 +1331,7 @@ export default defineGkdApp({
     {
       key: 60,
       name: '月月刷未开始，最小化',
-      desc: '260302',
+      desc: '261001，添加 获得立减金，立即参与，',
       rules: [
         {
           resetMatch: 'match',
@@ -1350,6 +1349,9 @@ export default defineGkdApp({
             'com.tencent.mm.plugin.appbrand.ui.AppBrandPluginUI',
           ],
           anyMatches: [
+            'TextView[text="该活动尚未开始"] + TextView[text="敬请期待"] <<n FrameLayout + ViewGroup >n ImageButton[desc="关闭"][clickable=true][visibleToUser=true]',
+            'TextView[text^="刷" && text$="卡"] <n View + View > TextView[text="立即参与领奖励"][clickable=false][visibleToUser=true]',
+            'TextView[text^="获得" && text*="元" && text$="立减金"] <<n View +3 View > Image[clickable=false][visibleToUser=true]',
             '[text="该活动尚未开始"] + [text="敬请期待"] <<n * + * [desc="关闭"][clickable=true]',
           ],
         },

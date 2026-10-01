@@ -180,6 +180,20 @@ export default defineGkdApp({
     },
     {
       key: 11,
+      name: '弹窗，抽奖很遗憾，X掉',
+      desc: '261001',
+      rules: [
+        {
+          resetMatch: 'match',
+          activityIds:
+            'com.huawei.module.commonwebview.ui.CommonWebviewActivity',
+          matches:
+            'View[id="popup_absolute"] > @TextView[text.length=1][clickable=true][visibleToUser=true] + View TextView[text="与奖品擦肩而过"] + View > TextView[text="查看活动规则"]',
+        },
+      ],
+    },
+    {
+      key: 12,
       name: '清除消息中心未读，确定',
       desc: '260205',
       rules: [

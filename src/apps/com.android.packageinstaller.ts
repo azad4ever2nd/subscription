@@ -18,5 +18,21 @@ export default defineGkdApp({
         },
       ],
     },
+    {
+      key: 2,
+      name: '弹窗，已安装应用，打开 或 完成',
+      desc: '261001',
+      rules: [
+        {
+          resetMatch: 'match',
+          fastQuery: true,
+          activityIds: '.InstallSuccess',
+          anyMatches: [
+            'ScrollView > LinearLayout > Button[id="android:id/button2"][text="完成"] + Button[id="android:id/button1"][text="打开"][clickable=true][visibleToUser=true]',
+            'ScrollView > LinearLayout > @Button[id="android:id/button2"][text="完成"] + Button[id="android:id/button1"][text="打开"][clickable=true][visibleToUser=true]',
+          ],
+        },
+      ],
+    },
   ],
 });

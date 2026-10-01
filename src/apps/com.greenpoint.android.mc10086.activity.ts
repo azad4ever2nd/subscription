@@ -199,5 +199,20 @@ export default defineGkdApp({
         },
       ],
     },
+    {
+      key: 14,
+      name: '弹窗，周三充值日抽奖，开心收下 或 X掉',
+      desc: '261001，无文字提示，有ID',
+      rules: [
+        {
+          resetMatch: 'match',
+          activityIds: 'com.cmccit.webview.ac.CommonHtml5Activity',
+          anyMatches: [
+            'Dialog > View > Image > @View[id="ani_btn"][clickable=true][visibleToUser=true] + View[id="ani_close"][clickable=true][visibleToUser=true]',
+            'Dialog > View > Image > View[id="ani_btn"][clickable=true][visibleToUser=true] + View[id="ani_close"][clickable=true][visibleToUser=true]',
+          ],
+        },
+      ],
+    },
   ],
 });

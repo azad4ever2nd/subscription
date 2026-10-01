@@ -140,7 +140,7 @@ export default defineGkdApp({
     {
       key: 9,
       name: '弹窗2，与分期有关，X掉',
-      desc: '260925，替换规则3，添加 签到成功，开通碰一下，推送服务，查询账单，返回领奖，到桌面，银行卡抽奖，升级月利宝',
+      desc: '261001，替换规则3，添加 签到成功，开通碰一下，推送服务，查询账单，返回领奖，到桌面，银行卡抽奖，升级月利宝',
       rules: [
         {
           resetMatch: 'match',
@@ -156,6 +156,7 @@ export default defineGkdApp({
             'View > @Image[text="关闭弹窗"] + View > View > TextView[text="立即更换"]',
             'View > @Image[text="关闭弹窗"][clickable=false][visibleToUser=true] + View > Button',
             'View > @Image[text="关闭弹窗"][clickable=true][visibleToUser=true] +n View > TextView[text="仍要赎回"]',
+            'View > @Image[text="关闭弹窗"][clickable=true][visibleToUser=true] + View >n TextView[text="再买一笔"]',
             'View > View > TextView[text="支付宝"] + TextView[text="邀请你"] + TextView[clickable=false][visibleToUser=true][text="跳过"]',
             'View > View > TextView[text="支付宝"] + TextView[text="邀请你"] + TextView[text="跳过"][clickable=true][visibleToUser=true]',
             'View > View > View > @Image[clickable=false][visibleToUser=true] + TextView[text^="用碰一下"] +n TextView[text="去申请"]',
@@ -787,7 +788,7 @@ export default defineGkdApp({
     {
       key: 41,
       name: '做任务领幸运星，领取奖励',
-      desc: '260906，无clickable=true 和 fastquery=true，添加明天不断签提醒，签到提醒，',
+      desc: '260906，fastquery=false，clickable=false ， 添加明天不断签提醒，签到提醒，',
       rules: [
         {
           resetMatch: 'match',

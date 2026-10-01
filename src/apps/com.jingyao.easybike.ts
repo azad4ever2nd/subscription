@@ -22,14 +22,16 @@ export default defineGkdApp({
     {
       key: 2,
       name: '确认开锁',
-      desc: '260416，原[desc^="骑行结束"] < * +2 [desc="确认开锁"]',
+      desc: '261001',
       rules: [
         {
           resetMatch: 'match',
           activityIds:
             'com.hellobike.flutter.platform.android.flutterboost.FlutterHostFragmentActivity',
-          anyMatches:
+          anyMatches: [
+            'View > View > View > ImageView[desc="确认开锁"][clickable=true][visibleToUser=true]',
             '[desc="骑行卡" || desc="主题卡"] <n * +n [desc="确认开锁"]',
+          ],
         },
       ],
     },

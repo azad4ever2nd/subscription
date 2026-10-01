@@ -39,7 +39,7 @@ export default defineGkdApp({
     {
       key: 3,
       name: '领奖完成',
-      desc: '260918，添加 弹窗，云朵领取成功',
+      desc: '261001，添加 抽奖，弹窗，云朵领取成功',
       rules: [
         {
           resetMatch: 'match',
@@ -47,14 +47,17 @@ export default defineGkdApp({
           activityIds:
             'com.chinamobile.mcloud.client.component.web.H5WebViewMainActivity',
           anyMatches: [
-            '(Dialog > View > View > TextView[text="知道啦"] + Image[clickable=false][visibleToUser=true][text="wMHmBwYPo98SAAAAABJRU5ErkJggg=="])',
-            '(TextView[text="移动云盘体验评价"] < View + Image[clickable=false][visibleToUser=true][text="wMHmBwYPo98SAAAAABJRU5ErkJggg=="])',
+            'TextView[text="移动云盘体验评价"] < View + Image[clickable=false][visibleToUser=true][text="wMHmBwYPo98SAAAAABJRU5ErkJggg=="]',
             'View > @Image[text="+SOMf8vIwWVqABk0AAAAASUVORK5CYII="][clickable=true][visibleToUser=true] - View > TextView[text="我知道了"]',
-            '(TextView[text*="转存成功"] < View + Image[text="+SOMf8vIwWVqABk0AAAAASUVORK5CYII="])',
-            '(TextView[text="订购结果"] < View + Image[text="+SOMf8vIwWVqABk0AAAAASUVORK5CYII="])',
-            '([text="我知道了"] <n View + Image[text="+SOMf8vIwWVqABk0AAAAASUVORK5CYII="][clickable=false][visibleToUser=true])',
-            '([text="立即前往"] <3 View + Image[text="+SOMf8vIwWVqABk0AAAAASUVORK5CYII="])',
-            '(View > Image[text="+SOMf8vIwWVqABk0AAAAASUVORK5CYII=1"])',
+            'TextView[text*="转存成功"] < View + Image[text="+SOMf8vIwWVqABk0AAAAASUVORK5CYII="]',
+            'TextView[text="订购结果"] < View + Image[text="+SOMf8vIwWVqABk0AAAAASUVORK5CYII="]',
+            '[text="我知道了"] <n View + Image[text="+SOMf8vIwWVqABk0AAAAASUVORK5CYII="][clickable=false][visibleToUser=true]',
+            '[text="立即前往"] <3 View + Image[text="+SOMf8vIwWVqABk0AAAAASUVORK5CYII="]',
+            'View > Image[text="+SOMf8vIwWVqABk0AAAAASUVORK5CYII=1"]',
+            'Dialog > View > View > TextView[text="知道啦"] + Image[text="wMHmBwYPo98SAAAAABJRU5ErkJggg=="][clickable=false][visibleToUser=true]',
+            'Dialog > View > View > TextView[text="知道啦"] + Image[text="wMHmBwYPo98SAAAAABJRU5ErkJggg=="][clickable=true][visibleToUser=true]',
+            'Dialog > TextView[text="恭喜你获得"] +n @TextView[clickable=true][visibleToUser=true] - View > Button[text="去云朵中心"]',
+            'Dialog > View > View > TextView[text^="好可惜" || text*="明日可继续抽奖" || text*="云朵中心兑好礼"] + Button[text="前往云朵中心"] + TextView[clickable=true][visibleToUser=true]',
           ],
         },
       ],

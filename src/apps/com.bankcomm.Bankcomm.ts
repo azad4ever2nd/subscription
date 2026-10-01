@@ -596,8 +596,8 @@ export default defineGkdApp({
 
     {
       key: 41,
-      name: '浏览任务完成',
-      desc: '260921，添加新布局，添加权限弹窗，直播间ids',
+      name: '浏览任务完成，返回',
+      desc: '261001，添加新布局，添加权限弹窗，直播间ids',
       rules: [
         {
           action: 'back',
@@ -608,6 +608,7 @@ export default defineGkdApp({
             'com.bankcomm.module.biz.webcontainer.BCMHtml5Activity',
           ],
           anyMatches: [
+            'View > Image[text="countdown-fulfilled-bg.f65a2ea"][clickable=true][visibleToUser=true] + Image[text="uYGtPZQreNFJUHiJFsH0akOlpQOFendaucAAAAASUVORK5CYII="]',
             'WebView > View > Image[text="countdown-fulfilled-bg.f65a2ea"][clickable=true][visibleToUser=true] + Image[text="uYGtPZQreNFJUHiJFsH0akOlpQOFendaucAAAAASUVORK5CYII="]',
             '([text="countdown-fulfilled-bg.f65a2ea"])',
             '(WebView > @View[clickable=false][visibleToUser=true] > Image[text="gthEFTB6uRQ36UPWtwD"])',
@@ -622,11 +623,12 @@ export default defineGkdApp({
     },
     {
       key: 42,
-      name: '浏览任务完成2',
+      name: '浏览任务完成，click',
       desc: 'D,占位，260829，取消back，添加新布局，添加权限弹窗，直播间ids',
       rules: [
         {
           resetMatch: 'match',
+          action: 'clickCenter',
           activityIds: [
             'com.bankcomm.module.biz.bcmvideo.BCMVerticalVideoActivity',
             'com.bankcomm.module.biz.webcontainer.BCMHtml5Activity',
