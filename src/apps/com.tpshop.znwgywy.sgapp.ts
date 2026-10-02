@@ -120,7 +120,7 @@ export default defineGkdApp({
     {
       key: 9,
       name: '弹窗，连接前广告弹窗',
-      desc: '260913',
+      desc: '261002',
       rules: [
         {
           resetMatch: 'match',
@@ -128,6 +128,7 @@ export default defineGkdApp({
           anyMatches: [
             'ImageView[vid="vpnSwitchButton"][desc="连接"] + FrameLayout + ScrollView > FrameLayout > FrameLayout > FrameLayout > FrameLayout > FrameLayout > FrameLayout[childCount=1] > View',
             'ImageView[vid="vpnSwitchButton"][desc="连接"] +n ScrollView >n  FrameLayout[childCount=1][index=parent.childCount.minus(1)] > ImageView[clickable=false][visibleToUser=true]',
+            'FrameLayout >  FrameLayout > FrameLayout > TextView[id="com.zj.zk.allmodules:id/wm_pop_pic_close"][clickable=true][visibleToUser=true]',
           ],
         },
       ],

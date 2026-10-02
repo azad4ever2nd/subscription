@@ -69,10 +69,12 @@ export default defineGkdApp({
     {
       key: 5,
       name: '天天领福利，签到',
-      desc: '260711"',
+      desc: '261002"',
       rules: [
         {
           resetMatch: 'match',
+          matchDelay: 1000,
+          forcedTime: 3000,
           activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
           anyMatches:
             'View[text="0"] < View < View - View > @Image[clickable=true][visibleToUser=true] + View',
@@ -250,6 +252,34 @@ export default defineGkdApp({
     },
     {
       key: 18,
+      name: '人脸识别场景，我已阅读并同意',
+      desc: '261002',
+      rules: [
+        {
+          resetMatch: 'match',
+          activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
+          matches:
+            'WebView > View[text="您将进入人脸识别场景"] +n @View[clickable=true][visibleToUser=true] > CheckBox[checked=false][visibleToUser=true][clickable=true]',
+        },
+      ],
+    },
+    {
+      key: 19,
+      name: '同意并发起人脸识别',
+      desc: '261002',
+      rules: [
+        {
+          activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
+          actionMaximum: 1,
+          resetMatch: 'match',
+          actionCd: 5000,
+          matches:
+            'WebView > @Button[text="同意并发起人脸识别"][clickable=true][visibleToUser=true] + Button[text="拒绝"][clickable=true][visibleToUser=true]',
+        },
+      ],
+    },
+    {
+      key: 20,
       name: '弹窗，隐私政策更新提示，同意',
       desc: '260904',
       rules: [

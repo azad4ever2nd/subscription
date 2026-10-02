@@ -114,15 +114,17 @@ export default defineGkdApp({
     {
       key: 9,
       name: '低碳生活，一键收取',
-      desc: '260904,clickable=true',
+      desc: '261002，增加 弹窗，clickable=true',
       rules: [
         {
           resetMatch: 'match',
           actionMaximum: 1,
           forcedTime: 2000,
           activityIds: 'com.ccb.cloudmerchant.view.WebViewActivity',
-          matches:
+          anyMatches: [
             '(WebView[text="低碳生活"] > View > Image[text="oneKey"][visibleToUser=true])',
+            'View > View > TextView[text*="上线通知"] +2 TextView[text.length=0][clickable=true][visibleToUser=true]',
+          ],
         },
       ],
     },

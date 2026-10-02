@@ -184,17 +184,18 @@ export default defineGkdApp({
     {
       key: 11,
       name: '弹窗，签到1',
-      desc: '260926',
+      desc: '261002',
       rules: [
         {
           resetMatch: 'match',
           forcedTime: 3000,
           activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
           anyMatches: [
-            '(View > View >  @TextView[text="签到"][clickable=true][visibleToUser=true] - View > TextView[text="今天签到可领" || text="奖励金"])',
             'TextView[text="我的奖励金"] +n View >n View >  TextView[text="签到"][clickable=true][visibleToUser=true]',
-            '([text="请点击下方按钮，立即签到"] + * [text="签到"])',
-            '([text="签到"])',
+            'TextView[text="我的奖励金"] +n View > View > TextView[text="签到"][index=parent.childCount.minus(1)][clickable=false][visibleToUser=true]',
+            '(View > View >  @TextView[text="签到"][clickable=true][visibleToUser=true] - View > TextView[text="今天签到可领" || text="奖励金"])',
+            '([text="请点击下方按钮，立即签到"] + * [text="签到"][visibleToUser=true])',
+            '([text="签到"][visibleToUser=true])',
           ],
         },
       ],
@@ -202,7 +203,7 @@ export default defineGkdApp({
     {
       key: 12,
       name: '弹窗，签到2',
-      desc: '260926，测试matchRoot',
+      desc: '261002，测试matchRoot',
       rules: [
         {
           resetMatch: 'match',
@@ -210,10 +211,11 @@ export default defineGkdApp({
           forcedTime: 3000,
           activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
           anyMatches: [
-            'View > View >  @TextView[text="签到"][clickable=true][visibleToUser=true] - View > TextView[text="今天签到可领" || text="奖励金"]',
             'TextView[text="我的奖励金"] +n View >n View >  TextView[text="签到"][clickable=true][visibleToUser=true]',
-            '([text="请点击下方按钮，立即签到"] + * [text="签到"])',
-            '([text="签到"])',
+            'TextView[text="我的奖励金"] +n View > View > TextView[text="签到"][index=parent.childCount.minus(1)][clickable=false][visibleToUser=true]',
+            '(View > View >  @TextView[text="签到"][clickable=true][visibleToUser=true] - View > TextView[text="今天签到可领" || text="奖励金"])',
+            '([text="请点击下方按钮，立即签到"] + * [text="签到"][visibleToUser=true])',
+            '([text="签到"][visibleToUser=true])',
           ],
         },
       ],
@@ -225,13 +227,18 @@ export default defineGkdApp({
       rules: [
         {
           resetMatch: 'match',
-          forcedTime: 2000,
+          forcedTime: 3000,
           actionCd: 3000,
           activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
           excludeMatches: [
             'TextView[text="我的奖励金"] +n View >n View >  TextView[text="签到"][visibleToUser=true]',
-            'TextView[text="我的奖励金"] +n View >n View > TextView[visibleToUser=true][text="知道了"]',
+            '(View > View >  @TextView[text="签到"][visibleToUser=true] - View > TextView[text="今天签到可领" || text="奖励金"])',
             'TextView[text="我的奖励金"] +n View >n View > TextView[visibleToUser=true] +n TextView[text="明日再来"][visibleToUser=true]',
+            'TextView[text="我的奖励金"] +n View >n View > [text="知道了"]TextView[visibleToUser=true]',
+            'TextView[text="我的奖励金"] +n View >n View > TextView[text="知道了"][visibleToUser=true]',
+            'View > View > TextView[text="任意完成以下订单，回来领奖励金"] +n TextView[text="知道了"][visibleToUser=true]',
+            '([text="请点击下方按钮，立即签到"] + * [text="签到"])',
+            '([text="签到"])',
           ],
           anyMatches: [
             '(View > TextView[text="我的奖励金"] +n View > View >  @View[clickable=true][visibleToUser=true] > View > TextView[text="今日签到"])',
@@ -260,7 +267,7 @@ export default defineGkdApp({
     {
       key: 15,
       name: '弹窗，领奖页面，签到完成，明日再来，X掉',
-      desc: '260910',
+      desc: '261002',
       rules: [
         {
           resetMatch: 'match',
@@ -268,8 +275,8 @@ export default defineGkdApp({
           activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
           anyMatches: [
             'TextView[text="我的奖励金"] +n View >n View > @TextView[clickable=true][visibleToUser=true] +n TextView[text="明日再来"][clickable=true][visibleToUser=true]',
-            'TextView[text="我的奖励金"] +n View > View > @TextView[clickable=false][visibleToUser=true][text.length=0] +n TextView[text="明日再来"]',
-            '@TextView[clickable=true] +n [text="明日再来"]',
+            'TextView[text="我的奖励金"] +n View > View > @TextView[clickable=false][visibleToUser=true][text.length=0] +n TextView[text="明日再来"][visibleToUser=true]',
+            '@TextView[clickable=true] +n [text="明日再来"][visibleToUser=true]',
           ],
         },
       ],
@@ -288,18 +295,33 @@ export default defineGkdApp({
     },
     {
       key: 17,
-      name: '弹窗，每日单单返奖励金，知道了',
-      desc: '260910，clik无反应就clickCenter',
+      name: '弹窗，每日单单返奖励金，知道了1',
+      desc: '261002，排除 签到 和 明日再来，clik无反应就clickCenter',
       rules: [
         {
           resetMatch: 'match',
           action: 'clickCenter',
           forcedTime: 3000,
           activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
+          excludeMatches: [
+            'TextView[text="我的奖励金"] +n View > View > @TextView[clickable=false][visibleToUser=true][text.length=0] +n TextView[text="明日再来"][visibleToUser=true]',
+            'TextView[text="我的奖励金"] +n View > View > TextView[text="签到"][index=parent.childCount.minus(1)][clickable=false][visibleToUser=true]',
+            'TextView[text="我的奖励金"] +n View >n View >  TextView[text="签到"][clickable=true][visibleToUser=true]',
+            'TextView[text="我的奖励金"] +n View >n View >  TextView[text="签到"][visibleToUser=true]',
+            '(View > View >  @TextView[text="签到"][clickable=true][visibleToUser=true] - View > TextView[text="今天签到可领" || text="奖励金"])',
+            '(View > View >  @TextView[text="签到"][visibleToUser=true] - View > TextView[text="今天签到可领" || text="奖励金"])',
+            '([text="签到"][visibleToUser=true])',
+            '([text="请点击下方按钮，立即签到"] + * [text="签到"][visibleToUser=true])',
+            '@TextView[clickable=true] +n [text="明日再来"][visibleToUser=true]',
+            'TextView[text="我的奖励金"] +n View >n View > @TextView[clickable=true][visibleToUser=true] +n TextView[text="明日再来"][clickable=true][visibleToUser=true]',
+            'TextView[text="我的奖励金"] +n View >n View > @TextView[clickable=true][visibleToUser=true] +n TextView[text="明日再来"][visibleToUser=true]',
+          ],
           anyMatches: [
-            'TextView[text="我的奖励金"] +n View > View > TextView[clickable=false][visibleToUser=true][text="知道了"]',
-            'TextView[text="我的奖励金"] +n View >n View > TextView[clickable=true][visibleToUser=true][text="知道了"]',
-            '([text="会员单单返"] + [text="领奖励"])',
+            'TextView[text="我的奖励金"] +n View > View > TextView[text="知道了"][clickable=false][visibleToUser=true]',
+            'TextView[text="我的奖励金"] +n View >n View > TextView[text="知道了"][clickable=true][visibleToUser=true]',
+            'View > View > TextView[text="任意完成以下订单，回来领奖励金"] +n TextView[text="知道了"][clickable=true][visibleToUser=true]',
+            'View > View > View > TextView[text="我知道了"][clickable=true][visibleToUser=true]',
+            '([text="会员单单返"] + [text="领奖励"][visibleToUser=true])',
           ],
         },
       ],
@@ -382,17 +404,22 @@ export default defineGkdApp({
     {
       key: 23,
       name: '奖励金页面，上方，今日签到2',
-      desc: '260921，与13相比，activityId不同',
+      desc: '261002，与13相比，activityId不同',
       rules: [
         {
+          actionCd: 3000,
           resetMatch: 'match',
           activityIds:
             'com.hellobike.moped.platform.offline.web.OhoRealmWebActivity',
           excludeMatches: [
-            'TextView[text="我的奖励金"] +n View >n View > TextView[visibleToUser=true][text="知道了"]',
-            'TextView[text="我的奖励金"] +n View >n View > TextView[visibleToUser=true] +n TextView[text="明日再来"][visibleToUser=true]',
             'TextView[text="我的奖励金"] +n View >n View >  TextView[text="签到"][visibleToUser=true]',
+            '(View > View >  @TextView[text="签到"][visibleToUser=true] - View > TextView[text="今天签到可领" || text="奖励金"])',
+            'TextView[text="我的奖励金"] +n View >n View > TextView[visibleToUser=true] +n TextView[text="明日再来"][visibleToUser=true]',
+            'TextView[text="我的奖励金"] +n View >n View > [text="知道了"]TextView[visibleToUser=true]',
+            'TextView[text="我的奖励金"] +n View >n View > TextView[text="知道了"][visibleToUser=true]',
             'View > View > TextView[text="任意完成以下订单，回来领奖励金"] +n TextView[text="知道了"][visibleToUser=true]',
+            '([text="请点击下方按钮，立即签到"] + * [text="签到"])',
+            '([text="签到"])',
           ],
           anyMatches: [
             'TextView[text="我的奖励金"] +n View > View > @View[clickable=false][visibleToUser=true] > TextView + TextView[text="今日签到"]',
@@ -404,7 +431,7 @@ export default defineGkdApp({
     {
       key: 24,
       name: '弹窗，奖励金，签到',
-      desc: '260928',
+      desc: '261002',
       rules: [
         {
           resetMatch: 'match',
@@ -414,14 +441,15 @@ export default defineGkdApp({
           anyMatches: [
             'TextView[text="我的奖励金"] +n View > View > TextView[index=parent.childCount.minus(1)][clickable=false][visibleToUser=true][text="签到"]',
             'TextView[text="我的奖励金"] +n View >n View >  TextView[text="签到"][clickable=true][visibleToUser=true]',
+            '([text="签到"][visibleToUser=true])',
           ],
         },
       ],
     },
     {
       key: 25,
-      name: '弹窗,明日再来，X掉',
-      desc: '260928',
+      name: '弹窗，签到完成，明日再来，X掉',
+      desc: '261002',
       rules: [
         {
           resetMatch: 'match',
@@ -431,7 +459,8 @@ export default defineGkdApp({
             'com.hellobike.moped.platform.offline.web.OhoRealmWebActivity',
           anyMatches: [
             'TextView[text="我的奖励金"] +n View >n View > @TextView[clickable=true][visibleToUser=true] +n TextView[text="明日再来"][clickable=true][visibleToUser=true]',
-            'TextView[text="我的奖励金"] +n View > View > @TextView[clickable=false][visibleToUser=true][text.length=0] +n TextView[text="明日再来"]',
+            'TextView[text="我的奖励金"] +n View > View > @TextView[clickable=false][visibleToUser=true][text.length=0] +n TextView[text="明日再来"][visibleToUser=true]',
+            '@TextView[clickable=true][visibleToUser=true] +n [text="明日再来"][visibleToUser=true]',
           ],
         },
       ],
@@ -439,7 +468,7 @@ export default defineGkdApp({
     {
       key: 26,
       name: '弹窗，每日单单返奖励金，知道了2',
-      desc: '260928，排除签到，明日再来，fastQuery=false,clickable=true，添加 弹窗知道了',
+      desc: '261002，fastQuery=false,clickable=true，添加 弹窗知道了',
       rules: [
         {
           action: 'clickCenter',
@@ -447,16 +476,24 @@ export default defineGkdApp({
           activityIds:
             'com.hellobike.moped.platform.offline.web.OhoRealmWebActivity',
           excludeMatches: [
-            'TextView[text="我的奖励金"] +n View > View > TextView[index=parent.childCount.minus(1)][clickable=false][visibleToUser=true][text="签到"]',
+            'TextView[text="我的奖励金"] +n View > View > @TextView[clickable=false][visibleToUser=true][text.length=0] +n TextView[text="明日再来"][visibleToUser=true]',
+            'TextView[text="我的奖励金"] +n View > View > TextView[text="签到"][index=parent.childCount.minus(1)][clickable=false][visibleToUser=true]',
             'TextView[text="我的奖励金"] +n View >n View >  TextView[text="签到"][clickable=true][visibleToUser=true]',
+            'TextView[text="我的奖励金"] +n View >n View >  TextView[text="签到"][visibleToUser=true]',
+            '(View > View >  @TextView[text="签到"][clickable=true][visibleToUser=true] - View > TextView[text="今天签到可领" || text="奖励金"])',
+            '(View > View >  @TextView[text="签到"][visibleToUser=true] - View > TextView[text="今天签到可领" || text="奖励金"])',
+            '([text="签到"][visibleToUser=true])',
+            '([text="请点击下方按钮，立即签到"] + * [text="签到"][visibleToUser=true])',
+            '@TextView[clickable=true] +n [text="明日再来"][visibleToUser=true]',
             'TextView[text="我的奖励金"] +n View >n View > @TextView[clickable=true][visibleToUser=true] +n TextView[text="明日再来"][clickable=true][visibleToUser=true]',
-            'TextView[text="我的奖励金"] +n View > View > @TextView[clickable=false][visibleToUser=true][text.length=0] +n TextView[text="明日再来"]',
+            'TextView[text="我的奖励金"] +n View >n View > @TextView[clickable=true][visibleToUser=true] +n TextView[text="明日再来"][visibleToUser=true]',
           ],
           anyMatches: [
-            'TextView[text="我的奖励金"] +n View > View > TextView[clickable=false][visibleToUser=true][text="知道了"]',
-            'TextView[text="我的奖励金"] +n View >n View > TextView[clickable=true][visibleToUser=true][text="知道了"]',
+            'TextView[text="我的奖励金"] +n View > View > TextView[text="知道了"][clickable=false][visibleToUser=true]',
+            'TextView[text="我的奖励金"] +n View >n View > TextView[text="知道了"][clickable=true][visibleToUser=true]',
             'View > View > View > TextView[text="我知道了"][clickable=true][visibleToUser=true]',
             'View > View > TextView[text="任意完成以下订单，回来领奖励金"] +n TextView[text="知道了"][clickable=true][visibleToUser=true]',
+            '([text="会员单单返"] + [text="领奖励"][visibleToUser=true])',
           ],
         },
       ],
