@@ -291,7 +291,7 @@ export default defineGkdApp({
     {
       key: 20,
       name: '碳星任务，点击签到',
-      desc: '260811，添加 签到成功clickable=true',
+      desc: '261003，添加 签到成功clickable=true',
       rules: [
         {
           action: 'clickCenter',
@@ -299,6 +299,8 @@ export default defineGkdApp({
             '([text="碳星任务"] [text="点击签到"])',
             '([text="+1"] + [text="点击签到"])',
             '(Dialog > View > @Button[clickable=true][visibleToUser=true][text="我知道了"] + Button[text="赚更多能量"])',
+            'View > View > TextView[text="恭喜您签到成功"] +n Image[text="我知道了"][clickable=true][visibleToUser=true]',
+            '([text="恭喜您签到成功"] +n [text="我知道了"])',
           ],
           actionMaximum: 3,
           resetMatch: 'match',
@@ -309,7 +311,7 @@ export default defineGkdApp({
     {
       key: 21,
       name: '能量签到完成',
-      desc: '260910，多行规则改用anyMatches测试，添加每周在线互动',
+      desc: '261003，多行规则改用anyMatches测试，添加每周在线互动',
       rules: [
         {
           anyMatches: [
@@ -319,7 +321,6 @@ export default defineGkdApp({
             '(TextView[text^="浏览" || text^="访问" || text^="查看"][text*="超过" && text$="秒"] <n View +2 TextView[text="去完成"][clickable=true][visibleToUser=true])',
             '(TextView[text^="浏览" || text^="访问" || text^="查看"][text*="超过" && text$="秒"] <n View +2 TextView[text="去完成"][clickable=false][visibleToUser=true])',
             'WebView > View > TextView[text^="您已完成该任务" || text*="欢迎继续浏览"] + @Image[text="取消"][clickable=true][visibleToUser=true] + Image[text="继续浏览"]',
-            '([text="恭喜您签到成功"] +n [text="我知道了"])',
           ],
           resetMatch: 'match',
           actionCd: 10000,

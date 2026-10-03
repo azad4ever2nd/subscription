@@ -151,8 +151,8 @@ export default defineGkdApp({
     },
     {
       key: 11,
-      name: '分期账单提示',
-      desc: '260426,添加小额免密',
+      name: '弹窗，分期账单，暂不办理',
+      desc: '261003,添加小额免密',
       rules: [
         {
           resetMatch: 'match',
@@ -160,8 +160,9 @@ export default defineGkdApp({
           actionCd: 0,
           activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
           anyMatches: [
-            '([text="开通小额免密支付"] + [text="暂不开通"])',
+            'View > View[text="分期还账单"] + View[text="暂不办理"][clickable=true][visibleToUser=true]',
             '([text="分期还账单"] + [text="暂不办理"])',
+            '([text="开通小额免密支付"] + [text="暂不开通"])',
           ],
         },
       ],

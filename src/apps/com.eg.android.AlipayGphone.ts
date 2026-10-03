@@ -140,7 +140,7 @@ export default defineGkdApp({
     {
       key: 9,
       name: '弹窗2，与分期有关，X掉',
-      desc: '261001，替换规则3，添加 签到成功，开通碰一下，推送服务，查询账单，返回领奖，到桌面，银行卡抽奖，升级月利宝',
+      desc: '261003，替换规则3，添加 神券五六天，签到成功，开通碰一下，推送服务，查询账单，返回领奖，到桌面，银行卡抽奖，升级月利宝',
       rules: [
         {
           resetMatch: 'match',
@@ -157,9 +157,12 @@ export default defineGkdApp({
             'View > @Image[text="关闭弹窗"][clickable=false][visibleToUser=true] + View > Button',
             'View > @Image[text="关闭弹窗"][clickable=true][visibleToUser=true] +n View > TextView[text="仍要赎回"]',
             'View > @Image[text="关闭弹窗"][clickable=true][visibleToUser=true] + View >n TextView[text="再买一笔"]',
+            'View > View > @TextView[text.length=1][clickable=false][visibleToUser=true] + * + Button[text="好的"]',
             'View > View > TextView[text="支付宝"] + TextView[text="邀请你"] + TextView[clickable=false][visibleToUser=true][text="跳过"]',
             'View > View > TextView[text="支付宝"] + TextView[text="邀请你"] + TextView[text="跳过"][clickable=true][visibleToUser=true]',
             'View > View > View > @Image[clickable=false][visibleToUser=true] + TextView[text^="用碰一下"] +n TextView[text="去申请"]',
+            'View > View > View > @Image[clickable=false][visibleToUser=true] + TextView +n TextView[text="去了解"]',
+            'View > View > View[text="红包区域"] > View[childCount=3] > @View[clickable=true][visibleToUser=true] > TextView[text^="开抢倒计时" && text$="结束"]',
             '@Image[clickable=false][visibleToUser=true] < View + View > Button[text="去看看"]',
             '@Image[clickable=false][visibleToUser=true] < View + View > TextView[text="去开启"]',
             '@Image[clickable=false][visibleToUser=true] < View + View > TextView[text="开通信用卡借款享一站式服务"]',
@@ -650,7 +653,7 @@ export default defineGkdApp({
     {
       key: 35,
       name: '添加神券到首页，X掉',
-      desc: '261001，fastquery=false,clickable=false,添加 闪购0.1，超级吃货卡体验版，闪购签到，闪购小程序，添加到首页，添加 生活缴费',
+      desc: '261003，fastquery=false,clickable=false,添加 闪购0.1，超级吃货卡体验版，闪购签到，闪购小程序，添加到首页，添加 生活缴费',
       rules: [
         {
           resetMatch: 'match',
@@ -668,11 +671,13 @@ export default defineGkdApp({
             'View[childCount=2] > @TextView[clickable=false][visibleToUser=true] - View > View > View >n TextView[text="去使用"] - View',
             '@TextView[clickable=false][visibleToUser=true] < View  + TextView + View > View > View > View > TextView[text="去使用"]',
             '@TextView[clickable=false][visibleToUser=true] - View > View > View > View > View > TextView[text="去使用"]',
+            'View > @View[childCount=1][clickable=false][visibleToUser=true] + * + View >n TextView[text="去使用"]',
+            'View > View > @TextView[clickable=false][visibleToUser=true] - View >n  TextView[text="去使用"]',
             'View > View > @TextView[clickable=false][visibleToUser=true] - View[childCount=3] >n TextView[text="立即使用"]',
             'View[childCount=2] > @TextView[clickable=false][visibleToUser=true] - View TextView[text="开心收下"]',
             'View[childCount=2] > @TextView[clickable=false][visibleToUser=true][text.length=0] -  View >n TextView[text="元升级"][visibleToUser=true]',
             'TextView[text="刷新"][visibleToUser=true]',
-            'TextView[text="回免单首页看看"][clickable=false][visibleToUser=true] < View + TextView[clickable=false][visibleToUser=true]',
+            'View > View > @TextView[clickable=false][visibleToUser=true] - View >n  TextView[text="回免单首页看看"]',
             '@TextView[clickable=false][visibleToUser=true] - View > View > TextView[text="购物爆红包"] + TextView[text="今天23:59到期"]',
             '@TextView[clickable=false][visibleToUser=true] - View > View > View > View > View > View > TextView[text="0"] + TextView[text=".1"] + TextView[text="元升级"]',
             '@TextView[clickable=false][visibleToUser=true] - View > View > View > View > View > TextView[text="首购特惠"]',
@@ -689,6 +694,7 @@ export default defineGkdApp({
             '[text^="完成"] <<n View + View > TextView[text="领取奖励"][clickable=false][visibleToUser=true]',
             '@TextView <n * + [text="取消"] + [text="立即添加"]',
             'View > View > TextView[text="立即抽-bak闪购抽奖"][clickable=false][visibleToUser=true]',
+            'TextView[text="回免单首页看看"][clickable=false][visibleToUser=true] < View + TextView[clickable=false][visibleToUser=true]',
           ],
         },
       ],

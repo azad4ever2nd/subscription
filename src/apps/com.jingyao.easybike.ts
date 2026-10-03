@@ -223,7 +223,7 @@ export default defineGkdApp({
     {
       key: 13,
       name: '奖励金页面，上方，今日签到1',
-      desc: '260921',
+      desc: '261003',
       rules: [
         {
           resetMatch: 'match',
@@ -236,11 +236,11 @@ export default defineGkdApp({
             'TextView[text="我的奖励金"] +n View >n View > TextView[visibleToUser=true] +n TextView[text="明日再来"][visibleToUser=true]',
             'TextView[text="我的奖励金"] +n View >n View > TextView[text="知道了"][visibleToUser=true]',
             'TextView[text="我的奖励金"] +n View >n View > TextView[text="知道了"][visibleToUser=true]',
-            'View > View > TextView[text="任意完成以下订单，回来领奖励金"] +n TextView[text="知道了"][visibleToUser=true]',
             '([text="请点击下方按钮，立即签到"] + * [text="签到"])',
             '([text="签到"])',
           ],
           anyMatches: [
+            '(View > TextView[text="我的奖励金"] +n View > View >  @View[clickable=true][visibleToUser=true] > View[childCount=2] > TextView[text="今日签到"])',
             '(View > TextView[text="我的奖励金"] +n View > View >  @View[clickable=true][visibleToUser=true] > View > TextView[text="今日签到"])',
             '(@*[clickable=true] > *[childCount=2] > [text="今日签到"])',
           ],
@@ -296,7 +296,7 @@ export default defineGkdApp({
     {
       key: 17,
       name: '弹窗，每日单单返奖励金，知道了1',
-      desc: '261002，排除 签到 和 明日再来，clik无反应就clickCenter',
+      desc: '261003，排除 签到 和 明日再来，clik无反应就clickCenter',
       rules: [
         {
           resetMatch: 'match',
@@ -319,9 +319,7 @@ export default defineGkdApp({
           anyMatches: [
             'TextView[text="我的奖励金"] +n View > View > TextView[text="知道了"][clickable=false][visibleToUser=true]',
             'TextView[text="我的奖励金"] +n View >n View > TextView[text="知道了"][clickable=true][visibleToUser=true]',
-            'View > View > TextView[text="任意完成以下订单，回来领奖励金"] +n TextView[text="知道了"][clickable=true][visibleToUser=true]',
             'View > View > View > TextView[text="我知道了"][clickable=true][visibleToUser=true]',
-            '([text="会员单单返"] + [text="领奖励"][visibleToUser=true])',
           ],
         },
       ],
@@ -417,7 +415,6 @@ export default defineGkdApp({
             'TextView[text="我的奖励金"] +n View >n View > TextView[visibleToUser=true] +n TextView[text="明日再来"][visibleToUser=true]',
             'TextView[text="我的奖励金"] +n View >n View > TextView[text="知道了"][visibleToUser=true]',
             'TextView[text="我的奖励金"] +n View >n View > TextView[text="知道了"][visibleToUser=true]',
-            'View > View > TextView[text="任意完成以下订单，回来领奖励金"] +n TextView[text="知道了"][visibleToUser=true]',
             '([text="请点击下方按钮，立即签到"] + * [text="签到"])',
             '([text="签到"])',
           ],
@@ -468,7 +465,7 @@ export default defineGkdApp({
     {
       key: 26,
       name: '弹窗，每日单单返奖励金，知道了2',
-      desc: '261002，fastQuery=false,clickable=true，添加 弹窗知道了',
+      desc: '261003，fastQuery=false,clickable=true，添加 弹窗知道了',
       rules: [
         {
           action: 'clickCenter',
@@ -492,8 +489,6 @@ export default defineGkdApp({
             'TextView[text="我的奖励金"] +n View > View > TextView[text="知道了"][clickable=false][visibleToUser=true]',
             'TextView[text="我的奖励金"] +n View >n View > TextView[text="知道了"][clickable=true][visibleToUser=true]',
             'View > View > View > TextView[text="我知道了"][clickable=true][visibleToUser=true]',
-            'View > View > TextView[text="任意完成以下订单，回来领奖励金"] +n TextView[text="知道了"][clickable=true][visibleToUser=true]',
-            '([text="会员单单返"] + [text="领奖励"][visibleToUser=true])',
           ],
         },
       ],

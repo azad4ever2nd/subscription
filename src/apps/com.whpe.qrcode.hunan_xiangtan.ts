@@ -7,11 +7,13 @@ export default defineGkdApp({
     {
       key: 1,
       name: '更新',
-      desc: '260213',
+      desc: '261003',
       rules: [
         {
-          matches: ['[text="立即更新"] + [text="以后再说"]'],
           resetMatch: 'match',
+          forcedTime: 3000,
+          matches:
+            'WebView > View > View > TextView[text*="更新"] +n TextView[text="立即更新"][clickable=true][visibleToUser=true] + TextView[text="以后再说"][clickable=true][visibleToUser=true]',
           activityIds: ['io.dcloud.PandoraEntryActivity'],
         },
       ],

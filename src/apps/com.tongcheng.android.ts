@@ -123,15 +123,18 @@ export default defineGkdApp({
     {
       key: 9,
       name: '2026暑假当然来广东，抢旅游景区券',
-      desc: '260811',
+      desc: '261003，添加 广东文旅',
       rules: [
         {
           actionCd: 500,
+          action: 'clickCenter',
           resetMatch: 'match',
-          actionMaximum: 10,
+          actionMaximum: 15,
           activityIds: 'com.tongcheng.android.module.webapp.WebViewActivity',
-          matches:
+          anyMatches: [
+            'View > View > Image[text="1NZmP5zb7wI"] + @View[clickable=true][visibleToUser=true] >  Image[text="1LBYVwKptxS"]',
             'WebView[text*="暑假当然来广东"] > View > View > View > Image[text="1NZmP5zb7wI"] + View > Image[text="1LBYVwKptxS"]',
+          ],
         },
       ],
     },

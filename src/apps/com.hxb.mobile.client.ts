@@ -115,10 +115,11 @@ export default defineGkdApp({
     {
       key: 8,
       name: '浏览后领取立减金',
-      desc: '260915',
+      desc: '261003',
       rules: [
         {
           forcedTime: 9000,
+          matchDelay: 3000,
           resetMatch: 'match',
           activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
           anyMatches: [

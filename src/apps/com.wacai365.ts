@@ -83,14 +83,15 @@ export default defineGkdApp({
     {
       key: 6,
       name: '评价弹窗，下次再说',
-      desc: '260221',
+      desc: '261003',
       rules: [
         {
-          matches: [
-            '[vid="firstButton"] +n [vid="thirdButton"][text="下次再说"]',
-          ],
           fastQuery: true,
           resetMatch: 'match',
+          anyMatches: [
+            'LinearLayout > [vid="firstButton"][text="好评，加油！"][clickable=true][visibleToUser=true] +n [vid="thirdButton"][text="下次再说"][clickable=true][visibleToUser=true]',
+            '[vid="firstButton"] +n [vid="thirdButton"][text="下次再说"]',
+          ],
           activityIds: ['com.wacai365.HomeActivity'],
         },
       ],

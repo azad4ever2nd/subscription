@@ -18,5 +18,19 @@ export default defineGkdApp({
         },
       ],
     },
+    {
+      key: 2,
+      name: '弹窗，多页广告，X掉',
+      desc: '261003',
+      rules: [
+        {
+          fastQuery: true,
+          resetMatch: 'match',
+          activityIds: '.MainActivity',
+          matches:
+            'LinearLayout > ViewPager + ImageView[vid="iv_close"][clickable=true][visibleToUser=true]',
+        },
+      ],
+    },
   ],
 });
