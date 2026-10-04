@@ -104,7 +104,7 @@ export default defineGkdApp({
       rules: [
         {
           resetMatch: 'match',
-          forcedTime: 3000,
+          forcedTime: 5000,
           action: 'clickCenter',
           activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
           anyMatches:

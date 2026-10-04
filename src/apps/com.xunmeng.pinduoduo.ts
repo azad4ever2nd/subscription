@@ -487,7 +487,7 @@ export default defineGkdApp({
     {
       key: 30,
       name: '如何解锁，去首页2',
-      desc: '2601003，添加组队成功，clickable=true',
+      desc: '2601004，添加组队成功，clickable=true',
       rules: [
         {
           resetMatch: 'match',
@@ -503,6 +503,7 @@ export default defineGkdApp({
             'TextView +n @Image[text="webp"][clickable=true][visibleToUser=true] -n View > View > TextView[text$="后过期"]',
             '(View > View > View > TextView[text="如何解锁点亮?"] + TextView[text="去首页"][clickable=true][visibleToUser=true])',
             '(View > View > View > TextView[text^="如何解锁"] + TextView[text="去首页"][clickable=true][visibleToUser=true])',
+            'TextView[text="待使用"] <<n ViewGroup + ViewGroup > ImageView[clickable=true][visibleToUser=true]',
           ],
         },
       ],

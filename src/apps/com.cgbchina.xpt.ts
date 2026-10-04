@@ -280,6 +280,68 @@ export default defineGkdApp({
     },
     {
       key: 20,
+      name: '秒杀，第一步，立即抢购',
+      desc: '261004',
+      rules: [
+        {
+          resetMatch: 'match',
+          action: 'clickCenter',
+          forcedTime: 2000,
+          activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
+          excludeMatches:
+            'View > Button[text="立即抢购"][clickable=true][visibleToUser=true]',
+          matches:
+            'View[text="￥1.00"] + View[text^="￥"] +n View > View[text="立即抢购"][clickable=true][visibleToUser=true]',
+        },
+      ],
+    },
+    {
+      key: 21,
+      name: '秒杀，第二步，立即抢购',
+      desc: '261004',
+      rules: [
+        {
+          resetMatch: 'match',
+          action: 'clickCenter',
+          forcedTime: 2000,
+          activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
+          matches:
+            'View[text="￥1.00"] + View[text^="库存"] +n View > Button[text="立即抢购"][clickable=true][visibleToUser=true]',
+        },
+      ],
+    },
+    {
+      key: 22,
+      name: '秒杀，第三步，下一步',
+      desc: '261004',
+      rules: [
+        {
+          resetMatch: 'match',
+          action: 'clickCenter',
+          forcedTime: 2000,
+          actionCd: 6000,
+          activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
+          matches:
+            'WebView[text="确认订单"] > View Button[text="下一步"][clickable=true][visibleToUser=true]',
+        },
+      ],
+    },
+    {
+      key: 23,
+      name: '弹窗，恭喜中奖了，取消',
+      desc: '261004',
+      rules: [
+        {
+          resetMatch: 'match',
+          action: 'clickCenter',
+          activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
+          matches:
+            'View[text="恭喜您中奖了"] < View +n View > @View[text="取消"][clickable=true][visibleToUser=true] + View[text="去使用"]',
+        },
+      ],
+    },
+    {
+      key: 24,
       name: '弹窗，隐私政策更新提示，同意',
       desc: '260904',
       rules: [

@@ -646,7 +646,7 @@ export default defineGkdApp({
     {
       key: 35,
       name: '阳光兑换3，兑换完成与返回',
-      desc: '260814，添加 排除 微信金币兑换',
+      desc: '261004，添加 排除 立减金兑换，微信金币兑换',
       rules: [
         {
           resetMatch: 'match',
@@ -664,8 +664,11 @@ export default defineGkdApp({
             'com.tencent.mm.plugin.appbrand.ui.AppBrandUI04',
             'com.tencent.mm.plugin.appbrand.ui.AppBrandPluginUI',
           ],
-          excludeMatches:
+          excludeMatches: [
             'TextView[text="兑换成功"] < View + View > View > TextView[text="微信提现免费券"][visibleToUser=true]',
+            'WebView[text="权益详情"] > View > View > TextView[text="权益信息"]',
+            'View > TextView[text="权益信息"]',
+          ],
           matches: ['([text="兑换成功"])'],
         },
       ],

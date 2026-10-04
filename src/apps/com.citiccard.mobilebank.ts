@@ -285,6 +285,51 @@ export default defineGkdApp({
     },
     {
       key: 20,
+      name: '9分享兑，去兑换',
+      desc: '261004，慎用',
+      rules: [
+        {
+          action: 'clickCenter',
+          forcedTime: 3000,
+          resetMatch: 'match',
+          activityIds: '.web.webpage.CommonWebPage',
+          matches:
+            'View > View > TextView[text="价格: 1个权益+9个积分"] + TextView[text="去兑换"][clickable=true][visibleToUser=true]',
+        },
+      ],
+    },
+    {
+      key: 21,
+      name: '9分享兑，去下单',
+      desc: '261004',
+      rules: [
+        {
+          action: 'clickCenter',
+          forcedTime: 3000,
+          resetMatch: 'match',
+          activityIds: '.web.webpage.CommonWebPage',
+          matches:
+            'WebView[text="订单兑换"] > View > View > View > TextView[text="去下单"][clickable=true][visibleToUser=true]',
+        },
+      ],
+    },
+    {
+      key: 22,
+      name: '9分享兑，立即支付',
+      desc: '261004',
+      rules: [
+        {
+          action: 'clickCenter',
+          forcedTime: 3000,
+          resetMatch: 'match',
+          activityIds: '.web.webpage.CommonWebPage',
+          matches:
+            'WebView[text="收银台"] > View > TextView[text="1权益+9积分"] +n View[clickable=true][visibleToUser=true] > @View[clickable=true][visibleToUser=true] > TextView[text="立即支付"]',
+        },
+      ],
+    },
+    {
+      key: 23,
       name: '系统检测到VPN，继续使用',
       desc: '260704',
       rules: [
@@ -300,7 +345,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 21,
+      key: 24,
       name: '首页弹窗广告',
       desc: '260808，延长等待时间，取消matchTime，添加分期弹窗',
       rules: [

@@ -47,15 +47,17 @@ export default defineGkdApp({
     },
     {
       key: 4,
-      name: '位置权限',
-      desc: '260213,D,备份,',
+      name: '弹窗，系统定位服务GPS已关闭，取消',
+      desc: '261004',
       rules: [
         {
-          matches: [
-            '[text*="位置"] <<n [id="android:id/contentPanel"] + [id="android:id/buttonPanel"] [id="android:id/button1"]',
-          ],
           fastQuery: true,
           resetMatch: 'match',
+          action: 'clickCenter',
+          forcedTime: 3000,
+          anyMatches: [
+            '[text*="系统定位服务"] <<n FrameLayout[id="android:id/contentPanel"] + ScrollView[id="android:id/buttonPanel"] > LinearLayout > Button[id="android:id/button1"][text="取消"][clickable=true][visibleToUser=true]',
+          ],
           activityIds: ['io.dcloud.PandoraEntryActivity'],
         },
       ],
@@ -63,15 +65,13 @@ export default defineGkdApp({
     {
       key: 5,
       name: '应用还没有授权位置权限，是否立即去设置开启？取消',
-      desc: '260904',
+      desc: '261004',
       rules: [
         {
           action: 'clickCenter',
           resetMatch: 'match',
           fastQuery: true,
-          actionCd: 500,
-          matchTime: 2000,
-          forcedTime: 2500,
+          forcedTime: 3000,
           activityIds: 'io.dcloud.PandoraEntryActivity',
           matches:
             'TextView[id="android:id/message"][text*="位置权限"] < LinearLayout < ScrollView < FrameLayout + ScrollView > LinearLayout > Button[text="去设置"][id="android:id/button2"] + Button[id="android:id/button1"][text="取消"]',
