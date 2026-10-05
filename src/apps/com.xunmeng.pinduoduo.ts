@@ -25,14 +25,14 @@ export default defineGkdApp({
     {
       key: 2,
       name: '积分兑无门槛券确认兑换',
-      desc: '261002，增加 排除非百亿补贴无门槛券 和 积分不足',
+      desc: '261005，增加 排除非百亿补贴无门槛券 和 积分不足',
       rules: [
         {
           anyMatches: [
             '(TextView[text*="百亿补贴无门槛券" || text$="无门槛券"] <n View + TextView[text="确认兑换"][clickable=false][visibleToUser=true])',
             'View > View > @Image[text="webp"][clickable=true][visibleToUser=true] + TextView[text="确认消耗"] +n View >  * + TextView[text!="百亿补贴无门槛券"] + TextView',
-            'View > View > @Image[text="webp"][clickable=true][visibleToUser=true] + TextView[text="积分不足 去获取更多积分吧"]',
-            '(TextView[text="元"] - TextView[text="5"] < View < View + TextView[text="确认兑换"][clickable=false][visibleToUser=true])',
+            'View > View > @Image[text="webp"][clickable=false][visibleToUser=true] + TextView[text="确认消耗"] +n View >  * + TextView[text!="百亿补贴无门槛券"] + TextView',
+            'View > View > @Image[text="webp"][visibleToUser=true] + TextView[text="积分不足 去获取更多积分吧"]',
           ],
           actionCd: 0,
           forcedTime: 1500,
@@ -168,7 +168,7 @@ export default defineGkdApp({
     {
       key: 11,
       name: '放弃发真实带图评价，退出',
-      desc: '260905， || (TextView[text="继续编辑" || text="放弃打款"] < FrameLayout  <n ViewGroup + ViewGroup[clickable=true]) || (@[vid="pdd"][desc="返回"] < * +n * > [vid="tv_title"][text="发表评价" || text="发表真实评价"]) || ',
+      desc: '261005， || (TextView[text="继续编辑" || text="放弃打款"] < FrameLayout  <n ViewGroup + ViewGroup[clickable=true]) || (@[vid="pdd"][desc="返回"] < * +n * > [vid="tv_title"][text="发表评价" || text="发表真实评价"]) || ',
       rules: [
         {
           fastQuery: true,
@@ -178,9 +178,9 @@ export default defineGkdApp({
           anyMatches: [
             '(TextView[text="继续编辑"] < FrameLayout + @FrameLayout[clickable=true][visibleToUser=true] > TextView[text="放弃打款"])',
             '(TextView[text="继续编辑"] < FrameLayout < ViewGroup + @ViewGroup[clickable=true] > FrameLayout > TextView[text="退出"])',
-            '(TextView[text="继续编辑"] <<n ViewGroup +n @ViewGroup[clickable=true])',
             '(@Button[text="关闭按钮"] +n [text^="还差1人" || text^="拼单已发起"])',
             '([vid="pdd"] < @[vid="pdd"] + [vid="pdd"] > [text="评价拍摄"])',
+            'TextView[text="放弃打款"] <<n ViewGroup + @ViewGroup[clickable=true][visibleToUser=true] > FrameLayout > TextView[text.length=1][clickable=false][visibleToUser=true]',
           ],
         },
       ],

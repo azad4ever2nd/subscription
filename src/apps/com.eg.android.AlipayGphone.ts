@@ -179,8 +179,6 @@ export default defineGkdApp({
             'TextView[text="确认要离开吗？"] < View - View > Image[clickable=false][visibleToUser=true]',
             'TextView[text="立即攒下"] <n View + TextView[text.length=0][clickable=false][visibleToUser=true]',
             'View >  TextView[text="兑换成其他福利"] + TextView[clickable=false][visibleToUser=true]',
-            'View > Button[text="返回"] +n @CheckBox[checked=false][clickable=true][visibleToUser=true] + TextView[text="本月不再提示"] + Button + Button[text="继续转出"]',
-            'View > Button[text="返回"] +n CheckBox[checked=true] +     TextView[text="本月不再提示"] + Button + Button[text="继续转出"]',
             'View > TextView[text="添加会员小组件到桌面"] -n View > Image[text="BE4E7D81-3958-4F2E-9956-E6071199885F@2x"][clickable=false][visibleToUser=true]',
             'View > TextView[text="签到成功"] +n TextView[text="去完成"] + TextView[text.length=0][clickable=false][visibleToUser=true]',
             'View > TextView[text^="添加" && text$="到桌面"] - View[clickable=false] > Image[clickable=false][visibleToUser=true]',
@@ -570,15 +568,18 @@ export default defineGkdApp({
     {
       key: 31,
       name: '转账提示，不再提示',
-      desc: '260710',
+      desc: '261005',
       rules: [
         {
           resetMatch: 'match',
           actionMaximum: 1,
           activityIds:
             'com.alipay.mobile.nebulax.xriver.activity.XRiverActivity',
-          anyMatches:
+          anyMatches: [
+            'View > Button[text="返回"] +n @CheckBox[checked=false][clickable=true][visibleToUser=true] + TextView[text="本月不再提示"] + Button + Button[text="继续转出"]',
+            'View > Button[text="返回"] +n CheckBox[checked=true] +     TextView[text="本月不再提示"] + Button + Button[text="继续转出"]',
             '(View > @CheckBox[checked=false] + TextView + Button + Button[clickable=true][visibleToUser=true][text="继续转出"])',
+          ],
         },
       ],
     },
@@ -640,7 +641,6 @@ export default defineGkdApp({
             '[text="去看看"] - [text="淘宝闪购"] <<n * + [text="关闭"]',
             '[text="去转换"] + [text="仍要卖出"]',
             '[text="支付宝"] + [text="邀请你" || text="推荐你"] + [text="跳过"]',
-            '[text="暂不转出"] + [text="继续转出"]',
             '[text^="无法获取定位信息"] + [text="我知道了"]',
           ],
           actionCd: 300,
@@ -653,7 +653,7 @@ export default defineGkdApp({
     {
       key: 35,
       name: '添加神券到首页，X掉',
-      desc: '261004，fastquery=false,clickable=false,添加 闪购0.1，超级吃货卡体验版，闪购签到，闪购小程序，添加到首页，添加 生活缴费',
+      desc: '261005，fastquery=false,clickable=false,添加 排除红包卡券误点，闪购0.1，超级吃货卡体验版，闪购签到，闪购小程序，添加到首页，添加 生活缴费',
       rules: [
         {
           resetMatch: 'match',
@@ -664,6 +664,8 @@ export default defineGkdApp({
             'com.alipay.mobile.nebulax.xriver.activity.XRiverActivity$App03',
             'com.alipay.mobile.nebulax.xriver.activity.XRiverActivity$App04',
           ],
+          excludeMatches:
+            'RelativeLayout > FrameLayout[id="com.alipay.multiplatform.phone.xriver_integration:id/frameLayout_backButton"][desc="返回"] + RelativeLayout >n TextView[id="com.alipay.multiplatform.phone.xriver_integration:id/textView_title"][text="红包卡券"]',
           anyMatches: [
             'TextView[text="开心收下"] <<n View + View > View > Image[clickable=false][visibleToUser=true]',
             '@Image[clickable=false][visibleToUser=true] < View - View > View > TextView[text="开心收下"]',
@@ -795,10 +797,11 @@ export default defineGkdApp({
     {
       key: 41,
       name: '做任务领幸运星，领取奖励',
-      desc: '260906，fastquery=false，clickable=false ， 添加明天不断签提醒，签到提醒，',
+      desc: '261005，fastquery=false，clickable=false ， 添加明天不断签提醒，签到提醒，',
       rules: [
         {
           resetMatch: 'match',
+          actionCd: 800,
           activityIds: [
             'com.alipay.mobile.nebulax.xriver.activity.XRiverActivity$App01',
             'com.alipay.mobile.nebulax.xriver.activity.XRiverActivity$App02',
@@ -806,11 +809,12 @@ export default defineGkdApp({
             'com.alipay.mobile.nebulax.xriver.activity.XRiverActivity$App04',
           ],
           anyMatches: [
-            '@TextView - View > View > TextView[text="提醒我不断签"]',
+            'View > View > @TextView[clickable=false][visibleToUser=true] -  View > View > TextView[text="提醒我不断签"]',
             'TextView[text="做任务领幸运星"] +2 View > View > View > TextView[text="领取奖励"][clickable=false][visibleToUser=true]',
             'View > @TextView[text="领取签到奖励"][clickable=false][visibleToUser=true] + View[childCount=2] > Image + TextView[text.length>0]',
             '@TextView[clickable=false][visibleToUser=true] - View > TextView[text^="开启消息提醒"] + View > TextView[text="立即开启"]',
             '@Image[clickable=false][visibleToUser=false] <n View + TextView[text="取消"] + TextView[text="立即添加"]',
+            '@TextView - View > View > TextView[text="提醒我不断签"]',
           ],
         },
       ],
