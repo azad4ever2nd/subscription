@@ -6,13 +6,14 @@ export default defineGkdApp({
     {
       key: 1,
       name: '带不再提示的弹窗，X掉',
-      desc: '260910',
+      desc: '261007',
       rules: [
         {
           resetMatch: 'match',
           action: 'clickCenter',
           forcedTime: 5000,
           matchDelay: 1500,
+          actionCd: 10000,
           activityIds:
             'com.cgb.mobilebank.sit.launcher.module.main.activity.IndexActivity',
           anyMatches:
