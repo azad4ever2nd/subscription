@@ -35,5 +35,20 @@ export default defineGkdApp({
         },
       ],
     },
+    {
+      key: 3,
+      name: '复制链接',
+      desc: '261007',
+      rules: [
+        {
+          resetMatch: 'match',
+          fastQuery: true,
+          actionCd: 10000,
+          activityIds: '.ui.MainActivity',
+          matches:
+            'FrameLayout > RecyclerView > @LinearLayout[clickable=true][visibleToUser=true] > TextView[text="复制链接"][vid="md_title"]',
+        },
+      ],
+    },
   ],
 });

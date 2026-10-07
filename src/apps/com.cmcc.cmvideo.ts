@@ -76,6 +76,19 @@ export default defineGkdApp({
     },
     {
       key: 5,
+      name: '弹窗，给个赞吧，下次再说',
+      desc: '261007',
+      rules: [
+        {
+          fastQuery: true,
+          activityIds: 'com.cmvideo.capability.vod.VodActivity',
+          matches:
+            'LinearLayout > RelativeLayout > @TextView[text="下次再说"][vid="tv_cancel"][clickable=true][visibleToUser=true] + TextView[text="打个好评"][vid="tv_next"]',
+        },
+      ],
+    },
+    {
+      key: 6,
       name: '领2GB日流量，马上领取',
       desc: '260831，依赖 返回到福利中心',
       rules: [
@@ -94,7 +107,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 6,
+      key: 7,
       name: '获取验证码',
       desc: '260831，取消依赖测试，依赖 领2GB日流量，马上领取',
       rules: [
@@ -114,7 +127,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 7,
+      key: 8,
       name: '弹窗，恭喜获得2GB通用流量，好的',
       desc: '261003，添加各种抽奖类的提示，各种弹窗，添加 IDS',
       rules: [
@@ -133,7 +146,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 8,
+      key: 9,
       name: '恭喜打卡成功',
       desc: '260622',
       rules: [
@@ -147,7 +160,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 9,
+      key: 10,
       name: '开启推送通知，以后再说',
       desc: '260622',
       rules: [
@@ -162,7 +175,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 10,
+      key: 11,
       name: '广告弹窗',
       desc: '260727',
       rules: [
@@ -180,7 +193,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 11,
+      key: 12,
       name: '更新协议提示',
       desc: '260711,更新协议',
       rules: [
@@ -197,7 +210,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 12,
+      key: 13,
       name: '提示 进群，X掉',
       desc: '260719',
       rules: [
@@ -211,7 +224,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 13,
+      key: 14,
       name: '钻石会员弹窗，X掉',
       desc: '260804',
       rules: [

@@ -13,6 +13,7 @@ export default defineGkdApp({
           forcedTime: 3000,
           anyMatches: [
             '([vid="bcm_alert_dialog_content"] + * > [vid="dialog_bottom_confirm_cancel"][text="继续使用"])',
+            'ViewGroup > ImageView[vid="popup_ad_image"] + ImageView[vid="popup_close"][clickable=true][visibleToUser=true]',
             '([vid="popup_ad_image"] + [vid="popup_close"])',
           ],
           fastQuery: true,

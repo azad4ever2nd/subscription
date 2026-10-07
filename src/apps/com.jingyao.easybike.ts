@@ -290,6 +290,7 @@ export default defineGkdApp({
           resetMatch: 'match',
           action: 'clickCenter',
           forcedTime: 3000,
+          actionCd: 5000,
           activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
           excludeMatches: [
             'TextView[text="我的奖励金"] +n View >n View > TextView[text="签到"][visibleToUser=true]',
@@ -368,7 +369,6 @@ export default defineGkdApp({
       rules: [
         {
           resetMatch: 'match',
-          actionCd: 500,
           actionMaximum: 1,
           action: 'clickCenter',
           activityIds:
@@ -407,7 +407,6 @@ export default defineGkdApp({
       rules: [
         {
           resetMatch: 'match',
-          actionCd: 700,
           activityIds:
             'com.hellobike.moped.platform.offline.web.OhoRealmWebActivity',
           anyMatches: [
@@ -425,7 +424,6 @@ export default defineGkdApp({
         {
           resetMatch: 'match',
           action: 'clickCenter',
-          actionCd: 500,
           activityIds:
             'com.hellobike.moped.platform.offline.web.OhoRealmWebActivity',
           anyMatches: [
@@ -438,7 +436,7 @@ export default defineGkdApp({
     {
       key: 26,
       name: '弹窗，知道了2',
-      desc: '261005，排除 签到 和 明日再来，fastQuery=false,clickable=true，',
+      desc: '261005，添加文明出行，排除 签到 和 明日再来，fastQuery=false,clickable=true，',
       rules: [
         {
           action: 'clickCenter',
@@ -452,6 +450,7 @@ export default defineGkdApp({
           anyMatches: [
             'TextView[text="我的奖励金"] +n View >n View > TextView[text="知道了"][clickable=true][visibleToUser=true]',
             'TextView[text="我的奖励金"] +n View >n View > TextView[text="知道了"][clickable=false][visibleToUser=true]',
+            'View > View > TextView[text="我知道了"][clickable=true][visibleToUser=true]',
           ],
         },
       ],

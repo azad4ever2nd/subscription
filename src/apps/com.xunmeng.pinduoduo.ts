@@ -25,14 +25,14 @@ export default defineGkdApp({
     {
       key: 2,
       name: '积分兑无门槛券确认兑换',
-      desc: '261005，增加 排除非百亿补贴无门槛券 和 积分不足',
+      desc: '261007，增加 排除非百亿补贴无门槛券 和 积分不足',
       rules: [
         {
           anyMatches: [
             '(TextView[text*="百亿补贴无门槛券" || text$="无门槛券"] <n View + TextView[text="确认兑换"][clickable=false][visibleToUser=true])',
             'View > View > @Image[text="webp"][clickable=true][visibleToUser=true] + TextView[text="确认消耗"] +n View >  * + TextView[text!="百亿补贴无门槛券"] + TextView',
             'View > View > @Image[text="webp"][clickable=false][visibleToUser=true] + TextView[text="确认消耗"] +n View >  * + TextView[text!="百亿补贴无门槛券"] + TextView',
-            'View > View > @Image[text="webp"][visibleToUser=true] + TextView[text="积分不足 去获取更多积分吧"]',
+            'View > View > @Image[text="webp"][clickable=true][visibleToUser=true] + TextView[text="积分不足 去获取更多积分吧"]',
           ],
           actionCd: 0,
           forcedTime: 1500,

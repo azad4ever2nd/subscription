@@ -833,14 +833,15 @@ export default defineGkdApp({
     {
       key: 49,
       name: '开启消息通知',
-      desc: '260814,增加IDS',
+      desc: '261007,增加IDS',
       rules: [
         {
           resetMatch: 'match',
           fastQuery: true,
+          matchDelay: 1000,
+          forcedTime: 3000,
           anyMatches: [
             '(FrameLayout > ViewGroup > RelativeLayout > TextView[vid="title"][text="开启消息通知"] + ImageView[vid="close_btn"][clickable=true][visibleToUser=true])',
-            '([vid="title"][text="开启消息通知"] + [vid="close_btn"])',
           ],
           activityIds: [
             'cmb.pb.app.mainframe.container.PBMainActivity',

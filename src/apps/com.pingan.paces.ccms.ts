@@ -48,13 +48,15 @@ export default defineGkdApp({
     {
       key: 4,
       name: '支付会员周周领好礼,立即领取',
-      desc: '260211',
+      desc: '261007',
       rules: [
         {
           action: 'clickCenter',
           matches: ['[text="支付会员周周领好礼"] @View > [text="立即领取"]'],
           actionMaximum: 1,
-          resetMatch: 'match',
+          resetMatch: 'app',
+          matchDelay: 1500,
+          actionCd: 20000,
           activityIds: ['com.pingan.componet.hybrid.webUrl.WebUrlActivity'],
         },
       ],

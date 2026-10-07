@@ -52,7 +52,7 @@ export default defineGkdApp({
     {
       key: 4,
       name: '签到红包',
-      desc: '260929，添加删除聊天，消息通知，弹窗，领奖',
+      desc: '261007，添加 立即使用，删除聊天，消息通知，弹窗，领奖',
       rules: [
         {
           anyMatches: [
@@ -70,6 +70,7 @@ export default defineGkdApp({
             '(Image < * + * >n [text^="添加"] +n * > [text$="元宝" && text^="立即领"])',
             '(@Image < * + * >n [text="去领元宝" || text="浏览商品30秒"])',
             '(Dialog >n [text="关闭"])',
+            'View > View > @TextView[clickable=true][visibleToUser=true] - View >n TextView[text="立即使用"]',
           ],
           resetMatch: 'match',
           activityIds: [
