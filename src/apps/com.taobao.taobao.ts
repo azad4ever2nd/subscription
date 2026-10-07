@@ -56,6 +56,7 @@ export default defineGkdApp({
       rules: [
         {
           anyMatches: [
+            'View > View > Image[text="关闭"][clickable=true][visibleToUser=true]',
             'FrameLayout > FrameLayout > FrameLayout > View[desc="确认删除聊天吗？"] +n View[desc="删除"][clickable=true][visibleToUser=true]',
             'View > View > View > @Image[text="O1CN01eVP9R729P4urD3Wq4_!!6000000008059-2-tps-112-112"][clickable=true][visibleToUser=true] + TextView[text*="消息通知"] +n TextView[text="去开启"]',
             '([text="去赚元宝"] <<n * + View > [text^="O1CN01UVlufl1CzCsp8oehQ_!!6000000000151-2-gg_dtc.png_q50"])',
@@ -196,6 +197,19 @@ export default defineGkdApp({
             'com.taobao.android.tbabilitykit.pop.StdPopContainerActivity',
           matches:
             'View > View > Image[text="O1CN018F6Hlq1LXZWiBKDOs_!!6000000001309-2-tps-72-72.png_90x90q50.jpg_"][clickable=false][visibleToUser=true]',
+        },
+      ],
+    },
+    {
+      key: 13,
+      name: '弹窗，开心收下，X掉',
+      desc: '261007',
+      rules: [
+        {
+          resetMatch: 'match',
+          activityIds: 'com.taobao.search.uniform.SearchActivity',
+          matches:
+            'View > @TextView[clickable=true][visibleToUser=true] - View TextView[text="开心收下"]',
         },
       ],
     },

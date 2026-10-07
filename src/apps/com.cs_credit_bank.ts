@@ -63,13 +63,14 @@ export default defineGkdApp({
     {
       key: 5,
       name: '周五5折',
-      desc: '260426，增加跨年，布局有变，([text="5折"] +n * > [text="立即购买"])',
+      desc: '261007，增加跨年，布局有变，([text="5折"] +n * > [text="立即购买"])',
       rules: [
         {
           actionMaximum: 8,
           actionCd: 0,
           resetMatch: 'match',
           activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
+          excludeMatches: 'View > View[text="确认订单"]',
           anyMatches: [
             '([text="5折"] +n @* > [text="立即购买" || text="立即抢购"])',
             '([text="5折"] +n [text="立即购买" || text="立即抢购"])',

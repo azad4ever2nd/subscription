@@ -653,7 +653,7 @@ export default defineGkdApp({
     {
       key: 35,
       name: '添加神券到首页，X掉',
-      desc: '261005，fastquery=false,clickable=false,添加 排除红包卡券误点，闪购0.1，超级吃货卡体验版，闪购签到，闪购小程序，添加到首页，添加 生活缴费',
+      desc: '261007，fastquery=false,clickable=false,添加 排除红包卡券误点，闪购0.1，超级吃货卡体验版，闪购签到，闪购小程序，添加到首页，添加 生活缴费',
       rules: [
         {
           resetMatch: 'match',
@@ -670,6 +670,7 @@ export default defineGkdApp({
             'TextView[text="开心收下"] <<n View + View > View > Image[clickable=false][visibleToUser=true]',
             '@Image[clickable=false][visibleToUser=true] < View - View > View > TextView[text="开心收下"]',
             'View > @TextView - View >5 TextView[text="开心收下"]',
+            'View > @View[childCount=1][clickable=false][visibleToUser=true] +2 View >n TextView[text="去使用"]',
             'View[childCount=2] > @TextView[clickable=false][visibleToUser=true] - View > View > View >n TextView[text="去使用"] - View',
             '@TextView[clickable=false][visibleToUser=true] < View  + TextView + View > View > View > View > TextView[text="去使用"]',
             '@TextView[clickable=false][visibleToUser=true] - View > View > View > View > View > TextView[text="去使用"]',
@@ -692,7 +693,6 @@ export default defineGkdApp({
             'View > @Image[clickable=false][visibleToUser=true] +2 TextView[text="去处理"] + TextView[text="暂不处理"]',
             'View > @TextView[text="领取签到奖励"][clickable=false][visibleToUser=true] + View > Image + TextView[text.length>0]',
             'View > TextView[text*="添加到首页"] +n @TextView[text="取消"][clickable=false][visibleToUser=true] + TextView[text="添加到首页"]',
-            'View > TextView[text*="添加" && text*="首页" && text*="红包"] +n TextView[text="取消"] + TextView[clickable=false][visibleToUser=true][text="添加到首页"]',
             'View > View > View + TextView[text="去签到"][clickable=false][visibleToUser=true]',
             '[text^="完成"] <<n View + View > TextView[text="领取奖励"][clickable=false][visibleToUser=true]',
             '@TextView <n * + [text="取消"] + [text="立即添加"]',

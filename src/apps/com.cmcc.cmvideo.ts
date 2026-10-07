@@ -80,6 +80,7 @@ export default defineGkdApp({
       desc: '261007',
       rules: [
         {
+          resetMatch: 'match',
           fastQuery: true,
           activityIds: 'com.cmvideo.capability.vod.VodActivity',
           matches:

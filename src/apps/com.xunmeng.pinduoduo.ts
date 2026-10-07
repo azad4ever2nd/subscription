@@ -317,13 +317,14 @@ export default defineGkdApp({
     {
       key: 20,
       name: '如何解锁，去首页1',
-      desc: '260929,clickable=false，添加 提前锁定，神券',
+      desc: '261007,clickable=false，添加 提前锁定，神券',
       rules: [
         {
           resetMatch: 'match',
           action: 'click',
           activityIds: 'com.xunmeng.pinduoduo.activity.NewPageActivity',
           anyMatches: [
+            'View > @Image[text="webp"][clickable=false][visibleToUser=true] -n View > TextView[text^="好友已加入队伍"]',
             '(View > View > View > View > TextView[text^="恭喜提前锁定"] +n TextView[text="开心收下"][clickable=false][visibleToUser=true])',
             '(View > TextView[text="如何解锁?" || text="如何解锁点亮?"] + TextView[clickable=false][text="去首页"])',
             'View >  TextView[text*="点抢最高16元无门槛券"] + @View[clickable=false][visibleToUser=true] > TextView[text="立即抽奖"]',
