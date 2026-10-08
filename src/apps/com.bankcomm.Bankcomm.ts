@@ -292,10 +292,12 @@ export default defineGkdApp({
     {
       key: 20,
       name: '碳星任务，点击签到',
-      desc: '261003，添加 签到成功clickable=true',
+      desc: '261008，添加 签到成功clickable=true',
       rules: [
         {
           action: 'clickCenter',
+          actionCd: 750,
+          forcedTime: 3000,
           anyMatches: [
             '([text="碳星任务"] [text="点击签到"])',
             '([text="+1"] + [text="点击签到"])',
@@ -303,7 +305,7 @@ export default defineGkdApp({
             'View > View > TextView[text="恭喜您签到成功"] +n Image[text="我知道了"][clickable=true][visibleToUser=true]',
             '([text="恭喜您签到成功"] +n [text="我知道了"])',
           ],
-          actionMaximum: 3,
+          actionMaximum: 33,
           resetMatch: 'match',
           activityIds: 'com.bankcomm.module.biz.webcontainer.BCMHtml5Activity',
         },

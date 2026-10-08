@@ -653,10 +653,11 @@ export default defineGkdApp({
     {
       key: 35,
       name: '添加神券到首页，X掉',
-      desc: '261007，fastquery=false,clickable=false,添加 排除红包卡券误点，闪购0.1，超级吃货卡体验版，闪购签到，闪购小程序，添加到首页，添加 生活缴费',
+      desc: '261008，fastquery=false,clickable=false,添加 添加明天不断签提醒，签到提醒，做任务领幸运星，领取奖励，排除红包卡券误点，闪购0.1，超级吃货卡体验版，闪购签到，闪购小程序，添加到首页，添加 生活缴费',
       rules: [
         {
           resetMatch: 'match',
+          actionCd: 800,
           forcedTime: 3000,
           activityIds: [
             'com.alipay.mobile.nebulax.xriver.activity.XRiverActivity$App01',
@@ -698,12 +699,59 @@ export default defineGkdApp({
             '@TextView <n * + [text="取消"] + [text="立即添加"]',
             'View > View > TextView[text="立即抽-bak闪购抽奖"][clickable=false][visibleToUser=true]',
             'TextView[text="回免单首页看看"][clickable=false][visibleToUser=true] < View + TextView[clickable=false][visibleToUser=true]',
+            'TextView["下方为36转移过来的规则  添加明天不断签提醒，签到提醒，做任务领幸运星，领取奖励"]',
+            'View > View > @TextView[clickable=false][visibleToUser=true] -  View > View > TextView[text="提醒我不断签"]',
+            'TextView[text="做任务领幸运星"] +2 View > View > View > TextView[text="领取奖励"][clickable=false][visibleToUser=true]',
+            'View > @TextView[text="领取签到奖励"][clickable=false][visibleToUser=true] + View[childCount=2] > Image + TextView[text.length>0]',
+            '@TextView[clickable=false][visibleToUser=true] - View > TextView[text^="开启消息提醒"] + View > TextView[text="立即开启"]',
+            '@Image[clickable=false][visibleToUser=false] <n View + TextView[text="取消"] + TextView[text="立即添加"]',
+            '@TextView - View > View > TextView[text="提醒我不断签"]',
           ],
         },
       ],
     },
     {
       key: 36,
+      name: '历史搜索，闪购免单',
+      desc: '261008，fastquery=false，clickable=false ，延时10秒 ',
+      rules: [
+        {
+          resetMatch: 'match',
+          actionCd: 15000,
+          activityIds: [
+            'com.alipay.mobile.nebulax.xriver.activity.XRiverActivity$App01',
+            'com.alipay.mobile.nebulax.xriver.activity.XRiverActivity$App02',
+            'com.alipay.mobile.nebulax.xriver.activity.XRiverActivity$App03',
+            'com.alipay.mobile.nebulax.xriver.activity.XRiverActivity$App04',
+          ],
+          anyMatches: [
+            'View > View > TextView[text="历史搜索"] +n View >n  TextView[text="闪购免单"][clickable=false][visibleToUser=true]',
+          ],
+        },
+      ],
+    },
+    {
+      key: 37,
+      name: '占位37',
+      desc: 'D,261008，fastquery=true，clickable=true',
+      rules: [
+        {
+          resetMatch: 'match',
+          actionCd: 15000,
+          activityIds: [
+            'com.alipay.mobile.nebulax.xriver.activity.XRiverActivity$App01',
+            'com.alipay.mobile.nebulax.xriver.activity.XRiverActivity$App02',
+            'com.alipay.mobile.nebulax.xriver.activity.XRiverActivity$App03',
+            'com.alipay.mobile.nebulax.xriver.activity.XRiverActivity$App04',
+          ],
+          anyMatches: [
+            'View > View > TextView[text="历史搜索"] +n View >n  TextView[text="闪购免单"][clickable=false][visibleToUser=true]',
+          ],
+        },
+      ],
+    },
+    {
+      key: 38,
       name: '卡包删除卡，取消',
       desc: '260705',
       rules: [
@@ -718,7 +766,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 37,
+      key: 39,
       name: '通知管理，不用',
       desc: '260304',
       rules: [
@@ -735,7 +783,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 38,
+      key: 40,
       name: '碰一碰，入会并支付',
       desc: '251228',
       rules: [
@@ -751,7 +799,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 39,
+      key: 41,
       name: '添加到首页，取消',
       desc: '260829',
       rules: [
@@ -767,7 +815,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 40,
+      key: 42,
       name: '开启地理位置权限',
       desc: '260929，增加IDS，[id="com.alipay.mobile.antui:id/title_txt_2"][text="开启位置权限并允许支付宝获取你的地理位置"]',
       rules: [
@@ -794,33 +842,9 @@ export default defineGkdApp({
         },
       ],
     },
+
     {
-      key: 41,
-      name: '做任务领幸运星，领取奖励',
-      desc: '261005，fastquery=false，clickable=false ， 添加明天不断签提醒，签到提醒，',
-      rules: [
-        {
-          resetMatch: 'match',
-          actionCd: 800,
-          activityIds: [
-            'com.alipay.mobile.nebulax.xriver.activity.XRiverActivity$App01',
-            'com.alipay.mobile.nebulax.xriver.activity.XRiverActivity$App02',
-            'com.alipay.mobile.nebulax.xriver.activity.XRiverActivity$App03',
-            'com.alipay.mobile.nebulax.xriver.activity.XRiverActivity$App04',
-          ],
-          anyMatches: [
-            'View > View > @TextView[clickable=false][visibleToUser=true] -  View > View > TextView[text="提醒我不断签"]',
-            'TextView[text="做任务领幸运星"] +2 View > View > View > TextView[text="领取奖励"][clickable=false][visibleToUser=true]',
-            'View > @TextView[text="领取签到奖励"][clickable=false][visibleToUser=true] + View[childCount=2] > Image + TextView[text.length>0]',
-            '@TextView[clickable=false][visibleToUser=true] - View > TextView[text^="开启消息提醒"] + View > TextView[text="立即开启"]',
-            '@Image[clickable=false][visibleToUser=false] <n View + TextView[text="取消"] + TextView[text="立即添加"]',
-            '@TextView - View > View > TextView[text="提醒我不断签"]',
-          ],
-        },
-      ],
-    },
-    {
-      key: 42,
+      key: 43,
       name: '弹窗，团购申请发送消息，取消 或 不再询问',
       desc: '260913,添加 暂不订阅',
       rules: [
@@ -838,7 +862,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 43,
+      key: 44,
       name: '弹窗，开启地理位置权限，X掉',
       desc: '260915',
       rules: [
@@ -856,7 +880,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 44,
+      key: 45,
       name: '弹窗，淘票票群聊，X掉',
       desc: '261004',
       rules: [

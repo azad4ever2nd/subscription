@@ -37,13 +37,12 @@ export default defineGkdApp({
     {
       key: 3,
       name: '新版本',
-      desc: '260924',
+      desc: '261008',
       rules: [
         {
           anyMatches: [
             'RelativeLayout > TextView[vid="tv_title"][text*="新版本"] + ImageView[vid="tv_cancel"][clickable=true][visibleToUser=true]',
             '[vid="tv_title"][text*="新版本"] + [vid="tv_cancel"][clickable=true][visibleToUser=true]',
-            '[vid="tv_title"][text*="新版本"] + [vid="tv_cancel"]',
           ],
           action: 'clickCenter',
           fastQuery: true,

@@ -210,6 +210,23 @@ export default defineGkdApp({
     },
     {
       key: 13,
+      name: '弹窗，回忆篇奖励，我知道了 或 X掉',
+      desc: '261008，1.我知道了，2.退出，无ID，无文字',
+      rules: [
+        {
+          action: 'clickCenter',
+          resetMatch: 'match',
+          forcedTime: 3000,
+          activityIds: 'com.dianping.nova.picasso.DPPicassoBoxActivity',
+          anyMatches: [
+            'FrameLayout[childCount=2] > @ImageView[clickable=true][visibleToUser=true] - FrameLayout[childCount=2] > @FrameLayout[childCount=1][clickable=true][visibleToUser=true] > ImageView',
+            'FrameLayout[childCount=2] > @ImageView[clickable=true][visibleToUser=true] - FrameLayout[childCount=2] > FrameLayout[childCount=1][clickable=true][visibleToUser=true] > ImageView',
+          ],
+        },
+      ],
+    },
+    {
+      key: 14,
       name: '弹窗，开启推送通知，X掉',
       desc: '260927',
       rules: [

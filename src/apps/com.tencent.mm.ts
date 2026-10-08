@@ -1198,11 +1198,12 @@ export default defineGkdApp({
     {
       key: 55,
       name: '广州，乐享品质旅游 ，共赴美好山河',
-      desc: '260516，五折演出券',
+      desc: '261008，排除 提现券页面，五折演出券',
       rules: [
         {
           resetMatch: 'match',
           actionCd: 0,
+          excludeMatches: 'TextView[text*="提现券" || text="提现服务费折扣卡"]',
           activityIds: [
             'com.tencent.mm.plugin.appbrand.ui.AppBrandUI0',
             'com.tencent.mm.plugin.appbrand.ui.AppBrandUI1',
@@ -1418,7 +1419,7 @@ export default defineGkdApp({
     {
       key: 63,
       name: '活动未开始，我知道了',
-      desc: '261001，添加 红色打卡，宁波，朴朴，动卡空间，内蒙工行，贵阳工行，工行余姚，湘约工行，贵州工行，已参加过',
+      desc: '261008，添加 红色打卡，宁波，朴朴，动卡空间，内蒙工行，贵阳工行，工行余姚，湘约工行，贵州工行，已参加过',
       rules: [
         {
           resetMatch: 'match',
@@ -1454,9 +1455,14 @@ export default defineGkdApp({
             'View >  View > View > TextView[text="来晚了，奖励派完了"] + View + TextView[clickable=true][visibleToUser=true]',
             'TextView[text^="今日名额已尽" || text="今日名额已尽，明日九点开放。"] < View + View + TextView[clickable=true][visibleToUser=true]',
             'View > TextView[text="该商品已售罄"] + TextView[text="我知道了"][clickable=true][visibleToUser=true]',
+            'View > View > @TextView[clickable=true][visibleToUser=true] - TextView - View >n TextView[text^="当前奖池已领完"]',
             'View > View > TextView[text^="奖品已领完"] + TextView[text="确定"][clickable=true][visibleToUser=true]',
             'WebView[text^="湘约工行"] > View > View > View > View > @TextView[clickable=true][visibleToUser=true] - View > View > TextView[text="目前活动权益已领完"]',
             'View > View >  @TextView[clickable=true][visibleToUser=true] -n View >  TextView[text^="您的领取机会已用完"]',
+            'View > View > @TextView[clickable=true][visibleToUser=true] - TextView - View >n TextView[text^="抽奖机会不足"]',
+            'View > View > @TextView[clickable=true][visibleToUser=true] -n View >n TextView[text^="您已经参与过了"]',
+            'View > View > @TextView[clickable=true][visibleToUser=true] -n View >n TextView[text^="您的抽奖次数不足"]',
+            'View > View > @TextView[clickable=true][visibleToUser=true] -n View > TextView[text^="您已经参与过了" || text*="下次活动记得来参加呀"]',
             'View > View > TextView[text="每人1次参与机会"] + TextView[text="确定"][clickable=true][visibleToUser=true]',
             'TextView[text^="已参与"] < View +2 @TextView[clickable=true][visibleToUser=true] - View > TextView[text="确认"]',
             '@TextView[clickable=true][visibleToUser=true] - TextView[clickable=true][visibleToUser=true] - View >n  TextView[text^="已参与"]',

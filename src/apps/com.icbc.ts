@@ -140,23 +140,24 @@ export default defineGkdApp({
     {
       key: 9,
       name: '各种中奖',
-      desc: '260605，添加未中奖，数字藏品中奖',
+      desc: '261008，添加 勾选，添加未中奖，数字藏品中奖',
       rules: [
         {
           resetMatch: 'match',
           action: 'clickCenter',
           activityIds: 'com.icbc.activity.web.ICBCWebView',
           anyMatches: [
-            '(View > View > @Button[clickable=true][text="关闭"] + TextView[text="恭喜获得"])',
-            '(TextView[text^="不要灰心" || text="差一点就中奖了"] <n View + View > Image[text="关闭按钮"][clickable=false])',
-            '(Dialog > TextView[text*="日前领取" || text$="过期未领将失效"] + Button[text="立即领取"])',
-            '(Dialog > View > Button[text="完成"])',
-            '([text="微信立减金" || text="支付宝红包"] + [text="立即领取"] + [text="关闭"])',
-            '([text="很遗憾，未中奖"] + [text="关闭"])',
-            '([text="恭喜中奖了"] <<n * + * > [text="关闭"])',
-            '([text="恭喜您中奖！"] + [text="关闭"])',
-            '([text^="奖品已发放至"] < * + [text="确认"])',
-            '([text="去兑好物"] + [text="开心收下"])',
+            'View > View > @Button[clickable=true][text="关闭"] + TextView[text="恭喜获得"]',
+            'TextView[text^="不要灰心" || text="差一点就中奖了"] <n View + View > Image[text="关闭按钮"][clickable=false]',
+            'Dialog > TextView[text*="日前领取" || text$="过期未领将失效"] + Button[text="立即领取"]',
+            'Dialog > View > Button[text="完成"]',
+            '[text="微信立减金" || text="支付宝红包"] + [text="立即领取"] + [text="关闭"]',
+            '[text="很遗憾，未中奖"] + [text="关闭"]',
+            '[text="恭喜中奖了"] <<n * + * > [text="关闭"]',
+            '[text="恭喜您中奖！"] + [text="关闭"]',
+            '[text^="奖品已发放至"] < * + [text="确认"]',
+            '[text="去兑好物"] + [text="开心收下"]',
+            'WebView > CheckBox[checked=false][visibleToUser=true][clickable=true]',
           ],
         },
       ],
@@ -231,6 +232,7 @@ export default defineGkdApp({
         },
       ],
     },
+
     {
       key: 15,
       name: '浇水成功',
@@ -246,6 +248,21 @@ export default defineGkdApp({
     },
     {
       key: 16,
+      name: '弹窗，评价，下次再说',
+      desc: '261008，fastQuery=true,clickable=true',
+      rules: [
+        {
+          resetMatch: 'match',
+          fastQuery: true,
+          action: 'clickCenter',
+          activityIds: '.activity.web.ICBCWebView',
+          matches:
+            'LinearLayout > TextView[text*="评价"] +n TextView[text="下次再说"][vid="tv_dismiss"][clickable=true][visibleToUser=true]',
+        },
+      ],
+    },
+    {
+      key: 17,
       name: '前往微信浇水',
       desc: '260615',
       rules: [
@@ -264,7 +281,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 17,
+      key: 18,
       name: '前往微信再浇一次后，关闭',
       desc: '260601',
       rules: [
@@ -278,7 +295,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 18,
+      key: 19,
       name: '恭喜完成任务，去看看',
       desc: '260904,整合14',
       rules: [
@@ -299,7 +316,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 19,
+      key: 20,
       name: '场景号取关',
       desc: '',
       rules: [
@@ -312,7 +329,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 20,
+      key: 21,
       name: '分享到，微信好友',
       desc: '260218',
       rules: [
@@ -327,11 +344,12 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 21,
+      key: 22,
       name: '弹窗，开启推送通知，X掉',
       desc: '260930',
       rules: [
         {
+          resetMatch: 'match',
           fastQuery: true,
           action: 'clickCenter',
           activityIds: '.oisc.UI.mainPage.OISCMainActivity',

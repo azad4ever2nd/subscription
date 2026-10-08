@@ -148,7 +148,6 @@ export default defineGkdApp({
           anyMatches: [
             '(ListView > View > @Image[clickable=false][visibleToUser=true][text="VK8fr6+sLwGnB552X3pvyv71EBhCUCcrVq1euHOf09gevPFGYnvp1uJmTJr399ksvPdXrcL8DlWgBfyVLJ3IAAAAASUVORK5CYII="] + TextView[text^="绿色"])',
             '(ListView > @View[clickable=true][visibleToUser=true] > Image[clickable=false][visibleToUser=true][text="0OtyvnGzoNS+5EoIAAAAASUVORK5CYII="] +n TextView[text$="电子账单" || text="动卡空间自助还款"])',
-            '(@Image[clickable=false][visibleToUser=true][text="0OtyvnGzoNS+5EoIAAAAASUVORK5CYII=bak"] +n TextView[text$="电子账单" || text="动卡空间自助还款"])',
           ],
         },
       ],
