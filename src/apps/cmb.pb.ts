@@ -12,7 +12,7 @@ export default defineGkdApp({
         {
           anyMatches:
             '([text="（周三5折）哈根达斯50元代金券" || text="（周三5折）肯德基20元代金券" || text="（周三5折）喜茶20元代金券" ||  text="（周三5折）必胜客50元代金券"] +n * > [text*="立即抢购"])',
-          actionCd: 300,
+          actionCd: 500,
           resetMatch: 'match',
           action: 'clickCenter',
           activityIds:

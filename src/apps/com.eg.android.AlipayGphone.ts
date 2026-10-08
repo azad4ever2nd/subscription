@@ -699,7 +699,7 @@ export default defineGkdApp({
             '@TextView <n * + [text="取消"] + [text="立即添加"]',
             'View > View > TextView[text="立即抽-bak闪购抽奖"][clickable=false][visibleToUser=true]',
             'TextView[text="回免单首页看看"][clickable=false][visibleToUser=true] < View + TextView[clickable=false][visibleToUser=true]',
-            'TextView["下方为36转移过来的规则  添加明天不断签提醒，签到提醒，做任务领幸运星，领取奖励"]',
+            'TextView[text="下方为36转移过来的规则  添加明天不断签提醒，签到提醒，做任务领幸运星，领取奖励"]',
             'View > View > @TextView[clickable=false][visibleToUser=true] -  View > View > TextView[text="提醒我不断签"]',
             'TextView[text="做任务领幸运星"] +2 View > View > View > TextView[text="领取奖励"][clickable=false][visibleToUser=true]',
             'View > @TextView[text="领取签到奖励"][clickable=false][visibleToUser=true] + View[childCount=2] > Image + TextView[text.length>0]',
