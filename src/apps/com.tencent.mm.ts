@@ -1439,6 +1439,7 @@ export default defineGkdApp({
             'com.tencent.mm.plugin.appbrand.ui.AppBrandPluginUI',
           ],
           anyMatches: [
+            'WebView > View > TextView[text="立即签到"][clickable=false][visibleToUser=true]',
             'WebView > View > View > View > View > @TextView[clickable=true][visibleToUser=true] - View > TextView[text="立即前往"]',
             'View > View > TextView[text="活动9:00开始"] + TextView[text="确定"][clickable=true][visibleToUser=true]',
             'TextView[clickable=true][visibleToUser=true] - @TextView[clickable=true][visibleToUser=true] - View >n TextView[text="每天上午9:00开始"]',
@@ -1755,6 +1756,33 @@ export default defineGkdApp({
     },
     {
       key: 74,
+      name: '活动，签到',
+      desc: '261009，限1次',
+      rules: [
+        {
+          actionCd: 5000,
+          actionMaximum: 1,
+          resetMatch: 'match',
+          matches:
+            'TextView[text="活动专区"] +n View[clickable=false][visibleToUser=true] > @View[clickable=false][visibleToUser=true] > TextView[text="签到打卡"] + TextView[text="签到得积分"]',
+          activityIds: [
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI0',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI1',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI2',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI3',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI4',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI00',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI01',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI02',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI03',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI04',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandPluginUI',
+          ],
+        },
+      ],
+    },
+    {
+      key: 75,
       name: '自动登录该设备',
       desc: '260804',
       rules: [
@@ -1767,7 +1795,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 75,
+      key: 76,
       name: '同程抢单，慎用',
       desc: '260926',
       rules: [
