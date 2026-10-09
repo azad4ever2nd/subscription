@@ -91,6 +91,19 @@ export default defineGkdApp({
     },
     {
       key: 6,
+      name: '弹窗，惊喜降临，X掉',
+      desc: '261009',
+      rules: [
+        {
+          resetMatch: 'match',
+          activityIds: 'com.jd.lib.ttt.page.TTTMultiPageActivity',
+          matches:
+            'ViewGroup > TextView[text="开心收下"] + @FrameLayout[clickable=true][visibleToUser=true] > ImageView[desc="关闭"]',
+        },
+      ],
+    },
+    {
+      key: 7,
       name: '下单后抽奖',
       desc: '',
       rules: [
@@ -105,7 +118,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 7,
+      key: 8,
       name: '领金豆页面的幸运奖励',
       desc: '251119',
       rules: [
@@ -118,7 +131,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 8,
+      key: 9,
       name: '通知权限未开启',
       desc: '251123',
       rules: [
@@ -133,7 +146,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 9,
+      key: 10,
       name: '定位提示',
       desc: '260831，添加 金条额度更新',
       rules: [
@@ -148,7 +161,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 10,
+      key: 11,
       name: '签到完成返回',
       desc: '',
       rules: [
@@ -162,7 +175,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 11,
+      key: 12,
       name: '开启刷脸支付',
       desc: '260310',
       rules: [
@@ -179,7 +192,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 12,
+      key: 13,
       name: '支付完后提示开启积分当钱花，X掉',
       desc: '260502',
       rules: [
@@ -194,7 +207,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 13,
+      key: 14,
       name: '订单列表，未付款取消的订单，删除',
       desc: '260831',
       rules: [
@@ -209,7 +222,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 14,
+      key: 15,
       name: '确认删除该订单？，删除',
       desc: '260710',
       rules: [
@@ -224,7 +237,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 15,
+      key: 16,
       name: '去开启通知，X掉',
       desc: '260726',
       rules: [
@@ -237,7 +250,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 16,
+      key: 17,
       name: '开启通知（物流）',
       desc: '260726,添加物流，促销，消息通知',
       rules: [
@@ -254,7 +267,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 17,
+      key: 18,
       name: '京东秒送1分够',
       desc: '251218',
       rules: [
@@ -266,7 +279,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 18,
+      key: 19,
       name: '外卖整点抢10-10',
       desc: '260425，可提前测出ID',
       rules: [
@@ -279,7 +292,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 19,
+      key: 20,
       name: '秒杀自提一分购',
       desc: '260118',
       rules: [
@@ -291,7 +304,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 20,
+      key: 21,
       name: '下单后抽奖有金豆，立即领取',
       desc: '260507，		  actionMaximum:2,',
       rules: [
@@ -308,7 +321,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 21,
+      key: 22,
       name: '补贴价0.01，立即购买',
       desc: '260118',
       rules: [
@@ -321,7 +334,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 22,
+      key: 23,
       name: '补贴价0.01，去抢购',
       desc: '260118',
       rules: [
