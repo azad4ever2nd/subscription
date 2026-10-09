@@ -140,7 +140,7 @@ export default defineGkdApp({
     },
     {
       key: 9,
-      name: '开启悬浮窗权限',
+      name: '弹窗，开启直播悬浮窗，暂不1',
       desc: '',
       rules: [
         {
@@ -155,14 +155,15 @@ export default defineGkdApp({
     },
     {
       key: 10,
-      name: '商品页面直播提示',
-      desc: '',
+      name: '弹窗，开启直播悬浮窗，暂不2',
+      desc: '261009',
       rules: [
         {
           fastQuery: true,
           resetMatch: 'match',
-          matches:
-            '[text="开启直播悬浮窗"][vid="title"] +2 * > [vid="positive"][text="暂不"]',
+          anyMatches: [
+            'LinearLayout > TextView[text="开启直播悬浮窗"] +n LinearLayout > @TextView[text="暂不"][clickable=true][visibleToUser=true] + TextView[text="开启"][clickable=true]',
+          ],
           activityIds: 'com.taobao.taolive.sdk.permisson.PermissionActivity',
         },
       ],

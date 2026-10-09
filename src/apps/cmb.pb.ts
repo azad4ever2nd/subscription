@@ -832,6 +832,23 @@ export default defineGkdApp({
     },
     {
       key: 49,
+      name: '弹窗，指数投资投资，浏览并集卡',
+      desc: '261009，添加 开心收下',
+      rules: [
+        {
+          resetMatch: 'match',
+          action: 'clickCenter',
+          activityIds:
+            '.app.h5container.webviewcontainer.PBWebContainerActivity',
+          anyMatches: [
+            'Dialog > View > View > TextView[text="浏览并集卡"][clickable=true][visibleToUser=true]',
+            'Dialog >n View > TextView[text="开心收下" || text="浏览并集卡"][clickable=true][visibleToUser=true]',
+          ],
+        },
+      ],
+    },
+    {
+      key: 50,
       name: '开启消息通知',
       desc: '261007,增加IDS',
       rules: [
@@ -851,7 +868,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 50,
+      key: 51,
       name: '资讯分享任务，微信好友',
       desc: '260706，clickable=false',
       rules: [
@@ -867,7 +884,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 51,
+      key: 52,
       name: '弹窗，月月领好好，继续做任务 或 X掉',
       desc: '260917',
       rules: [

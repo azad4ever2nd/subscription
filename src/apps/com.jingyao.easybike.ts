@@ -22,14 +22,16 @@ export default defineGkdApp({
     {
       key: 2,
       name: '确认开锁',
-      desc: '261001',
+      desc: '261009',
       rules: [
         {
           resetMatch: 'match',
+          action: 'clickCenter',
           activityIds:
             'com.hellobike.flutter.platform.android.flutterboost.FlutterHostFragmentActivity',
           anyMatches: [
-            'View > View > View > ImageView[desc="确认开锁"][clickable=true][visibleToUser=true]',
+            'ImageView[desc="确认开锁"][clickable=true][visibleToUser=true] -n View  >  View[desc*="碳积分要过期" && desc*="去领取"][clickable=true][visibleToUser=true]',
+            'View > View > ImageView[desc="确认开锁"][clickable=true][visibleToUser=true]',
             '[desc="骑行卡" || desc="主题卡"] <n * +n [desc="确认开锁"]',
           ],
         },
@@ -189,6 +191,7 @@ export default defineGkdApp({
         {
           resetMatch: 'match',
           forcedTime: 3000,
+          actionCd: 2000,
           activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
           anyMatches: [
             'TextView[text="我的奖励金"] +n View >n View > TextView[text="签到"][clickable=true][visibleToUser=true]',
@@ -290,7 +293,7 @@ export default defineGkdApp({
           resetMatch: 'match',
           action: 'clickCenter',
           forcedTime: 3000,
-          actionCd: 5000,
+          actionCd: 3000,
           activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
           excludeMatches: [
             'TextView[text="我的奖励金"] +n View >n View > TextView[text="签到"][visibleToUser=true]',
@@ -407,6 +410,8 @@ export default defineGkdApp({
       rules: [
         {
           resetMatch: 'match',
+          actionCd: 2000,
+          forcedTime: 3000,
           activityIds:
             'com.hellobike.moped.platform.offline.web.OhoRealmWebActivity',
           anyMatches: [
@@ -441,6 +446,7 @@ export default defineGkdApp({
         {
           action: 'clickCenter',
           resetMatch: 'match',
+          actionCd: 3000,
           activityIds:
             'com.hellobike.moped.platform.offline.web.OhoRealmWebActivity',
           excludeMatches: [

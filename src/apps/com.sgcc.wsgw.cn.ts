@@ -36,7 +36,7 @@ export default defineGkdApp({
       rules: [
         {
           actionCd: 0,
-          matchDelay: 3000,
+          matchDelay: 6000,
           forcedTime: 10000,
           resetMatch: 'match',
           matchRoot: true,
@@ -88,18 +88,15 @@ export default defineGkdApp({
     {
       key: 6,
       name: '签到多少天抽奖',
-      desc: '260922',
+      desc: '261009',
       rules: [
         {
           resetMatch: 'match',
-          matchDelay: 1000,
+          matchDelay: 8000,
           forcedTime: 10000,
           activityIds: 'com.sgcc.wsgw.mainbundle.ElectricTitleActivity',
           anyMatches: [
-            '(WebView > View > View > View > View > View > TextView[text^="抽中" && text$="个签到金"] + TextView[clickable=false][visibleToUser=true])',
-            '(WebView > View > View > View > View > View > TextView[text^="抽中" && text$="个签到金"] + TextView[clickable=true][visibleToUser=true])',
-            '(View > View > TextView[text^="抽中" && text$="个签到金"] + TextView[text.length=0][clickable=false][visibleToUser=true] )',
-            '(View > View > TextView[text^="抽中" && text$="签到金"] + TextView[clickable=true][visibleToUser=true])',
+            'View > View > TextView[text^="抽中" && text$="个签到金"] + TextView[text.length=0][visibleToUser=true]',
           ],
         },
       ],
