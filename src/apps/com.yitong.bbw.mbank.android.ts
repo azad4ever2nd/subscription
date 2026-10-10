@@ -37,15 +37,17 @@ export default defineGkdApp({
     {
       key: 3,
       name: '弹窗，签到成功获得立减金，X掉',
-      desc: '260919',
+      desc: '261010',
       rules: [
         {
           resetMatch: 'match',
           action: 'clickCenter',
           forcedTime: 3000,
           activityIds: 'com.yitong.mobile.biz.h5.container.WebViewActivity',
-          matches:
+          anyMatches: [
+            '@View[clickable=true][visibleToUser=true] > TextView + View > View[id="pop"] > TextView[text="恭喜获得"] + TextView[text="2.88元"] + TextView[text*="我的奖品"]',
             '@View[id="portal2"][clickable=true][visibleToUser=true] > View > View[id="pop"] > TextView[text="可去\\"我的奖品\\"兑换"]',
+          ],
         },
       ],
     },
