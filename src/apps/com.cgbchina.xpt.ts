@@ -24,12 +24,13 @@ export default defineGkdApp({
     {
       key: 2,
       name: '发现新版本，稍后再说',
-      desc: '260926',
+      desc: '261010',
       rules: [
         {
           fastQuery: true,
           resetMatch: 'match',
           matchDelay: 1000,
+          forcedTime: 3000,
           activityIds:
             'com.cgb.mobilebank.sit.launcher.module.main.activity.IndexActivity',
           anyMatches: [

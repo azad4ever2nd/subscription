@@ -6,20 +6,6 @@ export default defineGkdApp({
   groups: [
     {
       key: 1,
-      name: '首面广告',
-      desc: '',
-      rules: [
-        {
-          resetMatch: 'match',
-          fastQuery: true,
-          activityIds:
-            'com.cmbchina.ccd.pluto.cmbActivity.o2oMealTicket.activity.cmbBVAXA85',
-          matches: '[vid="advertise_iv"] +2 [vid="advertise_close_img"]',
-        },
-      ],
-    },
-    {
-      key: 2,
       name: '弹窗2',
       desc: '260313，添加开启消息通知',
       rules: [
@@ -36,7 +22,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 3,
+      key: 2,
       name: '发现新版本',
       desc: '260313',
       rules: [
@@ -50,6 +36,21 @@ export default defineGkdApp({
       ],
     },
     {
+      key: 3,
+      name: '首面广告',
+      desc: '',
+      rules: [
+        {
+          resetMatch: 'match',
+          fastQuery: true,
+          activityIds:
+            'com.cmbchina.ccd.pluto.cmbActivity.o2oMealTicket.activity.cmbBVAXA85',
+          matches: '[vid="advertise_iv"] +2 [vid="advertise_close_img"]',
+        },
+      ],
+    },
+
+    {
       key: 4,
       name: '周三5折列表',
       desc: '',
@@ -57,6 +58,7 @@ export default defineGkdApp({
         {
           resetMatch: 'match',
           actionCd: 0,
+          forcedTime: 3000,
           fastQuery: true,
           activityIds:
             'com.cmbchina.ccd.pluto.cmbActivity.o2oMealTicket.activity.cmbTPSREK',
@@ -73,6 +75,7 @@ export default defineGkdApp({
         {
           resetMatch: 'match',
           actionCd: 0,
+          forcedTime: 3000,
           fastQuery: true,
           activityIds:
             'com.cmbchina.ccd.pluto.cmbActivity.o2oMealTicket.activity.cmb57XONQ',
@@ -100,7 +103,7 @@ export default defineGkdApp({
     {
       key: 7,
       name: '周三5折喜茶',
-      desc: '',
+      desc: 'D，',
       rules: [
         {
           actionCd: 0,
@@ -116,7 +119,7 @@ export default defineGkdApp({
     {
       key: 8,
       name: '周三5折肯德基',
-      desc: '',
+      desc: 'D，',
       rules: [
         {
           actionCd: 0,
@@ -132,7 +135,7 @@ export default defineGkdApp({
     {
       key: 9,
       name: '周三5折哈根达斯',
-      desc: '',
+      desc: 'D，',
       rules: [
         {
           actionCd: 0,

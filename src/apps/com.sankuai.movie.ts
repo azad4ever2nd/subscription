@@ -19,21 +19,6 @@ export default defineGkdApp({
     },
     {
       key: 2,
-      name: '请打开定位',
-      desc: '251203',
-      rules: [
-        {
-          matches: [
-            '[text="请打开定位"] <<n * +n * @[id="android:id/button2"][text="取消"] + [id="android:id/button1"][text="确定"]',
-          ],
-          fastQuery: true,
-          resetMatch: 'match',
-          activityIds: ['com.sankuai.movie.transit.TransitActivity'],
-        },
-      ],
-    },
-    {
-      key: 3,
       name: '弹窗',
       desc: '251211 ',
       rules: [
@@ -46,7 +31,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 4,
+      key: 3,
       name: '上方定位横幅，关闭',
       desc: '251218,D',
       rules: [
@@ -59,7 +44,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 5,
+      key: 4,
       name: '开启通知弹窗，X掉',
       desc: '260518',
       rules: [
@@ -67,6 +52,21 @@ export default defineGkdApp({
           resetMatch: 'match',
           activityIds: 'com.sankuai.movie.MovieMainActivity',
           matches: '[text="开启通知"] <n * + ImageView',
+        },
+      ],
+    },
+    {
+      key: 5,
+      name: '请打开定位',
+      desc: '251203',
+      rules: [
+        {
+          matches: [
+            '[text="请打开定位"] <<n * +n * @[id="android:id/button2"][text="取消"] + [id="android:id/button1"][text="确定"]',
+          ],
+          fastQuery: true,
+          resetMatch: 'match',
+          activityIds: ['com.sankuai.movie.transit.TransitActivity'],
         },
       ],
     },

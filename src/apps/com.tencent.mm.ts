@@ -1119,7 +1119,7 @@ export default defineGkdApp({
     {
       key: 52,
       name: '深工登陆弹窗，X掉',
-      desc: '260627',
+      desc: '261010',
       rules: [
         {
           resetMatch: 'match',
@@ -1137,6 +1137,7 @@ export default defineGkdApp({
             'com.tencent.mm.plugin.appbrand.ui.AppBrandPluginUI',
           ],
           anyMatches: [
+            '@Image[clickable=false][visibleToUser=true] < View -n TextView[text$="积分"] +n TextView[text="去查看"]',
             '(@Image < View + Image + TextView[text^="恭喜你完成"] + TextView[text="取消"] + TextView[text="查看积分"])',
             '([text="更多精彩"] + @* +n [text="女职工服务"] +n [text="阵地服务"])',
           ],
@@ -1198,12 +1199,18 @@ export default defineGkdApp({
     {
       key: 55,
       name: '广州，乐享品质旅游 ，共赴美好山河',
-      desc: '261008，排除 提现券页面，五折演出券',
+      desc: '261010，排除 汉运动，提现券页面，五折演出券',
       rules: [
         {
           resetMatch: 'match',
           actionCd: 0,
-          excludeMatches: 'TextView[text*="提现券" || text="提现服务费折扣卡"]',
+          excludeMatches: [
+            'TextView[text*="提现券" || text="提现服务费折扣卡"]',
+            'View > TextView[text*="金秋消费券"][visibleToUser=true]',
+            'View > TextView[text*="体育消费券"][visibleToUser=true]',
+            'View > TextView[text*="场馆券"][visibleToUser=true]',
+            'View > TextView[text*="运动地图"][visibleToUser=true]',
+          ],
           activityIds: [
             'com.tencent.mm.plugin.appbrand.ui.AppBrandUI0',
             'com.tencent.mm.plugin.appbrand.ui.AppBrandUI1',
@@ -1419,7 +1426,7 @@ export default defineGkdApp({
     {
       key: 63,
       name: '活动未开始，我知道了',
-      desc: '261008，添加 红色打卡，宁波，朴朴，动卡空间，内蒙工行，贵阳工行，工行余姚，湘约工行，贵州工行，已参加过',
+      desc: '261010，添加 红色打卡，宁波，朴朴，动卡空间，内蒙工行，贵阳工行，工行余姚，湘约工行，贵州工行，已参加过',
       rules: [
         {
           resetMatch: 'match',
@@ -1455,6 +1462,7 @@ export default defineGkdApp({
             'View > View > TextView[text^="来晚啦"] + View + TextView[clickable=true][visibleToUser=true]',
             'View >  View > View > TextView[text="来晚了，奖励派完了"] + View + TextView[clickable=true][visibleToUser=true]',
             'TextView[text^="今日名额已尽" || text="今日名额已尽，明日九点开放。"] < View + View + TextView[clickable=true][visibleToUser=true]',
+            'View > View > @Button[text="我知道了"][clickable=true][visibleToUser=true] - View > TextView[text^="名额已抢完" && text*="谢谢参与"]',
             'View > TextView[text="该商品已售罄"] + TextView[text="我知道了"][clickable=true][visibleToUser=true]',
             'View > View > @TextView[clickable=true][visibleToUser=true] - TextView - View >n TextView[text^="当前奖池已领完"]',
             'View > View > TextView[text^="奖品已领完"] + TextView[text="确定"][clickable=true][visibleToUser=true]',
@@ -1469,6 +1477,7 @@ export default defineGkdApp({
             '@TextView[clickable=true][visibleToUser=true] - TextView[clickable=true][visibleToUser=true] - View >n  TextView[text^="已参与"]',
             'View > View > TextView[text="很遗憾，此次未中奖，感谢您的参与"] + TextView[text="确定"][clickable=true][visibleToUser=true]',
             'View > TextView[text="很遗憾未中奖" || text="感谢您的参与"] +n View > TextView[text="我知道了"][clickable=false][visibleToUser=true]',
+            'View > View > TextView[text="谢谢参与～"] +2 @TextView[clickable=true][visibleToUser=true] -  View > Image[text="60e3f3550c78485a6857ba23"][clickable=true][visibleToUser=true]',
             'Dialog > TextView[text="领取成功"] +n Button[text="确定"][clickable=true][visibleToUser=true]',
           ],
         },

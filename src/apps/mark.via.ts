@@ -7,10 +7,13 @@ export default defineGkdApp({
     {
       key: 1,
       name: '允许网站打开 * 吗？，确定',
-      desc: '260213',
+      desc: '261010',
       rules: [
         {
-          matches: ['[text^="打开" || text^="允许网站打开"] + [text="确定"]'],
+          anyMatches: [
+            'LinearLayout > TextView[text^="允许网站打开"] + TextView[text="确定"][clickable=true][visibleToUser=true]',
+            '[text^="打开" || text^="允许网站打开"] + [text="确定"]',
+          ],
           fastQuery: true,
           resetMatch: 'match',
           activityIds: ['mark.via.Shell'],

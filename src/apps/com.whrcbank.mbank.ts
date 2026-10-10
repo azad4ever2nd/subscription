@@ -23,7 +23,7 @@ export default defineGkdApp({
     {
       key: 2,
       name: '一马当先周五抢鲜，外面指定产品',
-      desc: '260118',
+      desc: 'D，260118',
       rules: [
         {
           matches: ['[text="德佑 儿童卫生湿巾"] + [text!="未开始"]'],
@@ -35,7 +35,7 @@ export default defineGkdApp({
     {
       key: 3,
       name: '一马当先周五抢鲜，',
-      desc: '260220,text*="开始" || text*="立即" || text*="购" || ',
+      desc: 'D，260220,text*="开始" || text*="立即" || text*="购" || ',
       rules: [
         {
           matches: [

@@ -25,6 +25,20 @@ export default defineGkdApp({
     },
     {
       key: 2,
+      name: '服务器证书检验失败，取消',
+      desc: '260804',
+      rules: [
+        {
+          resetMatch: 'match',
+          activityIds:
+            'com.newland.framework.ui.widget.TransparentActivityForDialogStack',
+          matches:
+            'TextView[text="服务器证书检验失败"] <2 RelativeLayout < ScrollView +n LinearLayout > TextView[clickable=true][visibleToUser=true][text="取消"]',
+        },
+      ],
+    },
+    {
+      key: 3,
       name: '通知提示',
       desc: '251123',
       rules: [
@@ -37,7 +51,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 3,
+      key: 4,
       name: '签到',
       desc: '251207,添加弹窗',
       rules: [
@@ -49,9 +63,9 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 4,
+      key: 5,
       name: '理财节，返回',
-      desc: '260108，D,添加红包雨',
+      desc: 'D，260108，添加红包雨',
       rules: [
         {
           anyMatches: [
@@ -64,7 +78,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 5,
+      key: 6,
       name: '已完成，返回',
       desc: '260108',
       rules: [
@@ -77,7 +91,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 6,
+      key: 7,
       name: '没有中奖后的弹窗',
       desc: '260117',
       rules: [
@@ -85,20 +99,6 @@ export default defineGkdApp({
           matches: ['[id="np_pop"] > [id="np_close"]'],
           resetMatch: 'match',
           activityIds: ['com.newland.app.webcore.CustomPageFlowActivity'],
-        },
-      ],
-    },
-    {
-      key: 7,
-      name: '服务器证书检验失败，取消',
-      desc: '260804',
-      rules: [
-        {
-          resetMatch: 'match',
-          activityIds:
-            'com.newland.framework.ui.widget.TransparentActivityForDialogStack',
-          matches:
-            'TextView[text="服务器证书检验失败"] <2 RelativeLayout < ScrollView +n LinearLayout > TextView[clickable=true][visibleToUser=true][text="取消"]',
         },
       ],
     },

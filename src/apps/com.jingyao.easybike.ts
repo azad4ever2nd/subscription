@@ -22,7 +22,7 @@ export default defineGkdApp({
     {
       key: 2,
       name: '确认开锁',
-      desc: '261009',
+      desc: '261010',
       rules: [
         {
           resetMatch: 'match',
@@ -30,7 +30,6 @@ export default defineGkdApp({
           activityIds:
             'com.hellobike.flutter.platform.android.flutterboost.FlutterHostFragmentActivity',
           anyMatches: [
-            'ImageView[desc="确认开锁"][clickable=true][visibleToUser=true] -n View  >  View[desc*="碳积分要过期" && desc*="去领取"][clickable=true][visibleToUser=true]',
             'View > View > ImageView[desc="确认开锁"][clickable=true][visibleToUser=true]',
             '[desc="骑行卡" || desc="主题卡"] <n * +n [desc="确认开锁"]',
           ],
@@ -59,6 +58,22 @@ export default defineGkdApp({
     },
     {
       key: 4,
+      name: '碳积分要过期，去领取',
+      desc: 'D，261010',
+      rules: [
+        {
+          resetMatch: 'match',
+          action: 'clickCenter',
+          activityIds:
+            'com.hellobike.flutter.platform.android.flutterboost.FlutterHostFragmentActivity',
+          anyMatches: [
+            'ImageView[desc="确认开锁"][clickable=true][visibleToUser=true] -n View  >  View[desc*="碳积分要过期" && desc*="去领取"][clickable=true][visibleToUser=true]',
+          ],
+        },
+      ],
+    },
+    {
+      key: 5,
       name: '弹窗，请授权以下权限，稍后再说',
       desc: '260913',
       rules: [
@@ -73,23 +88,6 @@ export default defineGkdApp({
           anyMatches: [
             'TextView[text^="位置权限已关闭"] <<n FrameLayout + ScrollView > LinearLayout > @Button[text="稍后再说"][id="android:id/button2"][clickable=true][visibleToUser=true] + Button[text="去授权"][id="android:id/button1"][clickable=true][visibleToUser=true]',
             '[vid="alertTitle"][text*="权限"] <<n * +n * [id="android:id/button2"][text="稍后再说"]',
-          ],
-        },
-      ],
-    },
-    {
-      key: 5,
-      name: '哈啰还不知道您在哪里',
-      desc: '260928，添加 消息通知',
-      rules: [
-        {
-          resetMatch: 'match',
-          fastQuery: true,
-          actionCd: 300,
-          activityIds: 'com.hellobike.atlas.business.portal.PortalActivity',
-          anyMatches: [
-            '([vid="title_tv"][text="哈啰还不知道您在哪里"] +2 @[vid="sign_out_tv"][text="暂不开启"] + [vid="agreement_tv"][text="快速开启定位"])',
-            '(TextView[text="开启消息通知"] < FrameLayout +n FrameLayout > LinearLayout > Button[text="取消"][clickable=true][visibleToUser=true])',
           ],
         },
       ],
@@ -111,7 +109,7 @@ export default defineGkdApp({
     {
       key: 7,
       name: '奖励金入口',
-      desc: '260615',
+      desc: 'D，260615',
       rules: [
         {
           fastQuery: true,
@@ -127,6 +125,23 @@ export default defineGkdApp({
     },
     {
       key: 8,
+      name: '哈啰还不知道您在哪里',
+      desc: '260928，添加 消息通知',
+      rules: [
+        {
+          resetMatch: 'match',
+          fastQuery: true,
+          actionCd: 300,
+          activityIds: 'com.hellobike.atlas.business.portal.PortalActivity',
+          anyMatches: [
+            '([vid="title_tv"][text="哈啰还不知道您在哪里"] +2 @[vid="sign_out_tv"][text="暂不开启"] + [vid="agreement_tv"][text="快速开启定位"])',
+            '(TextView[text="开启消息通知"] < FrameLayout +n FrameLayout > LinearLayout > Button[text="取消"][clickable=true][visibleToUser=true])',
+          ],
+        },
+      ],
+    },
+    {
+      key: 9,
       name: '月卡弹窗',
       desc: '260807，添加车主福利弹窗，IDS，哈罗快送跑腿弹窗',
       rules: [
@@ -145,7 +160,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 9,
+      key: 10,
       name: '弹窗，系统定位服务已关闭，取消',
       desc: '260928，添加matchroo测试，添加打开定位服务，,添加IDS,消息通知 com.hellobike.business.hitch.common.home.HLPHHomeActivity',
       rules: [
@@ -170,7 +185,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 10,
+      key: 11,
       name: '开启消息通知，返回',
       desc: '251208',
       rules: [
@@ -184,7 +199,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 11,
+      key: 12,
       name: '弹窗，签到1',
       desc: '261005',
       rules: [
@@ -201,9 +216,9 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 12,
+      key: 13,
       name: '弹窗，签到1-matchroot',
-      desc: '261002，测试matchRoot',
+      desc: 'D，261002，测试matchRoot',
       rules: [
         {
           resetMatch: 'match',
@@ -218,7 +233,23 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 13,
+      key: 14,
+      name: '弹窗，明日再来1，X掉',
+      desc: '261005',
+      rules: [
+        {
+          resetMatch: 'match',
+          forcedTime: 3000,
+          activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
+          anyMatches: [
+            'TextView[text="我的奖励金"] +n View >n View > @TextView[clickable=true][visibleToUser=true][text.length=0] +n TextView[text="明日再来"][visibleToUser=true]',
+            'TextView[text="我的奖励金"] +n View >n View > @TextView[clickable=false][visibleToUser=true][text.length=0] +n TextView[text="明日再来"][visibleToUser=true]',
+          ],
+        },
+      ],
+    },
+    {
+      key: 15,
       name: '奖励金页面，上方，今日签到1',
       desc: '261005，排除 签到，明日再来',
       rules: [
@@ -240,52 +271,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 14,
-      name: '签到奖励弹窗',
-      desc: '260920,fastQuery=true,clickable=true',
-      rules: [
-        {
-          resetMatch: 'match',
-          fastQuery: true,
-          action: 'clickCenter',
-          activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
-          anyMatches: [
-            'RelativeLayout > RelativeLayout[vid="rlDialogContent"] + ImageView[vid="ivClose"][clickable=true][visibleToUser=true]',
-            '[vid="ivTopBg"] +n [vid="ivClose"]',
-          ],
-        },
-      ],
-    },
-    {
-      key: 15,
-      name: '弹窗，明日再来1，X掉',
-      desc: '261005',
-      rules: [
-        {
-          resetMatch: 'match',
-          forcedTime: 3000,
-          activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
-          anyMatches: [
-            'TextView[text="我的奖励金"] +n View >n View > @TextView[clickable=true][visibleToUser=true][text.length=0] +n TextView[text="明日再来"][visibleToUser=true]',
-            'TextView[text="我的奖励金"] +n View >n View > @TextView[clickable=false][visibleToUser=true][text.length=0] +n TextView[text="明日再来"][visibleToUser=true]',
-          ],
-        },
-      ],
-    },
-    {
       key: 16,
-      name: '碳积分奖励',
-      desc: '251130，添加 开心收下 ([text="E1IR6_Z5_Group121582"] < * - [text$="碳积分"] < * + * > TextView) || ([text="10碳积分"] < * + * > *)',
-      rules: [
-        {
-          resetMatch: 'match',
-          activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
-          anyMatches: 'Image < * - [text$="0碳积分"] < View + View > TextView',
-        },
-      ],
-    },
-    {
-      key: 17,
       name: '弹窗，知道了1',
       desc: '261005，排除 签到 和 明日再来，clik无反应就clickCenter',
       rules: [
@@ -308,6 +294,23 @@ export default defineGkdApp({
       ],
     },
     {
+      key: 17,
+      name: '签到奖励弹窗',
+      desc: '260920,fastQuery=true,clickable=true',
+      rules: [
+        {
+          resetMatch: 'match',
+          fastQuery: true,
+          action: 'clickCenter',
+          activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
+          anyMatches: [
+            'RelativeLayout > RelativeLayout[vid="rlDialogContent"] + ImageView[vid="ivClose"][clickable=true][visibleToUser=true]',
+            '[vid="ivTopBg"] +n [vid="ivClose"]',
+          ],
+        },
+      ],
+    },
+    {
       key: 18,
       name: '单单返',
       desc: '260925，改进单单返BUG，数字TextView+单单返，图标Image+单单返，clik无反应就clickCenter',
@@ -325,7 +328,7 @@ export default defineGkdApp({
     {
       key: 19,
       name: '秒杀月卡付款',
-      desc: '251123[text="立即支付¥6.9"]',
+      desc: 'D，251123',
       rules: [
         {
           fastQuery: true,
@@ -353,6 +356,18 @@ export default defineGkdApp({
     },
     {
       key: 21,
+      name: '碳积分奖励',
+      desc: '251130，添加 开心收下 ([text="E1IR6_Z5_Group121582"] < * - [text$="碳积分"] < * + * > TextView) || ([text="10碳积分"] < * + * > *)',
+      rules: [
+        {
+          resetMatch: 'match',
+          activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
+          anyMatches: 'Image < * - [text$="0碳积分"] < View + View > TextView',
+        },
+      ],
+    },
+    {
+      key: 22,
       name: '请打开系统定位开关后用车,X掉',
       desc: '260928，测试日志反馈中经常达到上限',
       rules: [
@@ -366,7 +381,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 22,
+      key: 23,
       name: '领行完领奖励金',
       desc: '260928，测试限1次，clickable=true',
       rules: [
@@ -378,28 +393,6 @@ export default defineGkdApp({
             'com.hellobike.moped.platform.offline.web.OhoRealmWebActivity',
           anyMatches:
             'View[id="monad-return-ball"] > @View[clickable=true][visibleToUser=true] > TextView[text="奖励金"] - TextView - View > Image[text="c628086d6b3a4923907c57bc4326aa13_mask"]',
-        },
-      ],
-    },
-    {
-      key: 23,
-      name: '奖励金页面，上方，今日签到2',
-      desc: '261005，与13相比，activityId不同',
-      rules: [
-        {
-          actionCd: 3000,
-          resetMatch: 'match',
-          activityIds:
-            'com.hellobike.moped.platform.offline.web.OhoRealmWebActivity',
-          excludeMatches: [
-            'TextView[text="我的奖励金"] +n View >n View > TextView[text="签到"][visibleToUser=true]',
-            'TextView[text="我的奖励金"] +n View >n View > @TextView[visibleToUser=true][text.length=0] +n TextView[text="明日再来"][visibleToUser=true]',
-            'TextView[text="我的奖励金"] +n View >n View > TextView[text="知道了"][visibleToUser=true]',
-          ],
-          anyMatches: [
-            'TextView[text="我的奖励金"] +n View > View > @View[clickable=false][visibleToUser=true] > TextView + TextView[text="今日签到"]',
-            'TextView[text="我的奖励金"] +n View > View > @View[clickable=true][visibleToUser=true] > View >  TextView + TextView[text="今日签到"]',
-          ],
         },
       ],
     },
@@ -463,66 +456,28 @@ export default defineGkdApp({
     },
     {
       key: 27,
-      name: '一键收碳',
-      desc: '260702',
+      name: '奖励金页面，上方，今日签到2',
+      desc: '261005，与13相比，activityId不同',
       rules: [
         {
+          actionCd: 3000,
           resetMatch: 'match',
           activityIds:
             'com.hellobike.moped.platform.offline.web.OhoRealmWebActivity',
-          anyMatches:
-            '([text^="骑行领碳积分"] + * > [text="一键收碳"]) || (View > View > View > TextView[text="一键收碳"])',
-        },
-      ],
-    },
-    {
-      key: 28,
-      name: '碳积分，去领取',
-      desc: '260703',
-      rules: [
-        {
-          resetMatch: 'match',
-          actionMaximum: 10,
-          activityIds:
-            'com.hellobike.moped.platform.offline.web.OhoRealmWebActivity',
+          excludeMatches: [
+            'TextView[text="我的奖励金"] +n View >n View > TextView[text="签到"][visibleToUser=true]',
+            'TextView[text="我的奖励金"] +n View >n View > @TextView[visibleToUser=true][text.length=0] +n TextView[text="明日再来"][visibleToUser=true]',
+            'TextView[text="我的奖励金"] +n View >n View > TextView[text="知道了"][visibleToUser=true]',
+          ],
           anyMatches: [
-            '(View > View > View > TextView - @View > Image[text="aab668b57491499e89ee4a5b766bcf77_35"])',
-            '(Image[text="ea6cf0c3c8f6483c9dbbe484a2ea60e3_icon_green_c"] < View + TextView + View > TextView[text="去领取"])',
-            '(@View > [text="碳积分"] + * + [text="去领取"])',
+            'TextView[text="我的奖励金"] +n View > View > @View[clickable=false][visibleToUser=true] > TextView + TextView[text="今日签到"]',
+            'TextView[text="我的奖励金"] +n View > View > @View[clickable=true][visibleToUser=true] > View >  TextView + TextView[text="今日签到"]',
           ],
         },
       ],
     },
     {
-      key: 29,
-      name: '低碳会员页面，碳积分奖励，',
-      desc: '260509',
-      rules: [
-        {
-          resetMatch: 'match',
-          activityIds:
-            'com.hellobike.moped.platform.offline.web.OhoRealmWebActivity',
-          anyMatches: '@View Image[text="aab668b57491499e89ee4a5b766bcf77_35"]',
-        },
-      ],
-    },
-    {
-      key: 30,
-      name: '侍款弹窗',
-      desc: '260308',
-      rules: [
-        {
-          resetMatch: 'match',
-          fastQuery: true,
-          activityIds:
-            'com.hellobike.moped.platform.offline.web.OhoRealmWebActivity',
-          anyMatches:
-            '[vid="pay_inner_title"][text="付款金额"] + [vid="pay_close_iv"]',
-        },
-      ],
-    },
-    {
-      key: 31,
+      key: 28,
       name: '骑行完弹窗',
       desc: '260309,添加有无故障弹窗',
       rules: [
@@ -537,24 +492,25 @@ export default defineGkdApp({
         },
       ],
     },
+
     {
-      key: 32,
-      name: '秒杀价月卡',
-      desc: '251213，增加价格变化，0.01,0.99,1.99,7天无限次卡',
+      key: 29,
+      name: '侍款弹窗',
+      desc: '260308',
       rules: [
         {
           resetMatch: 'match',
-          activityIds: [
+          fastQuery: true,
+          activityIds:
             'com.hellobike.moped.platform.offline.web.OhoRealmWebActivity',
-            'com.alipay.mobile.nebulacore.ui.H5Activity',
-          ],
           anyMatches:
-            '[text="单车30天不限次卡" || text="单车7天不限次卡"] + [text="秒杀价"] + [text="￥0.01" || text="￥1.99" || text="￥0.99"] +n [text^="仅剩"] + [text="quality,q_80"]',
+            '[vid="pay_inner_title"][text="付款金额"] + [vid="pay_close_iv"]',
         },
       ],
     },
+
     {
-      key: 33,
+      key: 30,
       name: '骑行任务弹窗，关闭',
       desc: '260505',
       rules: [
@@ -568,9 +524,9 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 34,
+      key: 31,
       name: '拖住滑块，还车',
-      desc: '260916，测试，不建议打开避免误还车',
+      desc: 'D，260916，测试，不建议打开避免误还车',
       rules: [
         {
           resetMatch: 'match',
@@ -596,7 +552,20 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 35,
+      key: 32,
+      name: '0.1秒杀7天不限次周卡',
+      desc: '260920',
+      rules: [
+        {
+          resetMatch: 'match',
+          activityIds: 'com.hellobike.bundlelibrary.web.WebActivity',
+          matches:
+            'View > TextView[text="单车7天不限次卡"] + TextView[text="秒杀价"] +n TextView[text!="已售罄" && text^="仅剩"] + Image[text="quality,q_80"][clickable=false][visibleToUser=true]',
+        },
+      ],
+    },
+    {
+      key: 33,
       name: '弹窗，卡情况介绍，X掉',
       desc: '260920',
       rules: [
@@ -610,15 +579,63 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 36,
-      name: '0.1秒杀7天不限次周卡',
-      desc: '260920',
+      key: 34,
+      name: '秒杀价月卡',
+      desc: 'D，251213，增加价格变化，0.01,0.99,1.99,7天无限次卡',
       rules: [
         {
           resetMatch: 'match',
-          activityIds: 'com.hellobike.bundlelibrary.web.WebActivity',
-          matches:
-            'View > TextView[text="单车7天不限次卡"] + TextView[text="秒杀价"] +n TextView[text!="已售罄" && text^="仅剩"] + Image[text="quality,q_80"][clickable=false][visibleToUser=true]',
+          activityIds: [
+            'com.hellobike.moped.platform.offline.web.OhoRealmWebActivity',
+            'com.alipay.mobile.nebulacore.ui.H5Activity',
+          ],
+          anyMatches:
+            '[text="单车30天不限次卡" || text="单车7天不限次卡"] + [text="秒杀价"] + [text="￥0.01" || text="￥1.99" || text="￥0.99"] +n [text^="仅剩"] + [text="quality,q_80"]',
+        },
+      ],
+    },
+    {
+      key: 35,
+      name: '一键收碳',
+      desc: '260702',
+      rules: [
+        {
+          resetMatch: 'match',
+          activityIds:
+            'com.hellobike.moped.platform.offline.web.OhoRealmWebActivity',
+          anyMatches:
+            '([text^="骑行领碳积分"] + * > [text="一键收碳"]) || (View > View > View > TextView[text="一键收碳"])',
+        },
+      ],
+    },
+    {
+      key: 36,
+      name: '碳积分，去领取',
+      desc: '260703',
+      rules: [
+        {
+          resetMatch: 'match',
+          actionMaximum: 10,
+          activityIds:
+            'com.hellobike.moped.platform.offline.web.OhoRealmWebActivity',
+          anyMatches: [
+            '(View > View > View > TextView - @View > Image[text="aab668b57491499e89ee4a5b766bcf77_35"])',
+            '(Image[text="ea6cf0c3c8f6483c9dbbe484a2ea60e3_icon_green_c"] < View + TextView + View > TextView[text="去领取"])',
+            '(@View > [text="碳积分"] + * + [text="去领取"])',
+          ],
+        },
+      ],
+    },
+    {
+      key: 37,
+      name: '低碳会员页面，碳积分奖励，',
+      desc: '260509',
+      rules: [
+        {
+          resetMatch: 'match',
+          activityIds:
+            'com.hellobike.moped.platform.offline.web.OhoRealmWebActivity',
+          anyMatches: '@View Image[text="aab668b57491499e89ee4a5b766bcf77_35"]',
         },
       ],
     },

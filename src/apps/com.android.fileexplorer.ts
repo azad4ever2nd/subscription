@@ -7,12 +7,13 @@ export default defineGkdApp({
     {
       key: 1,
       name: '远程管理，启动服务',
-      desc: '260909',
+      desc: '261010，延长冷却时间',
       rules: [
         {
           resetMatch: 'match',
           fastQuery: true,
           actionMaximum: 1,
+          actionCd: 8000,
           activityIds:
             'com.android.fileexplorer.activity.ServerControlActivity',
           matches:

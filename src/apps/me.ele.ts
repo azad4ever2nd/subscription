@@ -54,14 +54,15 @@ export default defineGkdApp({
     {
       key: 4,
       name: '定位服务未开启，取消',
-      desc: '260915',
+      desc: '261010',
       rules: [
         {
           resetMatch: 'match',
           fastQuery: true,
+          action: 'clickCenter',
           activityIds: 'me.ele.application.ui.address.ChangeAddressActivity',
           anyMatches: [
-            'RelativeLayout[vid="dialog_container"] > LinearLayout > TextView[vid="title"][text="定位服务未开启"] +2 LinearLayout > TextView[vid="negative_btn"][text="取消"]',
+            'RelativeLayout[vid="dialog_container"] > LinearLayout > TextView[vid="title"][text="定位服务未开启"] +2 LinearLayout > TextView[vid="negative_btn"][text="取消"][clickable=true][visibleToUser=true]',
             'LinearLayout > TextView[text="定位服务未开启"] +n LinearLayout > @TextView[text="取消"][vid="title"][vid="negative_btn"][clickable=true][visibleToUser=true] + TextView[text="立即开启"][vid="positive_btn"]',
           ],
         },

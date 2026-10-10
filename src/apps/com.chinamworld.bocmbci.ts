@@ -39,7 +39,7 @@ export default defineGkdApp({
     {
       key: 3,
       name: '弹窗',
-      desc: '251120，D,添加新弹窗',
+      desc: 'D，251120，添加新弹窗',
       rules: [
         {
           anyMatches: [
