@@ -351,7 +351,7 @@ export default defineGkdApp({
     {
       key: 18,
       name: '迪士尼梦享券，500-60',
-      desc: '260925，区别在于可抢时childCount=4',
+      desc: 'D，260925，区别在于可抢时childCount=4',
       rules: [
         {
           resetMatch: 'match',
@@ -386,7 +386,7 @@ export default defineGkdApp({
     {
       key: 20,
       name: '迪士尼梦享券，2000-200',
-      desc: '260925，区别在于可抢时childCount=4',
+      desc: 'D，260925，区别在于可抢时childCount=4',
       rules: [
         {
           resetMatch: 'match',
@@ -403,7 +403,7 @@ export default defineGkdApp({
     {
       key: 21,
       name: '10点，18点旅享半价景点',
-      desc: '251215 ，D',
+      desc: 'D，251215',
       rules: [
         {
           anyMatches: [
@@ -418,7 +418,7 @@ export default defineGkdApp({
     {
       key: 22,
       name: '乐游券，要120或60改规则， || text="60"',
-      desc: '251219',
+      desc: 'D，251219',
       rules: [
         {
           resetMatch: 'match',
@@ -640,7 +640,7 @@ export default defineGkdApp({
     {
       key: 31,
       name: '云游上海75',
-      desc: '251219,[clickable=true] [text="75元"] + [text="游览券"] + [text="满150减75元"] + TextView',
+      desc: 'D，251219,[clickable=true] [text="75元"] + [text="游览券"] + [text="满150减75元"] + TextView',
       rules: [
         {
           resetMatch: 'match',
@@ -657,7 +657,7 @@ export default defineGkdApp({
     {
       key: 32,
       name: '云游上海50',
-      desc: '251219,[clickable=true] [text="50元"] + [text="游览券"] + [text="满100减50元"] + TextView',
+      desc: 'D，251219,[clickable=true] [text="50元"] + [text="游览券"] + [text="满100减50元"] + TextView',
       rules: [
         {
           resetMatch: 'match',
@@ -866,7 +866,7 @@ export default defineGkdApp({
     {
       key: 45,
       name: '占位，跳过借款',
-      desc: 'D,260325,添加返回，整合境外消费，转出提示，任务完成，各种弹窗，添加小组件，已学习去使用，会员小组件,卡到期续卡，还款后分期提示，资金规划',
+      desc: 'D，260325,添加返回，整合境外消费，转出提示，任务完成，各种弹窗，添加小组件，已学习去使用，会员小组件,卡到期续卡，还款后分期提示，资金规划',
       rules: [
         {
           anyMatches: [
