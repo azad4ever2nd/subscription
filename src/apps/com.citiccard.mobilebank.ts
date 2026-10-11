@@ -19,13 +19,16 @@ export default defineGkdApp({
     },
     {
       key: 2,
-      name: '分期弹窗',
-      desc: '260912',
+      name: '弹窗，分期',
+      desc: '261011，添加 小组件弹窗',
       rules: [
         {
           matchDelay: 1000,
           forcedTime: 3000,
-          matches: ['[vid="dialog"] + [vid="cancelArea"]'],
+          anyMatches: [
+            '[vid="dialog"] + [vid="cancelArea"]',
+            'TextView[text*="添加小组件"][vid="tv_message"] < LinearLayout +n LinearLayout > @Button[text="暂不添加"][vid="btn_cancel"][clickable=true][visibleToUser=true] +2 Button[text="添加小组件"][vid="btn_confirm"]',
+          ],
           fastQuery: true,
           resetMatch: 'match',
           activityIds: 'com.citiccard.mobilebank.web.applet.NewAppletActivity',

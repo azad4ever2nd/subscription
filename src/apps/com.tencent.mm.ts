@@ -224,7 +224,7 @@ export default defineGkdApp({
     {
       key: 13,
       name: '湖北邮政e权益，抽奖弹窗，立减金，返回',
-      desc: '260519',
+      desc: '260519，抽奖当天打开，其余时间关闭',
       rules: [
         {
           resetMatch: 'match',
@@ -255,7 +255,7 @@ export default defineGkdApp({
     {
       key: 15,
       name: '湖北电影消费券猫眼，要定位，否',
-      desc: '260305',
+      desc: 'D，260305',
       rules: [
         {
           fastQuery: true,
@@ -269,7 +269,7 @@ export default defineGkdApp({
     {
       key: 16,
       name: '需要获取你的地理位置，否，',
-      desc: '251231，先不启用避免误杀',
+      desc: 'D，251231，先不启用避免误杀',
       rules: [
         {
           fastQuery: true,
@@ -325,7 +325,7 @@ export default defineGkdApp({
     {
       key: 20,
       name: '领红包',
-      desc: '260119',
+      desc: 'D，260119',
       rules: [
         {
           resetMatch: 'match',
@@ -354,7 +354,7 @@ export default defineGkdApp({
     {
       key: 22,
       name: '领完红包返回',
-      desc: '260130',
+      desc: 'D，260130',
       rules: [
         {
           fastQuery: true,
@@ -402,7 +402,7 @@ export default defineGkdApp({
     {
       key: 25,
       name: '确定删除聊天记录，清空',
-      desc: '260221，[text="清空"]',
+      desc: 'D，260221，[text="清空"]',
       rules: [
         {
           resetMatch: 'match',
@@ -416,7 +416,7 @@ export default defineGkdApp({
     {
       key: 26,
       name: '不再关注',
-      desc: '260220,[text="不再关注"]',
+      desc: 'D，260220,[text="不再关注"]',
       rules: [
         {
           resetMatch: 'match',
@@ -436,7 +436,7 @@ export default defineGkdApp({
     {
       key: 27,
       name: '不再关注2，',
-      desc: '260220',
+      desc: 'D，260220',
       rules: [
         {
           resetMatch: 'match',
@@ -560,7 +560,7 @@ export default defineGkdApp({
     {
       key: 32,
       name: '阳光兑换外面',
-      desc: '251127，挑有库存的进',
+      desc: 'D，251127，挑有库存的进',
       rules: [
         {
           resetMatch: 'match',
@@ -784,7 +784,7 @@ export default defineGkdApp({
     {
       key: 40,
       name: '湖北SKP',
-      desc: '260406，中国银行信用卡湖北 公众号进去，立即支付，不能限制1次',
+      desc: 'D，260406，中国银行信用卡湖北 公众号进去，立即支付，不能限制1次',
       rules: [
         {
           activityIds: [
@@ -809,7 +809,7 @@ export default defineGkdApp({
     {
       key: 41,
       name: '湖北SKP，确认支付',
-      desc: '260406，优先测试',
+      desc: 'D，260406，优先测试',
       rules: [
         {
           order: -1,
@@ -836,7 +836,7 @@ export default defineGkdApp({
     {
       key: 42,
       name: '湖北SKP，火爆，刷新',
-      desc: '260102',
+      desc: 'D，260102',
       rules: [
         {
           activityIds: [
@@ -1014,7 +1014,7 @@ export default defineGkdApp({
     {
       key: 48,
       name: '腾讯理财通，领取奖励，同意服务协议',
-      desc: '260425，先禁用后续找出改余额',
+      desc: 'D，260425，先禁用后续找出改余额',
       rules: [
         {
           resetMatch: 'match',
@@ -1654,7 +1654,7 @@ export default defineGkdApp({
     {
       key: 70,
       name: '瑞幸，更改优惠',
-      desc: '260810',
+      desc: 'D，260810',
       rules: [
         {
           resetMatch: 'match',
@@ -1834,7 +1834,7 @@ export default defineGkdApp({
     {
       key: 77,
       name: '同程抢单，慎用',
-      desc: '260926',
+      desc: 'D，260926',
       rules: [
         {
           activityIds: 'com.tencent.mm..ui.LauncherUI',
