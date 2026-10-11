@@ -292,7 +292,7 @@ export default defineGkdApp({
     {
       key: 20,
       name: '碳星任务，点击签到',
-      desc: '261008，添加 签到成功clickable=true',
+      desc: '261011，添加 签到成功clickable=true',
       rules: [
         {
           action: 'clickCenter',
@@ -303,6 +303,7 @@ export default defineGkdApp({
             '([text="+1"] + [text="点击签到"])',
             '(Dialog > View > @Button[clickable=true][visibleToUser=true][text="我知道了"] + Button[text="赚更多能量"])',
             'View > View > TextView[text="恭喜您签到成功"] +n Image[text="我知道了"][clickable=true][visibleToUser=true]',
+            'View > View > TextView[text="您已完成该任务，欢迎继续浏览"] + Image[text="取消"][clickable=true][visibleToUser=true]',
             '([text="恭喜您签到成功"] +n [text="我知道了"])',
           ],
           actionMaximum: 33,
@@ -600,11 +601,12 @@ export default defineGkdApp({
     {
       key: 41,
       name: '浏览任务完成，返回',
-      desc: '261007，添加新布局，添加权限弹窗，直播间ids',
+      desc: '261011，添加新布局，添加权限弹窗，直播间ids',
       rules: [
         {
           action: 'back',
           resetMatch: 'match',
+          actionCd: 7000,
           forcedTime: 12000,
           activityIds: [
             'com.bankcomm.module.biz.bcmvideo.BCMVerticalVideoActivity',
@@ -612,6 +614,7 @@ export default defineGkdApp({
           ],
           anyMatches: [
             '[id="android:id/message"][text*="权限"] <<n * + [id="android:id/buttonPanel"] [id="android:id/button2"][text="否"] + [id="android:id/button1"][text="是"]',
+            'View > Image[text="gthEFTB6uRQ36UPWtwD"][clickable=true][visibleToUser=true] + Image[text="uYGtPZQreNFJUHiJFsH0akOlpQOFendaucAAAAASUVORK5CYII="]',
             'View > Image[text="gthEFTB6uRQ36UPWtwD"][visibleToUser=true]',
             'View > Image[text="countdown-fulfilled-bg.f65a2ea"][visibleToUser=true]',
             '[text="Pyi3KQBzgJA1F+Xm7MrWYA0HQqTcq4GrAAAAAASUVORK5CYII="]',
@@ -631,13 +634,7 @@ export default defineGkdApp({
             'com.bankcomm.module.biz.bcmvideo.BCMVerticalVideoActivity',
             'com.bankcomm.module.biz.webcontainer.BCMHtml5Activity',
           ],
-          anyMatches: [
-            '([text="Pyi3KQBzgJA1F+Xm7MrWYA0HQqTcq4GrAAAAAASUVORK5CYII="])',
-            '([text="countdown-fulfilled-bg.f65a2ea"])',
-            '(WebView > @View[clickable=false][visibleToUser=true] > Image[text="gthEFTB6uRQ36UPWtwD"])',
-            '(View > Image[clickable=false][text="gthEFTB6uRQ36UPWtwD"])',
-            '([id="android:id/message"][text*="权限"] <<n * + [id="android:id/buttonPanel"] [id="android:id/button2"][text="否"] + [id="android:id/button1"][text="是"])',
-          ],
+          anyMatches: [],
         },
       ],
     },

@@ -1792,6 +1792,34 @@ export default defineGkdApp({
     },
     {
       key: 75,
+      name: '弹窗，汉运动，券已发放结束，确定',
+      desc: '261011',
+      rules: [
+        {
+          resetMatch: 'match',
+          fastQuery: true,
+          actionCd: 2000,
+          matches:
+            'TextView[text="券已发放结束"] <<n LinearLayout + LinearLayout Button[text="确定"][vid="mm_alert_ok_btn"][clickable=true][visibleToUser=true]',
+          activityIds: [
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI0',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI1',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI2',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI3',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI4',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI00',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI01',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI02',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI03',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI04',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandPluginUI',
+          ],
+        },
+      ],
+    },
+
+    {
+      key: 76,
       name: '自动登录该设备',
       desc: '260804',
       rules: [
@@ -1804,7 +1832,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 76,
+      key: 77,
       name: '同程抢单，慎用',
       desc: '260926',
       rules: [

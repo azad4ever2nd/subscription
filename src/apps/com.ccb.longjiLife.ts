@@ -191,7 +191,7 @@ export default defineGkdApp({
     {
       key: 14,
       name: '建行社保卡，勾选同意',
-      desc: '260831',
+      desc: '261011，添加 不限制层数',
       rules: [
         {
           resetMatch: 'match',
@@ -199,8 +199,8 @@ export default defineGkdApp({
           action: 'clickCenter',
           activityIds: 'com.ccb.cloudmerchant.view.WebViewActivity',
           anyMatches: [
-            '(WebView[text*="建行社保卡"] > View > View > View > CheckBox[checked=false][visibleToUser=true])',
-            '(WebView > View > View > View > CheckBox[checked=false][visibleToUser=true])',
+            'WebView[text*="建行社保卡"] > View > View > View > CheckBox[checked=false][visibleToUser=true]',
+            'WebView >n View > CheckBox[checked=false][visibleToUser=true]',
           ],
         },
       ],

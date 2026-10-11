@@ -77,7 +77,7 @@ export default defineGkdApp({
     {
       key: 5,
       name: '推荐开通花呗',
-      desc: '261009，fastQuery=true,clickable=true,添加 支付宝推荐你，关闭PDD免密付款，添加放弃还款，推荐习惯，([text^="支付宝推荐" || text^="支付宝  推荐"] < * +n * > [text="关闭"]) ||',
+      desc: '261011，fastQuery=true,clickable=true,添加 支付宝推荐你，关闭PDD免密付款，添加放弃还款，推荐习惯，([text^="支付宝推荐" || text^="支付宝  推荐"] < * +n * > [text="关闭"]) ||',
       rules: [
         {
           resetMatch: 'match',
@@ -220,11 +220,10 @@ export default defineGkdApp({
         },
       ],
     },
-
     {
       key: 13,
       name: '弹窗2，与分期有关，X掉',
-      desc: '261010，fastQuery=false，添加 神券五六天，签到成功，开通碰一下，推送服务，查询账单，返回领奖，到桌面，银行卡抽奖，升级月利宝',
+      desc: '261011，fastQuery=false，添加 神券五六天，签到成功，开通碰一下，推送服务，查询账单，返回领奖，到桌面，银行卡抽奖，升级月利宝',
       rules: [
         {
           resetMatch: 'match',
@@ -254,7 +253,7 @@ export default defineGkdApp({
             '@Image[clickable=false][visibleToUser=true] < View + View > View > TextView[text="确认要离开吗？"]',
             'View > View > @TextView[clickable=false][visibleToUser=true] + TextView[text="请选择你的收货地址"] + TextView[text*="未获取定位" || text*="无法查看附近店铺及服务"]',
             '@Image < View + View > TextView[text="开通信用卡借款享一站式服务"]',
-            'Image < @View[clickable=true][visibleToUser=true] + View Button[text="同意协议并分期"][clickable=true][visibleToUser=true]',
+            'Image < @View[visibleToUser=true] + View Button[text="同意协议并分期"][clickable=true][visibleToUser=true]',
             '@Image[clickable=true][visibleToUser=true] < View + View Button[text="同意协议并分期"]',
             '@TextView[clickable=false][visibleToUser=true] - View > Button[text="我知道了"]',
             '@TextView[clickable=true][visibleToUser=true] - View > TextView[text="体验金领取成功"] +n TextView[text="立即攒下"]',
@@ -504,7 +503,7 @@ export default defineGkdApp({
     {
       key: 27,
       name: '任务完成，返回领奖',
-      desc: '260919，fastQuery=false,clickable=true，添加 闪购0.1，返回，',
+      desc: '260919，fastQuery=false,clickable=true，添加 0.1，返回，',
       rules: [
         {
           action: 'clickCenter',
@@ -531,10 +530,11 @@ export default defineGkdApp({
     {
       key: 28,
       name: '添加神券到首页，X掉',
-      desc: '261009，fastquery=false,clickable=false,添加 排除误点去使用，明天不断签提醒，签到提醒，做任务领幸运星，领取奖励，排除红包卡券误点，闪购0.1，超级吃货卡体验版，闪购签到，闪购小程序，添加到首页，添加 生活缴费',
+      desc: '261011，fastquery=false,clickable=false,添加 排除误点去使用，明天不断签提醒，签到提醒，做任务领幸运星，领取奖励，排除红包卡券误点，闪购，超级吃货卡体验版，闪购签到，闪购小程序，添加到首页，添加 生活缴费',
       rules: [
         {
           resetMatch: 'match',
+          matchDelay: 1000,
           actionCd: 800,
           forcedTime: 3000,
           activityIds: [
@@ -560,6 +560,7 @@ export default defineGkdApp({
             'View[childCount=2] > @TextView[clickable=false][visibleToUser=true] - View TextView[text="开心收下"]',
             'View[childCount=2] > @TextView[clickable=false][visibleToUser=true][text.length=0] -  View >n TextView[text="元升级"][visibleToUser=true]',
             'TextView[text="刷新"][visibleToUser=true]',
+            'View > TextView[text="领幸运星兑免单"] + @TextView[clickable=false][visibleToUser=true] +  View >n Button[text="重新获取定位"][clickable=true][visibleToUser=true]',
             'View > View > @TextView[clickable=false][visibleToUser=true] - View >n  TextView[text="回免单首页看看"]',
             '@TextView[clickable=false][visibleToUser=true] - View > View > TextView[text="购物爆红包"] + TextView[text="今天23:59到期"]',
             '@TextView[clickable=false][visibleToUser=true] - View > View > View > View > View > TextView[text="首购特惠"]',
@@ -575,7 +576,6 @@ export default defineGkdApp({
             'View > View > View + TextView[text="去签到"][clickable=false][visibleToUser=true]',
             '[text^="完成"] <<n View + View > TextView[text="领取奖励"][clickable=false][visibleToUser=true]',
             '@TextView <n * + [text="取消"] + [text="立即添加"]',
-            'View > View > TextView[text="立即抽-bak闪购抽奖"][clickable=false][visibleToUser=true]',
             'TextView[text="回免单首页看看"][clickable=false][visibleToUser=true] < View + TextView[clickable=false][visibleToUser=true]',
             'TextView[text="下方为36转移过来的规则  添加明天不断签提醒，签到提醒，做任务领幸运星，领取奖励"]',
             'View > View > @TextView[clickable=false][visibleToUser=true] -  View > View > TextView[text="提醒我不断签"]',
@@ -887,7 +887,6 @@ export default defineGkdApp({
             '@[text="关闭"] +n [text="立即续卡"]',
             'Dialog >n Button[text="关闭"]',
             '[text="关闭弹窗"] + * [text="立即更换"]',
-            '[text="去看看"] - [text="淘宝闪购"] <<n * + [text="关闭"]',
             '[text="去转换"] + [text="仍要卖出"]',
             '[text="支付宝"] + [text="邀请你" || text="推荐你"] + [text="跳过"]',
             '[text^="无法获取定位信息"] + [text="我知道了"]',

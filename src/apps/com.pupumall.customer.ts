@@ -54,13 +54,15 @@ export default defineGkdApp({
     {
       key: 4,
       name: '弹窗，天降福利',
-      desc: '260927',
+      desc: '261011，排除 误触朴朴卡',
       rules: [
         {
           resetMatch: 'match',
           activityIds: 'com.pupumall.customer.activity.SplashActivity',
-          matches:
+          excludeMatches: 'ViewGroup >  TextView + TextView[text="朴朴卡"]',
+          anyMatches: [
             'ViewGroup[childCount=2] + ViewGroup[clickable=true][visibleToUser=true] > TextView[text!="0"][text.length=1]',
+          ],
         },
       ],
     },

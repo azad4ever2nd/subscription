@@ -22,10 +22,13 @@ export default defineGkdApp({
     {
       key: 2,
       name: '确认开锁',
-      desc: '261010',
+      desc: '261011',
       rules: [
         {
           resetMatch: 'match',
+          matchDelay: 1000,
+          matchTime: 2000,
+          forcedTime: 3000,
           action: 'clickCenter',
           activityIds:
             'com.hellobike.flutter.platform.android.flutterboost.FlutterHostFragmentActivity',
@@ -205,6 +208,7 @@ export default defineGkdApp({
       rules: [
         {
           resetMatch: 'match',
+          matchDelay: 1000,
           forcedTime: 3000,
           actionCd: 2000,
           activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
@@ -389,6 +393,7 @@ export default defineGkdApp({
           resetMatch: 'match',
           actionMaximum: 1,
           action: 'clickCenter',
+          matchDelay: 1000,
           activityIds:
             'com.hellobike.moped.platform.offline.web.OhoRealmWebActivity',
           anyMatches:
@@ -404,6 +409,7 @@ export default defineGkdApp({
         {
           resetMatch: 'match',
           actionCd: 2000,
+          matchDelay: 1500,
           forcedTime: 3000,
           activityIds:
             'com.hellobike.moped.platform.offline.web.OhoRealmWebActivity',
@@ -417,11 +423,13 @@ export default defineGkdApp({
     {
       key: 25,
       name: '弹窗，明日再来2，X掉',
-      desc: '261005',
+      desc: '261011',
       rules: [
         {
           resetMatch: 'match',
           action: 'clickCenter',
+          matchDelay: 1500,
+          forcedTime: 3000,
           activityIds:
             'com.hellobike.moped.platform.offline.web.OhoRealmWebActivity',
           anyMatches: [
@@ -433,6 +441,30 @@ export default defineGkdApp({
     },
     {
       key: 26,
+      name: '奖励金页面，上方，今日签到2',
+      desc: '261005，与13相比，activityId不同',
+      rules: [
+        {
+          actionCd: 3000,
+          matchDelay: 1500,
+          forcedTime: 3000,
+          resetMatch: 'match',
+          activityIds:
+            'com.hellobike.moped.platform.offline.web.OhoRealmWebActivity',
+          excludeMatches: [
+            'TextView[text="我的奖励金"] +n View >n View > TextView[text="签到"][visibleToUser=true]',
+            'TextView[text="我的奖励金"] +n View >n View > @TextView[visibleToUser=true][text.length=0] +n TextView[text="明日再来"][visibleToUser=true]',
+            'TextView[text="我的奖励金"] +n View >n View > TextView[text="知道了"][visibleToUser=true]',
+          ],
+          anyMatches: [
+            'TextView[text="我的奖励金"] +n View > View > @View[clickable=false][visibleToUser=true] > TextView + TextView[text="今日签到"]',
+            'TextView[text="我的奖励金"] +n View > View > @View[clickable=true][visibleToUser=true] > View >  TextView + TextView[text="今日签到"]',
+          ],
+        },
+      ],
+    },
+    {
+      key: 27,
       name: '弹窗，知道了2',
       desc: '261005，添加文明出行，排除 签到 和 明日再来，fastQuery=false,clickable=true，',
       rules: [
@@ -450,28 +482,6 @@ export default defineGkdApp({
             'TextView[text="我的奖励金"] +n View >n View > TextView[text="知道了"][clickable=true][visibleToUser=true]',
             'TextView[text="我的奖励金"] +n View >n View > TextView[text="知道了"][clickable=false][visibleToUser=true]',
             'View > View > TextView[text="我知道了"][clickable=true][visibleToUser=true]',
-          ],
-        },
-      ],
-    },
-    {
-      key: 27,
-      name: '奖励金页面，上方，今日签到2',
-      desc: '261005，与13相比，activityId不同',
-      rules: [
-        {
-          actionCd: 3000,
-          resetMatch: 'match',
-          activityIds:
-            'com.hellobike.moped.platform.offline.web.OhoRealmWebActivity',
-          excludeMatches: [
-            'TextView[text="我的奖励金"] +n View >n View > TextView[text="签到"][visibleToUser=true]',
-            'TextView[text="我的奖励金"] +n View >n View > @TextView[visibleToUser=true][text.length=0] +n TextView[text="明日再来"][visibleToUser=true]',
-            'TextView[text="我的奖励金"] +n View >n View > TextView[text="知道了"][visibleToUser=true]',
-          ],
-          anyMatches: [
-            'TextView[text="我的奖励金"] +n View > View > @View[clickable=false][visibleToUser=true] > TextView + TextView[text="今日签到"]',
-            'TextView[text="我的奖励金"] +n View > View > @View[clickable=true][visibleToUser=true] > View >  TextView + TextView[text="今日签到"]',
           ],
         },
       ],

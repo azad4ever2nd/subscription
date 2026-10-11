@@ -11,7 +11,7 @@ export default defineGkdApp({
       rules: [
         {
           resetMatch: 'match',
-          matchDelay: 1500,
+          matchDelay: 1000,
           actionCd: 2000,
           activityIds: '.CaptivePortalLoginActivity',
           excludeMatches:

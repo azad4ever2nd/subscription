@@ -95,6 +95,20 @@ export default defineGkdApp({
     },
     {
       key: 7,
+      name: '弹窗，开启免密支付，X掉',
+      desc: '261011',
+      rules: [
+        {
+          resetMatch: 'match',
+          action: 'clickCenter',
+          activityIds: 'com.pingan.componet.hybrid.webUrl.WebUrlActivity',
+          matches:
+            'View > View > TextView[text="开启免密支付"] + TextView[clickable=true][visibleToUser=true]',
+        },
+      ],
+    },
+    {
+      key: 8,
       name: '订单支付完后广告弹窗',
       desc: '260227',
       rules: [
