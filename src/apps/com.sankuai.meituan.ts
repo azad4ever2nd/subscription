@@ -414,5 +414,20 @@ export default defineGkdApp({
         },
       ],
     },
+    {
+      key: 28,
+      name: '弹窗，请打开GPS服务，暂不开启',
+      desc: '261012',
+      rules: [
+        {
+          resetMatch: 'match',
+          fastQuery: true,
+          activityIds:
+            'com.meituan.sankuai.map.unity.lib.modules.unitymap.UnityMapActivity',
+          matches:
+            'TextView[text="请开启GPS服务"] <<n LinearLayout +n ScrollView > LinearLayout > Button[text="去开启"] + Button[text="暂不开启"][clickable=true][visibleToUser=true]',
+        },
+      ],
+    },
   ],
 });

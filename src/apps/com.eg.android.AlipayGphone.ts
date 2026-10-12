@@ -748,15 +748,17 @@ export default defineGkdApp({
     {
       key: 38,
       name: '卡包删除卡，取消',
-      desc: '260705，fastQuery=true,',
+      desc: '261012，fastQuery=true,添加 地理位置权限',
       rules: [
         {
           resetMatch: 'match',
           fastQuery: true,
           activityIds:
             'com.alipay.android.phone.xriver.bundlex.CSGAPushActivity',
-          anyMatches:
-            'TextView[text*="确认删除" || text^="删除后无法恢复"] < ScrollView <n LinearLayout < LinearLayout + LinearLayout > @Button[id="com.alipay.mobile.antui:id/btn_cancel"][clickable=true][text="取消"] + Button[id="com.alipay.mobile.antui:id/btn_ensure"][text="确认删除"]',
+          anyMatches: [
+            'TextView[text.length=1] < @FrameLayout[desc="取消"][clickable=true][visibleToUser=true] + TextView[text="开启地理位置权限"] + TextView[text^="开启位置权限"]',
+            'TextView[text*="确认删除" || text^="删除后无法恢复"] < ScrollView <n LinearLayout < LinearLayout + LinearLayout > @Button[text="取消"][id="com.alipay.mobile.antui:id/btn_cancel"][clickable=true][visibleToUser=true] + Button[text^="确认"][id="com.alipay.mobile.antui:id/btn_ensure"]',
+          ],
         },
       ],
     },

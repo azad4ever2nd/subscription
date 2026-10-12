@@ -160,7 +160,7 @@ export default defineGkdApp({
     {
       key: 11,
       name: '基金，关注',
-      desc: '260527',
+      desc: '261012',
       rules: [
         {
           resetMatch: 'match',
@@ -168,22 +168,22 @@ export default defineGkdApp({
           activityIds:
             'com.nantian.iBank.ui.activity.container.ProgramSingleWindowActivity',
           matches:
-            '* > TextView[text="关注"][clickable=true][visibleToUser=true]',
+            'View > View > TextView[text="定投"] -n View > TextView[text="关注"][clickable=true][visibleToUser=true]',
         },
       ],
     },
     {
       key: 12,
       name: '勾选 本人已认真阅读并同意以上内容',
-      desc: '260711"',
+      desc: '261012"',
       rules: [
         {
           resetMatch: 'match',
           actionMaximum: 1,
           activityIds:
             'com.nantian.iBank.ui.activity.container.ProgramSingleWindowActivity',
-          matches:
-            '@TextView[clickable=false][visibleToUser=true] + View > TextView[text="本人已认真阅读并同意以上内容"]',
+          anyMatches:
+            '@TextView[visibleToUser=true] + View > TextView[text="本人已认真阅读并同意以上内容"]',
         },
       ],
     },
@@ -298,7 +298,7 @@ export default defineGkdApp({
     {
       key: 20,
       name: '速盈，勾选 本人已认真阅读并同意',
-      desc: '260917，测试看看执行顺序，保第2条',
+      desc: '261012，测试看看执行顺序，保第2条',
       rules: [
         {
           activityIds:
@@ -307,7 +307,7 @@ export default defineGkdApp({
           resetMatch: 'match',
           anyMatches: [
             'View > @TextView[clickable=true][visibleToUser=true] + View > TextView[text="本人已认真阅读并同意以上内容"]',
-            'View > @TextView[clickable=true][visibleToUser=true] + View > TextView[text="本人已认真阅读并同意"]',
+            'View > @TextView[clickable=true][visibleToUser=true] + View > TextView[text="本人已认真阅读并同意bak"]',
           ],
         },
       ],

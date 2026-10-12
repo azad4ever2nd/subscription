@@ -101,13 +101,29 @@ export default defineGkdApp({
     },
     {
       key: 7,
+      name: '立减金兑换成功，返回',
+      desc: '261012',
+      rules: [
+        {
+          resetMatch: 'match',
+          action: 'back',
+          actionCd: 1500,
+          activityIds: 'com.yitong.mobile.biz.h5.container.WebViewActivity',
+          matches:
+            'WebView[text^="微信立减金2.88元"] > View > TextView[text="交易成功"]',
+        },
+      ],
+    },
+    {
+      key: 8,
       name: '弹窗，立减金兑换，同意前往',
       desc: '260830',
       rules: [
         {
           resetMatch: 'match',
           fastQuery: true,
-          actionCd: 3000,
+          actionCd: 1500,
+          forcedTime: 3000,
           activityIds: 'com.yitong.mobile.biz.h5.container.WebViewActivity',
           matches:
             'ViewGroup > TextView[text="暂不前往"] + TextView[text="同意前往"][clickable=true][visibleToUser=true]',
@@ -115,7 +131,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 8,
+      key: 9,
       name: '兑换好礼，兑换',
       desc: '260928',
       rules: [
