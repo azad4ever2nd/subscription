@@ -92,17 +92,16 @@ export default defineGkdApp({
     {
       key: 7,
       name: '弹窗，删除当前快照，确定，新版本用',
-      desc: '260926',
+      desc: '261012',
       rules: [
         {
           resetMatch: 'match',
-          matchDelay: 500,
-          forcedTime: 3000,
-          actionCd: 0,
+          matchTime: 3000,
+          forcedTime: 4000,
+          actionCd: 100,
           action: 'clickCenter',
           anyMatches: [
             '([text="确定删除当前快照吗?"] +n @View[clickable=true][visibleToUser=true] > TextView[text="确定"])',
-            '([text="确定删除当前快照吗?"] +n @* > [text="确定"])',
           ],
           activityIds: ['li.songe.gkd.MainActivity'],
         },

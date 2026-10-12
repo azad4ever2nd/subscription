@@ -76,7 +76,7 @@ export default defineGkdApp({
     },
     {
       key: 5,
-      name: '弹窗，推荐开通花呗',
+      name: '弹窗，放弃付款，推荐开通花呗',
       desc: '261011，fastQuery=true,clickable=true,添加 支付宝推荐你，关闭PDD免密付款，添加放弃还款，推荐习惯，([text^="支付宝推荐" || text^="支付宝  推荐"] < * +n * > [text="关闭"]) ||',
       rules: [
         {
