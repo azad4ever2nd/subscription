@@ -62,7 +62,7 @@ export default defineGkdApp({
     {
       key: 3,
       name: '菜单，识别图中的二维码',
-      desc: '261012，添加 勾选人脸验证',
+      desc: '261013，添加 勾选人脸验证',
       rules: [
         {
           fastQuery: true,
@@ -71,11 +71,13 @@ export default defineGkdApp({
           activityIds: 'com.tencent.mm.plugin.webview.ui.tools.MMWebViewUI',
           anyMatches: [
             'View > View > TextView[text="人脸验证"] +n View > View > CheckBox[checked=false][clickable=true][visibleToUser=true]',
+            '@LinearLayout[clickable=true][visibleToUser=true] > LinearLayout > LinearLayout > TextView[text="识别图中的二维码"]',
             '[text="识别图中的二维码"]',
           ],
         },
       ],
     },
+
     {
       key: 4,
       name: '建行社保卡，公告，X掉',
@@ -332,7 +334,7 @@ export default defineGkdApp({
         {
           resetMatch: 'match',
           activityIds: '.ui.LauncherUI',
-          actionCd: 2000,
+          actionCd: 2500,
           matches:
             'ListView > @LinearLayout[clickable=true][visibleToUser=true] TextView - LinearLayout > View[text$="@openim"]',
         },
@@ -346,7 +348,7 @@ export default defineGkdApp({
         {
           resetMatch: 'match',
           activityIds: '.ui.LauncherUI',
-          actionCd: 2000,
+          actionCd: 2500,
           matches:
             'RelativeLayout > LinearLayout > LinearLayout > LinearLayout[desc="提示,对方还不是你的朋友"][clickable=true][visibleToUser=true]',
         },
@@ -1188,6 +1190,7 @@ export default defineGkdApp({
       rules: [
         {
           resetMatch: 'match',
+          forcedTime: 3000,
           activityIds: [
             'com.tencent.mm.plugin.appbrand.ui.AppBrandUI0',
             'com.tencent.mm.plugin.appbrand.ui.AppBrandUI1',
@@ -1489,7 +1492,7 @@ export default defineGkdApp({
     {
       key: 67,
       name: '活动未开始，我知道了',
-      desc: '261010，添加 红色打卡，宁波，朴朴，动卡空间，内蒙工行，贵阳工行，工行余姚，湘约工行，贵州工行，已参加过',
+      desc: '261013，添加 红色打卡，宁波，朴朴，动卡空间，内蒙工行，贵阳工行，工行余姚，湘约工行，贵州工行，已参加过',
       rules: [
         {
           resetMatch: 'match',
@@ -1526,6 +1529,7 @@ export default defineGkdApp({
             'View >  View > View > TextView[text="来晚了，奖励派完了"] + View + TextView[clickable=true][visibleToUser=true]',
             'TextView[text^="今日名额已尽" || text="今日名额已尽，明日九点开放。"] < View + View + TextView[clickable=true][visibleToUser=true]',
             'View > View > @Button[text="我知道了"][clickable=true][visibleToUser=true] - View > TextView[text^="名额已抢完" && text*="谢谢参与"]',
+            'TextView[text^="今日额度已领完"]  <<n LinearLayout + LinearLayout >n Button[text="确定"][vid="mm_alert_ok_btn"][clickable=true][visibleToUser=true]',
             'View > TextView[text="该商品已售罄"] + TextView[text="我知道了"][clickable=true][visibleToUser=true]',
             'View > View > @TextView[clickable=true][visibleToUser=true] - TextView - View >n TextView[text^="当前奖池已领完"]',
             'View > View > TextView[text^="奖品已领完"] + TextView[text="确定"][clickable=true][visibleToUser=true]',
@@ -1856,14 +1860,16 @@ export default defineGkdApp({
     {
       key: 79,
       name: '弹窗，汉运动，券已发放结束，确定',
-      desc: '261011',
+      desc: '261013',
       rules: [
         {
           resetMatch: 'match',
           fastQuery: true,
-          actionCd: 2000,
-          matches:
+          anyMatches: [
+            'TextView[text="活动火爆,请稍后再试"] <<n LinearLayout + LinearLayout Button[text="确定"][vid="mm_alert_ok_btn"][clickable=true][visibleToUser=true]',
+            'TextView[text="您的请求过于频繁，请稍后再试！"] <<n LinearLayout + LinearLayout Button[text="确定"][vid="mm_alert_ok_btn"][clickable=true][visibleToUser=true]',
             'TextView[text="券已发放结束"] <<n LinearLayout + LinearLayout Button[text="确定"][vid="mm_alert_ok_btn"][clickable=true][visibleToUser=true]',
+          ],
           activityIds: [
             'com.tencent.mm.plugin.appbrand.ui.AppBrandUI0',
             'com.tencent.mm.plugin.appbrand.ui.AppBrandUI1',

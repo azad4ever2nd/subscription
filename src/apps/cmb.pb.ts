@@ -434,6 +434,8 @@ export default defineGkdApp({
           action: 'clickCenter',
           resetMatch: 'match',
           actionMaximum: 1,
+          excludeMatches:
+            'View > Button[text="修改"] + Button[text="暂停"] + Button[visibleToUser=true][text="终止"]',
           activityIds:
             'cmb.pb.app.h5container.webviewcontainer.PBWebContainerActivity',
           anyMatches: [
@@ -559,15 +561,17 @@ export default defineGkdApp({
     {
       key: 32,
       name: '定投，阅读并确认以下文件，确认',
-      desc: '260602，增加风险确认',
+      desc: '261013，增加风险确认',
       rules: [
         {
           action: 'clickCenter',
           resetMatch: 'match',
           activityIds:
             'cmb.pb.app.h5container.webviewcontainer.PBWebContainerActivity',
-          anyMatches:
+          anyMatches: [
+            '[text="请阅读并确认以下文件"] < View +n View > Button[text="已阅读并确认"][clickable=true][visibleToUser=true]',
             '([text="请阅读并确认以下文件"] < * +n * > [text="已阅读并确认"])',
+          ],
         },
       ],
     },

@@ -27,7 +27,6 @@ export default defineGkdApp({
         {
           resetMatch: 'match',
           matchDelay: 1000,
-          matchTime: 2000,
           forcedTime: 3000,
           action: 'clickCenter',
           activityIds:
@@ -474,7 +473,7 @@ export default defineGkdApp({
         {
           action: 'clickCenter',
           resetMatch: 'match',
-          actionCd: 3000,
+          actionCd: 1500,
           activityIds:
             'com.hellobike.moped.platform.offline.web.OhoRealmWebActivity',
           excludeMatches: [
@@ -485,6 +484,7 @@ export default defineGkdApp({
             'TextView[text="我的奖励金"] +n View >n View > TextView[text="知道了"][clickable=true][visibleToUser=true]',
             'TextView[text="我的奖励金"] +n View >n View > TextView[text="知道了"][clickable=false][visibleToUser=true]',
             'View > View > TextView[text="我知道了"][clickable=true][visibleToUser=true]',
+            'View > View > TextView[text*="公告"] +n TextView[text="我知道了"][clickable=true][visibleToUser=true]', //杭州盲道礼让公告
           ],
         },
       ],

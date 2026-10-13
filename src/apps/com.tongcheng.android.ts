@@ -167,13 +167,13 @@ export default defineGkdApp({
     {
       key: 12,
       name: '恭喜获得红包，残忍离开',
-      desc: '260812，添加 酒店权益已到账',
+      desc: '261013，添加 酒店权益已到账',
       rules: [
         {
           resetMatch: 'match',
           activityIds: 'com.tongcheng.android.module.webapp.WebViewActivity',
           anyMatches: [
-            '(View > View > @TextView[text="残忍离开"][clickable=false][visibleToUser=true] + TextView)',
+            '(View > View > @TextView[text="残忍离开"][visibleToUser=true] + TextView)',
             '(View > TextView[text="酒店权益已到账"] +n View > Image[text*="close"][clickable=false][visibleToUser=true])',
           ],
         },

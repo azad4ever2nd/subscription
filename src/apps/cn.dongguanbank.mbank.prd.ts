@@ -22,13 +22,15 @@ export default defineGkdApp({
     {
       key: 2,
       name: '签完到弹窗，X掉',
-      desc: '260502',
+      desc: '261113',
       rules: [
         {
           resetMatch: 'match',
           activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
-          matches:
+          anyMatches: [
             '@Image +n [text="恭喜获得"] +n [text="积分"] + [text="分享好友还可再领积分噢!"]',
+            'View > View > @Image[clickable=true][visibleToUser=true] +n [text$="积分"] + [text="开心收下"]',
+          ],
         },
       ],
     },

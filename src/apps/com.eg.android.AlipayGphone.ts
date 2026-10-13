@@ -282,7 +282,7 @@ export default defineGkdApp({
     {
       key: 14,
       name: '中奖了，开心收下',
-      desc: '260925，新旧版本对于checkbox处理不同，添加 卡包管理 优酷飞猪话费',
+      desc: '261013，新旧版本对于checkbox处理不同，添加 卡包管理 优酷飞猪话费',
       rules: [
         {
           resetMatch: 'match',
@@ -290,7 +290,8 @@ export default defineGkdApp({
           activityIds:
             'com.alipay.mobile.nebulax.xriver.activity.XRiverActivity',
           anyMatches: [
-            '@Button[clickable=true][text="开心收下"] <n View < View + Button[clickable=true][visibleToUser=true][text="关闭"]',
+            '@Button[clickable=true][text="开心收下"] <<n View  + Button[clickable=true][visibleToUser=true][text="关闭"] ',
+            'View > TextView[text*="恭喜获得"] + View > View > Button[text="开心收下"][clickable=true][visibleToUser=true]',
             'View[childCount=0] < @CheckBox[checked=false][visibleToUser=true] + View > View > TextView[text="优酷视频"]',
             'View[childCount=0] < @CheckBox[checked=false][visibleToUser=true] + View > View > TextView[text="满200元可用"] +2 TextView[text="话费满减券"]',
             'View[childCount=0] < @CheckBox[checked=false][visibleToUser=true] + View > View > TextView[text="飞猪旅行"]',
@@ -798,7 +799,7 @@ export default defineGkdApp({
     {
       key: 41,
       name: '添加到首页，取消',
-      desc: '260829',
+      desc: '261013',
       rules: [
         {
           resetMatch: 'match',
@@ -806,6 +807,7 @@ export default defineGkdApp({
           activityIds: 'com.alipay.android.phone.home.market.AddToHomeActivity',
           anyMatches: [
             '(TextView[text*="添加到首页"] < RelativeLayout < FrameLayout < FrameLayout + LinearLayout > Button[id="com.alipay.mobile.antui:id/btn_cancel"][clickable=true][visibleToUser=true][text="取消"])',
+            'TextView[text="编辑首页服务"] <<n FrameLayout + LinearLayout > @Button[text="取消"][id="com.alipay.mobile.antui:id/btn_cancel"][clickable=true][visibleToUser=true] + Button[text="完成"][id="com.alipay.mobile.antui:id/btn_ensure"]',
             '(TextView[text="编辑首页服务"] < LinearLayout < FrameLayout + LinearLayout > Button[text="取消"][clickable=true][visibleToUser=true] + Button[text="完成"][clickable=true][visibleToUser=true])',
           ],
         },
@@ -894,6 +896,21 @@ export default defineGkdApp({
           resetMatch: 'match',
           activityIds:
             'com.alipay.mobile.nebulax.xriver.activity.XRiverActivity',
+        },
+      ],
+    },
+    {
+      key: 46,
+      name: '扣款顺序设置',
+      desc: '261013',
+      rules: [
+        {
+          actionCd: 15000,
+          resetMatch: 'match',
+          fastQuery: true,
+          activityIds: 'com.flybird.app.FBAppWindowActivity',
+          matches:
+            '@FrameLayout[clickable=true][visibleToUser=true] > TextView[text="扣款顺序设置"]',
         },
       ],
     },

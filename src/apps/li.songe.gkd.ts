@@ -25,7 +25,10 @@ export default defineGkdApp({
           actionCd: 100,
           forcedTime: 3000,
           activityIds: 'li.songe.gkd.MainActivity',
-          matches: '@[text="加载失败, 点击重试"] + View',
+          anyMatches: [
+            'View > TextView[text="加载失败, 点击重试"][clickable=true][visibleToUser=true]',
+            '@[text="加载失败, 点击重试"] + View',
+          ],
         },
       ],
     },
@@ -92,11 +95,10 @@ export default defineGkdApp({
     {
       key: 7,
       name: '弹窗，删除当前快照，确定，新版本用',
-      desc: '261012',
+      desc: '261013，测试去掉matchTime',
       rules: [
         {
           resetMatch: 'match',
-          matchTime: 3000,
           forcedTime: 4000,
           actionCd: 100,
           action: 'clickCenter',

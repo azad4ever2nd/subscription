@@ -110,11 +110,17 @@ export default defineGkdApp({
     {
       key: 7,
       name: '盲盒来早了',
-      desc: '',
+      desc: '261013，添加 当前活动火爆请稍后重试',
       rules: [
         {
           action: 'back',
-          matches: ['[text^="活动未开始"] + [text="确定"]'],
+          anyMatches: [
+            'TextView[text*="当前活动火爆请稍后重试"]',
+            'View[desc*="当前活动火爆请稍后重试"]',
+            '[text^="活动未开始"] + [text="确定"]',
+            '[text*="当前活动火爆请稍后重试"]',
+            '[desc*="当前活动火爆请稍后重试"]',
+          ],
           actionCd: 700,
           resetMatch: 'match',
           activityIds: 'com.icbc.activity.web.ICBCWebView',

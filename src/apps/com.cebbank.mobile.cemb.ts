@@ -218,7 +218,8 @@ export default defineGkdApp({
           actionMaximum: 1,
           activityIds:
             'com.cebbank.mobile.cemb.ui.activity.mobilePayment.MobilePaymentWebActivity',
-          matches: 'View > [text="指定产品加自选"] + TextView[text.length=0]',
+          matches:
+            'View > [text="指定产品加自选"] + TextView[text.length=0][clickable=true][visibleToUser=true]',
         },
       ],
     },
@@ -232,7 +233,8 @@ export default defineGkdApp({
           actionMaximum: 1,
           activityIds:
             'com.cebbank.mobile.cemb.ui.activity.mobilePayment.MobilePaymentWebActivity',
-          matches: 'View > [text="阅读指定产品文章"] + TextView[text.length=0]',
+          matches:
+            'View > [text="阅读指定产品文章"] + TextView[text.length=0][clickable=true][visibleToUser=true]',
         },
       ],
     },

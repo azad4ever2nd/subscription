@@ -175,15 +175,17 @@ export default defineGkdApp({
     {
       key: 12,
       name: '勾选 本人已认真阅读并同意以上内容',
-      desc: '261012"',
+      desc: '261013，可禁用 或 占位',
       rules: [
         {
           resetMatch: 'match',
           actionMaximum: 1,
+          excludeMatches: 'LinearLayout > TextView[text="速盈购买"]',
           activityIds:
             'com.nantian.iBank.ui.activity.container.ProgramSingleWindowActivity',
-          anyMatches:
+          anyMatches: [
             '@TextView[visibleToUser=true] + View > TextView[text="本人已认真阅读并同意以上内容"]',
+          ],
         },
       ],
     },
@@ -298,7 +300,7 @@ export default defineGkdApp({
     {
       key: 20,
       name: '速盈，勾选 本人已认真阅读并同意',
-      desc: '261012，测试看看执行顺序，保第2条',
+      desc: '261013',
       rules: [
         {
           activityIds:
@@ -307,7 +309,6 @@ export default defineGkdApp({
           resetMatch: 'match',
           anyMatches: [
             'View > @TextView[clickable=true][visibleToUser=true] + View > TextView[text="本人已认真阅读并同意以上内容"]',
-            'View > @TextView[clickable=true][visibleToUser=true] + View > TextView[text="本人已认真阅读并同意bak"]',
           ],
         },
       ],
@@ -338,6 +339,37 @@ export default defineGkdApp({
             'com.nantian.iBank.ui.activity.container.ProgramSingleWindowActivity',
           matches:
             'View > View > View > Button[text="确定"][clickable=true][focusable=true][visibleToUser=true]',
+        },
+      ],
+    },
+    {
+      key: 23,
+      name: '整存整取页面，一键全部勾选',
+      desc: '261013',
+      rules: [
+        {
+          resetMatch: 'match',
+          actionMaximum: 1,
+          activityIds:
+            'com.nantian.iBank.ui.activity.container.ProgramSingleWindowActivity',
+          anyMatches: [
+            'View > View > Button[text="确认存入"] - View > TextView[text="一键全部勾选"] - View > @View[clickable=true][visibleToUser=true] > Image[text="V74Ofw+8qgAAAABJRU5ErkJggg=="]', //整存整取页面
+          ],
+        },
+      ],
+    },
+    {
+      key: 24,
+      name: '整存整取页面，确认存入',
+      desc: '261013',
+      rules: [
+        {
+          resetMatch: 'match',
+          activityIds:
+            'com.nantian.iBank.ui.activity.container.ProgramSingleWindowActivity',
+          anyMatches: [
+            'View > View > Button[text="确认存入"][clickable=true][visibleToUser=true][focusable=true]',
+          ],
         },
       ],
     },
