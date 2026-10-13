@@ -182,7 +182,7 @@ export default defineGkdApp({
     {
       key: 13,
       name: '给评价',
-      desc: '260912，添加 IDS，添加弹窗',
+      desc: '261013，添加 惊喜弹窗，IDS',
       rules: [
         {
           forcedTime: 3000,
@@ -193,9 +193,10 @@ export default defineGkdApp({
             'com.tongcheng.android.LoadingActivity',
           ],
           anyMatches: [
+            'ViewGroup > ViewGroup[vid="not_disturb_layout"] + ImageView[vid="second_close"][clickable=true][visibleToUser=true]',
+            'LinearLayout > ImageView[vid="second_close"][clickable=true][visibleToUser=true]',
             '([vid="top_iv" || vid="flADLayout" || vid="flContainer"] + [vid="iv_close" ])',
             '([vid="top_iv" || vid="flADLayout" || vid="flContainer"] + [vid="ivClose"])',
-            'LinearLayout > ImageView[vid="second_close"][clickable=true][visibleToUser=true]',
             '(LinearLayout > FrameLayout[vid="flADLayout"] + ImageView[vid="ivClose"])',
             '(@ImageView[clickable=true][visibleToUser=true][vid="iv_close"] - ImageView[vid="top_iv"] < FrameLayout + LinearLayout > TextView[text*="好评"])',
           ],
