@@ -81,7 +81,7 @@ export default defineGkdApp({
     {
       key: 4,
       name: '建行社保卡，公告，X掉',
-      desc: '260708',
+      desc: '261014',
       rules: [
         {
           resetMatch: 'match',
@@ -89,14 +89,14 @@ export default defineGkdApp({
           action: 'clickCenter',
           activityIds: 'com.tencent.mm.plugin.webview.ui.tools.MMWebViewUI',
           matches:
-            '(WebView[text*="建行社保卡"] > View > View > @Image[visibleToUser=true][clickable=true][text="NWJ6tc6mwaKQfgbADXAJPIxaVNUQJguwpoNgAy0x2ew8SgXab+AzNTubJfuAmp7HtQL5K8AARxBdk+5zMOgAAAAASUVORK5CYII="] - View > View > TextView[text^="尊敬的客户"])',
+            '(WebView[text*="建行社保卡" || text*="社保卡福利日"] > View > View > @Image[visibleToUser=true][clickable=true][text="NWJ6tc6mwaKQfgbADXAJPIxaVNUQJguwpoNgAy0x2ew8SgXab+AzNTubJfuAmp7HtQL5K8AARxBdk+5zMOgAAAAASUVORK5CYII="] - View > View > TextView[text^="尊敬的客户"])',
         },
       ],
     },
     {
       key: 5,
       name: '建行社保卡，勾选同意',
-      desc: '260815，添加 非建行社保卡活动',
+      desc: '261014，添加 非建行社保卡活动',
       rules: [
         {
           resetMatch: 'match',
@@ -104,7 +104,7 @@ export default defineGkdApp({
           action: 'clickCenter',
           activityIds: 'com.tencent.mm.plugin.webview.ui.tools.MMWebViewUI',
           anyMatches: [
-            '(WebView[text*="建行社保卡"] > View > View > View > CheckBox[clickable=true][checked=false])',
+            '(WebView[text*="建行社保卡" || text*="社保卡福利日"] > View > View > View > CheckBox[clickable=true][checked=false])',
             '(WebView > View > View > View > CheckBox[clickable=true][checked=false])',
           ],
         },
@@ -113,29 +113,30 @@ export default defineGkdApp({
     {
       key: 6,
       name: '建行社保卡，勾选同意后，立即参与',
-      desc: '260610',
+      desc: '261014',
       rules: [
         {
           resetMatch: 'match',
           actionCdKey: 4,
           activityIds: 'com.tencent.mm.plugin.webview.ui.tools.MMWebViewUI',
           matches:
-            '(WebView[text*="建行社保卡"] > View > View > View > CheckBox[checked=true] +2 CheckBox[checked=true] +2 Image[text="loginBtn.f302f730"])',
+            '(WebView[text*="建行社保卡" || text*="社保卡福利日"] > View > View > View > CheckBox[checked=true] +2 CheckBox[checked=true] +2 Image[text="loginBtn.f302f730"])',
         },
       ],
     },
     {
       key: 7,
       name: '建行社保卡，火暴',
-      desc: '260708',
+      desc: '261014',
       rules: [
         {
           resetMatch: 'match',
           actionCdKey: 4,
           activityIds: 'com.tencent.mm.plugin.webview.ui.tools.MMWebViewUI',
           anyMatches: [
-            '(WebView[text*="建行社保卡"] > View > View > @Image[visibleToUser=true][clickable=true][text="NWJ6tc6mwaKQfgbADXAJPIxaVNUQJguwpoNgAy0x2ew8SgXab+AzNTubJfuAmp7HtQL5K8AARxBdk+5zMOgAAAAASUVORK5CYII="] - View > View > TextView[text^="尊敬的客户"])',
-            '(WebView[text*="建行社保卡"] > View > Dialog > View > Button[text="好的"])',
+            'WebView[text*="建行社保卡" || text*="社保卡福利日"] > View > Dialog > View > Button[text="好的"]',
+            'WebView[text*="建行社保卡" || text*="社保卡福利日"] > View > View > @Image[visibleToUser=true][clickable=true][text="NWJ6tc6mwaKQfgbADXAJPIxaVNUQJguwpoNgAy0x2ew8SgXab+AzNTubJfuAmp7HtQL5K8AARxBdk+5zMOgAAAAASUVORK5CYII="] - View > View > TextView[text^="尊敬的客户"]',
+            'Dialog > TextView[text="温馨提示"] + TextView[text*="周三15:00开放报名"] + View > Button[text="好的"][clickable=true][visibleToUser=true]',
           ],
         },
       ],
