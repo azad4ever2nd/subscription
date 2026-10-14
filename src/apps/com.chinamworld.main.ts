@@ -28,7 +28,7 @@ export default defineGkdApp({
           actionCd: 100,
           activityIds: 'com.ccb.framework.ui.widget.webview.CcbWebViewActivity',
           anyMatches: [
-            '(CheckBox[checked=true] + CheckBox[checked=true] + [text="loginBtn.f302f730"])',
+            '(CheckBox[checked=true] +n CheckBox[checked=true] + [text="loginBtn.f302f730"])',
             '([text="温馨提示"] +n * > Button[text="好的"])',
             '([text="身份信息验证"] +n CheckBox[checked=false])',
           ],
@@ -42,7 +42,7 @@ export default defineGkdApp({
       rules: [
         {
           resetMatch: 'match',
-          actionCd: 100,
+          actionCd: 10,
           activityIds: 'com.ccb.framework.ui.widget.webview.CcbWebViewActivity',
           matches:
             'CheckBox[checked=true] + CheckBox[checked=true] + [text="loginBtn.f302f730"]',
@@ -56,7 +56,7 @@ export default defineGkdApp({
       rules: [
         {
           resetMatch: 'match',
-          actionCd: 100,
+          actionCd: 10,
           activityIds: 'com.ccb.framework.ui.widget.webview.CcbWebViewActivity',
           matches: 'TextView[text="温馨提示"] +n * > Button[text="好的"]',
         },

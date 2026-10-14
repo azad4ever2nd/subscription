@@ -136,6 +136,7 @@ export default defineGkdApp({
           anyMatches: [
             'WebView[text*="建行社保卡" || text*="社保卡福利日"] > View > Dialog > View > Button[text="好的"]',
             'Dialog > TextView[text="温馨提示"] + TextView[text*="周三15:00开放报名"] + View > Button[text="好的"][clickable=true][visibleToUser=true]',
+            'Dialog > TextView[text="温馨提示"] + View > Button[text="好的"][clickable=true][visibleToUser=true]',
           ],
         },
       ],
