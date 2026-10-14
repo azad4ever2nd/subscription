@@ -144,16 +144,16 @@ export default defineGkdApp({
     {
       key: 11,
       name: '财富会员，中间横幅，社保卡活动',
-      desc: '260114',
+      desc: 'D，260114，整合12，13，16',
       rules: [
         {
           actionCd: 100,
           resetMatch: 'match',
           anyMatches: [
-            '[text="身份信息验证"] +n CheckBox[checked=false] || ([text="身份信息验证"] +n [text="loginBtn.f302f730"])',
-            '([text*="活动期间每周三15:00起开放报名领券入口"] <<n * + [text="NWJ6tc6mwaKQfgbADXAJPIxaVNUQJguwpoNgAy0x2ew8SgXab+AzNTubJfuAmp7HtQL5K8AARxBdk+5zMOgAAAAASUVORK5CYII="])',
-            '([text="温馨提示"] + [text*="报名人数已满" || text="今日报名人数已满，您可下个领券日再来~" || text^="活动期间每周三"] + * > [text="好的"])',
-            '([text="温馨提示"] + * > [text="好的"])',
+            '[text="身份信息验证"] +n CheckBox[checked=false] || ([text="身份信息验证"] +n [text="loginBtn.f302f730"])', //规则12
+            '([text*="活动期间每周三15:00起开放报名领券入口"] <<n * + [text="NWJ6tc6mwaKQfgbADXAJPIxaVNUQJguwpoNgAy0x2ew8SgXab+AzNTubJfuAmp7HtQL5K8AARxBdk+5zMOgAAAAASUVORK5CYII="text="NWJ6tc6mwaKQfgbADXAJPIxaVNUQJguwpoNgAy0x2ew8SgXab+AzNTubJfuAmp7HtQL5K8AARxBdk+5zMOgAAAAASUVORK5CYII="])', //规则 13
+            '([text="温馨提示"] + [text*="报名人数已满" || text="今日报名人数已满，您可下个领券日再来~" || text^="活动期间每周三"] + * > [text="好的"])', //规则 13
+            '([text="温馨提示"] + * > [text="好的"])', //规则12
           ],
           activityIds: 'com.ccb.cloudmerchant.view.WebViewActivity',
         },
@@ -162,12 +162,15 @@ export default defineGkdApp({
     {
       key: 12,
       name: '财富会员，中间横幅，社保卡活动，身份信息验证',
-      desc: '260114',
+      desc: 'D，261014，冲突14，',
       rules: [
         {
-          actionCd: 0,
+          actionCd: 500,
           resetMatch: 'match',
-          matches: '[text="身份信息验证"] +n CheckBox[checked=false]',
+          anyMatches: [
+            'View > TextView[text="身份信息验证"] +n CheckBox[checked=false][visibleToUser=true]',
+            '[text="身份信息验证"] +n CheckBox[checked=false]',
+          ],
           activityIds: 'com.ccb.cloudmerchant.view.WebViewActivity',
         },
       ],
@@ -176,22 +179,7 @@ export default defineGkdApp({
     {
       key: 13,
       name: '建行社保卡，公告，X掉',
-      desc: '260806',
-      rules: [
-        {
-          resetMatch: 'match',
-          actionCd: 0,
-          action: 'clickCenter',
-          activityIds: 'com.ccb.cloudmerchant.view.WebViewActivity',
-          matches:
-            'WebView[text*="建行社保卡"] > View > View > View > @Image[text="NWJ6tc6mwaKQfgbADXAJPIxaVNUQJguwpoNgAy0x2ew8SgXab+AzNTubJfuAmp7HtQL5K8AARxBdk+5zMOgAAAAASUVORK5CYII="] - View > TextView[text*="建行社保福利日" || text="尊敬的客户："] ',
-        },
-      ],
-    },
-    {
-      key: 14,
-      name: '建行社保卡，勾选同意',
-      desc: '261011，添加 不限制层数',
+      desc: 'D，260806',
       rules: [
         {
           resetMatch: 'match',
@@ -199,7 +187,23 @@ export default defineGkdApp({
           action: 'clickCenter',
           activityIds: 'com.ccb.cloudmerchant.view.WebViewActivity',
           anyMatches: [
-            'WebView[text*="建行社保卡"] > View > View > View > CheckBox[checked=false][visibleToUser=true]',
+            'Dialog > TextView[text="温馨提示"] + TextView + View > Button[text="好的"][clickable=true][visibleToUser=true]',
+            'WebView[text*="建行社保卡" || text*="社保卡福利日"] > View > View > View > @Image[text="NWJ6tc6mwaKQfgbADXAJPIxaVNUQJguwpoNgAy0x2ew8SgXab+AzNTubJfuAmp7HtQL5K8AARxBdk+5zMOgAAAAASUVORK5CYII="] - View > TextView[text*="建行社保福利日" || text="尊敬的客户："] ',
+          ],
+        },
+      ],
+    },
+    {
+      key: 14,
+      name: '建行社保卡，勾选同意',
+      desc: '261014，添加 不限制层数',
+      rules: [
+        {
+          resetMatch: 'match',
+          action: 'clickCenter',
+          activityIds: 'com.ccb.cloudmerchant.view.WebViewActivity',
+          anyMatches: [
+            'WebView[text*="建行社保卡" || text*="社保卡福利日"] > View > View > View > CheckBox[checked=false][visibleToUser=true]',
             'WebView >n View > CheckBox[checked=false][visibleToUser=true]',
           ],
         },
@@ -212,11 +216,11 @@ export default defineGkdApp({
       rules: [
         {
           resetMatch: 'match',
-          actionCd: 0,
+          actionCd: 500,
           action: 'clickCenter',
           activityIds: 'com.ccb.cloudmerchant.view.WebViewActivity',
           matches:
-            'WebView[text*="建行社保卡"] > View > View > View > CheckBox[checked=true] +2 CheckBox[checked=true] +2 Image[clickable=false][visibleToUser=true][text="loginBtn.f302f730"]',
+            'WebView[text*="建行社保卡" || text*="社保卡福利日"] > View > View > View > CheckBox[checked=true] +2 CheckBox[checked=true] +2 Image[clickable=false][visibleToUser=true][text="loginBtn.f302f730"]',
         },
       ],
     },
@@ -227,12 +231,14 @@ export default defineGkdApp({
       rules: [
         {
           resetMatch: 'match',
-          actionCd: 0,
+          actionCd: 500,
           action: 'clickCenter',
           activityIds: 'com.ccb.cloudmerchant.view.WebViewActivity',
           anyMatches: [
-            '(WebView[text*="建行社保卡"] > View > View > @Image[visibleToUser=true][clickable=true][text="NWJ6tc6mwaKQfgbADXAJPIxaVNUQJguwpoNgAy0x2ew8SgXab+AzNTubJfuAmp7HtQL5K8AARxBdk+5zMOgAAAAASUVORK5CYII="] - View > View > TextView[text^="尊敬的客户"])',
-            '(WebView[text*="建行社保卡"] > View > Dialog > View > Button[text="好的"])',
+            'WebView[text*="建行社保卡" || text*="社保卡福利日"] > View > View > @Image[visibleToUser=true][clickable=true][text="NWJ6tc6mwaKQfgbADXAJPIxaVNUQJguwpoNgAy0x2ew8SgXab+AzNTubJfuAmp7HtQL5K8AARxBdk+5zMOgAAAAASUVORK5CYII="] - View > View > TextView[text^="尊敬的客户"]',
+            'Dialog > TextView[text="温馨提示"] + TextView + View > Button[text="好的"][clickable=true][visibleToUser=true]',
+            'WebView[text*="建行社保卡" || text*="社保卡福利日"] > View > Dialog > View > Button[text="好的"])',
+            'WebView[text*="建行社保卡" || text*="社保卡福利日"] > View > View > View > @Image[text="NWJ6tc6mwaKQfgbADXAJPIxaVNUQJguwpoNgAy0x2ew8SgXab+AzNTubJfuAmp7HtQL5K8AARxBdk+5zMOgAAAAASUVORK5CYII="] - View > TextView[text*="建行社保福利日" || text="尊敬的客户："] ',
           ],
         },
       ],

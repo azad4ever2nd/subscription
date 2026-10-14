@@ -58,7 +58,7 @@ export default defineGkdApp({
           resetMatch: 'match',
           actionCd: 0,
           activityIds: 'com.ccb.framework.ui.widget.webview.CcbWebViewActivity',
-          matches: '[text="温馨提示"] +n * > Button[text="好的"]',
+          matches: 'TextView[text="温馨提示"] +n * > Button[text="好的"]',
         },
       ],
     },

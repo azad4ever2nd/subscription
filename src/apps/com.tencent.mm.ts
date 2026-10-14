@@ -80,7 +80,7 @@ export default defineGkdApp({
 
     {
       key: 4,
-      name: '建行社保卡，公告，X掉',
+      name: '弹窗，建行社保卡活动，公告，X掉',
       desc: '261014',
       rules: [
         {
@@ -126,7 +126,7 @@ export default defineGkdApp({
     },
     {
       key: 7,
-      name: '建行社保卡，火暴',
+      name: '弹窗，建行社保卡活动，火爆',
       desc: '261014',
       rules: [
         {
