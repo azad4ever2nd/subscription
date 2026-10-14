@@ -1887,9 +1887,38 @@ export default defineGkdApp({
         },
       ],
     },
-
     {
       key: 80,
+      name: '粟上皇，立即领取',
+      desc: '261014',
+      rules: [
+        {
+          resetMatch: 'match',
+          actionMaximum: 3,
+          actionCd: 5000,
+          anyMatches: [
+            'View > View > TextView[text*="武汉" && text*="10元无门槛"] + TextView + Button[text="立即领取 "][clickable=true][visibleToUser=true]',
+            'View > View > TextView[text*="武汉" && text*="10元无门槛"] + View > View > Button[text="立即领取 "][clickable=true][visibleToUser=true]',
+          ],
+          activityIds: [
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI0',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI1',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI2',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI3',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI4',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI00',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI01',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI02',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI03',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI04',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandPluginUI',
+          ],
+        },
+      ],
+    },
+
+    {
+      key: 81,
       name: '自动登录该设备',
       desc: '260804',
       rules: [
@@ -1902,7 +1931,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 81,
+      key: 82,
       name: '同程抢单，慎用',
       desc: 'D，260926',
       rules: [

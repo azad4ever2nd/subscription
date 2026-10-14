@@ -7,14 +7,14 @@ export default defineGkdApp({
     {
       key: 1,
       name: '弹窗，新版本，取消',
-      desc: '260926',
+      desc: '261014',
       rules: [
         {
           fastQuery: true,
           resetMatch: 'match',
           activityIds: 'com.cqrcb.mainbundle.page.MainActivity',
           matches:
-            'TextView[text="版本更新"][vid="tv_title"] < LinearLayout + LinearLayout > LinearLayout > @TextView[text="取消"][vid="tv_cancel"] + TextView[text="升级"][vid="tv_confirm"]',
+            'TextView[text="版本更新"][vid="tv_title"] < LinearLayout + LinearLayout > LinearLayout > @TextView[text="取消"][vid="tv_cancel"][clickable=true][visibleToUser=true] + TextView[text="升级"][vid="tv_confirm"]',
         },
       ],
     },

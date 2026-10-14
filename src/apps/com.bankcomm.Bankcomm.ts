@@ -118,7 +118,7 @@ export default defineGkdApp({
     {
       key: 8,
       name: '领券中心,信用卡专享好券，还款红包',
-      desc: '260916',
+      desc: '261014，布局更新',
       rules: [
         {
           resetMatch: 'match',
@@ -126,112 +126,136 @@ export default defineGkdApp({
           forcedTime: 2000,
           actionMaximum: 3,
           activityIds: 'com.bankcomm.module.biz.webcontainer.BCMHtml5Activity',
-          matches:
+          anyMatches: [
+            'View > View > TextView[text="信用卡"] + TextView[text="专享好券"] + View > View > View > Image[text="立即领取"]',
+            'View > View > TextView[text="信用卡"] + TextView[text="专享好券"] + View >n Image[text="立即领取"]',
             '(Image[text="ACIM_20260728000180_20260728174629048"] <<n View + View > View[index=1] Image[text="立即领取"])',
+          ],
         },
       ],
     },
     {
       key: 9,
-      name: '领券中心,领更多品牌商户券',
-      desc: '260803，[clickable=true][visibleToUser=true]',
+      name: '领券中心,领更多品牌商户券，智能推荐',
+      desc: '261014，更新布局，想抢指定第几个就把第1个 +n 换成 加几',
       rules: [
         {
           actionMaximum: 2,
           actionCd: 0,
           resetMatch: 'match',
           activityIds: 'com.bankcomm.module.biz.webcontainer.BCMHtml5Activity',
-          matches:
+          anyMatches: [
+            'View > View > TextView[text="智能推荐"] +n View > View > Image[text="立即领取"][clickable=true]',
+            'View > View > TextView[text="智能推荐"] +n View >n Image[text="立即领取"][clickable=true]',
             'Image[text="ACIM_20260729000087_20260729163354230"] < View +n TextView[clickable=true]',
+          ],
         },
       ],
     },
     {
       key: 10,
       name: '领券中心,甄选购物',
-      desc: '260803',
+      desc: '261014，更新布局，想抢指定第几个就把第1个 +n 换成 加几',
       rules: [
         {
           actionMaximum: 2,
           actionCd: 0,
           resetMatch: 'match',
           activityIds: 'com.bankcomm.module.biz.webcontainer.BCMHtml5Activity',
-          matches:
+          anyMatches: [
+            'View > View > TextView[text="甄选购物"] +n View > View > Image[text="立即领取"][clickable=true]',
+            'View > View > TextView[text="甄选购物"] +n View >n Image[text="立即领取"][clickable=true]',
             'Image[text="ACIM_20260608000049_20260608154424382"] <<n View + View > View[index=1 || index=2] Image[text="立即领取"]',
+          ],
         },
       ],
     },
     {
       key: 11,
       name: '领券中心,优选美食',
-      desc: '260803，',
+      desc: '261014，更新布局，想抢指定第几个就把第1个 +n 换成 加几',
       rules: [
         {
           actionMaximum: 1,
           actionCd: 0,
           resetMatch: 'match',
           activityIds: 'com.bankcomm.module.biz.webcontainer.BCMHtml5Activity',
-          matches:
+          anyMatches: [
+            'View > View > TextView[text="优选美食"] +n View > View > Image[text="立即领取"][clickable=true]',
+            'View > View > TextView[text="优选美食"] +n View >n Image[text="立即领取"][clickable=true]',
             'Image[text="ACIM_20251219000112_20251219111501806"] <<n View + View > View[index=0 || index=2 || index=3] Image[text="立即领取"]',
+          ],
         },
       ],
     },
     {
       key: 12,
       name: '领券中心，品质商超，扫一扫门店享优惠，暂时指定领第2张index=1',
-      desc: '260803，规则先暂时定好定位',
+      desc: '261014，更新布局，想抢指定第几个就把第1个 +n 换成 加几',
       rules: [
         {
           actionMaximum: 1,
           resetMatch: 'match',
           activityIds: 'com.bankcomm.module.biz.webcontainer.BCMHtml5Activity',
-          matches:
+          anyMatches: [
+            'View > View > TextView[text="品质商超"] + TextView[text="扫一扫 门店享优惠"] +n View > View > Image[text="立即领取"][clickable=true]',
+            'View > View > TextView[text="品质商超"] + TextView[text="扫一扫 门店享优惠"] +n View >n Image[text="立即领取"][clickable=true]',
             'Image[text="ACIM_20251027000174_20251027163532007"] <<n View + View > View[index=0 || index=2] [text="立即领取"]',
+          ],
         },
       ],
     },
     {
       key: 13,
       name: '领券中心，郊游通勤 低碳出行，火车票-3，index=1',
-      desc: '260803',
+      desc: '261014，更新布局',
       rules: [
         {
           actionMaximum: 1,
           resetMatch: 'match',
           actionCd: 0,
           activityIds: 'com.bankcomm.module.biz.webcontainer.BCMHtml5Activity',
-          matches:
+          anyMatches: [
+            'View > View > TextView[text="郊游通勤"] + TextView[text="低碳出行"] +n View > View > Image[text="立即领取"][clickable=true]',
+            'View > View > TextView[text="郊游通勤"] + TextView[text="低碳出行"] +n View >n Image[text="立即领取"][clickable=true]',
             'Image[text="ACIM_20260302000116_20260302113642643"] <<n View + View > View[index=1] Image[text="立即领取"]',
+          ],
         },
       ],
     },
     {
       key: 14,
       name: '领券中心，校园洗衣',
-      desc: '260803',
+      desc: '261014，更新布局',
       rules: [
         {
           actionMaximum: 1,
           resetMatch: 'match',
           actionCd: 0,
           activityIds: 'com.bankcomm.module.biz.webcontainer.BCMHtml5Activity',
-          matches:
+          anyMatches: [
+            'View > View > TextView[text="校园洗衣"] + TextView[text="省时省力"] +n View > View > Image[text="立即领取"][clickable=true]',
+            'View > View > TextView[text="校园洗衣"] + TextView[text="省时省力"] +n View >n Image[text="立即领取"][clickable=true]',
             'Image[text="ACIM_20260629000014_20260629103652681"] <<n View + View > View[index=0 || index=1] Image[text="立即领取"]',
+          ],
         },
       ],
     },
     {
       key: 15,
       name: '领券中心，娱乐影音',
-      desc: '260803',
+      desc: '261014，更新布局',
       rules: [
         {
           actionMaximum: 1,
           resetMatch: 'match',
           actionCd: 0,
           activityIds: 'com.bankcomm.module.biz.webcontainer.BCMHtml5Activity',
-          matches:
+          anyMatches: [
+            'View > View > TextView[text="娱乐影音"] + View > View > View > Image[text="立即领取"][clickable=true]',
+            'View > View > TextView[text="娱乐影音"] + View >n Image[text="立即领取"][clickable=true]',
             'Image[text="ACIM_20260206000011_20260206101205385"] <<n View + View > View[index=0 || index=1] Image[text="立即领取"]',
+          ],
         },
       ],
     },

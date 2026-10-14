@@ -186,6 +186,35 @@ export default defineGkdApp({
     },
     {
       key: 13,
+      name: '验证身份，勾选 我已阅读并同意',
+      desc: '261014',
+      rules: [
+        {
+          resetMatch: 'match',
+          actionMaximum: 1,
+          activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
+          matches:
+            'WebView[text="验证身份"] > View > View > View > View[text="短信验证码验证"] + View[clickable=true][visibleToUser=true]',
+        },
+      ],
+    },
+    {
+      key: 14,
+      name: '验证身份，勾选 我已阅读并同意，短信验证码验证',
+      desc: '261014',
+      rules: [
+        {
+          resetMatch: 'match',
+          actionMaximum: 1,
+          preKeys: [13],
+          activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
+          matches:
+            'WebView[text="验证身份"] > View > View > View > View[text="短信验证码验证"]',
+        },
+      ],
+    },
+    {
+      key: 15,
       name: '验证身份，获取验证码',
       desc: '260929',
       rules: [
@@ -198,7 +227,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 14,
+      key: 16,
       name: '打开定位，取消',
       desc: '260125',
       rules: [
