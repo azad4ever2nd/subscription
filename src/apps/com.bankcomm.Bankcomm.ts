@@ -231,6 +231,7 @@ export default defineGkdApp({
         {
           actionMaximum: 1,
           resetMatch: 'match',
+          action: 'clickCenter',
           actionCd: 0,
           activityIds: 'com.bankcomm.module.biz.webcontainer.BCMHtml5Activity',
           anyMatches: [
