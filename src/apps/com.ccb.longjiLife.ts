@@ -143,7 +143,7 @@ export default defineGkdApp({
     },
     {
       key: 11,
-      name: '财富会员，中间横幅，社保卡活动',
+      name: '占位11，财富会员，中间横幅，社保卡活动',
       desc: 'D，260114，整合12，13，16',
       rules: [
         {
@@ -161,7 +161,7 @@ export default defineGkdApp({
     },
     {
       key: 12,
-      name: '财富会员，中间横幅，社保卡活动，身份信息验证',
+      name: '占位2，财富会员，中间横幅，社保卡活动，身份信息验证',
       desc: 'D，261014，冲突14，',
       rules: [
         {
@@ -175,11 +175,10 @@ export default defineGkdApp({
         },
       ],
     },
-
     {
       key: 13,
-      name: '建行社保卡，公告，X掉',
-      desc: 'D，260806',
+      name: '弹窗，建行社保卡活动，公告，X掉',
+      desc: '260806',
       rules: [
         {
           resetMatch: 'match',
@@ -187,7 +186,7 @@ export default defineGkdApp({
           action: 'clickCenter',
           activityIds: 'com.ccb.cloudmerchant.view.WebViewActivity',
           anyMatches: [
-            'Dialog > TextView[text="温馨提示"] + TextView + View > Button[text="好的"][clickable=true][visibleToUser=true]',
+            'WebView[text*="建行社保卡" || text*="社保卡福利日"] > View > View > @Image[visibleToUser=true][clickable=true][text="NWJ6tc6mwaKQfgbADXAJPIxaVNUQJguwpoNgAy0x2ew8SgXab+AzNTubJfuAmp7HtQL5K8AARxBdk+5zMOgAAAAASUVORK5CYII="] - View > View > TextView[text^="尊敬的客户"]',
             'WebView[text*="建行社保卡" || text*="社保卡福利日"] > View > View > View > @Image[text="NWJ6tc6mwaKQfgbADXAJPIxaVNUQJguwpoNgAy0x2ew8SgXab+AzNTubJfuAmp7HtQL5K8AARxBdk+5zMOgAAAAASUVORK5CYII="] - View > TextView[text*="建行社保福利日" || text="尊敬的客户："] ',
           ],
         },
@@ -195,8 +194,8 @@ export default defineGkdApp({
     },
     {
       key: 14,
-      name: '建行社保卡，勾选同意',
-      desc: '261014，添加 不限制层数',
+      name: '财富会员，中间横幅，社保卡活动，身份信息验证，勾选同意',
+      desc: '261014，添加 不限制社保卡活动，不限制层数',
       rules: [
         {
           resetMatch: 'match',
@@ -226,7 +225,7 @@ export default defineGkdApp({
     },
     {
       key: 16,
-      name: '建行社保卡，火暴',
+      name: '弹窗，建行社保卡活动，好的',
       desc: '261014',
       rules: [
         {
@@ -236,8 +235,6 @@ export default defineGkdApp({
           activityIds: 'com.ccb.cloudmerchant.view.WebViewActivity',
           anyMatches: [
             'Dialog > TextView[text="温馨提示"] + TextView + View > Button[text="好的"][clickable=true][visibleToUser=true]',
-            'WebView[text*="建行社保卡" || text*="社保卡福利日"] > View > View > @Image[visibleToUser=true][clickable=true][text="NWJ6tc6mwaKQfgbADXAJPIxaVNUQJguwpoNgAy0x2ew8SgXab+AzNTubJfuAmp7HtQL5K8AARxBdk+5zMOgAAAAASUVORK5CYII="] - View > View > TextView[text^="尊敬的客户"]',
-            'WebView[text*="建行社保卡" || text*="社保卡福利日"] > View > View > View > @Image[text="NWJ6tc6mwaKQfgbADXAJPIxaVNUQJguwpoNgAy0x2ew8SgXab+AzNTubJfuAmp7HtQL5K8AARxBdk+5zMOgAAAAASUVORK5CYII="] - View > TextView[text*="建行社保福利日" || text="尊敬的客户："] ',
             'WebView[text*="建行社保卡" || text*="社保卡福利日"] > View > Dialog > View > Button[text="好的"]',
           ],
         },

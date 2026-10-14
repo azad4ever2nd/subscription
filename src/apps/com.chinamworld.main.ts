@@ -25,7 +25,7 @@ export default defineGkdApp({
       rules: [
         {
           resetMatch: 'match',
-          actionCd: 0,
+          actionCd: 100,
           activityIds: 'com.ccb.framework.ui.widget.webview.CcbWebViewActivity',
           anyMatches: [
             '(CheckBox[checked=true] + CheckBox[checked=true] + [text="loginBtn.f302f730"])',
@@ -42,7 +42,7 @@ export default defineGkdApp({
       rules: [
         {
           resetMatch: 'match',
-          actionCd: 0,
+          actionCd: 100,
           activityIds: 'com.ccb.framework.ui.widget.webview.CcbWebViewActivity',
           matches:
             'CheckBox[checked=true] + CheckBox[checked=true] + [text="loginBtn.f302f730"]',
@@ -56,7 +56,7 @@ export default defineGkdApp({
       rules: [
         {
           resetMatch: 'match',
-          actionCd: 0,
+          actionCd: 100,
           activityIds: 'com.ccb.framework.ui.widget.webview.CcbWebViewActivity',
           matches: 'TextView[text="温馨提示"] +n * > Button[text="好的"]',
         },
@@ -69,7 +69,7 @@ export default defineGkdApp({
       rules: [
         {
           resetMatch: 'match',
-          actionCd: 0,
+          actionCd: 100,
           activityIds: 'com.ccb.framework.ui.widget.webview.CcbWebViewActivity',
           matches: '[text="银联满60减20元券"] +n [text="立即领取"]',
         },

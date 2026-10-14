@@ -80,7 +80,7 @@ export default defineGkdApp({
 
     {
       key: 4,
-      name: '弹窗，建行社保卡活动，公告，X掉',
+      name: '弹窗，建行社保卡活动公告，X掉',
       desc: '261014',
       rules: [
         {
@@ -126,7 +126,7 @@ export default defineGkdApp({
     },
     {
       key: 7,
-      name: '弹窗，建行社保卡活动，火爆',
+      name: '弹窗，建行社保卡活动，好的',
       desc: '261014',
       rules: [
         {
@@ -135,7 +135,6 @@ export default defineGkdApp({
           activityIds: 'com.tencent.mm.plugin.webview.ui.tools.MMWebViewUI',
           anyMatches: [
             'WebView[text*="建行社保卡" || text*="社保卡福利日"] > View > Dialog > View > Button[text="好的"]',
-            'WebView[text*="建行社保卡" || text*="社保卡福利日"] > View > View > @Image[visibleToUser=true][clickable=true][text="NWJ6tc6mwaKQfgbADXAJPIxaVNUQJguwpoNgAy0x2ew8SgXab+AzNTubJfuAmp7HtQL5K8AARxBdk+5zMOgAAAAASUVORK5CYII="] - View > View > TextView[text^="尊敬的客户"]',
             'Dialog > TextView[text="温馨提示"] + TextView[text*="周三15:00开放报名"] + View > Button[text="好的"][clickable=true][visibleToUser=true]',
           ],
         },
