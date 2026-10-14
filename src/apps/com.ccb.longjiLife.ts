@@ -150,10 +150,10 @@ export default defineGkdApp({
           actionCd: 100,
           resetMatch: 'match',
           anyMatches: [
-            '[text="身份信息验证"] +n CheckBox[checked=false] || ([text="身份信息验证"] +n [text="loginBtn.f302f730"])', //规则12
-            '([text*="活动期间每周三15:00起开放报名领券入口"] <<n * + [text="NWJ6tc6mwaKQfgbADXAJPIxaVNUQJguwpoNgAy0x2ew8SgXab+AzNTubJfuAmp7HtQL5K8AARxBdk+5zMOgAAAAASUVORK5CYII="text="NWJ6tc6mwaKQfgbADXAJPIxaVNUQJguwpoNgAy0x2ew8SgXab+AzNTubJfuAmp7HtQL5K8AARxBdk+5zMOgAAAAASUVORK5CYII="])', //规则 13
-            '([text="温馨提示"] + [text*="报名人数已满" || text="今日报名人数已满，您可下个领券日再来~" || text^="活动期间每周三"] + * > [text="好的"])', //规则 13
-            '([text="温馨提示"] + * > [text="好的"])', //规则12
+            '[text="身份信息验证"] +n CheckBox[checked=false] || ([text="身份信息验证"] +n [text="loginBtn.f302f730"]', //规则12
+            '[text*="活动期间每周三15:00起开放报名领券入口"] <<n * + [text="NWJ6tc6mwaKQfgbADXAJPIxaVNUQJguwpoNgAy0x2ew8SgXab+AzNTubJfuAmp7HtQL5K8AARxBdk+5zMOgAAAAASUVORK5CYII="text="NWJ6tc6mwaKQfgbADXAJPIxaVNUQJguwpoNgAy0x2ew8SgXab+AzNTubJfuAmp7HtQL5K8AARxBdk+5zMOgAAAAASUVORK5CYII="]', //规则 13
+            '[text="温馨提示"] + [text*="报名人数已满" || text="今日报名人数已满，您可下个领券日再来~" || text^="活动期间每周三"] + * > [text="好的"]', //规则 13
+            '[text="温馨提示"] + * > [text="好的"]', //规则12
           ],
           activityIds: 'com.ccb.cloudmerchant.view.WebViewActivity',
         },
@@ -227,7 +227,7 @@ export default defineGkdApp({
     {
       key: 16,
       name: '建行社保卡，火暴',
-      desc: '260806',
+      desc: '261014',
       rules: [
         {
           resetMatch: 'match',
@@ -235,10 +235,10 @@ export default defineGkdApp({
           action: 'clickCenter',
           activityIds: 'com.ccb.cloudmerchant.view.WebViewActivity',
           anyMatches: [
-            'WebView[text*="建行社保卡" || text*="社保卡福利日"] > View > View > @Image[visibleToUser=true][clickable=true][text="NWJ6tc6mwaKQfgbADXAJPIxaVNUQJguwpoNgAy0x2ew8SgXab+AzNTubJfuAmp7HtQL5K8AARxBdk+5zMOgAAAAASUVORK5CYII="] - View > View > TextView[text^="尊敬的客户"]',
             'Dialog > TextView[text="温馨提示"] + TextView + View > Button[text="好的"][clickable=true][visibleToUser=true]',
-            'WebView[text*="建行社保卡" || text*="社保卡福利日"] > View > Dialog > View > Button[text="好的"])',
+            'WebView[text*="建行社保卡" || text*="社保卡福利日"] > View > View > @Image[visibleToUser=true][clickable=true][text="NWJ6tc6mwaKQfgbADXAJPIxaVNUQJguwpoNgAy0x2ew8SgXab+AzNTubJfuAmp7HtQL5K8AARxBdk+5zMOgAAAAASUVORK5CYII="] - View > View > TextView[text^="尊敬的客户"]',
             'WebView[text*="建行社保卡" || text*="社保卡福利日"] > View > View > View > @Image[text="NWJ6tc6mwaKQfgbADXAJPIxaVNUQJguwpoNgAy0x2ew8SgXab+AzNTubJfuAmp7HtQL5K8AARxBdk+5zMOgAAAAASUVORK5CYII="] - View > TextView[text*="建行社保福利日" || text="尊敬的客户："] ',
+            'WebView[text*="建行社保卡" || text*="社保卡福利日"] > View > Dialog > View > Button[text="好的"]',
           ],
         },
       ],
