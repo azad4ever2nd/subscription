@@ -119,7 +119,6 @@ export default defineGkdApp({
         },
       ],
     },
-
     {
       key: 7,
       name: '会员签到',
@@ -156,14 +155,17 @@ export default defineGkdApp({
     {
       key: 9,
       name: '还款优惠，下一步去还款',
-      desc: '260508',
+      desc: '261016，添加 银行卡抽奖',
       rules: [
         {
           resetMatch: 'match',
           activityIds:
             'com.alipay.mobile.nebulax.xriver.activity.XRiverActivity',
-          anyMatches:
+          anyMatches: [
             '[text="本卡满¥1500.00"] + [text="-¥5.00"] +n * Button[text="下一步去还款"]',
+            'WebView > View > View > TextView[text^="抽奖机会"] + TextView[clickable=false][visibleToUser=true]', //银行卡抽奖，action: 'clickCenter',
+            'WebView > View > View > TextView[text^="抽奖机会"] + TextView[clickable=true][visibleToUser=true]', //银行卡抽奖，action: 'clickCenter',
+          ],
         },
       ],
     },
@@ -187,23 +189,6 @@ export default defineGkdApp({
     },
     {
       key: 11,
-      name: '银行卡抽奖',
-      desc: '260909',
-      rules: [
-        {
-          resetMatch: 'match',
-          action: 'clickCenter',
-          activityIds:
-            'com.alipay.mobile.nebulax.xriver.activity.XRiverActivity',
-          anyMatches: [
-            'WebView > View > View > TextView[text^="抽奖机会"] + TextView[clickable=false][visibleToUser=true]',
-            'WebView > View > View > TextView[text^="抽奖机会"] + TextView[clickable=true][visibleToUser=true]',
-          ],
-        },
-      ],
-    },
-    {
-      key: 12,
       name: '弹窗，闪购获取你的位置信息，拒绝',
       desc: '261010，fastQuery=true,clickable=true',
       rules: [
@@ -220,8 +205,28 @@ export default defineGkdApp({
       ],
     },
     {
+      key: 12,
+      name: '弹窗2，需要排除的规则',
+      desc: '261014，fastQuery=false，需要排除的放在这里',
+      rules: [
+        {
+          resetMatch: 'match',
+          actionCd: 500,
+          forcedTime: 3000,
+          activityIds:
+            'com.alipay.mobile.nebulax.xriver.activity.XRiverActivity',
+          excludeMatches: [
+            'Dialog >n View > Button[text="去完成" || text*="领取"]',
+          ],
+          anyMatches: [
+            'View > View > @Button[text="关闭"][clickable=true][visibleToUser=true] + Image',
+          ],
+        },
+      ],
+    },
+    {
       key: 13,
-      name: '弹窗2，与分期有关，X掉',
+      name: '弹窗2，各种弹窗，X掉2',
       desc: '261014，fastQuery=false，添加 神券五六天，签到成功，开通碰一下，推送服务，查询账单，返回领奖，到桌面，银行卡抽奖，升级月利宝',
       rules: [
         {
@@ -239,7 +244,6 @@ export default defineGkdApp({
             'View > @Image[text="关闭弹窗"][clickable=false][visibleToUser=true] + View > Button',
             'View > @Image[text="关闭弹窗"][clickable=true][visibleToUser=true] +n View > TextView[text="仍要赎回"]',
             'View > @Image[text="关闭弹窗"][clickable=true][visibleToUser=true] + View >n TextView[text="再买一笔"]',
-            'View > View > @Button[text="关闭"][clickable=true][visibleToUser=true] + Image',
             'View > View > @TextView[text.length=1][clickable=false][visibleToUser=true] + * + Button[text="好的"]',
             'View > View > TextView[text="支付宝"] + TextView[text="邀请你"] + TextView[clickable=false][visibleToUser=true][text="跳过"]',
             'View > View > TextView[text="支付宝"] + TextView[text="邀请你"] + TextView[text="跳过"][clickable=true][visibleToUser=true]',
@@ -268,7 +272,8 @@ export default defineGkdApp({
             'View > TextView[text="添加会员小组件到桌面"] -n View > Image[text="BE4E7D81-3958-4F2E-9956-E6071199885F@2x"][clickable=false][visibleToUser=true]',
             'View > TextView[text="签到成功"] +n TextView[text="去完成"] + TextView[text.length=0][clickable=false][visibleToUser=true]',
             'View > TextView[text^="添加" && text$="到桌面"] - View[clickable=false] > Image[clickable=false][visibleToUser=true]',
-            'View >  View > View > TextView[text*="到支付宝首页"] +n TextView[text="取消"][clickable=false][visibleToUser=true]',
+            'View > View > TextView[text*="到支付宝首页"] +n TextView[text="取消"][clickable=false][visibleToUser=true]',
+            'View > View > TextView[text*="添加到首页"] +n TextView[text="取消"][clickable=false][visibleToUser=true]',
             'View > TextView[text="立即添加"] - @TextView[text="取消"][clickable=false][visibleToUser=false] - View > Image + TextView',
             '@Image[text="BE4E7D81-3958-4F2E-9956-E6071199885F@2x"][clickable=false][visibleToUser=true] < View + TextView[text="去手机桌面添加余额宝小组件"]',
             'Dialog > View > View > @Button[clickable=true][visibleToUser=true][text="关闭"] - View >n TextView[text="去抢购"]',
@@ -315,14 +320,16 @@ export default defineGkdApp({
           resetMatch: 'match',
           activityIds:
             'com.alipay.mobile.nebulax.xriver.activity.XRiverActivity',
-          anyMatches:
+          anyMatches: [
             'View > Button[text="关闭"] +n View > View > View Button[clickable=true][visibleToUser=true][text="去领取" || text="去浏览"]',
+            '@View > View > TextView[text="任务完成"] + TextView[text="返回会场"]', //'@View > View > TextView[text="任务完成"] + TextView[text="返回会场"]',
+          ],
         },
       ],
     },
     {
       key: 16,
-      name: '浏览任务完成，返回会场',
+      name: '占位16，浏览任务完成，返回会场',
       desc: '260701',
       rules: [
         {

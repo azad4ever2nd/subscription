@@ -320,15 +320,15 @@ export default defineGkdApp({
       rules: [
         {
           action: 'clickCenter',
-          actionCd: 750,
+          actionCd: 500,
           forcedTime: 3000,
           anyMatches: [
             '([text="碳星任务"] [text="点击签到"])',
             '([text="+1"] + [text="点击签到"])',
             '(Dialog > View > @Button[clickable=true][visibleToUser=true][text="我知道了"] + Button[text="赚更多能量"])',
             'View > View > TextView[text="恭喜您签到成功"] +n Image[text="我知道了"][clickable=true][visibleToUser=true]',
-            'View > View > TextView[text="您已完成该任务，欢迎继续浏览"] + Image[text="取消"][clickable=true][visibleToUser=true]',
-            '([text="恭喜您签到成功"] +n [text="我知道了"])',
+            'WebView > View > TextView[text^="您已完成该任务" || text*="欢迎继续浏览"] + @Image[text="取消"][visibleToUser=true] + Image[text="继续浏览"]',
+            'View > TextView[text="您已完成该任务，欢迎继续浏览"] + Image[text="取消"][clickable=true][visibleToUser=true]',
           ],
           actionMaximum: 33,
           resetMatch: 'match',
@@ -339,7 +339,7 @@ export default defineGkdApp({
     {
       key: 21,
       name: '能量签到完成',
-      desc: '261007，多行规则改用anyMatches测试，添加每周在线互动',
+      desc: '261016，多行规则改用anyMatches测试，添加每周在线互动',
       rules: [
         {
           anyMatches: [
@@ -347,10 +347,10 @@ export default defineGkdApp({
             '(TextView[text^="浏览" || text^="访问" || text^="查看"][text*="超过" && text$="秒"] +2 TextView[text="去完成"][visibleToUser=true])',
             '(TextView[text^="浏览" || text^="访问" || text^="查看"] <n View +2 TextView[text="去完成"][visibleToUser=true])',
             '(TextView[text^="浏览" || text^="访问" || text^="查看"][text*="超过" && text$="秒"] <n View +2 TextView[text="去完成"][visibleToUser=true])',
-            'WebView > View > TextView[text^="您已完成该任务" || text*="欢迎继续浏览"] + @Image[text="取消"][visibleToUser=true] + Image[text="继续浏览"]',
           ],
           resetMatch: 'match',
-          actionCd: 10000,
+          actionCd: 9000,
+          actionDelay: 1500,
           activityIds: 'com.bankcomm.module.biz.webcontainer.BCMHtml5Activity',
         },
       ],

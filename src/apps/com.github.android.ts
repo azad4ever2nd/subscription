@@ -63,49 +63,15 @@ export default defineGkdApp({
     },
     {
       key: 5,
-      name: 'build_release 界面，RUN WORKFLOW',
-      desc: 'D,260807',
-      rules: [
-        {
-          resetMatch: 'app',
-          forcedTime: 7000,
-          actionMaximum: 1,
-          activityIds: 'com.github.android.main.MainActivity',
-          anyMatches: [
-            '(Button - TextView[text="RUN WORKFLOW"] < @View[clickable=true][visibleToUser=true] <(2,4) View +(3,5) View > TextView[text="build_release"] + View > View[desc="Share"])',
-            '(ComposeView > View > View > View > TextView[text="This workflow has a workflow_dispatch event trigger."] + @View[clickable=true][visibleToUser=true] > TextView[text="RUN WORKFLOW"] + Button)',
-            '([text="RUN WORKFLOW"] <n @* <n View +n View View [desc="Share"])',
-          ],
-        },
-      ],
-    },
-    {
-      key: 6,
-      name: 'RUN WORKFLOW,自动点击脚本执行',
-      desc: 'D,260731',
-      rules: [
-        {
-          resetMatch: 'app',
-          actionMaximum: 1,
-          activityIds: 'com.github.android.main.MainActivity',
-          anyMatches: [
-            '(Button - TextView[text="RUN WORKFLOW"] < @View[clickable=true][visibleToUser=true] + View > View > TextView[text="CHANGE"] + Button)',
-            '([text="RUN WORKFLOW"] + @Button <<n * + * [text="CHANGE"])',
-          ],
-        },
-      ],
-    },
-    {
-      key: 7,
       name: '下滑刷新',
       desc: '260925',
       rules: [
         {
           resetMatch: 'match',
           preKeys: [4],
-          actionMaximum: 2,
+          actionMaximum: 3,
           action: 'swipe',
-          actionCd: 8000,
+          actionCd: 6000,
           swipeArg: {
             start: {
               x: 510,
