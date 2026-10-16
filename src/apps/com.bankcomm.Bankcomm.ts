@@ -6,18 +6,17 @@ export default defineGkdApp({
     {
       key: 1,
       name: '首页弹窗',
-      desc: '251208，添加代理提醒',
+      desc: '261016，添加代理提醒',
       rules: [
         {
+          fastQuery: true,
+          resetMatch: 'match',
           matchDelay: 1000,
           forcedTime: 3000,
           anyMatches: [
-            '([vid="bcm_alert_dialog_content"] + * > [vid="dialog_bottom_confirm_cancel"][text="继续使用"])',
+            '[vid="bcm_alert_dialog_content"] + * > [vid="dialog_bottom_confirm_cancel"][text="继续使用"]',
             'ViewGroup > ImageView[vid="popup_ad_image"] + ImageView[vid="popup_close"][clickable=true][visibleToUser=true]',
-            '([vid="popup_ad_image"] + [vid="popup_close"])',
           ],
-          fastQuery: true,
-          resetMatch: 'match',
           activityIds: 'com.bankcomm.module.biz.home.MainActivity',
         },
       ],

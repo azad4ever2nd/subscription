@@ -86,16 +86,20 @@ export default defineGkdApp({
     {
       key: 6,
       name: '基金体验金，立即使用',
-      desc: '260627',
+      desc: '261016，添加朝朝宝确认转入',
       rules: [
         {
           resetMatch: 'match',
           action: 'clickCenter',
+          matchDelay: 500,
           activityIds:
             'cmb.pb.app.h5container.webviewcontainer.PBWebContainerActivity',
           anyMatches: [
-            '(TextView[text$="基金体验金"] < View +(1,3) View[id="useBtn"] > Button[text="立即使用"][clickable=true])',
-            '(WebView[text="券详情"] > View > View > View > View > Button[text="立即使用"][clickable=true][visibleToUser=true])',
+            'TextView[text$="基金体验金"] < View +(1,3) View[id="useBtn"] > Button[text="立即使用"][clickable=true]',
+            'WebView[text="券详情"] > View > View > View > View > Button[text="立即使用"][clickable=true][visibleToUser=true]',
+            'View > View > TextView[text="转入产品确认"] +n View > Button[text="确认转入"][clickable=true][visibleToUser=true]', //朝朝宝确认转入
+            'Dialog > @Button[text="确认"][clickable=true][visibleToUser=true] - View > View > EditText[text.length>0] ', //协议声明后，确认
+            'Dialog > View > @Button[text="一键输入"][clickable=true][visibleToUser=true] - View > EditText[text.length=0]', ////朝朝宝一键录入
           ],
         },
       ],
@@ -174,7 +178,7 @@ export default defineGkdApp({
     {
       key: 11,
       name: '抽奖领任务页面，加自选 任务',
-      desc: '260924，clickable=true',
+      desc: '261016，clickable=true',
       rules: [
         {
           resetMatch: 'match',
@@ -188,6 +192,7 @@ export default defineGkdApp({
           ],
           anyMatches: [
             'TextView[text="0／1"] <n View + View > Button[text="加自选"][clickable=true][visibleToUser=true]',
+            'TextView[text="完成0／1"] +n View > Button[text="加自选"][clickable=true][visibleToUser=true]',
             'TextView[text="0／1"] <n View +n Button[text="加自选"][clickable=true][visibleToUser=true]',
             'View > View > TextView[text="完成0／1"] +n View > Button[text="加自选"][clickable=true][visibleToUser=true]',
             'View > View > @Button[text="加自选"][clickable=true] -n View > TextView[text="0／1"]',

@@ -209,5 +209,19 @@ export default defineGkdApp({
         },
       ],
     },
+    {
+      key: 13,
+      name: '弹窗，是否继续下载？，确定',
+      desc: '261016',
+      rules: [
+        {
+          resetMatch: 'match',
+          fastQuery: true,
+          activityIds: 'com.gtja.business.component.pdf.PDFViewActivity',
+          matches:
+            'TextView[text^="当前使用移动网络" || text*="是否继续下载？"][vid="message"] <<n LinearLayout + LinearLayout > LinearLayout > TextView[text="取消"][vid="btn_n"] + TextView[text="确定"][vid="btn_p"]',
+        },
+      ],
+    },
   ],
 });

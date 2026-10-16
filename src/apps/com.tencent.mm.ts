@@ -81,22 +81,24 @@ export default defineGkdApp({
     {
       key: 4,
       name: '弹窗，建行社保卡活动公告，X掉',
-      desc: '261014',
+      desc: '261016',
       rules: [
         {
           resetMatch: 'match',
           actionCd: 0,
           action: 'clickCenter',
           activityIds: 'com.tencent.mm.plugin.webview.ui.tools.MMWebViewUI',
-          matches:
-            '(WebView[text*="建行社保卡" || text*="社保卡福利日"] > View > View > @Image[visibleToUser=true][clickable=true][text="NWJ6tc6mwaKQfgbADXAJPIxaVNUQJguwpoNgAy0x2ew8SgXab+AzNTubJfuAmp7HtQL5K8AARxBdk+5zMOgAAAAASUVORK5CYII="] - View > View > TextView[text^="尊敬的客户"])',
+          anyMatches: [
+            'View > View > TextView[text="尊敬的客户："] +n TextView[text.length=0][clickable=true][visibleToUser=true]',
+            'WebView[text*="建行社保卡" || text*="社保卡福利日"] > View >n @Image[visibleToUser=true][clickable=true][text="NWJ6tc6mwaKQfgbADXAJPIxaVNUQJguwpoNgAy0x2ew8SgXab+AzNTubJfuAmp7HtQL5K8AARxBdk+5zMOgAAAAASUVORK5CYII="] - View >n TextView[text*="建行社保福利日" || text^="尊敬的客户"]',
+          ],
         },
       ],
     },
     {
       key: 5,
       name: '建行社保卡，勾选同意',
-      desc: '261014，添加 非建行社保卡活动',
+      desc: '261016，添加 非建行社保卡活动',
       rules: [
         {
           resetMatch: 'match',
@@ -104,8 +106,8 @@ export default defineGkdApp({
           action: 'clickCenter',
           activityIds: 'com.tencent.mm.plugin.webview.ui.tools.MMWebViewUI',
           anyMatches: [
-            '(WebView[text*="建行社保卡" || text*="社保卡福利日"] > View > View > View > CheckBox[clickable=true][checked=false])',
-            '(WebView > View > View > View > CheckBox[clickable=true][checked=false])',
+            'WebView[text*="建行社保卡" || text*="社保卡福利日"] > View > View > View > CheckBox[clickable=true][checked=false][visibleToUser=true]',
+            'View > View > CheckBox[clickable=true][checked=false][visibleToUser=true]',
           ],
         },
       ],
@@ -113,30 +115,32 @@ export default defineGkdApp({
     {
       key: 6,
       name: '建行社保卡，勾选同意后，立即参与',
-      desc: '261014',
-      rules: [
-        {
-          resetMatch: 'match',
-          actionCdKey: 4,
-          activityIds: 'com.tencent.mm.plugin.webview.ui.tools.MMWebViewUI',
-          matches:
-            '(WebView[text*="建行社保卡" || text*="社保卡福利日"] > View > View > View > CheckBox[checked=true] +2 CheckBox[checked=true] +2 Image[text="loginBtn.f302f730"])',
-        },
-      ],
-    },
-    {
-      key: 7,
-      name: '弹窗，建行社保卡活动，好的',
-      desc: '261014',
+      desc: '261016',
       rules: [
         {
           resetMatch: 'match',
           actionCdKey: 4,
           activityIds: 'com.tencent.mm.plugin.webview.ui.tools.MMWebViewUI',
           anyMatches: [
-            'WebView[text*="建行社保卡" || text*="社保卡福利日"] > View > Dialog > View > Button[text="好的"]',
-            'Dialog > TextView[text="温馨提示"] + TextView[text*="周三15:00开放报名"] + View > Button[text="好的"][clickable=true][visibleToUser=true]',
-            'Dialog > TextView[text="温馨提示"] + View > Button[text="好的"][clickable=true][visibleToUser=true]',
+            '(WebView[text*="建行社保卡" || text*="社保卡福利日"] > View > View > View > CheckBox[checked=true] +2 CheckBox[checked=true] +2 Image[text="loginBtn.f302f730"][visibleToUser=true])',
+            'View > View > CheckBox[checked=true][visibleToUser=true] +n CheckBox[checked=true][visibleToUser=true] +n Image[text="loginBtn.f302f730"][visibleToUser=true]',
+          ],
+        },
+      ],
+    },
+    {
+      key: 7,
+      name: '弹窗，建行社保卡活动，好的',
+      desc: '261016',
+      rules: [
+        {
+          resetMatch: 'match',
+          actionCdKey: 4,
+          activityIds: 'com.tencent.mm.plugin.webview.ui.tools.MMWebViewUI',
+          anyMatches: [
+            'Dialog > TextView[text="温馨提示"] +n View > Button[text="好的"][clickable=true][visibleToUser=true]',
+            'WebView[text*="建行社保卡" || text*="社保卡福利日"] > View > Dialog > View > Button[text="好的"][visibleToUser=true]',
+            'Dialog > TextView[text="温馨提示"] + TextView + View > Button[text="好的"][clickable=true][visibleToUser=true]',
           ],
         },
       ],
@@ -1862,12 +1866,14 @@ export default defineGkdApp({
     {
       key: 79,
       name: '弹窗，汉运动，券已发放结束，确定',
-      desc: '261013',
+      desc: '261016',
       rules: [
         {
           resetMatch: 'match',
           fastQuery: true,
+          actionCd: 500,
           anyMatches: [
+            'TextView[text^="还未到领券时间"] <<n LinearLayout + LinearLayout Button[text="确定"][vid="mm_alert_ok_btn"][clickable=true][visibleToUser=true]',
             'TextView[text="活动火爆,请稍后再试"] <<n LinearLayout + LinearLayout Button[text="确定"][vid="mm_alert_ok_btn"][clickable=true][visibleToUser=true]',
             'TextView[text="您的请求过于频繁，请稍后再试！"] <<n LinearLayout + LinearLayout Button[text="确定"][vid="mm_alert_ok_btn"][clickable=true][visibleToUser=true]',
             'TextView[text="券已发放结束"] <<n LinearLayout + LinearLayout Button[text="确定"][vid="mm_alert_ok_btn"][clickable=true][visibleToUser=true]',

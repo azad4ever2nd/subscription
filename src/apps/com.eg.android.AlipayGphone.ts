@@ -226,7 +226,7 @@ export default defineGkdApp({
       rules: [
         {
           resetMatch: 'match',
-          actionCd: 100,
+          actionCd: 500,
           forcedTime: 3000,
           activityIds:
             'com.alipay.mobile.nebulax.xriver.activity.XRiverActivity',
@@ -532,7 +532,7 @@ export default defineGkdApp({
     {
       key: 28,
       name: '添加神券到首页，X掉',
-      desc: '261014，fastquery=false,clickable=false,添加 排除误点去使用，明天不断签提醒，签到提醒，做任务领幸运星，领取奖励，排除红包卡券误点，闪购，超级吃货卡体验版，闪购签到，闪购小程序，添加到首页，添加 生活缴费',
+      desc: '261016，fastquery=false,clickable=false,添加 排除误点去使用，明天不断签提醒，签到提醒，做任务领幸运星，领取奖励，排除红包卡券误点，闪购，超级吃货卡体验版，闪购签到，闪购小程序，添加到首页，添加 生活缴费',
       rules: [
         {
           resetMatch: 'match',
@@ -573,6 +573,7 @@ export default defineGkdApp({
             'View > @Image[clickable=false][visibleToUser=true] +2 TextView[text="去处理"] + TextView[text="暂不处理"]',
             'View > View[childCount=4] > @Image[clickable=false][visibleToUser=true] + Image + TextView[text="开通自动缴费"] + TextView[text="暂不开通"]',
             'View > @TextView[text="领取签到奖励"][clickable=false][visibleToUser=true] + View > Image + TextView[text.length>0]',
+            '@TextView[text="领取签到奖励"][clickable=false][visibleToUser=true] < View +  View > Image + TextView[text.length>0]',
             'View > TextView[text*="添加到首页"] +n @TextView[text="取消"][clickable=false][visibleToUser=true] + TextView[text="添加到首页"]',
             'View > View > View + TextView[text="去签到"][clickable=false][visibleToUser=true]',
             '[text^="完成"] <<n View + View > TextView[text="领取奖励"][clickable=false][visibleToUser=true]',
@@ -592,7 +593,7 @@ export default defineGkdApp({
     {
       key: 29,
       name: '添加神券到首页，X掉2，拆分测试，无exclude',
-      desc: '261014，fastquery=false,clickable=false,添加 排除误点去使用，明天不断签提醒，签到提醒，做任务领幸运星，领取奖励，排除红包卡券误点，闪购，超级吃货卡体验版，闪购签到，闪购小程序，添加到首页，添加 生活缴费',
+      desc: '261016，fastquery=false,clickable=false,添加 排除误点去使用，明天不断签提醒，签到提醒，做任务领幸运星，领取奖励，排除红包卡券误点，闪购，超级吃货卡体验版，闪购签到，闪购小程序，添加到首页，添加 生活缴费',
       rules: [
         {
           resetMatch: 'match',
@@ -629,6 +630,7 @@ export default defineGkdApp({
             'View > @Image[clickable=false][visibleToUser=true] +2 TextView[text="去处理"] + TextView[text="暂不处理"]',
             'View > View[childCount=4] > @Image[clickable=false][visibleToUser=true] + Image + TextView[text="开通自动缴费"] + TextView[text="暂不开通"]',
             'View > @TextView[text="领取签到奖励"][clickable=false][visibleToUser=true] + View > Image + TextView[text.length>0]',
+            '@TextView[text="领取签到奖励"][clickable=false][visibleToUser=true] < View +  View > Image + TextView[text.length>0]',
             'View > TextView[text*="添加到首页"] +n @TextView[text="取消"][clickable=false][visibleToUser=true] + TextView[text="添加到首页"]',
             'View > View > View + TextView[text="去签到"][clickable=false][visibleToUser=true]',
             '[text^="完成"] <<n View + View > TextView[text="领取奖励"][clickable=false][visibleToUser=true]',

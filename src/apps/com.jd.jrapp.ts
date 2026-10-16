@@ -117,5 +117,18 @@ export default defineGkdApp({
         },
       ],
     },
+    {
+      key: 9,
+      name: '弹窗，推荐活动，X掉',
+      desc: '261016',
+      rules: [
+        {
+          resetMatch: 'match',
+          activityIds: '.bm.common.web.ui.WebActivity',
+          matches:
+            'View > View > TextView[text="推荐活动"] +n View > Image[text="关闭"][clickable=true][visibleToUser=true]',
+        },
+      ],
+    },
   ],
 });

@@ -261,7 +261,7 @@ export default defineGkdApp({
       rules: [
         {
           resetMatch: 'match',
-          actionCd: 3000,
+          actionCd: 6000,
           matchDelay: 1000,
           forcedTime: 3000,
           activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
@@ -447,7 +447,7 @@ export default defineGkdApp({
       desc: '261012，与13相比，activityId不同',
       rules: [
         {
-          actionCd: 3000,
+          actionCd: 6000,
           matchDelay: 1000,
           forcedTime: 3000,
           resetMatch: 'match',

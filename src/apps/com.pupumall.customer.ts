@@ -137,15 +137,15 @@ export default defineGkdApp({
     {
       key: 10,
       name: '确认订单，勾选 微信支付',
-      desc: '261004，华为布局不同',
+      desc: '261016，华为布局不同',
       rules: [
         {
           resetMatch: 'match',
           actionCd: 6000,
           activityIds: 'com.pupumall.webview.page.PuPuWebViewActivity',
           anyMatches: [
-            'View > TextView[text="支付方式"] +n @View[clickable=true][visibleToUser=true] > View > TextView[text="微信支付"]',
             'View > TextView[text="支付方式"] +n @View[clickable=true][visibleToUser=true] >n View > View[text="微信支付"]',
+            'View > TextView[text="支付方式"] +n @View[clickable=true][visibleToUser=true] >n View > TextView[text="微信支付"]',
           ],
         },
       ],

@@ -91,16 +91,17 @@ export default defineGkdApp({
     {
       key: 6,
       name: '基金财富月历，每周任务',
-      desc: '260910，([text="每周"] +2 TextView[text="(0/1)"] +3 TextView) || ([text="每周"] + [text="指定产品加自选" || text="浏览指定专区"] + [text="(0/1)"] +3 TextView)',
+      desc: '261016',
       rules: [
         {
-          actionCd: 4000,
+          actionCd: 3000,
+          resetMatch: 'match',
           action: 'clickCenter',
           activityIds:
             'com.cebbank.mobile.cemb.ui.activity.mobilePayment.MobilePaymentWebActivity',
           anyMatches: [
-            '(WebView > View > View > View > View > TextView[text="每周"] +2 TextView[text="(0/1)"] +(3,5) TextView[text.length=0][clickable=false][visibleToUser=true])',
-            '(WebView > View > View > View > View > TextView[text="每周"] +2 TextView[text="(0/1)"] +(3,5) TextView[text.length=0][clickable=true][visibleToUser=true])',
+            'WebView > View > View > View > View > TextView[text="每周"] +2 TextView[text="(0/1)"] +(3,5) TextView[text.length=0][clickable=false][visibleToUser=true]',
+            'WebView > View > View > View > View > TextView[text="每周"] +2 TextView[text="(0/1)"] +(3,5) TextView[text.length=0][clickable=true][visibleToUser=true]',
           ],
         },
       ],
@@ -118,8 +119,8 @@ export default defineGkdApp({
           activityIds:
             'com.cebbank.mobile.cemb.ui.activity.mobilePayment.MobilePaymentWebActivity',
           anyMatches: [
-            '(WebView > View > View > View > View > TextView[text="参与话题讨论"] +(3,5) TextView[text.length=0][clickable=false][visibleToUser=true])',
-            '(WebView > View > View > View > View > TextView[text="参与话题讨论"] +(3,5) TextView[text.length=0][clickable=true][visibleToUser=true])',
+            'WebView > View > View > View > View > TextView[text="参与话题讨论"] +(3,5) TextView[text.length=0][clickable=false][visibleToUser=true]',
+            'WebView > View > View > View > View > TextView[text="参与话题讨论"] +(3,5) TextView[text.length=0][clickable=true][visibleToUser=true]',
           ],
         },
       ],
@@ -299,8 +300,8 @@ export default defineGkdApp({
     },
     {
       key: 19,
-      name: '恭喜获得微信红包，先复制',
-      desc: '260831',
+      name: '占位19，恭喜获得微信红包，先复制',
+      desc: 'D，261016',
       rules: [
         {
           resetMatch: 'match',
@@ -308,6 +309,7 @@ export default defineGkdApp({
           activityIds:
             'com.cebbank.mobile.cemb.ui.activity.mobilePayment.MobilePaymentWebActivity',
           anyMatches: [
+            'View > TextView[text="元"] + TextView[text^="兑奖码："] + @TextView[text.length=0][clickable=true][visibleToUser=true] + TextView[text*="光彩礼遇社"]', //26年10月活动布局，text="搜索并关注微信公众号【光彩礼遇社】>点击菜单“领奖入口-南方财富月”>输入兑奖码领取红包"
             '(View > TextView[text^="兑奖码"] + @TextView[clickable=false][visibleToUser=true][text.length=0] + TextView[text*="光彩礼遇社" && text*="输入兑奖码领取红包"])',
             '(TextView[text*="光彩礼遇社" || text^="兑换路径"] - View > TextView[text="兑奖码:"] + TextView[text.length>0] + TextView[text.length=0])',
             '(TextView[text*="元微信红包"] < View + @TextView[clickable=false][visibleToUser=true] + TextView[text*="光彩礼遇社" && text*="输入兑奖码领取红包"])',
@@ -317,13 +319,14 @@ export default defineGkdApp({
     },
     {
       key: 20,
-      name: '恭喜获得微信红包，开心收下',
+      name: '占位20，恭喜获得微信红包，开心收下',
       desc: '260622，D',
       rules: [
         {
           activityIds:
             'com.cebbank.mobile.cemb.ui.activity.mobilePayment.MobilePaymentWebActivity',
           anyMatches: [
+            'View > TextView[text="元"] + TextView[text^="兑奖码："] + TextView[text.length=0][clickable=true][visibleToUser=true] + TextView[text*="光彩礼遇社"] + TextView[text.length=0][clickable=true][visibleToUser=true]', //26年10月活动布局
             '(View > TextView[text*="光彩礼遇社" && text*="输入兑奖码领取红包"] + @TextView[clickable=false][visibleToUser=true][text.length=0] + TextView[text.length=0])',
             '(TextView[text="兑奖码:"] < View + TextView[text^="兑换路径"] + @TextView + TextView[text="可在首页-[奖品]查看"])',
           ],
@@ -332,26 +335,24 @@ export default defineGkdApp({
     },
     {
       key: 21,
-      name: '抽奖微信红包，复制',
-      desc: '260911',
+      name: '弹窗，恭喜获得微信红包，先复制',
+      desc: '261016',
       rules: [
         {
           resetMatch: 'match',
-          actionMaximum: 1,
+          actioinCd: 3000,
           activityIds:
             'com.cebbank.mobile.cemb.ui.activity.mobilePayment.MobilePaymentWebActivity',
           anyMatches: [
-            '([text^="兑奖码"] + @TextView[clickable=true][visibleToUser=true] + [text^="搜索并关注微信公众号"])',
-            '([text^="兑奖码"] +n @TextView[clickable=true][visibleToUser=true] + [text^="搜索并关注微信公众号"])',
-            '([text^="兑奖码"] +n @*[clickable=true] + [text^="搜索并关注微信公众号"])',
+            'View > TextView[text="元"] + TextView[text^="兑奖码："] + @TextView[text.length=0][clickable=true][visibleToUser=true] + TextView[text*="光彩礼遇社"]', //26年10月活动布局，text="搜索并关注微信公众号【光彩礼遇社】>点击菜单“领奖入口-南方财富月”>输入兑奖码领取红包"
           ],
         },
       ],
     },
     {
       key: 22,
-      name: '抽奖微信红包，复制完后，开心收下 ',
-      desc: '260911',
+      name: '弹窗，恭喜获得微信红包，复制完成后，开心收下 ',
+      desc: '261016',
       rules: [
         {
           resetMatch: 'match',
@@ -359,9 +360,8 @@ export default defineGkdApp({
           activityIds:
             'com.cebbank.mobile.cemb.ui.activity.mobilePayment.MobilePaymentWebActivity',
           anyMatches: [
+            'View > TextView[text="元"] + TextView[text^="兑奖码："] + TextView[text.length=0][clickable=true][visibleToUser=true] + TextView[text*="光彩礼遇社"] + TextView[text.length=0][clickable=true][visibleToUser=true]', //26年10月活动布局
             '(View > TextView[text*="光彩礼遇社" && text*="输入兑奖码领取红包"] + @TextView[clickable=false][visibleToUser=true][text.length=0] + TextView[text.length=0])',
-            '([text^="搜索并关注微信公众号"] + TextView[clickable=true][visibleToUser=true])',
-            '([text^="搜索并关注微信公众号"] + *[clickable=true])',
           ],
         },
       ],
@@ -641,14 +641,16 @@ export default defineGkdApp({
     {
       key: 41,
       name: '基金定投设置，提交',
-      desc: '260616',
+      desc: '261016',
       rules: [
         {
           resetMatch: 'match',
           action: 'clickCenter',
           activityIds: 'com.cebbank.mobile.cemb.ui.activity.WebActivity',
-          matches:
+          anyMatches: [
             'View[text^="基金定投设置"] < ListView +n View > Button[text="提交"]',
+            'TextView[text^="基金定投设置"] <<n View +n View >n Button[text="提交"]',
+          ],
         },
       ],
     },

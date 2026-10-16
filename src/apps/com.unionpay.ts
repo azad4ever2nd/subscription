@@ -170,42 +170,51 @@ export default defineGkdApp({
     {
       key: 10,
       name: '迪士尼梦享券500-60，立即领取',
-      desc: '260508',
+      desc: '261016',
       rules: [
         {
           resetMatch: 'match',
           actionMaximum: 1,
           fastQuery: true,
           activityIds: 'com.unionpay.activity.react.UPActivityReactNative',
-          matches: '[text="60元梦享券-乐园门票"] <<n * +n * [text="立即领取"]',
+          anyMatches: [
+            'TextView[text="60元梦享券-乐园门票"] <<n ViewGroup +n ViewGroup > @ViewGroup[visibleToUser=true] > TextView[text="立即领取"]',
+            '[text="60元梦享券-乐园门票"] <<n * +n * [text="立即领取"]',
+          ],
         },
       ],
     },
     {
       key: 11,
       name: '迪士尼梦享券1000-120，立即领取',
-      desc: '260508',
+      desc: '261016',
       rules: [
         {
           resetMatch: 'match',
           actionMaximum: 1,
           fastQuery: true,
           activityIds: 'com.unionpay.activity.react.UPActivityReactNative',
-          matches: '[text="120元梦享券-乐园门票"] <<n * +n * [text="未开始"]',
+          anyMatches: [
+            'TextView[text="120元梦享券-乐园门票"] <<n ViewGroup +n ViewGroup > @ViewGroup[visibleToUser=true] > TextView[text="立即领取"]',
+            '[text="120元梦享券-乐园门票"] <<n * +n * [text="立即领取"]',
+          ],
         },
       ],
     },
     {
       key: 12,
       name: '迪士尼梦享券2000-200，立即领取',
-      desc: '260508',
+      desc: '261016',
       rules: [
         {
           resetMatch: 'match',
           actionMaximum: 1,
           fastQuery: true,
           activityIds: 'com.unionpay.activity.react.UPActivityReactNative',
-          matches: '[text="200元梦享券-乐园门票"] <<n * +n * [text="未开始"]',
+          anyMatches: [
+            'TextView[text="200元梦享券-乐园门票"] <<n ViewGroup +n ViewGroup > @ViewGroup[visibleToUser=true] > TextView[text="立即领取"]',
+            '[text="200元梦享券-乐园门票"] <<n * +n * [text="立即领取"]',
+          ],
         },
       ],
     },

@@ -39,7 +39,7 @@ export default defineGkdApp({
     {
       key: 3,
       name: '领奖完成',
-      desc: '261001，添加 抽奖，弹窗，云朵领取成功',
+      desc: '261016，添加 抽奖，弹窗，云朵领取成功',
       rules: [
         {
           resetMatch: 'match',
@@ -49,6 +49,7 @@ export default defineGkdApp({
           anyMatches: [
             'TextView[text="移动云盘体验评价"] < View + Image[clickable=false][visibleToUser=true][text="wMHmBwYPo98SAAAAABJRU5ErkJggg=="]',
             'View > @Image[text="+SOMf8vIwWVqABk0AAAAASUVORK5CYII="][clickable=true][visibleToUser=true] - View > TextView[text="我知道了"]',
+            'View > View > TextView[text="活动公告"] + View + Button[text="我知道了"][clickable=true][visibleToUser=true]',
             'TextView[text*="转存成功"] < View + Image[text="+SOMf8vIwWVqABk0AAAAASUVORK5CYII="]',
             'TextView[text="订购结果"] < View + Image[text="+SOMf8vIwWVqABk0AAAAASUVORK5CYII="]',
             '[text="我知道了"] <n View + Image[text="+SOMf8vIwWVqABk0AAAAASUVORK5CYII="][clickable=false][visibleToUser=true]',
