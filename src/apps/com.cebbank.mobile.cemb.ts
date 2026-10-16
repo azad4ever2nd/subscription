@@ -340,7 +340,7 @@ export default defineGkdApp({
       rules: [
         {
           resetMatch: 'match',
-          actioinCd: 3000,
+          actionCd: 3000,
           activityIds:
             'com.cebbank.mobile.cemb.ui.activity.mobilePayment.MobilePaymentWebActivity',
           anyMatches: [
