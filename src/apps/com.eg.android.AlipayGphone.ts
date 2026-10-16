@@ -18,7 +18,7 @@ export default defineGkdApp({
             '([desc="推荐广告"] + * > [desc="关闭"])',
           ],
           resetMatch: 'match',
-          activityIds: ['com.eg.android.AlipayGphone.AlipayLogin'],
+          activityIds: 'com.eg.android.AlipayGphone.AlipayLogin',
         },
       ],
     },
@@ -195,9 +195,8 @@ export default defineGkdApp({
         {
           fastQuery: true,
           resetMatch: 'match',
-          activityIds: [
+          activityIds:
             'com.alipay.mobile.nebulax.xriver.activity.XRiverActivity',
-          ],
           anyMatches: [
             'TextView[text*="您的位置信息" || text*="您的地理位置"] <<n FrameLayout + LinearLayout > @Button[id="com.alipay.mobile.antui:id/btn_cancel"][text="拒绝"][clickable=true][visibleToUser=true] + Button[id="com.alipay.mobile.antui:id/btn_ensure"][text="允许"]',
           ],
@@ -936,6 +935,21 @@ export default defineGkdApp({
     },
     {
       key: 46,
+      name: '扣款顺序设置',
+      desc: '261013',
+      rules: [
+        {
+          actionCd: 15000,
+          resetMatch: 'match',
+          fastQuery: true,
+          activityIds: 'com.flybird.app.FBAppWindowActivity',
+          matches:
+            '@FrameLayout[clickable=true][visibleToUser=true] > TextView[text="扣款顺序设置"]',
+        },
+      ],
+    },
+    {
+      key: 47,
       name: '占位，跳过借款',
       desc: 'D，260325,添加返回，整合境外消费，转出提示，任务完成，各种弹窗，添加小组件，已学习去使用，会员小组件,卡到期续卡，还款后分期提示，资金规划',
       rules: [
@@ -966,21 +980,6 @@ export default defineGkdApp({
           resetMatch: 'match',
           activityIds:
             'com.alipay.mobile.nebulax.xriver.activity.XRiverActivity',
-        },
-      ],
-    },
-    {
-      key: 47,
-      name: '扣款顺序设置',
-      desc: '261013',
-      rules: [
-        {
-          actionCd: 15000,
-          resetMatch: 'match',
-          fastQuery: true,
-          activityIds: 'com.flybird.app.FBAppWindowActivity',
-          matches:
-            '@FrameLayout[clickable=true][visibleToUser=true] > TextView[text="扣款顺序设置"]',
         },
       ],
     },
