@@ -341,13 +341,12 @@ export default defineGkdApp({
     {
       key: 19,
       name: '分享到，微信好友',
-      desc: '260915，clickable=true',
+      desc: '261017，clickable=true',
       rules: [
         {
           resetMatch: 'match',
-          actionMaximum: 1,
-          matchDelay: 1000,
           forcedTime: 3000,
+          actionCd: 3000,
           action: 'clickCenter',
           activityIds:
             'cmb.pb.app.h5container.webviewcontainer.PBWebContainerActivity',

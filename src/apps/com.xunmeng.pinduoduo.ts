@@ -317,7 +317,7 @@ export default defineGkdApp({
     {
       key: 20,
       name: '如何解锁，去首页1',
-      desc: '261007,clickable=false，添加 提前锁定，神券',
+      desc: '261017,clickable=false，添加 提前锁定，神券',
       rules: [
         {
           resetMatch: 'match',
@@ -333,6 +333,7 @@ export default defineGkdApp({
             '(View > TextView[text="解锁消费券"] + TextView + TextView[clickable=false][visibleToUser=true][text="去首页领券"])',
             '(View > View > View > TextView[text*="浏览商品10秒"] +n TextView[clickable=false][visibleToUser=true][text^="去看看"])',
             'View > @View[clickable=false][visibleToUser=true] + TextView[text="进入消费券活动页领券"]',
+            'View > View > View > TextView[text="恭喜获得专属惊喜券"] + TextView[text*="已成功点亮" || text$="明日可继续点亮"] +(3,4)  Image[text="webp"][visibleToUser=true]',
           ],
         },
       ],
@@ -506,6 +507,7 @@ export default defineGkdApp({
             '(View > View > View > TextView[text^="如何解锁"] + TextView[text="去首页"][clickable=true][visibleToUser=true])',
             'TextView[text="待使用"] <<n ViewGroup + ViewGroup > ImageView[clickable=true][visibleToUser=true]',
             'TextView[text="先去逛逛"] <<n ViewGroup + ViewGroup > ImageView[clickable=true][visibleToUser=true]',
+            'View > @Image[text="webp"][clickable=true][visibleToUser=true] - View >n TextView[text*="元券"] - View > Image[text="webp"]',
           ],
         },
       ],

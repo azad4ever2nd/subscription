@@ -194,6 +194,7 @@ export default defineGkdApp({
           ],
           anyMatches: [
             'ViewGroup > ViewGroup[vid="not_disturb_layout"] + ImageView[vid="second_close"][clickable=true][visibleToUser=true]',
+            'ViewGroup > FrameLayout[vid="surprise_box_ctn_top"] + ImageView[clickable=true][visibleToUser=true]',
             'LinearLayout > ImageView[vid="second_close"][clickable=true][visibleToUser=true]',
             '([vid="top_iv" || vid="flADLayout" || vid="flContainer"] + [vid="iv_close" ])',
             '([vid="top_iv" || vid="flADLayout" || vid="flContainer"] + [vid="ivClose"])',

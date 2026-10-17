@@ -232,7 +232,7 @@ export default defineGkdApp({
           activityIds:
             'com.alipay.mobile.nebulax.xriver.activity.XRiverActivity',
           excludeMatches: [
-            'Dialog >n View > Button[text="去完成" || text*="领取"]',
+            'Dialog >n View > Button[text="去完成" || text*="领取" || text="领奖励"]',
           ],
           anyMatches: [
             'View > View > @Button[text="关闭"][clickable=true][visibleToUser=true] + Image',
@@ -266,7 +266,7 @@ export default defineGkdApp({
     {
       key: 15,
       name: '弹窗，各种弹窗，有名字的按钮',
-      desc: '261014，fastQuery=false，添加 神券五六天，签到成功，开通碰一下，推送服务，查询账单，返回领奖，到桌面，银行卡抽奖，升级月利宝',
+      desc: '261017，fastQuery=false，添加 神券五六天，签到成功，开通碰一下，推送服务，查询账单，返回领奖，到桌面，银行卡抽奖，升级月利宝',
       rules: [
         {
           resetMatch: 'match',
@@ -291,6 +291,11 @@ export default defineGkdApp({
             'View > @Button[text="关闭"][clickable=true][visibleToUser=true] + TextView[text^="该信用卡支持查询账单"]',
             'View > View > @Button[text="关闭"][clickable=true][visibleToUser=true] +n Button[text="去添加银行卡"]',
             'View > View > @Button[text="关闭"][clickable=true][visibleToUser=true] + Image',
+            'View > View > Button[text="领奖励"][clickable=true][visibleToUser=true]',
+            'View > View > TextView[text*="到支付宝首页"] +n Button[text="关闭"][clickable=true][visibleToUser=true]',
+            'Dialog[text="恭喜获得红包福利"] > Button[text="关闭"][clickable=true][visibleToUser=true] - View >n Button[text="继续抽奖"] + Button[text="点我领取"][clickable=true][visibleToUser=true]',
+            'Dialog[text="恭喜获得隐藏福利"] > Button[text="关闭"][clickable=true][visibleToUser=true] - View >n @Button[text="继续抽奖"][clickable=true][visibleToUser=true] + Button[text="去完成"]',
+            'Dialog[text="恭喜获得惊喜福利"] > @Button[text="关闭"][clickable=true][visibleToUser=true] - View >n Button[text="去领取"][clickable=true][visibleToUser=true]',
           ],
         },
       ],
@@ -387,7 +392,7 @@ export default defineGkdApp({
             'com.alipay.mobile.nebulax.xriver.activity.XRiverActivity',
           anyMatches: [
             'View > Button[text="关闭"] +n View > View > View Button[clickable=true][visibleToUser=true][text="去领取" || text="去浏览"]',
-            '@View > View > TextView[text="任务完成"] + TextView[text="返回会场"]', //'@View > View > TextView[text="任务完成"] + TextView[text="返回会场"]',
+            '@View[clickable=true][visibleToUser=true] > View > TextView[text="任务完成"] + TextView[text="返回会场"]', //'@View > View > TextView[text="任务完成"] + TextView[text="返回会场"]',
           ],
         },
       ],
@@ -395,7 +400,7 @@ export default defineGkdApp({
     {
       key: 20,
       name: '本次没有中奖，知道了，关闭',
-      desc: '261017，添加 卡包管理， 入会领，下单 ，去看看',
+      desc: '261017，添加 卡包管理删除 入会领，下单 ，去看看',
       rules: [
         {
           resetMatch: 'match',
@@ -571,16 +576,16 @@ export default defineGkdApp({
           action: 'clickCenter',
           forcedTime: 3000,
           anyMatches: [
-            '@View[clickable=true] >n [text="任务完成"] + [text="返回会场" || text="返回领奖>"]',
-            '@View > [text="任务完成"] + [text="返回会场" || text="返回领奖>"]',
+            '@View[clickable=true][visibleToUser=true] > View > TextView[text="任务完成"] + TextView[text="返回会场"]',
             'TextView[text="0.1"] - TextView[text="¥"] < View +n @TextView[text="先囤后送"][clickable=true][visibleToUser=true] + TextView[text="过期自动退"]',
             'TextView[text="暂不离开"] < View + View >  TextView[text="直接退出"][clickable=false][visibleToUser=true]',
             'View > View > @Image[text="关闭弹窗"][clickable=true][visibleToUser=true] + View TextView[text="去买入"]',
             'TextView[text="刷新"][clickable=true][visibleToUser=true]',
+            '@View[clickable=true] >n [text="任务完成"] + [text="返回会场" || text="返回领奖>"]',
+            '@View > [text="任务完成"] + [text="返回会场" || text="返回领奖>"]',
           ],
           resetMatch: 'match',
           activityIds: [
-            'com.alipay.mobile.nebulax.xriver.activity.XRiverActivity',
             'com.alipay.mobile.nebulax.xriver.activity.XRiverActivity$App01',
             'com.alipay.mobile.nebulax.xriver.activity.XRiverActivity$App02',
             'com.alipay.mobile.nebulax.xriver.activity.XRiverActivity$App03',
@@ -633,8 +638,10 @@ export default defineGkdApp({
             'com.alipay.mobile.nebulax.xriver.activity.XRiverActivity$App04',
           ],
           anyMatches: [
-            '@Image[clickable=false][visibleToUser=false] <n View + TextView[text="取消"] + TextView[text="立即添加"]',
+            'TextView[text="开心收下"] <<n View + View > View > Image[clickable=false][visibleToUser=true]',
             '@Image[clickable=false][visibleToUser=true] < View - View > View > TextView[text="开心收下"]',
+            'View > @TextView - View >5 TextView[text="开心收下"]',
+            '@Image[clickable=false][visibleToUser=false] <n View + TextView[text="取消"] + TextView[text="立即添加"]',
             '@TextView - View > View > TextView[text="提醒我不断签"]',
             '@TextView <n * + [text="取消"] + [text="立即添加"]',
             '@TextView[clickable=false][visibleToUser=true] - View > TextView[text^="开启消息提醒"] + View > TextView[text="立即开启"]',
@@ -648,8 +655,6 @@ export default defineGkdApp({
             '@TextView[text="领取签到奖励"][clickable=false][visibleToUser=true] < View +  View > Image + TextView[text.length>0]',
             'Image[id="meb24ise8obdb"] < View[id^="meb23wkfgkptj"] < View + View > View > Image[clickable=false][visibleToUser=true]',
             'TextView[text="回免单首页看看"][clickable=false][visibleToUser=true] < View + TextView[clickable=false][visibleToUser=true]',
-            'TextView[text="开心收下"] <<n View + TextView[text.length=0][clickable=false][visibleToUser=true]',
-            'TextView[text="开心收下"] <<n View + View > View > Image[clickable=false][visibleToUser=true]',
             'TextView[text="立即抽免单"][clickable=false][visibleToUser=true] < View < View + TextView[text.length=0][clickable=false][visibleToUser=true]',
             'View > @TextView[text="领取签到奖励"][clickable=false][visibleToUser=true] + View > Image + TextView[text.length>0]',
             'View > @TextView[text="领取签到奖励"][clickable=false][visibleToUser=true] + View[childCount=2] > Image + TextView[text.length>0]',
@@ -661,7 +666,8 @@ export default defineGkdApp({
             'View[childCount=2] > @TextView[clickable=false][visibleToUser=true] - View TextView[text="开心收下"]',
             'View[childCount=2] > @TextView[clickable=false][visibleToUser=true][text.length=0] -  View >n TextView[text="元升级"][visibleToUser=true]',
             'View > @Image[clickable=false][visibleToUser=true] +2 TextView[text="去处理"] + TextView[text="暂不处理"]',
-            'View > @TextView - View >5 TextView[text="开心收下"]',
+            'View[childCount=2] > @TextView[clickable=false][visibleToUser=true] - View TextView[text="开心收下"]',
+            'TextView[text="开心收下"] <<n View + TextView[text.length=0][clickable=false][visibleToUser=true]',
           ],
         },
       ],

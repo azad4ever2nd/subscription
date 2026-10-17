@@ -7,15 +7,17 @@ export default defineGkdApp({
     {
       key: 1,
       name: '新版本',
-      desc: '251118',
+      desc: '261017',
       rules: [
         {
           resetMatch: 'match',
           fastQuery: true,
           action: 'clickCenter',
           activityIds: 'com.dianping.v1.NovaMainActivity',
-          matches:
+          anyMatches: [
+            'RelativeLayout > @ImageView[vid="update_close_icon"] + TextView[vid="update_title"][text*="新版本"]',
             '@[vid="update_close_icon"] + [vid="update_title"][text*="新版本"]',
+          ],
         },
       ],
     },
@@ -227,7 +229,22 @@ export default defineGkdApp({
     },
     {
       key: 14,
-      name: '弹窗，开启推送通知，X掉',
+      name: '弹窗，开启推送通知，X掉1',
+      desc: '261017',
+      rules: [
+        {
+          fastQuery: true,
+          resetMatch: 'match',
+          action: 'clickCenter',
+          activityIds: 'com.dianping.nova.picasso.DPPicassoBoxActivity',
+          matches:
+            '@ImageView[clickable=true][visibleToUser=true] - ImageView < FrameLayout + FrameLayout > TextView[text="开启推送通知"]',
+        },
+      ],
+    },
+    {
+      key: 15,
+      name: '弹窗，开启推送通知，X掉2',
       desc: '260927',
       rules: [
         {
