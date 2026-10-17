@@ -1940,14 +1940,14 @@ export default defineGkdApp({
     {
       key: 82,
       name: '同程抢单，慎用',
-      desc: 'D，260926',
+      desc: 'D，261017',
       rules: [
         {
           activityIds: 'com.tencent.mm..ui.LauncherUI',
           actionCd: 3000,
           resetMatch: 'match',
           matches:
-            'TextView[text*="同程来一个" || text*="收同程广东"] < * - TextView[text="车头-那年盛夏电影票" || text="hua"] < LinearLayout[childCount=4] <<n RelativeLayout[index=parent.childCount.minus(1)] <n RecyclerView <<n FrameLayout + FrameLayout >n RelativeLayout > Button[text="发送"][clickable=true][visibleToUser=true]',
+            'TextView[text*="同程来一个" || text*="收同程广东" || text*="江西五折券] < * - TextView[text="车头-那年盛夏电影票" || text="hua"] < LinearLayout[childCount=4] <<n RelativeLayout[index=parent.childCount.minus(1)] <n RecyclerView <<n FrameLayout + FrameLayout >n RelativeLayout > Button[text="发送"][clickable=true][visibleToUser=true]',
         },
       ],
     },
