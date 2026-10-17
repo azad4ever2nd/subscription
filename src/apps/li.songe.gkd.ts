@@ -194,5 +194,22 @@ export default defineGkdApp({
         },
       ],
     },
+    {
+      key: 14,
+      name: '关闭指定几个选项',
+      desc: '261017',
+      rules: [
+        {
+          resetMatch: 'match',
+          actionCd: 700,
+          action: 'clickCenter',
+          activityIds: '.MainActivity',
+          matches:
+            'View > TextView[text="音量快照" || text="截屏快照" || text="保存提示" || text="清除订阅"] +n View[clickable=true][checked=true]',
+          resetMatch: 'match',
+          actionCd: 500,
+        },
+      ],
+    },
   ],
 });
