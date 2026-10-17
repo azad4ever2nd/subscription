@@ -206,8 +206,6 @@ export default defineGkdApp({
           activityIds: '.MainActivity',
           matches:
             'View > TextView[text="音量快照" || text="截屏快照" || text="保存提示" || text="清除订阅"] +n View[clickable=true][checked=true]',
-          resetMatch: 'match',
-          actionCd: 500,
         },
       ],
     },
