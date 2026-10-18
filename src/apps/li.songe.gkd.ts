@@ -201,11 +201,11 @@ export default defineGkdApp({
       rules: [
         {
           resetMatch: 'match',
-          actionCd: 700,
+          actionCd: 2000,
           action: 'clickCenter',
           activityIds: '.MainActivity',
           matches:
-            'View > TextView[text="音量快照" || text="截屏快照" || text="保存提示" || text="清除订阅"] +n View[clickable=true][checked=true]',
+            '@View[clickable=true][visibleToUser=true] > TextView[text="音量快照" || text="截屏快照" || text="保存提示" || text="清除订阅"] +2 View[checked=true]',
         },
       ],
     },

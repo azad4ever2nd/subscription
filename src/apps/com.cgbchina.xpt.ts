@@ -344,6 +344,20 @@ export default defineGkdApp({
     },
     {
       key: 24,
+      name: '浮动窗，打开通知开关，关闭',
+      desc: '261018',
+      rules: [
+        {
+          resetMatch: 'match',
+          action: 'clickCenter',
+          activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
+          matches:
+            'View > View > View[text="打开通知开关"] +n Button[text="关闭"][clickable=true][visibleToUser=true]',
+        },
+      ],
+    },
+    {
+      key: 25,
       name: '弹窗，隐私政策更新提示，同意',
       desc: '260904',
       rules: [

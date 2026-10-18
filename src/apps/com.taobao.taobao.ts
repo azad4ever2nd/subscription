@@ -84,12 +84,16 @@ export default defineGkdApp({
     {
       key: 5,
       name: '节日版金币',
-      desc: '',
+      desc: '261018',
       rules: [
         {
           actionMaximum: 1,
           resetMatch: 'app',
-          matches: '@[text="赚金币"] <<n * + [text="回日常版"]',
+          anyMatches: [
+            'WebView[text="淘金币首页"] View > View > View > Button[text="回日常版"][clickable=true][visibleToUser=true]',
+            'View > View > Button[text="回日常版"] +n Button[text="赚金币"][clickable=true][visibleToUser=true]',
+            '@[text="赚金币"] <<n * + [text="回日常版"]',
+          ],
           activityIds: ['com.taobao.themis.container.app.TMSActivity'],
         },
       ],

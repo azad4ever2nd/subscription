@@ -378,6 +378,20 @@ export default defineGkdApp({
     },
     {
       key: 27,
+      name: '点击打开或下载第三方应用',
+      desc: '261018',
+      rules: [
+        {
+          resetMatch: 'match',
+          fastQuery: true,
+          activityIds: 'com.qq.e.ads.PortraitADActivity',
+          matches:
+            'FrameLayout > FrameLayout > FrameLayout > TextView[text="点击打开或下载第三方应用"][clickable=false][visibleToUser=true]',
+        },
+      ],
+    },
+    {
+      key: 28,
       name: '弹窗，连接后新版浮动广告，关闭',
       desc: '260908',
       rules: [
@@ -391,7 +405,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 28,
+      key: 29,
       name: '弹窗，连接后新版浮动广告2，关闭',
       desc: '260513',
       rules: [
@@ -408,7 +422,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 29,
+      key: 30,
       name: '奖励已下发，跳过',
       desc: '260510',
       rules: [
@@ -420,7 +434,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 30,
+      key: 31,
       name: '弹窗，连接后广告弹窗6',
       desc: '260930',
       rules: [

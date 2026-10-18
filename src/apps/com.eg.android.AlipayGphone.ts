@@ -223,7 +223,7 @@ export default defineGkdApp({
     {
       key: 13,
       name: '弹窗，有排除规则，关闭',
-      desc: '261017，fastQuery=false，clickable=true，需要排除的放在这里',
+      desc: '261018，fastQuery=false，clickable=true，需要排除的放在这里',
       rules: [
         {
           resetMatch: 'match',
@@ -236,6 +236,7 @@ export default defineGkdApp({
           ],
           anyMatches: [
             'View > View > @Button[text="关闭"][clickable=true][visibleToUser=true] + Image',
+            'View > View > Button[text="关闭"][clickable=true][visibleToUser=true]',
           ],
         },
       ],
@@ -266,7 +267,7 @@ export default defineGkdApp({
     {
       key: 15,
       name: '弹窗，各种弹窗，有名字的按钮',
-      desc: '261017，fastQuery=false，添加 神券五六天，签到成功，开通碰一下，推送服务，查询账单，返回领奖，到桌面，银行卡抽奖，升级月利宝',
+      desc: '261018，fastQuery=false，添加 神券五六天，签到成功，开通碰一下，推送服务，查询账单，返回领奖，到桌面，银行卡抽奖，升级月利宝',
       rules: [
         {
           resetMatch: 'match',
@@ -290,12 +291,14 @@ export default defineGkdApp({
             '@View[clickable=false][visibleToUser=true] > View > TextView[text*="任务完成"] + TextView[text*="返回领奖"]',
             'View > @Button[text="关闭"][clickable=true][visibleToUser=true] + TextView[text^="该信用卡支持查询账单"]',
             'View > View > @Button[text="关闭"][clickable=true][visibleToUser=true] +n Button[text="去添加银行卡"]',
-            'View > View > @Button[text="关闭"][clickable=true][visibleToUser=true] + Image',
             'View > View > Button[text="领奖励"][clickable=true][visibleToUser=true]',
             'View > View > TextView[text*="到支付宝首页"] +n Button[text="关闭"][clickable=true][visibleToUser=true]',
             'Dialog[text="恭喜获得红包福利"] > Button[text="关闭"][clickable=true][visibleToUser=true] - View >n Button[text="继续抽奖"] + Button[text="点我领取"][clickable=true][visibleToUser=true]',
+            'Dialog[text="恭喜抽中红包福利"] > Button[text="关闭"][clickable=true][visibleToUser=true] - View >n Button[text="继续抽奖"] + Button[text="点我领取"][clickable=true][visibleToUser=true]',
             'Dialog[text="恭喜获得隐藏福利"] > Button[text="关闭"][clickable=true][visibleToUser=true] - View >n @Button[text="继续抽奖"][clickable=true][visibleToUser=true] + Button[text="去完成"]',
             'Dialog[text="恭喜获得惊喜福利"] > @Button[text="关闭"][clickable=true][visibleToUser=true] - View >n Button[text="去领取"][clickable=true][visibleToUser=true]',
+            'Dialog[text="恭喜获得遇财神支付红包"] > Button[text="关闭"][clickable=true][visibleToUser=true] - View >n Button[text="去领取" || text="点我领取"][clickable=true][visibleToUser=true]',
+            'Dialog[text="恭喜获得惊喜福利"] > @Button[text="关闭"][clickable=true][visibleToUser=true]',
           ],
         },
       ],
@@ -384,15 +387,17 @@ export default defineGkdApp({
     {
       key: 19,
       name: '任务列表，去领取 去浏览',
-      desc: '260702',
+      desc: '261018',
       rules: [
         {
           resetMatch: 'match',
           activityIds:
             'com.alipay.mobile.nebulax.xriver.activity.XRiverActivity',
           anyMatches: [
+            'View > View > Button[text="去领取"][clickable=true][visibleToUser=true]',
+            '@View[clickable=true][visibleToUser=true] > View > TextView[text="任务完成"] + TextView[text="返回会场" || text="返回领奖>"]', //'@View > View > TextView[text="任务完成"] + TextView[text="返回会场"]',
             'View > Button[text="关闭"] +n View > View > View Button[clickable=true][visibleToUser=true][text="去领取" || text="去浏览"]',
-            '@View[clickable=true][visibleToUser=true] > View > TextView[text="任务完成"] + TextView[text="返回会场"]', //'@View > View > TextView[text="任务完成"] + TextView[text="返回会场"]',
+            '@View[clickable=true][visibleToUser=true] >n TextView[text="任务完成"] + TextView[text="返回会场" || text="返回领奖>"]',
           ],
         },
       ],
@@ -570,7 +575,7 @@ export default defineGkdApp({
     {
       key: 30,
       name: '小程序，任务完成，返回领奖',
-      desc: '260919，fastQuery=false,clickable=true，添加 0.1，返回，',
+      desc: '261018，fastQuery=false,clickable=true，添加 0.1，返回，',
       rules: [
         {
           action: 'clickCenter',
@@ -581,8 +586,7 @@ export default defineGkdApp({
             'TextView[text="暂不离开"] < View + View >  TextView[text="直接退出"][clickable=false][visibleToUser=true]',
             'View > View > @Image[text="关闭弹窗"][clickable=true][visibleToUser=true] + View TextView[text="去买入"]',
             'TextView[text="刷新"][clickable=true][visibleToUser=true]',
-            '@View[clickable=true] >n [text="任务完成"] + [text="返回会场" || text="返回领奖>"]',
-            '@View > [text="任务完成"] + [text="返回会场" || text="返回领奖>"]',
+            '@View[clickable=true][visibleToUser=true] >n TextView[text="任务完成"] + TextView[text="返回领奖>"]',
           ],
           resetMatch: 'match',
           activityIds: [
@@ -886,6 +890,7 @@ export default defineGkdApp({
             'Dialog > View > View > Button[text="关闭"][clickable=true][visibleToUser=true]',
             'TextView[text="去下单"] <n View + Button[clickable=true][visibleToUser=true][text="关闭"]',
             'Dialog > View > View > Button[text="关闭"] - View > View > TextView[text="继续领"]',
+            'View > View > TextView[text^="已连签" && text$="天"] +n TextView[text="提醒我领积分"] + Image[clickable=false][visibleToUser=true][index=parent.childCount.minus(1)]',
           ],
         },
       ],
@@ -988,7 +993,7 @@ export default defineGkdApp({
     {
       key: 48,
       name: '弹窗，团购申请发送消息，取消 或 不再询问',
-      desc: '260913,添加 暂不订阅',
+      desc: '261018,添加 暂不订阅,fastquery=true,clickable=true',
       rules: [
         {
           resetMatch: 'match',
@@ -996,7 +1001,7 @@ export default defineGkdApp({
           activityIds:
             'com.alipay.android.phone.mbox.biz.legacy.sbs.v2.MBoxSubscribeHostActivity',
           anyMatches: [
-            '(LinearLayout > TextView[text="发送以下消息"] +n LinearLayout > Button[clickable=true][visibleToUser=true][id="com.alipay.android.phone.product_msgboxbase:id/negativeBtn"][text="取消"] + Button[text="好的"])',
+            'LinearLayout > TextView[text="发送以下消息"] +n LinearLayout > @Button[text="取消"][id="com.alipay.android.phone.product_msgboxbase:id/negativeBtn"][clickable=true][visibleToUser=true] + Button[text="好的"][id="com.alipay.android.phone.product_msgboxbase:id/positiveBtn"]',
             '(LinearLayout > TextView[id="com.alipay.android.phone.product_msgboxbase:id/pluginTitle"][text="发送以下消息"] +n FrameLayout > TextView[id="com.alipay.android.phone.product_msgboxbase:id/rejectTxtBtn"][clickable=true][visibleToUser=true])',
             'LinearLayout > TextView +n LinearLayout > @Button[text="暂不订阅"][id="com.alipay.android.phone.product_msgboxbase:id/negativeBtn"][clickable=true][visibleToUser=true] + Button[text="好的"][clickable=true][visibleToUser=true]',
           ],
