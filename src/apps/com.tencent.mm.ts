@@ -1599,7 +1599,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 72,
+      key: 71,
       name: '粤工会，同意协议',
       desc: '260810',
       rules: [
