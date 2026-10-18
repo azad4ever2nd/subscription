@@ -272,8 +272,8 @@ export default defineGkdApp({
           resetMatch: 'match',
           activityIds: '.plugin.webview.ui.tools.MMWebViewUI',
           anyMatches: [
-            'TextView[text~="我的碎片 X[5-9]{2,}.\\d?"] + TextView[text="碎片记录"] + View > Image[text="50.0bb93c5e"][clickable=true][visibleToUser=true]',
-            'TextView[text~="我的碎片 X2[5-9]{2,}.\\\\d?"] + TextView[text="碎片记录"] + View > Image[text="50.0bb93c5e"][clickable=true][visibleToUser=true]',
+            'TextView[text~="我的碎片 X[3-4]{2,}.\\\\d?"] + TextView[text="碎片记录"] + View > Image[text="50.0bb93c5e"][clickable=true][visibleToUser=true]',
+            'TextView[text~="我的碎片 X2[5-9].\\\\d?"] + TextView[text="碎片记录"] + View > Image[text="50.0bb93c5e"][clickable=true][visibleToUser=true]',
           ],
         },
       ],
@@ -288,6 +288,7 @@ export default defineGkdApp({
           activityIds: '.plugin.webview.ui.tools.MMWebViewUI',
           anyMatches: [
             'TextView[text~="我的碎片 X[5-9][0-9]{2,}.\\\\d?"] + TextView[text="碎片记录"] + View > Image[text="100.7398bdef"][clickable=true][visibleToUser=true]',
+            'TextView[text~="我的碎片 X[0-9]{3,}.\\\\d?"] + TextView[text="碎片记录"] + View > Image[text="100.7398bdef"][clickable=true][visibleToUser=true]',
           ],
         },
       ],
