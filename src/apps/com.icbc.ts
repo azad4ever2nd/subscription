@@ -115,6 +115,7 @@ export default defineGkdApp({
         {
           action: 'back',
           anyMatches: [
+            'WebView > TextView[text="当前活动火爆请稍后重试"]',
             'TextView[text*="当前活动火爆请稍后重试"]',
             'View[desc*="当前活动火爆请稍后重试"]',
             '[text^="活动未开始"] + [text="确定"]',
