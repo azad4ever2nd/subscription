@@ -117,7 +117,7 @@ export default defineGkdApp({
     {
       key: 8,
       name: '领券中心,信用卡专享好券，还款红包',
-      desc: '261014，布局更新',
+      desc: '261019，布局更新',
       rules: [
         {
           resetMatch: 'match',
@@ -126,6 +126,7 @@ export default defineGkdApp({
           actionMaximum: 3,
           activityIds: 'com.bankcomm.module.biz.webcontainer.BCMHtml5Activity',
           anyMatches: [
+            'TextView[text="专享好券"] - TextView[text="信用卡"] < View + View > View > View > Image[text!="立即领取"]',
             'View > View > TextView[text="信用卡"] + TextView[text="专享好券"] + View > View > View > Image[text="立即领取"]',
             'View > View > TextView[text="信用卡"] + TextView[text="专享好券"] + View >n Image[text="立即领取"]',
             '(Image[text="ACIM_20260728000180_20260728174629048"] <<n View + View > View[index=1] Image[text="立即领取"])',
