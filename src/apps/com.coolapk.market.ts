@@ -6,15 +6,17 @@ export default defineGkdApp({
   groups: [
     {
       key: 1,
-      name: '请开启推送通知权限,以后再说',
-      desc: '251207,',
+      name: '弹窗，请开启推送通知权限,以后再说',
+      desc: '261019,',
       rules: [
         {
           resetMatch: 'match',
           fastQuery: true,
           activityIds: 'com.coolapk.market.view.main.MainActivity',
-          matches:
+          anyMatches: [
+            'TextView[vid="alertTitle"][text="请开启推送通知权限"] <<n LinearLayout +(2,3) ScrollView[vid="buttonPanel"] >n Button[id="android:id/button2"][text="以后再说"][clickable=true][visibleToUser=true]',
             '[vid="alertTitle"][text="请开启推送通知权限"] <<n [vid="topPanel"] +n [vid="buttonPanel"] [id="android:id/button2"][text="以后再说"]',
+          ],
         },
       ],
     },

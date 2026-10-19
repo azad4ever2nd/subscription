@@ -115,5 +115,44 @@ export default defineGkdApp({
         },
       ],
     },
+    {
+      key: 8,
+      name: '弹窗，做任务得绿色能量任务，X掉',
+      desc: '261019',
+      rules: [
+        {
+          resetMatch: 'match',
+          activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
+          matches:
+            'Dialog > TextView[text="做任务得绿色能量"] + TextView[text^="+"] + TextView + TextView[clickable=true][visibleToUser=true]',
+        },
+      ],
+    },
+    {
+      key: 9,
+      name: '弹窗，签到成功，X掉',
+      desc: '261029',
+      rules: [
+        {
+          resetMatch: 'match',
+          activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
+          matches:
+            'View > View > Image[text="rBwwImd_OjSAJa7CAAAHEsb1TVc451"][clickable=true][visibleToUser=true]',
+        },
+      ],
+    },
+    {
+      key: 10,
+      name: '签到兑好礼，一键领取',
+      desc: '261019',
+      rules: [
+        {
+          resetMatch: 'match',
+          activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
+          matches:
+            'TextView[text="浏览" || text.length>0] - TextView[text$="0"] < View <n View + View > TextView[text="一键领取"][clickable=true][visibleToUser=true]',
+        },
+      ],
+    },
   ],
 });

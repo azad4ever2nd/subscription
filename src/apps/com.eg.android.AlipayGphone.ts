@@ -223,7 +223,7 @@ export default defineGkdApp({
     {
       key: 13,
       name: '弹窗，有排除规则，关闭',
-      desc: '261018，fastQuery=false，clickable=true，需要排除的放在这里',
+      desc: '261019，fastQuery=false，clickable=true，需要排除的放在这里，排除信用卡还款，排除活动页面',
       rules: [
         {
           resetMatch: 'match',
@@ -233,10 +233,12 @@ export default defineGkdApp({
             'com.alipay.mobile.nebulax.xriver.activity.XRiverActivity',
           excludeMatches: [
             'Dialog >n View > Button[text="去完成" || text*="领取" || text="领奖励"]',
+            'WebView[text="信用卡还款"][visibleToUser=true]',
           ],
           anyMatches: [
             'View > View > @Button[text="关闭"][clickable=true][visibleToUser=true] + Image',
             'View > View > Button[text="关闭"][clickable=true][visibleToUser=true]',
+            'View > View > @Image[text="关闭"][clickable=true][visibleToUser=true] + Image + TextView[text="提醒我来继续攒"]',
           ],
         },
       ],
@@ -295,9 +297,12 @@ export default defineGkdApp({
             'View > View > TextView[text*="到支付宝首页"] +n Button[text="关闭"][clickable=true][visibleToUser=true]',
             'Dialog[text="恭喜获得红包福利"] > Button[text="关闭"][clickable=true][visibleToUser=true] - View >n Button[text="继续抽奖"] + Button[text="点我领取"][clickable=true][visibleToUser=true]',
             'Dialog[text="恭喜抽中红包福利"] > Button[text="关闭"][clickable=true][visibleToUser=true] - View >n Button[text="继续抽奖"] + Button[text="点我领取"][clickable=true][visibleToUser=true]',
+            'Dialog[text="恭喜获得优惠福利"] > Button[text="关闭"][clickable=true][visibleToUser=true] - View >n View[childCount=2] > Button[text="继续抽奖"] + @Button[text="点我领取"][clickable=true][visibleToUser=true]',
+            'Dialog[text="恭喜获得优惠福利"] > Button[text="关闭"][clickable=true][visibleToUser=true] - View >n Button[text="继续抽奖"] + Button[text="点我领取"][clickable=true][visibleToUser=true]',
             'Dialog[text="恭喜获得隐藏福利"] > Button[text="关闭"][clickable=true][visibleToUser=true] - View >n @Button[text="继续抽奖"][clickable=true][visibleToUser=true] + Button[text="去完成"]',
             'Dialog[text="恭喜获得惊喜福利"] > @Button[text="关闭"][clickable=true][visibleToUser=true] - View >n Button[text="去领取"][clickable=true][visibleToUser=true]',
             'Dialog[text="恭喜获得遇财神支付红包"] > Button[text="关闭"][clickable=true][visibleToUser=true] - View >n Button[text="去领取" || text="点我领取"][clickable=true][visibleToUser=true]',
+            'Dialog[text="恭喜获得隐藏福利"] > @Button[text="关闭"][clickable=true][visibleToUser=true] - View >n View[childCount=1] >  Button[text="去完成"]',
             'Dialog[text="恭喜获得惊喜福利"] > @Button[text="关闭"][clickable=true][visibleToUser=true]',
           ],
         },
@@ -387,10 +392,11 @@ export default defineGkdApp({
     {
       key: 19,
       name: '任务列表，去领取 去浏览',
-      desc: '261018',
+      desc: '261019，测试clickcenter',
       rules: [
         {
           resetMatch: 'match',
+          action: 'clickCenter',
           activityIds:
             'com.alipay.mobile.nebulax.xriver.activity.XRiverActivity',
           anyMatches: [
@@ -628,7 +634,7 @@ export default defineGkdApp({
     {
       key: 32,
       name: '小程序，各种弹窗，X掉1',
-      desc: '261016，fastquery=false,clickable=false,添加 排除误点去使用，明天不断签提醒，签到提醒，做任务领幸运星，领取奖励，排除红包卡券误点，闪购，超级吃货卡体验版，闪购签到，闪购小程序，添加到首页，添加 生活缴费',
+      desc: '261019，fastquery=false,clickable=false,添加 排除误点去使用，明天不断签提醒，签到提醒，做任务领幸运星，领取奖励，排除红包卡券误点，闪购，超级吃货卡体验版，闪购签到，闪购小程序，添加到首页，添加 生活缴费',
       rules: [
         {
           resetMatch: 'match',
@@ -655,6 +661,7 @@ export default defineGkdApp({
             '@TextView[clickable=false][visibleToUser=true] - View > View > View >n TextView[text="去使用"] - View', //6步
             '@TextView[clickable=false][visibleToUser=true] - View >n  TextView[text="下次再来" || text="继续攒星"]',
             '@TextView[clickable=false][visibleToUser=true] < View  + TextView + View > View > View > View > TextView[text="去使用"]',
+            'View[childCount=3] > View[childCount=3] > @TextView[clickable=false][visibleToUser=true] -2 View  >n TextView[text="去使用"]', //新版去使用，下方多了一个窗口
             '@TextView[clickable=false][visibleToUser=true] <2 View + TextView[text="取消"] + TextView[text="立即添加"]',
             '@TextView[text="领取签到奖励"][clickable=false][visibleToUser=true] < View +  View > Image + TextView[text.length>0]',
             'Image[id="meb24ise8obdb"] < View[id^="meb23wkfgkptj"] < View + View > View > Image[clickable=false][visibleToUser=true]',

@@ -130,5 +130,19 @@ export default defineGkdApp({
         },
       ],
     },
+    {
+      key: 9,
+      name: '弹窗，清除已选中的历史记录吗？确定',
+      desc: '261019',
+      rules: [
+        {
+          fastQuery: true,
+          resetMatch: 'match',
+          activityIds: 'com.bilibili.lib.ui.GeneralActivity',
+          matches:
+            'TextView[text="清除已选中的历史记录吗？"] <<n FrameLayout + LinearLayout > Button[text="取消"][id="android:id/button2"] + Button[text="确定"][id="android:id/button1"][clickable=true][visibleToUser=true]',
+        },
+      ],
+    },
   ],
 });

@@ -137,6 +137,22 @@ export default defineGkdApp({
     },
     {
       key: 9,
+      name: '预约打新，选择预约时间',
+      desc: '261019',
+      rules: [
+        {
+          resetMatch: 'match',
+          action: 'clickCenter',
+          actionMaximum: 2,
+          activityIds:
+            'com.gtja.business.component.browser.webview.BrowserScreen',
+          matches:
+            'TextView[text="选择预约时间"] + Button[text="确认"] + View > View > ListView > Button[text="30分-35分"][clickable=true][visibleToUser=true]',
+        },
+      ],
+    },
+    {
+      key: 10,
       name: '预约打新，第二步，符合预约时间后，确认',
       desc: '260910，要求预约时间在14:30，[text="已选中 "] + [text!="0"] <n * + [text="确认"][clickable=false]',
       rules: [
@@ -156,7 +172,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 10,
+      key: 11,
       name: '预约打新，第三步，风险确认，二次确认',
       desc: '260909',
       rules: [
@@ -178,7 +194,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 11,
+      key: 12,
       name: '预约打新完成，完成',
       desc: '260926',
       rules: [
@@ -197,7 +213,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 12,
+      key: 13,
       name: '交易系统清算期间，我知道了',
       desc: '260808',
       rules: [
@@ -210,7 +226,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 13,
+      key: 14,
       name: '弹窗，是否继续下载？，确定',
       desc: '261016',
       rules: [

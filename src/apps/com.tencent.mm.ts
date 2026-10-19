@@ -1253,8 +1253,9 @@ export default defineGkdApp({
             'com.tencent.mm.plugin.appbrand.ui.AppBrandPluginUI',
           ],
           anyMatches: [
+            '@Image[clickable=false][visibleToUser=true] < View + Image + TextView[text^="恭喜你完成"] + TextView[text="取消"] + TextView[text="查看积分"]', //完成每日登录，获得20积分，取消，查看积分
             '@Image[clickable=false][visibleToUser=true] < View -n TextView[text$="积分"] +n TextView[text="去查看"]',
-            '(@Image < View + Image + TextView[text^="恭喜你完成"] + TextView[text="取消"] + TextView[text="查看积分"])',
+            'TextView[text="去领取"] < FrameLayout <n FrameLayout +2 FrameLayout > FrameLayout > TextView > ImageView[clickable=false][visibleToUser=true]', //恭喜你 抽中了 100积分，去领取，分享好友，一起抽大奖，X掉
             '([text="更多精彩"] + @* +n [text="女职工服务"] +n [text="阵地服务"])',
           ],
         },
@@ -1540,7 +1541,7 @@ export default defineGkdApp({
     {
       key: 70,
       name: '活动未开始，我知道了',
-      desc: '261013，添加 红色打卡，宁波，朴朴，动卡空间，内蒙工行，贵阳工行，工行余姚，湘约工行，贵州工行，已参加过',
+      desc: '261019，添加 广发限购，红色打卡，宁波，朴朴，动卡空间，内蒙工行，贵阳工行，工行余姚，湘约工行，贵州工行，已参加过',
       rules: [
         {
           resetMatch: 'match',
@@ -1595,6 +1596,7 @@ export default defineGkdApp({
             'View > TextView[text="很遗憾未中奖" || text="感谢您的参与"] +n View > TextView[text="我知道了"][clickable=false][visibleToUser=true]',
             'View > View > TextView[text="谢谢参与～"] +2 @TextView[clickable=true][visibleToUser=true] -  View > Image[text="60e3f3550c78485a6857ba23"][clickable=true][visibleToUser=true]',
             'Dialog > TextView[text="领取成功"] +n Button[text="确定"][clickable=true][visibleToUser=true]',
+            '@TextView[text.length=1][clickable=false][visibleToUser=true] < View +(3,5) View > TextView[text="数量最多可购0张"]',
           ],
         },
       ],
