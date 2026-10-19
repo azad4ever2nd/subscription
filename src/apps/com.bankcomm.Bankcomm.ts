@@ -649,8 +649,8 @@ export default defineGkdApp({
     },
     {
       key: 42,
-      name: '浏览任务完成，click',
-      desc: 'D,占位，260829，取消back，添加新布局，添加权限弹窗，直播间ids',
+      name: '占位42，浏览任务完成',
+      desc: 'D，占位，260829，取消back，添加新布局，添加权限弹窗，直播间ids',
       rules: [
         {
           resetMatch: 'match',

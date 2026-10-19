@@ -151,7 +151,7 @@ export default defineGkdApp({
           resetMatch: 'match',
           anyMatches: [
             '([text="身份信息验证"] +n CheckBox[checked=false]) || ([text="身份信息验证"] +n [text="loginBtn.f302f730"])', //规则12
-            '[text*="活动期间每周三15:00起开放报名领券入口"] <<n * + [text="NWJ6tc6mwaKQfgbADXAJPIxaVNUQJguwpoNgAy0x2ew8SgXab+AzNTubJfuAmp7HtQL5K8AARxBdk+5zMOgAAAAASUVORK5CYII="text="NWJ6tc6mwaKQfgbADXAJPIxaVNUQJguwpoNgAy0x2ew8SgXab+AzNTubJfuAmp7HtQL5K8AARxBdk+5zMOgAAAAASUVORK5CYII="]', //规则 13
+            '[text*="活动期间每周三15:00起开放报名领券入口"] <<n * + [text="NWJ6tc6mwaKQfgbADXAJPIxaVNUQJguwpoNgAy0x2ew8SgXab+AzNTubJfuAmp7HtQL5K8AARxBdk+5zMOgAAAAASUVORK5CYII="]', //规则 13
             '[text="温馨提示"] + [text*="报名人数已满" || text="今日报名人数已满，您可下个领券日再来~" || text^="活动期间每周三"] + * > [text="好的"]', //规则 13
             '[text="温馨提示"] + * > [text="好的"]', //规则12
           ],

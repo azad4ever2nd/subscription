@@ -81,7 +81,7 @@ export default defineGkdApp({
           activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
           anyMatches: [
             'TextView[vid="dialog_content"][text*="优惠券不在销售时间内"] < ScrollView +n LinearLayout > TextView[text="确认"][vid="dialog_button_positive"][clickable=true][visibleToUser=true]',
-            '[vid="dialog_content"][text*="优惠券不在销售时间内"] < * +n * > [vid="dialog_button_positive"][text="确认"])',
+            '[vid="dialog_content"][text*="优惠券不在销售时间内"] < * +n * > [vid="dialog_button_positive"][text="确认"]',
           ],
         },
       ],

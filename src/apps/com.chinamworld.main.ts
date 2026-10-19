@@ -181,7 +181,7 @@ export default defineGkdApp({
     },
     {
       key: 12,
-      name: '勾选 本人已认真阅读并同意以上内容',
+      name: '占位12，勾选 本人已认真阅读并同意以上内容',
       desc: '261013，可禁用 或 占位',
       rules: [
         {
