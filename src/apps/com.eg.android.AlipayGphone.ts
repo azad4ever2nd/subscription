@@ -304,8 +304,8 @@ export default defineGkdApp({
             'Dialog[text="恭喜获得遇财神支付红包"] > Button[text="关闭"][clickable=true][visibleToUser=true] - View >n Button[text="去领取" || text="点我领取"][clickable=true][visibleToUser=true]',
             'Dialog[text="恭喜获得隐藏福利"] > @Button[text="关闭"][clickable=true][visibleToUser=true] - View >n View[childCount=1] >  Button[text="去完成"]',
             'Dialog[text="恭喜免费升级扫码点单"] > @Button[text="关闭"][clickable=true][visibleToUser=true] - View >n View[childCount=1] > Button[text="去了解"]',
-            'Dialog[text="恭喜获得惊喜福利"] > @Button[text="关闭"][clickable=true][visibleToUser=true]',
             'Dialog > @Button[text="关闭"][clickable=true][visibleToUser=true] - View >n View[childCount=1] > Button[text="去了解" || text="去开通"]',
+            'Dialog[text="恭喜获得惊喜福利"] > @Button[text="关闭"][clickable=true][visibleToUser=true]',
           ],
         },
       ],
@@ -342,7 +342,7 @@ export default defineGkdApp({
     {
       key: 17,
       name: '弹窗，各种弹窗，X掉2',
-      desc: '261014，fastQuery=false，添加 神券五六天，签到成功，开通碰一下，推送服务，查询账单，返回领奖，到桌面，银行卡抽奖，升级月利宝',
+      desc: '261020，fastQuery=false，添加 神券五六天，签到成功，开通碰一下，推送服务，查询账单，返回领奖，到桌面，银行卡抽奖，升级月利宝',
       rules: [
         {
           resetMatch: 'match',
