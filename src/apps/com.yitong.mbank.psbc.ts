@@ -177,6 +177,21 @@ export default defineGkdApp({
     },
     {
       key: 12,
+      name: '弹窗，支付有礼，中奖，X掉 或 去领取',
+      desc: '261020',
+      rules: [
+        {
+          resetMatch: 'match',
+          activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
+          anyMatches: [
+            'View > Image + TextView[text*="立减金"] + Image[text="1772245072000n64"][clickable=true] + Image[text="FQCh+AAAAAElFTkSuQmCC"][clickable=true][visibleToUser=true]',
+            'View > Image + TextView[text*="立减金"] + @Image[text="1772245072000n64"][clickable=true] + Image[text="FQCh+AAAAAElFTkSuQmCC"][clickable=true][visibleToUser=true]',
+          ],
+        },
+      ],
+    },
+    {
+      key: 13,
       name: '三方页面，勾选30天内不再提示',
       desc: '260525',
       rules: [
@@ -192,7 +207,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 13,
+      key: 14,
       name: '三方页面，勾选30天内不再提示，点击进入',
       desc: '260525',
       rules: [
@@ -209,7 +224,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 14,
+      key: 15,
       name: '山东邮储，支付0.01抽奖',
       desc: '260315，活动到3/31止，每天9点开始',
       rules: [

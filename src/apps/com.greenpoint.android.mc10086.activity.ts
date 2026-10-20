@@ -39,7 +39,7 @@ export default defineGkdApp({
     {
       key: 3,
       name: '弹窗',
-      desc: '260918,fastQuery=true,clickable=true，添加 周三活动',
+      desc: '261020，fastQuery=true,clickable=true，添加 周三活动',
       rules: [
         {
           resetMatch: 'match',
@@ -48,6 +48,7 @@ export default defineGkdApp({
           fastQuery: true,
           forcedTime: 4000,
           anyMatches: [
+            'ViewGroup > @ImageView[vid="iv_close"][clickable=true][visibleToUser=true] +3 TextView[vid="dialog_btn2"]',
             '(LinearLayout > @ImageView[vid="close_btn"][desc="关闭"][clickable=true][visibleToUser=true] - RelativeLayout > ImageView[vid="ad_image"][desc="广告bak"])',
             '(ImageView[vid="ad_image"][desc="广告"] <n RelativeLayout + ImageView[vid="close_btn"][desc="关闭"][clickable=true][visibleToUser=true])',
             '(ViewGroup[vid="cl_pop"] > ImageView[vid="img_close"][clickable=true][visibleToUser=true])',

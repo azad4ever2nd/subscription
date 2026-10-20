@@ -6,11 +6,13 @@ export default defineGkdApp({
     {
       key: 1,
       name: '立即签到',
-      desc: '261018',
+      desc: '261020',
       rules: [
         {
           resetMatch: 'match',
           actionMaximum: 2,
+          matchDelay: 1000,
+          forcedTime: 3000,
           activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
           anyMatches: [
             'View > @View[clickable=true][visibleToUser=true] > TextView[text="立即签到"][visibleToUser=true]',

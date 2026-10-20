@@ -1541,7 +1541,7 @@ export default defineGkdApp({
     {
       key: 70,
       name: '活动未开始，我知道了',
-      desc: '261019，添加 广发限购，红色打卡，宁波，朴朴，动卡空间，内蒙工行，贵阳工行，工行余姚，湘约工行，贵州工行，已参加过',
+      desc: '261019，添加 红色打卡，宁波，朴朴，动卡空间，内蒙工行，贵阳工行，工行余姚，湘约工行，贵州工行，已参加过',
       rules: [
         {
           resetMatch: 'match',
@@ -1596,7 +1596,6 @@ export default defineGkdApp({
             'View > TextView[text="很遗憾未中奖" || text="感谢您的参与"] +n View > TextView[text="我知道了"][clickable=false][visibleToUser=true]',
             'View > View > TextView[text="谢谢参与～"] +2 @TextView[clickable=true][visibleToUser=true] -  View > Image[text="60e3f3550c78485a6857ba23"][clickable=true][visibleToUser=true]',
             'Dialog > TextView[text="领取成功"] +n Button[text="确定"][clickable=true][visibleToUser=true]',
-            '@TextView[text.length=1][clickable=false][visibleToUser=true] < View +(3,5) View > TextView[text="数量最多可购0张"]',
           ],
         },
       ],
@@ -1968,9 +1967,37 @@ export default defineGkdApp({
         },
       ],
     },
-
     {
       key: 84,
+      name: '弹窗，广发限购，X掉',
+      desc: '261020，添加 广发限购',
+      rules: [
+        {
+          resetMatch: 'match',
+          action: 'clickCenter',
+          actionCd: 500,
+          forcedTime: 3000,
+          activityIds: [
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI0',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI1',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI2',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI3',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI4',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI00',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI01',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI02',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI03',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI04',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandPluginUI',
+          ],
+          anyMatches: [
+            '@TextView[text.length=1][clickable=false][visibleToUser=true] < View +(3,5) View > TextView[text="数量最多可购0张"]',
+          ],
+        },
+      ],
+    },
+    {
+      key: 85,
       name: '自动登录该设备',
       desc: '260804',
       rules: [
@@ -1983,7 +2010,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 85,
+      key: 86,
       name: '同程抢单，慎用',
       desc: 'D，261018',
       rules: [

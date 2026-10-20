@@ -336,14 +336,14 @@ export default defineGkdApp({
     {
       key: 24,
       name: '恭喜获得奖励2',
-      desc: '260929',
+      desc: '261020',
       rules: [
         {
           resetMatch: 'match',
           activityIds: 'com.qq.e.ads.PortraitADActivity',
           anyMatches: [
             'ImageView < @FrameLayout[clickable=false][visibleToUser=true] <2 FrameLayout < FrameLayout +2 FrameLayout > FrameLayout > TextView[text="恭喜获得奖励"]',
-            '([text="恭喜获得奖励"] < FrameLayout < FrameLayout < FrameLayout + FrameLayout > FrameLayout > FrameLayout ImageView)',
+            '[text="恭喜获得奖励"] < FrameLayout < FrameLayout < FrameLayout + FrameLayout > FrameLayout > FrameLayout ImageView',
             '[text="恭喜获得奖励！"] < * + *[clickable=true]',
           ],
         },
@@ -352,14 +352,15 @@ export default defineGkdApp({
     {
       key: 25,
       name: '恭喜获得奖励3',
-      desc: 'D，整合到24，260607',
+      desc: '261020,fastQuery=true',
       rules: [
         {
           resetMatch: 'match',
+          fastQuery: true,
           action: 'clickCenter',
           activityIds: 'com.qq.e.ads.PortraitADActivity',
           anyMatches: [
-            '([text="恭喜获得奖励"] < FrameLayout < FrameLayout < FrameLayout + FrameLayout > FrameLayout > FrameLayout ImageView)',
+            '@ImageView[clickable=false][visibleToUser=true] <<3 FrameLayout +3 FrameLayout > FrameLayout > TextView[text="恭喜获得奖励"]',
           ],
         },
       ],

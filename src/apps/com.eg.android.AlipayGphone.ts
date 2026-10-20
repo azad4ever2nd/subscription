@@ -269,7 +269,7 @@ export default defineGkdApp({
     {
       key: 15,
       name: '弹窗，各种弹窗，有名字的按钮',
-      desc: '261018，fastQuery=false，添加 神券五六天，签到成功，开通碰一下，推送服务，查询账单，返回领奖，到桌面，银行卡抽奖，升级月利宝',
+      desc: '261020，fastQuery=false，添加 神券五六天，签到成功，开通碰一下，推送服务，查询账单，返回领奖，到桌面，银行卡抽奖，升级月利宝',
       rules: [
         {
           resetMatch: 'match',
@@ -303,7 +303,9 @@ export default defineGkdApp({
             'Dialog[text="恭喜获得惊喜福利"] > @Button[text="关闭"][clickable=true][visibleToUser=true] - View >n Button[text="去领取"][clickable=true][visibleToUser=true]',
             'Dialog[text="恭喜获得遇财神支付红包"] > Button[text="关闭"][clickable=true][visibleToUser=true] - View >n Button[text="去领取" || text="点我领取"][clickable=true][visibleToUser=true]',
             'Dialog[text="恭喜获得隐藏福利"] > @Button[text="关闭"][clickable=true][visibleToUser=true] - View >n View[childCount=1] >  Button[text="去完成"]',
+            'Dialog[text="恭喜免费升级扫码点单"] > @Button[text="关闭"][clickable=true][visibleToUser=true] - View >n View[childCount=1] > Button[text="去了解"]',
             'Dialog[text="恭喜获得惊喜福利"] > @Button[text="关闭"][clickable=true][visibleToUser=true]',
+            'Dialog > @Button[text="关闭"][clickable=true][visibleToUser=true] - View >n View[childCount=1] > Button[text="去了解" || text="去开通"]',
           ],
         },
       ],
@@ -362,6 +364,7 @@ export default defineGkdApp({
             'View > View > View > @Image[clickable=false][visibleToUser=true] + TextView[text^="用碰一下"] +n TextView[text="去申请"]',
             'View > View > View[text="红包区域"] > View[childCount=3] > @View[clickable=true][visibleToUser=true] > TextView[text^="开抢倒计时" && text$="结束"]',
             'WebView > View > View > TextView[text^="抽奖机会1"] + TextView[clickable=false][visibleToUser=true]',
+            'View > @TextView[clickable=true][visibleToUser=true] - View > TextView[text*="次抽奖机会！"] + TextView[text="天天来天天抽，抽抽必中"]',
           ],
         },
       ],
@@ -392,7 +395,7 @@ export default defineGkdApp({
     {
       key: 19,
       name: '任务列表，去领取 去浏览',
-      desc: '261019，测试clickcenter',
+      desc: '261020，action:clickCenter',
       rules: [
         {
           resetMatch: 'match',
@@ -982,7 +985,7 @@ export default defineGkdApp({
     {
       key: 47,
       name: '添加到首页，取消',
-      desc: '261014',
+      desc: '261020',
       rules: [
         {
           resetMatch: 'match',
@@ -990,9 +993,9 @@ export default defineGkdApp({
           activityIds: 'com.alipay.android.phone.home.market.AddToHomeActivity',
           anyMatches: [
             'RelativeLayout > FrameLayout > TextView[text*="到首页"] + ImageView[id="com.alipay.android.phone.openplatform.app:id/add_home_private_close"]',
-            '(TextView[text*="添加到首页"] < RelativeLayout < FrameLayout < FrameLayout + LinearLayout > Button[id="com.alipay.mobile.antui:id/btn_cancel"][clickable=true][visibleToUser=true][text="取消"])',
+            'TextView[text*="添加到首页"] < RelativeLayout < FrameLayout < FrameLayout + LinearLayout > Button[id="com.alipay.mobile.antui:id/btn_cancel"][clickable=true][visibleToUser=true][text="取消"]',
+            'TextView[text="编辑首页服务"] < LinearLayout < FrameLayout + LinearLayout > @Button[text="取消"][clickable=true][visibleToUser=true] + Button[text="完成"][clickable=true][visibleToUser=true]',
             'TextView[text="编辑首页服务"] <<n FrameLayout + LinearLayout > @Button[text="取消"][id="com.alipay.mobile.antui:id/btn_cancel"][clickable=true][visibleToUser=true] + Button[text="完成"][id="com.alipay.mobile.antui:id/btn_ensure"]',
-            '(TextView[text="编辑首页服务"] < LinearLayout < FrameLayout + LinearLayout > Button[text="取消"][clickable=true][visibleToUser=true] + Button[text="完成"][clickable=true][visibleToUser=true])',
           ],
         },
       ],

@@ -130,5 +130,18 @@ export default defineGkdApp({
         },
       ],
     },
+    {
+      key: 10,
+      name: '弹窗，联名卡，X掉',
+      desc: '261020',
+      rules: [
+        {
+          resetMatch: 'match',
+          activityIds: '.bm.common.web.ui.WebActivity',
+          matches:
+            'WebView > Image[text="close"][clickable=true][index=parent.childCount.minus(1)][visibleToUser=true]',
+        },
+      ],
+    },
   ],
 });
