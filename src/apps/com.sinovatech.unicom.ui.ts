@@ -7,12 +7,15 @@ export default defineGkdApp({
     {
       key: 1,
       name: '首页弹窗',
-      desc: '',
+      desc: '261021',
       rules: [
         {
-          matches: ['[text="广告"] + Image + Image'],
-          actionMaximum: 1,
           resetMatch: 'match',
+          forcedTime: 3000,
+          anyMatches: [
+            'WebView[text="首页福利弹窗"] View > TextView[text="广告"] + Image[clickable=true][visibleToUser=true] + Image[clickable=true][visibleToUser=true]',
+            '[text="广告"] + Image + Image',
+          ],
           activityIds: 'com.sinovatech.unicom.basic.ui.activity.MainActivity',
         },
       ],

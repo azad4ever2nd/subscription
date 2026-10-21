@@ -1541,7 +1541,7 @@ export default defineGkdApp({
     {
       key: 70,
       name: '活动未开始，我知道了',
-      desc: '261019，添加 红色打卡，宁波，朴朴，动卡空间，内蒙工行，贵阳工行，工行余姚，湘约工行，贵州工行，已参加过',
+      desc: '261021，添加 红色打卡，宁波，朴朴，动卡空间，内蒙工行，贵阳工行，工行余姚，湘约工行，贵州工行，已参加过',
       rules: [
         {
           resetMatch: 'match',
@@ -1564,6 +1564,8 @@ export default defineGkdApp({
             'WebView > View > TextView[text="立即签到"][clickable=false][visibleToUser=true]',
             'WebView > View > View > View > View > @TextView[clickable=true][visibleToUser=true] - View > TextView[text="立即前往"]',
             'View > View > @Image[clickable=false][visibleToUser=true] + View > TextView[text="恭喜您"] +n TextView[text="积分"] + TextView[text^="恭喜您获得" && text*="专属积分奖励"]', //红色火箭签到
+            'View > View > TextView[text="恭喜您"] + * + TextView[text="微信红包"] +2 View > TextView[text="去领取"][clickable=false][visibleToUser=true]', //红色火箭，红包
+            'View > View > TextView[text="您的活动奖励金额为:"] + TextView + View > @TextView[text.length=0][clickable=true][visibleToUser=true] + View > TextView[text^="恭喜您抽中红包！点击领取后，奖励将发放至微信零钱"]', //红色火箭，红包
             'View > View > TextView[text="活动9:00开始"] + TextView[text="确定"][clickable=true][visibleToUser=true]',
             'TextView[clickable=true][visibleToUser=true] - @TextView[clickable=true][visibleToUser=true] - View >n TextView[text="每天上午9:00开始"]',
             'View > View > TextView[text^="活动将于" && text$="开始"] + TextView[text="确定"][clickable=true][visibleToUser=true]',
@@ -1629,10 +1631,11 @@ export default defineGkdApp({
     {
       key: 72,
       name: '粤工会，登陆',
-      desc: '260916，添加 参与抽奖',
+      desc: '260916，',
       rules: [
         {
           resetMatch: 'match',
+          preKeys: [71],
           activityIds: [
             'com.tencent.mm.plugin.appbrand.ui.AppBrandUI0',
             'com.tencent.mm.plugin.appbrand.ui.AppBrandUI1',

@@ -22,14 +22,17 @@ export default defineGkdApp({
     {
       key: 2,
       name: '弹窗，请选择你的收货地址，X掉',
-      desc: '260829',
+      desc: '261021，添加 大额红包待领取',
       rules: [
         {
           fastQuery: true,
           resetMatch: 'match',
+          forcedTime: 3000,
           activityIds: 'me.ele.application.ui.Launcher.LauncherActivity',
-          matches:
+          anyMatches: [
             'RelativeLayout[vid="dialog_container"] > ImageView[vid="close_btn"][desc="关闭"][clickable=true][visibleToUser=true]',
+            'ViewGroup[vid="id_magex_mistview"] > @ViewGroup[clickable=true][visibleToUser=true][childCount=1] > ViewGroup[clickable=false]',
+          ],
         },
       ],
     },
@@ -85,13 +88,15 @@ export default defineGkdApp({
     {
       key: 6,
       name: '下单后弹出开启订单通知，X掉',
-      desc: '260629',
+      desc: '261021',
       rules: [
         {
           resetMatch: 'match',
           activityIds: 'me.ele.message.ui.PushMessageGuideActivity',
-          matches:
+          anyMatches: [
+            'ViewGroup > @FrameLayout[clickable=true][visibleToUser=true] - LinearLayout > TextView[text="及时获取聊天消息"][vid="tv_title"]',
             'TextView[text*="通知"] - TextView < LinearLayout + @FrameLayout[vid="view_close"][clickable=true] > View',
+          ],
         },
       ],
     },
@@ -216,6 +221,19 @@ export default defineGkdApp({
           activityIds: 'me.ele.android.emagex.container.EMagexActivity',
           matches:
             'ViewGroup[vid="id_magex_mistview"] > ImageView + ImageView[clickable=true][visibleToUser=true]',
+        },
+      ],
+    },
+    {
+      key: 15,
+      name: '下单成功，恭喜获得下单奖励，立即领取',
+      desc: '261021',
+      rules: [
+        {
+          resetMatch: 'match',
+          activityIds: '.android.emagex.container.EMagexActivity',
+          matches:
+            'ViewGroup[vid="id_magex_mist_view"] > ViewGroup > @ViewGroup[clickable=true][visibleToUser=true] + View[index=parent.childCount.minus(1)]',
         },
       ],
     },

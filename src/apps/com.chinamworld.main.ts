@@ -338,12 +338,16 @@ export default defineGkdApp({
     {
       key: 22,
       name: '速盈，交易确认，确定',
-      desc: '260916',
+      desc: '261021，赎回时排除验证码',
       rules: [
         {
           resetMatch: 'match',
           activityIds:
             'com.nantian.iBank.ui.activity.container.ProgramSingleWindowActivity',
+          excludeMatches: [
+            'View > TextView[text*="验证码已发送至您尾号"]',
+            'View > TextView[text^="重新发送"]',
+          ],
           matches:
             'View > View > View > Button[text="确定"][clickable=true][focusable=true][visibleToUser=true]',
         },
@@ -352,13 +356,15 @@ export default defineGkdApp({
     {
       key: 23,
       name: '整存整取页面，一键全部勾选',
-      desc: '261013',
+      desc: '261021，排除确认',
       rules: [
         {
           resetMatch: 'match',
           actionMaximum: 1,
           activityIds:
             'com.nantian.iBank.ui.activity.container.ProgramSingleWindowActivity',
+          excludeMatches:
+            'View > @TextView[text="确认"][clickable=true][visibleToUser=true] -n View > TextView[text="存入金额"]',
           anyMatches: [
             'View > View > Button[text="确认存入"] - View > TextView[text="一键全部勾选"] - View > @View[clickable=true][visibleToUser=true] > Image[text="V74Ofw+8qgAAAABJRU5ErkJggg=="]', //整存整取页面
           ],
@@ -368,12 +374,14 @@ export default defineGkdApp({
     {
       key: 24,
       name: '整存整取页面，确认存入',
-      desc: '261013',
+      desc: '261021，排除 确认 ',
       rules: [
         {
           resetMatch: 'match',
           activityIds:
             'com.nantian.iBank.ui.activity.container.ProgramSingleWindowActivity',
+          excludeMatches:
+            'View > @TextView[text="确认"][clickable=true][visibleToUser=true] -n View > TextView[text="存入金额"]',
           anyMatches: [
             'View > View > Button[text="确认存入"][clickable=true][visibleToUser=true][focusable=true]',
           ],

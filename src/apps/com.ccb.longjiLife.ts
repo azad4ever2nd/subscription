@@ -247,13 +247,15 @@ export default defineGkdApp({
     {
       key: 17,
       name: '弹窗，低碳挑战，领取成功，X掉',
-      desc: '260831',
+      desc: '261021',
       rules: [
         {
           resetMatch: 'match',
           activityIds: 'com.ccb.cloudmerchant.view.WebViewActivity',
-          matches:
+          anyMatches: [
+            'View > Button[text="查看积分"] + Image[text="close.c2f29ee4"][clickable=true][visibleToUser=true]',
             'View > Button[text="查看积分"] + Image[text="close.c2f29ee4"][clickable=false][visibleToUser=true]',
+          ],
         },
       ],
     },

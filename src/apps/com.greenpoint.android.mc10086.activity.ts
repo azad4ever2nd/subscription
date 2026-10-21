@@ -100,7 +100,7 @@ export default defineGkdApp({
     {
       key: 7,
       name: '兑换成功',
-      desc: '260920，添加兑换中，签到成功领奖',
+      desc: '261021，添加兑换中，签到成功领奖',
       rules: [
         {
           resetMatch: 'match',
@@ -203,7 +203,7 @@ export default defineGkdApp({
     {
       key: 14,
       name: '弹窗，周三充值日抽奖，开心收下 或 X掉',
-      desc: '261001，无文字提示，有ID',
+      desc: '261021，无文字提示，有ID',
       rules: [
         {
           resetMatch: 'match',
@@ -211,6 +211,7 @@ export default defineGkdApp({
           anyMatches: [
             'Dialog > View > Image > @View[id="ani_btn"][clickable=true][visibleToUser=true] + View[id="ani_close"][clickable=true][visibleToUser=true]',
             'Dialog > View > Image > View[id="ani_btn"][clickable=true][visibleToUser=true] + View[id="ani_close"][clickable=true][visibleToUser=true]',
+            'Image > @View[id="closeBtn"][clickable=true][visibleToUser=true] + View[id="acceptJoy"]',
           ],
         },
       ],

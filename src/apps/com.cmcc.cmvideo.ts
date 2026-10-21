@@ -142,7 +142,7 @@ export default defineGkdApp({
             '@View > View > View > Image[text="1O7GEIFBFRPLK" || text="1O7GEIFC0TJFP" || text="1O7GE0VC9N7O0" || text="1O7GC3SARU1RQ" || text="1O7GDU9N7V7LU" || text="1O7GDU9H2A5TQ" || text="1O7GL9PTD3DCA" || text="1O7GE0VD20609" || text="1O7GEIFC0TJFP" || text="1O7GEIFBVUQCO" || text="1O7GDU9HAKUMC"]',
             '@View[clickable=true][visibleToUser=true] > View > View > View > Image[text="1O7GE17M3SEBP"]', //这个按钮clickable=true是在第5层
             'View[clickable=true][visibleToUser=true] > View > Image[text="1O7GDU9H0PKEV"]',
-            'View[clickable=true][visibleToUser=true] > View >  Image[text="1O7H0RKDJTDFS"]', //抽奖次数
+            '@View[clickable=true][visibleToUser=true] > View > Image[text="1O7H0ON8UHFGE"]', //累计打卡
             '@View > View > View > Image[text="1O7GDU9LRD8A8" || text="1O7GDU9LPCKHS" || text="1O7GE0VDLVO51" || text="1O7GEIFC0TJFP"]',
           ],
         },
