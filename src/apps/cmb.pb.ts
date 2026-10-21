@@ -7,11 +7,14 @@ export default defineGkdApp({
     {
       key: 1,
       name: '周三5折单个模式',
-      desc: '260105，([text="（周三5折）哈根达斯50元代金券" || text="（周三5折）肯德基20元代金券" || text="（周三5折）喜茶20元代金券" ||  text="（周三5折）必胜客50元代金券"] +n [text*="立即抢购"]) || ',
+      desc: '261021，布局改变，如果有临时的，添加在内存订阅中应急',
       rules: [
         {
-          anyMatches:
-            '([text="（周三5折）哈根达斯50元代金券" || text="（周三5折）肯德基20元代金券" || text="（周三5折）喜茶20元代金券" ||  text="（周三5折）必胜客50元代金券"] +n * > [text*="立即抢购"])',
+          anyMatches: [
+            'Button[text*="立即抢购"][clickable=true][visibleToUser=true] < View -n View > TextView[text*="周三5折" && text*="元代金券"][text*="哈根达斯" || text*="肯德基" || text*="喜茶" || text*="必胜客"]',
+            'Button[text*="立即抢购"][clickable=true][visibleToUser=true] < View -n View > TextView[text="（周三5折）哈根达斯50元代金券" || text="（周三5折）肯德基20元代金券" || text="（周三5折）喜茶20元代金券" ||  text="（周三5折）必胜客50元代金券"]',
+            '[text="（周三5折）哈根达斯50元代金券" || text="（周三5折）肯德基20元代金券" || text="（周三5折）喜茶20元代金券" ||  text="（周三5折）必胜客50元代金券"] +n * > [text*="立即抢购"]',
+          ],
           actionCd: 2500,
           resetMatch: 'match',
           action: 'clickCenter',
@@ -23,11 +26,14 @@ export default defineGkdApp({
     {
       key: 2,
       name: '周三5折列表模式',
-      desc: '',
+      desc: '261021，布局改变，如果有临时的，添加在内存订阅中应急',
       rules: [
         {
-          anyMatches:
+          anyMatches: [
+            'View > TextView[text*="周三5折" && text*="元代金券"][text*="哈根达斯" || text*="肯德基" || text*="喜茶" || text*="必胜客"] +n TextView[text*="立即抢购"][clickable=true][visibleToUser=true]',
+            'View > TextView[text="（周三5折）必胜客50元代金券" || text="（周三5折）肯德基20元代金券" ||  text="（周三5折）喜茶20元代金券" || text="（周三5折）哈根达斯50元代金券" ] +n TextView[text*="立即抢购"][clickable=true][visibleToUser=true]',
             '[text="（周三5折）必胜客50元代金券" || text="（周三5折）肯德基20元代金券" ||  text="（周三5折）喜茶20元代金券" || text="（周三5折）哈根达斯50元代金券" ] +n [text*="立即抢购"]',
+          ],
           actionCd: 300,
           resetMatch: 'match',
           activityIds:
@@ -70,13 +76,15 @@ export default defineGkdApp({
     {
       key: 5,
       name: '卖光了',
-      desc: '260831',
+      desc: '261021，布局改变',
       rules: [
         {
           action: 'back',
           forcedTime: 2000,
-          anyMatches:
+          anyMatches: [
+            'TextView[text="卖光了"] < View -n View > TextView[text*="周三5折"][text*="肯德基" || text*="喜茶" || text*="必胜客" || text*="哈根达斯"]',
             'View > TextView[text*="周三5折"][text*="肯德基" || text*="喜茶" || text*="必胜客" || text*="哈根达斯"] +n View > TextView[text="卖光了"]',
+          ],
           actionCd: 2000,
           activityIds:
             'cmb.pb.app.h5container.webviewcontainer.PBWebContainerActivity',
