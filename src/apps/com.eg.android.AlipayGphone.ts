@@ -649,7 +649,7 @@ export default defineGkdApp({
     {
       key: 32,
       name: '小程序，各种弹窗，有名字的按钮',
-      desc: '261021，fastquery=false,clickable=false,添加 排除误点去使用，明天不断签提醒，签到提醒，做任务领幸运星，领取奖励，排除红包卡券误点，闪购，超级吃货卡体验版，闪购签到，闪购小程序，添加到首页，添加 生活缴费',
+      desc: '261022，fastquery=false,clickable=false,添加 排除误点去使用，明天不断签提醒，签到提醒，做任务领幸运星，领取奖励，排除红包卡券误点，闪购，超级吃货卡体验版，闪购签到，闪购小程序，添加到首页，添加 生活缴费',
       rules: [
         {
           resetMatch: 'match',
@@ -671,6 +671,7 @@ export default defineGkdApp({
             'View > @TextView[text="领取签到奖励"][clickable=false][visibleToUser=true] + View[childCount=2] > Image + TextView[text.length>0]',
             '@TextView[text="领取签到奖励"][clickable=false][visibleToUser=true] < View +  View > Image + TextView[text.length>0]',
             '@TextView[text="签到领幸运星"][clickable=false][visibleToUser=true] < View + View > Image + TextView[text^="+"][text.length>=3]', //nova7 布局有变
+            '@TextView[text="领今日份领幸运星"][clickable=false][visibleToUser=true] < View + View > Image + TextView[text^="+"][text.length>=3]', //K40，布局有变
             'View > TextView[text="领幸运星兑免单"] + @TextView[clickable=false][visibleToUser=true] +  View >n Button[text="重新获取定位"][clickable=true][visibleToUser=true]',
           ],
         },
