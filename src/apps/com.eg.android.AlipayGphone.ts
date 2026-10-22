@@ -248,15 +248,17 @@ export default defineGkdApp({
     {
       key: 14,
       name: '任务列表，去领取 去浏览',
-      desc: '261020，action:clickCenter',
+      desc: '261022，action:clickCenter',
       rules: [
         {
           resetMatch: 'match',
           action: 'clickCenter',
           activityIds:
             'com.alipay.mobile.nebulax.xriver.activity.XRiverActivity',
+          excludeMatches:
+            'TextView[text="数字人民币月享节" || text="月享节幸运大转盘"|| text="交行新客数币红包"]',
           anyMatches: [
-            'View > View > Button[text="去领取"][clickable=true][visibleToUser=true]',
+            'View > View > Button[text="去领取"][clickable=true][visibleToUser=true]', //排除主要针对数币活动
             '@View[clickable=true][visibleToUser=true] > View > TextView[text="任务完成"] + TextView[text="返回会场" || text="返回领奖>"]', //'@View > View > TextView[text="任务完成"] + TextView[text="返回会场"]',
             'View > Button[text="关闭"] +n View > View > View Button[clickable=true][visibleToUser=true][text="去领取" || text="去浏览"]',
             '@View[clickable=true][visibleToUser=true] >n TextView[text="任务完成"] + TextView[text="返回会场" || text="返回领奖>"]',
