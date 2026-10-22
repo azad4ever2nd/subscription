@@ -102,7 +102,7 @@ export default defineGkdApp({
       rules: [
         {
           resetMatch: 'match',
-          action: 300,
+          actionCd: 300,
           action: 'clickCenter',
           activityIds: 'com.tencent.mm.plugin.webview.ui.tools.MMWebViewUI',
           anyMatches: [
