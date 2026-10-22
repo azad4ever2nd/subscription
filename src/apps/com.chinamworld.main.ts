@@ -388,5 +388,20 @@ export default defineGkdApp({
         },
       ],
     },
+    {
+      key: 25,
+      name: '整存整取页面，存入金额，确认',
+      desc: '261022',
+      rules: [
+        {
+          resetMatch: 'match',
+          activityIds:
+            'com.nantian.iBank.ui.activity.container.ProgramSingleWindowActivity',
+          anyMatches: [
+            'View > @TextView[text="确认"][clickable=true][visibleToUser=true] -n View > TextView[text="存入金额"]',
+          ],
+        },
+      ],
+    },
   ],
 });

@@ -218,5 +218,18 @@ export default defineGkdApp({
         },
       ],
     },
+    {
+      key: 14,
+      name: '弹窗，双11开门红，X掉',
+      desc: '261022',
+      rules: [
+        {
+          resetMatch: 'match',
+          activityIds: 'com.taobao.tao.TBMainActivity',
+          matches:
+            'FrameLayout > ImageView[desc="关闭按钮"][clickable=true][visibleToUser=true]',
+        },
+      ],
+    },
   ],
 });

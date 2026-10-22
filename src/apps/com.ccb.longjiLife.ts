@@ -200,7 +200,7 @@ export default defineGkdApp({
         {
           resetMatch: 'match',
           action: 'clickCenter',
-          actionCd: 10,
+          actionCd: 300,
           activityIds: 'com.ccb.cloudmerchant.view.WebViewActivity',
           anyMatches: [
             'WebView[text*="建行社保卡" || text*="社保卡福利日"] > View > View > View > CheckBox[checked=false][visibleToUser=true]',
@@ -233,7 +233,7 @@ export default defineGkdApp({
       rules: [
         {
           resetMatch: 'match',
-          actionCd: 10,
+          actionCd: 100,
           action: 'clickCenter',
           activityIds: 'com.ccb.cloudmerchant.view.WebViewActivity',
           anyMatches: [

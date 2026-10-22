@@ -35,13 +35,14 @@ export default defineGkdApp({
     {
       key: 3,
       name: '签到弹窗，确认',
-      desc: '260507',
+      desc: '261022',
       rules: [
         {
           resetMatch: 'match',
           fastQuery: true,
           activityIds: 'tool.seagull.v.ui.MainActivity',
           anyMatches: [
+            'TextView[id="android:id/message"][text*="广告签到"] <<n FrameLayout + ScrollView > LinearLayout >  Button[text="取消"][id="android:id/button2"] + Button[text="确认"][id="android:id/button1"][clickable=true][visibleToUser=true]',
             '[text*="广告签到"] <<n * + * [id="android:id/button2"] + [id="android:id/button1"]',
           ],
         },
@@ -65,7 +66,7 @@ export default defineGkdApp({
     {
       key: 5,
       name: '弹窗，签到页面广告弹窗1，未签到，X掉',
-      desc: '260624',
+      desc: '261022',
       rules: [
         {
           resetMatch: 'match',
@@ -73,6 +74,7 @@ export default defineGkdApp({
           anyMatches: [
             'TextView[text="签到"] + FrameLayout > FrameLayout > FrameLayout > FrameLayout > FrameLayout > LinearLayout +2 ImageView - FrameLayout[childCount=1] > View',
             'ImageView[vid="vpnSwitchButton"] +n ScrollView > FrameLayout > FrameLayout > FrameLayout > FrameLayout > FrameLayout > FrameLayout[childCount=1] > View',
+            'TextView[text="签到"][vid="checkin_button"] + FrameLayout >n RelativeLayout[childCount=2] > ImageView + ImageView[clickable=true][visibleToUser=true]',
           ],
         },
       ],

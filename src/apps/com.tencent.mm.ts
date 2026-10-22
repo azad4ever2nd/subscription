@@ -85,7 +85,7 @@ export default defineGkdApp({
       rules: [
         {
           resetMatch: 'match',
-          actionCd: 0,
+          actionCd: 10,
           action: 'clickCenter',
           activityIds: 'com.tencent.mm.plugin.webview.ui.tools.MMWebViewUI',
           anyMatches: [
@@ -102,7 +102,7 @@ export default defineGkdApp({
       rules: [
         {
           resetMatch: 'match',
-          actionCdKey: 4,
+          action: 300,
           action: 'clickCenter',
           activityIds: 'com.tencent.mm.plugin.webview.ui.tools.MMWebViewUI',
           anyMatches: [
@@ -115,15 +115,16 @@ export default defineGkdApp({
     {
       key: 6,
       name: '建行社保卡，勾选同意后，立即参与',
-      desc: '261016',
+      desc: '261022',
       rules: [
         {
           resetMatch: 'match',
-          actionCdKey: 4,
+          actionCd: 10,
           activityIds: 'com.tencent.mm.plugin.webview.ui.tools.MMWebViewUI',
           anyMatches: [
             '(WebView[text*="建行社保卡" || text*="社保卡福利日"] > View > View > View > CheckBox[checked=true] +2 CheckBox[checked=true] +2 Image[text="loginBtn.f302f730"][visibleToUser=true])',
             'View > View > CheckBox[checked=true][visibleToUser=true] +n CheckBox[checked=true][visibleToUser=true] +n Image[text="loginBtn.f302f730"][visibleToUser=true]',
+            'View > View > CheckBox[checked=true][visibleToUser=true] +n CheckBox[checked=true][visibleToUser=true] +n Image[text="loginBtn.032f23f5"][visibleToUser=true]',
           ],
         },
       ],
@@ -135,7 +136,7 @@ export default defineGkdApp({
       rules: [
         {
           resetMatch: 'match',
-          actionCdKey: 4,
+          actionCd: 100,
           activityIds: 'com.tencent.mm.plugin.webview.ui.tools.MMWebViewUI',
           anyMatches: [
             'Dialog > TextView[text="温馨提示"] +n View > Button[text="好的"][clickable=true][visibleToUser=true]',
@@ -609,7 +610,7 @@ export default defineGkdApp({
       rules: [
         {
           resetMatch: 'match',
-          actionCdKey: 700,
+          actionCd: 300,
           order: -1,
           excludeMatches: [
             'View > View > TextView[text^="服务异常" || text="访问人数过多，请稍后再试" || text="商品已被秒完" || text="商品已售罄"] + TextView[text="我知道了"][visibleToUser=true]',
@@ -645,7 +646,7 @@ export default defineGkdApp({
         {
           resetMatch: 'match',
           order: -2,
-          actionCdKey: 700,
+          actionCd: 300,
           activityIds: [
             'com.tencent.mm.plugin.appbrand.ui.AppBrandUI0',
             'com.tencent.mm.plugin.appbrand.ui.AppBrandUI1',
@@ -936,7 +937,7 @@ export default defineGkdApp({
             'com.tencent.mm.plugin.appbrand.ui.AppBrandPluginUI',
           ],
           resetMatch: 'match',
-          actionCdKey: 4,
+          actionCd: 100,
           matches:
             '[text="仅限中国银行信用卡支付"] + [text="dpyo8s1ulmfditgb8ejiv"] + [text="xmdaohehb7wx6hqcb8xft"]',
         },
@@ -963,7 +964,7 @@ export default defineGkdApp({
           ],
           matches: '[text="活动火爆，当前参与人数过多"] +n [text="刷 新"]',
           resetMatch: 'match',
-          actionCdKey: 4,
+          actionCd: 100,
         },
       ],
     },
@@ -1184,7 +1185,7 @@ export default defineGkdApp({
       rules: [
         {
           resetMatch: 'match',
-          actionCdKey: 4,
+          actionCd: 100,
           activityIds: [
             'com.tencent.mm.plugin.appbrand.ui.AppBrandUI0',
             'com.tencent.mm.plugin.appbrand.ui.AppBrandUI1',
@@ -1294,7 +1295,7 @@ export default defineGkdApp({
       rules: [
         {
           resetMatch: 'match',
-          actionCdKey: 4,
+          actionCd: 100,
           activityIds: [
             'com.tencent.mm.plugin.appbrand.ui.AppBrandUI0',
             'com.tencent.mm.plugin.appbrand.ui.AppBrandUI1',
@@ -1352,7 +1353,7 @@ export default defineGkdApp({
       rules: [
         {
           resetMatch: 'match',
-          actionCdKey: 4,
+          actionCd: 100,
           activityIds: [
             'com.tencent.mm.plugin.appbrand.ui.AppBrandUI0',
             'com.tencent.mm.plugin.appbrand.ui.AppBrandUI1',
@@ -1378,7 +1379,7 @@ export default defineGkdApp({
       rules: [
         {
           resetMatch: 'match',
-          actionCdKey: 4,
+          actionCd: 100,
           activityIds: [
             'com.tencent.mm.plugin.appbrand.ui.AppBrandUI0',
             'com.tencent.mm.plugin.appbrand.ui.AppBrandUI1',

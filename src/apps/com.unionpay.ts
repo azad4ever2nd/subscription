@@ -100,8 +100,8 @@ export default defineGkdApp({
           ],
           anyMatches: [
             '(LinearLayout > TextView[vid="tv_dialog_info"][text*="开启定位服务"] + LinearLayout > @TextView[vid="btn_cancel"][clickable=true][visibleToUser=true][text*="取消" || text="取 消"] + TextView[vid="btn_ok"])',
-            '(TextView[vid="tv_dialog_title"][text="开启手机定位服务"] < LinearLayout +n LinearLayout > TextView[vid="btn_cancel"][clickable=true])',
-            '([vid="tv_dialog_title"][text="开启手机定位服务"] < * +n * > [vid="btn_cancel"])',
+            'TextView[vid="tv_dialog_title"][text="开启手机定位服务"] < LinearLayout + LinearLayout > TextView[vid="btn_cancel"][clickable=true]',
+            'TextView[vid="tv_dialog_title"][text="开启手机定位服务"] < LinearLayout + LinearLayout > TextView[vid="btn_cancel"][clickable=true]',
           ],
         },
       ],
