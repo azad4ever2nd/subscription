@@ -237,5 +237,17 @@ export default defineGkdApp({
         },
       ],
     },
+    {
+      key: 16,
+      name: '重新加载',
+      desc: '261022',
+      rules: [
+        {
+          resetMatch: 'match',
+          activityIds: '.muise.page.WeexPageActivity',
+          matches: 'TextView[text="重新加载"]',
+        },
+      ],
+    },
   ],
 });

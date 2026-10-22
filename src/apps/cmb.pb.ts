@@ -94,7 +94,7 @@ export default defineGkdApp({
     {
       key: 6,
       name: '基金体验金，立即使用',
-      desc: '261016，添加朝朝宝确认转入',
+      desc: '261022，添加朝朝宝确认转入',
       rules: [
         {
           resetMatch: 'match',
@@ -108,6 +108,7 @@ export default defineGkdApp({
             'View > View > TextView[text="转入产品确认"] +n View > Button[text="确认转入"][clickable=true][visibleToUser=true]', //朝朝宝确认转入
             'Dialog > @Button[text="确认"][clickable=true][visibleToUser=true] - View > View > EditText[text.length>0] ', //协议声明后，确认
             'Dialog > View > @Button[text="一键输入"][clickable=true][visibleToUser=true] - View > EditText[text.length=0]', ////朝朝宝一键录入
+            'View > View > TextView[text="确定"] - @TextView[text="一键输入"][clickable=true][visibleToUser=true] - View > EditText[text.length=0]', //他行转入
           ],
         },
       ],
@@ -459,7 +460,7 @@ export default defineGkdApp({
     {
       key: 25,
       name: '删除定制计划',
-      desc: '260804',
+      desc: '261022，添加  关闭计划 ',
       rules: [
         {
           action: 'clickCenter',
@@ -467,8 +468,10 @@ export default defineGkdApp({
           actionMaximum: 1,
           activityIds:
             'cmb.pb.app.h5container.webviewcontainer.PBWebContainerActivity',
-          anyMatches:
-            '(View > Button[text="修改"] + Button[text="暂停"] + Button[clickable=true][visibleToUser=true][text="终止"])',
+          anyMatches: [
+            'View > Button[text="修改"] + Button[text="暂停"] + Button[clickable=true][visibleToUser=true][text="终止"]',
+            'TextView[text="修改计划"] < View + @View[clickable=true][visibleToUser=true] > TextView[text="关闭计划"]',
+          ],
         },
       ],
     },
