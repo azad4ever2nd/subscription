@@ -99,7 +99,7 @@ export default defineGkdApp({
             'com.taobao.trip.home.HomeActivity',
           ],
           anyMatches: [
-            'View > View > Image[text="O1CN01TD5wn71Ptmtb9GAxE_!!6000000001899-2-tps-60-60"][clickable=true][visibleToUser=true]',
+            'View > View > Image[text="O1CN01TD5wn71Ptmtb9GAxE_!!6000000001899-2-tps-60-60"][visibleToUser=true]',
             '([text^="O1CN01TD5wn71Ptmtb9GAxE_!!6000000001899-2-tps-60-60"])',
             '([text^="O1CN01EmIdr51vV7c1P87T9_!!6000000006177-2-tps-750-178"])',
           ],

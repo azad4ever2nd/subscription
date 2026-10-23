@@ -180,5 +180,18 @@ export default defineGkdApp({
         },
       ],
     },
+    {
+      key: 12,
+      name: '弹窗，签到成功，X掉',
+      desc: '261023',
+      rules: [
+        {
+          resetMatch: 'match',
+          activityIds: 'com.citic.jk.activity.H5ContainerAty',
+          matches:
+            'Dialog > View > @Image[text="RAszQptmiCmRvNJiA+QAIrgwxo14tFrwANgrygYQnQ7jXvU6OcQFqhpSBJlrsk2wKaRJSJVwHnPRamaZ8x4zrUBOKNyR8h0Ahyh5Y7POAF2VO6IW58AR2i54zP+A6T5HMvkIOb9AAAAAElFTkSuQmCC"][clickable=true][visibleToUser=true] + Image',
+        },
+      ],
+    },
   ],
 });
