@@ -929,7 +929,7 @@ export default defineGkdApp({
       rules: [
         {
           resetMatch: 'match',
-          actionCd: 600,
+          actionCd: 300,
           activityIds:
             'com.alipay.mobile.nebulax.xriver.activity.XRiverTransActivity$Main',
           anyMatches: [
