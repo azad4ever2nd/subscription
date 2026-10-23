@@ -840,7 +840,7 @@ export default defineGkdApp({
     {
       key: 49,
       name: '弹窗，指数投资投资，浏览并集卡',
-      desc: '261009，添加 开心收下',
+      desc: '261023，添加 预约成功，开心收下',
       rules: [
         {
           resetMatch: 'match',
@@ -850,6 +850,7 @@ export default defineGkdApp({
           anyMatches: [
             'Dialog > View > View > TextView[text="浏览并集卡"][clickable=true][visibleToUser=true]',
             'Dialog >n View > TextView[text="开心收下" || text="浏览并集卡"][clickable=true][visibleToUser=true]',
+            'View > View > TextView[text="预约成功"] +n Button[text="好的"][clickable=true][visibleToUser=true]',
           ],
         },
       ],
@@ -863,9 +864,9 @@ export default defineGkdApp({
           resetMatch: 'match',
           fastQuery: true,
           matchDelay: 1000,
-          forcedTime: 3000,
+          forcedTime: 5000,
           anyMatches: [
-            '(FrameLayout > ViewGroup > RelativeLayout > TextView[vid="title"][text="开启消息通知"] + ImageView[vid="close_btn"][clickable=true][visibleToUser=true])',
+            'FrameLayout > ViewGroup > RelativeLayout > TextView[vid="title"][text="开启消息通知"] + ImageView[vid="close_btn"][clickable=true][visibleToUser=true]',
           ],
           activityIds: [
             'cmb.pb.app.mainframe.container.PBMainActivity',

@@ -573,11 +573,11 @@ export default defineGkdApp({
     {
       key: 36,
       name: '深工积分兑换，立即抢购',
-      desc: '260930',
+      desc: '261023',
       rules: [
         {
           resetMatch: 'match',
-          actionCd: 800,
+          actionCd: 300,
           activityIds: [
             'com.tencent.mm.plugin.appbrand.ui.AppBrandUI0',
             'com.tencent.mm.plugin.appbrand.ui.AppBrandUI1',
@@ -591,8 +591,10 @@ export default defineGkdApp({
             'com.tencent.mm.plugin.appbrand.ui.AppBrandUI04',
             'com.tencent.mm.plugin.appbrand.ui.AppBrandPluginUI',
           ],
-          excludeMatches:
+          excludeMatches: [
+            'TextView[text="确认支付"][visibleToUser=true]',
             'WebView > View > TextView[text^="总计："] + TextView[text="确认支付"][visibleToUser=true]',
+          ],
           anyMatches: [
             '(View > TextView[text="抢购成功消耗1000积分"] + TextView[text="抢购不成功不消耗积分"] + TextView[text="立即抢购"][visibleToUser=true])',
             'WebView > View > View > @TextView[text="立即抢购"][visibleToUser=true] - View > TextView[text="购买成功消耗200积分，不消耗抢购权益"] + TextView[text="仅限特定人群购买"]',
@@ -606,11 +608,11 @@ export default defineGkdApp({
     {
       key: 37,
       name: '深工积分兑换，确认支付',
-      desc: '260930，添加  1元购',
+      desc: '261023，添加  1元购',
       rules: [
         {
           resetMatch: 'match',
-          actionCd: 300,
+          actionCd: 400,
           order: -1,
           excludeMatches: [
             'View > View > TextView[text^="服务异常" || text="访问人数过多，请稍后再试" || text="商品已被秒完" || text="商品已售罄"] + TextView[text="我知道了"][visibleToUser=true]',
@@ -641,12 +643,12 @@ export default defineGkdApp({
     {
       key: 38,
       name: '深工积分兑换，人数过多，我知道了',
-      desc: '261001',
+      desc: '261023',
       rules: [
         {
           resetMatch: 'match',
           order: -2,
-          actionCd: 300,
+          actionCd: 50,
           activityIds: [
             'com.tencent.mm.plugin.appbrand.ui.AppBrandUI0',
             'com.tencent.mm.plugin.appbrand.ui.AppBrandUI1',

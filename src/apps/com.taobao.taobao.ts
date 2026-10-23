@@ -160,11 +160,12 @@ export default defineGkdApp({
     {
       key: 10,
       name: '弹窗，开启直播悬浮窗，暂不2',
-      desc: '261009',
+      desc: '261023',
       rules: [
         {
           fastQuery: true,
           resetMatch: 'match',
+          forcedTime: 3000,
           anyMatches: [
             'LinearLayout > TextView[text="开启直播悬浮窗"] +n LinearLayout > @TextView[text="暂不"][clickable=true][visibleToUser=true] + TextView[text="开启"][clickable=true]',
           ],

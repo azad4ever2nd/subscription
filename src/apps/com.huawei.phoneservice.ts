@@ -6,20 +6,19 @@ export default defineGkdApp({
     {
       key: 1,
       name: '隐私变更，同意',
-      desc: '260814，增加IDS',
+      desc: '261023，增加IDS',
       rules: [
         {
-          actionMaximum: 1,
-          resetMatch: 'app',
+          resetMatch: 'match',
+          matchDelay: 1000,
           fastQuery: true,
-          forcedTime: 2000,
+          forcedTime: 3000,
           activityIds: [
             'com.huawei.myhw.ui.HwHomeActivity',
             'com.huawei.myhuawei.ui.HwSplashActivity',
           ],
           anyMatches: [
-            '(TextView[id="android:id/alertTitle"][text="隐私声明变更通知"] < LinearLayout < LinearLayout +n LinearLayout > LinearLayout > Button[id="android:id/button1"][clickable=true][visibleToUser=true][text="同意"])',
-            '([id="android:id/alertTitle"][text="隐私声明变更通知"] <<n * +n * [id="android:id/button1"][text="同意"])',
+            'TextView[id="android:id/alertTitle"][text="隐私声明变更通知"] < LinearLayout < LinearLayout +n LinearLayout > LinearLayout > Button[id="android:id/button1"][clickable=true][visibleToUser=true][text="同意"]',
           ],
         },
       ],

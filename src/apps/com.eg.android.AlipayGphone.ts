@@ -329,6 +329,7 @@ export default defineGkdApp({
             'Dialog[text="恭喜获得红包福利"] > Button[text="关闭"][clickable=true][visibleToUser=true] - View >n Button[text="放弃领取"] + Button[text="点我领取"][clickable=true][visibleToUser=true]',
             'Dialog[text="恭喜抽中红包福利"] > Button[text="关闭"][clickable=true][visibleToUser=true] - View >n Button[text="继续抽奖"] + Button[text="点我领取"][clickable=true][visibleToUser=true]',
             'Dialog[text="恭喜获得优惠福利"] > Button[text="关闭"][clickable=true][visibleToUser=true] - View >n Button[text="继续抽奖"] + Button[text="点我领取"][clickable=true][visibleToUser=true]',
+            'Dialog[text="恭喜获得优惠福利"] > @Button[text="关闭"][clickable=true][visibleToUser=true] - View >n Button[text="放弃领取"] + Button[text="点我领取"][clickable=true][visibleToUser=true]',
             'Dialog[text="恭喜获得惊喜福利"] > @Button[text="关闭"][clickable=true][visibleToUser=true] - View >n Button[text="去领取"][clickable=true][visibleToUser=true]',
             'Dialog[text="恭喜获得遇财神支付红包"] > Button[text="关闭"][clickable=true][visibleToUser=true] - View >n Button[text="去领取" || text="点我领取"][clickable=true][visibleToUser=true]',
             'Dialog[text="恭喜获得惊喜福利"] > @Button[text="关闭"][clickable=true][visibleToUser=true]',
@@ -923,29 +924,37 @@ export default defineGkdApp({
     },
     {
       key: 42,
-      name: '占位神券抽奖，继续领',
-      desc: 'D，260810',
+      name: '红包雨，摇一摇 狂点',
+      desc: '261023',
       rules: [
         {
+          resetMatch: 'match',
+          actionCd: 600,
           activityIds:
             'com.alipay.mobile.nebulax.xriver.activity.XRiverTransActivity$Main',
-          actionCd: 300,
-          resetMatch: 'match',
-          anyMatches:
-            'Dialog > View > View > Button[text="关闭"] - View > View > TextView[text="继续领"]',
+          anyMatches: [
+            '@Button[text="摇一摇" || text="狂点"][clickable=true][visibleToUser=true] < View -n Button[text="关闭摇红包"] + View > TextView[text="剩余时间"] + View[text$="s" && text!="0s"] + TextView', //6步，3款
+            'Button[text="关闭摇红包"] +n View > Button[text="摇一摇" || text="狂点"][clickable=true][visibleToUser=true]', //2步，2款
+            'Button[text="关闭摇红包"] + View > TextView - View[text$="s" && text!="0s"] - TextView[text="剩余时间"] < View  +n View > Button[text="摇一摇" || text="狂点"][clickable=true][visibleToUser=true]', //8步，4款
+            'Button[text="关闭摇红包"] + View > TextView[text="剩余时间"] + View[text$="s" && text!="0s"] + TextView <<3 View +n View > Button[text="摇一摇" || text="狂点"][clickable=true][visibleToUser=true]', //8步，5款
+          ],
+          //matches:'Button[text="关闭摇红包"] +n View > Button[text="摇一摇" || text="狂点"][clickable=true][visibleToUser=true]',//2步，2款
         },
       ],
     },
     {
       key: 43,
       name: '支付有礼，集卡，开心收下',
-      desc: '260324',
+      desc: '261023，添加 返回会场',
       rules: [
         {
-          anyMatches: ['@View + ViewGroup *[desc="开心收下"]'],
           resetMatch: 'match',
           activityIds:
             'com.alipay.android.phone.xriver.bundlex.CSGAPushActivity',
+          anyMatches: [
+            '@View[clickable=true][visibleToUser=true] > View > TextView[text="任务完成"] + TextView[text="返回会场" || text="返回领奖>"]', //'@View > View > TextView[text="任务完成"] + TextView[text="返回会场"]',
+            '@View + ViewGroup *[desc="开心收下"]',
+          ],
         },
       ],
     },
