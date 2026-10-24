@@ -108,10 +108,11 @@ export default defineGkdApp({
     {
       key: 7,
       name: '会员打卡',
-      desc: '260905,整合打卡布局有变，打卡成功，@View >n [text="打卡"]',
+      desc: '261024,整合打卡布局有变，打卡成功',
       rules: [
         {
           anyMatches: [
+            'View > TextView[text="打卡送积分"] + View + TextView[text="打卡"][clickable=true][visibleToUser=true]',
             '([text="打卡送积分"] +n [text="打卡"])',
             '(View > [text="+"] + TextView + * + [text="打卡"])',
             '(@[text="抽奖"] - View > Image[text="webp"])',

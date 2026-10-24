@@ -147,13 +147,14 @@ export default defineGkdApp({
     {
       key: 9,
       name: '各种中奖',
-      desc: '261008，添加 勾选，添加未中奖，数字藏品中奖',
+      desc: '261024，添加 勾选，添加未中奖，数字藏品中奖',
       rules: [
         {
           resetMatch: 'match',
           action: 'clickCenter',
           activityIds: 'com.icbc.activity.web.ICBCWebView',
           anyMatches: [
+            'View > View > TextView[text="奖励派送中，稍后送达～"] + TextView[text="开心收下按钮点击两次关闭弹框"][clickable=true][visibleToUser=true]',
             'View > View > @Button[clickable=true][text="关闭"] + TextView[text="恭喜获得"]',
             'TextView[text^="不要灰心" || text="差一点就中奖了"] <n View + View > Image[text="关闭按钮"][clickable=false]',
             'Dialog > TextView[text*="日前领取" || text$="过期未领将失效"] + Button[text="立即领取"]',

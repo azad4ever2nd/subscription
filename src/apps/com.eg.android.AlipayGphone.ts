@@ -223,7 +223,7 @@ export default defineGkdApp({
     {
       key: 13,
       name: '弹窗，有排除规则，关闭',
-      desc: '261019，fastQuery=false，clickable=true，需要排除的放在这里，排除信用卡还款，排除活动页面',
+      desc: '261024，fastQuery=false，clickable=true，需要排除的放在这里，排除信用卡还款，排除活动页面',
       rules: [
         {
           resetMatch: 'match',
@@ -234,6 +234,7 @@ export default defineGkdApp({
           excludeMatches: [
             'Dialog >n View > Button[text="去完成" || text*="领取" || text="领奖励"]',
             'WebView[text="信用卡还款"][visibleToUser=true]',
+            'View > View > Button[text="关闭"][clickable=true][visibleToUser=true] + TextView[text="选择转出到账账户"][visibleToUser=true]', //攒着转出到余额宝时
           ],
           anyMatches: [
             'View > View > @Button[text="关闭"][clickable=true][visibleToUser=true] + Image',
@@ -293,7 +294,7 @@ export default defineGkdApp({
     {
       key: 16,
       name: '弹窗，各种弹窗，有名字的按钮',
-      desc: '261021，fastQuery=false，添加 返回会场，邀请你，去抢购，位置权限，不感兴趣，添加到桌面首页，',
+      desc: '261024，fastQuery=false，添加 返回会场，邀请你，去抢购，位置权限，不感兴趣，添加到桌面首页，',
       rules: [
         {
           resetMatch: 'match',
@@ -319,8 +320,11 @@ export default defineGkdApp({
             'View > View > @Button[text="关闭"][clickable=true][visibleToUser=true] +n Button[text="去添加银行卡"]',
             'View > View > Button[text="领奖励"][clickable=true][visibleToUser=true]',
             'View > View > TextView[text*="到支付宝首页"] +n Button[text="关闭"][clickable=true][visibleToUser=true]',
+            'Dialog > View > View > TextView[text="从余额宝-攒着转出"] +(5,7) TextView[text="确认转出"][clickable=true][visibleToUser=true]', //攒着转出到余额宝
             'Dialog[text="恭喜获得隐藏福利"] > @Button[text="关闭"][clickable=true][visibleToUser=true] - View >n View[childCount=1] >  Button[text="去完成"]',
             'Dialog[text="恭喜免费升级扫码点单"] > @Button[text="关闭"][clickable=true][visibleToUser=true] - View >n View[childCount=1] > Button[text="去了解"]',
+            'Dialog[text="恭喜抽中惊喜福利"] > @Button[text="关闭"][clickable=true][visibleToUser=true] - View >n View[childCount=1] > Button[text="恭喜抽中惊喜福利"]',
+            'Dialog[text="恭喜抽中惊喜福利"] > @Button[text="关闭"][clickable=true][visibleToUser=true] - View >n View[childCount=1] > Button[text="立即去"]',
             'Dialog[text="恭喜抽中惊喜福利"] > @Button[text="关闭"][clickable=true][visibleToUser=true] - View >n View[childCount=1] > Button[text="去抽奖" || text="去瓜分"][visibleToUser=true]',
             'Dialog > @Button[text="关闭"][clickable=true][visibleToUser=true] - View >n View[childCount=1] > Button[text="去了解" || text="去开通"]',
             'Dialog[text="恭喜获得优惠福利"] > Button[text="关闭"][clickable=true][visibleToUser=true] - View >n View[childCount=2] > Button[text="继续抽奖"] + @Button[text="点我领取"][clickable=true][visibleToUser=true]',
@@ -944,14 +948,15 @@ export default defineGkdApp({
     },
     {
       key: 43,
-      name: '支付有礼，集卡，开心收下',
-      desc: '261023，添加 返回会场',
+      name: '支付有礼，返回会场 or 开心收下',
+      desc: '261024，添加 返回会场',
       rules: [
         {
           resetMatch: 'match',
           activityIds:
             'com.alipay.android.phone.xriver.bundlex.CSGAPushActivity',
           anyMatches: [
+            'ViewGroup[childCount=5] > ViewGroup > *[desc="你有团购神券待使用"] <<2 ViewGroup +3 ViewGroup[clickable=false][visibleToUser=true] > View[clickable=false][visibleToUser=true]', //弹窗，你有团购神券待使用，X掉，弹窗优先，然后再是返回
             '@View[clickable=true][visibleToUser=true] > View > TextView[text="任务完成"] + TextView[text="返回会场" || text="返回领奖>"]', //'@View > View > TextView[text="任务完成"] + TextView[text="返回会场"]',
             '@View + ViewGroup *[desc="开心收下"]',
           ],

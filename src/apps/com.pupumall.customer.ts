@@ -23,17 +23,19 @@ export default defineGkdApp({
     {
       key: 2,
       name: '弹窗1',
-      desc: '260810，添加 开启通知，',
+      desc: '261024，添加 开启通知，',
       rules: [
         {
+          fastQuery: true,
+          resetMatch: 'match',
           anyMatches: [
             '(ViewGroup > TextView[text="尚未开启系统通知"] +(3,4) TextView[vid="btn_close"][text="跳过"][clickable=true][visibleToUser=true])',
+            'ViewGroup > ImageView[vid="iv_ad"] + ImageView[vid="iv_close"][clickable=true][visibleToUser=true]',
             '([vid="iv_ad"] + [vid="iv_close"])',
             '([id="app"] [text^="此图片未加标签"])',
             '([id="J-webglCanvas"] - View >2 Image)',
           ],
-          fastQuery: true,
-          resetMatch: 'match',
+          forcedTime: 3000,
           activityIds: ['com.pupumall.customer.activity.SplashActivity'],
         },
       ],

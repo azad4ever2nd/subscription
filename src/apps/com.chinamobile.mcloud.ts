@@ -207,6 +207,32 @@ export default defineGkdApp({
     },
     {
       key: 13,
+      name: '弹窗，做任务',
+      desc: '261024',
+      rules: [
+        {
+          resetMatch: 'match',
+          activityIds: '.client.component.web.H5WebViewMainActivity',
+          anyMatches: [
+            'View > View > TextView + TextView[text="去转存"][clickable=true][visibleToUser=true]',
+          ],
+        },
+      ],
+    },
+    {
+      key: 14,
+      name: '占位14',
+      desc: 'D，261024',
+      rules: [
+        {
+          resetMatch: 'match',
+          activityIds: '.client.component.web.H5WebViewMainActivity',
+          anyMatches: [],
+        },
+      ],
+    },
+    {
+      key: 15,
       name: '开启通知',
       desc: '251205',
       rules: [
@@ -221,7 +247,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 14,
+      key: 16,
       name: '弹窗',
       desc: '251118，增加开启通知',
       rules: [
@@ -237,7 +263,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 15,
+      key: 17,
       name: '发现新版本',
       desc: '251208',
       rules: [
@@ -254,7 +280,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 16,
+      key: 18,
       name: '服务通知，X掉',
       desc: '260702',
       rules: [
