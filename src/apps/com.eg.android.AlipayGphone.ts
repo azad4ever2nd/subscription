@@ -249,15 +249,17 @@ export default defineGkdApp({
     {
       key: 14,
       name: '任务列表，去领取 去浏览',
-      desc: '261022，action:clickCenter',
+      desc: '261025，action:clickCenter',
       rules: [
         {
           resetMatch: 'match',
           action: 'clickCenter',
           activityIds:
             'com.alipay.mobile.nebulax.xriver.activity.XRiverActivity',
-          excludeMatches:
+          excludeMatches: [
             'TextView[text="数字人民币月享节" || text="月享节幸运大转盘"|| text="交行新客数币红包"]',
+            'View > View > TextView[text="信用卡积分当钱花"] + TextView[text="支付时直接抵现金"] + Button[text="去领取"][clickable=true][visibleToUser=true]', //还款页面排除
+          ],
           anyMatches: [
             'View > View > Button[text="去领取"][clickable=true][visibleToUser=true]', //排除主要针对数币活动
             '@View[clickable=true][visibleToUser=true] > View > TextView[text="任务完成"] + TextView[text="返回会场" || text="返回领奖>"]', //'@View > View > TextView[text="任务完成"] + TextView[text="返回会场"]',
@@ -294,7 +296,7 @@ export default defineGkdApp({
     {
       key: 16,
       name: '弹窗，各种弹窗，有名字的按钮',
-      desc: '261024，fastQuery=false，添加 返回会场，邀请你，去抢购，位置权限，不感兴趣，添加到桌面首页，',
+      desc: '261025，fastQuery=false，添加 返回会场，邀请你，去抢购，位置权限，不感兴趣，添加到桌面首页，',
       rules: [
         {
           resetMatch: 'match',
@@ -321,11 +323,15 @@ export default defineGkdApp({
             'View > View > Button[text="领奖励"][clickable=true][visibleToUser=true]',
             'View > View > TextView[text*="到支付宝首页"] +n Button[text="关闭"][clickable=true][visibleToUser=true]',
             'Dialog > View > View > TextView[text="从余额宝-攒着转出"] +(5,7) TextView[text="确认转出"][clickable=true][visibleToUser=true]', //攒着转出到余额宝
+            'Dialog > View > View > View > TextView[text="恭喜获得碰金币"] +(4,7) TextView[text*="开心收下"][clickable=true][visibleToUser=true]', //碰金币
+            'Dialog > View > View > View > TextView[text="恭喜获得任务奖励"] +n TextView[text*="开心收下"][clickable=true][visibleToUser=true]',
+            'Dialog > View > View > View > TextView[text="恭喜获得今日食材"] +n TextView[text*="开心收下"][clickable=true][visibleToUser=true]',
             'Dialog[text="恭喜获得隐藏福利"] > @Button[text="关闭"][clickable=true][visibleToUser=true] - View >n View[childCount=1] >  Button[text="去完成"]',
             'Dialog[text="恭喜免费升级扫码点单"] > @Button[text="关闭"][clickable=true][visibleToUser=true] - View >n View[childCount=1] > Button[text="去了解"]',
             'Dialog[text="恭喜抽中惊喜福利"] > @Button[text="关闭"][clickable=true][visibleToUser=true] - View >n View[childCount=1] > Button[text="恭喜抽中惊喜福利"]',
             'Dialog[text="恭喜抽中惊喜福利"] > @Button[text="关闭"][clickable=true][visibleToUser=true] - View >n View[childCount=1] > Button[text="立即去"]',
             'Dialog[text="恭喜抽中惊喜福利"] > @Button[text="关闭"][clickable=true][visibleToUser=true] - View >n View[childCount=1] > Button[text="去抽奖" || text="去瓜分"][visibleToUser=true]',
+            'Dialog[text="恭喜抽中惊喜福利"] > @Button[text="关闭"][clickable=true][visibleToUser=true] - View >n View[childCount=1] > Button[text="去看看"]',
             'Dialog > @Button[text="关闭"][clickable=true][visibleToUser=true] - View >n View[childCount=1] > Button[text="去了解" || text="去开通"]',
             'Dialog[text="恭喜获得优惠福利"] > Button[text="关闭"][clickable=true][visibleToUser=true] - View >n View[childCount=2] > Button[text="继续抽奖"] + @Button[text="点我领取"][clickable=true][visibleToUser=true]',
             'Dialog[text="恭喜获得隐藏福利"] > Button[text="关闭"][clickable=true][visibleToUser=true] - View >n View[childCount=2] > @Button[text="继续抽奖"][clickable=true][visibleToUser=true] + Button[text="去完成"]',
@@ -375,7 +381,7 @@ export default defineGkdApp({
     {
       key: 18,
       name: '弹窗，各种弹窗，X掉2',
-      desc: '261021，fastQuery=false，添加 神券五六天，签到成功，开通碰一下，推送服务，查询账单，返回领奖，到桌面，银行卡抽奖，升级月利宝',
+      desc: '261025，fastQuery=false，添加 神券五六天，签到成功，开通碰一下，推送服务，查询账单，返回领奖，到桌面，银行卡抽奖，升级月利宝',
       rules: [
         {
           resetMatch: 'match',
@@ -402,6 +408,7 @@ export default defineGkdApp({
             'View > View > @TextView[text.length=0][clickable=true][visibleToUser=true] - View > TextView[text="银行卡支付红包"] + View + TextView[text="已发放至「我的奖励」"]',
             'View > View > @TextView[text.length=0][clickable=true][visibleToUser=true] - View > TextView[text="立即翻倍"]',
             'View > @TextView[clickable=false][visibleToUser=true] - View > TextView[text*="次抽奖机会！"] + TextView[text="天天来天天抽，抽抽必中"]',
+            'View > View  > @TextView[text.length=1][clickable=false][visibleToUser=true][index=0] +n View > View > TextView[text="立即购买¥9.9"]', //9.9购收钱音箱
           ],
         },
       ],
@@ -551,14 +558,16 @@ export default defineGkdApp({
     {
       key: 27,
       name: '逛一逛遂骰子次数，去完成',
-      desc: '260701',
+      desc: '261025，添加  完成',
       rules: [
         {
           resetMatch: 'match',
           activityIds:
             'com.alipay.mobile.nebulax.xriver.activity.XRiverActivity',
-          anyMatches:
+          anyMatches: [
             'TextView[text^="逛一逛"] +(2,3) View > Button[text="去完成"]', //逛一逛遂骰子次数，去完成
+            'View > View > Button[text="完成"][clickable=true][visibleToUser=true]', //还款成功后
+          ],
         },
       ],
     },
@@ -949,15 +958,15 @@ export default defineGkdApp({
     {
       key: 43,
       name: '支付有礼，返回会场 or 开心收下',
-      desc: '261024，添加 返回会场',
+      desc: '261025，添加 返回会场',
       rules: [
         {
           resetMatch: 'match',
           activityIds:
             'com.alipay.android.phone.xriver.bundlex.CSGAPushActivity',
           anyMatches: [
-            'ViewGroup[childCount=5] > ViewGroup > *[desc="你有团购神券待使用"] <<2 ViewGroup +3 ViewGroup[clickable=false][visibleToUser=true] > View[clickable=false][visibleToUser=true]', //弹窗，你有团购神券待使用，X掉，弹窗优先，然后再是返回
             '@View[clickable=true][visibleToUser=true] > View > TextView[text="任务完成"] + TextView[text="返回会场" || text="返回领奖>"]', //'@View > View > TextView[text="任务完成"] + TextView[text="返回会场"]',
+            'ViewGroup[childCount=5] > ViewGroup > *[desc="你有团购神券待使用"] <<2 ViewGroup +3 ViewGroup[clickable=false][visibleToUser=true] > View[clickable=false][visibleToUser=true]', //弹窗，你有团购神券待使用，X掉，弹窗优先，然后再是返回
             '@View + ViewGroup *[desc="开心收下"]',
           ],
         },

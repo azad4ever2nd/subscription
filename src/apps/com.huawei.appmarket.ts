@@ -25,16 +25,17 @@ export default defineGkdApp({
     {
       key: 2,
       name: 'WLAN 闲时自动更新, WLAN 下自动更新应用，不用了',
-      desc: '260329',
+      desc: '261025',
       rules: [
         {
-          matches: [
-            '[vid="updatemanager_choose_state_card_desc" || vid="updatemanager_choose_state_card_title"] <n * + * > [vid="updatemanager_choose_state_btn_no"]',
-          ],
           matchDelay: 500,
           fastQuery: true,
-          actionMaximum: 1,
-          resetMatch: 'app',
+          resetMatch: 'match',
+          forcedTime: 3000,
+          anyMatches: [
+            'TextView[vid="updatemanager_choose_state_card_title" || vid="updatemanager_choose_state_card_desc"] <n LinearLayout + LinearLayout > Button[vid="updatemanager_choose_state_btn_no"][text="不用了"][clickable=true][visibleToUser=true]',
+            '[vid="updatemanager_choose_state_card_desc" || vid="updatemanager_choose_state_card_title"] <n * + * > [vid="updatemanager_choose_state_btn_no"]',
+          ],
           activityIds:
             'com.huawei.appmarket.service.appmgr.view.activity.AppUpdateActivity',
         },

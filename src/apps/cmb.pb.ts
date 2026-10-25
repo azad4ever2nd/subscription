@@ -840,10 +840,11 @@ export default defineGkdApp({
     {
       key: 49,
       name: '弹窗，指数投资投资，浏览并集卡',
-      desc: '261023，添加 预约成功，开心收下',
+      desc: '261025，添加 完成，预约成功，开心收下',
       rules: [
         {
           resetMatch: 'match',
+          actionCd: 500,
           action: 'clickCenter',
           activityIds:
             '.app.h5container.webviewcontainer.PBWebContainerActivity',
@@ -851,6 +852,7 @@ export default defineGkdApp({
             'Dialog > View > View > TextView[text="浏览并集卡"][clickable=true][visibleToUser=true]',
             'Dialog >n View > TextView[text="开心收下" || text="浏览并集卡"][clickable=true][visibleToUser=true]',
             'View > View > TextView[text="预约成功"] +n Button[text="好的"][clickable=true][visibleToUser=true]',
+            'View > View > Button[id="btnFinish"][text="完成"][clickable=true][visibleToUser=true]',
           ],
         },
       ],

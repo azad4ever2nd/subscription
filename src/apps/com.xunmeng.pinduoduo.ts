@@ -72,7 +72,7 @@ export default defineGkdApp({
     {
       key: 5,
       name: '百亿补贴无门槛抽奖',
-      desc: '260924，fastQuery=false,clickable=true',
+      desc: '261025，fastQuery=false,clickable=true',
       rules: [
         {
           actionMaximum: 15,
@@ -85,6 +85,7 @@ export default defineGkdApp({
             'View >  TextView[text*="点抢最高16元无门槛券"] + @View[clickable=true][visibleToUser=true] > TextView[text="立即抽奖"]',
             '(TextView[text="限时抽神券"] -2 TextView[text="无门槛券"] + View >3 TextView[text="立即抽奖"])',
             '([text="限时抽神券"] +n [text="无门槛券"] + * [text="立即抽奖"])',
+            '@Image[text="webp"][clickable=true][visibleToUser=true] - View > View > TextView + TextView[text="无门槛券"]', //弹窗，2元无门槛券
           ],
         },
       ],
@@ -169,7 +170,7 @@ export default defineGkdApp({
     {
       key: 11,
       name: '放弃发真实带图评价，退出',
-      desc: '261005， || (TextView[text="继续编辑" || text="放弃打款"] < FrameLayout  <n ViewGroup + ViewGroup[clickable=true]) || (@[vid="pdd"][desc="返回"] < * +n * > [vid="tv_title"][text="发表评价" || text="发表真实评价"]) || ',
+      desc: '261005， ',
       rules: [
         {
           fastQuery: true,
@@ -517,6 +518,19 @@ export default defineGkdApp({
     },
     {
       key: 31,
+      name: '弹窗，可参与的拼单，X掉',
+      desc: '261025，fastQuery=true,clickable=true',
+      rules: [
+        {
+          fastQuery: true,
+          activityIds: '.activity.NewPageActivity',
+          matches:
+            'ImageView < @FrameLayout[vid="pdd"][clickable=true][visibleToUser=true] - ViewGroup > TextView[vid="tv_title"][text="可参与的拼单"]',
+        },
+      ],
+    },
+    {
+      key: 32,
       name: '通知关闭，拒绝接收',
       desc: '260609',
       rules: [
@@ -531,7 +545,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 32,
+      key: 33,
       name: '百亿补贴消费券天天抢，点击领取消费券（激活）',
       desc: '260911，添加 Ids ',
       rules: [

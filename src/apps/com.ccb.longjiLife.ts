@@ -246,6 +246,19 @@ export default defineGkdApp({
     },
     {
       key: 17,
+      name: '低碳挑战，领取奖励',
+      desc: '261025',
+      rules: [
+        {
+          resetMatch: 'match',
+          activityIds: 'com.ccb.cloudmerchant.view.WebViewActivity',
+          matches:
+            'ListView View > TextView[text="领取奖励"][clickable=true][visibleToUser=true]',
+        },
+      ],
+    },
+    {
+      key: 18,
       name: '弹窗，低碳挑战，领取成功，X掉',
       desc: '261021',
       rules: [

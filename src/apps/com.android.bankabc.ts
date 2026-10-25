@@ -305,6 +305,19 @@ export default defineGkdApp({
     },
     {
       key: 21,
+      name: '弹窗，您已拒绝“中国农业银行”访问您的位置"，确定',
+      desc: '261025',
+      rules: [
+        {
+          resetMatch: 'match',
+          activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
+          matches:
+            'Dialog > View[text$="访问您的位置"] + View[text*="访问位置信息"] + View > Button[text="确定"][clickable=true][visibleToUser=true]',
+        },
+      ],
+    },
+    {
+      key: 22,
       name: '开启消息通知',
       desc: '260726',
       rules: [

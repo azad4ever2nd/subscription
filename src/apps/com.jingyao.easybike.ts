@@ -389,11 +389,10 @@ export default defineGkdApp({
     {
       key: 23,
       name: '领行完领奖励金',
-      desc: '260928，测试限1次，clickable=true',
+      desc: '261025，，clickable=true',
       rules: [
         {
           resetMatch: 'match',
-          actionMaximum: 1,
           action: 'clickCenter',
           matchDelay: 1000,
           activityIds:
@@ -406,13 +405,13 @@ export default defineGkdApp({
     {
       key: 24,
       name: '弹窗，签到2',
-      desc: '261012',
+      desc: '261025，测试降低actionCd',
       rules: [
         {
           resetMatch: 'match',
           matchDelay: 1000,
           forcedTime: 3000,
-          actionCd: 2500,
+          actionCd: 1500,
           activityIds:
             'com.hellobike.moped.platform.offline.web.OhoRealmWebActivity',
           anyMatches: [
@@ -468,12 +467,11 @@ export default defineGkdApp({
     {
       key: 27,
       name: '弹窗，知道了2',
-      desc: '261005，添加文明出行，排除 签到 和 明日再来，fastQuery=false,clickable=true，',
+      desc: '261025，添加文明出行，排除 签到 和 明日再来，fastQuery=false,clickable=true，',
       rules: [
         {
           action: 'clickCenter',
           resetMatch: 'match',
-          actionCd: 1500,
           activityIds:
             'com.hellobike.moped.platform.offline.web.OhoRealmWebActivity',
           excludeMatches: [

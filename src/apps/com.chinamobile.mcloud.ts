@@ -208,13 +208,14 @@ export default defineGkdApp({
     {
       key: 13,
       name: '弹窗，做任务',
-      desc: '261024',
+      desc: '261025',
       rules: [
         {
           resetMatch: 'match',
           activityIds: '.client.component.web.H5WebViewMainActivity',
           anyMatches: [
             'View > View > TextView + TextView[text="去转存"][clickable=true][visibleToUser=true]',
+            'View > View > TextView + TextView[text="去上传"][clickable=true][visibleToUser=true]',
           ],
         },
       ],

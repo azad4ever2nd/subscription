@@ -252,8 +252,24 @@ export default defineGkdApp({
         },
       ],
     },
+
     {
       key: 18,
+      name: '弹窗，温馨提示，验证',
+      desc: '261025',
+      rules: [
+        {
+          fastQuery: true,
+          resetMatch: 'match',
+          activityIds:
+            'com.cgb.mobilebank.android.login.module.login.activity.LoginActivityV2',
+          matches:
+            'LinearLayout > TextView[vid="tv_left"][text="取消"] + View + TextView[vid="tv_right"][text="验证"][clickable=true][visibleToUser=true]',
+        },
+      ],
+    },
+    {
+      key: 19,
       name: '人脸识别场景，我已阅读并同意',
       desc: '261002',
       rules: [
@@ -266,7 +282,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 19,
+      key: 20,
       name: '同意并发起人脸识别',
       desc: '261002',
       rules: [
@@ -281,7 +297,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 20,
+      key: 21,
       name: '秒杀，第一步，立即抢购',
       desc: '261004',
       rules: [
@@ -298,7 +314,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 21,
+      key: 22,
       name: '秒杀，第二步，立即抢购',
       desc: '261004',
       rules: [
@@ -313,7 +329,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 22,
+      key: 23,
       name: '秒杀，第三步，下一步',
       desc: '261004',
       rules: [
@@ -329,7 +345,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 23,
+      key: 24,
       name: '弹窗，恭喜中奖了，取消',
       desc: '261004',
       rules: [
@@ -343,7 +359,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 24,
+      key: 25,
       name: '浮动窗，打开通知开关，关闭',
       desc: '261018',
       rules: [
@@ -357,7 +373,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 25,
+      key: 26,
       name: '弹窗，隐私政策更新提示，同意',
       desc: '260904',
       rules: [
