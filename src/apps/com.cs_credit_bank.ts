@@ -228,6 +228,21 @@ export default defineGkdApp({
     },
     {
       key: 16,
+      name: '弹窗，超级刷刷刷中奖，',
+      desc: '261026',
+      rules: [
+        {
+          resetMatch: 'match',
+          activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
+          anyMatches: [
+            'WebView[text="超级刷刷刷"] > View > View > View > View[text.length=1][clickable=true][visibleToUser=true]',
+            'WebView[text="超级刷刷刷"] > View > View > View > @View[text.length=1][clickable=true][visibleToUser=true] - View >n View[text="去查看"]',
+          ],
+        },
+      ],
+    },
+    {
+      key: 17,
       name: '打开定位，取消',
       desc: '260125',
       rules: [

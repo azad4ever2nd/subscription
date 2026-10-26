@@ -133,13 +133,28 @@ export default defineGkdApp({
     {
       key: 10,
       name: '弹窗，联名卡，X掉',
-      desc: '261020',
+      desc: '261026',
+      rules: [
+        {
+          resetMatch: 'match',
+          activityIds: '.bm.common.web.ui.WebActivity',
+          anyMatches: [
+            'WebView > Image[text="close"][clickable=true][index=parent.childCount.minus(1)][visibleToUser=true]',
+            'WebView[text="京东联名卡"] > Image[text="close"][clickable=true][visibleToUser=true]',
+          ],
+        },
+      ],
+    },
+    {
+      key: 11,
+      name: '签到领京豆，点击领取',
+      desc: '261026',
       rules: [
         {
           resetMatch: 'match',
           activityIds: '.bm.common.web.ui.WebActivity',
           matches:
-            'WebView > Image[text="close"][clickable=true][index=parent.childCount.minus(1)][visibleToUser=true]',
+            'View[id="SIGNUP"] > TextView[text="签到领京豆"] +n TextView[text="点击领取"][clickable=true][visibleToUser=true]',
         },
       ],
     },

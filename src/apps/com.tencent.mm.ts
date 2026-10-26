@@ -1977,7 +1977,7 @@ export default defineGkdApp({
     {
       key: 84,
       name: '弹窗，广发限购，X掉',
-      desc: '261020，添加 广发限购',
+      desc: '261026，添加 广发限购，广发立减金立即领取，关闭',
       rules: [
         {
           resetMatch: 'match',
@@ -1999,6 +1999,8 @@ export default defineGkdApp({
           ],
           anyMatches: [
             '@TextView[text.length=1][clickable=false][visibleToUser=true] < View +(3,5) View > TextView[text="数量最多可购0张"]',
+            'View > View > TextView[text="广发银行微信立减金"] + TextView[text="满5.01减5.00"] + TextView[text="立即领取"][clickable=false][visibleToUser=true]',
+            '@ImageButton[desc="关闭"][clickable=true][visibleToUser=true] <<n ViewGroup - FrameLayout >n View > View > TextView[text="广发银行微信立减金"] + TextView[text="满5.01减5.00"] + TextView[text="已领取"]',
           ],
         },
       ],

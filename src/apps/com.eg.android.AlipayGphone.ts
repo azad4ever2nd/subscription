@@ -381,7 +381,7 @@ export default defineGkdApp({
     {
       key: 18,
       name: '弹窗，各种弹窗，X掉2',
-      desc: '261025，fastQuery=false，添加 神券五六天，签到成功，开通碰一下，推送服务，查询账单，返回领奖，到桌面，银行卡抽奖，升级月利宝',
+      desc: '261026，fastQuery=false，添加 神券五六天，签到成功，开通碰一下，推送服务，查询账单，返回领奖，到桌面，银行卡抽奖，升级月利宝',
       rules: [
         {
           resetMatch: 'match',
@@ -409,6 +409,9 @@ export default defineGkdApp({
             'View > View > @TextView[text.length=0][clickable=true][visibleToUser=true] - View > TextView[text="立即翻倍"]',
             'View > @TextView[clickable=false][visibleToUser=true] - View > TextView[text*="次抽奖机会！"] + TextView[text="天天来天天抽，抽抽必中"]',
             'View > View  > @TextView[text.length=1][clickable=false][visibleToUser=true][index=0] +n View > View > TextView[text="立即购买¥9.9"]', //9.9购收钱音箱
+            'View > View > @TextView[clickable=true][visibleToUser=true] +2 View > TextView[text="完成得金币，可兑换消费红包当钱花"]', //金币暴涨
+            'View > @TextView[clickable=true][visibleToUser=true] - View > View > TextView[text="已发放至「我的奖励」"]', //获得财运红包
+            'View > @TextView[clickable=true][visibleToUser=true] - View > View > View > View > View > TextView[text="已发放至「我的奖励」"]', //恭喜获得攒钱节专属福利，这个顺序必须低于上面的 获得财运红包
           ],
         },
       ],
@@ -737,6 +740,7 @@ export default defineGkdApp({
             'View > @Image[clickable=false][visibleToUser=true] +2 TextView[text="去处理"] + TextView[text="暂不处理"]',
             'View[childCount=2] > @TextView[clickable=false][visibleToUser=true] - View TextView[text="开心收下"]',
             'TextView[text="开心收下"] <<n View + TextView[text.length=0][clickable=false][visibleToUser=true]',
+            'View > @TextView[clickable=false][visibleToUser=true] - View >5 TextView[text="去使用"]', //5层
           ],
         },
       ],

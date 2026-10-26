@@ -128,7 +128,7 @@ export default defineGkdApp({
     {
       key: 8,
       name: '哈啰还不知道您在哪里',
-      desc: '260928，添加 消息通知',
+      desc: '261026，添加 消息通知，添加 骑行任务弹窗',
       rules: [
         {
           resetMatch: 'match',
@@ -138,6 +138,7 @@ export default defineGkdApp({
           anyMatches: [
             '([vid="title_tv"][text="哈啰还不知道您在哪里"] +2 @[vid="sign_out_tv"][text="暂不开启"] + [vid="agreement_tv"][text="快速开启定位"])',
             '(TextView[text="开启消息通知"] < FrameLayout +n FrameLayout > LinearLayout > Button[text="取消"][clickable=true][visibleToUser=true])',
+            'LinearLayout > LinearLayout[vid="hbDialogLayout"] + View[vid="indicatorView"] + ImageView[vid="actionDialogClose"][clickable=true][visibleToUser=true]',
           ],
         },
       ],
@@ -156,7 +157,6 @@ export default defineGkdApp({
           activityIds: 'com.hellobike.atlas.business.portal.PortalActivity',
           anyMatches: [
             '(LinearLayout > FrameLayout[vid="creativeContainer"] + ImageView[vid="actionDialogClose"][clickable=true][visibleToUser=true])',
-            '(FrameLayout > LinearLayout > LinearLayout[vid="hbDialogLayout"] + View + ImageView[vid="actionDialogClose"])',
           ],
         },
       ],

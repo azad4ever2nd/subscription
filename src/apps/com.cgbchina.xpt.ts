@@ -24,7 +24,7 @@ export default defineGkdApp({
     {
       key: 2,
       name: '发现新版本，稍后再说',
-      desc: '261010',
+      desc: '261026，添加 弹窗 退出',
       rules: [
         {
           fastQuery: true,
@@ -35,6 +35,7 @@ export default defineGkdApp({
             'com.cgb.mobilebank.sit.launcher.module.main.activity.IndexActivity',
           anyMatches: [
             'TextView[text*="新版本"] <n LinearLayout +n LinearLayout > TextView[vid="tv_left"][text="稍后再说" || text="暂不更新"][clickable=true][visibleToUser=true]',
+            'TextView[text="您确定要退出手机银行吗？"] < LinearLayout +2 LinearLayout > TextView[text="取消"][vid="tv_left"] + View + TextView[text="确定"][vid="tv_right"]',
           ],
         },
       ],
@@ -155,15 +156,17 @@ export default defineGkdApp({
     },
     {
       key: 11,
-      name: '影音娱乐充值弹窗，确定',
-      desc: '260417',
+      name: '弹窗，影音娱乐充值弹窗，确定',
+      desc: '261026，添加 三方服务商提供',
       rules: [
         {
           resetMatch: 'match',
           fastQuery: true,
           activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
-          anyMatches:
+          anyMatches: [
             '[vid="tv_title"] +n [vid="tip"][text^="广发银行不承担影娱充值产品"] + * > [vid="tv_right"][text="确定"]',
+            'LinearLayout > TextView[text="温馨提示"] +n LinearLayout > TextView[text="取消"] + View + TextView[text="确认"][vid="tv_right"][clickable=true][visibleToUser=true]',
+          ],
         },
       ],
     },
