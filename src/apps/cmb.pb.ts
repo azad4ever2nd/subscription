@@ -668,126 +668,160 @@ export default defineGkdApp({
     },
     {
       key: 38,
-      name: '周三5折必胜客',
-      desc: 'D',
+      name: '抽奖领任务页面，加自选 任务，规则1，action=clickCenter',
+      desc: '261016，clickable=true',
       rules: [
         {
-          anyMatches:
-            '[text="（周三5折）必胜客50元代金券"] +n * > [text*="立即抢购"]',
+          action: 'clickCenter',
+          excludeMatches: [
+            'TextView[text="1／1"]',
+            'TextView[text="完成1／1"]',
+            'TextView[text="生活缴费"][vid="tvMainTitle"]',
+          ],
+          anyMatches: [
+            'TextView[text="0／1"] <n View + View > Button[text="加自选"][clickable=true][visibleToUser=true]',
+            'TextView[text="0／1"] <n View +n Button[text="加自选"][clickable=true][visibleToUser=true]',
+          ],
+          actionCd: 700,
           forcedTime: 3000,
+          matchDelay: 1000,
           resetMatch: 'match',
-          activityIds:
+          activityIds: [
             'cmb.pb.app.h5container.webviewcontainer.PBWebContainerActivity',
+          ],
         },
       ],
     },
     {
       key: 39,
-      name: '周三5折喜茶',
-      desc: 'D',
+      name: '抽奖领任务页面，加自选 任务，规则2，action=clickNode',
+      desc: '261016，clickable=true',
       rules: [
         {
-          anyMatches:
-            '[text="（周三5折）喜茶20元代金券"] +n * > [text*="立即抢购"]',
+          action: 'clickNode',
+          excludeMatches: [
+            'TextView[text="1／1"]',
+            '[text="完成1／1"]',
+            'TextView[text="生活缴费"][vid="tvMainTitle"]',
+          ],
+          anyMatches: [
+            'TextView[text="完成0／1"] +n View > Button[text="加自选"][clickable=true][visibleToUser=true]',
+          ],
           forcedTime: 3000,
+          matchDelay: 1000,
           resetMatch: 'match',
-          activityIds:
+          activityIds: [
             'cmb.pb.app.h5container.webviewcontainer.PBWebContainerActivity',
+          ],
         },
       ],
     },
     {
       key: 40,
-      name: '周三5折肯德基',
-      desc: 'D',
+      name: '抽奖领任务页面，参与抽奖 or 我要抽奖，规则3，action=clickCenter',
+      desc: '261016，clickable=true',
       rules: [
         {
-          anyMatches:
-            '[text="（周三5折）肯德基20元代金券"] +n * > [text*="立即抢购"]',
+          action: 'clickCenter',
+          excludeMatches: [
+            'TextView[text="1／1"]',
+            '[text="完成1／1"]',
+            'TextView[text="生活缴费"][vid="tvMainTitle"]',
+          ],
+          anyMatches: [
+            'View > View > @View[clickable=true][visibleToUser=true] > TextView[text="参与抽奖"]',
+            'View > View > @View[clickable=true][visibleToUser=true] > TextView[text="我要抽奖"]',
+          ],
           forcedTime: 3000,
+          matchDelay: 1000,
           resetMatch: 'match',
-          activityIds:
+          activityIds: [
             'cmb.pb.app.h5container.webviewcontainer.PBWebContainerActivity',
+          ],
         },
       ],
     },
     {
       key: 41,
-      name: '周三5折哈根达斯',
-      desc: 'D',
+      name: '抽奖领任务页面，加自选 任务，规则4，action=clickCenter',
+      desc: '261016，clickable=true',
       rules: [
         {
+          action: 'clickCenter',
+          excludeMatches: [
+            'TextView[text="1／1"]',
+            '[text="完成1／1"]',
+            'TextView[text="生活缴费"][vid="tvMainTitle"]',
+            'TextView[text="0／1"]',
+            'TextView[text="完成0／1"]',
+          ],
+          anyMatches: [
+            'WebView > View > View > View > View > Button[text="加自选"][clickable=true][visibleToUser=true]',
+          ],
           forcedTime: 3000,
-          anyMatches:
-            '[text="（周三5折）哈根达斯50元代金券"] +n * > [text*="立即抢购"]',
+          matchDelay: 1000,
           resetMatch: 'match',
-          activityIds:
+          activityIds: [
             'cmb.pb.app.h5container.webviewcontainer.PBWebContainerActivity',
+          ],
         },
       ],
     },
     {
       key: 42,
-      name: '周三5折列表必胜客',
-      desc: 'D',
+      name: '抽奖领任务页面，加自选 任务，规则5，action=clickCenter',
+      desc: '261016，clickable=true',
       rules: [
         {
+          action: 'clickNode',
+          excludeMatches: [
+            'TextView[text="1／1"]',
+            '[text="完成1／1"]',
+            'TextView[text="生活缴费"][vid="tvMainTitle"]',
+            'TextView[text="0／1"]',
+            'TextView[text="完成0／1"]',
+          ],
+          anyMatches: [
+            'WebView > View > View > View > Button[text="加自选"][clickable=true][visibleToUser=true]',
+          ],
           forcedTime: 3000,
-          anyMatches:
-            '[text="（周三5折）必胜客50元代金券"] +6 [text*="立即抢购"]',
+          matchDelay: 1000,
           resetMatch: 'match',
-          activityIds:
+          activityIds: [
             'cmb.pb.app.h5container.webviewcontainer.PBWebContainerActivity',
+          ],
         },
       ],
     },
     {
       key: 43,
-      name: '周三5折列表喜茶',
-      desc: 'D',
+      name: '抽奖领任务页面，加自选 任务，规则6，action=clickCenter',
+      desc: '261016，clickable=true',
       rules: [
         {
-          anyMatches:
-            '[text="（周三5折）喜茶20元代金券"] +6 [text*="立即抢购"]',
+          action: 'clickCenter',
+          excludeMatches: [
+            'TextView[text="1／1"]',
+            '[text="完成1／1"]',
+            'TextView[text="生活缴费"][vid="tvMainTitle"]',
+            'TextView[text="0／1"]',
+            'TextView[text="完成0／1"]',
+          ],
+          anyMatches: [
+            'WebView > View > View > View > Button[text="去添加"][clickable=true][visibleToUser=true]',
+          ],
           forcedTime: 3000,
+          matchDelay: 1000,
           resetMatch: 'match',
-          activityIds:
+          activityIds: [
             'cmb.pb.app.h5container.webviewcontainer.PBWebContainerActivity',
+          ],
         },
       ],
     },
+
     {
       key: 44,
-      name: '周三5折列表肯德基',
-      desc: 'D',
-      rules: [
-        {
-          forcedTime: 3000,
-          anyMatches:
-            '[text="（周三5折）肯德基20元代金券"] +6 [text*="立即抢购"]',
-          resetMatch: 'match',
-          activityIds:
-            'cmb.pb.app.h5container.webviewcontainer.PBWebContainerActivity',
-        },
-      ],
-    },
-    {
-      key: 45,
-      name: '周三5折列表哈根达斯',
-      desc: 'D',
-      rules: [
-        {
-          forcedTime: 3000,
-          anyMatches:
-            '[text="（周三5折）哈根达斯50元代金券"] +6 [text*="立即抢购"]',
-          resetMatch: 'match',
-          activityIds:
-            'cmb.pb.app.h5container.webviewcontainer.PBWebContainerActivity',
-        },
-      ],
-    },
-    {
-      key: 46,
       name: '讨论，关闭投票',
       desc: '260817,clickable=false',
       rules: [
@@ -803,7 +837,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 47,
+      key: 45,
       name: '讨论，关闭投票2',
       desc: '260917，clickable=true',
       rules: [
@@ -822,7 +856,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 48,
+      key: 46,
       name: '风险提示，同意',
       desc: '261001',
       rules: [
@@ -838,7 +872,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 49,
+      key: 47,
       name: '弹窗，指数投资投资，浏览并集卡',
       desc: '261025，添加 完成，预约成功，开心收下',
       rules: [
@@ -858,7 +892,127 @@ export default defineGkdApp({
       ],
     },
     {
+      key: 48,
+      name: '周三5折必胜客',
+      desc: 'D',
+      rules: [
+        {
+          anyMatches:
+            '[text="（周三5折）必胜客50元代金券"] +n * > [text*="立即抢购"]',
+          forcedTime: 3000,
+          resetMatch: 'match',
+          activityIds:
+            'cmb.pb.app.h5container.webviewcontainer.PBWebContainerActivity',
+        },
+      ],
+    },
+    {
+      key: 49,
+      name: '周三5折喜茶',
+      desc: 'D',
+      rules: [
+        {
+          anyMatches:
+            '[text="（周三5折）喜茶20元代金券"] +n * > [text*="立即抢购"]',
+          forcedTime: 3000,
+          resetMatch: 'match',
+          activityIds:
+            'cmb.pb.app.h5container.webviewcontainer.PBWebContainerActivity',
+        },
+      ],
+    },
+    {
       key: 50,
+      name: '周三5折肯德基',
+      desc: 'D',
+      rules: [
+        {
+          anyMatches:
+            '[text="（周三5折）肯德基20元代金券"] +n * > [text*="立即抢购"]',
+          forcedTime: 3000,
+          resetMatch: 'match',
+          activityIds:
+            'cmb.pb.app.h5container.webviewcontainer.PBWebContainerActivity',
+        },
+      ],
+    },
+    {
+      key: 51,
+      name: '周三5折哈根达斯',
+      desc: 'D',
+      rules: [
+        {
+          forcedTime: 3000,
+          anyMatches:
+            '[text="（周三5折）哈根达斯50元代金券"] +n * > [text*="立即抢购"]',
+          resetMatch: 'match',
+          activityIds:
+            'cmb.pb.app.h5container.webviewcontainer.PBWebContainerActivity',
+        },
+      ],
+    },
+    {
+      key: 52,
+      name: '周三5折列表必胜客',
+      desc: 'D',
+      rules: [
+        {
+          forcedTime: 3000,
+          anyMatches:
+            '[text="（周三5折）必胜客50元代金券"] +6 [text*="立即抢购"]',
+          resetMatch: 'match',
+          activityIds:
+            'cmb.pb.app.h5container.webviewcontainer.PBWebContainerActivity',
+        },
+      ],
+    },
+    {
+      key: 53,
+      name: '周三5折列表喜茶',
+      desc: 'D',
+      rules: [
+        {
+          anyMatches:
+            '[text="（周三5折）喜茶20元代金券"] +6 [text*="立即抢购"]',
+          forcedTime: 3000,
+          resetMatch: 'match',
+          activityIds:
+            'cmb.pb.app.h5container.webviewcontainer.PBWebContainerActivity',
+        },
+      ],
+    },
+    {
+      key: 54,
+      name: '周三5折列表肯德基',
+      desc: 'D',
+      rules: [
+        {
+          forcedTime: 3000,
+          anyMatches:
+            '[text="（周三5折）肯德基20元代金券"] +6 [text*="立即抢购"]',
+          resetMatch: 'match',
+          activityIds:
+            'cmb.pb.app.h5container.webviewcontainer.PBWebContainerActivity',
+        },
+      ],
+    },
+    {
+      key: 55,
+      name: '周三5折列表哈根达斯',
+      desc: 'D',
+      rules: [
+        {
+          forcedTime: 3000,
+          anyMatches:
+            '[text="（周三5折）哈根达斯50元代金券"] +6 [text*="立即抢购"]',
+          resetMatch: 'match',
+          activityIds:
+            'cmb.pb.app.h5container.webviewcontainer.PBWebContainerActivity',
+        },
+      ],
+    },
+    {
+      key: 56,
       name: '开启消息通知',
       desc: '261007,增加IDS',
       rules: [
@@ -878,7 +1032,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 51,
+      key: 57,
       name: '资讯分享任务，微信好友',
       desc: '260706，clickable=false',
       rules: [
@@ -894,7 +1048,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 52,
+      key: 58,
       name: '弹窗，月月领好好，继续做任务 或 X掉',
       desc: '260917',
       rules: [
