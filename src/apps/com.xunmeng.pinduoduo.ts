@@ -141,7 +141,7 @@ export default defineGkdApp({
     {
       key: 9,
       name: '弹窗',
-      desc: '260905，添加福袋，下单完成分享弹窗，先用后付资格，百亿补贴弹窗  || (View[childCount=4] > [text="webp"] +3 *',
+      desc: '260905，添加福袋，下单完成分享弹窗，先用后付资格，百亿补贴弹窗',
       rules: [
         {
           anyMatches: [

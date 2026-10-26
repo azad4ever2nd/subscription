@@ -145,14 +145,18 @@ export default defineGkdApp({
     {
       key: 10,
       name: '立即签到',
-      desc: '260831',
+      desc: '261026，增加 排除场景',
       rules: [
         {
+          actionMaximum: 1,
+          resetMatch: 'app',
+          excludeMatches: [
+            'View > TextView[text="2元话费券"] + View + TextView[text="立即抢"][clickable=true][visibleToUser=true]', //排除抢券场景
+            'View > TextView[text="立即抢"][clickable=true][visibleToUser=true]',
+          ],
           anyMatches: [
             'TextView[text^="累签" && text$="次"] <<n View + View > TextView[index=0][clickable=true][visibleToUser=true]',
           ],
-          actionMaximum: 1,
-          resetMatch: 'app',
           activityIds: ['com.cmccit.webview.ac.CommonHtml5Activity'],
         },
       ],
@@ -213,6 +217,19 @@ export default defineGkdApp({
             'Dialog > View > Image > View[id="ani_btn"][clickable=true][visibleToUser=true] + View[id="ani_close"][clickable=true][visibleToUser=true]',
             'Image > @View[id="closeBtn"][clickable=true][visibleToUser=true] + View[id="acceptJoy"]',
           ],
+        },
+      ],
+    },
+    {
+      key: 15,
+      name: '签到有礼，2元话费券，立即抢',
+      desc: '261026',
+      rules: [
+        {
+          resetMatch: 'match',
+          activityIds: 'com.cmccit.webview.ac.CommonHtml5Activity',
+          matches:
+            'View > TextView[text="2元话费券"] + View + TextView[text="立即抢"][clickable=true][visibleToUser=true]',
         },
       ],
     },

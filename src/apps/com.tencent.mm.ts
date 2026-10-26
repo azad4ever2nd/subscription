@@ -34,7 +34,7 @@ export default defineGkdApp({
     {
       key: 2,
       name: '糖的报单',
-      desc: '261012，添加 排除中信活动规则，中信活动，中信抽奖，华夏红包领取，继续访问，知道了，是否继续上传',
+      desc: '261026，添加 华夏已领取，排除中信活动规则，中信活动，中信抽奖，华夏红包领取，继续访问，知道了，是否继续上传',
       rules: [
         {
           resetMatch: 'match',
@@ -55,6 +55,7 @@ export default defineGkdApp({
             '([text="操作提示"] + [text="上传成功，是否继续上传？"] + * > [text="取消"])',
             '(@[text="继续访问"] +n * > [desc="申请恢复访问"])',
             'View[text="我的足迹"] + View > TextView[text.length=0][clickable=true][visibleToUser=true]',
+            '@Button[vid="actionbar_up_indicator"][clickable=true][visibleToUser=true] <<n FrameLayout - FrameLayout >n WebView[text="权益领取"] >n View > TextView[text="支付宝立减金0.3元"] + * + View > TextView[text="已领取"][clickable=false][visibleToUser=true]',
           ],
         },
       ],

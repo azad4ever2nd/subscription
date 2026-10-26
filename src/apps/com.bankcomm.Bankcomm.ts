@@ -567,7 +567,7 @@ export default defineGkdApp({
     {
       key: 37,
       name: '理财+，购买，已勾选我已阅读并同意多选框，下一步',
-      desc: '260920',
+      desc: '260920，添加 我已阅读',
       rules: [
         {
           resetMatch: 'match',
@@ -575,6 +575,7 @@ export default defineGkdApp({
           anyMatches: [
             'WebView[text="购买"] > View > TextView[text="已勾选我已阅读并同意多选框"][visibleToUser=true] +n View > Button[text="下一步"][clickable=true][visibleToUser=true]',
             'WebView[text="购买"] > View > View > TextView[text="已勾选我已阅读并同意多选框"][visibleToUser=true] +n View > Button[text="下一步"][clickable=true][visibleToUser=true]',
+            'Dialog > @Button[text="我已阅读"][clickable=true][visibleToUser=true] -n View > TextView[text="活动细则"]',
           ],
         },
       ],
