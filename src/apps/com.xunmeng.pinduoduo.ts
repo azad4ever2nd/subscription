@@ -133,7 +133,7 @@ export default defineGkdApp({
     },
     {
       key: 8,
-      name: '百亿补贴无门槛抽奖',
+      name: '百亿补贴，无门槛抽奖',
       desc: '261025，fastQuery=false,clickable=true',
       rules: [
         {
@@ -159,7 +159,6 @@ export default defineGkdApp({
       rules: [
         {
           resetMatch: 'match',
-          actionCd: 1000,
           activityIds: 'com.xunmeng.pinduoduo.activity.NewPageActivity',
           anyMatches: [
             '([text^="邀请你加入队伍"] +n @*[clickable=true][visibleToUser=true] > [text="立即加入抽福袋"])',
@@ -230,7 +229,7 @@ export default defineGkdApp({
     },
     {
       key: 14,
-      name: '如何解锁，去首页1',
+      name: '弹窗，X掉3',
       desc: '261017，fastQuery=false，clickable=false，添加 提前锁定，神券',
       rules: [
         {
@@ -255,14 +254,14 @@ export default defineGkdApp({
             '([text="如何领取福袋奖励"] +n [text="去首页解锁"])',
             '(ImageView < @* - ViewGroup [text="支付成功"])',
             'TextView[text^="剩余"] + View > View > TextView[text^="还差"] + ListView + TextView[text="去首页逛逛"]',
-            'LinearLayout > TextView[vid="pdd"][text="取消"] +n TextView[clickable=true][visibleToUser=true][vid="pdd"][text="退出"]', //此次评价未完成，退出
+            '([text="添加物流助手到桌面"] <<n * + @ViewGroup[clickable=false][visibleToUser=true] ImageView)',
           ],
         },
       ],
     },
     {
       key: 15,
-      name: '弹窗，福袋奖励，X掉2',
+      name: '弹窗，福袋奖励，X掉',
       desc: '260905，fastQuery=false，clickable=false',
       rules: [
         {
@@ -281,7 +280,7 @@ export default defineGkdApp({
     },
     {
       key: 16,
-      name: '弹窗，X掉3',
+      name: '弹窗，X掉4',
       desc: '260905，fastQuery=false，clickable=true',
       rules: [
         {
@@ -290,21 +289,20 @@ export default defineGkdApp({
           activityIds: 'com.xunmeng.pinduoduo.activity.NewPageActivity',
           anyMatches: [
             'View > Image + @Image[clickable=true] + View > TextView[text="消费券福袋奖励"] - View > TextView[text$="折"] + TextView[text^="最高减"]',
-            '(@Image[text="webp"][clickable=true] - View > View > TextView[text$="折"] + TextView[text^="最高减"] + TextView[text="专场可用"])',
-            '(TextView[text="专场可用"] - TextView[text^="最高减"] - TextView[text$="折"] < View < View + Image[text="webp"][clickable=true])',
-            '(View > View > View > View > TextView[text^="恭喜提前锁定"] +n TextView[text="开心收下"][clickable=true][visibleToUser=true])', //
-            '(TextView[text="专场可用"] - TextView[text^="最高减"] - TextView[text$="折"] < View < View + Image[text="webp"][clickable=true])',
-            '(TextView[text="添加物流助手到桌面"] < FrameLayout < ViewGroup < ViewGroup < ViewGroup < ViewGroup + ViewGroup[clickable=true][visibleToUser=true] > ViewGroup > ImageView)',
-            '([text="添加物流助手到桌面"] <<n * + @ViewGroup[clickable=true][visibleToUser=true] ImageView)',
-            '([text="添加物流助手到桌面"] <<n * + @ViewGroup[visibleToUser=true] ImageView)',
+            '@Image[text="webp"][clickable=true] - View > View > TextView[text$="折"] + TextView[text^="最高减"] + TextView[text="专场可用"]',
+            'TextView[text="专场可用"] - TextView[text^="最高减"] - TextView[text$="折"] < View < View + Image[text="webp"][clickable=true]',
+            'View > View > View > View > TextView[text^="恭喜提前锁定"] +n TextView[text="开心收下"][clickable=true][visibleToUser=true]', //
+            'TextView[text="添加物流助手到桌面"] < FrameLayout < ViewGroup < ViewGroup < ViewGroup < ViewGroup + ViewGroup[clickable=true][visibleToUser=true] > ViewGroup > ImageView',
+            '[text="添加物流助手到桌面"] <<n * + @ViewGroup[clickable=true][visibleToUser=true] ImageView',
             '@Image[text="webp"][clickable=true][visibleToUser=true] - View > View > TextView + TextView[text="无门槛券"]', //弹窗，2元无门槛券
+            'LinearLayout > TextView[vid="pdd"][text="取消"] +n TextView[clickable=true][visibleToUser=true][vid="pdd"][text="退出"]', //此次评价未完成，退出
           ],
         },
       ],
     },
     {
       key: 17,
-      name: '弹窗，X掉4',
+      name: '弹窗，X掉5',
       desc: '2601016，添加组队成功，fastQuery=false，clickable=true',
       rules: [
         {
@@ -315,18 +313,16 @@ export default defineGkdApp({
           anyMatches: [
             'View  > @Image[text="webp"][clickable=true][visibleToUser=true] -n View >  TextView[text^="好友已加入队伍"]',
             'View > View > View > TextView[text^="浏览商品10秒" || text$="即可点亮1次"] +n TextView[text^="去看看"][clickable=true][visibleToUser=true]',
-            '(View > View > View > TextView[text="如何解锁?" || text="如何解锁点亮?"] + TextView[text="去首页"][clickable=true][visibleToUser=true])',
+            'View > View > View > TextView[text^="如何解锁" || text="如何解锁点亮?"] + TextView[text="去首页"][clickable=true][visibleToUser=true]',
             'View > View > View > TextView[text="恭喜获得专属惊喜券"] + TextView[text*="已成功点亮" || text$="明日可继续点亮"] +(3,4)  Image[text="webp"][clickable=true][visibleToUser=true]',
             'View > @View[clickable=true][visibleToUser=true] + TextView[text="进入消费券活动页领券"]',
             'TextView +n @Image[text="webp"][clickable=true][visibleToUser=true] -n View > View > TextView[text$="后过期"]',
-            '(View > View > View > TextView[text="如何解锁点亮?"] + TextView[text="去首页"][clickable=true][visibleToUser=true])',
-            '(View > View > View > TextView[text^="如何解锁"] + TextView[text="去首页"][clickable=true][visibleToUser=true])',
             'TextView[text="待使用"] <<n ViewGroup + ViewGroup > ImageView[clickable=true][visibleToUser=true]',
             'TextView[text="先去逛逛"] <<n ViewGroup + ViewGroup > ImageView[clickable=true][visibleToUser=true]',
             'View > @Image[text="webp"][clickable=true][visibleToUser=true] - View >n TextView[text*="元券"] - View > Image[text="webp"]',
-            '(WebView > WebView > View > View > View > Button[text="关闭弹窗"][clickable=true])',
+            'WebView > WebView > View > View > View > Button[text="关闭弹窗"][clickable=true]',
             'View > @Button[text="关闭按钮"][clickable=true][visibleToUser=true] + TextView[text^="余额¥" && text$="购物可直接抵扣"]',
-            '([text="暂时放弃"] <<n @*[clickable=true] + [text="继续支付"])',
+            '[text="暂时放弃"] <<n @*[clickable=true] + [text="继续支付"]',
             'LinearLayout > TextView[id="com.xunmeng.pinduoduo:id/pdd"][text="确认删除最近搜索记录吗？"] + LinearLayout > TextView[clickable=true][visibleToUser=true][text="删除"]',
           ],
         },
