@@ -78,7 +78,6 @@ export default defineGkdApp({
         },
       ],
     },
-
     {
       key: 4,
       name: '弹窗，建行社保卡活动公告，X掉',
@@ -1778,14 +1777,14 @@ export default defineGkdApp({
     },
     {
       key: 77,
-      name: '瑞幸，更改优惠',
-      desc: 'D，260810',
+      name: '弹窗，红色火箭',
+      desc: '261027',
       rules: [
         {
           resetMatch: 'match',
-          matches:
-            'WebView > View > View > View > TextView[text="更改优惠"][clickable=false][visibleToUser=true]',
-          actionMaximum: 1,
+          matchDelay: 2000,
+          matchTime: 5000,
+          forcedTime: 5000,
           activityIds: [
             'com.tencent.mm.plugin.appbrand.ui.AppBrandUI0',
             'com.tencent.mm.plugin.appbrand.ui.AppBrandUI1',
@@ -1798,6 +1797,11 @@ export default defineGkdApp({
             'com.tencent.mm.plugin.appbrand.ui.AppBrandUI03',
             'com.tencent.mm.plugin.appbrand.ui.AppBrandUI04',
             'com.tencent.mm.plugin.appbrand.ui.AppBrandPluginUI',
+          ],
+          anyMatches: [
+            'View > View > @Image[clickable=false][visibleToUser=true] + View > TextView[text="恭喜您"] +n TextView[text="积分"] + TextView[text^="恭喜您获得" && text*="专属积分奖励"]', //红色火箭签到
+            'View > View > TextView[text="恭喜您"] + * + TextView[text="微信红包"] +2 View > TextView[text="去领取"][clickable=false][visibleToUser=true]', //红色火箭，红包
+            'View > View > TextView[text="您的活动奖励金额为:"] + TextView + View > @TextView[text.length=0][clickable=true][visibleToUser=true] + View > TextView[text^="恭喜您抽中红包！点击领取后，奖励将发放至微信零钱"]', //红色火箭，红包
           ],
         },
       ],
@@ -2008,6 +2012,32 @@ export default defineGkdApp({
     },
     {
       key: 85,
+      name: '瑞幸，更改优惠',
+      desc: 'D，260810',
+      rules: [
+        {
+          resetMatch: 'match',
+          matches:
+            'WebView > View > View > View > TextView[text="更改优惠"][clickable=false][visibleToUser=true]',
+          actionMaximum: 1,
+          activityIds: [
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI0',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI1',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI2',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI3',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI4',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI00',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI01',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI02',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI03',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI04',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandPluginUI',
+          ],
+        },
+      ],
+    },
+    {
+      key: 86,
       name: '自动登录该设备',
       desc: '260804',
       rules: [
@@ -2020,7 +2050,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 86,
+      key: 87,
       name: '同程抢单，慎用',
       desc: 'D，261018',
       rules: [
