@@ -43,9 +43,9 @@ export default defineGkdApp({
       rules: [
         {
           anyMatches: [
-            '([text="0740728-T204411NSMB8Y202511100918500188675-1"] <<n * + Image)',
-            '([id="app"] > [id="homePage_0000" || id="personalPage_0000"] +3 * >3 Image)',
-            '([id="app"] > [id="lifePage_0000"] +2 * >3 Image)',
+            '[text="0740728-T204411NSMB8Y202511100918500188675-1"] <<n * + Image',
+            '[id="app"] > [id="homePage_0000" || id="personalPage_0000"] +3 * >3 Image',
+            '[id="app"] > [id="lifePage_0000"] +2 * >3 Image',
           ],
           resetMatch: 'match',
           activityIds: [

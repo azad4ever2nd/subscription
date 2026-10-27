@@ -24,7 +24,7 @@ export default defineGkdApp({
       rules: [
         {
           matches:
-            '(TextView[text="收藏"] - Image < @View[clickable=false][visibleToUser=true] <2 View + View > Button[text="定投"] + Button[text="购买"])',
+            'TextView[text="收藏"] - Image < @View[clickable=false][visibleToUser=true] <2 View + View > Button[text="定投"] + Button[text="购买"]',
           resetMatch: 'match',
           activityIds:
             'cn.com.spdb.mobilebank.per.activity.web.stage.StageCommonWebActivity',
@@ -38,9 +38,9 @@ export default defineGkdApp({
       rules: [
         {
           anyMatches: [
-            '([text*="确定要终止定投计划吗"] [text="终止投资"])',
-            '([text="交易确认"] <<n * + * [text="确定"])',
-            '([text^="交易确认"] [text="确定"])',
+            '[text*="确定要终止定投计划吗"] [text="终止投资"]',
+            '[text="交易确认"] <<n * + * [text="确定"]',
+            '[text^="交易确认"] [text="确定"]',
           ],
           resetMatch: 'match',
           activityIds:

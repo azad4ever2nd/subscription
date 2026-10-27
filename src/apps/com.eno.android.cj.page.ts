@@ -11,8 +11,8 @@ export default defineGkdApp({
       rules: [
         {
           anyMatches: [
-            '([vid="dlg_home_annc_title"][text*="风险提示"] +n * [text="关闭"])',
-            '([vid="dlg_home_annc_buttons"] > [text="关闭"])',
+            '[vid="dlg_home_annc_title"][text*="风险提示"] +n * [text="关闭"]',
+            '[vid="dlg_home_annc_buttons"] > [text="关闭"]',
           ],
           fastQuery: true,
           resetMatch: 'match',
@@ -178,8 +178,8 @@ export default defineGkdApp({
       rules: [
         {
           anyMatches: [
-            '([vid="confirmBtn"][clickable=true][text="立即签署协议"])',
-            '(@[vid="protocolLayout"] > [vid="protocolUnread"])',
+            '[vid="confirmBtn"][clickable=true][text="立即签署协议"]',
+            '@[vid="protocolLayout"] > [vid="protocolUnread"]',
           ],
           fastQuery: true,
           resetMatch: 'match',

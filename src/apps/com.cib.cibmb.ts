@@ -56,7 +56,7 @@ export default defineGkdApp({
       desc: '251207,添加弹窗',
       rules: [
         {
-          anyMatches: ['([text="点击签到"])', '([id="lottery_close"])'],
+          anyMatches: ['[text="点击签到"]', '[id="lottery_close"]'],
           resetMatch: 'match',
           activityIds: ['com.newland.app.webcore.CustomPageFlowActivity'],
         },
@@ -69,8 +69,8 @@ export default defineGkdApp({
       rules: [
         {
           anyMatches: [
-            '([id="pop-my-prize"] > *[index=parent.childCount.minus(1)])',
-            '(WebView [text^="恭喜您答对" && text$="题"] + TextView)',
+            '[id="pop-my-prize"] > *[index=parent.childCount.minus(1)]',
+            'WebView [text^="恭喜您答对" && text$="题"] + TextView',
           ],
           resetMatch: 'match',
           activityIds: ['com.newland.app.webcore.CustomPageFlowActivity'],

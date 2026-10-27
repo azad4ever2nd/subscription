@@ -63,8 +63,8 @@ export default defineGkdApp({
           forcedTime: 10000,
           activityIds: 'com.sgcc.wsgw.mainbundle.ElectricTitleActivity',
           anyMatches: [
-            '(TextView[text="立即查看"] < View + View > Image[clickable=false][visibleToUser=true])',
-            '([text="立即查看"] < View + View > *)',
+            'TextView[text="立即查看"] < View + View > Image[clickable=false][visibleToUser=true]',
+            '[text="立即查看"] < View + View > *',
           ],
         },
       ],

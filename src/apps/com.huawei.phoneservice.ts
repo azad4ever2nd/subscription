@@ -77,8 +77,8 @@ export default defineGkdApp({
           fastQuery: true,
           activityIds: 'com.huawei.myhw.ui.HwHomeActivity',
           anyMatches: [
-            '(ViewGroup > TextView[vid="tv_title"][text="恭喜您获得经验值"] +2 LinearLayout > Button[vid="bt_negative"][clickable=true][visibleToUser=true][text="知道了"])',
-            '([text="恭喜您获得经验值"] +2 * > [vid="bt_negative"][text="知道了"])',
+            'ViewGroup > TextView[vid="tv_title"][text="恭喜您获得经验值"] +2 LinearLayout > Button[vid="bt_negative"][clickable=true][visibleToUser=true][text="知道了"]',
+            '[text="恭喜您获得经验值"] +2 * > [vid="bt_negative"][text="知道了"]',
           ],
         },
       ],
@@ -96,8 +96,8 @@ export default defineGkdApp({
             'com.huawei.module.commonwebview.ui.CommonWebviewActivity',
           ],
           anyMatches: [
-            '([text^="浏览服务频道" || text^="新品发布会" || text^="浏览新品商" ||  text^="精选好物" || text="参与精彩活动" || text$="玩机攻略" || text^="浏览爱车" || text^="逛同城" || text$="看热门" || text^="到店体验华为"] < * + [text="去完成"])',
-            '(ViewGroup > TextView[text*="会员日福利" || text^="发帖赢" || text^="到店瓜分" || text^="浏览服务频道" || text^="新品发布会" || text^="浏览新品商" || text^="精选好物" || text="参与精彩活动" || text$="玩机攻略" || text^="浏览爱车" || text^="逛同城" || text$="看热门" || text^="到店体验华为"] +2 TextView[text="去完成"])',
+            '[text^="浏览服务频道" || text^="新品发布会" || text^="浏览新品商" ||  text^="精选好物" || text="参与精彩活动" || text$="玩机攻略" || text^="浏览爱车" || text^="逛同城" || text$="看热门" || text^="到店体验华为"] < * + [text="去完成"]',
+            'ViewGroup > TextView[text*="会员日福利" || text^="发帖赢" || text^="到店瓜分" || text^="浏览服务频道" || text^="新品发布会" || text^="浏览新品商" || text^="精选好物" || text="参与精彩活动" || text$="玩机攻略" || text^="浏览爱车" || text^="逛同城" || text$="看热门" || text^="到店体验华为"] +2 TextView[text="去完成"]',
           ],
         },
       ],
@@ -116,11 +116,11 @@ export default defineGkdApp({
             'com.huawei.module.commonwebview.ui.CommonWebviewActivity',
           ],
           anyMatches: [
-            '(View > TextView[text="领奖励"][clickable=true])',
-            '(ViewGroup > TextView[clickable=true][vid="tv_tasks_type"][text="领奖励"])',
-            '([vid="tv_tasks_title"][text="我的任务"] + [vid="tv_tasks_more"][text="更多"])',
-            '(ViewGroup > TextView[vid="tv_tasks_type"][text="领奖励"])',
-            '(ListView > View > TextView[clickable=true][text="领奖励"])',
+            'View > TextView[text="领奖励"][clickable=true]',
+            'ViewGroup > TextView[clickable=true][vid="tv_tasks_type"][text="领奖励"]',
+            '[vid="tv_tasks_title"][text="我的任务"] + [vid="tv_tasks_more"][text="更多"]',
+            'ViewGroup > TextView[vid="tv_tasks_type"][text="领奖励"]',
+            'ListView > View > TextView[clickable=true][text="领奖励"]',
           ],
         },
       ],
@@ -132,10 +132,10 @@ export default defineGkdApp({
       rules: [
         {
           anyMatches: [
-            '(View > View > TextView[text="报名成功"] + View > View > TextView[text="我知道了"][clickable=true])',
-            '([text="恭喜您获得经验值奖励"] +n * [text="我知道了"])',
-            '([text^="恭喜您获取经验值"] +2 @* >3 [text="我知道了"])',
-            '([text^="签到成功"] + [text="我知道了"])',
+            'View > View > TextView[text="报名成功"] + View > View > TextView[text="我知道了"][clickable=true]',
+            '[text="恭喜您获得经验值奖励"] +n * [text="我知道了"]',
+            '[text^="恭喜您获取经验值"] +2 @* >3 [text="我知道了"]',
+            '[text^="签到成功"] + [text="我知道了"]',
           ],
           resetMatch: 'match',
           actionCd: 500,
@@ -207,6 +207,19 @@ export default defineGkdApp({
           activityIds: [
             'com.huawei.module.mynotice.impl.revision.MessageActivity',
           ],
+        },
+      ],
+    },
+    {
+      key: 13,
+      name: '购物页面，返回',
+      desc: '261027',
+      rules: [
+        {
+          resetMatch: 'match',
+          activityIds: 'com.huawei.arkui.impl.ui.ArkUICarActivity',
+          matches:
+            '@Button[desc="返回"][clickable=true][visibleToUser=true] < View + ViewGroup ViewGroup > TextView[text="推荐"] + TextView[text="资讯"] + TextView[text="购车"]',
         },
       ],
     },

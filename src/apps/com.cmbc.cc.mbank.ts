@@ -44,9 +44,9 @@ export default defineGkdApp({
           resetMatch: 'match',
           activityIds: 'com.cmbc.cc.mbank.module.web.activity.WebViewActivity',
           anyMatches: [
-            '(WebView[text="惠买单"] > View > View > Dialog > TextView[text="提示"] + TextView + Button[clickable=true][visibleToUser=true][text="我知道了"])',
-            '(Dialog > TextView[text="提示"] + TextView + Button[clickable=true][visibleToUser=true][text="我知道了"])',
-            '([text*="定位"] + [text="我知道了"])',
+            'WebView[text="惠买单"] > View > View > Dialog > TextView[text="提示"] + TextView + Button[clickable=true][visibleToUser=true][text="我知道了"]',
+            'Dialog > TextView[text="提示"] + TextView + Button[clickable=true][visibleToUser=true][text="我知道了"]',
+            '[text*="定位"] + [text="我知道了"]',
           ],
         },
       ],
@@ -76,7 +76,7 @@ export default defineGkdApp({
           activityIds: 'com.cmbc.cc.mbank.module.web.activity.WebViewActivity',
           actionCd: 0,
           matches:
-            '([text*="15元代金券"] + @[text="立即抢"] +3 [text="民生借记卡专享"])',
+            '[text*="15元代金券"] + @[text="立即抢"] +3 [text="民生借记卡专享"]',
         },
       ],
     },

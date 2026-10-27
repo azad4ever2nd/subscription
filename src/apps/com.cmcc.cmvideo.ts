@@ -121,8 +121,8 @@ export default defineGkdApp({
             'com.cmvideo.capability.remote_web.WebProcessActivity',
           ],
           matches: [
-            '(View[id="verfyDiv"] > @View[id="smsBtn"][clickable=true][desc="获取验证码"] > TextView[text="获取验证码"])',
-            '(View > TextView[text="获取验证码"][clickable=false][visibleToUser=true])',
+            'View[id="verfyDiv"] > @View[id="smsBtn"][clickable=true][desc="获取验证码"] > TextView[text="获取验证码"]',
+            'View > TextView[text="获取验证码"][clickable=false][visibleToUser=true]',
           ],
         },
       ],
@@ -158,7 +158,7 @@ export default defineGkdApp({
           action: 'clickCenter',
           activityIds: 'com.cmvideo.capability.remote_web.WebProcessActivity',
           matches:
-            '(View > View > View > View > View > View[id="cc54b71dca3545fb95c3de42954fa8e2"])',
+            'View > View > View > View > View > View[id="cc54b71dca3545fb95c3de42954fa8e2"]',
         },
       ],
     },
@@ -189,8 +189,8 @@ export default defineGkdApp({
           activityIds:
             'com.cmcc.cmvideo.main.application.CompatibleMainActivity',
           anyMatches: [
-            '(FrameLayout > ViewGroup > FrameLayout[vid="close_bg_single"] > ImageView[vid="iv_close_single"][clickable=true][visibleToUser=true])',
-            '(ViewGroup + FrameLayout[childCount=2] > FrameLayout[vid="h5_content_container"] + ImageView[clickable=true][visibleToUser=true])',
+            'FrameLayout > ViewGroup > FrameLayout[vid="close_bg_single"] > ImageView[vid="iv_close_single"][clickable=true][visibleToUser=true]',
+            'ViewGroup + FrameLayout[childCount=2] > FrameLayout[vid="h5_content_container"] + ImageView[clickable=true][visibleToUser=true]',
           ],
         },
       ],
@@ -206,8 +206,8 @@ export default defineGkdApp({
           activityIds:
             'com.cmcc.cmvideo.main.application.CompatibleMainActivity',
           anyMatches: [
-            '(ViewGroup > TextView[text="更新提示" || text*="用户服务协议" || text*="隐私政策"] +n TextView + TextView[vid="btn_ok"][clickable=true][visibleToUser=true])',
-            '([vid="tv_title"][text="更新提示"] +4 [vid="btn_ok"][text="同意并继续"])',
+            'ViewGroup > TextView[text="更新提示" || text*="用户服务协议" || text*="隐私政策"] +n TextView + TextView[vid="btn_ok"][clickable=true][visibleToUser=true]',
+            '[vid="tv_title"][text="更新提示"] +4 [vid="btn_ok"][text="同意并继续"]',
           ],
         },
       ],

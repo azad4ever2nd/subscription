@@ -126,9 +126,9 @@ export default defineGkdApp({
           activityIds:
             'cmb.pb.app.h5container.webviewcontainer.PBWebContainerActivity',
           anyMatches: [
-            '(WebView[text="收益奖励发放方式"] > View > View > @TextView[clickable=false] + TextView[text^="已阅读并同意"] + View + Button[text="提交"][clickable=true][visibleToUser=true])',
-            '([text="recommend.f43217f6"] < View + [text="我已阅读"])',
-            '([text="收益奖励发放方式"] >n [text="我已阅读"])',
+            'WebView[text="收益奖励发放方式"] > View > View > @TextView[clickable=false] + TextView[text^="已阅读并同意"] + View + Button[text="提交"][clickable=true][visibleToUser=true]',
+            '[text="recommend.f43217f6"] < View + [text="我已阅读"]',
+            '[text="收益奖励发放方式"] >n [text="我已阅读"]',
           ],
         },
       ],
@@ -145,8 +145,8 @@ export default defineGkdApp({
           activityIds:
             'cmb.pb.app.h5container.webviewcontainer.PBWebContainerActivity',
           anyMatches: [
-            '(WebView[text="收益奖励发放方式"] > View > View > TextView + TextView[text="发放到银行卡"][clickable=false])',
-            '([text$="可点击"] + [text="发放到银行卡"])',
+            'WebView[text="收益奖励发放方式"] > View > View > TextView + TextView[text="发放到银行卡"][clickable=false]',
+            '[text$="可点击"] + [text="发放到银行卡"]',
           ],
         },
       ],
@@ -165,7 +165,7 @@ export default defineGkdApp({
           activityIds:
             'cmb.pb.app.h5container.webviewcontainer.PBWebContainerActivity',
           anyMatches:
-            '(TextView[text="收益奖励将免费发放到您这张银行卡："] < View <2 WebView[text="收益奖励发放方式"] > View > View > [text="提交"][clickable=true][visibleToUser=true])',
+            'TextView[text="收益奖励将免费发放到您这张银行卡："] < View <2 WebView[text="收益奖励发放方式"] > View > View > [text="提交"][clickable=true][visibleToUser=true]',
         },
       ],
     },
@@ -230,7 +230,7 @@ export default defineGkdApp({
             'cmb.pb.app.h5container.webviewcontainer.PBWebContainerActivity',
           anyMatches: [
             'View[id="FundDetailBody"] > View > View > @Button[text="自选"][clickable=true][visibleToUser=true] +n Button[text="定投" || text="购买"]',
-            '(WebView > View > View > View > View > Button[text="自选"][clickable=true][visibleToUser=true])',
+            'WebView > View > View > View > View > Button[text="自选"][clickable=true][visibleToUser=true]',
           ],
         },
       ],
@@ -253,7 +253,7 @@ export default defineGkdApp({
           activityIds:
             'cmb.pb.app.h5container.webviewcontainer.PBWebContainerActivity',
           anyMatches:
-            '(WebView > View > View > View > View > TextView[text="加自选"][clickable=false][visibleToUser=true])',
+            'WebView > View > View > View > View > TextView[text="加自选"][clickable=false][visibleToUser=true]',
         },
       ],
     },
@@ -300,8 +300,8 @@ export default defineGkdApp({
           activityIds:
             'cmb.pb.app.h5container.webviewcontainer.PBWebContainerActivity',
           anyMatches: [
-            '(WebView[text="讨论区"] >n View >  @TextView[clickable=false][visibleToUser=true] +  TextView[text="同步到动态"])',
-            '(View > @TextView[clickable=false][visibleToUser=true] + TextView[text="同步到动态"])',
+            'WebView[text="讨论区"] >n View >  @TextView[clickable=false][visibleToUser=true] +  TextView[text="同步到动态"]',
+            'View > @TextView[clickable=false][visibleToUser=true] + TextView[text="同步到动态"]',
           ],
         },
       ],
@@ -319,10 +319,10 @@ export default defineGkdApp({
           activityIds:
             'cmb.pb.app.h5container.webviewcontainer.PBWebContainerActivity',
           anyMatches: [
-            '(WebView[text="讨论区"] >n View >  @TextView[clickable=true][visibleToUser=true] +  TextView[text="同步到动态"])',
-            '(View > Button[text="关闭"] +n TextView[text="同步到动态"][clickable=true][visibleToUser=true])',
+            'WebView[text="讨论区"] >n View >  @TextView[clickable=true][visibleToUser=true] +  TextView[text="同步到动态"]',
+            'View > Button[text="关闭"] +n TextView[text="同步到动态"][clickable=true][visibleToUser=true]',
             'View > View > TextView[text="发布"] +n TextView[text="同步到动态"][clickable=true][visibleToUser=true]',
-            '(View > @TextView[clickable=true][visibleToUser=true] + TextView[text="同步到动态"])',
+            'View > @TextView[clickable=true][visibleToUser=true] + TextView[text="同步到动态"]',
           ],
         },
       ],
@@ -334,8 +334,8 @@ export default defineGkdApp({
       rules: [
         {
           anyMatches: [
-            '([text="分享招财号文章"] +n * > [text="去分享"])',
-            '([text="分享指定文章"] +n [text="去分享"])',
+            '[text="分享招财号文章"] +n * > [text="去分享"]',
+            '[text="分享指定文章"] +n [text="去分享"]',
           ],
           action: 'clickCenter',
           matchDelay: 1000,
@@ -393,10 +393,10 @@ export default defineGkdApp({
           activityIds:
             'cmb.pb.app.h5container.webviewcontainer.PBWebContainerActivity',
           anyMatches: [
-            '(View > View > View > @Button[clickable=true][visibleToUser=true] + TextView[text*="恭喜"] +n TextView[text="返回"])',
-            '(View > View > View > @Button[clickable=true][visibleToUser=true] + TextView[text^="恭喜"] +n TextView[text="立即查看"])',
-            '(@Button + [text*="恭喜"] +n [text="返回"])',
-            '(@Button + [text^="恭喜"] +n [text="立即查看"])',
+            'View > View > View > @Button[clickable=true][visibleToUser=true] + TextView[text*="恭喜"] +n TextView[text="返回"]',
+            'View > View > View > @Button[clickable=true][visibleToUser=true] + TextView[text^="恭喜"] +n TextView[text="立即查看"]',
+            '@Button + [text*="恭喜"] +n [text="返回"]',
+            '@Button + [text^="恭喜"] +n [text="立即查看"]',
           ],
         },
       ],
@@ -415,8 +415,8 @@ export default defineGkdApp({
             'cmb.pb.app.h5container.webviewcontainer.PBWebContainerActivity',
           anyMatches: [
             'WebView > View > View > TextView[text="待提现红包"] + Button[text="一键提现"][clickable=true][visibleToUser=true]',
-            '([text="确认提现到账户"])',
-            '([text="待提现红包"] + [text="一键提现"])',
+            '[text="确认提现到账户"]',
+            '[text="待提现红包"] + [text="一键提现"]',
           ],
         },
       ],
@@ -451,8 +451,8 @@ export default defineGkdApp({
           activityIds:
             'cmb.pb.app.h5container.webviewcontainer.PBWebContainerActivity',
           anyMatches: [
-            '(WebView[text="定投详情"] > View > View > Button[clickable=true][visibleToUser=true][text="管理"])',
-            '(Button[text="管理"])',
+            'WebView[text="定投详情"] > View > View > Button[clickable=true][visibleToUser=true][text="管理"]',
+            'Button[text="管理"]',
           ],
         },
       ],
@@ -482,8 +482,8 @@ export default defineGkdApp({
       rules: [
         {
           anyMatches: [
-            '([text="确定不再关注？"] < * + [text="取消"] + [text="确定"])',
-            '([text="确定终止该定投计划吗？"] +n * > [text="确定"])',
+            '[text="确定不再关注？"] < * + [text="取消"] + [text="确定"]',
+            '[text="确定终止该定投计划吗？"] +n * > [text="确定"]',
           ],
           resetMatch: 'match',
           activityIds:
@@ -563,8 +563,8 @@ export default defineGkdApp({
           activityIds:
             'cmb.pb.app.h5container.webviewcontainer.PBWebContainerActivity',
           anyMatches: [
-            '(Dialog > @Button[clickable=true][visibleToUser=true][text="确认继续定投"] - TextView - View > View[text="超风险及高风险产品定投确认"])',
-            '([text$="定投确认"] < * +n [text="确认继续定投"])',
+            'Dialog > @Button[clickable=true][visibleToUser=true][text="确认继续定投"] - TextView - View > View[text="超风险及高风险产品定投确认"]',
+            '[text$="定投确认"] < * +n [text="确认继续定投"]',
           ],
         },
       ],
@@ -581,7 +581,7 @@ export default defineGkdApp({
             'cmb.pb.app.h5container.webviewcontainer.PBWebContainerActivity',
           anyMatches: [
             '[text="请阅读并确认以下文件"] < View +n View > Button[text="已阅读并确认"][clickable=true][visibleToUser=true]',
-            '([text="请阅读并确认以下文件"] < * +n * > [text="已阅读并确认"])',
+            '[text="请阅读并确认以下文件"] < * +n * > [text="已阅读并确认"]',
           ],
         },
       ],
@@ -597,8 +597,8 @@ export default defineGkdApp({
           actionMaximum: 1,
           resetMatch: 'match',
           anyMatches: [
-            '(@*[clickable=true][checked=false] + [text="全选"])',
-            '(@*[clickable=false][checked=false] + [text="全选"])',
+            '@*[clickable=true][checked=false] + [text="全选"]',
+            '@*[clickable=false][checked=false] + [text="全选"]',
           ],
         },
       ],
@@ -656,9 +656,9 @@ export default defineGkdApp({
       rules: [
         {
           anyMatches: [
-            '([text$="秒后关闭"] +n @TextView + [text="广告"])',
-            '([vid="alertTitle"] +n * > [vid="buttonNegative"][text="拒绝"])',
-            '([text="1762179375715243693"] + Image)',
+            '[text$="秒后关闭"] +n @TextView + [text="广告"]',
+            '[vid="alertTitle"] +n * > [vid="buttonNegative"][text="拒绝"]',
+            '[text="1762179375715243693"] + Image',
           ],
           resetMatch: 'match',
           activityIds:

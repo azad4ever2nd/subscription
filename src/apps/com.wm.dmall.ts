@@ -14,8 +14,8 @@ export default defineGkdApp({
           fastQuery: true,
           activityIds: 'com.wm.dmall.MainActivity',
           anyMatches: [
-            '([vid="advert_image"] + [vid="advert_close"][desc="多点"])',
-            '([vid="notification_close"])',
+            '[vid="advert_image"] + [vid="advert_close"][desc="多点"]',
+            '[vid="notification_close"]',
           ],
         },
       ],
@@ -30,8 +30,8 @@ export default defineGkdApp({
           fastQuery: true,
           activityIds: 'com.wm.dmall.MainActivity',
           anyMatches: [
-            '(TextView[vid="update_title"] <n RelativeLayout < RelativeLayout + ImageView[vid="close_btn"][clickable=true][visibleToUser=true])',
-            '([vid="update_title"] <<n * + [vid="close_btn"])',
+            'TextView[vid="update_title"] <n RelativeLayout < RelativeLayout + ImageView[vid="close_btn"][clickable=true][visibleToUser=true]',
+            '[vid="update_title"] <<n * + [vid="close_btn"]',
           ],
         },
       ],

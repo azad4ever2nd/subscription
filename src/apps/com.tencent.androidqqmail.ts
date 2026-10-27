@@ -30,8 +30,8 @@ export default defineGkdApp({
             'com.tencent.qqmail.activity.readmail.ReadMailActivity',
           ],
           anyMatches: [
-            '([text="彻底删除​"] +n * [text="取消"] + [text="确定删除"])',
-            '([text="彻底删除​"] +n * > [text="确定删除"])',
+            '[text="彻底删除​"] +n * [text="取消"] + [text="确定删除"]',
+            '[text="彻底删除​"] +n * > [text="确定删除"]',
           ],
         },
       ],

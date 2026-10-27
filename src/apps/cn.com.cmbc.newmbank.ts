@@ -55,8 +55,8 @@ export default defineGkdApp({
       rules: [
         {
           anyMatches: [
-            '([text="4Sf0Hfm7X8Ar14i2VC1FrsAAAAASUVORK5CYII="] <<n * + * > [text="wG3E8rLbFftjgAAAABJRU5ErkJggg=="])',
-            '([vid="tv_countdown_over"][text*="任务完成"])',
+            '[text="4Sf0Hfm7X8Ar14i2VC1FrsAAAAASUVORK5CYII="] <<n * + * > [text="wG3E8rLbFftjgAAAABJRU5ErkJggg=="]',
+            '[vid="tv_countdown_over"][text*="任务完成"]',
           ],
           activityIds: ['cn.com.cmbc.newmbank.activity.WebViewActivity'],
         },

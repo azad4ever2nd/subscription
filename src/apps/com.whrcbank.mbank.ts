@@ -15,8 +15,11 @@ export default defineGkdApp({
           action: 'clickCenter',
           activityIds:
             'com.yitong.mobile.biz.launcher.secondapp.activity.SecondMainActivity',
-          matches:
-            '(LinearLayout[vid="dialog_iostitleokcanccle_top_lin"] > LinearLayout > Button[text="取消"] + Button[text="确定"][clickable=true][visibleToUser=true]) || (FrameLayout > RelativeLayout > LinearLayout[vid="page_indicator"] + ImageView[vid="close_image"][clickable=true][visibleToUser=true]) || ( (FrameLayout > RelativeLayout > LinearLayout[vid="ll_pics"] + ImageView[vid="close_image"][clickable=true][visibleToUser=true]))',
+          anyMatches: [
+            'LinearLayout[vid="dialog_iostitleokcanccle_top_lin"] > LinearLayout > Button[text="取消"] + Button[text="确定"][clickable=true][visibleToUser=true]',
+            'FrameLayout > RelativeLayout > LinearLayout[vid="page_indicator"] + ImageView[vid="close_image"][clickable=true][visibleToUser=true]',
+            'FrameLayout > RelativeLayout > LinearLayout[vid="ll_pics"] + ImageView[vid="close_image"][clickable=true][visibleToUser=true]',
+          ],
         },
       ],
     },

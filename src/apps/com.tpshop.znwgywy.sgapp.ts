@@ -26,8 +26,8 @@ export default defineGkdApp({
           fastQuery: true,
           activityIds: 'tool.seagull.v.ui.MainActivity',
           anyMatches: [
-            '([text^="请关闭 获取运动方向权限 和 快应用权限" || text*="付费订阅"] <<n * + * [id="android:id/button1"][text="确定"])',
-            '(ScrollView > LinearLayout > Button[text="确定"][id="android:id/button1"][clickable=true][visibleToUser=true])',
+            '[text^="请关闭 获取运动方向权限 和 快应用权限" || text*="付费订阅"] <<n * + * [id="android:id/button1"][text="确定"]',
+            'ScrollView > LinearLayout > Button[text="确定"][id="android:id/button1"][clickable=true][visibleToUser=true]',
           ],
         },
       ],
@@ -418,9 +418,9 @@ export default defineGkdApp({
           resetMatch: 'match',
           activityIds: 'com.windmill.sdk.widget.InterstitialView_4012003',
           anyMatches: [
-            '(@*[clickable=true] > [vid="tobid_interstitial_skip_text"][text="关闭"])',
-            '(@[vid="tobid_interstitial_skip_ll"][clickable=true] > [text="关闭"])',
-            '(@*[clickable=true] > [text="关闭"])',
+            '@*[clickable=true] > [vid="tobid_interstitial_skip_text"][text="关闭"]',
+            '@[vid="tobid_interstitial_skip_ll"][clickable=true] > [text="关闭"]',
+            '@*[clickable=true] > [text="关闭"]',
           ],
         },
       ],

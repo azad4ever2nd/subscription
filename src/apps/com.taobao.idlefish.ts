@@ -64,8 +64,8 @@ export default defineGkdApp({
           activityIds:
             'com.idlefish.flutterbridge.flutterboost.boost.FishFlutterBoostTransparencyActivity',
           anyMatches: [
-            '(View[desc^="开启系统通知"] > ImageView[clickable=true][index=0])',
-            '(View > View > @ImageView[clickable=false][visibleToUser=true] + View[desc="添加闲鱼关注桌面小组件"])',
+            'View[desc^="开启系统通知"] > ImageView[clickable=true][index=0]',
+            'View > View > @ImageView[clickable=false][visibleToUser=true] + View[desc="添加闲鱼关注桌面小组件"]',
           ],
         },
       ],
@@ -154,7 +154,7 @@ export default defineGkdApp({
       desc: '260101,([text="闲鱼社区小额免密 推荐你"] <2 * +2 * > [text="关闭"]) || ',
       rules: [
         {
-          matches: ['([text^="闲鱼社区小额免密"] <<n * +n * > [text="关闭"])'],
+          matches: ['[text^="闲鱼社区小额免密"] <<n * +n * > [text="关闭"]'],
           fastQuery: true,
           resetMatch: 'match',
           activityIds: ['com.alipay.android.msp.ui.views.MspContainerActivity'],

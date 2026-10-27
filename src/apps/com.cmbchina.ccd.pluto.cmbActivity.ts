@@ -14,9 +14,9 @@ export default defineGkdApp({
           fastQuery: true,
           activityIds: 'com.cmbchina.ccd.pluto.cmbActivity.CMBRootActivityV2',
           anyMatches: [
-            '([vid="tv_ad_label" || vid="img_cf_view_close"] + [vid="img_cf_view_close"])',
-            '([vid="tv_title"] <<n * + [vid="iv_close"])',
-            '([vid="img_cf_view_close"])',
+            '[vid="tv_ad_label" || vid="img_cf_view_close"] + [vid="img_cf_view_close"]',
+            '[vid="tv_title"] <<n * + [vid="iv_close"]',
+            '[vid="img_cf_view_close"]',
           ],
         },
       ],
@@ -31,7 +31,7 @@ export default defineGkdApp({
           fastQuery: true,
           activityIds: 'com.cmbchina.ccd.pluto.cmbActivity.CMBRootActivityV2',
           matches:
-            '([vid="tv_title"][text="发现新版本"] <<n * + * [vid="bt_cancel_tips"][text="暂不更新"])',
+            '[vid="tv_title"][text="发现新版本"] <<n * + * [vid="bt_cancel_tips"][text="暂不更新"]',
         },
       ],
     },

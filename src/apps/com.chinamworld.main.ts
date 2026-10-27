@@ -44,7 +44,7 @@ export default defineGkdApp({
           actionCd: 10,
           activityIds: 'com.ccb.framework.ui.widget.webview.CcbWebViewActivity',
           anyMatches: [
-            '(WebView[text*="建行社保卡" || text*="社保卡福利日"] > View > View > View > CheckBox[checked=true] +2 CheckBox[checked=true] +2 Image[text="loginBtn.f302f730"][visibleToUser=true])',
+            'WebView[text*="建行社保卡" || text*="社保卡福利日"] > View > View > View > CheckBox[checked=true] +2 CheckBox[checked=true] +2 Image[text="loginBtn.f302f730"][visibleToUser=true]',
             'View > View > CheckBox[checked=true][visibleToUser=true] +n CheckBox[checked=true][visibleToUser=true] +n Image[text="loginBtn.f302f730"][visibleToUser=true]',
           ],
         },
@@ -105,8 +105,14 @@ export default defineGkdApp({
         {
           actionCd: 0,
           resetMatch: 'match',
-          matches:
-            '([text="立即使用"] -n [text="获得 1 龙积分" || text$="龙积分"] <<n * + * > [text="JkaCmWVQ500S2oPJIJv3pK4lAM8omfwAibAgp2L0QtsAAAAASUVORK5CYII="]) || (@[text="确定"] -3 * > [text="AU8HaNGNFfbEAAAAAElFTkSuQmCC"]) || (@[text="关闭 按钮"] +n [text="立即使用"]) || (Image[text="AU8HaNGNFfbEAAAAAElFTkSuQmCC"] <<n * Image[text="关闭 按钮"]) || ([text^="获得" && text$="龙积分"] <<n * + [text="关闭 按钮"]) || (View > TextView[text="请勿重复签到"] + TextView[text="知道了"] + Image[text="关闭 按钮"])',
+          anyMatches: [
+            '[text="立即使用"] -n [text="获得 1 龙积分" || text$="龙积分"] <<n * + * > [text="JkaCmWVQ500S2oPJIJv3pK4lAM8omfwAibAgp2L0QtsAAAAASUVORK5CYII="]',
+            '@[text="确定"] -3 * > [text="AU8HaNGNFfbEAAAAAElFTkSuQmCC"]',
+            '@[text="关闭 按钮"] +n [text="立即使用"]',
+            'Image[text="AU8HaNGNFfbEAAAAAElFTkSuQmCC"] <<n * Image[text="关闭 按钮"]',
+            '[text^="获得" && text$="龙积分"] <<n * + [text="关闭 按钮"]',
+            'View > TextView[text="请勿重复签到"] + TextView[text="知道了"] + Image[text="关闭 按钮"]',
+          ],
           activityIds:
             'com.nantian.iBank.ui.activity.container.ProgramSingleWindowActivity',
         },
@@ -124,10 +130,10 @@ export default defineGkdApp({
           activityIds:
             'com.nantian.iBank.ui.activity.container.ProgramSingleWindowActivity',
           anyMatches: [
-            '([text="签到有礼楼层"] +n @View[clickable=false][childCount=1] + [text="今天"])',
-            '([text="签到有礼楼层"] +n @View[clickable=true][childCount=1] + [text="今天"])',
-            '(TextView[text^="+" && text$="0"] < @View[childCount=1] + TextView[text="今天"])',
-            '(@View[childCount=1] + TextView[text="今天"])',
+            '[text="签到有礼楼层"] +n @View[clickable=false][childCount=1] + [text="今天"]',
+            '[text="签到有礼楼层"] +n @View[clickable=true][childCount=1] + [text="今天"]',
+            'TextView[text^="+" && text$="0"] < @View[childCount=1] + TextView[text="今天"]',
+            '@View[childCount=1] + TextView[text="今天"]',
           ],
         },
       ],
@@ -154,8 +160,8 @@ export default defineGkdApp({
       rules: [
         {
           anyMatches: [
-            '([text="活动火爆，请稍候再试！"] + [text="知道了"] + [text="关闭 按钮"])',
-            '([id="app"] > [text="我的礼包 按钮"] + [id="scroll"][childCount=1] [index=1])',
+            '[text="活动火爆，请稍候再试！"] + [text="知道了"] + [text="关闭 按钮"]',
+            '[id="app"] > [text="我的礼包 按钮"] + [id="scroll"][childCount=1] [index=1]',
           ],
           resetMatch: 'match',
           activityIds:
@@ -238,8 +244,8 @@ export default defineGkdApp({
           activityIds:
             'com.nantian.iBank.ui.activity.container.ProgramSingleWindowActivity',
           anyMatches: [
-            '(@TextView[clickable=false][visibleToUser=true][text="复制并粘贴"] - TextView[text^="本人已阅读风险揭示"] < View + View > EditText[text.length=0])',
-            '(@TextView[text="复制并粘贴"][clickable=false][visibleToUser=true] <n View + View > EditText[text.length=0])',
+            '@TextView[clickable=false][visibleToUser=true][text="复制并粘贴"] - TextView[text^="本人已阅读风险揭示"] < View + View > EditText[text.length=0]',
+            '@TextView[text="复制并粘贴"][clickable=false][visibleToUser=true] <n View + View > EditText[text.length=0]',
           ],
         },
       ],

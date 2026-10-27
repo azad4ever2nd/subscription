@@ -26,8 +26,8 @@ export default defineGkdApp({
       rules: [
         {
           anyMatches: [
-            '([vid="0_resource_name_obfuscated"] > [vid="0_resource_name_obfuscated"])',
-            '([vid="mDescTextView"] <<n * +n [vid="mNegativeImageView"])',
+            '[vid="0_resource_name_obfuscated"] > [vid="0_resource_name_obfuscated"]',
+            '[vid="mDescTextView"] <<n * +n [vid="mNegativeImageView"]',
           ],
           resetMatch: 'match',
           activityIds: [
@@ -58,8 +58,8 @@ export default defineGkdApp({
       rules: [
         {
           anyMatches: [
-            '([vid="0_resource_name_obfuscated"][text="开启"] + [vid="0_resource_name_obfuscated"])',
-            '([vid="notificationContentView"] + * > [vid="hintImageView"])',
+            '[vid="0_resource_name_obfuscated"][text="开启"] + [vid="0_resource_name_obfuscated"]',
+            '[vid="notificationContentView"] + * > [vid="hintImageView"]',
           ],
           resetMatch: 'match',
           activityIds: ['com.xingin.xhs.index.v2.IndexActivityV2'],
@@ -73,8 +73,8 @@ export default defineGkdApp({
       rules: [
         {
           anyMatches: [
-            '([vid="guideSnackBar"] [vid="closeButton"])',
-            '([vid="guide"] [vid="close"])',
+            '[vid="guideSnackBar"] [vid="closeButton"]',
+            '[vid="guide"] [vid="close"]',
           ],
           fastQuery: true,
           resetMatch: 'match',

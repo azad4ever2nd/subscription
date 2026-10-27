@@ -46,10 +46,10 @@ export default defineGkdApp({
           matchTime: 3000,
           forcedTime: 3000,
           excludeMatches:
-            '(ViewGroup[vid="id_magex_mist_view"] > ViewGroup > ImageView[clickable=true][visibleToUser=true] + TextView[text.length=11])',
+            'ViewGroup[vid="id_magex_mist_view"] > ViewGroup > ImageView[clickable=true][visibleToUser=true] + TextView[text.length=11]',
           anyMatches: [
-            '(ViewGroup[vid="id_magex_mist_view"] > ViewGroup > ViewGroup > ImageView[clickable=true][visibleToUser=true])',
-            '(ViewGroup[vid="id_magex_mist_view"] > ViewGroup > ImageView[clickable=true][visibleToUser=true])',
+            'ViewGroup[vid="id_magex_mist_view"] > ViewGroup > ViewGroup > ImageView[clickable=true][visibleToUser=true]',
+            'ViewGroup[vid="id_magex_mist_view"] > ViewGroup > ImageView[clickable=true][visibleToUser=true]',
           ],
         },
       ],
@@ -109,9 +109,9 @@ export default defineGkdApp({
           resetMatch: 'match',
           activityIds: 'me.ele.component.webcontainer.view.AppUCWebActivity',
           anyMatches: [
-            '(View > @View[clickable=true][visibleToUser=true] > TextView[text="任务完成"] + TextView[text="返回领奖"])',
-            '(@View[clickable=true][visibleToUser=true] > Image + TextView + TextView[text="任务完成"] + TextView[text="返回领奖"])',
-            '(@View[clickable=true] > TextView[text="任务完成"] + TextView[text*="领奖"])',
+            'View > @View[clickable=true][visibleToUser=true] > TextView[text="任务完成"] + TextView[text="返回领奖"]',
+            '@View[clickable=true][visibleToUser=true] > Image + TextView + TextView[text="任务完成"] + TextView[text="返回领奖"]',
+            '@View[clickable=true] > TextView[text="任务完成"] + TextView[text*="领奖"]',
           ],
         },
       ],
@@ -127,8 +127,8 @@ export default defineGkdApp({
           actionMaximum: 2,
           activityIds: 'me.ele.component.webcontainer.view.AppUCWebActivity',
           anyMatches: [
-            '(TextView[text="¥"] - TextView[text="0.1"] < View +n View > TextView[clickable=true][visibleToUser=true][text^="立即配送"])',
-            '(TextView[text="0.1"] - TextView[text="¥"] < View +n View > TextView[clickable=true][visibleToUser=true][text^="立即配送"])',
+            'TextView[text="¥"] - TextView[text="0.1"] < View +n View > TextView[clickable=true][visibleToUser=true][text^="立即配送"]',
+            'TextView[text="0.1"] - TextView[text="¥"] < View +n View > TextView[clickable=true][visibleToUser=true][text^="立即配送"]',
           ],
         },
       ],
@@ -176,8 +176,8 @@ export default defineGkdApp({
           matchTime: 2000,
           forcedTime: 2000,
           anyMatches: [
-            '(ViewGroup[vid="id_magex_mist_view"] > ViewGroup > ViewGroup > ImageView[clickable=true][visibleToUser=true])',
-            '(ViewGroup[vid="id_magex_mist_view"] > ViewGroup > ImageView[clickable=true][visibleToUser=true])',
+            'ViewGroup[vid="id_magex_mist_view"] > ViewGroup > ViewGroup > ImageView[clickable=true][visibleToUser=true]',
+            'ViewGroup[vid="id_magex_mist_view"] > ViewGroup > ImageView[clickable=true][visibleToUser=true]',
           ],
         },
       ],

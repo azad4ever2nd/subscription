@@ -53,7 +53,7 @@ export default defineGkdApp({
       rules: [
         {
           matches: [
-            '([vid="alertTitle"][text="删除下载"] <<n * +n * > [id="android:id/button1"][text="删除"])',
+            '[vid="alertTitle"][text="删除下载"] <<n * +n * > [id="android:id/button1"][text="删除"]',
           ],
           fastQuery: true,
           resetMatch: 'match',

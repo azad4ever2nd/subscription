@@ -10,9 +10,9 @@ export default defineGkdApp({
       rules: [
         {
           anyMatches: [
-            '(@View > View + View > [text="今日签到" || text="门票订购"])',
-            '([text="今日签到"] <<n *[depth=19] + * > *[index=1])',
-            '(@* > * + * > [text="今日签到" || text="门票订购"])',
+            '@View > View + View > [text="今日签到" || text="门票订购"]',
+            '[text="今日签到"] <<n *[depth=19] + * > *[index=1]',
+            '@* > * + * > [text="今日签到" || text="门票订购"]',
           ],
           actionCd: 0,
           actionMaximum: 2,
@@ -24,7 +24,7 @@ export default defineGkdApp({
     {
       key: 2,
       name: '签到成功',
-      desc: '261020，第一K40，第二nova7，两台手机而成不同，改布局，漏签，动态，只能通过关键信息 (@*[clickable=true][visibleToUser=true] + [text^="已连签" && text$="累计获得"] +n [text="里程"]) || (@*[clickable=true][visibleToUser=true] + [text="连签"] +2 [text="日可领"] +2 [text="里程"]) || ',
+      desc: '261020，第一K40，第二nova7，两台手机而成不同，改布局，漏签，动态，只能通过关键信息',
       rules: [
         {
           actionMaximum: 3,
@@ -100,8 +100,8 @@ export default defineGkdApp({
           ],
           anyMatches: [
             'View > View > Image[text="O1CN01TD5wn71Ptmtb9GAxE_!!6000000001899-2-tps-60-60"][visibleToUser=true]',
-            '([text^="O1CN01TD5wn71Ptmtb9GAxE_!!6000000001899-2-tps-60-60"])',
-            '([text^="O1CN01EmIdr51vV7c1P87T9_!!6000000006177-2-tps-750-178"])',
+            '[text^="O1CN01TD5wn71Ptmtb9GAxE_!!6000000001899-2-tps-60-60"]',
+            '[text^="O1CN01EmIdr51vV7c1P87T9_!!6000000006177-2-tps-750-178"]',
           ],
         },
       ],

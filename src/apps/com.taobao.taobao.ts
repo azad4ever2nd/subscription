@@ -24,9 +24,9 @@ export default defineGkdApp({
         {
           resetMatch: 'app',
           anyMatches: [
-            '(@[text="O1CN01eVP9R729P4urD3Wq4_!!6000000008059-2-tps-112-112"] +n [text="去开启"])',
-            '([vid="poplayer_native_state_id"] + [desc="关闭按钮"])',
-            '([desc="关闭浮条"] - * > * +2 *)',
+            '@[text="O1CN01eVP9R729P4urD3Wq4_!!6000000008059-2-tps-112-112"] +n [text="去开启"]',
+            '[vid="poplayer_native_state_id"] + [desc="关闭按钮"]',
+            '[desc="关闭浮条"] - * > * +2 *',
           ],
           activityIds: [
             'com.taobao.tao.welcome.Welcome',
@@ -43,8 +43,10 @@ export default defineGkdApp({
         {
           actionMaximum: 2,
           resetMatch: 'app',
-          matches:
-            '([desc="领淘金币"] > [desc="领淘金币"]) || (Dialog [text="关闭"])',
+          anyMatches: [
+            '[desc="领淘金币"] > [desc="领淘金币"]',
+            'Dialog [text="关闭"]',
+          ],
           activityIds: 'com.taobao.tao.welcome.Welcome',
         },
       ],
@@ -59,18 +61,18 @@ export default defineGkdApp({
             'View > View > Image[text="关闭"][clickable=true][visibleToUser=true]',
             'FrameLayout > FrameLayout > FrameLayout > View[desc="确认删除聊天吗？"] +n View[desc="删除"][clickable=true][visibleToUser=true]',
             'View > View > View > @Image[text="O1CN01eVP9R729P4urD3Wq4_!!6000000008059-2-tps-112-112"][clickable=true][visibleToUser=true] + TextView[text*="消息通知"] +n TextView[text="去开启"]',
-            '([text="去赚元宝"] <<n * + View > [text^="O1CN01UVlufl1CzCsp8oehQ_!!6000000000151-2-gg_dtc.png_q50"])',
-            '(@[text="O1CN01zH3VkM1KrtQhLlTqz_!!6000000001218-2-tps-56-56.png_q50.jpg_"] + [text="做任务赚元宝"] + * >n [text="点击领元宝(1/1)"])',
-            '(@[text^="O1CN01JfbGY21lIcW06JOti_!!6000000004796-2-tps-64-64"] - * > [text="我知道了"])',
-            '([text*="立即领"] - [text="O1CN019BmmLi1GZKvUisx8l_!!6000000000636-2-tps-393-223.png_q50.jpg_"] - [text*="元宝"] <n * + [text="关闭"])',
-            '([id="SINGLE_ITEM_CASH_BACK_MAIN_ID" || id="MAJOR_HONGBAO_SEND_MODAL_MAIN"] + [text="关闭"])',
-            '([id="SIGN_IN_AREA_ID"] [text="立即签到"])',
-            '([id="SIGN_IN_AREA_ID"] > [text="继续领钱"] + * >n [text="点击领取"])',
-            '([text="继续领钱"] < * + * >n [text="点击领取"])',
-            '([text="点击领元宝(0/1)"] +n [text="领取"])',
-            '(Image < * + * >n [text^="添加"] +n * > [text$="元宝" && text^="立即领"])',
-            '(@Image < * + * >n [text="去领元宝" || text="浏览商品30秒"])',
-            '(Dialog >n [text="关闭"])',
+            '[text="去赚元宝"] <<n * + View > [text^="O1CN01UVlufl1CzCsp8oehQ_!!6000000000151-2-gg_dtc.png_q50"]',
+            '@[text="O1CN01zH3VkM1KrtQhLlTqz_!!6000000001218-2-tps-56-56.png_q50.jpg_"] + [text="做任务赚元宝"] + * >n [text="点击领元宝(1/1)"]',
+            '@[text^="O1CN01JfbGY21lIcW06JOti_!!6000000004796-2-tps-64-64"] - * > [text="我知道了"]',
+            '[text*="立即领"] - [text="O1CN019BmmLi1GZKvUisx8l_!!6000000000636-2-tps-393-223.png_q50.jpg_"] - [text*="元宝"] <n * + [text="关闭"]',
+            '[id="SINGLE_ITEM_CASH_BACK_MAIN_ID" || id="MAJOR_HONGBAO_SEND_MODAL_MAIN"] + [text="关闭"]',
+            '[id="SIGN_IN_AREA_ID"] [text="立即签到"]',
+            '[id="SIGN_IN_AREA_ID"] > [text="继续领钱"] + * >n [text="点击领取"]',
+            '[text="继续领钱"] < * + * >n [text="点击领取"]',
+            '[text="点击领元宝(0/1)"] +n [text="领取"]',
+            'Image < * + * >n [text^="添加"] +n * > [text$="元宝" && text^="立即领"]',
+            '@Image < * + * >n [text="去领元宝" || text="浏览商品30秒"]',
+            'Dialog >n [text="关闭"]',
             'View > View > @TextView[clickable=true][visibleToUser=true] - View >n TextView[text="立即使用"]',
           ],
           resetMatch: 'match',
@@ -119,8 +121,8 @@ export default defineGkdApp({
       rules: [
         {
           anyMatches: [
-            '([vid="update_contentDialog_v2"] > [vid="update_imageview_cancel_v2"])',
-            '([id="receivedAward"] > * + *)',
+            '[vid="update_contentDialog_v2"] > [vid="update_imageview_cancel_v2"]',
+            '[id="receivedAward"] > * + *',
           ],
 
           resetMatch: 'match',
@@ -185,9 +187,9 @@ export default defineGkdApp({
           activityIds: 'com.alipay.android.msp.ui.views.MspContainerActivity',
           anyMatches: [
             'TextView[text="放弃"] < @FrameLayout[clickable=true][visibleToUser=true] + FrameLayout[clickable=true][visibleToUser=true] > TextView[text="继续付款"]',
-            '(@* > [text="关闭"] <<n * +n * [text="同意协议并开通"])',
-            '(@[text="关闭"] <<n * +n * [text="同意协议并开通"])',
-            '([text="淘宝 推荐你"] <<n * +n @* > [text="关闭"])',
+            '@* > [text="关闭"] <<n * +n * [text="同意协议并开通"]',
+            '@[text="关闭"] <<n * +n * [text="同意协议并开通"]',
+            '[text="淘宝 推荐你"] <<n * +n @* > [text="关闭"]',
           ],
         },
       ],

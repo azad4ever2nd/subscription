@@ -92,8 +92,8 @@ export default defineGkdApp({
           fastQuery: true,
           activityIds: 'com.mpaas.mriver.integration.MriverActivityBase$Main',
           anyMatches: [
-            '(FrameLayout[vid="dialogMxView"] > RelativeLayout > LinearLayout > ImageView[vid="ivLandscapeClose"])',
-            '(* + [vid="ivVerticalClose"])',
+            'FrameLayout[vid="dialogMxView"] > RelativeLayout > LinearLayout > ImageView[vid="ivLandscapeClose"]',
+            '* + [vid="ivVerticalClose"]',
           ],
         },
       ],
@@ -108,9 +108,9 @@ export default defineGkdApp({
           actionMaximum: 1,
           activityIds: 'com.mpaas.mriver.integration.MriverActivityBase$Main',
           anyMatches: [
-            '(WebView > WebView > View > View > TextView[text$="绿色能量"] +2 TextView[text="立即领取"][clickable=false][visibleToUser=true])',
-            '(TextView[text="绿色能量"] <n View < View <n View + View > TextView[clickable=true][visibleToUser=true][text="立即领取"])',
-            '([text="可在能量商城兑换好礼"] + [text="立即领取"])',
+            'WebView > WebView > View > View > TextView[text$="绿色能量"] +2 TextView[text="立即领取"][clickable=false][visibleToUser=true]',
+            'TextView[text="绿色能量"] <n View < View <n View + View > TextView[clickable=true][visibleToUser=true][text="立即领取"]',
+            '[text="可在能量商城兑换好礼"] + [text="立即领取"]',
           ],
         },
       ],

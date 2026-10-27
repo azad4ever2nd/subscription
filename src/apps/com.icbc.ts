@@ -14,8 +14,8 @@ export default defineGkdApp({
           resetMatch: 'app',
           activityIds: ['com.icbc.activity.main.MainActivity'],
           anyMatches: [
-            '([vid="dialog"] + [vid="img_close"][desc="关闭"])',
-            '([vid="close_iv"])',
+            '[vid="dialog"] + [vid="img_close"][desc="关闭"]',
+            '[vid="close_iv"]',
           ],
         },
       ],
@@ -27,8 +27,8 @@ export default defineGkdApp({
       rules: [
         {
           anyMatches: [
-            '([text="工享湖北消费季"] +n [text="领取"])',
-            '([text="工享湖北消费季"] +n * >n [text="领取"])',
+            '[text="工享湖北消费季"] +n [text="领取"]',
+            '[text="工享湖北消费季"] +n * >n [text="领取"]',
           ],
           actionCd: 0,
           resetMatch: 'match',
@@ -48,9 +48,9 @@ export default defineGkdApp({
           action: 'clickCenter',
           activityIds: 'com.icbc.activity.web.ICBCWebView',
           anyMatches: [
-            '(View > TextView[text*="优惠券"] +n Button[clickable=true][visibleToUser=true][text="立即领取"])',
-            '([text="详情"] + * + [text$="元优惠券"] + Button[text*="立即领取"])',
-            '([id="app"] > [id="viewWrapper"] >n [text=" 立即领取"])',
+            'View > TextView[text*="优惠券"] +n Button[clickable=true][visibleToUser=true][text="立即领取"]',
+            '[text="详情"] + * + [text$="元优惠券"] + Button[text*="立即领取"]',
+            '[id="app"] > [id="viewWrapper"] >n [text=" 立即领取"]',
           ],
         },
       ],
@@ -66,9 +66,9 @@ export default defineGkdApp({
           action: 'clickCenter',
           activityIds: 'com.icbc.activity.web.ICBCWebView',
           anyMatches: [
-            '(View > TextView[text*="最大参与次数" || text*="活动太火爆" || text$="请稍后再试"] + Button[clickable=true][visibleToUser=true][text="我知道了"])',
-            '([text*="活动太火爆，请稍后再试"] + [text="我知道了"])',
-            '([text="刷新重试"])',
+            'View > TextView[text*="最大参与次数" || text*="活动太火爆" || text$="请稍后再试"] + Button[clickable=true][visibleToUser=true][text="我知道了"]',
+            '[text*="活动太火爆，请稍后再试"] + [text="我知道了"]',
+            '[text="刷新重试"]',
           ],
         },
       ],
@@ -84,10 +84,10 @@ export default defineGkdApp({
           actionMaximum: 3,
           activityIds: 'com.icbc.activity.web.ICBCWebView',
           anyMatches: [
-            '(WebView > View > TextView[text="商品已抢完"] + Button[clickable=true][visibleToUser=true][text="我知道了"])',
-            '([text="商品已抢完"] + [text="我知道了"])',
-            '([text="商品已领完"])',
-            '([text="已领完"])',
+            'WebView > View > TextView[text="商品已抢完"] + Button[clickable=true][visibleToUser=true][text="我知道了"]',
+            '[text="商品已抢完"] + [text="我知道了"]',
+            '[text="商品已领完"]',
+            '[text="已领完"]',
           ],
         },
       ],
@@ -100,8 +100,8 @@ export default defineGkdApp({
         {
           resetMatch: 'match',
           anyMatches: [
-            '(@TextView[clickable=false][visibleToUser=true] <2 View < View + View > TextView[text="拆盲盒剩余次数：1次"])',
-            '(@*[parent.childCount=3] <<n * + * > [text="拆盲盒剩余次数：1次"])',
+            '@TextView[clickable=false][visibleToUser=true] <2 View < View + View > TextView[text="拆盲盒剩余次数：1次"]',
+            '@*[parent.childCount=3] <<n * + * > [text="拆盲盒剩余次数：1次"]',
           ],
           activityIds: 'com.icbc.activity.web.ICBCWebView',
         },
@@ -136,8 +136,8 @@ export default defineGkdApp({
         {
           action: 'back',
           anyMatches: [
-            '([text^="来的太晚啦"] + [text="知道了"])',
-            '(View > View > View > View > TextView[text="拆盲盒剩余次数：0次1"])',
+            '[text^="来的太晚啦"] + [text="知道了"]',
+            'View > View > View > View > TextView[text="拆盲盒剩余次数：0次1"]',
           ],
           resetMatch: 'match',
           activityIds: 'com.icbc.activity.web.ICBCWebView',
@@ -279,8 +279,8 @@ export default defineGkdApp({
           actionMaximum: 1,
           resetMatch: 'match',
           anyMatches: [
-            '((View > TextView[text^="前往微信再浇一次"] + Image))',
-            '([text^="前往微信再浇一次"] + Image)',
+            '(View > TextView[text^="前往微信再浇一次"] + Image)',
+            '[text^="前往微信再浇一次"] + Image',
           ],
           activityIds: [
             'com.icbc.activity.web.ICBCWebView',

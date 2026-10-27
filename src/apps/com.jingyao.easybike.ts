@@ -51,7 +51,7 @@ export default defineGkdApp({
           activityIds:
             'com.hellobike.flutter.platform.android.flutterboost.FlutterHostFragmentActivity',
           anyMatches: [
-            '(LinearLayout > FrameLayout[vid="creativeContainer"] + ImageView[vid="actionDialogClose"][clickable=true][visibleToUser=true])',
+            'LinearLayout > FrameLayout[vid="creativeContainer"] + ImageView[vid="actionDialogClose"][clickable=true][visibleToUser=true]',
             'View > View[desc*="管制公告"] +n View[desc="不接受"] + View[desc="接受"][clickable=true][visibleToUser=true]',
             'View > View[desc*="管制公告"] +n View[desc="我知道了"][clickable=true][visibleToUser=true]',
           ],
@@ -119,8 +119,8 @@ export default defineGkdApp({
           actionMaximum: 1,
           activityIds: 'com.hellobike.atlas.business.portal.PortalActivity',
           anyMatches: [
-            '(ViewGroup > ViewGroup > @ViewGroup[clickable=true] > ViewGroup > TextView[text="奖励金"])',
-            '(@ViewGroup[clickable=true] [text="奖励金"])',
+            'ViewGroup > ViewGroup > @ViewGroup[clickable=true] > ViewGroup > TextView[text="奖励金"]',
+            '@ViewGroup[clickable=true] [text="奖励金"]',
           ],
         },
       ],
@@ -136,8 +136,8 @@ export default defineGkdApp({
           actionCd: 300,
           activityIds: 'com.hellobike.atlas.business.portal.PortalActivity',
           anyMatches: [
-            '([vid="title_tv"][text="哈啰还不知道您在哪里"] +2 @[vid="sign_out_tv"][text="暂不开启"] + [vid="agreement_tv"][text="快速开启定位"])',
-            '(TextView[text="开启消息通知"] < FrameLayout +n FrameLayout > LinearLayout > Button[text="取消"][clickable=true][visibleToUser=true])',
+            '[vid="title_tv"][text="哈啰还不知道您在哪里"] +2 @[vid="sign_out_tv"][text="暂不开启"] + [vid="agreement_tv"][text="快速开启定位"]',
+            'TextView[text="开启消息通知"] < FrameLayout +n FrameLayout > LinearLayout > Button[text="取消"][clickable=true][visibleToUser=true]',
             'LinearLayout > LinearLayout[vid="hbDialogLayout"] + View[vid="indicatorView"] + ImageView[vid="actionDialogClose"][clickable=true][visibleToUser=true]',
           ],
         },
@@ -156,7 +156,7 @@ export default defineGkdApp({
           fastQuery: true,
           activityIds: 'com.hellobike.atlas.business.portal.PortalActivity',
           anyMatches: [
-            '(LinearLayout > FrameLayout[vid="creativeContainer"] + ImageView[vid="actionDialogClose"][clickable=true][visibleToUser=true])',
+            'LinearLayout > FrameLayout[vid="creativeContainer"] + ImageView[vid="actionDialogClose"][clickable=true][visibleToUser=true]',
           ],
         },
       ],
@@ -178,10 +178,10 @@ export default defineGkdApp({
             'com.hellobike.business.hitch.common.home.HLPHHomeActivity',
           ],
           anyMatches: [
-            '(TextView[text^="请打开定位服务"] < FrameLayout + FrameLayout[id="com.jingyao.easybike:id/bottomContainer"] > LinearLayout > Button[text="取消"][clickable=true][visibleToUser=true])',
+            'TextView[text^="请打开定位服务"] < FrameLayout + FrameLayout[id="com.jingyao.easybike:id/bottomContainer"] > LinearLayout > Button[text="取消"][clickable=true][visibleToUser=true]',
             'RelativeLayout > @ImageView[clickable=true][visibleToUser=true] + FrameLayout > TextView[text^="允许哈啰出行使用你的定位" || text$="定位服务"]',
             'RelativeLayout > TextView[text="开启消息通知"] + TextView[vid="ivClose"][clickable=true][visibleToUser=true][text.length=1]',
-            '([text^="请打开定位服务"] <<n * +n * [text="取消"][clickable=true][visibleToUser=true])',
+            '[text^="请打开定位服务"] <<n * +n * [text="取消"][clickable=true][visibleToUser=true]',
           ],
         },
       ],
@@ -271,8 +271,8 @@ export default defineGkdApp({
             'TextView[text="我的奖励金"] +n View >n View > TextView[text="知道了"][visibleToUser=true]',
           ],
           anyMatches: [
-            '(View > TextView[text="我的奖励金"] +n View > View >  @View[clickable=true][visibleToUser=true] > View[childCount=2] > TextView[text="今日签到"])',
-            '(View > TextView[text="我的奖励金"] +n View > View >  @View[clickable=true][visibleToUser=true] > View > TextView[text="今日签到"])',
+            'View > TextView[text="我的奖励金"] +n View > View >  @View[clickable=true][visibleToUser=true] > View[childCount=2] > TextView[text="今日签到"]',
+            'View > TextView[text="我的奖励金"] +n View > View >  @View[clickable=true][visibleToUser=true] > View > TextView[text="今日签到"]',
           ],
         },
       ],
@@ -353,9 +353,9 @@ export default defineGkdApp({
           resetMatch: 'match',
           activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
           anyMatches: [
-            '(View > View > TextView[text^="兑换" || text=" 单车1.5元券"] +2 @TextView[text="再想想"][clickable=true][visibleToUser=true] + TextView[text="确认兑换"])',
+            'View > View > TextView[text^="兑换" || text=" 单车1.5元券"] +2 @TextView[text="再想想"][clickable=true][visibleToUser=true] + TextView[text="确认兑换"]',
             'View > @TextView[text="再想想"][clickable=true][visibleToUser=true] + TextView[text="确认兑换"]',
-            '(@TextView[clickable=true] + [text="新人首单，兑免费骑车"])',
+            '@TextView[clickable=true] + [text="新人首单，兑免费骑车"]',
           ],
         },
       ],
@@ -363,7 +363,7 @@ export default defineGkdApp({
     {
       key: 21,
       name: '碳积分奖励',
-      desc: '251130，添加 开心收下 ([text="E1IR6_Z5_Group121582"] < * - [text$="碳积分"] < * + * > TextView) || ([text="10碳积分"] < * + * > *)',
+      desc: '251130，添加 开心收下',
       rules: [
         {
           resetMatch: 'match',
@@ -497,8 +497,8 @@ export default defineGkdApp({
           activityIds:
             'com.hellobike.moped.platform.offline.web.OhoRealmWebActivity',
           anyMatches: [
-            '([text="gENrrooPRRSKS2nmR644j"])',
-            '([text="有故障"] + [text="没故障"])',
+            '[text="gENrrooPRRSKS2nmR644j"]',
+            '[text="有故障"] + [text="没故障"]',
           ],
         },
       ],
@@ -614,8 +614,10 @@ export default defineGkdApp({
           resetMatch: 'match',
           activityIds:
             'com.hellobike.moped.platform.offline.web.OhoRealmWebActivity',
-          anyMatches:
-            '([text^="骑行领碳积分"] + * > [text="一键收碳"]) || (View > View > View > TextView[text="一键收碳"])',
+          anyMatches: [
+            '[text^="骑行领碳积分"] + * > [text="一键收碳"]',
+            'View > View > View > TextView[text="一键收碳"]',
+          ],
         },
       ],
     },
@@ -630,9 +632,9 @@ export default defineGkdApp({
           activityIds:
             'com.hellobike.moped.platform.offline.web.OhoRealmWebActivity',
           anyMatches: [
-            '(View > View > View > TextView - @View > Image[text="aab668b57491499e89ee4a5b766bcf77_35"])',
-            '(Image[text="ea6cf0c3c8f6483c9dbbe484a2ea60e3_icon_green_c"] < View + TextView + View > TextView[text="去领取"])',
-            '(@View > [text="碳积分"] + * + [text="去领取"])',
+            'View > View > View > TextView - @View > Image[text="aab668b57491499e89ee4a5b766bcf77_35"]',
+            'Image[text="ea6cf0c3c8f6483c9dbbe484a2ea60e3_icon_green_c"] < View + TextView + View > TextView[text="去领取"]',
+            '@View > [text="碳积分"] + * + [text="去领取"]',
           ],
         },
       ],

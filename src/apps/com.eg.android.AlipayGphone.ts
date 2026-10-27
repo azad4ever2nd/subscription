@@ -11,11 +11,11 @@ export default defineGkdApp({
       rules: [
         {
           anyMatches: [
-            '(RelativeLayout > @ImageView[id="com.alipay.mobile.accountauthbiz:id/close_dialog_button"][desc="取消"][clickable=true][visibleToUser=true] +n LinearLayout > TextView[text="立即更新"])',
+            'RelativeLayout > @ImageView[id="com.alipay.mobile.accountauthbiz:id/close_dialog_button"][desc="取消"][clickable=true][visibleToUser=true] +n LinearLayout > TextView[text="立即更新"]',
             'View > View > TextView[text="删除该聊天"] + View + @View[clickable=true][visibleToUser=true] > TextView[text="刪除"] + Button',
-            '(View > TextView[text="将所有消息标为已读？"] + @View[clickable=true][visibleToUser=true] > TextView[text="取消"] + Button)',
+            'View > TextView[text="将所有消息标为已读？"] + @View[clickable=true][visibleToUser=true] > TextView[text="取消"] + Button',
             'View > View > TextView[text="标为已读"] + TextView[text="置顶"] + TextView[text="删除该聊天"][clickable=false][visibleToUser=true]',
-            '([desc="推荐广告"] + * > [desc="关闭"])',
+            '[desc="推荐广告"] + * > [desc="关闭"]',
           ],
           resetMatch: 'match',
           activityIds: 'com.eg.android.AlipayGphone.AlipayLogin',
@@ -34,9 +34,9 @@ export default defineGkdApp({
           activityIds:
             'com.alipay.android.phone.msgboxapp.ui.activity.MBoxTabPageActivity',
           anyMatches: [
-            '(TextView[text.length=1] < @FrameLayout[id="com.alipay.android.phone.messageboxapp:id/cancel_btn"][clickable=true] + LinearLayout > Button[text="去开启"])',
-            '([id="com.alipay.android.phone.messageboxapp:id/image"] + [id="com.alipay.android.phone.messageboxapp:id/cancel_btn"])',
-            '(@[id="com.alipay.android.phone.messageboxapp:id/cancel_btn"] + * > [text="去开启"])',
+            'TextView[text.length=1] < @FrameLayout[id="com.alipay.android.phone.messageboxapp:id/cancel_btn"][clickable=true] + LinearLayout > Button[text="去开启"]',
+            '[id="com.alipay.android.phone.messageboxapp:id/image"] + [id="com.alipay.android.phone.messageboxapp:id/cancel_btn"]',
+            '@[id="com.alipay.android.phone.messageboxapp:id/cancel_btn"] + * > [text="去开启"]',
           ],
         },
       ],
@@ -52,10 +52,10 @@ export default defineGkdApp({
           actionMaximum: 1,
           activityIds: 'com.alipay.android.msp.ui.views.MspContainerActivity',
           anyMatches: [
-            '(TextView[text="光大银行立减金"] + TextView[text="-¥ 10.00"] <<n FrameLayout + FrameLayout Button[desc^="付款" || desc*="确认付款"] > FrameLayout[clickable=true])',
-            '([desc="支付金额90.00元"] <<n * + * >n @Button[desc^="确认付款"])',
-            '([desc="支付金额90.00元"] <<n * + * >n Button[desc^="付款"] > *[clickable=true])',
-            '([text="光大银行立减金"] + [text="-¥ 10.00"] <<n * + * @Button[desc^="确认付款"])',
+            'TextView[text="光大银行立减金"] + TextView[text="-¥ 10.00"] <<n FrameLayout + FrameLayout Button[desc^="付款" || desc*="确认付款"] > FrameLayout[clickable=true]',
+            '[desc="支付金额90.00元"] <<n * + * >n @Button[desc^="确认付款"]',
+            '[desc="支付金额90.00元"] <<n * + * >n Button[desc^="付款"] > *[clickable=true]',
+            '[text="光大银行立减金"] + [text="-¥ 10.00"] <<n * + * @Button[desc^="确认付款"]',
           ],
         },
       ],
@@ -71,8 +71,8 @@ export default defineGkdApp({
           actionMaximum: 1,
           activityIds: 'com.alipay.android.msp.ui.views.MspContainerActivity',
           anyMatches: [
-            '(TextView[text="邮储银行立减金"] + TextView[text="-¥ 5.00"] <<n FrameLayout + FrameLayout Button[desc^="付款" || desc*="确认付款"] > FrameLayout[clickable=true])',
-            '([text="邮储银行立减金"] + [text="-¥ 5.00"] <<n * + * @Button[desc*="确认付款"] > [text="确认付款"])',
+            'TextView[text="邮储银行立减金"] + TextView[text="-¥ 5.00"] <<n FrameLayout + FrameLayout Button[desc^="付款" || desc*="确认付款"] > FrameLayout[clickable=true]',
+            '[text="邮储银行立减金"] + [text="-¥ 5.00"] <<n * + * @Button[desc*="确认付款"] > [text="确认付款"]',
           ],
         },
       ],
@@ -143,8 +143,8 @@ export default defineGkdApp({
       rules: [
         {
           anyMatches: [
-            '([text="每日签到"] +2 * [text^="今日签到"])',
-            '(@View > [text="每日签到"] +n * >n [text^="今日签到+"])',
+            '[text="每日签到"] +2 * [text^="今日签到"]',
+            '@View > [text="每日签到"] +n * >n [text^="今日签到+"]',
           ],
           resetMatch: 'activity',
           actionCd: 10000,
@@ -160,8 +160,8 @@ export default defineGkdApp({
       rules: [
         {
           anyMatches: [
-            '([text="赚更多积分"] <<n * -2 [text="每日签到"] <<n * [text^="领取"][text*="积分"])',
-            '([text="我的订单"] <<n * + * >n [text^="领取" && text$="积分"])',
+            '[text="赚更多积分"] <<n * -2 [text="每日签到"] <<n * [text^="领取"][text*="积分"]',
+            '[text="我的订单"] <<n * + * >n [text^="领取" && text$="积分"]',
           ],
           resetMatch: 'match',
           activityIds:
@@ -199,7 +199,7 @@ export default defineGkdApp({
           anyMatches: [
             'View > Button[text="返回"] +n @CheckBox[checked=false][clickable=true][visibleToUser=true] + TextView[text="本月不再提示"] + Button + Button[text="继续转出"]',
             'View > Button[text="返回"] +n CheckBox[checked=true] +     TextView[text="本月不再提示"] + Button + Button[text="继续转出"]',
-            '(View > @CheckBox[checked=false] + TextView + Button + Button[clickable=true][visibleToUser=true][text="继续转出"])',
+            'View > @CheckBox[checked=false] + TextView + Button + Button[clickable=true][visibleToUser=true][text="继续转出"]',
           ],
         },
       ],
@@ -451,9 +451,9 @@ export default defineGkdApp({
           activityIds:
             'com.alipay.mobile.nebulax.xriver.activity.XRiverActivity',
           anyMatches: [
-            '(Button[clickable=true][text="知道了"] <n View <n View < View + Button[clickable=true][visibleToUser=true][text="关闭"])',
-            '(Button[text="去完成"] <n View -n TextView[text*="下单"] <n View <n View + Button[clickable=true][visibleToUser=true][text="关闭"])',
-            '(Button[clickable=true][text="入会领"] < View <n View <n View + Button[clickable=true][visibleToUser=true][text="关闭"])',
+            'Button[clickable=true][text="知道了"] <n View <n View < View + Button[clickable=true][visibleToUser=true][text="关闭"]',
+            'Button[text="去完成"] <n View -n TextView[text*="下单"] <n View <n View + Button[clickable=true][visibleToUser=true][text="关闭"]',
+            'Button[clickable=true][text="入会领"] < View <n View <n View + Button[clickable=true][visibleToUser=true][text="关闭"]',
             'TextView[text*="确认删除" || text^="删除后无法恢复"] < ScrollView <n LinearLayout < LinearLayout + LinearLayout > @Button[text="取消"][id="com.alipay.mobile.antui:id/btn_cancel"][clickable=true][visibleToUser=true] + Button[text^="确认"][id="com.alipay.mobile.antui:id/btn_ensure"]',
             'TextView[text*="优惠券删除无法恢复" && text*="确认删除？"] <<n LinearLayout + LinearLayout > Button[text="取消"][id="com.alipay.mobile.antui:id/btn_cancel"] + Button[text="确认"][id="com.alipay.mobile.antui:id/btn_ensure"][clickable=true][visibleToUser=true]',
           ],
@@ -552,8 +552,8 @@ export default defineGkdApp({
           activityIds:
             'com.alipay.mobile.nebulax.xriver.activity.XRiverActivity',
           anyMatches: [
-            '([text="乐园券"] +n [text="120" || text="120"] +n * > [text="领取"][clickable=true])',
-            '([text="乐园券"] +n [text="120" || text="120"] +4 [text="领取"][clickable=true])',
+            '[text="乐园券"] +n [text="120" || text="120"] +n * > [text="领取"][clickable=true]',
+            '[text="乐园券"] +n [text="120" || text="120"] +4 [text="领取"][clickable=true]',
           ],
         },
       ],
@@ -585,8 +585,8 @@ export default defineGkdApp({
           activityIds:
             'com.alipay.mobile.nebulax.xriver.activity.XRiverActivity',
           anyMatches: [
-            '(@Button[text="点我领取"][clickable=true] <n View <n View + Button[clickable=true][visibleToUser=true][text="关闭"])',
-            '(@Button[text="点我领取"][clickable=true] <n View <n View <n View + Button[clickable=true][visibleToUser=true][text="关闭"])',
+            '@Button[text="点我领取"][clickable=true] <n View <n View + Button[clickable=true][visibleToUser=true][text="关闭"]',
+            '@Button[text="点我领取"][clickable=true] <n View <n View <n View + Button[clickable=true][visibleToUser=true][text="关闭"]',
           ],
         },
       ],
@@ -849,8 +849,8 @@ export default defineGkdApp({
           ],
           anyMatches: [
             'TextView[text*="开启位置权限" || text="开启地理位置权限"] -n @FrameLayout[id="com.alipay.mobile.antui:id/btn_close"][desc="取消"][clickable=true][visibleToUser=true] <<n ScrollView + FrameLayout > LinearLayout > Button[text="确定"][id="com.alipay.mobile.antui:id/buttomButtonView"][clickable=true][visibleToUser=true]',
-            '(@[id="com.alipay.mobile.antui:id/btn_close"][desc="取消"] + [id="com.alipay.mobile.antui:id/title_txt_1" || id="com.alipay.mobile.antui:id/title_txt_2"][text*="地理位置" || text="支付宝本地服务"])',
-            '(@[id="com.alipay.mobile.antui:id/btn_close"][desc="取消"] + [id="com.alipay.mobile.antui:id/title_txt_1"][text*="地理位置" || text="支付宝本地服务"])',
+            '@[id="com.alipay.mobile.antui:id/btn_close"][desc="取消"] + [id="com.alipay.mobile.antui:id/title_txt_1" || id="com.alipay.mobile.antui:id/title_txt_2"][text*="地理位置" || text="支付宝本地服务"]',
+            '@[id="com.alipay.mobile.antui:id/btn_close"][desc="取消"] + [id="com.alipay.mobile.antui:id/title_txt_1"][text*="地理位置" || text="支付宝本地服务"]',
           ],
         },
       ],
@@ -999,8 +999,8 @@ export default defineGkdApp({
       rules: [
         {
           anyMatches: [
-            '([id="com.alipay.mobile.rome.pushservice:id/dialog_title"][text="选择通知接收范围"] +n * > [id="com.alipay.mobile.rome.pushservice:id/dialog_cancel_btn"][text="暂时不用"])',
-            '(@[id="com.alipay.mobile.rome.pushservice:id/dialog_cancel_btn"][text="暂时不用"] + [id="com.alipay.mobile.rome.pushservice:id/dialog_confirm_btn"][text="立即开启"])',
+            '[id="com.alipay.mobile.rome.pushservice:id/dialog_title"][text="选择通知接收范围"] +n * > [id="com.alipay.mobile.rome.pushservice:id/dialog_cancel_btn"][text="暂时不用"]',
+            '@[id="com.alipay.mobile.rome.pushservice:id/dialog_cancel_btn"][text="暂时不用"] + [id="com.alipay.mobile.rome.pushservice:id/dialog_confirm_btn"][text="立即开启"]',
           ],
           fastQuery: true,
           resetMatch: 'match',
@@ -1055,7 +1055,7 @@ export default defineGkdApp({
             'com.alipay.android.phone.mbox.biz.legacy.sbs.v2.MBoxSubscribeHostActivity',
           anyMatches: [
             'LinearLayout > TextView[text="发送以下消息"] +n LinearLayout > @Button[text="取消"][id="com.alipay.android.phone.product_msgboxbase:id/negativeBtn"][clickable=true][visibleToUser=true] + Button[text="好的"][id="com.alipay.android.phone.product_msgboxbase:id/positiveBtn"]',
-            '(LinearLayout > TextView[id="com.alipay.android.phone.product_msgboxbase:id/pluginTitle"][text="发送以下消息"] +n FrameLayout > TextView[id="com.alipay.android.phone.product_msgboxbase:id/rejectTxtBtn"][clickable=true][visibleToUser=true])',
+            'LinearLayout > TextView[id="com.alipay.android.phone.product_msgboxbase:id/pluginTitle"][text="发送以下消息"] +n FrameLayout > TextView[id="com.alipay.android.phone.product_msgboxbase:id/rejectTxtBtn"][clickable=true][visibleToUser=true]',
             'LinearLayout > TextView +n LinearLayout > @Button[text="暂不订阅"][id="com.alipay.android.phone.product_msgboxbase:id/negativeBtn"][clickable=true][visibleToUser=true] + Button[text="好的"][clickable=true][visibleToUser=true]',
           ],
         },
@@ -1073,8 +1073,8 @@ export default defineGkdApp({
             'com.alipay.mobile.beehive.poiselect.ui.PoiSelectActivity_',
           anyMatches: [
             'TextView[text*="开启位置权限" || text="开启地理位置权限"] -n @FrameLayout[id="com.alipay.mobile.antui:id/btn_close"][desc="取消"][clickable=true][visibleToUser=true] <<n ScrollView + FrameLayout > LinearLayout > Button[text="确定"][id="com.alipay.mobile.antui:id/buttomButtonView"][clickable=true][visibleToUser=true]',
-            '(@[id="com.alipay.mobile.antui:id/btn_close"][desc="取消"] + [id="com.alipay.mobile.antui:id/title_txt_1" || id="com.alipay.mobile.antui:id/title_txt_2"][text*="地理位置" || text="支付宝本地服务"])',
-            '(@[id="com.alipay.mobile.antui:id/btn_close"][desc="取消"] + [id="com.alipay.mobile.antui:id/title_txt_1"][text*="地理位置" || text="支付宝本地服务"])',
+            '@[id="com.alipay.mobile.antui:id/btn_close"][desc="取消"] + [id="com.alipay.mobile.antui:id/title_txt_1" || id="com.alipay.mobile.antui:id/title_txt_2"][text*="地理位置" || text="支付宝本地服务"]',
+            '@[id="com.alipay.mobile.antui:id/btn_close"][desc="取消"] + [id="com.alipay.mobile.antui:id/title_txt_1"][text*="地理位置" || text="支付宝本地服务"]',
           ],
         },
       ],

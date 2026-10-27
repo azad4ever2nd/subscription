@@ -45,9 +45,9 @@ export default defineGkdApp({
           actionCd: 0,
           activityIds: 'com.bankcomm.module.biz.webcontainer.BCMHtml5Activity',
           anyMatches: [
-            '(WebView > View > View > View > View > Button[id="copy"][clickable=true][visibleToUser=true][text=" 立即购买"])',
-            '(View > View > Button[id="copy"][clickable=true][visibleToUser=true])',
-            '(@[id="copy"][text*="立即购买"] <<2 * - * [text="最红星期五"])',
+            'WebView > View > View > View > View > Button[id="copy"][clickable=true][visibleToUser=true][text=" 立即购买"]',
+            'View > View > Button[id="copy"][clickable=true][visibleToUser=true]',
+            '@[id="copy"][text*="立即购买"] <<2 * - * [text="最红星期五"]',
           ],
         },
       ],
@@ -108,8 +108,8 @@ export default defineGkdApp({
           forcedTime: 2000,
           activityIds: 'com.bankcomm.module.biz.webcontainer.BCMHtml5Activity',
           anyMatches: [
-            '(Image[text="ACIM_20260728000180_20260728174629048"] <<n View + View > View[index=0] Image[text="立即领取"][clickable=true])',
-            '(Image[text="ACIM_20260728000180_20260728174629048"] <<n View + View > View[index=0] Image[text="立即领取"])',
+            'Image[text="ACIM_20260728000180_20260728174629048"] <<n View + View > View[index=0] Image[text="立即领取"][clickable=true]',
+            'Image[text="ACIM_20260728000180_20260728174629048"] <<n View + View > View[index=0] Image[text="立即领取"]',
           ],
         },
       ],
@@ -129,7 +129,7 @@ export default defineGkdApp({
             'TextView[text="专享好券"] - TextView[text="信用卡"] < View + View > View > View > Image[text="立即领取"]',
             'View > View > TextView[text="信用卡"] + TextView[text="专享好券"] + View > View > View > Image[text="立即领取"]',
             'View > View > TextView[text="信用卡"] + TextView[text="专享好券"] + View >n Image[text="立即领取"]',
-            '(Image[text="ACIM_20260728000180_20260728174629048"] <<n View + View > View[index=1] Image[text="立即领取"])',
+            'Image[text="ACIM_20260728000180_20260728174629048"] <<n View + View > View[index=1] Image[text="立即领取"]',
           ],
         },
       ],
@@ -282,8 +282,8 @@ export default defineGkdApp({
           resetMatch: 'match',
           activityIds: 'com.bankcomm.module.biz.webcontainer.BCMHtml5Activity',
           anyMatches: [
-            '(TextView[id="dialogInnerDiv"][text*="当前奖励已领完"] < View < View + View > Button[text="关闭"][clickable=true][visibleToUser=true])',
-            '([id="dialogInnerDiv"][text^="哎呀" || text^="人数太多" || text*="次数上限" || text^="服务器在忙" || text$="请稍后再试" ] <<n * + * > [text="关闭"])',
+            'TextView[id="dialogInnerDiv"][text*="当前奖励已领完"] < View < View + View > Button[text="关闭"][clickable=true][visibleToUser=true]',
+            '[id="dialogInnerDiv"][text^="哎呀" || text^="人数太多" || text*="次数上限" || text^="服务器在忙" || text$="请稍后再试" ] <<n * + * > [text="关闭"]',
           ],
         },
       ],
@@ -324,9 +324,9 @@ export default defineGkdApp({
           actionCd: 500,
           forcedTime: 3000,
           anyMatches: [
-            '([text="碳星任务"] [text="点击签到"])',
-            '([text="+1"] + [text="点击签到"])',
-            '(Dialog > View > @Button[clickable=true][visibleToUser=true][text="我知道了"] + Button[text="赚更多能量"])',
+            '[text="碳星任务"] [text="点击签到"]',
+            '[text="+1"] + [text="点击签到"]',
+            'Dialog > View > @Button[clickable=true][visibleToUser=true][text="我知道了"] + Button[text="赚更多能量"]',
             'View > View > TextView[text="恭喜您签到成功"] +n Image[text="我知道了"][clickable=true][visibleToUser=true]',
             'WebView > View > TextView[text^="您已完成该任务" || text*="欢迎继续浏览"] + @Image[text="取消"][visibleToUser=true] + Image[text="继续浏览"]',
             'View > TextView[text="您已完成该任务，欢迎继续浏览"] + Image[text="取消"][clickable=true][visibleToUser=true]',
@@ -344,10 +344,10 @@ export default defineGkdApp({
       rules: [
         {
           anyMatches: [
-            '(TextView[text^="浏览" || text^="访问" || text^="查看"] +2 TextView[text="去完成"][visibleToUser=true])',
-            '(TextView[text^="浏览" || text^="访问" || text^="查看"][text*="超过" && text$="秒"] +2 TextView[text="去完成"][visibleToUser=true])',
-            '(TextView[text^="浏览" || text^="访问" || text^="查看"] <n View +2 TextView[text="去完成"][visibleToUser=true])',
-            '(TextView[text^="浏览" || text^="访问" || text^="查看"][text*="超过" && text$="秒"] <n View +2 TextView[text="去完成"][visibleToUser=true])',
+            'TextView[text^="浏览" || text^="访问" || text^="查看"] +2 TextView[text="去完成"][visibleToUser=true]',
+            'TextView[text^="浏览" || text^="访问" || text^="查看"][text*="超过" && text$="秒"] +2 TextView[text="去完成"][visibleToUser=true]',
+            'TextView[text^="浏览" || text^="访问" || text^="查看"] <n View +2 TextView[text="去完成"][visibleToUser=true]',
+            'TextView[text^="浏览" || text^="访问" || text^="查看"][text*="超过" && text$="秒"] <n View +2 TextView[text="去完成"][visibleToUser=true]',
           ],
           resetMatch: 'match',
           actionCd: 9000,
@@ -366,8 +366,8 @@ export default defineGkdApp({
           activityIds: 'com.bankcomm.module.biz.webcontainer.BCMHtml5Activity',
           anyMatches: [
             'View > View > @Button[text="稍后再说"][clickable=true][visibleToUser=true] + Button[text="前往安装"]',
-            '([text="感谢您的订阅"] <<n * + * > [text="知道了"])',
-            '(TextView[text*="订阅"] <n View < View + View > @Button[clickable=true][visibleToUser=true][text="知道了"] + Button[text="去查看"])',
+            '[text="感谢您的订阅"] <<n * + * > [text="知道了"]',
+            'TextView[text*="订阅"] <n View < View + View > @Button[clickable=true][visibleToUser=true][text="知道了"] + Button[text="去查看"]',
           ],
         },
       ],
@@ -473,9 +473,9 @@ export default defineGkdApp({
       rules: [
         {
           anyMatches: [
-            '(@[text="知道了"] + [text="去查看"])',
-            '([text="终止心愿"] <<n * + * > [text="确认"])',
-            '([text="暂停心愿"] + [text="终止心愿"])',
+            '@[text="知道了"] + [text="去查看"]',
+            '[text="终止心愿"] <<n * + * > [text="确认"]',
+            '[text="暂停心愿"] + [text="终止心愿"]',
           ],
 
           actionMaximum: 2,

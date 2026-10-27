@@ -15,10 +15,10 @@ export default defineGkdApp({
           action: 'clickCenter',
           activityIds: 'com.ecitic.bank.mobile.ui.MainActivity',
           anyMatches: [
-            '(View > View > View > View > View > View > Button[text="立即签到"][clickable=true][visibleToUser=true])',
-            '(View > TextView[text="会员专属活动1"] + View >10 Button[text="立即签到1"][clickable=true][visibleToUser=true])',
-            '(View > View > TextView[text="会员专属活动1"] + Image)',
-            '([text="去签到，按钮1"])',
+            'View > View > View > View > View > View > Button[text="立即签到"][clickable=true][visibleToUser=true]',
+            'View > TextView[text="会员专属活动1"] + View >10 Button[text="立即签到1"][clickable=true][visibleToUser=true]',
+            'View > View > TextView[text="会员专属活动1"] + Image',
+            '[text="去签到，按钮1"]',
           ],
         },
       ],
@@ -34,8 +34,8 @@ export default defineGkdApp({
           forcedTime: 3000,
           activityIds: 'com.ecitic.bank.mobile.ui.MainActivity',
           anyMatches: [
-            '(LinearLayout > @Button[vid="alert_cancel"][text="取消"][clickable=true][visibleToUser=true] + Button[vid="alert_confirm"][text="立即开启"])',
-            '(TextView[text="开启消息通知"] < FrameLayout +n LinearLayout > Button[vid="alert_cancel"][text="取消"][clickable=true][visibleToUser=true])',
+            'LinearLayout > @Button[vid="alert_cancel"][text="取消"][clickable=true][visibleToUser=true] + Button[vid="alert_confirm"][text="立即开启"]',
+            'TextView[text="开启消息通知"] < FrameLayout +n LinearLayout > Button[vid="alert_cancel"][text="取消"][clickable=true][visibleToUser=true]',
           ],
         },
       ],
@@ -77,8 +77,8 @@ export default defineGkdApp({
       rules: [
         {
           anyMatches: [
-            '([text="1765279045133733545"] + Image)',
-            '([text="恭喜中奖"] + [text="确定"])',
+            '[text="1765279045133733545"] + Image',
+            '[text="恭喜中奖"] + [text="确定"]',
           ],
           resetMatch: 'match',
           activityIds: [
@@ -112,8 +112,8 @@ export default defineGkdApp({
           activityIds:
             'com.ecitic.bank.mobile.ui.webview.CordovaExternalWebViewActivity',
           anyMatches: [
-            '(View > @Button[clickable=true][text="我知道了"] - View > TextView[text.length=1][clickable=false])',
-            '(View > View + Button[clickable=true][visibleToUser=true][text="我知道了"])',
+            'View > @Button[clickable=true][text="我知道了"] - View > TextView[text.length=1][clickable=false]',
+            'View > View + Button[clickable=true][visibleToUser=true][text="我知道了"]',
           ],
         },
       ],
@@ -128,8 +128,8 @@ export default defineGkdApp({
           activityIds:
             'com.ecitic.bank.mobile.ui.webview.CordovaExternalWebViewActivity',
           anyMatches: [
-            '(View > View > View > TextView[text="领取成功"] +n Button[clickable=true][visibleToUser=true][text="确定"])',
-            '(View > TextView[text="恭喜中奖"] +n Button[clickable=true][visibleToUser=true][text="确定"])',
+            'View > View > View > TextView[text="领取成功"] +n Button[clickable=true][visibleToUser=true][text="确定"]',
+            'View > TextView[text="恭喜中奖"] +n Button[clickable=true][visibleToUser=true][text="确定"]',
           ],
         },
       ],

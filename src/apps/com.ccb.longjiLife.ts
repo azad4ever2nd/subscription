@@ -6,7 +6,7 @@ export default defineGkdApp({
     {
       key: 1,
       name: '每日签到，成功了',
-      desc: '260915,添加首页签到成功, ([text="签到成功"] < * + TextView) || (@[text="知道了"] <n * + TextView) ||',
+      desc: '260915,添加首页签到成功',
       rules: [
         {
           actionCd: 100,
@@ -14,9 +14,9 @@ export default defineGkdApp({
           excludeMatches: 'View > View > [text="7天签到礼包"]',
           activityIds: 'com.ccb.longjiLife.MainActivity',
           anyMatches: [
-            '(View > View > TextView[text="签到成功"] +3 TextView[text="确定领取"] + TextView)',
-            '(View > TextView +n TextView[text="知道了"][clickable=false])',
-            ' ([text="签到成功"] +n [text="知道了"])',
+            'View > View > TextView[text="签到成功"] +3 TextView[text="确定领取"] + TextView',
+            'View > TextView +n TextView[text="知道了"][clickable=false]',
+            ' ([text="签到成功"] +n [text="知道了"]',
           ],
         },
       ],
@@ -122,7 +122,7 @@ export default defineGkdApp({
           forcedTime: 2000,
           activityIds: 'com.ccb.cloudmerchant.view.WebViewActivity',
           anyMatches: [
-            '(WebView[text="低碳生活"] > View > Image[text="oneKey"][visibleToUser=true])',
+            'WebView[text="低碳生活"] > View > Image[text="oneKey"][visibleToUser=true]',
             'View > View > TextView[text*="上线通知"] +2 TextView[text.length=0][clickable=true][visibleToUser=true]',
           ],
         },
@@ -150,7 +150,8 @@ export default defineGkdApp({
           actionCd: 100,
           resetMatch: 'match',
           anyMatches: [
-            '([text="身份信息验证"] +n CheckBox[checked=false]) || ([text="身份信息验证"] +n [text="loginBtn.f302f730"])', //规则12
+            '[text="身份信息验证"] +n CheckBox[checked=false]',
+            '[text="身份信息验证"] +n [text="loginBtn.f302f730"]', //规则12
             '[text*="活动期间每周三15:00起开放报名领券入口"] <<n * + [text="NWJ6tc6mwaKQfgbADXAJPIxaVNUQJguwpoNgAy0x2ew8SgXab+AzNTubJfuAmp7HtQL5K8AARxBdk+5zMOgAAAAASUVORK5CYII="]', //规则 13
             '[text="温馨提示"] + [text*="报名人数已满" || text="今日报名人数已满，您可下个领券日再来~" || text^="活动期间每周三"] + * > [text="好的"]', //规则 13
             '[text="温馨提示"] + * > [text="好的"]', //规则12

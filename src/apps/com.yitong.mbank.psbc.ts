@@ -91,9 +91,9 @@ export default defineGkdApp({
       rules: [
         {
           matches: [
-            '([text^="恭喜您抢到一张" && text*="邮票图片"] +2 Image)',
-            '([text="权益二选一"] +3 [text="去领取"])',
-            '([text*="火爆"] <<n * + [text^="我已知晓"])',
+            '[text^="恭喜您抢到一张" && text*="邮票图片"] +2 Image',
+            '[text="权益二选一"] +3 [text="去领取"]',
+            '[text*="火爆"] <<n * + [text^="我已知晓"]',
           ],
           matchDelay: 2000,
           resetMatch: 'match',
@@ -108,8 +108,8 @@ export default defineGkdApp({
       rules: [
         {
           anyMatches: [
-            '(TextView[text="温馨提示"] < RelativeLayout +n LinearLayout > TextView[clickable=true][visibleToUser=true][text="下次再说"])',
-            '(@[vid="tv_cancel"] + [vid="mContent"][text*="好评"])',
+            'TextView[text="温馨提示"] < RelativeLayout +n LinearLayout > TextView[clickable=true][visibleToUser=true][text="下次再说"]',
+            '@[vid="tv_cancel"] + [vid="mContent"][text*="好评"]',
           ],
           fastQuery: true,
           resetMatch: 'match',
@@ -126,8 +126,8 @@ export default defineGkdApp({
           activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
           resetMatch: 'match',
           anyMatches: [
-            '(@*[clickable=true] [text="返回活动" || text="返回权益专区"])',
-            '(@View[clickable=false][visibleToUser=true] > TextView + TextView[text="返回活动"])',
+            '@*[clickable=true] [text="返回活动" || text="返回权益专区"]',
+            '@View[clickable=false][visibleToUser=true] > TextView + TextView[text="返回活动"]',
           ],
         },
       ],

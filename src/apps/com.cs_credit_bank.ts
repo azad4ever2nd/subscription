@@ -63,7 +63,7 @@ export default defineGkdApp({
     {
       key: 5,
       name: '周五5折',
-      desc: '261007，增加跨年，布局有变，([text="5折"] +n * > [text="立即购买"])',
+      desc: '261007，增加跨年，布局有变，([text="5折"] +n * > [text="立即购买"]',
       rules: [
         {
           actionMaximum: 8,
@@ -72,8 +72,8 @@ export default defineGkdApp({
           activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
           excludeMatches: 'View > View[text="确认订单"]',
           anyMatches: [
-            '([text="5折"] +n @* > [text="立即购买" || text="立即抢购"])',
-            '([text="5折"] +n [text="立即购买" || text="立即抢购"])',
+            '[text="5折"] +n @* > [text="立即购买" || text="立即抢购"]',
+            '[text="5折"] +n [text="立即购买" || text="立即抢购"]',
           ],
         },
       ],
@@ -162,8 +162,8 @@ export default defineGkdApp({
           activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
           anyMatches: [
             'View > View[text="分期还账单"] + View[text="暂不办理"][clickable=true][visibleToUser=true]',
-            '([text="分期还账单"] + [text="暂不办理"])',
-            '([text="开通小额免密支付"] + [text="暂不开通"])',
+            '[text="分期还账单"] + [text="暂不办理"]',
+            '[text="开通小额免密支付"] + [text="暂不开通"]',
           ],
         },
       ],

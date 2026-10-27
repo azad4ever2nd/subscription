@@ -13,8 +13,8 @@ export default defineGkdApp({
           fastQuery: true,
           activityIds: 'com.wacai365.LicenseActivity',
           anyMatches: [
-            '(TextView[text*="个人信息"] < LinearLayout + LinearLayout > LinearLayout > TextView[vid="txt_right"][text="已阅读同意"])',
-            '([vid="agreement_tips"][text*="个人信息保护政策"] <<n * + * [vid="txt_right"][text="已阅读同意bak"])',
+            'TextView[text*="个人信息"] < LinearLayout + LinearLayout > LinearLayout > TextView[vid="txt_right"][text="已阅读同意"]',
+            '[vid="agreement_tips"][text*="个人信息保护政策"] <<n * + * [vid="txt_right"][text="已阅读同意bak"]',
           ],
         },
       ],
