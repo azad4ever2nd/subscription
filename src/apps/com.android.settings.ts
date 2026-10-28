@@ -125,5 +125,19 @@ export default defineGkdApp({
         },
       ],
     },
+    {
+      key: 9,
+      name: '设置，USB用于，仅限充电',
+      desc: '261028',
+      rules: [
+        {
+          fastQuery: true,
+          resetMatch: 'match',
+          activityIds: '.connecteddevice.usb.UsbModeChooserActivity',
+          matches:
+            'TextView[text="USB 用于"][vid="alertTitle"] < LinearLayout + ScrollView @LinearLayout[clickable=false][visibleToUser=true] > ImageView[vid="icon"] + TextView[vid="title"][text="仅限充电"]', //text="传输文件"
+        },
+      ],
+    },
   ],
 });

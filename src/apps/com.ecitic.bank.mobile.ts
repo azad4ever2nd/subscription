@@ -182,6 +182,20 @@ export default defineGkdApp({
     },
     {
       key: 12,
+      name: '财富，签到享好礼，立即签到',
+      desc: '261028',
+      rules: [
+        {
+          resetMatch: 'app',
+          actionMaximum: 1,
+          activityIds: 'com.citic.jk.activity.H5ContainerAty',
+          matches:
+            'View[id="DailyCheckIn"] > View > View > View[childCount=1] - View[childCount=2] > TextView[text.length=0][clickable=false][visibleToUser=true]',
+        },
+      ],
+    },
+    {
+      key: 13,
       name: '弹窗，签到成功，X掉',
       desc: '261023',
       rules: [

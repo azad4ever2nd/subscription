@@ -341,6 +341,7 @@ export default defineGkdApp({
             'Dialog[text="恭喜获得优惠福利"] > Button[text="关闭"][clickable=true][visibleToUser=true] - View >n Button[text="继续抽奖"] + Button[text="点我领取"][clickable=true][visibleToUser=true]',
             'Dialog[text="恭喜获得优惠福利"] > @Button[text="关闭"][clickable=true][visibleToUser=true] - View >n Button[text="放弃领取"] + Button[text="点我领取"][clickable=true][visibleToUser=true]',
             'Dialog[text="恭喜获得惊喜福利"] > @Button[text="关闭"][clickable=true][visibleToUser=true] - View >n Button[text="去领取"][clickable=true][visibleToUser=true]',
+            'Dialog[text="恭喜获得惊喜福利"] > @Button[text="关闭"][clickable=true][visibleToUser=true] - View >n Button[text="去看看"][clickable=true][visibleToUser=true]',
             'Dialog[text="恭喜获得遇财神支付红包"] > Button[text="关闭"][clickable=true][visibleToUser=true] - View >n Button[text="去领取" || text="点我领取"][clickable=true][visibleToUser=true]',
             'Dialog[text="恭喜获得惊喜福利"] > @Button[text="关闭"][clickable=true][visibleToUser=true]',
             'View > View > TextView +(3,5) @Button[text="继续退出"][clickable=true][visibleToUser=true] + Button[text="去设置"][clickable=true][visibleToUser=true]',
@@ -352,7 +353,7 @@ export default defineGkdApp({
     {
       key: 17,
       name: '弹窗，各种弹窗，X掉1',
-      desc: '261014，fastQuery=false，添加 神券五六天，签到成功，开通碰一下，推送服务，查询账单，返回领奖，到桌面，银行卡抽奖，升级月利宝',
+      desc: '261028，fastQuery=false，添加 神券五六天，签到成功，开通碰一下，推送服务，查询账单，返回领奖，到桌面，银行卡抽奖，升级月利宝',
       rules: [
         {
           resetMatch: 'match',
@@ -374,6 +375,7 @@ export default defineGkdApp({
             '@TextView[clickable=true][visibleToUser=true] - View > TextView[text="查看可升级产品"]',
             '@TextView[text=""][clickable=true][visibleToUser=true] < View + Button[text="一键升级"]',
             '@View[clickable=false][visibleToUser=true] > Button[text="去看看"][clickable=true][visibleToUser=false]',
+            '@Image[clickable=false][visibleToUser=true] < View +n TextView[text^="添加" && text$="桌面小组件"] + View +  Button[text="立即添加"] + Button[text="再想想"]',
           ],
         },
       ],

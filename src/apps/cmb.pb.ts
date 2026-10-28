@@ -7,12 +7,12 @@ export default defineGkdApp({
     {
       key: 1,
       name: '周三5折单个模式',
-      desc: '261021，布局改变，如果有临时的，添加在内存订阅中应急',
+      desc: '261028，布局改变，如果有临时的，添加在内存订阅中应急',
       rules: [
         {
           anyMatches: [
-            'Button[text*="立即抢购"][clickable=true][visibleToUser=true] < View -n View > TextView[text*="周三5折" && text*="元代金券"][text*="哈根达斯" || text*="肯德基" || text*="喜茶" || text*="必胜客"]',
-            'Button[text*="立即抢购"][clickable=true][visibleToUser=true] < View -n View > TextView[text="（周三5折）哈根达斯50元代金券" || text="（周三5折）肯德基20元代金券" || text="（周三5折）喜茶20元代金券" ||  text="（周三5折）必胜客50元代金券"]',
+            '@Button[text*="立即抢购"][clickable=true][visibleToUser=true] < View -n View > TextView[text*="周三5折" && text*="元代金券"][text*="哈根达斯" || text*="肯德基" || text*="喜茶" || text*="必胜客"]',
+            '@Button[text*="立即抢购"][clickable=true][visibleToUser=true] < View -n View > TextView[text="（周三5折）哈根达斯50元代金券" || text="（周三5折）肯德基20元代金券" || text="（周三5折）喜茶20元代金券" ||  text="（周三5折）必胜客50元代金券"]',
             '[text="（周三5折）哈根达斯50元代金券" || text="（周三5折）肯德基20元代金券" || text="（周三5折）喜茶20元代金券" ||  text="（周三5折）必胜客50元代金券"] +n * > [text*="立即抢购"]',
           ],
           actionCd: 2500,
@@ -99,7 +99,8 @@ export default defineGkdApp({
         {
           resetMatch: 'match',
           action: 'clickCenter',
-          matchDelay: 500,
+          //处于匹配延迟，matchDelay: 500,
+          forcedTime: 2000,
           activityIds:
             'cmb.pb.app.h5container.webviewcontainer.PBWebContainerActivity',
           anyMatches: [
@@ -187,12 +188,13 @@ export default defineGkdApp({
     {
       key: 11,
       name: '抽奖领任务页面，加自选 任务',
-      desc: '261016，clickable=true',
+      desc: '暂时禁用，规则拆分成6条，261028，clickable=true',
       rules: [
         {
           resetMatch: 'match',
-          matchDelay: 1000,
+          matchDelay: 500, //原来1000，缩小
           forcedTime: 3000,
+          actionCd: 2000, //原来800，延长，考虑到任务时间
           action: 'clickCenter',
           excludeMatches: [
             'TextView[text="1／1"]',
@@ -200,6 +202,7 @@ export default defineGkdApp({
             'TextView[text="生活缴费"][vid="tvMainTitle"]',
           ],
           anyMatches: [
+            'View > View > TextView[text="登录后参与"][clickable=true][visibleToUser=true]',
             'TextView[text="0／1"] <n View + View > Button[text="加自选"][clickable=true][visibleToUser=true]',
             'TextView[text="完成0／1"] +n View > Button[text="加自选"][clickable=true][visibleToUser=true]',
             'TextView[text="0／1"] <n View +n Button[text="加自选"][clickable=true][visibleToUser=true]',
@@ -223,28 +226,32 @@ export default defineGkdApp({
       rules: [
         {
           action: 'clickCenter',
-          matchDelay: 1000,
+          matchDelay: 2000, //有没有可能，是因为页面没有加载完成，导致的误触，先测试
+          //处于匹配延迟matchDelay: 1000,关闭测试
           forcedTime: 3000,
+          actionCd: 2000,
           resetMatch: 'match',
           activityIds:
             'cmb.pb.app.h5container.webviewcontainer.PBWebContainerActivity',
           anyMatches: [
-            'View[id="FundDetailBody"] > View > View > @Button[text="自选"][clickable=true][visibleToUser=true] +n Button[text="定投" || text="购买"]',
-            'WebView > View > View > View > View > Button[text="自选"][clickable=true][visibleToUser=true]',
+            'View[id="FundDetailBody"] > View > View > Button[text="讨论区"] + Button[text="招财号"] + @Button[text="自选"][clickable=true][visibleToUser=true]', //测试规则写完整，避免误点
+            //'View[id="FundDetailBody"] > View > View > @Button[text="自选"][clickable=true][visibleToUser=true] +n Button[text="定投" || text="购买"]',
+            //'WebView > View > View > View > View > Button[text="自选"][clickable=true][visibleToUser=true]',
           ],
         },
       ],
     },
     {
       key: 13,
-      name: '基金页面下方，加自选2',
+      name: '基金页面下方，添加自选2',
       desc: '260915，clickable=false',
       rules: [
         {
           resetMatch: 'match',
           action: 'click',
-          matchDelay: 1000,
+          //处于匹配延迟matchDelay: 1000,关闭测试matchDelay: 1000,
           forcedTime: 3000,
+          actionCd: 2000,
           excludeMatches: [
             'TextView[text="1／1"]',
             '[text="完成1／1"]',
@@ -260,10 +267,11 @@ export default defineGkdApp({
     {
       key: 14,
       name: '添加自选成功，返回',
-      desc: '260601',
+      desc: '261028',
       rules: [
         {
           resetMatch: 'match',
+          actionCd: 2000, //延长
           forcedTime: 3000,
           activityIds:
             'cmb.pb.app.h5container.webviewcontainer.PBWebContainerActivity',
@@ -338,7 +346,7 @@ export default defineGkdApp({
             '[text="分享指定文章"] +n [text="去分享"]',
           ],
           action: 'clickCenter',
-          matchDelay: 1000,
+          matchDelay: 500, //处于匹配延迟matchDelay: 1000,改到500测试
           forcedTime: 3000,
           resetMatch: 'match',
           activityIds:
@@ -353,8 +361,9 @@ export default defineGkdApp({
       rules: [
         {
           resetMatch: 'match',
+          matchDelay: 500,
+          actionMaximum: 1,
           forcedTime: 3000,
-          actionCd: 3000,
           action: 'clickCenter',
           activityIds:
             'cmb.pb.app.h5container.webviewcontainer.PBWebContainerActivity',
@@ -368,7 +377,7 @@ export default defineGkdApp({
     {
       key: 20,
       name: '领任务界面，我要抽奖',
-      desc: '260706，clickable=false',
+      desc: '暂时禁用，规则40，260706，clickable=false',
       rules: [
         {
           resetMatch: 'match',
@@ -408,7 +417,7 @@ export default defineGkdApp({
       rules: [
         {
           resetMatch: 'match',
-          matchDelay: 1000,
+          //处于匹配延迟，matchDelay: 1000,关闭测试
           forcedTime: 3000,
           action: 'clickCenter',
           activityIds:
@@ -682,9 +691,9 @@ export default defineGkdApp({
             'TextView[text="0／1"] <n View + View > Button[text="加自选"][clickable=true][visibleToUser=true]',
             'TextView[text="0／1"] <n View +n Button[text="加自选"][clickable=true][visibleToUser=true]',
           ],
-          actionCd: 700,
           forcedTime: 3000,
-          matchDelay: 1000,
+          actionCd: 2000, //延长，考虑到任务时间
+          matchDelay: 500, //减小，原800
           resetMatch: 'match',
           activityIds: [
             'cmb.pb.app.h5container.webviewcontainer.PBWebContainerActivity',
@@ -708,7 +717,8 @@ export default defineGkdApp({
             'TextView[text="完成0／1"] +n View > Button[text="加自选"][clickable=true][visibleToUser=true]',
           ],
           forcedTime: 3000,
-          matchDelay: 1000,
+          actionCd: 2000, //延长，考虑到任务时间
+          matchDelay: 500, //减小，原800
           resetMatch: 'match',
           activityIds: [
             'cmb.pb.app.h5container.webviewcontainer.PBWebContainerActivity',
@@ -733,7 +743,8 @@ export default defineGkdApp({
             'View > View > @View[clickable=true][visibleToUser=true] > TextView[text="我要抽奖"]',
           ],
           forcedTime: 3000,
-          matchDelay: 1000,
+          actionCd: 2000, //延长，考虑到任务时间
+          matchDelay: 500, //减小，原800
           resetMatch: 'match',
           activityIds: [
             'cmb.pb.app.h5container.webviewcontainer.PBWebContainerActivity',
@@ -759,7 +770,8 @@ export default defineGkdApp({
             'WebView > View > View > View > View > Button[text="加自选"][clickable=true][visibleToUser=true]',
           ],
           forcedTime: 3000,
-          matchDelay: 1000,
+          actionCd: 2000, //延长，考虑到任务时间
+          matchDelay: 500, //减小，原800
           resetMatch: 'match',
           activityIds: [
             'cmb.pb.app.h5container.webviewcontainer.PBWebContainerActivity',
@@ -785,7 +797,8 @@ export default defineGkdApp({
             'WebView > View > View > View > Button[text="加自选"][clickable=true][visibleToUser=true]',
           ],
           forcedTime: 3000,
-          matchDelay: 1000,
+          actionCd: 2000, //延长，考虑到任务时间
+          matchDelay: 500, //减小，原800
           resetMatch: 'match',
           activityIds: [
             'cmb.pb.app.h5container.webviewcontainer.PBWebContainerActivity',
@@ -811,7 +824,8 @@ export default defineGkdApp({
             'WebView > View > View > View > Button[text="去添加"][clickable=true][visibleToUser=true]',
           ],
           forcedTime: 3000,
-          matchDelay: 1000,
+          actionCd: 2000, //延长，考虑到任务时间
+          matchDelay: 500, //减小，原800
           resetMatch: 'match',
           activityIds: [
             'cmb.pb.app.h5container.webviewcontainer.PBWebContainerActivity',

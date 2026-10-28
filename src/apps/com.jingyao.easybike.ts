@@ -333,14 +333,17 @@ export default defineGkdApp({
     },
     {
       key: 19,
-      name: '秒杀月卡付款',
-      desc: 'D，251123',
+      name: '领行完领奖励金1',
+      desc: '261025，，clickable=true',
       rules: [
         {
-          fastQuery: true,
           resetMatch: 'match',
+          action: 'clickCenter',
+          matchDelay: 1000,
+          forcedTime: 4000,
           activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
-          anyMatches: '[vid="paySubmitTv"][text="立即支付¥0.01"]',
+          anyMatches:
+            'View[id="monad-return-ball"] > @View[clickable=true][visibleToUser=true] > TextView[text="奖励金"] - TextView - View > Image[text="c628086d6b3a4923907c57bc4326aa13_mask"]',
         },
       ],
     },
@@ -388,13 +391,14 @@ export default defineGkdApp({
     },
     {
       key: 23,
-      name: '领行完领奖励金',
+      name: '领行完领奖励金2',
       desc: '261025，，clickable=true',
       rules: [
         {
           resetMatch: 'match',
           action: 'clickCenter',
           matchDelay: 1000,
+          forcedTime: 4000,
           activityIds:
             'com.hellobike.moped.platform.offline.web.OhoRealmWebActivity',
           anyMatches:
@@ -649,6 +653,19 @@ export default defineGkdApp({
           activityIds:
             'com.hellobike.moped.platform.offline.web.OhoRealmWebActivity',
           anyMatches: '@View Image[text="aab668b57491499e89ee4a5b766bcf77_35"]',
+        },
+      ],
+    },
+    {
+      key: 38,
+      name: '秒杀月卡付款',
+      desc: 'D，251123',
+      rules: [
+        {
+          fastQuery: true,
+          resetMatch: 'match',
+          activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
+          anyMatches: '[vid="paySubmitTv"][text="立即支付¥0.01"]',
         },
       ],
     },

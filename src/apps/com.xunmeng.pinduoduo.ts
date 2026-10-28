@@ -102,7 +102,6 @@ export default defineGkdApp({
           anyMatches: [
             'TextView[text="继续编辑"] < FrameLayout + @FrameLayout[clickable=true][visibleToUser=true] > TextView[text="放弃打款"]',
             'TextView[text="继续编辑"] < FrameLayout < ViewGroup + @ViewGroup[clickable=true] > FrameLayout > TextView[text="退出"]',
-            '@Button[text="关闭按钮"] +n [text^="还差1人" || text^="拼单已发起"]',
             '[vid="pdd"] < @[vid="pdd"] + [vid="pdd"] > [text="评价拍摄"]',
             'TextView[text="放弃打款"] <<n ViewGroup + @ViewGroup[clickable=true][visibleToUser=true] > FrameLayout > TextView[text.length=1][clickable=false][visibleToUser=true]',
             'ImageView < @FrameLayout[vid="pdd"][clickable=true][visibleToUser=true] - ViewGroup > TextView[vid="tv_title"][text="可参与的拼单"]', //可参与的拼单，X掉
@@ -119,7 +118,6 @@ export default defineGkdApp({
         {
           anyMatches: [
             '[text="邀请好友拼单"] + [text="去首页逛逛"]',
-            '@Button[text="关闭按钮"] +n [text^="还差1人" || text^="拼单已发起"]',
             '@[vid="pdd"][desc="返回"] < * +n * > [vid="tv_title"][text="发表评价" || text="发表真实评价"]', //发表评价，返回',
             'TextView[text="因通知关闭，无法接收物流消息"] < FrameLayout +2 ViewGroup > @ViewGroup > FrameLayout > TextView[text="拒绝接收"]', //通知关闭，拒绝接收
             '[text="确认收货成功"] <<n * + * @[vid="pdd"] > [desc="返回"]', //确认收货成功，返回
@@ -170,13 +168,14 @@ export default defineGkdApp({
     {
       key: 10,
       name: '会员打卡',
-      desc: '261024,整合打卡布局有变，打卡成功，fastQuery=false，限次数',
+      desc: '261028,整合打卡布局有变，打卡成功，fastQuery=false，限次数',
       rules: [
         {
           actionMaximum: 2,
           resetMatch: 'match',
           anyMatches: [
             'View > TextView[text="打卡送积分"] + View + TextView[text="打卡"][clickable=true][visibleToUser=true]',
+            'View > TextView[text="打卡送积分"] + View + TextView[text="打卡"][clickable=false][visibleToUser=true]',
             '@[text="抽奖"] - View > Image[text="webp"]',
             '[text*="打卡成功"] +4 *',
           ],
@@ -281,7 +280,7 @@ export default defineGkdApp({
     {
       key: 16,
       name: '弹窗，X掉4',
-      desc: '260905，fastQuery=false，clickable=true',
+      desc: '261028，fastQuery=false，clickable=true',
       rules: [
         {
           resetMatch: 'match',
@@ -300,6 +299,7 @@ export default defineGkdApp({
             'View > View > View > TextView[text="恭喜获得专属惊喜券"] + TextView[text*="已成功点亮" || text$="明日可继续点亮"] +(3,4)  Image[text="webp"][clickable=true][visibleToUser=true]',
             'TextView[text="待使用"] <<n ViewGroup + ViewGroup > ImageView[clickable=true][visibleToUser=true]',
             'TextView[text="先去逛逛"] <<n ViewGroup + ViewGroup > ImageView[clickable=true][visibleToUser=true]',
+            'View > @Button[text="关闭弹窗"][clickable=true][visibleToUser=true] +n View > TextView[text$="已支付"] + TextView[text*="邀请好友来拼单"]', //下单完后弹窗，还差1人，赶快邀请好友来拼单吧
           ],
         },
       ],
@@ -307,7 +307,7 @@ export default defineGkdApp({
     {
       key: 17,
       name: '弹窗，有名字的按钮',
-      desc: '2601016，添加组队成功，fastQuery=false，clickable=true',
+      desc: '2601028，添加组队成功，fastQuery=false，clickable=true',
       rules: [
         {
           resetMatch: 'match',
@@ -324,6 +324,7 @@ export default defineGkdApp({
             'LinearLayout > TextView[id="com.xunmeng.pinduoduo:id/pdd"][text="确认删除最近搜索记录吗？"] + LinearLayout > TextView[text="删除"][clickable=true][visibleToUser=true]',
             'View > View > View > View > TextView[text^="恭喜提前锁定"] +n TextView[text="开心收下"][clickable=true][visibleToUser=true]', //
             'LinearLayout > TextView[vid="pdd"][text="取消"] +n TextView[clickable=true][visibleToUser=true][vid="pdd"][text="退出"]', //此次评价未完成，退出
+            'View > @Button[text="关闭弹窗"][clickable=true][visibleToUser=true] + View > Button[text="查看订单详情"] - View > TextView[text="开心收下"]', //下单完后弹窗
           ],
         },
       ],

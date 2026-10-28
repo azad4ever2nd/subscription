@@ -409,5 +409,35 @@ export default defineGkdApp({
         },
       ],
     },
+    {
+      key: 26,
+      name: '弹窗，中奖龙积分，X掉',
+      desc: '261028',
+      rules: [
+        {
+          resetMatch: 'match',
+          activityIds:
+            'com.nantian.iBank.ui.activity.container.ProgramSingleWindowActivity',
+          matches:
+            'View > View > @Image[text="关闭 按钮"][clickable=true][visibleToUser=true] + TextView[text^="获得" && text$="龙积分"]',
+        },
+      ],
+    },
+    {
+      key: 27,
+      name: '弹窗，任务判定中，X掉 或 确定 ',
+      desc: '261028',
+      rules: [
+        {
+          resetMatch: 'match',
+          activityIds:
+            'com.nantian.iBank.ui.activity.container.ProgramSingleWindowActivity',
+          anyMatches: [
+            'View > View > TextView[text="任务判定中，请耐心等待。"] + TextView[text="确定"][clickable=true] + Image[text="关闭 按钮"][clickable=true][visibleToUser=true]',
+            'View > View > TextView[text="任务判定中，请耐心等待。"] + @TextView[text="确定"][clickable=true] + Image[text="关闭 按钮"][clickable=true][visibleToUser=true]',
+          ],
+        },
+      ],
+    },
   ],
 });

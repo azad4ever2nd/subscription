@@ -34,7 +34,7 @@ export default defineGkdApp({
     {
       key: 2,
       name: '糖的报单',
-      desc: '261027，添加 华夏已领取已核销，排除中信活动规则，中信活动，中信抽奖，华夏红包领取，继续访问，知道了，是否继续上传',
+      desc: '261028，添加 光大财富月历红包，华夏已领取已核销，排除中信活动规则，中信活动，中信抽奖，华夏红包领取，继续访问，知道了，是否继续上传',
       rules: [
         {
           resetMatch: 'match',
@@ -56,6 +56,7 @@ export default defineGkdApp({
             '@[text="继续访问"] +n * > [desc="申请恢复访问"]',
             'View[text="我的足迹"] + View > TextView[text.length=0][clickable=true][visibleToUser=true]',
             '@Button[vid="actionbar_up_indicator"][clickable=true][visibleToUser=true] <<n FrameLayout - FrameLayout >n WebView[text="权益领取"] >n View > TextView[text="支付宝立减金0.3元"] + * + View > TextView[text="已领取" || text="已核销"][clickable=false][visibleToUser=true]',
+            'WebView[text$="月财富月历"] > View > @TextView[text.length=0][clickable=true][visibleToUser=true] - View > TextView[text$="元"] + TextView[text.length=0]', //光大财富月历红包
           ],
         },
       ],
@@ -1922,7 +1923,7 @@ export default defineGkdApp({
     {
       key: 82,
       name: '弹窗，汉运动，券已发放结束，确定',
-      desc: '261016',
+      desc: '261028，添加饿了么定位提示',
       rules: [
         {
           resetMatch: 'match',
@@ -1933,6 +1934,7 @@ export default defineGkdApp({
             'TextView[text="活动火爆,请稍后再试"] <<n LinearLayout + LinearLayout Button[text="确定"][vid="mm_alert_ok_btn"][clickable=true][visibleToUser=true]',
             'TextView[text="您的请求过于频繁，请稍后再试！"] <<n LinearLayout + LinearLayout Button[text="确定"][vid="mm_alert_ok_btn"][clickable=true][visibleToUser=true]',
             'TextView[text="券已发放结束"] <<n LinearLayout + LinearLayout Button[text="确定"][vid="mm_alert_ok_btn"][clickable=true][visibleToUser=true]',
+            'TextView[text*="获取您的位置信息"] <<n LinearLayout + LinearLayout > LinearLayout > @Button[text="暂不"][clickable=true][visibleToUser=true] + * + Button[text="去设置"][clickable=true][visibleToUser=true]',
           ],
           activityIds: [
             'com.tencent.mm.plugin.appbrand.ui.AppBrandUI0',

@@ -22,6 +22,34 @@ export default defineGkdApp({
     },
     {
       key: 2,
+      name: '弹窗，更新，勾选忽略此版本',
+      desc: '261028',
+      rules: [
+        {
+          resetMatch: 'match',
+          fastQuery: true,
+          activityIds: '.MainActivity',
+          matches:
+            'ViewGroup > RelativeLayout > CheckBox[vid="upgrade_checkbox"][checked=false][visibleToUser=true][clickable=true] + TextView[text="忽略此版本"][vid="tv_noremind"]',
+        },
+      ],
+    },
+    {
+      key: 3,
+      name: '弹窗，更新，勾选忽略此版本，X掉',
+      desc: '261028',
+      rules: [
+        {
+          resetMatch: 'match',
+          fastQuery: true,
+          activityIds: '.MainActivity',
+          matches:
+            '@ImageView[vid="iv_negative"][clickable=true][visibleToUser=true][desc="关闭"] - ViewGroup > RelativeLayout > CheckBox[vid="upgrade_checkbox"][checked=true][visibleToUser=true][clickable=true] + TextView[text="忽略此版本"][vid="tv_noremind"]',
+        },
+      ],
+    },
+    {
+      key: 4,
       name: '允许获取位置信息，取消',
       desc: '260905',
       rules: [
@@ -38,7 +66,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 3,
+      key: 5,
       name: '确认退出应用',
       desc: '26026，测试过顺序，从左往后',
       rules: [
@@ -55,7 +83,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 4,
+      key: 6,
       name: '免责提示，知道了',
       desc: '260218',
       rules: [
@@ -70,7 +98,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 5,
+      key: 7,
       name: '茶饮优惠享-立即购买',
       desc: '260702',
       rules: [
@@ -86,7 +114,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 6,
+      key: 8,
       name: '茶饮优惠享-提交',
       desc: '260702',
       rules: [
@@ -102,7 +130,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 7,
+      key: 9,
       name: '商品已抢完',
       desc: 'D',
       rules: [
@@ -115,7 +143,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 8,
+      key: 10,
       name: '同意授权',
       desc: '260705',
       rules: [
@@ -131,7 +159,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 9,
+      key: 11,
       name: '车主弹窗',
       desc: 'D',
       rules: [
@@ -144,7 +172,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 10,
+      key: 12,
       name: '游戏，我知道了',
       desc: '251219，D，添加抽奖机会用完',
       rules: [
@@ -162,7 +190,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 11,
+      key: 13,
       name: '每日签到抽奖',
       desc: '260726',
       rules: [
@@ -178,7 +206,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 12,
+      key: 14,
       name: '小豆立即抽奖',
       desc: '260710，没抽是[clickable=true][text.length=0],没中奖是有提示[text="很遗憾，您未中奖"][clickable=false],抽过奖View[clickable=false]且有child,child是查看小豆[clickable=true]，([text="每日抽小豆"] +2 View[childCount=0]) || ',
       rules: [
@@ -192,7 +220,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 13,
+      key: 15,
       name: '信用卡弹窗',
       desc: '251117，D',
       rules: [
@@ -204,7 +232,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 14,
+      key: 16,
       name: '弹窗，获取验证码',
       desc: '260908',
       rules: [
@@ -217,7 +245,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 15,
+      key: 17,
       name: '省钱月卡,拼手气抽价格',
       desc: '260921',
       rules: [
@@ -233,7 +261,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 16,
+      key: 18,
       name: '省钱月卡,开盲盒抽价格',
       desc: '260921',
       rules: [
@@ -249,7 +277,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 17,
+      key: 19,
       name: '弹窗，省钱月卡，仅限受邀用户，确定',
       desc: '260921',
       rules: [
@@ -265,7 +293,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 18,
+      key: 20,
       name: '弹窗，勾选 此服务后15日内不再提示',
       desc: '260925',
       rules: [
@@ -278,7 +306,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 19,
+      key: 21,
       name: '弹窗，勾选不再提示，知道了',
       desc: '260925',
       rules: [
@@ -291,7 +319,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 20,
+      key: 22,
       name: '点击此处返回',
       desc: '260925',
       rules: [
@@ -304,7 +332,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 21,
+      key: 23,
       name: '弹窗，您已拒绝“中国农业银行”访问您的位置"，确定',
       desc: '261025',
       rules: [
@@ -317,7 +345,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 22,
+      key: 24,
       name: '开启消息通知',
       desc: '260726',
       rules: [
