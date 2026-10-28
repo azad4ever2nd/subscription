@@ -16,7 +16,6 @@ export default defineGkdApp({
           anyMatches: [
             'View > View > TextView[text="签到成功"] +3 TextView[text="确定领取"] + TextView',
             'View > TextView +n TextView[text="知道了"][clickable=false]',
-            ' ([text="签到成功"] +n [text="知道了"]',
           ],
         },
       ],
