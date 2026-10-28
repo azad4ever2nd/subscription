@@ -377,6 +377,21 @@ export default defineGkdApp({
     },
     {
       key: 26,
+      name: '微信立减金领取，去领取',
+      desc: '261028',
+      rules: [
+        {
+          resetMatch: 'match',
+          action: 'clickCenter',
+          actionCd: 2000,
+          activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
+          matches:
+            'View > View[text="广发银行微信立减金"] + View + View[text="去领取"][clickable=true][visibleToUser=true]',
+        },
+      ],
+    },
+    {
+      key: 27,
       name: '弹窗，隐私政策更新提示，同意',
       desc: '260904',
       rules: [
