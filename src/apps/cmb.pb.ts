@@ -378,7 +378,7 @@ export default defineGkdApp({
     {
       key: 20,
       name: '领任务界面，我要抽奖1',
-      desc: '暂规则40，260706，clickable=false',
+      desc: '260706，clickable=false',
       rules: [
         {
           resetMatch: 'match',

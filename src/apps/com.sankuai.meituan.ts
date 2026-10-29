@@ -429,5 +429,19 @@ export default defineGkdApp({
         },
       ],
     },
+    {
+      key: 29,
+      name: '发现新版本，暂不升级',
+      desc: '261029',
+      rules: [
+        {
+          resetMatch: 'match',
+          fastQuery: true,
+          activityIds: 'com.meituan.android.upgrade.UpgradeDialogActivity',
+          matches:
+            'RelativeLayout > TextView[text="发现美团App新版本" || text*="新版本"] + * + @Button[text="暂不升级"][vid="btn_cancel"][clickable=true][visibleToUser=true] + Button[text="去应用商店升级"]',
+        },
+      ],
+    },
   ],
 });

@@ -1568,9 +1568,9 @@ export default defineGkdApp({
           anyMatches: [
             'WebView > View > TextView[text="立即签到"][clickable=false][visibleToUser=true]',
             'WebView > View > View > View > View > @TextView[clickable=true][visibleToUser=true] - View > TextView[text="立即前往"]',
-            'View > View > @Image[clickable=false][visibleToUser=true] + View > TextView[text="恭喜您"] +n TextView[text="积分"] + TextView[text^="恭喜您获得" && text*="专属积分奖励"]', //红色火箭签到
-            'View > View > TextView[text="恭喜您"] + * + TextView[text="微信红包"] +2 View > TextView[text="去领取"][clickable=false][visibleToUser=true]', //红色火箭，红包
-            'View > View > TextView[text="您的活动奖励金额为:"] + TextView + View > @TextView[text.length=0][clickable=true][visibleToUser=true] + View > TextView[text^="恭喜您抽中红包！点击领取后，奖励将发放至微信零钱"]', //红色火箭，红包
+            //'View > View > @Image[clickable=false][visibleToUser=true] + View > TextView[text="恭喜您"] +n TextView[text="积分"] + TextView[text^="恭喜您获得" && text*="专属积分奖励"]', //红色火箭签到
+            //'View > View > TextView[text="恭喜您"] + * + TextView[text="微信红包"] +2 View > TextView[text="去领取"][clickable=false][visibleToUser=true]', //红色火箭，红包
+            //'View > View > TextView[text="您的活动奖励金额为:"] + TextView + View > @TextView[text.length=0][clickable=true][visibleToUser=true] + View > TextView[text^="恭喜您抽中红包！点击领取后，奖励将发放至微信零钱"]', //红色火箭，红包
             'View > View > TextView[text="活动9:00开始"] + TextView[text="确定"][clickable=true][visibleToUser=true]',
             'View > View > TextView[text^="活动未开始"] +2 @TextView[clickable=true][visibleToUser=true] -  View >n Image[text="60e3f3550c78485a6857ba23"][clickable=true][visibleToUser=true]', //贵州工享有礼
             'TextView[clickable=true][visibleToUser=true] - @TextView[clickable=true][visibleToUser=true] - View >n TextView[text="每天上午9:00开始"]',
@@ -1598,6 +1598,7 @@ export default defineGkdApp({
             'View > View > @TextView[clickable=true][visibleToUser=true] -n View >n TextView[text^="您的抽奖次数不足"]',
             'View > View > @TextView[clickable=true][visibleToUser=true] -n View > TextView[text^="您已经参与过了" || text*="下次活动记得来参加呀"]',
             'View > View > TextView[text="每人1次参与机会"] + TextView[text="确定"][clickable=true][visibleToUser=true]',
+            'View > View > TextView[text="每人每月1次参与机会"] + TextView[text="确定"][clickable=true][visibleToUser=true]',
             'TextView[text^="已参与"] < View +2 @TextView[clickable=true][visibleToUser=true] - View > TextView[text="确认"]',
             '@TextView[clickable=true][visibleToUser=true] - TextView[clickable=true][visibleToUser=true] - View >n  TextView[text^="已参与"]',
             'View > View > TextView[text="很遗憾，此次未中奖，感谢您的参与"] + TextView[text="确定"][clickable=true][visibleToUser=true]',
@@ -2017,6 +2018,36 @@ export default defineGkdApp({
     },
     {
       key: 85,
+      name: '湘约，1元微信立减金，立即领取',
+      desc: '261029，添加内蒙古',
+      rules: [
+        {
+          resetMatch: 'match',
+          action: 'clickCenter',
+          actionCd: 5000,
+          forcedTime: 3000,
+          activityIds: [
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI0',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI1',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI2',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI3',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI4',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI00',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI01',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI02',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI03',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI04',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandPluginUI',
+          ],
+          anyMatches: [
+            'WebView[text*="湘约"] > View > View > TextView[text="￥1"] + TextView[text="微信立减金"] + View > TextView[text="立即领取"][clickable=true][visibleToUser=true]',
+            'WebView[text*="内蒙古"] > View > View > TextView[text="￥1"] + TextView[text="微信立减金"] + View > TextView[text="立即领取"][clickable=true][visibleToUser=true]',
+          ],
+        },
+      ],
+    },
+    {
+      key: 86,
       name: '瑞幸，更改优惠',
       desc: 'D，260810',
       rules: [
@@ -2042,7 +2073,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 86,
+      key: 87,
       name: '自动登录该设备',
       desc: '260804',
       rules: [
@@ -2055,7 +2086,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 87,
+      key: 88,
       name: '同程抢单，慎用',
       desc: 'D，261018',
       rules: [
