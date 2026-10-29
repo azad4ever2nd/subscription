@@ -377,18 +377,19 @@ export default defineGkdApp({
     },
     {
       key: 20,
-      name: '领任务界面，我要抽奖',
-      desc: '暂时禁用，规则40，260706，clickable=false',
+      name: '领任务界面，我要抽奖1',
+      desc: '暂规则40，260706，clickable=false',
       rules: [
         {
           resetMatch: 'match',
-          actionMaximum: 1,
           action: 'click',
           forcedTime: 3000,
           activityIds:
             'cmb.pb.app.h5container.webviewcontainer.PBWebContainerActivity',
-          anyMatches:
+          anyMatches: [
             'WebView > View > View > View > View > TextView[clickable=false][visibleToUser=true][text="我要抽奖"]',
+            'View > View > TextView[text^="我要" && text$="抽奖"][clickable=false][visibleToUser=true]',
+          ],
         },
       ],
     },
@@ -730,7 +731,7 @@ export default defineGkdApp({
     {
       key: 40,
       name: '抽奖领任务页面，参与抽奖 or 我要抽奖，规则3，action=clickCenter',
-      desc: '261016，clickable=true',
+      desc: '261029，clickable=true',
       rules: [
         {
           action: 'clickCenter',
@@ -742,6 +743,7 @@ export default defineGkdApp({
           anyMatches: [
             'View > View > @View[clickable=true][visibleToUser=true] > TextView[text="参与抽奖"]',
             'View > View > @View[clickable=true][visibleToUser=true] > TextView[text="我要抽奖"]',
+            'View > View > TextView[text^="我要" && text$="抽奖"][clickable=true][visibleToUser=true]',
           ],
           forcedTime: 3000,
           actionCd: 2000, //延长，考虑到任务时间
