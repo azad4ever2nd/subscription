@@ -439,5 +439,33 @@ export default defineGkdApp({
         },
       ],
     },
+    {
+      key: 28,
+      name: '弹窗，同意并授权，同意',
+      desc: '暂时不开，备用，261029',
+      rules: [
+        {
+          resetMatch: 'match',
+          activityIds:
+            'com.nantian.iBank.ui.activity.container.ProgramSingleWindowActivity',
+          matches:
+            'View > TextView[text="拒绝"] + TextView[text="同意"] + Image[text="关闭 按钮"][clickable=true][visibleToUser=true]',
+        },
+      ],
+    },
+    {
+      key: 29,
+      name: '弹窗，奖励待领取，去领取',
+      desc: '暂时不开，备用，261029',
+      rules: [
+        {
+          resetMatch: 'match',
+          activityIds:
+            'com.nantian.iBank.ui.activity.container.ProgramSingleWindowActivity',
+          matches:
+            'View > TextView[text="去领取"] + Image[text="关闭 按钮"][index=parent.childCount.minus(1)][clickable=true][visibleToUser=true]',
+        },
+      ],
+    },
   ],
 });

@@ -6,7 +6,7 @@ export default defineGkdApp({
     {
       key: 1,
       name: '每日签到，成功了',
-      desc: '260915,添加首页签到成功',
+      desc: '261029，添加首页签到成功',
       rules: [
         {
           actionCd: 100,
@@ -16,6 +16,7 @@ export default defineGkdApp({
           anyMatches: [
             'View > View > TextView[text="签到成功"] +3 TextView[text="确定领取"] + TextView',
             'View > TextView +n TextView[text="知道了"][clickable=false]',
+            'View > TextView +n TextView[text="知道了"][clickable=true][visibleToUser=true]',
           ],
         },
       ],

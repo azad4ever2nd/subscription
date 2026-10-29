@@ -300,6 +300,7 @@ export default defineGkdApp({
             'TextView[text="待使用"] <<n ViewGroup + ViewGroup > ImageView[clickable=true][visibleToUser=true]',
             'TextView[text="先去逛逛"] <<n ViewGroup + ViewGroup > ImageView[clickable=true][visibleToUser=true]',
             'View > @Button[text="关闭弹窗"][clickable=true][visibleToUser=true] +n View > TextView[text$="已支付"] + TextView[text*="邀请好友来拼单"]', //下单完后弹窗，还差1人，赶快邀请好友来拼单吧
+            'View > @Button[text="关闭弹窗"][clickable=true][visibleToUser=true] + View > Button[text="查看订单详情"] - View > TextView[text="开心收下"]', //下单完后弹窗，下单成功，预计4小时内发货，开心收下，查看订单详情
           ],
         },
       ],

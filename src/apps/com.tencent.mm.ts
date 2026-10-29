@@ -34,7 +34,7 @@ export default defineGkdApp({
     {
       key: 2,
       name: '糖的报单',
-      desc: '261028，添加 光大财富月历红包，华夏已领取已核销，排除中信活动规则，中信活动，中信抽奖，华夏红包领取，继续访问，知道了，是否继续上传',
+      desc: '261029，添加 光大财富月历红包，华夏已领取已核销，排除中信活动规则，中信活动，中信抽奖，华夏红包领取，继续访问，知道了，是否继续上传',
       rules: [
         {
           resetMatch: 'match',
@@ -57,6 +57,7 @@ export default defineGkdApp({
             'View[text="我的足迹"] + View > TextView[text.length=0][clickable=true][visibleToUser=true]',
             '@Button[vid="actionbar_up_indicator"][clickable=true][visibleToUser=true] <<n FrameLayout - FrameLayout >n WebView[text="权益领取"] >n View > TextView[text="支付宝立减金0.3元"] + * + View > TextView[text="已领取" || text="已核销"][clickable=false][visibleToUser=true]',
             'WebView[text$="月财富月历"] > View > @TextView[text.length=0][clickable=true][visibleToUser=true] - View > TextView[text$="元"] + TextView[text.length=0]', //光大财富月历红包
+            'WebView[text$="月财富月历"] > View > @TextView[text.length=0][clickable=true][visibleToUser=true] - TextView[text.length=0][clickable=true][visibleToUser=true] - View > TextView[text="该兑奖码已被使用"]', //光大财富月历红包
           ],
         },
       ],
@@ -1545,7 +1546,7 @@ export default defineGkdApp({
     {
       key: 70,
       name: '活动未开始，我知道了',
-      desc: '261025，添加 红色打卡，宁波，朴朴，动卡空间，内蒙工行，贵阳工行，工行余姚，湘约工行，贵州工行，已参加过',
+      desc: '261029，添加 红色打卡，宁波，朴朴，动卡空间，内蒙工行，贵阳工行，工行余姚，湘约工行，贵州工行，已参加过',
       rules: [
         {
           resetMatch: 'match',
@@ -1603,6 +1604,8 @@ export default defineGkdApp({
             'View > TextView[text="很遗憾未中奖" || text="感谢您的参与"] +n View > TextView[text="我知道了"][clickable=false][visibleToUser=true]',
             'View > View > TextView[text="谢谢参与～"] +2 @TextView[clickable=true][visibleToUser=true] -  View > Image[text="60e3f3550c78485a6857ba23"][clickable=true][visibleToUser=true]',
             'Dialog > TextView[text="领取成功"] +n Button[text="确定"][clickable=true][visibleToUser=true]',
+            'View > View > @TextView[clickable=true][visibleToUser=true] -n View > TextView[text="谢谢参与"]',
+            'View > View > @TextView[clickable=true][visibleToUser=true] - View > TextView[text="立即前往"]', //谢谢参与
           ],
         },
       ],

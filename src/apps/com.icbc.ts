@@ -147,7 +147,7 @@ export default defineGkdApp({
     {
       key: 9,
       name: '各种中奖',
-      desc: '261024，添加 勾选，添加未中奖，数字藏品中奖',
+      desc: '261029，添加 勾选，添加未中奖，数字藏品中奖',
       rules: [
         {
           resetMatch: 'match',
@@ -160,12 +160,13 @@ export default defineGkdApp({
             'Dialog > TextView[text*="日前领取" || text$="过期未领将失效"] + Button[text="立即领取"]',
             'Dialog > View > Button[text="完成"]',
             '[text="微信立减金" || text="支付宝红包"] + [text="立即领取"] + [text="关闭"]',
-            '[text="很遗憾，未中奖"] + [text="关闭"]',
+            'Dialog > View > View > TextView[text="很遗憾，未中奖"] + Image[text="关闭"][clickable=true][visibleToUser=true]',
             '[text="恭喜中奖了"] <<n * + * > [text="关闭"]',
             '[text="恭喜您中奖！"] + [text="关闭"]',
             '[text^="奖品已发放至"] < * + [text="确认"]',
             '[text="去兑好物"] + [text="开心收下"]',
             'WebView > CheckBox[checked=false][visibleToUser=true][clickable=true]',
+            '[text="很遗憾，未中奖"] + [text="关闭"]',
           ],
         },
       ],

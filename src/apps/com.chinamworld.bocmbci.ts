@@ -84,5 +84,18 @@ export default defineGkdApp({
         },
       ],
     },
+    {
+      key: 6,
+      name: '弹窗，未中奖，我知道了 或 X掉',
+      desc: '261029',
+      rules: [
+        {
+          resetMatch: 'match',
+          activityIds: 'com.boc.android.foundation.h5.WebViewContainerActivity',
+          matches:
+            'View > TextView[text="我知道了"][clickable=true][visibleToUser=true] + Image[clickable=true][visibleToUser=true]',
+        },
+      ],
+    },
   ],
 });

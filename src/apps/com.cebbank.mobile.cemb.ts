@@ -336,7 +336,7 @@ export default defineGkdApp({
     {
       key: 21,
       name: '弹窗，恭喜获得微信红包，先复制',
-      desc: '261016',
+      desc: '261029',
       rules: [
         {
           resetMatch: 'match',
@@ -344,7 +344,8 @@ export default defineGkdApp({
           activityIds:
             'com.cebbank.mobile.cemb.ui.activity.mobilePayment.MobilePaymentWebActivity',
           anyMatches: [
-            'View > TextView[text="元"] + TextView[text^="兑奖码："] + @TextView[text.length=0][clickable=true][visibleToUser=true] + TextView[text*="光彩礼遇社"]', //26年10月活动布局，text="搜索并关注微信公众号【光彩礼遇社】>点击菜单“领奖入口-南方财富月”>输入兑奖码领取红包"
+            'View > View[childCount=5] > TextView[text^="恭喜获得" && text*="微信红包"] + TextView + View > TextView[text^="兑奖码:"] + TextView[text.length=0][clickable=true][visibleToUser=true]', //用金币兑换后的弹窗
+            'View > View > TextView[text.length>=1] + TextView[text="元"] + TextView[text^="兑奖码:"] + @TextView[text.length=0][clickable=true][visibleToUser=true] + TextView[text*="光彩礼遇社"] +  TextView[text.length=0][clickable=true][visibleToUser=true]', //抽奖，26年10月活动布局，
           ],
         },
       ],
@@ -352,7 +353,7 @@ export default defineGkdApp({
     {
       key: 22,
       name: '弹窗，恭喜获得微信红包，复制完成后，开心收下 ',
-      desc: '261016',
+      desc: '261029',
       rules: [
         {
           resetMatch: 'match',
@@ -360,8 +361,8 @@ export default defineGkdApp({
           activityIds:
             'com.cebbank.mobile.cemb.ui.activity.mobilePayment.MobilePaymentWebActivity',
           anyMatches: [
-            'View > TextView[text="元"] + TextView[text^="兑奖码："] + TextView[text.length=0][clickable=true][visibleToUser=true] + TextView[text*="光彩礼遇社"] + TextView[text.length=0][clickable=true][visibleToUser=true]', //26年10月活动布局
-            'View > TextView[text*="光彩礼遇社" && text*="输入兑奖码领取红包"] + @TextView[clickable=false][visibleToUser=true][text.length=0] + TextView[text.length=0]',
+            'View > View[childCount=5] > TextView[text^="恭喜获得" && text*="微信红包"] + TextView +n View > TextView[text^="兑奖码:"] + TextView[text.length=0][clickable=true][visibleToUser=true] <<2 View + TextView[text*="光彩礼遇社"] + TextView[text.length=0][clickable=true][visibleToUser=true]', //用金币兑换后的弹窗
+            'View > View > TextView[text.length>=1] + TextView[text="元"] + TextView[text^="兑奖码:"] + TextView[text.length=0][clickable=true][visibleToUser=true] + TextView[text*="光彩礼遇社"] +  TextView[text.length=0][clickable=true][visibleToUser=true]', //抽奖，26年10月活动布局，
           ],
         },
       ],

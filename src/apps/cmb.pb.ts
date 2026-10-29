@@ -222,7 +222,7 @@ export default defineGkdApp({
     {
       key: 12,
       name: '基金页面下方，添加自选1',
-      desc: '260908，clickable=true',
+      desc: '261029，clickable=true',
       rules: [
         {
           action: 'clickCenter',
@@ -235,6 +235,7 @@ export default defineGkdApp({
             'cmb.pb.app.h5container.webviewcontainer.PBWebContainerActivity',
           anyMatches: [
             'View[id="FundDetailBody"] > View > View > Button[text="讨论区"] + Button[text="招财号"] + @Button[text="自选"][clickable=true][visibleToUser=true]', //测试规则写完整，避免误点
+            'View[childCount=4] > Button[text="招财号"] + @Button[text="自选"][clickable=true][visibleToUser=true] + Button + Button',
             //'View[id="FundDetailBody"] > View > View > @Button[text="自选"][clickable=true][visibleToUser=true] +n Button[text="定投" || text="购买"]',
             //'WebView > View > View > View > View > Button[text="自选"][clickable=true][visibleToUser=true]',
           ],
