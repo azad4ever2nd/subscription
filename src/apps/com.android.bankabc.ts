@@ -23,14 +23,16 @@ export default defineGkdApp({
     {
       key: 2,
       name: '弹窗，更新，勾选忽略此版本',
-      desc: '261028',
+      desc: '261030',
       rules: [
         {
           resetMatch: 'match',
           fastQuery: true,
           activityIds: '.MainActivity',
-          matches:
+          anyMatches: [
             'ViewGroup > RelativeLayout > CheckBox[vid="upgrade_checkbox"][checked=false][visibleToUser=true][clickable=true] + TextView[text="忽略此版本"][vid="tv_noremind"]',
+            'ViewGroup > TextView[text*="升级" || text*="更新"] +n TextView[text="退出"][vid="tv_cancel"][clickable=true][visibleToUser=true] +2 TextView[text="立即更新"][vid="tv_sure"][clickable=true][visibleToUser=true]',
+          ],
         },
       ],
     },
