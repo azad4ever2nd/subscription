@@ -250,7 +250,7 @@ export default defineGkdApp({
             'View > View > View > View > TextView[text^="恭喜提前锁定"] +n TextView[text="开心收下"][clickable=false][visibleToUser=true]',
             'TextView[text^="剩余"] + View > View > TextView[text^="还差"] + ListView + TextView[text="去首页逛逛"]',
             '[text="添加物流助手到桌面"] <<n * + @ViewGroup[clickable=false][visibleToUser=true] ImageView',
-            'WebView > WebView > View > View > View > Button[text="关闭弹窗"]',
+            'WebView > WebView > View > View > View > Button[text="关闭弹窗"][clickable=false][visibleToUser=true]',
             '[text="暂时放弃"] <<n @* + [text="继续支付"]',
             'ImageView < @* - ViewGroup [text="支付成功"]',
             '[text="如何领取福袋奖励"] +n [text="去首页解锁"]',
@@ -299,8 +299,6 @@ export default defineGkdApp({
             'View > View > View > TextView[text="恭喜获得专属惊喜券"] + TextView[text*="已成功点亮" || text$="明日可继续点亮"] +(3,4)  Image[text="webp"][clickable=true][visibleToUser=true]',
             'TextView[text="待使用"] <<n ViewGroup + ViewGroup > ImageView[clickable=true][visibleToUser=true]',
             'TextView[text="先去逛逛"] <<n ViewGroup + ViewGroup > ImageView[clickable=true][visibleToUser=true]',
-            'View > @Button[text="关闭弹窗"][clickable=true][visibleToUser=true] +n View > TextView[text$="已支付"] + TextView[text*="邀请好友来拼单"]', //下单完后弹窗，还差1人，赶快邀请好友来拼单吧
-            'View > @Button[text="关闭弹窗"][clickable=true][visibleToUser=true] + View > Button[text="查看订单详情"] - View > TextView[text="开心收下"]', //下单完后弹窗，下单成功，预计4小时内发货，开心收下，查看订单详情
           ],
         },
       ],
@@ -308,7 +306,7 @@ export default defineGkdApp({
     {
       key: 17,
       name: '弹窗，有名字的按钮',
-      desc: '2601028，添加组队成功，fastQuery=false，clickable=true',
+      desc: '2601030，添加组队成功，fastQuery=false，clickable=true',
       rules: [
         {
           resetMatch: 'match',
@@ -320,12 +318,14 @@ export default defineGkdApp({
             'View > View > View > TextView[text^="浏览商品10秒" || text$="即可点亮1次"] +n TextView[text^="去看看"][clickable=true][visibleToUser=true]',
             'View > View > View > TextView[text^="如何解锁" || text="如何解锁点亮?"] + TextView[text="去首页"][clickable=true][visibleToUser=true]',
             'View > @View[clickable=true][visibleToUser=true] + TextView[text="进入消费券活动页领券"]', //页面，非弹窗
-            'WebView > WebView > View > View > View > Button[text="关闭弹窗"][clickable=true]',
             'View > @Button[text="关闭按钮"][clickable=true][visibleToUser=true] + TextView[text^="余额¥" && text$="购物可直接抵扣"]',
             'LinearLayout > TextView[id="com.xunmeng.pinduoduo:id/pdd"][text="确认删除最近搜索记录吗？"] + LinearLayout > TextView[text="删除"][clickable=true][visibleToUser=true]',
             'View > View > View > View > TextView[text^="恭喜提前锁定"] +n TextView[text="开心收下"][clickable=true][visibleToUser=true]', //
             'LinearLayout > TextView[vid="pdd"][text="取消"] +n TextView[clickable=true][visibleToUser=true][vid="pdd"][text="退出"]', //此次评价未完成，退出
-            'View > @Button[text="关闭弹窗"][clickable=true][visibleToUser=true] + View > Button[text="查看订单详情"] - View > TextView[text="开心收下"]', //下单完后弹窗
+            'View > @Button[text="关闭弹窗"][clickable=true][visibleToUser=true] + View > Button[text="查看订单详情"] - View > TextView[text="开心收下"]', //下单完后弹窗，下单成功，预计4小时内发货，开心收下，查看订单详情
+            'View > @Button[text="关闭弹窗"][clickable=true][visibleToUser=true] + View > TextView[text="开心收下"] + Button[text="查看订单详情"]', //下单完后弹窗，下单成功，预计5小时内发货，开心收下，查看订单详情
+            'View > @Button[text="关闭弹窗"][clickable=true][visibleToUser=true] +n View > TextView[text$="已支付"] + TextView[text*="邀请好友来拼单"]', //下单完后弹窗，还差1人，赶快邀请好友来拼单吧
+            'WebView > WebView > View > View > View > Button[text="关闭弹窗"][clickable=true][visibleToUser=true]',
           ],
         },
       ],
