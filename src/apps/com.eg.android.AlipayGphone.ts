@@ -249,22 +249,23 @@ export default defineGkdApp({
     {
       key: 14,
       name: '任务列表，去领取 去浏览',
-      desc: '261025，action:clickCenter',
+      desc: '261030，action:clickCenter',
       rules: [
         {
           resetMatch: 'match',
           action: 'clickCenter',
+          forcedTime: 3000,
           activityIds:
             'com.alipay.mobile.nebulax.xriver.activity.XRiverActivity',
           excludeMatches: [
-            'TextView[text="数字人民币月享节" || text="月享节幸运大转盘"|| text="交行新客数币红包"]',
+            'TextView[text="数字人民币月享节" || text="月享节幸运大转盘"|| text="交行新客数币红包"][visibleToUser=true]',
             'View > View > TextView[text="信用卡积分当钱花"] + TextView[text="支付时直接抵现金"] + Button[text="去领取"][clickable=true][visibleToUser=true]', //还款页面排除
           ],
           anyMatches: [
             'View > View > Button[text="去领取"][clickable=true][visibleToUser=true]', //排除主要针对数币活动
+            '@View[clickable=true][visibleToUser=true] >n TextView[text="任务完成"] + TextView[text="返回会场" || text="返回领奖>"]',
             '@View[clickable=true][visibleToUser=true] > View > TextView[text="任务完成"] + TextView[text="返回会场" || text="返回领奖>"]', //'@View > View > TextView[text="任务完成"] + TextView[text="返回会场"]',
             'View > Button[text="关闭"] +n View > View > View Button[clickable=true][visibleToUser=true][text="去领取" || text="去浏览"]',
-            '@View[clickable=true][visibleToUser=true] >n TextView[text="任务完成"] + TextView[text="返回会场" || text="返回领奖>"]',
           ],
         },
       ],
@@ -296,7 +297,7 @@ export default defineGkdApp({
     {
       key: 16,
       name: '弹窗，各种弹窗，有名字的按钮',
-      desc: '261028，fastQuery=false，添加 返回会场，邀请你，去抢购，位置权限，不感兴趣，添加到桌面首页，',
+      desc: '261030，fastQuery=false，添加 返回会场，邀请你，去抢购，位置权限，不感兴趣，添加到桌面首页，',
       rules: [
         {
           resetMatch: 'match',
@@ -322,6 +323,8 @@ export default defineGkdApp({
             'View > View > @Button[text="关闭"][clickable=true][visibleToUser=true] +n Button[text="去添加银行卡"]',
             'View > View > Button[text="领奖励"][clickable=true][visibleToUser=true]',
             'View > View > TextView[text*="到支付宝首页"] +n Button[text="关闭"][clickable=true][visibleToUser=true]',
+            '@View[clickable=false][visibleToUser=true] > View > TextView[text*="任务完成"] + TextView[text*="返回领奖"]',
+            'View > View > TextView +(3,5) @Button[text="继续退出"][clickable=true][visibleToUser=true] + Button[text="去设置"][clickable=true][visibleToUser=true]',
             'Dialog > View > View > TextView[text="从余额宝-攒着转出"] +(5,7) TextView[text="确认转出"][clickable=true][visibleToUser=true]', //攒着转出到余额宝
             'Dialog > View > View > View > TextView[text="恭喜获得碰金币"] +(4,7) TextView[text*="开心收下"][clickable=true][visibleToUser=true]', //碰金币
             'Dialog > View > View > View > TextView[text="恭喜获得任务奖励"] +n TextView[text*="开心收下"][clickable=true][visibleToUser=true]',
@@ -330,20 +333,23 @@ export default defineGkdApp({
             'Dialog[text="恭喜获得隐藏福利"] > Button[text="关闭"][clickable=true][visibleToUser=true] - View >n View[childCount=2] > @Button[text="继续抽奖"][clickable=true][visibleToUser=true] + Button[text="去完成" || text="去领取"]',
             'Dialog[text="恭喜获得隐藏福利"] > @Button[text="关闭"][clickable=true][visibleToUser=true] - View >n View[childCount=1] >  Button[text="去完成"]',
             'Dialog[text="恭喜抽中惊喜福利"] > @Button[text="关闭"][clickable=true][visibleToUser=true] - View >n View[childCount=1] > Button[text="恭喜抽中惊喜福利" || text*="去"]',
+            'Dialog[text="恭喜获得惊喜福利"] > @Button[text="关闭"][clickable=true][visibleToUser=true] - View >n View[childCount=1] > Button[text="恭喜获得惊喜福利" || text*="去"]',
             //'Dialog[text="恭喜抽中惊喜福利"] > @Button[text="关闭"][clickable=true][visibleToUser=true] - View >n View[childCount=1] > Button[text="立即去"]',
             //'Dialog[text="恭喜抽中惊喜福利"] > @Button[text="关闭"][clickable=true][visibleToUser=true] - View >n View[childCount=1] > Button[text="去抽奖" || text="去瓜分"][visibleToUser=true]',
             //'Dialog[text="恭喜抽中惊喜福利"] > @Button[text="关闭"][clickable=true][visibleToUser=true] - View >n View[childCount=1] > Button[text="去看看"]',
+            'Dialog[text="恭喜获得惊喜福利"] > @Button[text="关闭"][clickable=true][visibleToUser=true] - View >n View[childCount=1] > Button[text="去领取" || text="去看看"][clickable=true][visibleToUser=true]',
+            'Dialog[text="恭喜获得惊喜福利"] > @Button[text="关闭"][clickable=true][visibleToUser=true]',
             'Dialog[text="恭喜获得优惠福利"] > Button[text="关闭"][clickable=true][visibleToUser=true] - View >n View[childCount=2] > Button[text="继续抽奖"] + @Button[text="点我领取"][clickable=true][visibleToUser=true]',
             'Dialog[text="恭喜获得优惠福利"] > @Button[text="关闭"][clickable=true][visibleToUser=true] - View >n View[childCount=2] > Button[text="放弃领取"] + Button[text="点我领取"][clickable=true][visibleToUser=true]',
             'Dialog[text="恭喜获得红包福利"] > Button[text="关闭"][clickable=true][visibleToUser=true] - View >n View[childCount=2] > Button[text="继续抽奖"] + Button[text="点我领取"][clickable=true][visibleToUser=true]',
             'Dialog[text="恭喜获得红包福利"] > Button[text="关闭"][clickable=true][visibleToUser=true] - View >n View[childCount=2] > Button[text="放弃领取"] + Button[text="点我领取"][clickable=true][visibleToUser=true]',
             'Dialog[text="恭喜抽中红包福利"] > Button[text="关闭"][clickable=true][visibleToUser=true] - View >n View[childCount=2] > Button[text="继续抽奖"] + Button[text="点我领取"][clickable=true][visibleToUser=true]',
-            'Dialog[text="恭喜获得惊喜福利"] > @Button[text="关闭"][clickable=true][visibleToUser=true] - View >n View[childCount=1] > Button[text="去领取" || text="去看看"][clickable=true][visibleToUser=true]',
-            'Dialog[text="恭喜获得惊喜福利"] > @Button[text="关闭"][clickable=true][visibleToUser=true]',
             'Dialog[text="恭喜获得遇财神支付红包"] > Button[text="关闭"][clickable=true][visibleToUser=true] - View >n View[childCount=1] > Button[text="去领取" || text="点我领取"][clickable=true][visibleToUser=true]',
+            'Dialog[text="恭喜获得遇财神支付红包"] > Button[text="关闭"][clickable=true][visibleToUser=true] - View >n View[childCount=2] > Button[text="继续抽奖"] + Button[text="去领取" || text="点我领取"][clickable=true][visibleToUser=true]',
             'Dialog[text="恭喜免费升级扫码点单"] > @Button[text="关闭"][clickable=true][visibleToUser=true] - View >n View[childCount=1] > Button[text="去了解"]',
-            'View > View > TextView +(3,5) @Button[text="继续退出"][clickable=true][visibleToUser=true] + Button[text="去设置"][clickable=true][visibleToUser=true]',
-            '@View[clickable=false][visibleToUser=true] > View > TextView[text*="任务完成"] + TextView[text*="返回领奖"]',
+            'Dialog[text="恭喜获得今日食材"] > @Button[text="关闭"][clickable=true][visibleToUser=true] - View >n View[childCount=1] >  Button[text*="开心收下"]',
+            'Dialog[text="恭喜获得合成奖励"] > @Button[text="关闭"][clickable=true][visibleToUser=true] - View >n View[childCount=1] >  Button[text="开心收下"]',
+            'Dialog[text="恭喜免费升级手机点单"] > @Button[text="关闭"][clickable=true][visibleToUser=true] - View >n View[childCount=1] >  Button[text="去了解"]',
           ],
         },
       ],
