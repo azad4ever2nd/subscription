@@ -132,11 +132,11 @@ export default defineGkdApp({
     {
       key: 8,
       name: '百亿补贴，无门槛抽奖',
-      desc: '261027，fastQuery=false,clickable=true',
+      desc: '261031，fastQuery=false,clickable=true',
       rules: [
         {
           actionMaximum: 5,
-          actionCd: 2000,
+          actionCd: 700,
           resetMatch: 'match',
           action: 'clickCenter',
           activityIds: 'com.xunmeng.pinduoduo.activity.NewPageActivity',
