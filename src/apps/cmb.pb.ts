@@ -1081,5 +1081,53 @@ export default defineGkdApp({
         },
       ],
     },
+
+    {
+      key: 59,
+      name: '弹窗，荆楚葵花园，协议勾选框',
+      desc: '261031，限1',
+      rules: [
+        {
+          resetMatch: 'match',
+          actionMaximum: 1,
+          forcedTime: 3000,
+          action: 'clickNode',
+          activityIds: 'com.pb.tpstore.PBAppletWebViewActivity',
+          matches:
+            'View > TextView[text="荆楚葵花园"] +n Button[text="已选定，协议勾选框"][clickable=true][visibleToUser=true]',
+        },
+      ],
+    },
+    {
+      key: 60,
+      name: '弹窗，荆楚葵花园，协议勾选框后，同意',
+      desc: '261031',
+      rules: [
+        {
+          resetMatch: 'match',
+          forcedTime: 6000,
+          action: 'click',
+          preKeys: [59],
+          activityIds: 'com.pb.tpstore.PBAppletWebViewActivity',
+          matches:
+            '@Button[text="同意"][clickable=true][visibleToUser=true] - Button[text="拒绝"] < View -2 View > TextView[text="荆楚葵花园"] +n Button[text="已选定，协议勾选框"][clickable=true][visibleToUser=true]',
+        },
+      ],
+    },
+    {
+      key: 61,
+      name: '弹窗，荆楚葵花园，领取成功，X掉',
+      desc: '261031',
+      rules: [
+        {
+          resetMatch: 'match',
+          forcedTime: 3000,
+          action: 'click',
+          activityIds: 'com.pb.tpstore.PBAppletWebViewActivity',
+          matches:
+            'TextView[text^="+" && text$="葵花籽"] <<n View + View + @View[clickable=false][visibleToUser=true] > View > TextView[text.length=0][clickable=false][visibleToUser=true]',
+        },
+      ],
+    },
   ],
 });
