@@ -760,7 +760,7 @@ export default defineGkdApp({
     {
       key: 42,
       name: '阳光兑换3，兑换完成与返回',
-      desc: '261004，添加 排除 立减金兑换，微信金币兑换',
+      desc: '261031，添加 排除 立减金兑换，微信立减金，微信金币兑换',
       rules: [
         {
           resetMatch: 'match',
@@ -782,6 +782,7 @@ export default defineGkdApp({
             'TextView[text="兑换成功"] < View + View > View > TextView[text="微信提现免费券"][visibleToUser=true]',
             'WebView[text="权益详情"] > View > View > TextView[text="权益信息"]',
             'View > TextView[text="权益信息"]',
+            'WebView > View > TextView[text^="微信立减金" && text$="元"]',
           ],
           matches: ['[text="兑换成功"]'],
         },
@@ -1239,7 +1240,7 @@ export default defineGkdApp({
     {
       key: 59,
       name: '深工登陆弹窗，X掉',
-      desc: '261010',
+      desc: '261031',
       rules: [
         {
           resetMatch: 'match',
@@ -1258,6 +1259,7 @@ export default defineGkdApp({
             'com.tencent.mm.plugin.appbrand.ui.AppBrandPluginUI',
           ],
           anyMatches: [
+            'View > TextView[text*="恭喜你完成每日登录，获得" && text*="积分。"] - Image - @View[childCount=1][clickable=false][visibleToUser=true] > Image',
             '@Image[clickable=false][visibleToUser=true] < View + Image + TextView[text^="恭喜你完成"] + TextView[text="取消"] + TextView[text="查看积分"]', //完成每日登录，获得20积分，取消，查看积分
             '@Image[clickable=false][visibleToUser=true] < View -n TextView[text$="积分"] +n TextView[text="去查看"]',
             'TextView[text="去领取"] < FrameLayout <n FrameLayout +2 FrameLayout > FrameLayout > TextView > ImageView[clickable=false][visibleToUser=true]', //恭喜你 抽中了 100积分，去领取，分享好友，一起抽大奖，X掉

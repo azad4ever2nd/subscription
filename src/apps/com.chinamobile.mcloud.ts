@@ -44,7 +44,7 @@ export default defineGkdApp({
     {
       key: 3,
       name: '领奖完成',
-      desc: '261016，添加 抽奖，弹窗，云朵领取成功',
+      desc: '261031，添加 抽奖，弹窗，云朵领取成功',
       rules: [
         {
           resetMatch: 'match',
@@ -67,6 +67,7 @@ export default defineGkdApp({
             'Dialog > TextView[text="恭喜您答对啦!"] +n TextView[text.length=0][clickable=true][visibleToUser=true]',
             'Dialog > View > View >  TextView[text="哎呀~"] +n Button[text="好的"] + TextView[text.length=0][clickable=true][visibleToUser=true]',
             'Dialog > TextView[text="哎呀~答错啦!"] +n Button[text="分享给好友"] +2 TextView[text.length=0][clickable=true][visibleToUser=true]',
+            'View > View > @Image[text.length=0][clickable=true][visibleToUser=true] + TextView[text^="您已成功订购"] + Image[text.length=0]',
           ],
         },
       ],

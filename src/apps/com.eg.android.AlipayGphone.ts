@@ -7,7 +7,7 @@ export default defineGkdApp({
     {
       key: 1,
       name: '首页弹窗',
-      desc: '261014，添加 更新，添加 消息标为已读',
+      desc: '261031，添加 更新，添加 消息标为已读',
       rules: [
         {
           anyMatches: [
@@ -15,7 +15,7 @@ export default defineGkdApp({
             'View > View > TextView[text="删除该聊天"] + View + @View[clickable=true][visibleToUser=true] > TextView[text="刪除"] + Button',
             'View > TextView[text="将所有消息标为已读？"] + @View[clickable=true][visibleToUser=true] > TextView[text="取消"] + Button',
             'View > View > TextView[text="标为已读"] + TextView[text="置顶"] + TextView[text="删除该聊天"][clickable=false][visibleToUser=true]',
-            '[desc="推荐广告"] + * > [desc="关闭"]',
+            //'[desc="推荐广告"] + * > [desc="关闭"]',
           ],
           resetMatch: 'match',
           activityIds: 'com.eg.android.AlipayGphone.AlipayLogin',
@@ -297,7 +297,7 @@ export default defineGkdApp({
     {
       key: 16,
       name: '弹窗，各种弹窗，有名字的按钮',
-      desc: '261030，fastQuery=false，添加 返回会场，邀请你，去抢购，位置权限，不感兴趣，添加到桌面首页，',
+      desc: '261031，fastQuery=false，添加 返回会场，邀请你，去抢购，位置权限，不感兴趣，添加到桌面首页，',
       rules: [
         {
           resetMatch: 'match',
@@ -306,9 +306,14 @@ export default defineGkdApp({
           activityIds:
             'com.alipay.mobile.nebulax.xriver.activity.XRiverActivity',
           anyMatches: [
+            'View > View > TextView[text="确定用5000碰金币兑换吗"] +n TextView[text="我再想想"] + TextView[text="确认兑换"][clickable=true][visibleToUser=true]', //弹窗，碰金币兑换，确认兑换
+            'View > View > TextView[text="确定用2000碰金币兑换吗"] +n TextView[text="我再想想"] + TextView[text="确认兑换"][clickable=true][visibleToUser=true]',
+            'View > View > TextView[text="确定用1680碰金币兑换吗"] +n TextView[text="我再想想"] + TextView[text="确认兑换"][clickable=true][visibleToUser=true]',
+            //'View > View > TextView[text*="碰金币兑换吗"] +n TextView[text="我再想想"] + TextView[text="确认兑换"][clickable=true][visibleToUser=true]',
             'View > View > TextView[text="支付宝"] + TextView[text="邀请你"] + TextView[clickable=false][visibleToUser=true][text="跳过"]',
             'View > View > TextView[text="支付宝"] + TextView[text="邀请你"] + TextView[text="跳过"][clickable=true][visibleToUser=true]',
             'Dialog > View > View > @Button[clickable=true][visibleToUser=true][text="关闭"] - View >n TextView[text="去抢购"]',
+            'Dialog[text="兑换成功！"] > @Button[text="关闭"][clickable=true][visibleToUser=true] - View TextView[text^="兑换成功"]', //碰金币兑换成功
             'RelativeLayout > TextView[id="com.alipay.mobile.antui:id/title_txt_1"][text="开启地理位置权限"] - @FrameLayout[desc="取消"][id="com.alipay.mobile.antui:id/btn_close"][clickable=true][visibleToUser=true] > TextView[desc="取消"]',
             'View > CheckBox[checked=true] + TextView + Button + Button[clickable=true][visibleToUser=true][text="继续转出"]',
             'TextView[text="拼多多 推荐你"] <n FrameLayout +n FrameLayout > TextView[text="不感兴趣"][clickable=false][visibleToUser=true]',
@@ -350,6 +355,7 @@ export default defineGkdApp({
             'Dialog[text="恭喜获得今日食材"] > @Button[text="关闭"][clickable=true][visibleToUser=true] - View >n View[childCount=1] >  Button[text*="开心收下"]',
             'Dialog[text="恭喜获得合成奖励"] > @Button[text="关闭"][clickable=true][visibleToUser=true] - View >n View[childCount=1] >  Button[text="开心收下"]',
             'Dialog[text="恭喜免费升级手机点单"] > @Button[text="关闭"][clickable=true][visibleToUser=true] - View >n View[childCount=1] >  Button[text="去了解"]',
+            'Dialog > View > View >n View[childCount=1] > Image[text="fmt"][clickable=false][visibleToUser=true]', //双11天降消费券
           ],
         },
       ],
@@ -387,7 +393,7 @@ export default defineGkdApp({
     {
       key: 18,
       name: '弹窗，各种弹窗，X掉2',
-      desc: '261026，fastQuery=false，添加 神券五六天，签到成功，开通碰一下，推送服务，查询账单，返回领奖，到桌面，银行卡抽奖，升级月利宝',
+      desc: '261031，fastQuery=false，添加 神券五六天，签到成功，开通碰一下，推送服务，查询账单，返回领奖，到桌面，银行卡抽奖，升级月利宝',
       rules: [
         {
           resetMatch: 'match',
@@ -418,6 +424,7 @@ export default defineGkdApp({
             'View > View > @TextView[clickable=true][visibleToUser=true] +2 View > TextView[text="完成得金币，可兑换消费红包当钱花"]', //金币暴涨
             'View > @TextView[clickable=true][visibleToUser=true] - View > View > TextView[text="已发放至「我的奖励」"]', //获得财运红包
             'View > @TextView[clickable=true][visibleToUser=true] - View > View > View > View > View > TextView[text="已发放至「我的奖励」"]', //恭喜获得攒钱节专属福利，这个顺序必须低于上面的 获得财运红包
+            'View > @TextView[clickable=false][visibleToUser=true] - View > View > View >n TextView[text="已发放至「我的奖励」"]',
           ],
         },
       ],

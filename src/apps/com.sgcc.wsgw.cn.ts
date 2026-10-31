@@ -173,5 +173,20 @@ export default defineGkdApp({
         },
       ],
     },
+    {
+      key: 12,
+      name: '支付结果，完成',
+      desc: '261031',
+      rules: [
+        {
+          resetMatch: 'match',
+          fastQuery: true,
+          activityIds:
+            'com.htjc.pay.lite.moudle.electricchargemulti.MultiElePayResultActivity',
+          matches:
+            'LinearLayout > Button[text="完成"][vid="btn_finish"][clickable=true][visibleToUser=true]',
+        },
+      ],
+    },
   ],
 });

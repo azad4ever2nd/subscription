@@ -6,7 +6,7 @@ export default defineGkdApp({
   groups: [
     {
       key: 1,
-      name: '内测更新，X掉',
+      name: '弹窗，内测更新，X掉',
       desc: '260829',
       rules: [
         {
@@ -47,15 +47,15 @@ export default defineGkdApp({
     },
     {
       key: 4,
-      name: '弹窗',
-      desc: '260802，财运红包',
+      name: '弹窗，财运红包，X掉',
+      desc: '260802，',
       rules: [
         {
           resetMatch: 'match',
           activityIds:
             'com.alipay.mobile.nebulax.xriver.activity.XRiverActivity',
           matches:
-            '@TextView[clickable=true][visibleToUser=true] < View +2 TextView[text="已学习，去使用"]',
+            '@TextView[clickable=true][visibleToUser=true] < View +2 TextView[text="已学习，去使用"]', //财运红包
         },
       ],
     },
@@ -86,6 +86,21 @@ export default defineGkdApp({
             'com.alipay.mobile.nebulax.xriver.activity.XRiverActivity',
           matches:
             '@Image[clickable=true][visibleToUser=true] < View + View TextView[text="转入余额宝(元)"]',
+        },
+      ],
+    },
+    {
+      key: 7,
+      name: '完成',
+      desc: '261031',
+      rules: [
+        {
+          resetMatch: 'match',
+          fastQuery: true,
+          activityIds:
+            'com.alipay.mobile.nebulax.xriver.activity.XRiverActivity',
+          matches:
+            'FrameLayout > TextView[text="完成"][id="com.alipay.multiplatform.phone.xriver_integration:id/textView_rightButton1"][clickable=true][visibleToUser=true]',
         },
       ],
     },
