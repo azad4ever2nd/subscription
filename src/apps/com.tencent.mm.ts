@@ -1608,6 +1608,7 @@ export default defineGkdApp({
             'View > View > TextView[text="谢谢参与～"] +2 @TextView[clickable=true][visibleToUser=true] -  View > Image[text="60e3f3550c78485a6857ba23"][clickable=true][visibleToUser=true]',
             'Dialog > TextView[text="领取成功"] +n Button[text="确定"][clickable=true][visibleToUser=true]',
             'View > View > @TextView[clickable=true][visibleToUser=true] -n View > TextView[text="谢谢参与"]',
+            'Dialog > TextView[text="谢谢参与"] + TextView + @View[clickable=true][visibleToUser=true] > TextView[text.length=1]',
             'View > View > @TextView[clickable=true][visibleToUser=true] - View > TextView[text="立即前往"]', //谢谢参与
           ],
         },
