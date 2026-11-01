@@ -98,12 +98,13 @@ export default defineGkdApp({
           fastQuery: true,
           resetMatch: 'match',
           actionCd: 300,
+          action: 'clickCenter',
           activityIds: 'com.xunmeng.pinduoduo.activity.NewPageActivity',
           anyMatches: [
+            'TextView[text="放弃打款"] <<n ViewGroup + @ViewGroup[clickable=true][visibleToUser=true] > FrameLayout > TextView[text.length=1][clickable=false][visibleToUser=true]',
             'TextView[text="继续编辑"] < FrameLayout + @FrameLayout[clickable=true][visibleToUser=true] > TextView[text="放弃打款"]',
             'TextView[text="继续编辑"] < FrameLayout < ViewGroup + @ViewGroup[clickable=true] > FrameLayout > TextView[text="退出"]',
             '[vid="pdd"] < @[vid="pdd"] + [vid="pdd"] > [text="评价拍摄"]',
-            'TextView[text="放弃打款"] <<n ViewGroup + @ViewGroup[clickable=true][visibleToUser=true] > FrameLayout > TextView[text.length=1][clickable=false][visibleToUser=true]',
             'ImageView < @FrameLayout[vid="pdd"][clickable=true][visibleToUser=true] - ViewGroup > TextView[vid="tv_title"][text="可参与的拼单"]', //可参与的拼单，X掉
             '[text="继续编辑"] <<n *[clickable=true] + @*[clickable=true] >n [text="放弃领券"]',
           ],
@@ -113,16 +114,20 @@ export default defineGkdApp({
     {
       key: 7,
       name: '弹窗，X掉2',
-      desc: '260905，fastQuery=true，clickable=false',
+      desc: '261101，fastQuery=true，clickable=false，排除2个规则冲突轮流查询',
       rules: [
         {
+          excludeMatches: [
+            'TextView[text="放弃打款"] <<n ViewGroup + @ViewGroup[clickable=true][visibleToUser=true] > FrameLayout > TextView[text.length=1][clickable=false][visibleToUser=true]',
+            'TextView[text="继续编辑"] < FrameLayout + @FrameLayout[clickable=true][visibleToUser=true] > TextView[text="放弃打款"]',
+          ],
           anyMatches: [
-            '[text="邀请好友拼单"] + [text="去首页逛逛"]',
             '@[vid="pdd"][desc="返回"] < * +n * > [vid="tv_title"][text="发表评价" || text="发表真实评价"]', //发表评价，返回',
             'TextView[text="因通知关闭，无法接收物流消息"] < FrameLayout +2 ViewGroup > @ViewGroup > FrameLayout > TextView[text="拒绝接收"]', //通知关闭，拒绝接收
             '[text="确认收货成功"] <<n * + * @[vid="pdd"] > [desc="返回"]', //确认收货成功，返回
+            '[text="邀请好友拼单"] + [text="去首页逛逛"]',
           ],
-          actionCd: 300,
+          actionCd: 500,
           fastQuery: true,
           resetMatch: 'match',
           activityIds: ['com.xunmeng.pinduoduo.activity.NewPageActivity'],
@@ -229,7 +234,7 @@ export default defineGkdApp({
     {
       key: 14,
       name: '弹窗，X掉3',
-      desc: '261017，fastQuery=false，clickable=false，添加 提前锁定，神券',
+      desc: '261101，fastQuery=false，clickable=false，添加 提前锁定，神券',
       rules: [
         {
           resetMatch: 'match',
@@ -251,7 +256,7 @@ export default defineGkdApp({
             'TextView[text^="剩余"] + View > View > TextView[text^="还差"] + ListView + TextView[text="去首页逛逛"]',
             '[text="添加物流助手到桌面"] <<n * + @ViewGroup[clickable=false][visibleToUser=true] ImageView',
             'WebView > WebView > View > View > View > Button[text="关闭弹窗"][clickable=false][visibleToUser=true]',
-            '[text="暂时放弃"] <<n @* + [text="继续支付"]',
+            '[text="暂时放弃"] <<n @*[clickable=false][visibleToUser=true] + [text="继续支付"]',
             'ImageView < @* - ViewGroup [text="支付成功"]',
             '[text="如何领取福袋奖励"] +n [text="去首页解锁"]',
           ],
@@ -306,7 +311,7 @@ export default defineGkdApp({
     {
       key: 17,
       name: '弹窗，有名字的按钮',
-      desc: '2601030，添加组队成功，fastQuery=false，clickable=true',
+      desc: '2601101，添加组队成功，fastQuery=false，clickable=true',
       rules: [
         {
           resetMatch: 'match',
@@ -314,13 +319,14 @@ export default defineGkdApp({
           actionCd: 750,
           activityIds: 'com.xunmeng.pinduoduo.activity.NewPageActivity',
           anyMatches: [
-            '[text="暂时放弃"] <<n @*[clickable=true] + [text="继续支付"]',
+            '[text="暂时放弃"] <<n @*[clickable=false][visibleToUser=true] + [text="继续支付"]',
             'View > View > View > TextView[text^="浏览商品10秒" || text$="即可点亮1次"] +n TextView[text^="去看看"][clickable=true][visibleToUser=true]',
             'View > View > View > TextView[text^="如何解锁" || text="如何解锁点亮?"] + TextView[text="去首页"][clickable=true][visibleToUser=true]',
             'View > @View[clickable=true][visibleToUser=true] + TextView[text="进入消费券活动页领券"]', //页面，非弹窗
             'View > @Button[text="关闭按钮"][clickable=true][visibleToUser=true] + TextView[text^="余额¥" && text$="购物可直接抵扣"]',
             'LinearLayout > TextView[id="com.xunmeng.pinduoduo:id/pdd"][text="确认删除最近搜索记录吗？"] + LinearLayout > TextView[text="删除"][clickable=true][visibleToUser=true]',
-            'View > View > View > View > TextView[text^="恭喜提前锁定"] +n TextView[text="开心收下"][clickable=true][visibleToUser=true]', //
+            'View > View > View > View > TextView[text^="恭喜提前锁定"] + TextView + TextView[text="开心收下"][clickable=true][visibleToUser=true] + Image[text="webp"][clickable=true][visibleToUser=true]', //恭喜提前锁定限时翻倍券，X掉
+            'View > View > View > View > TextView[text^="恭喜提前锁定"] +n TextView[text="开心收下"][clickable=true][visibleToUser=true]', //恭喜提前锁定限时翻倍券，开心收下
             'LinearLayout > TextView[vid="pdd"][text="取消"] +n TextView[clickable=true][visibleToUser=true][vid="pdd"][text="退出"]', //此次评价未完成，退出
             'View > @Button[text="关闭弹窗"][clickable=true][visibleToUser=true] + View > Button[text="查看订单详情"] - View > TextView[text="开心收下"]', //下单完后弹窗，下单成功，预计4小时内发货，开心收下，查看订单详情
             'View > @Button[text="关闭弹窗"][clickable=true][visibleToUser=true] + View > TextView[text="开心收下"] + Button[text="查看订单详情"]', //下单完后弹窗，下单成功，预计5小时内发货，开心收下，查看订单详情

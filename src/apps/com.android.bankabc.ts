@@ -102,15 +102,16 @@ export default defineGkdApp({
     {
       key: 7,
       name: '茶饮优惠享-立即购买',
-      desc: '260702',
+      desc: '261101',
       rules: [
         {
           resetMatch: 'match',
           actionCd: 250,
+          forcedTime: 3000,
           activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
           anyMatches: [
-            'WebView[text="茶影优惠享"] > View > View > View > View > View[clickable=true][visibleToUser=true][text="立即购买"]',
-            'WebView[text="茶影优惠享"] View[text="立即购买"][clickable=true]',
+            'WebView[text="茶影优惠享"] > View > View > View > View > View[text="立即购买"][clickable=true][visibleToUser=true]',
+            'WebView[text="茶影优惠享"] View[text="立即购买"][clickable=true][visibleToUser=true]',
           ],
         },
       ],
@@ -133,13 +134,16 @@ export default defineGkdApp({
     },
     {
       key: 9,
-      name: '商品已抢完',
-      desc: 'D',
+      name: '商品已抢完，返回',
+      desc: '261101',
       rules: [
         {
           resetMatch: 'match',
           activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
-          matches: '[text^="本期活动商品已抢完"]',
+          anyMatches: [
+            'View > View[text="本期活动商品已抢完，下次请早哦"]',
+            '[text^="本期活动商品已抢完"]',
+          ],
           action: 'back',
         },
       ],

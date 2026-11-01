@@ -135,5 +135,19 @@ export default defineGkdApp({
         },
       ],
     },
+    {
+      key: 10,
+      name: '弹窗，更新，暂不更新',
+      desc: '261101',
+      rules: [
+        {
+          fastQuery: true,
+          resetMatch: 'match',
+          activityIds: '.sunshineupgrade.UpgradeActivity',
+          matches:
+            'LinearLayout > TextView[text="更新内容"] +n LinearLayout > @TextView[text="暂不更新"][vid="btn_dialog_update_no"][clickable=true][visibleToUser=true] + TextView[text="立即更新"]',
+        },
+      ],
+    },
   ],
 });

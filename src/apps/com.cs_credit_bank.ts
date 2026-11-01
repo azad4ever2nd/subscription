@@ -243,6 +243,33 @@ export default defineGkdApp({
     },
     {
       key: 17,
+      name: '弹窗，会员权益，消耗次机会，确定',
+      desc: '261101',
+      rules: [
+        {
+          resetMatch: 'match',
+          fastQuery: true,
+          activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
+          matches:
+            'LinearLayout + View + LinearLayout > TextView[text="取消"] + View + TextView[text="确定"][vid="submit"][clickable=true][visibleToUser=true]',
+        },
+      ],
+    },
+    {
+      key: 18,
+      name: '弹窗，会员权益兑换，查看奖品，X掉',
+      desc: '261101',
+      rules: [
+        {
+          resetMatch: 'match',
+          activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
+          matches:
+            '@Image[text="popup_icon_close.15362f7"][clickable=true][visibleToUser=true] < View - View > Button[text="查看奖品"]',
+        },
+      ],
+    },
+    {
+      key: 19,
       name: '打开定位，取消',
       desc: '260125',
       rules: [

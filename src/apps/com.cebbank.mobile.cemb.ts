@@ -775,17 +775,19 @@ export default defineGkdApp({
     {
       key: 50,
       name: '金豆抽奖',
-      desc: '260917，添加中奖了，差一点就中奖',
+      desc: '261101，添加中奖了，差一点就中奖',
       rules: [
         {
+          forcedTime: 3000,
           anyMatches: [
+            'TextView[text.length=1] < @View[clickable=true][visibleToUser=true] < View + View[id="compntWinningResult1"] > View > TextView[text="继续抽奖" || text="差一点就中奖啦"]',
             'TextView[text="差一点就中奖啦"] <n View < View[id="compntWinningResult1"] + View > @View[clickable=true][visibleToUser=true] > TextView[text.length=1]',
             'TextView[text="差一点就中奖啦"] <n View < View + View > @View[clickable=false][visibleToUser=true] > TextView[text.length=1]',
             'TextView[text="恭喜您，中奖啦"] < View < View[id="compntWinningResult1"] + View > View > TextView[text.length=1][clickable=false][visibleToUser=true]',
             'TextView[text="恭喜您，中奖啦" || text="去兑换" || text="奖品可在「我的权益」中查看"] <<n View + View > @View[clickable=true][visibleToUser=true] > TextView[text.length=1]',
             'View > View > TextView[text="您已参加过活动啦"] + TextView[text="确定"][clickable=false][visibleToUser=true]',
             '[text="返回去抽奖"]',
-            '@View << * + * >2 [text="差一点就中奖啦"] + [text="继续抽奖"]',
+            //'@View << * + * >2 [text="差一点就中奖啦"] + [text="继续抽奖"]',
           ],
           resetMatch: 'match',
           activityIds:

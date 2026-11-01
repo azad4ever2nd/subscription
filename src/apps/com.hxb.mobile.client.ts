@@ -37,12 +37,16 @@ export default defineGkdApp({
     {
       key: 3,
       name: '周五能量兑换1，立即兑换',
-      desc: '260627',
+      desc: '261101',
       rules: [
         {
           resetMatch: 'match',
-          actionCd: 0,
+          actionCd: 100,
           activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
+          excludeMatches: [
+            'View[text*="是否确认兑换"] + View > View[text="确认"][clickable=true][visibleToUser=true]',
+            'Dialog > View[text*="活动太火爆了" || text*="权益已被抢完"] + View > Button[clickable=true][visibleToUser=true][text*="知道了"]',
+          ],
           anyMatches: [
             'WebView[text="权益详情"] > View > View > View[text$="能量分"] +(1,2) View > Button[text="立即兑换"]',
             '[text$="能量分"] +n * > [text="立即兑换"]',
@@ -53,11 +57,11 @@ export default defineGkdApp({
     {
       key: 4,
       name: '周五能量兑换2，确认兑换',
-      desc: '260704',
+      desc: '暂时禁用，等周五活动恢复再启用，260704',
       rules: [
         {
           resetMatch: 'match',
-          actionCd: 0,
+          actionCd: 300,
           order: -1,
           activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
           anyMatches: [
@@ -74,7 +78,7 @@ export default defineGkdApp({
       rules: [
         {
           resetMatch: 'match',
-          actionCd: 0,
+          actionCd: 300,
           order: -2,
           activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
           anyMatches: [

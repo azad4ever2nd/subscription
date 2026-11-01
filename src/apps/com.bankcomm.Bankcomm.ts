@@ -623,9 +623,22 @@ export default defineGkdApp({
         },
       ],
     },
-
     {
       key: 41,
+      name: '弹窗，获得成为交易明星的资格，再考虑下',
+      desc: '261101',
+      rules: [
+        {
+          resetMatch: 'match',
+          action: 'clickCenter',
+          activityIds: 'com.bankcomm.module.biz.webcontainer.BCMHtml5Activity',
+          matches:
+            'View > View + View > @Button[text="再考虑下"][clickable=true][visibleToUser=true] + Button[text="立即成为交易明星"]',
+        },
+      ],
+    },
+    {
+      key: 42,
       name: '浏览任务完成，返回',
       desc: '261011，添加新布局，添加权限弹窗，直播间ids',
       rules: [
@@ -645,22 +658,6 @@ export default defineGkdApp({
             'View > Image[text="countdown-fulfilled-bg.f65a2ea"][visibleToUser=true]',
             '[text="Pyi3KQBzgJA1F+Xm7MrWYA0HQqTcq4GrAAAAAASUVORK5CYII="]',
           ],
-        },
-      ],
-    },
-    {
-      key: 42,
-      name: '占位42，浏览任务完成',
-      desc: 'D，占位，260829，取消back，添加新布局，添加权限弹窗，直播间ids',
-      rules: [
-        {
-          resetMatch: 'match',
-          action: 'clickCenter',
-          activityIds: [
-            'com.bankcomm.module.biz.bcmvideo.BCMVerticalVideoActivity',
-            'com.bankcomm.module.biz.webcontainer.BCMHtml5Activity',
-          ],
-          anyMatches: [],
         },
       ],
     },

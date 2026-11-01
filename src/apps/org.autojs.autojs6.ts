@@ -7,7 +7,7 @@ export default defineGkdApp({
     {
       key: 1,
       name: '检测到新版，稍后提示',
-      desc: '',
+      desc: '261031',
       rules: [
         {
           resetMatch: 'match',

@@ -230,14 +230,14 @@ export default defineGkdApp({
     {
       key: 14,
       name: '浇水',
-      desc: '261001，每月要变更id',
+      desc: '261101，每月要变更id',
       rules: [
         {
           actionMaximum: 1,
           resetMatch: 'match',
           action: 'clickCenter',
           matches:
-            'View > Image[text="1dc48713f1dd45c19c4252895a3314510231280296"][clickable=true][visibleToUser=true]',
+            'View > Image[text="2c91065213dc4bde8e6f2d41f0c5a5814281953607"][clickable=true][visibleToUser=true]',
           activityIds: 'com.icbc.activity.web.ICBCWebView',
         },
       ],
@@ -259,15 +259,20 @@ export default defineGkdApp({
     {
       key: 16,
       name: '弹窗，评价，下次再说',
-      desc: '261008，fastQuery=true,clickable=true',
+      desc: '261101，fastQuery=true,clickable=true，添加 软件更新',
       rules: [
         {
           resetMatch: 'match',
           fastQuery: true,
           action: 'clickCenter',
+          forcedTime: 3000,
           activityIds: '.activity.web.ICBCWebView',
-          matches:
+          actionCd: 700,
+          anyMatches: [
+            'LinearLayout > @CheckBox[text="3个月内不再提示"][checked=false][visibleToUser=true] + ImageView[vid="iv_close"][clickable=true][visibleToUser=true]', //勾选 3个月不再提示
+            'LinearLayout > CheckBox[text="3个月内不再提示"][checked=true][visibleToUser=true] + ImageView[vid="iv_close"][clickable=true][visibleToUser=true]', //勾选 3个月不再提示 后，X掉
             'LinearLayout > TextView[text*="评价"] +n TextView[text="下次再说"][vid="tv_dismiss"][clickable=true][visibleToUser=true]',
+          ],
         },
       ],
     },

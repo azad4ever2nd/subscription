@@ -21,11 +21,11 @@ export default defineGkdApp({
     {
       key: 2,
       name: '建行社保卡，勾选',
-      desc: '261016，',
+      desc: '261101，',
       rules: [
         {
           resetMatch: 'match',
-          actionCd: 100,
+          actionCd: 300,
           activityIds: 'com.ccb.framework.ui.widget.webview.CcbWebViewActivity',
           anyMatches: [
             'WebView[text*="建行社保卡" || text*="社保卡福利日"] > View > View > View > CheckBox[clickable=true][checked=false][visibleToUser=true]',
