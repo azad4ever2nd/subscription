@@ -1547,7 +1547,7 @@ export default defineGkdApp({
     {
       key: 70,
       name: '活动未开始，我知道了',
-      desc: '261029，添加 红色打卡，宁波，朴朴，动卡空间，内蒙工行，贵阳工行，工行余姚，湘约工行，贵州工行，已参加过',
+      desc: '261101，添加 红色打卡，宁波，朴朴，动卡空间，内蒙工行，贵阳工行，工行余姚，湘约工行，贵州工行，已参加过',
       rules: [
         {
           resetMatch: 'match',
@@ -1583,6 +1583,7 @@ export default defineGkdApp({
             'View > @TextView[clickable=true][visibleToUser=true] - View > View > Image[text="ac327e12fc2c48ee92771714b590d29b"]',
             'TextView[text="系统繁忙，请稍后再试。"] <<n View + View > @View[clickable=false][visibleToUser=true] > TextView[text="确定"]',
             'View > View > @TextView[clickable=true][visibleToUser=true] -n View > View > TextView[text="恭喜您获得"]',
+            'View > View > @TextView[text.length=0][clickable=true][visibleToUser=true] -n View > TextView[text^="请前往“奖品”查看并手动领取至支付宝账户"]',
             'TextView[text^="奖励已发送" || text$="可前往【我的奖品】查看提取"] < View +2 @TextView[clickable=true][visibleToUser=true] - View > TextView[text="立即使用"]',
             'View > View > TextView[text^="来晚啦"] + View + TextView[clickable=true][visibleToUser=true]',
             'View >  View > View > TextView[text="来晚了，奖励派完了"] + View + TextView[clickable=true][visibleToUser=true]',
