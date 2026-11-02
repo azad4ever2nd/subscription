@@ -7,13 +7,19 @@ export default defineGkdApp({
     {
       key: 1,
       name: '签到',
-      desc: '261028',
+      desc: '261102',
       rules: [
         {
           actionMaximum: 2,
           resetMatch: 'match',
           matchDelay: 500,
           forcedTime: 3000,
+          excludeMatches: [
+            'View > View > TextView + TextView[text="去转存"][clickable=true][visibleToUser=true]',
+            'View > View > TextView + TextView[text="去上传"][clickable=true][visibleToUser=true]',
+            'View > View > TextView + TextView[text="去体验"][clickable=true][visibleToUser=true]',
+            'View > View > TextView[text="返回领奖"][clickable=true][visibleToUser=true]',
+          ],
           activityIds:
             'com.chinamobile.mcloud.client.component.web.H5WebViewMainActivity',
           anyMatches: [

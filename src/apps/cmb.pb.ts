@@ -226,15 +226,15 @@ export default defineGkdApp({
       rules: [
         {
           action: 'clickCenter',
-          matchDelay: 2000, //有没有可能，是因为页面没有加载完成，导致的误触，先测试
+          matchDelay: 3000, //有没有可能，是因为页面没有加载完成，导致的误触，先测试
           //处于匹配延迟matchDelay: 1000,关闭测试
           forcedTime: 3000,
-          actionCd: 2000,
+          actionCd: 2500,
           resetMatch: 'match',
           activityIds:
             'cmb.pb.app.h5container.webviewcontainer.PBWebContainerActivity',
           anyMatches: [
-            'View[id="FundDetailBody"] > View > View > Button[text="讨论区"] + Button[text="招财号"] + @Button[text="自选"][clickable=true][visibleToUser=true]', //测试规则写完整，避免误点
+            'View[id="FundDetailBody"] > View > View[childCount=3] > Button[text="讨论区"] + Button[text="招财号"] + Button[text="自选"][clickable=true][visibleToUser=true]', //测试规则写完整，避免误点
             'View[childCount=4] > Button[text="招财号"] + @Button[text="自选"][clickable=true][visibleToUser=true] + Button + Button',
             //'View[id="FundDetailBody"] > View > View > @Button[text="自选"][clickable=true][visibleToUser=true] +n Button[text="定投" || text="购买"]',
             //'WebView > View > View > View > View > Button[text="自选"][clickable=true][visibleToUser=true]',

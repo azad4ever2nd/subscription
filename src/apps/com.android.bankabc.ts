@@ -106,7 +106,7 @@ export default defineGkdApp({
       rules: [
         {
           resetMatch: 'match',
-          actionCd: 250,
+          actionCd: 350,
           forcedTime: 3000,
           activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
           anyMatches: [
@@ -119,11 +119,12 @@ export default defineGkdApp({
     {
       key: 8,
       name: '茶饮优惠享-提交',
-      desc: '260702',
+      desc: '261102',
       rules: [
         {
           resetMatch: 'match',
-          actionCd: 0,
+          actionCd: 350, //测试时间
+          forcedTime: 3000,
           activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
           anyMatches: [
             'WebView > View > View > View > View > Button[clickable=true][visibleToUser=true][text="提交订单"]',
