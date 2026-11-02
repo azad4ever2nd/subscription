@@ -207,7 +207,7 @@ export default defineGkdApp({
     {
       key: 12,
       name: '弹窗，闪购获取你的位置信息，拒绝',
-      desc: '261010，fastQuery=true,clickable=true',
+      desc: '261102，fastQuery=true,clickable=true，添加 完成',
       rules: [
         {
           fastQuery: true,
@@ -216,6 +216,7 @@ export default defineGkdApp({
             'com.alipay.mobile.nebulax.xriver.activity.XRiverActivity',
           anyMatches: [
             'TextView[text*="您的位置信息" || text*="您的地理位置"] <<n FrameLayout + LinearLayout > @Button[id="com.alipay.mobile.antui:id/btn_cancel"][text="拒绝"][clickable=true][visibleToUser=true] + Button[id="com.alipay.mobile.antui:id/btn_ensure"][text="允许"]',
+            'RelativeLayout > FrameLayout > TextView[text="完成"][id="com.alipay.multiplatform.phone.xriver_integration:id/textView_rightButton1"][clickable=true][visibleToUser=true]',
           ],
         },
       ],
@@ -712,7 +713,7 @@ export default defineGkdApp({
     {
       key: 33,
       name: '小程序，各种弹窗，X掉1',
-      desc: '261019，fastquery=false,clickable=false,添加 排除误点去使用，明天不断签提醒，签到提醒，做任务领幸运星，领取奖励，排除红包卡券误点，闪购，超级吃货卡体验版，闪购签到，闪购小程序，添加到首页，添加 生活缴费',
+      desc: '261102，fastquery=false,clickable=false,添加 排除误点去使用，明天不断签提醒，签到提醒，做任务领幸运星，领取奖励，排除红包卡券误点，闪购，超级吃货卡体验版，闪购签到，闪购小程序，添加到首页，添加 生活缴费',
       rules: [
         {
           resetMatch: 'match',
@@ -729,9 +730,11 @@ export default defineGkdApp({
             'TextView[text="开心收下"] <<n View + View > View > Image[clickable=false][visibleToUser=true]',
             '@Image[clickable=false][visibleToUser=true] < View - View > View > TextView[text="开心收下"]',
             'View > @TextView - View >5 TextView[text="开心收下"]',
-            '@Image[clickable=false][visibleToUser=false] <n View + TextView[text="取消"] + TextView[text="立即添加"]',
+            '@TextView[clickable=false][visibleToUser=true] - Image < View + TextView[text="取消"] + TextView[text="立即添加"]',
+            '@TextView[clickable=false][visibleToUser=true] <2 View + TextView[text="取消"] + TextView[text="立即添加"]', //这两条有冲突
+            '@Image[clickable=false][visibleToUser=false] <n View + TextView[text="取消"] + TextView[text="立即添加"]', //这两条有冲突
+            //'@TextView <n * + [text="取消"] + [text="立即添加"]',
             '@TextView - View > View > TextView[text="提醒我不断签"]',
-            '@TextView <n * + [text="取消"] + [text="立即添加"]',
             '@TextView[clickable=false][visibleToUser=true] - View > TextView[text^="开启消息提醒"] + View > TextView[text="立即开启"]',
             '@TextView[clickable=false][visibleToUser=true] - View > View > TextView[text="购物爆红包"] + TextView[text="今天23:59到期"]',
             '@TextView[clickable=false][visibleToUser=true] - View > View > View > View > View > TextView[text="去使用"]', //6步
@@ -740,7 +743,6 @@ export default defineGkdApp({
             '@TextView[clickable=false][visibleToUser=true] - View >n  TextView[text="下次再来" || text="继续攒星"]',
             '@TextView[clickable=false][visibleToUser=true] < View  + TextView + View > View > View > View > TextView[text="去使用"]',
             'View[childCount=3] > View[childCount=3] > @TextView[clickable=false][visibleToUser=true] -2 View  >n TextView[text="去使用"]', //新版去使用，下方多了一个窗口
-            '@TextView[clickable=false][visibleToUser=true] <2 View + TextView[text="取消"] + TextView[text="立即添加"]',
             'Image[id="meb24ise8obdb"] < View[id^="meb23wkfgkptj"] < View + View > View > Image[clickable=false][visibleToUser=true]',
             'TextView[text="回免单首页看看"][clickable=false][visibleToUser=true] < View + TextView[clickable=false][visibleToUser=true]',
             'TextView[text="立即抽免单"][clickable=false][visibleToUser=true] < View < View + TextView[text.length=0][clickable=false][visibleToUser=true]',
@@ -807,7 +809,7 @@ export default defineGkdApp({
             'View > TextView[text*="添加到首页"] +n @TextView[text="取消"][clickable=false][visibleToUser=true] + TextView[text="添加到首页"]',
             'View > View > View + TextView[text="去签到"][clickable=false][visibleToUser=true]',
             '[text^="完成"] <<n View + View > TextView[text="领取奖励"][clickable=false][visibleToUser=true]',
-            '@TextView <n * + [text="取消"] + [text="立即添加"]',
+            //'@TextView <n * + [text="取消"] + [text="立即添加"]',
             'TextView[text="回免单首页看看"][clickable=false][visibleToUser=true] < View + TextView[clickable=false][visibleToUser=true]',
             'TextView[text="下方为36转移过来的规则  添加明天不断签提醒，签到提醒，做任务领幸运星，领取奖励"]',
             'View > View > @TextView[clickable=false][visibleToUser=true] -  View > View > TextView[text="提醒我不断签"]',
@@ -1130,7 +1132,6 @@ export default defineGkdApp({
         {
           anyMatches: [
             '@* - [text^="开启"] <n * +n * > [text="去订阅"]',
-            '@Button + * > [text=" 立即添加"]',
             '@Image + [text*="收益可升级" || text="上架商品促成单" || text$="挑战活动"] +n [text="去升级" || text="去了解"]',
             '@Image < * + * > [text*="红包奖励" || text="分期新户专享" || text^="开通"  || text="去看看1" || text*="同意协议" || text="同意协议并分期"]',
             '@Image < * + * > [text*="红包奖励" || text="分期新户专享" || text^="开通"] +n [text="去看看1" || text*="同意协议" || text="同意协议并分期"]',

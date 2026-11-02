@@ -23,5 +23,20 @@ export default defineGkdApp({
         },
       ],
     },
+    {
+      key: 2,
+      name: '星巴克WIFI，连接上网',
+      desc: '261102',
+      rules: [
+        {
+          resetMatch: 'match',
+          matchDelay: 1000,
+          actionCd: 2000,
+          activityIds: '.CaptivePortalLoginActivity',
+          matches:
+            'CheckBox[checked=true] < View + Button[text*="连接上网"][clickable=true][visibleToUser=true]',
+        },
+      ],
+    },
   ],
 });

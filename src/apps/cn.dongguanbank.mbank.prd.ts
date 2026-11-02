@@ -39,14 +39,16 @@ export default defineGkdApp({
     },
     {
       key: 3,
-      name: '下载海报，点击下载海报',
-      desc: '260706',
+      name: '话题PK赛，点击下载海报',
+      desc: '261102',
       rules: [
         {
           resetMatch: 'match',
           activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
-          matches:
-            'View > Image + TextView[clickable=true][visibleToUser=true][text="点击下载海报"]',
+          anyMatches: [
+            //'View > Image + TextView[clickable=true][visibleToUser=true][text="点击下载海报"]',
+            'WebView[text="话题PK赛"] > View > View > View  > TextView[text="点击下载海报"][clickable=true][visibleToUser=true]',
+          ],
         },
       ],
     },
@@ -178,6 +180,20 @@ export default defineGkdApp({
     },
     {
       key: 12,
+      name: '话题PK，去浏览',
+      desc: '261102',
+      rules: [
+        {
+          resetMatch: 'match',
+          actionCd: 3000,
+          activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
+          matches:
+            'View > TextView[text^="浏览" || text^="分享活动"][text*="（0/1）"] + TextView[text="去浏览"][clickable=true][visibleToUser=true]',
+        },
+      ],
+    },
+    {
+      key: 13,
       name: '弹窗，协议更新，确定',
       desc: '260831',
       rules: [

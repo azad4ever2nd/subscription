@@ -213,13 +213,16 @@ export default defineGkdApp({
     {
       key: 13,
       name: '购物页面，返回',
-      desc: '261027',
+      desc: '261102，新布局',
       rules: [
         {
           resetMatch: 'match',
+          action: 'back',
           activityIds: 'com.huawei.arkui.impl.ui.ArkUICarActivity',
-          matches:
+          anyMatches: [
             '@Button[desc="返回"][clickable=true][visibleToUser=true] < View + ViewGroup ViewGroup > TextView[text="推荐"] + TextView[text="资讯"] + TextView[text="购车"]',
+            '@Button[desc="返回"][clickable=true][visibleToUser=true] < View + ViewGroup > View[desc="我的爱车"] > Button[text=""]',
+          ],
         },
       ],
     },

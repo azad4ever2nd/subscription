@@ -396,5 +396,31 @@ export default defineGkdApp({
         },
       ],
     },
+    {
+      key: 21,
+      name: '弹窗NewPageMaskActivity，X掉1',
+      desc: '261102，fastQuery=false，clickable=true',
+      rules: [
+        {
+          resetMatch: 'match',
+          activityIds: '.activity.NewPageMaskActivity',
+          matches:
+            'View > View > @Button[text="关闭弹窗"][clickable=true][visibleToUser=true] +n View > TextView[text="开心收下"] + Button[text="查看订单详情"]',
+        },
+      ],
+    },
+    {
+      key: 22,
+      name: '弹窗NewPageMaskActivity，X掉2',
+      desc: '261102，fastQuery=false，clickable=false',
+      rules: [
+        {
+          resetMatch: 'match',
+          activityIds: '.activity.NewPageMaskActivity',
+          matches:
+            'View > View > @Button[text="关闭弹窗"][clickable=false][visibleToUser=true] +n View > TextView[text="开心收下"] + Button[text="查看订单详情"]',
+        },
+      ],
+    },
   ],
 });

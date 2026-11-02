@@ -363,6 +363,20 @@ export default defineGkdApp({
     },
     {
       key: 25,
+      name: '浏览产品，去完成',
+      desc: '261102',
+      rules: [
+        {
+          resetMatch: 'match',
+          actionCd: 3000,
+          activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
+          matches:
+            'View[text^="浏览" && text$="产品"] +(2,4) View > View[text="去完成"][clickable=true][visibleToUser=true]',
+        },
+      ],
+    },
+    {
+      key: 26,
       name: '浮动窗，打开通知开关，关闭',
       desc: '261018',
       rules: [
@@ -376,7 +390,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 26,
+      key: 27,
       name: '微信立减金领取，去领取',
       desc: '261028',
       rules: [
@@ -391,7 +405,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 27,
+      key: 28,
       name: '弹窗，隐私政策更新提示，同意',
       desc: '260904',
       rules: [
