@@ -101,10 +101,10 @@ export default defineGkdApp({
           action: 'clickCenter',
           activityIds: 'com.xunmeng.pinduoduo.activity.NewPageActivity',
           anyMatches: [
-            'TextView[text="放弃打款"] <<n ViewGroup + @ViewGroup[clickable=true][visibleToUser=true] > FrameLayout > TextView[text.length=1][clickable=false][visibleToUser=true]',
             'TextView[text="继续编辑"] < FrameLayout + @FrameLayout[clickable=true][visibleToUser=true] > TextView[text="放弃打款"]',
             'TextView[text="继续编辑"] < FrameLayout < ViewGroup + @ViewGroup[clickable=true] > FrameLayout > TextView[text="退出"]',
-            '[vid="pdd"] < @[vid="pdd"] + [vid="pdd"] > [text="评价拍摄"]',
+            '[vid="pdd"] < @[vid="pdd"] + [vid="pdd"] > [text="评价拍摄"]', //老版的
+            'TextView[text="放弃打款"] <<n ViewGroup + @ViewGroup[clickable=true][visibleToUser=true] > FrameLayout > TextView[text.length=1][clickable=false][visibleToUser=true]',
             'ImageView < @FrameLayout[vid="pdd"][clickable=true][visibleToUser=true] - ViewGroup > TextView[vid="tv_title"][text="可参与的拼单"]', //可参与的拼单，X掉
             '[text="继续编辑"] <<n *[clickable=true] + @*[clickable=true] >n [text="放弃领券"]',
           ],
@@ -113,23 +113,26 @@ export default defineGkdApp({
     },
     {
       key: 7,
-      name: '弹窗，X掉2',
-      desc: '261101，fastQuery=true，clickable=false，排除2个规则冲突轮流查询',
+      name: '弹窗，带排除，X掉2',
+      desc: '261101，fastQuery=true，clickable=false，有排除需求的。排除2个规则冲突轮流查询',
       rules: [
         {
+          actionCd: 500,
+          fastQuery: true,
+          resetMatch: 'match',
           excludeMatches: [
+            'TextView[text="此次评价未完成，是否确认退出？"][vid="title"] <<n LinearLayout[vid="pdd"] + View[desc="关闭"][clickable=true][visibleToUser=true]', //261102，新布局，此次评价未完成，是否确认退出？X掉
             'TextView[text="放弃打款"] <<n ViewGroup + @ViewGroup[clickable=true][visibleToUser=true] > FrameLayout > TextView[text.length=1][clickable=false][visibleToUser=true]',
             'TextView[text="继续编辑"] < FrameLayout + @FrameLayout[clickable=true][visibleToUser=true] > TextView[text="放弃打款"]',
+            'TextView[text="继续编辑"] < FrameLayout < ViewGroup + @ViewGroup[clickable=true] > FrameLayout > TextView[text="退出"]',
           ],
           anyMatches: [
-            '@[vid="pdd"][desc="返回"] < * +n * > [vid="tv_title"][text="发表评价" || text="发表真实评价"]', //发表评价，返回',
+            'ImageView[vid="pdd"][desc="返回"] < @LinearLayout[clickable=true][visibleToUser=true] + LinearLayout > TextView[text="发表真实评价"][vid="tv_title"]',
+            //'@[vid="pdd"][desc="返回"] < * +n * > [vid="tv_title"][text="发表评价" || text="发表真实评价"]', //发表评价，返回',
             'TextView[text="因通知关闭，无法接收物流消息"] < FrameLayout +2 ViewGroup > @ViewGroup > FrameLayout > TextView[text="拒绝接收"]', //通知关闭，拒绝接收
             '[text="确认收货成功"] <<n * + * @[vid="pdd"] > [desc="返回"]', //确认收货成功，返回
             '[text="邀请好友拼单"] + [text="去首页逛逛"]',
           ],
-          actionCd: 500,
-          fastQuery: true,
-          resetMatch: 'match',
           activityIds: ['com.xunmeng.pinduoduo.activity.NewPageActivity'],
         },
       ],
@@ -137,11 +140,11 @@ export default defineGkdApp({
     {
       key: 8,
       name: '百亿补贴，无门槛抽奖',
-      desc: '261031，fastQuery=false,clickable=true',
+      desc: '261102，fastQuery=false,clickable=true',
       rules: [
         {
           actionMaximum: 5,
-          actionCd: 700,
+          actionCd: 800,
           resetMatch: 'match',
           action: 'clickCenter',
           activityIds: 'com.xunmeng.pinduoduo.activity.NewPageActivity',
@@ -242,7 +245,6 @@ export default defineGkdApp({
           activityIds: 'com.xunmeng.pinduoduo.activity.NewPageActivity',
           anyMatches: [
             'TextView[id="sticky_Yf2L"] + View > View > View >  Image[text="800x9999%3E"][clickable=false][visibleToUser=true]',
-            'View > View > View > TextView[text="恭喜获得专属惊喜券"] + TextView[text*="已成功点亮" || text$="明日可继续点亮"] +(3,4)  Image[text="webp"][visibleToUser=true]',
             'TextView[text="海量商品可用"] - TextView < View +n TextView[index=parent.childCount.minus(1)][clickable=false][visibleToUser=true]',
             'View >  TextView[text*="点抢最高16元无门槛券"] + @View[clickable=false][visibleToUser=true] > TextView[text="立即抽奖"]',
             'View >  TextView[text*="点抢最高16元无门槛券"] + View[clickable=false][visibleToUser=true] > TextView[text="立即抽奖"][clickable=false][visibleToUser=true]',
@@ -257,8 +259,8 @@ export default defineGkdApp({
             '[text="添加物流助手到桌面"] <<n * + @ViewGroup[clickable=false][visibleToUser=true] ImageView',
             'WebView > WebView > View > View > View > Button[text="关闭弹窗"][clickable=false][visibleToUser=true]',
             '[text="暂时放弃"] <<n @*[clickable=false][visibleToUser=true] + [text="继续支付"]',
-            'ImageView < @* - ViewGroup [text="支付成功"]',
-            '[text="如何领取福袋奖励"] +n [text="去首页解锁"]',
+            'ImageView < @*[clickable=false][visibleToUser=true] - ViewGroup [text="支付成功"]',
+            '[text="如何领取福袋奖励"] +n [text="去首页解锁"][clickable=false][visibleToUser=true]',
           ],
         },
       ],
@@ -278,6 +280,7 @@ export default defineGkdApp({
             'View > @Image[text="webp"] + Image + TextView[text$="后过期"]',
             'View > View > @Image[text="webp"][clickable=false] - View > View > TextView[text$="元"] + TextView[text="无门槛券" || text="专场可用"]',
             'View > View > View > View > TextView[clickable=false][text="开心收下"] + Image[clickable=false][visibleToUser=true][text="webp"]', //提前锁定限时翻倍券， X掉
+            'View > View > View > TextView[text="恭喜获得专属惊喜券"] + TextView[text*="已成功点亮" || text$="明日可继续点亮"] +(3,4)  Image[text="webp"][visibleToUser=true]',
           ],
         },
       ],
@@ -285,13 +288,15 @@ export default defineGkdApp({
     {
       key: 16,
       name: '弹窗，X掉4',
-      desc: '261028，fastQuery=false，clickable=true',
+      desc: '261102，fastQuery=false，clickable=true',
       rules: [
         {
           resetMatch: 'match',
           action: 'clickCenter',
           activityIds: 'com.xunmeng.pinduoduo.activity.NewPageActivity',
           anyMatches: [
+            'ViewGroup[desc="翻转"] <<n FrameLayout + FrameLayout > FrameLayout > @FrameLayout[clickable=true][visibleToUser=true] > ImageView[vid="pdd"]', //261102，新版，评价拍摄，返回
+            'TextView[text="此次评价未完成，是否确认退出？"][vid="title"] <<n LinearLayout[vid="pdd"] + View[desc="关闭"][clickable=true][visibleToUser=true]', //261102，新布局，此次评价未完成，是否确认退出？X掉
             'View > Image + @Image[clickable=true] + View > TextView[text="消费券福袋奖励"] - View > TextView[text$="折"] + TextView[text^="最高减"]',
             '@Image[text="webp"][clickable=true][visibleToUser=true] - View > View > TextView[text$="折"] + TextView[text^="最高减"] + TextView[text="专场可用"]',
             '@Image[text="webp"][clickable=true][visibleToUser=true] - View > View > TextView + TextView[text="无门槛券"]', //弹窗，2元无门槛券
