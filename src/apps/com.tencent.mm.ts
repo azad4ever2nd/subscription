@@ -298,7 +298,7 @@ export default defineGkdApp({
     },
     {
       key: 17,
-      name: '占位17',
+      name: '占位19',
       desc: 'D，',
       rules: [
         {
@@ -311,34 +311,6 @@ export default defineGkdApp({
     },
     {
       key: 18,
-      name: '湖北电影消费券猫眼，要定位，否',
-      desc: 'D，260305',
-      rules: [
-        {
-          fastQuery: true,
-          resetMatch: 'match',
-          activityIds: 'com.tencent.mm.plugin.webview.stub.WebViewStubTempUI',
-          matches:
-            '[text="\\"美团\\" 需要获取你的地理位置"] <<n * + * [vid="mm_alert_cancel_btn"][text="否"]',
-        },
-      ],
-    },
-    {
-      key: 19,
-      name: '占位19',
-      desc: 'D，',
-      rules: [
-        {
-          fastQuery: true,
-          resetMatch: 'match',
-          activityIds: 'com.tencent.mm.plugin.webview.stub.WebViewStubTempUI',
-          matches:
-            '[text="\\"美团\\" 需要获取你的地理位置"] <<n * + * [vid="mm_alert_cancel_btn"][text="否"]',
-        },
-      ],
-    },
-    {
-      key: 20,
       name: '需要获取你的地理位置，否，',
       desc: 'D，251231，先不启用避免误杀',
       rules: [
@@ -352,7 +324,21 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 21,
+      key: 19,
+      name: '微信二维码，长按，跳工行服务',
+      desc: '261103',
+      rules: [
+        {
+          resetMatch: 'match',
+          fastQuery: true,
+          activityIds: '.ui.chatting.gallery.ImageGalleryUI',
+          matches:
+            'TextView[text="保存图片"] <n LinearLayout < RecyclerView +n LinearLayout @LinearLayout[clickable=true][visibleToUser=true] TextView[text="工行服务"] + TextView[text="小程序码"]',
+        },
+      ],
+    },
+    {
+      key: 20,
       name: '图片，再次保存',
       desc: '260725',
       rules: [
@@ -364,19 +350,41 @@ export default defineGkdApp({
         },
       ],
     },
+
     {
-      key: 22,
-      name: '占位22，',
-      desc: 'D,260725',
+      key: 21,
+      name: '公众号里跳转小程序',
+      desc: '251221，增加工行',
       rules: [
         {
           resetMatch: 'match',
-          activityIds: 'com.tencent.mm.ui.chatting.gallery.ImageGalleryUI',
-          matches:
-            'RecyclerView > LinearLayout > RelativeLayout > LinearLayout > TextView[clickable=false][visibleToUser=true][text="再次保存"]',
+          actionCd: 0,
+          activityIds:
+            'com.tencent.mm.plugin.brandservice.ui.timeline.preload.ui.TmplWebViewMMUI',
+          anyMatches: [
+            '[text^="即将"] <<n * + * [vid="mm_alert_cancel_btn"][text="取消"] +n [vid="mm_alert_ok_btn"][text="确认跳转" || text="允许"]',
+            '[id="js_link_dialog_body"][text*="打开"] + * > [id="js_link_dialog_ok"][text="允许"]',
+            '[text="get_prize_title.dc05dc4a"] +n * > [text="立即前往"]',
+            '[id="js_minipro_dialog_head"][text="即将打开小程序"] <<n * +n * > [id="js_minipro_dialog_ok"][text="允许"]',
+          ],
         },
       ],
     },
+    {
+      key: 22,
+      name: '分享返回微信',
+      desc: '',
+      rules: [
+        {
+          resetMatch: 'match',
+          fastQuery: true,
+          activityIds: 'com.tencent.mm.ui.transmit.SendAppMessageWrapperUI',
+          matches:
+            '[vid="mm_alert_ok_btn"][text="留在微信"] -2 [text^="返回"][vid="mm_alert_cancel_btn"]',
+        },
+      ],
+    },
+
     {
       key: 23,
       name: 'openim字样的联系人或群，点击',
@@ -436,6 +444,20 @@ export default defineGkdApp({
     },
     {
       key: 27,
+      name: '同程抢单，慎用',
+      desc: 'D，261018',
+      rules: [
+        {
+          activityIds: 'com.tencent.mm.ui.LauncherUI',
+          actionCd: 3000,
+          resetMatch: 'match',
+          matches:
+            'TextView[text*="同程来一个" || text*="收同程广东" || text*="江西五折券"] < * - TextView[text="车头-那年盛夏电影票" || text="hua"] < LinearLayout[childCount=4] <<n RelativeLayout[index=parent.childCount.minus(1)] <n RecyclerView <<n FrameLayout + FrameLayout >n RelativeLayout > Button[text="发送"][clickable=true][visibleToUser=true]',
+        },
+      ],
+    },
+    {
+      key: 28,
       name: '领红包',
       desc: '260119',
       rules: [
@@ -448,8 +470,9 @@ export default defineGkdApp({
         },
       ],
     },
+
     {
-      key: 28,
+      key: 29,
       name: '打开红包',
       desc: '260130',
       rules: [
@@ -464,7 +487,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 29,
+      key: 30,
       name: '领完红包返回',
       desc: 'D，260130',
       rules: [
@@ -479,101 +502,45 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 30,
-      name: '公众号里跳转小程序',
-      desc: '251221，增加工行',
+      key: 31,
+      name: '即将跳转',
+      desc: '260804，com.tencent.mm.plugin.brandservice.ui.timeline.preload.ui.TmplWebViewMMUI,添加IDS，移动抽奖，动态ID，增加小程序里的跳转，改匹配顺序，尽量从左往右',
       rules: [
         {
           resetMatch: 'match',
-          actionCd: 0,
-          activityIds:
-            'com.tencent.mm.plugin.brandservice.ui.timeline.preload.ui.TmplWebViewMMUI',
           anyMatches: [
-            '[text^="即将"] <<n * + * [vid="mm_alert_cancel_btn"][text="取消"] +n [vid="mm_alert_ok_btn"][text="确认跳转" || text="允许"]',
-            '[id="js_link_dialog_body"][text*="打开"] + * > [id="js_link_dialog_ok"][text="允许"]',
-            '[text="get_prize_title.dc05dc4a"] +n * > [text="立即前往"]',
+            '[text^="即将"] <<n  * + * >n [vid="mm_alert_cancel_btn"][text="取消"] +n [vid="mm_alert_ok_btn"][text="确认跳转" || text="允许"]',
             '[id="js_minipro_dialog_head"][text="即将打开小程序"] <<n * +n * > [id="js_minipro_dialog_ok"][text="允许"]',
+            '[text="get_prize_title.dc05dc4a"] +n * > [text="立即前往"]',
+            'Dialog [text*="即将打开第三方"] + * > [text="允许"]',
+          ],
+          fastQuery: true,
+          actionCd: 800,
+          activityIds: [
+            'com.tencent.mm.plugin.webview.ui.tools.CustomSchemeEntryMMWebViewUI',
+            'com.tencent.mm.plugin.webview.ui.tools.MMWebViewUI',
+            'com.tencent.mm.framework.app.UIPageFragmentActivity',
+            'com.tencent.mm.plugin.webview.stub.WebViewStubProxyUI',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandCheckWxaShortLinkUI',
+            'com.tencent.mm.pluginsdk.ui.tools.AppChooserUI',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI0',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI1',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI2',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI3',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI4',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI00',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI01',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI02',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI03',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI04',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandPluginUI',
           ],
         },
       ],
     },
-    {
-      key: 31,
-      name: '分享返回微信',
-      desc: '',
-      rules: [
-        {
-          resetMatch: 'match',
-          fastQuery: true,
-          activityIds: 'com.tencent.mm.ui.transmit.SendAppMessageWrapperUI',
-          matches:
-            '[vid="mm_alert_ok_btn"][text="留在微信"] -2 [text^="返回"][vid="mm_alert_cancel_btn"]',
-        },
-      ],
-    },
+
     {
       key: 32,
-      name: '确定删除聊天记录，清空',
-      desc: 'D，260221',
-      rules: [
-        {
-          resetMatch: 'match',
-          fastQuery: true,
-          activityIds: 'com.tencent.mm.ui.SingleChatInfoUI',
-          matches:
-            '[text^="确定删除" && text*="聊天记录吗？"] <<n * + * [vid="mm_alert_ok_btn"]',
-        },
-      ],
-    },
-    {
-      key: 33,
-      name: '不再关注',
-      desc: 'D，260220',
-      rules: [
-        {
-          resetMatch: 'match',
-          fastQuery: true,
-          activityIds: [
-            'com.tencent.mm.plugin.brandservice.ui.BrandServiceIndexUI',
-            'com.tencent.mm.plugin.flutter.ui.MMFlutterViewActivity',
-            'com.tencent.mm.plugin.profile.ui.ContactInfoUI',
-          ],
-          anyMatches: [
-            '[text^="不再关注" && text$="你将不再收到其下发的消息"] <<n * + * [vid="mm_alert_ok_btn"]',
-            '*[childCount=1] > [text="不再关注"]',
-          ],
-        },
-      ],
-    },
-    {
-      key: 34,
-      name: '不再关注2，',
-      desc: 'D，260220',
-      rules: [
-        {
-          resetMatch: 'match',
-          activityIds: 'com.tencent.mm.plugin.flutter.ui.MMFlutterViewActivity',
-          matches: '[desc="关闭"] [desc="不再关注"]',
-        },
-      ],
-    },
-    {
-      key: 35,
-      name: '清空公众号聊天中的所有内容，清空',
-      desc: '260220,[text="清空"]',
-      rules: [
-        {
-          resetMatch: 'match',
-          fastQuery: true,
-          activityIds:
-            'com.tencent.mm.plugin.profile.ui.newbizinfo.NewBizInfoSettingUI',
-          matches:
-            '[text="将清空公众号聊天中的所有内容"] <<n * + * [vid="mm_alert_ok_btn"]',
-        },
-      ],
-    },
-    {
-      key: 36,
       name: '深工积分兑换，立即抢购',
       desc: '261023',
       rules: [
@@ -608,7 +575,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 37,
+      key: 33,
       name: '深工积分兑换，确认支付',
       desc: '261023，添加  1元购',
       rules: [
@@ -643,7 +610,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 38,
+      key: 34,
       name: '深工积分兑换，人数过多，我知道了',
       desc: '261023',
       rules: [
@@ -672,7 +639,339 @@ export default defineGkdApp({
       ],
     },
     {
+      key: 35,
+      name: '深工周五秒杀，弹窗，商品已被秒完，返回',
+      desc: '261001,action=back',
+      rules: [
+        {
+          resetMatch: 'match',
+          action: 'back',
+          matches:
+            'View > View > TextView[text="商品已被秒完" || text="商品已售罄"] + TextView[text="我知道了"][visibleToUser=true]',
+          activityIds: [
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI0',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI1',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI2',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI3',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI4',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI00',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI01',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI02',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI03',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI04',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandPluginUI',
+          ],
+        },
+      ],
+    },
+    {
+      key: 36,
+      name: '广发小程序周五半价',
+      desc: '260503，增加跨年，布局有变',
+      rules: [
+        {
+          resetMatch: 'match',
+          actionCd: 0,
+          activityIds: [
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI0',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI1',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI2',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI3',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI4',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI00',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI01',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI02',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI03',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI04',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandPluginUI',
+          ],
+          matches:
+            '[text^="周五5折" || text^="（跨年大促）"] <<n * + * > [text="立即抢购" || text="抢购"]',
+        },
+      ],
+    },
+    {
+      key: 37,
+      name: '屈臣氏42代50',
+      desc: '251202，1立即抢购，2提交',
+      rules: [
+        {
+          resetMatch: 'match',
+          actionCd: 100,
+          activityIds: [
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI0',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI1',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI2',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI3',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI4',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI00',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI01',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI02',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI03',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI04',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandPluginUI',
+          ],
+          anyMatches: [
+            '[text="42元购50元屈臣氏代金券"] < * +n * [text="提交"]',
+            '[text="42元购50元屈臣氏代金券"] < * + * > [text="抢购"]',
+          ],
+        },
+      ],
+    },
+    {
+      key: 38,
+      name: '工行武汉云网点打卡1.08元，',
+      desc: '260811，添加 荆州云网点',
+      rules: [
+        {
+          resetMatch: 'match',
+          actionMaximum: 5,
+          actionCd: 0,
+          activityIds: [
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI0',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI1',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI2',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI3',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI4',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI00',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI01',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI02',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI03',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI04',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandPluginUI',
+          ],
+          anyMatches: [
+            'TextView[text="云网点"] <n View <n View + View > Button[text="立即领取"][clickable=true][visibleToUser=true]',
+            '[text="1.08元"] + [text="云网点打卡"] <<n * + * > Button[text*="立即领取"]',
+          ],
+        },
+      ],
+    },
+    {
       key: 39,
+      name: '湘约，1元微信立减金，立即领取',
+      desc: '261029，添加内蒙古',
+      rules: [
+        {
+          resetMatch: 'match',
+          action: 'clickCenter',
+          actionCd: 5000,
+          forcedTime: 3000,
+          activityIds: [
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI0',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI1',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI2',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI3',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI4',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI00',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI01',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI02',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI03',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI04',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandPluginUI',
+          ],
+          anyMatches: [
+            'WebView[text*="湘约"] > View > View > TextView[text="￥1"] + TextView[text="微信立减金"] + View > TextView[text="立即领取"][clickable=true][visibleToUser=true]',
+            'WebView[text*="内蒙古"] > View > View > TextView[text="￥1"] + TextView[text="微信立减金"] + View > TextView[text="立即领取"][clickable=true][visibleToUser=true]',
+          ],
+        },
+      ],
+    },
+    {
+      key: 40,
+      name: '弹窗，工行相关，X掉2，',
+      desc: '261103，添加 活动未开始，我知道了，红色打卡，宁波，朴朴，动卡空间，内蒙工行，贵阳工行，工行余姚，湘约工行，贵州工行，已参加过',
+      rules: [
+        {
+          resetMatch: 'match',
+          actionCd: 500,
+          forcedTime: 5000,
+          activityIds: [
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI0',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI1',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI2',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI3',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI4',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI00',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI01',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI02',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI03',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI04',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandPluginUI',
+          ],
+          anyMatches: [
+            'WebView > View > TextView[text="立即签到"][clickable=false][visibleToUser=true]',
+            'View > View > @TextView[clickable=true][visibleToUser=true] - View[clickable=true][visibleToUser=true] > TextView[text="立即前往"]',
+            //'WebView > View > View > View > View > @TextView[clickable=true][visibleToUser=true] - View > TextView[text="立即前往"]',//261103，
+            //'View > View > @Image[clickable=false][visibleToUser=true] + View > TextView[text="恭喜您"] +n TextView[text="积分"] + TextView[text^="恭喜您获得" && text*="专属积分奖励"]', //红色火箭签到
+            //'View > View > TextView[text="恭喜您"] + * + TextView[text="微信红包"] +2 View > TextView[text="去领取"][clickable=false][visibleToUser=true]', //红色火箭，红包
+            //'View > View > TextView[text="您的活动奖励金额为:"] + TextView + View > @TextView[text.length=0][clickable=true][visibleToUser=true] + View > TextView[text^="恭喜您抽中红包！点击领取后，奖励将发放至微信零钱"]', //红色火箭，红包
+            'View > View > TextView[text="活动9:00开始"] + TextView[text="确定"][clickable=true][visibleToUser=true]',
+            'View > View > TextView[text^="活动未开始"] +2 @TextView[clickable=true][visibleToUser=true] -  View >n Image[text="60e3f3550c78485a6857ba23"][clickable=true][visibleToUser=true]', //贵州工享有礼
+            'TextView[clickable=true][visibleToUser=true] - @TextView[clickable=true][visibleToUser=true] - View >n TextView[text="每天上午9:00开始"]',
+            'View > View > TextView[text^="活动将于" && text$="开始"] + TextView[text="确定"][clickable=true][visibleToUser=true]',
+            'View > TextView[text^="活动未开始" || text^="已参加过本次活动"] + View > View > Image[clickable=true][visibleToUser=true]',
+            'View > View > @TextView[clickable=true][visibleToUser=true] - View[clickable=true][visibleToUser=true] - View > View > TextView[text="暂未开始"]', //261103，
+            'View > TextView[text="Blocked by Sentinel"] + View + TextView[clickable=true][visibleToUser=true]',
+            'View > View > @TextView[clickable=true][visibleToUser=true] - View > View >   Image[text="66c29cff8e9f4a2aaf3f1b67b944daac"]',
+            'View > View > @TextView[clickable=true][visibleToUser=true] - View > View >   Image[text="2821aa8f32d5477d85db2a4a119d06cd"]',
+            'View > @TextView[clickable=true][visibleToUser=true] - View > View > Image[text="ac327e12fc2c48ee92771714b590d29b"]',
+            'TextView[text="系统繁忙，请稍后再试。"] <<n View + View > @View[clickable=false][visibleToUser=true] > TextView[text="确定"]',
+            'View > View > @TextView[clickable=true][visibleToUser=true] -n View > View > TextView[text="恭喜您获得"]',
+            'View > View > @TextView[text.length=0][clickable=true][visibleToUser=true] -n View > TextView[text^="请前往“奖品”查看并手动领取至支付宝账户"]',
+            'TextView[text^="奖励已发送" || text$="可前往【我的奖品】查看提取"] < View +2 @TextView[clickable=true][visibleToUser=true] - View > TextView[text="立即使用"]',
+            'View > View > TextView[text^="来晚啦"] + View + TextView[clickable=true][visibleToUser=true]',
+            'View >  View > View > TextView[text="来晚了，奖励派完了"] + View + TextView[clickable=true][visibleToUser=true]',
+            'TextView[text^="今日名额已尽" || text="今日名额已尽，明日九点开放。"] < View + View + TextView[clickable=true][visibleToUser=true]',
+            'View > View > @Button[text="我知道了"][clickable=true][visibleToUser=true] - View > TextView[text^="名额已抢完" && text*="谢谢参与"]',
+            'TextView[text^="今日额度已领完"]  <<n LinearLayout + LinearLayout >n Button[text="确定"][vid="mm_alert_ok_btn"][clickable=true][visibleToUser=true]',
+            'View > TextView[text="该商品已售罄"] + TextView[text="我知道了"][clickable=true][visibleToUser=true]',
+            'View > View > @TextView[clickable=true][visibleToUser=true] - TextView - View >n TextView[text^="当前奖池已领完"]',
+            'View > View > TextView[text^="奖品已领完"] + TextView[text="确定"][clickable=true][visibleToUser=true]',
+            'WebView[text^="湘约工行"] > View > View > View > View > @TextView[clickable=true][visibleToUser=true] - View > View > TextView[text="目前活动权益已领完"]',
+            'View > View >  @TextView[clickable=true][visibleToUser=true] -n View >  TextView[text^="您的领取机会已用完"]',
+            'View > View > @TextView[clickable=true][visibleToUser=true] - TextView - View >n TextView[text^="抽奖机会不足"]',
+            'View > View > @TextView[clickable=true][visibleToUser=true] -n View >n TextView[text^="您已经参与过了"]',
+            'View > View > @TextView[clickable=true][visibleToUser=true] -n View >n TextView[text^="您的抽奖次数不足"]',
+            'View > View > @TextView[clickable=true][visibleToUser=true] -n View > TextView[text^="您已经参与过了" || text*="下次活动记得来参加呀"]',
+            'View > View > @Button[text="我知道了"][clickable=true][visibleToUser=true] - View > TextView[text="您的月参与次数已达上限～"]', //261103
+            'View > View > TextView[text="每人1次参与机会"] + TextView[text="确定"][clickable=true][visibleToUser=true]',
+            'View > View > TextView[text="每人每月1次参与机会"] + TextView[text="确定"][clickable=true][visibleToUser=true]',
+            'TextView[text^="已参与"] < View +2 @TextView[clickable=true][visibleToUser=true] - View > TextView[text="确认"]',
+            '@TextView[clickable=true][visibleToUser=true] - TextView[clickable=true][visibleToUser=true] - View >n  TextView[text^="已参与"]',
+            'View > View > TextView[text="很遗憾，此次未中奖，感谢您的参与"] + TextView[text="确定"][clickable=true][visibleToUser=true]',
+            'View > TextView[text="很遗憾未中奖" || text="感谢您的参与"] +n View > TextView[text="我知道了"][clickable=false][visibleToUser=true]',
+            'View > View > TextView[text="谢谢参与～"] +2 @TextView[clickable=true][visibleToUser=true] -  View > Image[text="60e3f3550c78485a6857ba23"][clickable=true][visibleToUser=true]',
+            'Dialog > TextView[text="领取成功"] +n Button[text="确定"][clickable=true][visibleToUser=true]',
+            'View > View > @TextView[clickable=true][visibleToUser=true] -n View > TextView[text="谢谢参与"]',
+            'Dialog > TextView[text="谢谢参与"] + TextView + @View[clickable=true][visibleToUser=true] > TextView[text.length=1]',
+            'View > View > @TextView[clickable=true][visibleToUser=true] - View > TextView[text="立即前往"]', //谢谢参与
+          ],
+        },
+      ],
+    },
+    {
+      key: 41,
+      name: '八闽有礼，关闭城市弹窗',
+      desc: '260803',
+      rules: [
+        {
+          resetMatch: 'match',
+          actionCd: 500,
+          activityIds: [
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI0',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI1',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI2',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI3',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI4',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI00',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI01',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI02',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI03',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI04',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandPluginUI',
+          ],
+          matches:
+            'WebView[text*="八闽有礼"] > View > View > View > View > View > @Image[clickable=true][visibleToUser=true][text="关闭"] + Image[text="地市详情"]',
+        },
+      ],
+    },
+    {
+      key: 42,
+      name: '弹窗，汉运动，券已发放结束，确定',
+      desc: '261028，添加饿了么定位提示',
+      rules: [
+        {
+          resetMatch: 'match',
+          fastQuery: true,
+          actionCd: 500,
+          anyMatches: [
+            'TextView[text^="还未到领券时间"] <<n LinearLayout + LinearLayout Button[text="确定"][vid="mm_alert_ok_btn"][clickable=true][visibleToUser=true]',
+            'TextView[text="活动火爆,请稍后再试"] <<n LinearLayout + LinearLayout Button[text="确定"][vid="mm_alert_ok_btn"][clickable=true][visibleToUser=true]',
+            'TextView[text="您的请求过于频繁，请稍后再试！"] <<n LinearLayout + LinearLayout Button[text="确定"][vid="mm_alert_ok_btn"][clickable=true][visibleToUser=true]',
+            'TextView[text="券已发放结束"] <<n LinearLayout + LinearLayout Button[text="确定"][vid="mm_alert_ok_btn"][clickable=true][visibleToUser=true]',
+            'TextView[text*="获取您的位置信息"] <<n LinearLayout + LinearLayout > LinearLayout > @Button[text="暂不"][clickable=true][visibleToUser=true] + * + Button[text="去设置"][clickable=true][visibleToUser=true]',
+          ],
+          activityIds: [
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI0',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI1',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI2',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI3',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI4',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI00',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI01',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI02',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI03',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI04',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandPluginUI',
+          ],
+        },
+      ],
+    },
+    {
+      key: 43,
+      name: '工行浇水',
+      desc: '261101，延时要考虑弹窗',
+      rules: [
+        {
+          activityIds: [
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI0',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI1',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI2',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI3',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI4',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI00',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI01',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI02',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI03',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI04',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandPluginUI',
+          ],
+          actionMaximum: 6,
+          resetMatch: 'match',
+          anyMatches: [
+            'View > View > View > Image[text="2c91065213dc4bde8e6f2d41f0c5a5814281953607"][clickable=true][visibleToUser=true]',
+            'TextView[text="奖励派送中，稍后送达～"] <n View + View > Image[clickable=true][visibleToUser=true]',
+            'TextView[text^="前往手机银行APP再浇一次"] <n  View + View > Image[clickable=true][visibleToUser=true]',
+            'TextView[text^="解锁奖励" && text$="豆"] <n  View + View > Image[clickable=true][visibleToUser=true]',
+          ],
+        },
+      ],
+    },
+    {
+      key: 44,
+      name: '弹窗，红色火箭',
+      desc: '261027',
+      rules: [
+        {
+          resetMatch: 'match',
+          matchDelay: 1000,
+          matchTime: 5000,
+          forcedTime: 6000,
+          activityIds: [
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI0',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI1',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI2',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI3',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI4',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI00',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI01',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI02',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI03',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI04',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandPluginUI',
+          ],
+          anyMatches: [
+            'View > View > @Image[clickable=false][visibleToUser=true] + View > TextView[text="恭喜您"] +n TextView[text="积分"] + TextView[text^="恭喜您获得" && text*="专属积分奖励"]', //红色火箭签到
+            'View > View > TextView[text="恭喜您"] + * + TextView[text="微信红包"] +2 View > TextView[text="去领取"][clickable=false][visibleToUser=true]', //红色火箭，红包
+            'View > View > TextView[text="您的活动奖励金额为:"] + TextView + View > @TextView[text.length=0][clickable=true][visibleToUser=true] + View > TextView[text^="恭喜您抽中红包！点击领取后，奖励将发放至微信零钱"]', //红色火箭，红包
+          ],
+        },
+      ],
+    },
+
+    {
+      key: 45,
       name: '阳光兑换外面',
       desc: 'D，251127，挑有库存的进',
       rules: [
@@ -699,7 +998,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 40,
+      key: 46,
       name: '阳光兑换1，立即兑换',
       desc: '260919，',
       rules: [
@@ -731,7 +1030,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 41,
+      key: 47,
       name: '阳光兑换2，确认兑换',
       desc: '260919，',
       rules: [
@@ -758,7 +1057,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 42,
+      key: 48,
       name: '阳光兑换3，兑换完成与返回',
       desc: '261031，添加 排除 立减金兑换，微信立减金，微信金币兑换',
       rules: [
@@ -789,7 +1088,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 43,
+      key: 49,
       name: '阳光兑换2，已兑完返回',
       desc: '251127，',
       rules: [
@@ -814,165 +1113,7 @@ export default defineGkdApp({
         },
       ],
     },
-    {
-      key: 44,
-      name: '金币抽提现券1',
-      desc: '251222，添加第一步兑换',
-      rules: [
-        {
-          resetMatch: 'match',
-          activityIds: [
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI0',
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI1',
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI2',
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI3',
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI4',
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI00',
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI01',
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI02',
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI03',
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI04',
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandPluginUI',
-          ],
-          anyMatches: [
-            '[text="微信提现免费券"] <<n * + * [text="1金币兑换"]',
-            '[text="祝你每天好运气"] +3 * >2 [text="1金币抽提现券"]',
-          ],
-        },
-      ],
-    },
-    {
-      key: 45,
-      name: '金币抽提现券2',
-      desc: '',
-      rules: [
-        {
-          resetMatch: 'match',
-          activityIds: [
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI0',
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI1',
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI2',
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI3',
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI4',
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI00',
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI01',
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI02',
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI03',
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI04',
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandPluginUI',
-          ],
-          matches:
-            '[text^="确认使用1金币"] + [text="取消"] + [text="使用1金币"]',
-        },
-      ],
-    },
-    {
-      key: 46,
-      name: '金币抽提现券，立即收下',
-      desc: '260926，取消 关闭，兑换提示',
-      rules: [
-        {
-          resetMatch: 'match',
-          action: 'clickCenter',
-          activityIds: [
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI0',
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI1',
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI2',
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI3',
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI4',
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI00',
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI01',
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI02',
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI03',
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI04',
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandPluginUI',
-          ],
-          anyMatches: [
-            'TextView[text^="确认使用1金币"]  <<n  LinearLayout + LinearLayout >n Button[text="确认兑换"][vid="mm_alert_ok_btn"]',
-            '[text="确认使用1金币兑换吗？"] <<n * + * >n [vid="mm_alert_ok_btn"][text="确认兑换"]',
-            '[text="立即收下"] + @[text="今日24点前可领"]',
-            '[text="已收下1"] + [text="7天后可再参与"] <<n * + * >n [desc="关闭-bak"] ',
-          ],
-        },
-      ],
-    },
-    {
-      key: 47,
-      name: '湖北SKP',
-      desc: 'D，260406，中国银行信用卡湖北 公众号进去，立即支付，不能限制1次',
-      rules: [
-        {
-          activityIds: [
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI0',
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI1',
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI2',
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI3',
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI4',
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI00',
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI01',
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI02',
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI03',
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI04',
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandPluginUI',
-          ],
-          matches: '@[text="file-WI7PoWjb8T"] + [text!="今日剩余名额：0名"]',
-          resetMatch: 'match',
-          actionCd: 0,
-        },
-      ],
-    },
-    {
-      key: 48,
-      name: '湖北SKP，确认支付',
-      desc: 'D，260406，优先测试',
-      rules: [
-        {
-          order: -1,
-          activityIds: [
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI0',
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI1',
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI2',
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI3',
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI4',
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI00',
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI01',
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI02',
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI03',
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI04',
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandPluginUI',
-          ],
-          resetMatch: 'match',
-          actionCd: 100,
-          matches:
-            '[text="仅限中国银行信用卡支付"] + [text="dpyo8s1ulmfditgb8ejiv"] + [text="xmdaohehb7wx6hqcb8xft"]',
-        },
-      ],
-    },
-    {
-      key: 49,
-      name: '湖北SKP，火爆，刷新',
-      desc: 'D，260102',
-      rules: [
-        {
-          activityIds: [
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI0',
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI1',
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI2',
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI3',
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI4',
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI00',
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI01',
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI02',
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI03',
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI04',
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandPluginUI',
-          ],
-          matches: '[text="活动火爆，当前参与人数过多"] +n [text="刷 新"]',
-          resetMatch: 'match',
-          actionCd: 100,
-        },
-      ],
-    },
+
     {
       key: 50,
       name: '沪上阿姨一分购，勾选 我已阅读并同意',
@@ -1060,160 +1201,7 @@ export default defineGkdApp({
     },
     {
       key: 53,
-      name: '即将跳转',
-      desc: '260804，com.tencent.mm.plugin.brandservice.ui.timeline.preload.ui.TmplWebViewMMUI,添加IDS，移动抽奖，动态ID，增加小程序里的跳转，改匹配顺序，尽量从左往右',
-      rules: [
-        {
-          resetMatch: 'match',
-          anyMatches: [
-            '[text^="即将"] <<n  * + * >n [vid="mm_alert_cancel_btn"][text="取消"] +n [vid="mm_alert_ok_btn"][text="确认跳转" || text="允许"]',
-            '[id="js_minipro_dialog_head"][text="即将打开小程序"] <<n * +n * > [id="js_minipro_dialog_ok"][text="允许"]',
-            '[text="get_prize_title.dc05dc4a"] +n * > [text="立即前往"]',
-            'Dialog [text*="即将打开第三方"] + * > [text="允许"]',
-          ],
-          fastQuery: true,
-          actionCd: 800,
-          activityIds: [
-            'com.tencent.mm.plugin.webview.ui.tools.CustomSchemeEntryMMWebViewUI',
-            'com.tencent.mm.plugin.webview.ui.tools.MMWebViewUI',
-            'com.tencent.mm.framework.app.UIPageFragmentActivity',
-            'com.tencent.mm.plugin.webview.stub.WebViewStubProxyUI',
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandCheckWxaShortLinkUI',
-            'com.tencent.mm.pluginsdk.ui.tools.AppChooserUI',
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI0',
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI1',
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI2',
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI3',
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI4',
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI00',
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI01',
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI02',
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI03',
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI04',
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandPluginUI',
-          ],
-        },
-      ],
-    },
-    {
-      key: 54,
-      name: '腾讯理财通，领取奖励',
-      desc: '260925,添加 大家盈，抢理财金，整合领取与返回，体验完成，',
-      rules: [
-        {
-          resetMatch: 'match',
-          activityIds: [
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI0',
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI1',
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI2',
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI3',
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI4',
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI00',
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI01',
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI02',
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI03',
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI04',
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandPluginUI',
-          ],
-          excludeMatches:
-            'View > TextView[text^="晒出正收益" && text$="元理财金"] + TextView[text="详细规则"]',
-          anyMatches: [
-            'WebView @View[clickable=true][visibleToUser=true] > TextView[text^="最高" && text$="元理财金"] + TextView[text="领取理财金"]',
-            '@View[clickable=true][visibleToUser=true] > View > View > Image[text="3ead67a7aa048b8658fe73f53b677f60"] +n TextView[text="抢"]',
-            'WebView >n View > Button[text="领取奖励"][clickable=true][visibleToUser=true]',
-            'View[childCount=2] > [text$="元理财金"] + *',
-            'View[childCount=3] > * + [text$="元理财金"] + *',
-            'View[childCount=3][clickable=true] > [text$="元理财金"] + *',
-            'View > @View > TextView + TextView[text$="元理财金"] + TextView[clickable=true]',
-            '[text^="成功领取奖励" || text="成功开始模拟"] <<n FrameLayout + * >n [desc="关闭bak"][childCount=1]',
-            '[text^="成功领取奖励"] <<n FrameLayout + * >n [desc="关闭bak"]',
-            'WebView [text="领取奖励bak"]',
-          ],
-        },
-      ],
-    },
-    {
-      key: 55,
-      name: '腾讯理财通，领取奖励，同意服务协议',
-      desc: 'D，260425，先禁用后续找出改余额',
-      rules: [
-        {
-          resetMatch: 'match',
-          activityIds: [
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI0',
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI1',
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI2',
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI3',
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI4',
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI00',
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI01',
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI02',
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI03',
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI04',
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandPluginUI',
-          ],
-          matches:
-            '@[text="已悉知风险提示并同意"] + [desc="服务协议"] <n * + [text="领取至“理财通活期+”账户"]',
-        },
-      ],
-    },
-    {
-      key: 56,
-      name: '广发小程序周五半价',
-      desc: '260503，增加跨年，布局有变',
-      rules: [
-        {
-          resetMatch: 'match',
-          actionCd: 0,
-          activityIds: [
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI0',
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI1',
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI2',
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI3',
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI4',
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI00',
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI01',
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI02',
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI03',
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI04',
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandPluginUI',
-          ],
-          matches:
-            '[text^="周五5折" || text^="（跨年大促）"] <<n * + * > [text="立即抢购" || text="抢购"]',
-        },
-      ],
-    },
-    {
-      key: 57,
-      name: '屈臣氏42代50',
-      desc: '251202，1立即抢购，2提交',
-      rules: [
-        {
-          resetMatch: 'match',
-          actionCd: 100,
-          activityIds: [
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI0',
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI1',
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI2',
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI3',
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI4',
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI00',
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI01',
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI02',
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI03',
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI04',
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandPluginUI',
-          ],
-          anyMatches: [
-            '[text="42元购50元屈臣氏代金券"] < * +n * [text="提交"]',
-            '[text="42元购50元屈臣氏代金券"] < * + * > [text="抢购"]',
-          ],
-        },
-      ],
-    },
-    {
-      key: 58,
-      name: '光大小程序弹窗',
+      name: '弹窗，X掉1',
       desc: '260624',
       rules: [
         {
@@ -1232,34 +1220,9 @@ export default defineGkdApp({
             'com.tencent.mm.plugin.appbrand.ui.AppBrandUI04',
             'com.tencent.mm.plugin.appbrand.ui.AppBrandPluginUI',
           ],
-          matches:
-            'View > View > View >  Image + TextView[text="今日不再提醒"] + TextView[text="前往领取"] + Image',
-        },
-      ],
-    },
-    {
-      key: 59,
-      name: '深工登陆弹窗，X掉',
-      desc: '261031',
-      rules: [
-        {
-          resetMatch: 'match',
-          forcedTime: 3000,
-          activityIds: [
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI0',
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI1',
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI2',
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI3',
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI4',
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI00',
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI01',
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI02',
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI03',
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI04',
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandPluginUI',
-          ],
           anyMatches: [
-            'View > TextView[text*="恭喜你完成每日登录，获得" && text*="积分。"] - Image - @View[childCount=1][clickable=false][visibleToUser=true] > Image',
+            'View > View > View >  Image + TextView[text="今日不再提醒"] + TextView[text="前往领取"] + Image', //光大小程序弹窗
+            'View > TextView[text*="恭喜你完成每日登录，获得" && text*="积分。"] - Image - @View[childCount=1][clickable=false][visibleToUser=true] > Image', //深工登陆弹窗，X掉
             '@Image[clickable=false][visibleToUser=true] < View + Image + TextView[text^="恭喜你完成"] + TextView[text="取消"] + TextView[text="查看积分"]', //完成每日登录，获得20积分，取消，查看积分
             '@Image[clickable=false][visibleToUser=true] < View -n TextView[text$="积分"] +n TextView[text="去查看"]',
             'TextView[text="去领取"] < FrameLayout <n FrameLayout +2 FrameLayout > FrameLayout > TextView > ImageView[clickable=false][visibleToUser=true]', //恭喜你 抽中了 100积分，去领取，分享好友，一起抽大奖，X掉
@@ -1269,7 +1232,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 60,
+      key: 54,
       name: '请到广东过端午',
       desc: '260616',
       rules: [
@@ -1289,39 +1252,15 @@ export default defineGkdApp({
           ],
           actionCd: 0,
           resetMatch: 'match',
-          matches:
+          matches: [
             'View > Image[text="1NZmP5zb7wI"] + @View[clickable=true] > Image[text="1LBYVwKptxS"]',
-        },
-      ],
-    },
-    {
-      key: 61,
-      name: '同程抢旅游景区券',
-      desc: '251229',
-      rules: [
-        {
-          resetMatch: 'match',
-          actionCd: 100,
-          activityIds: [
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI0',
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI1',
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI2',
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI3',
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI4',
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI00',
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI01',
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI02',
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI03',
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI04',
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandPluginUI',
+            'WebView[text="2026请到广东过大年"] >n [text="1JkEZih3lfi"] + * > [text="1JkIoUfneDu"]', //同程抢旅游景区券
           ],
-          matches:
-            'WebView[text="2026请到广东过大年"] >n [text="1JkEZih3lfi"] + * > [text="1JkIoUfneDu"]',
         },
       ],
     },
     {
-      key: 62,
+      key: 55,
       name: '广州，乐享品质旅游 ，共赴美好山河',
       desc: '261010，排除 汉运动，提现券页面，五折演出券',
       rules: [
@@ -1353,272 +1292,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 63,
-      name: '湖北电影消费券猫眼小程序',
-      desc: '260117',
-      rules: [
-        {
-          resetMatch: 'match',
-          actionCd: 100,
-          activityIds: [
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI0',
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI1',
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI2',
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI3',
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI4',
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI00',
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI01',
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI02',
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI03',
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI04',
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandPluginUI',
-          ],
-          matches:
-            '[text="26年湖北消费券"] [text="¥ 10" || text="¥ 25"] +n * > [text="f34e522ba841ae9135fc77546faaf5f638005"]',
-        },
-      ],
-    },
-    {
-      key: 64,
-      name: '湖北电影消费券淘票票小程序',
-      desc: '260117',
-      rules: [
-        {
-          resetMatch: 'match',
-          actionCd: 100,
-          activityIds: [
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI0',
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI1',
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI2',
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI3',
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI4',
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI00',
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI01',
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI02',
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI03',
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI04',
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandPluginUI',
-          ],
-          matches:
-            'WebView[text="“惠影湖北 乐享生活”-湖北省惠民观影活动"] View[index=4 || index=6] @View[index=parent.childCount.minus(1)] > TextView[depth=29]',
-        },
-      ],
-    },
-    {
-      key: 65,
-      name: '工行浇水',
-      desc: '261101，延时要考虑弹窗',
-      rules: [
-        {
-          activityIds: [
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI0',
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI1',
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI2',
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI3',
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI4',
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI00',
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI01',
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI02',
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI03',
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI04',
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandPluginUI',
-          ],
-          actionMaximum: 6,
-          resetMatch: 'match',
-          anyMatches: [
-            'View > View > View > Image[text="2c91065213dc4bde8e6f2d41f0c5a5814281953607"][clickable=true][visibleToUser=true]',
-            'TextView[text="奖励派送中，稍后送达～"] <n View + View > Image[clickable=true][visibleToUser=true]',
-            'TextView[text^="前往手机银行APP再浇一次"] <n  View + View > Image[clickable=true][visibleToUser=true]',
-            'TextView[text^="解锁奖励" && text$="豆"] <n  View + View > Image[clickable=true][visibleToUser=true]',
-          ],
-        },
-      ],
-    },
-    {
-      key: 66,
-      name: '光大小程序阳光抽奖',
-      desc: '251224',
-      rules: [
-        {
-          resetMatch: 'match',
-          activityIds: [
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI0',
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI1',
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI2',
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI3',
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI4',
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI00',
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI01',
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI02',
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI03',
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI04',
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandPluginUI',
-          ],
-          anyMatches: [
-            '[text^="消耗" && text$="阳光值参与抽奖？"] +n [text="取消"] + [id="onSureReward"][text="确定"]',
-            '[text="谢谢您的参与"] +n [text="确定"]',
-          ],
-        },
-      ],
-    },
-    {
-      key: 67,
-      name: '月月刷未开始，最小化',
-      desc: '261101，添加 获得立减金，立即参与，',
-      rules: [
-        {
-          resetMatch: 'match',
-          activityIds: [
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI0',
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI1',
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI2',
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI3',
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI4',
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI00',
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI01',
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI02',
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI03',
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI04',
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandPluginUI',
-          ],
-          anyMatches: [
-            'TextView[text="该活动尚未开始"] + TextView[text="敬请期待"] <<n FrameLayout + ViewGroup >n ImageButton[desc="关闭"][clickable=true][visibleToUser=true]',
-            'TextView[text^="刷" && text$="卡"] <n View + View > TextView[text="立即参与领奖励"][clickable=false][visibleToUser=true]',
-            'TextView[text^="获得" && text*="元" && text$="立减金"] <<n View +3 View > Image[clickable=false][visibleToUser=true]',
-          ],
-        },
-      ],
-    },
-    {
-      key: 68,
-      name: '工行武汉云网点打卡1.08元，',
-      desc: '260811，添加 荆州云网点',
-      rules: [
-        {
-          resetMatch: 'match',
-          actionMaximum: 5,
-          actionCd: 0,
-          activityIds: [
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI0',
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI1',
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI2',
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI3',
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI4',
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI00',
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI01',
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI02',
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI03',
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI04',
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandPluginUI',
-          ],
-          anyMatches: [
-            'TextView[text="云网点"] <n View <n View + View > Button[text="立即领取"][clickable=true][visibleToUser=true]',
-            '[text="1.08元"] + [text="云网点打卡"] <<n * + * > Button[text*="立即领取"]',
-          ],
-        },
-      ],
-    },
-    {
-      key: 69,
-      name: '八闽有礼，关闭城市弹窗',
-      desc: '260803',
-      rules: [
-        {
-          resetMatch: 'match',
-          actionCd: 500,
-          activityIds: [
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI0',
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI1',
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI2',
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI3',
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI4',
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI00',
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI01',
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI02',
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI03',
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI04',
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandPluginUI',
-          ],
-          matches:
-            'WebView[text*="八闽有礼"] > View > View > View > View > View > @Image[clickable=true][visibleToUser=true][text="关闭"] + Image[text="地市详情"]',
-        },
-      ],
-    },
-    {
-      key: 70,
-      name: '活动未开始，我知道了',
-      desc: '261103，添加 红色打卡，宁波，朴朴，动卡空间，内蒙工行，贵阳工行，工行余姚，湘约工行，贵州工行，已参加过',
-      rules: [
-        {
-          resetMatch: 'match',
-          actionCd: 500,
-          forcedTime: 5000,
-          activityIds: [
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI0',
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI1',
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI2',
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI3',
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI4',
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI00',
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI01',
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI02',
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI03',
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI04',
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandPluginUI',
-          ],
-          anyMatches: [
-            'WebView > View > TextView[text="立即签到"][clickable=false][visibleToUser=true]',
-            'View > View > @TextView[clickable=true][visibleToUser=true] - View[clickable=true][visibleToUser=true] > TextView[text="立即前往"]',
-            //'WebView > View > View > View > View > @TextView[clickable=true][visibleToUser=true] - View > TextView[text="立即前往"]',//261103，
-            //'View > View > @Image[clickable=false][visibleToUser=true] + View > TextView[text="恭喜您"] +n TextView[text="积分"] + TextView[text^="恭喜您获得" && text*="专属积分奖励"]', //红色火箭签到
-            //'View > View > TextView[text="恭喜您"] + * + TextView[text="微信红包"] +2 View > TextView[text="去领取"][clickable=false][visibleToUser=true]', //红色火箭，红包
-            //'View > View > TextView[text="您的活动奖励金额为:"] + TextView + View > @TextView[text.length=0][clickable=true][visibleToUser=true] + View > TextView[text^="恭喜您抽中红包！点击领取后，奖励将发放至微信零钱"]', //红色火箭，红包
-            'View > View > TextView[text="活动9:00开始"] + TextView[text="确定"][clickable=true][visibleToUser=true]',
-            'View > View > TextView[text^="活动未开始"] +2 @TextView[clickable=true][visibleToUser=true] -  View >n Image[text="60e3f3550c78485a6857ba23"][clickable=true][visibleToUser=true]', //贵州工享有礼
-            'TextView[clickable=true][visibleToUser=true] - @TextView[clickable=true][visibleToUser=true] - View >n TextView[text="每天上午9:00开始"]',
-            'View > View > TextView[text^="活动将于" && text$="开始"] + TextView[text="确定"][clickable=true][visibleToUser=true]',
-            'View > TextView[text^="活动未开始" || text^="已参加过本次活动"] + View > View > Image[clickable=true][visibleToUser=true]',
-            'View > View > @TextView[clickable=true][visibleToUser=true] - View[clickable=true][visibleToUser=true] - View > View > TextView[text="暂未开始"]', //261103，
-            'View > TextView[text="Blocked by Sentinel"] + View + TextView[clickable=true][visibleToUser=true]',
-            'View > View > @TextView[clickable=true][visibleToUser=true] - View > View >   Image[text="66c29cff8e9f4a2aaf3f1b67b944daac"]',
-            'View > View > @TextView[clickable=true][visibleToUser=true] - View > View >   Image[text="2821aa8f32d5477d85db2a4a119d06cd"]',
-            'View > @TextView[clickable=true][visibleToUser=true] - View > View > Image[text="ac327e12fc2c48ee92771714b590d29b"]',
-            'TextView[text="系统繁忙，请稍后再试。"] <<n View + View > @View[clickable=false][visibleToUser=true] > TextView[text="确定"]',
-            'View > View > @TextView[clickable=true][visibleToUser=true] -n View > View > TextView[text="恭喜您获得"]',
-            'View > View > @TextView[text.length=0][clickable=true][visibleToUser=true] -n View > TextView[text^="请前往“奖品”查看并手动领取至支付宝账户"]',
-            'TextView[text^="奖励已发送" || text$="可前往【我的奖品】查看提取"] < View +2 @TextView[clickable=true][visibleToUser=true] - View > TextView[text="立即使用"]',
-            'View > View > TextView[text^="来晚啦"] + View + TextView[clickable=true][visibleToUser=true]',
-            'View >  View > View > TextView[text="来晚了，奖励派完了"] + View + TextView[clickable=true][visibleToUser=true]',
-            'TextView[text^="今日名额已尽" || text="今日名额已尽，明日九点开放。"] < View + View + TextView[clickable=true][visibleToUser=true]',
-            'View > View > @Button[text="我知道了"][clickable=true][visibleToUser=true] - View > TextView[text^="名额已抢完" && text*="谢谢参与"]',
-            'TextView[text^="今日额度已领完"]  <<n LinearLayout + LinearLayout >n Button[text="确定"][vid="mm_alert_ok_btn"][clickable=true][visibleToUser=true]',
-            'View > TextView[text="该商品已售罄"] + TextView[text="我知道了"][clickable=true][visibleToUser=true]',
-            'View > View > @TextView[clickable=true][visibleToUser=true] - TextView - View >n TextView[text^="当前奖池已领完"]',
-            'View > View > TextView[text^="奖品已领完"] + TextView[text="确定"][clickable=true][visibleToUser=true]',
-            'WebView[text^="湘约工行"] > View > View > View > View > @TextView[clickable=true][visibleToUser=true] - View > View > TextView[text="目前活动权益已领完"]',
-            'View > View >  @TextView[clickable=true][visibleToUser=true] -n View >  TextView[text^="您的领取机会已用完"]',
-            'View > View > @TextView[clickable=true][visibleToUser=true] - TextView - View >n TextView[text^="抽奖机会不足"]',
-            'View > View > @TextView[clickable=true][visibleToUser=true] -n View >n TextView[text^="您已经参与过了"]',
-            'View > View > @TextView[clickable=true][visibleToUser=true] -n View >n TextView[text^="您的抽奖次数不足"]',
-            'View > View > @TextView[clickable=true][visibleToUser=true] -n View > TextView[text^="您已经参与过了" || text*="下次活动记得来参加呀"]',
-            'View > View > @Button[text="我知道了"][clickable=true][visibleToUser=true] - View > TextView[text="您的月参与次数已达上限～"]', //261103
-            'View > View > TextView[text="每人1次参与机会"] + TextView[text="确定"][clickable=true][visibleToUser=true]',
-            'View > View > TextView[text="每人每月1次参与机会"] + TextView[text="确定"][clickable=true][visibleToUser=true]',
-            'TextView[text^="已参与"] < View +2 @TextView[clickable=true][visibleToUser=true] - View > TextView[text="确认"]',
-            '@TextView[clickable=true][visibleToUser=true] - TextView[clickable=true][visibleToUser=true] - View >n  TextView[text^="已参与"]',
-            'View > View > TextView[text="很遗憾，此次未中奖，感谢您的参与"] + TextView[text="确定"][clickable=true][visibleToUser=true]',
-            'View > TextView[text="很遗憾未中奖" || text="感谢您的参与"] +n View > TextView[text="我知道了"][clickable=false][visibleToUser=true]',
-            'View > View > TextView[text="谢谢参与～"] +2 @TextView[clickable=true][visibleToUser=true] -  View > Image[text="60e3f3550c78485a6857ba23"][clickable=true][visibleToUser=true]',
-            'Dialog > TextView[text="领取成功"] +n Button[text="确定"][clickable=true][visibleToUser=true]',
-            'View > View > @TextView[clickable=true][visibleToUser=true] -n View > TextView[text="谢谢参与"]',
-            'Dialog > TextView[text="谢谢参与"] + TextView + @View[clickable=true][visibleToUser=true] > TextView[text.length=1]',
-            'View > View > @TextView[clickable=true][visibleToUser=true] - View > TextView[text="立即前往"]', //谢谢参与
-          ],
-        },
-      ],
-    },
-    {
-      key: 71,
+      key: 56,
       name: '粤工会，同意协议',
       desc: '260810',
       rules: [
@@ -1644,13 +1318,13 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 72,
+      key: 57,
       name: '粤工会，登陆',
       desc: '260916，',
       rules: [
         {
           resetMatch: 'match',
-          preKeys: [71],
+          preKeys: [56],
           activityIds: [
             'com.tencent.mm.plugin.appbrand.ui.AppBrandUI0',
             'com.tencent.mm.plugin.appbrand.ui.AppBrandUI1',
@@ -1671,7 +1345,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 73,
+      key: 58,
       name: '粤工会，参与抽奖',
       desc: '260928',
       rules: [
@@ -1700,7 +1374,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 74,
+      key: 59,
       name: '粤工会滑块验证',
       desc: '260908',
       rules: [
@@ -1737,7 +1411,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 75,
+      key: 60,
       name: '粤工会，成功参与今日抽奖，确定',
       desc: '260810',
       rules: [
@@ -1762,7 +1436,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 76,
+      key: 61,
       name: '瑞幸，一键换购，X掉',
       desc: '260810',
       rules: [
@@ -1787,15 +1461,75 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 77,
-      name: '弹窗，红色火箭',
-      desc: '261027',
+      key: 62,
+      name: '腾讯理财通，领取奖励',
+      desc: '260925,添加 大家盈，抢理财金，整合领取与返回，体验完成，',
       rules: [
         {
           resetMatch: 'match',
-          matchDelay: 2000,
-          matchTime: 5000,
-          forcedTime: 5000,
+          activityIds: [
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI0',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI1',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI2',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI3',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI4',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI00',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI01',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI02',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI03',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI04',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandPluginUI',
+          ],
+          excludeMatches:
+            'View > TextView[text^="晒出正收益" && text$="元理财金"] + TextView[text="详细规则"]',
+          anyMatches: [
+            'WebView @View[clickable=true][visibleToUser=true] > TextView[text^="最高" && text$="元理财金"] + TextView[text="领取理财金"]',
+            '@View[clickable=true][visibleToUser=true] > View > View > Image[text="3ead67a7aa048b8658fe73f53b677f60"] +n TextView[text="抢"]',
+            'WebView >n View > Button[text="领取奖励"][clickable=true][visibleToUser=true]',
+            'View[childCount=2] > [text$="元理财金"] + *',
+            'View[childCount=3] > * + [text$="元理财金"] + *',
+            'View[childCount=3][clickable=true] > [text$="元理财金"] + *',
+            'View > @View > TextView + TextView[text$="元理财金"] + TextView[clickable=true]',
+            '[text^="成功领取奖励" || text="成功开始模拟"] <<n FrameLayout + * >n [desc="关闭bak"][childCount=1]',
+            '[text^="成功领取奖励"] <<n FrameLayout + * >n [desc="关闭bak"]',
+            'WebView [text="领取奖励bak"]',
+          ],
+        },
+      ],
+    },
+    {
+      key: 63,
+      name: '腾讯理财通，领取奖励，同意服务协议',
+      desc: 'D，260425，先禁用后续找出改余额',
+      rules: [
+        {
+          resetMatch: 'match',
+          activityIds: [
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI0',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI1',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI2',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI3',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI4',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI00',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI01',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI02',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI03',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI04',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandPluginUI',
+          ],
+          matches:
+            '@[text="已悉知风险提示并同意"] + [desc="服务协议"] <n * + [text="领取至“理财通活期+”账户"]',
+        },
+      ],
+    },
+    {
+      key: 64,
+      name: '湖北电影消费券',
+      desc: '260117',
+      rules: [
+        {
+          resetMatch: 'match',
+          actionCd: 100,
           activityIds: [
             'com.tencent.mm.plugin.appbrand.ui.AppBrandUI0',
             'com.tencent.mm.plugin.appbrand.ui.AppBrandUI1',
@@ -1810,23 +1544,20 @@ export default defineGkdApp({
             'com.tencent.mm.plugin.appbrand.ui.AppBrandPluginUI',
           ],
           anyMatches: [
-            'View > View > @Image[clickable=false][visibleToUser=true] + View > TextView[text="恭喜您"] +n TextView[text="积分"] + TextView[text^="恭喜您获得" && text*="专属积分奖励"]', //红色火箭签到
-            'View > View > TextView[text="恭喜您"] + * + TextView[text="微信红包"] +2 View > TextView[text="去领取"][clickable=false][visibleToUser=true]', //红色火箭，红包
-            'View > View > TextView[text="您的活动奖励金额为:"] + TextView + View > @TextView[text.length=0][clickable=true][visibleToUser=true] + View > TextView[text^="恭喜您抽中红包！点击领取后，奖励将发放至微信零钱"]', //红色火箭，红包
+            '[text="26年湖北消费券"] [text="¥ 10" || text="¥ 25"] +n * > [text="f34e522ba841ae9135fc77546faaf5f638005"]', //猫眼小程序
+            'WebView[text="“惠影湖北 乐享生活”-湖北省惠民观影活动"] View[index=4 || index=6] @View[index=parent.childCount.minus(1)] > TextView[depth=29]', //湖北电影消费券淘票票小程序
           ],
         },
       ],
     },
+
     {
-      key: 78,
-      name: '深工周五秒杀，弹窗，商品已被秒完，返回',
-      desc: '261001,action=back',
+      key: 65,
+      name: '月月刷未开始，最小化',
+      desc: '261101，添加 获得立减金，立即参与，',
       rules: [
         {
           resetMatch: 'match',
-          action: 'back',
-          matches:
-            'View > View > TextView[text="商品已被秒完" || text="商品已售罄"] + TextView[text="我知道了"][visibleToUser=true]',
           activityIds: [
             'com.tencent.mm.plugin.appbrand.ui.AppBrandUI0',
             'com.tencent.mm.plugin.appbrand.ui.AppBrandUI1',
@@ -1840,11 +1571,16 @@ export default defineGkdApp({
             'com.tencent.mm.plugin.appbrand.ui.AppBrandUI04',
             'com.tencent.mm.plugin.appbrand.ui.AppBrandPluginUI',
           ],
+          anyMatches: [
+            'TextView[text="该活动尚未开始"] + TextView[text="敬请期待"] <<n FrameLayout + ViewGroup >n ImageButton[desc="关闭"][clickable=true][visibleToUser=true]',
+            'TextView[text^="刷" && text$="卡"] <n View + View > TextView[text="立即参与领奖励"][clickable=false][visibleToUser=true]',
+            'TextView[text^="获得" && text*="元" && text$="立减金"] <<n View +3 View > Image[clickable=false][visibleToUser=true]',
+          ],
         },
       ],
     },
     {
-      key: 79,
+      key: 66,
       name: '北部湾立减金',
       desc: '260907，',
       rules: [
@@ -1872,7 +1608,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 80,
+      key: 67,
       name: '微信话费充值，第一步',
       desc: '260925，排除立即支付，添加 金币兑换后过期提醒我',
       rules: [
@@ -1904,7 +1640,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 81,
+      key: 68,
       name: '活动，签到',
       desc: '261009，限1次',
       rules: [
@@ -1931,68 +1667,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 82,
-      name: '弹窗，汉运动，券已发放结束，确定',
-      desc: '261028，添加饿了么定位提示',
-      rules: [
-        {
-          resetMatch: 'match',
-          fastQuery: true,
-          actionCd: 500,
-          anyMatches: [
-            'TextView[text^="还未到领券时间"] <<n LinearLayout + LinearLayout Button[text="确定"][vid="mm_alert_ok_btn"][clickable=true][visibleToUser=true]',
-            'TextView[text="活动火爆,请稍后再试"] <<n LinearLayout + LinearLayout Button[text="确定"][vid="mm_alert_ok_btn"][clickable=true][visibleToUser=true]',
-            'TextView[text="您的请求过于频繁，请稍后再试！"] <<n LinearLayout + LinearLayout Button[text="确定"][vid="mm_alert_ok_btn"][clickable=true][visibleToUser=true]',
-            'TextView[text="券已发放结束"] <<n LinearLayout + LinearLayout Button[text="确定"][vid="mm_alert_ok_btn"][clickable=true][visibleToUser=true]',
-            'TextView[text*="获取您的位置信息"] <<n LinearLayout + LinearLayout > LinearLayout > @Button[text="暂不"][clickable=true][visibleToUser=true] + * + Button[text="去设置"][clickable=true][visibleToUser=true]',
-          ],
-          activityIds: [
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI0',
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI1',
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI2',
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI3',
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI4',
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI00',
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI01',
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI02',
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI03',
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI04',
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandPluginUI',
-          ],
-        },
-      ],
-    },
-    {
-      key: 83,
-      name: '粟上皇，立即领取',
-      desc: '261014',
-      rules: [
-        {
-          resetMatch: 'match',
-          actionMaximum: 3,
-          actionCd: 5000,
-          anyMatches: [
-            'View > View > TextView[text*="武汉" && text*="10元无门槛"] + TextView + Button[text="立即领取 "][clickable=true][visibleToUser=true]',
-            'View > View > TextView[text*="武汉" && text*="10元无门槛"] + View > View > Button[text="立即领取 "][clickable=true][visibleToUser=true]',
-          ],
-          activityIds: [
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI0',
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI1',
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI2',
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI3',
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI4',
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI00',
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI01',
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI02',
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI03',
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI04',
-            'com.tencent.mm.plugin.appbrand.ui.AppBrandPluginUI',
-          ],
-        },
-      ],
-    },
-    {
-      key: 84,
+      key: 69,
       name: '弹窗，广发限购，X掉',
       desc: '261026，添加 广发限购，广发立减金立即领取，关闭',
       rules: [
@@ -2023,15 +1698,12 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 85,
-      name: '湘约，1元微信立减金，立即领取',
-      desc: '261029，添加内蒙古',
+      key: 70,
+      name: '金币抽提现券1',
+      desc: '251222，添加第一步兑换',
       rules: [
         {
           resetMatch: 'match',
-          action: 'clickCenter',
-          actionCd: 5000,
-          forcedTime: 3000,
           activityIds: [
             'com.tencent.mm.plugin.appbrand.ui.AppBrandUI0',
             'com.tencent.mm.plugin.appbrand.ui.AppBrandUI1',
@@ -2046,14 +1718,126 @@ export default defineGkdApp({
             'com.tencent.mm.plugin.appbrand.ui.AppBrandPluginUI',
           ],
           anyMatches: [
-            'WebView[text*="湘约"] > View > View > TextView[text="￥1"] + TextView[text="微信立减金"] + View > TextView[text="立即领取"][clickable=true][visibleToUser=true]',
-            'WebView[text*="内蒙古"] > View > View > TextView[text="￥1"] + TextView[text="微信立减金"] + View > TextView[text="立即领取"][clickable=true][visibleToUser=true]',
+            '[text="微信提现免费券"] <<n * + * [text="1金币兑换"]',
+            '[text="祝你每天好运气"] +3 * >2 [text="1金币抽提现券"]',
           ],
         },
       ],
     },
     {
-      key: 86,
+      key: 71,
+      name: '金币抽提现券2',
+      desc: '',
+      rules: [
+        {
+          resetMatch: 'match',
+          activityIds: [
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI0',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI1',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI2',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI3',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI4',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI00',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI01',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI02',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI03',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI04',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandPluginUI',
+          ],
+          matches:
+            '[text^="确认使用1金币"] + [text="取消"] + [text="使用1金币"]',
+        },
+      ],
+    },
+    {
+      key: 72,
+      name: '金币抽提现券，立即收下',
+      desc: '260926，取消 关闭，兑换提示',
+      rules: [
+        {
+          resetMatch: 'match',
+          action: 'clickCenter',
+          activityIds: [
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI0',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI1',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI2',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI3',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI4',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI00',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI01',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI02',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI03',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI04',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandPluginUI',
+          ],
+          anyMatches: [
+            'TextView[text^="确认使用1金币"]  <<n  LinearLayout + LinearLayout >n Button[text="确认兑换"][vid="mm_alert_ok_btn"]',
+            '[text="确认使用1金币兑换吗？"] <<n * + * >n [vid="mm_alert_ok_btn"][text="确认兑换"]',
+            '[text="立即收下"] + @[text="今日24点前可领"]',
+            '[text="已收下1"] + [text="7天后可再参与"] <<n * + * >n [desc="关闭-bak"] ',
+          ],
+        },
+      ],
+    },
+    {
+      key: 73,
+      name: '光大小程序阳光抽奖',
+      desc: '251224',
+      rules: [
+        {
+          resetMatch: 'match',
+          activityIds: [
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI0',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI1',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI2',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI3',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI4',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI00',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI01',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI02',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI03',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI04',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandPluginUI',
+          ],
+          anyMatches: [
+            '[text^="消耗" && text$="阳光值参与抽奖？"] +n [text="取消"] + [id="onSureReward"][text="确定"]',
+            '[text="谢谢您的参与"] +n [text="确定"]',
+          ],
+        },
+      ],
+    },
+    {
+      key: 74,
+      name: '粟上皇，立即领取',
+      desc: '261014',
+      rules: [
+        {
+          resetMatch: 'match',
+          actionMaximum: 3,
+          actionCd: 5000,
+          anyMatches: [
+            'View > View > TextView[text*="武汉" && text*="10元无门槛"] + TextView + Button[text="立即领取 "][clickable=true][visibleToUser=true]',
+            'View > View > TextView[text*="武汉" && text*="10元无门槛"] + View > View > Button[text="立即领取 "][clickable=true][visibleToUser=true]',
+          ],
+          activityIds: [
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI0',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI1',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI2',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI3',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI4',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI00',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI01',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI02',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI03',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI04',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandPluginUI',
+          ],
+        },
+      ],
+    },
+
+    {
+      key: 75,
       name: '瑞幸，更改优惠',
       desc: 'D，260810',
       rules: [
@@ -2079,7 +1863,145 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 87,
+      key: 76,
+      name: '湖北SKP',
+      desc: 'D，260406，中国银行信用卡湖北 公众号进去，立即支付，不能限制1次',
+      rules: [
+        {
+          activityIds: [
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI0',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI1',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI2',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI3',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI4',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI00',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI01',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI02',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI03',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI04',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandPluginUI',
+          ],
+          matches: '@[text="file-WI7PoWjb8T"] + [text!="今日剩余名额：0名"]',
+          resetMatch: 'match',
+          actionCd: 0,
+        },
+      ],
+    },
+    {
+      key: 77,
+      name: '湖北SKP，确认支付',
+      desc: 'D，260406，优先测试',
+      rules: [
+        {
+          order: -1,
+          activityIds: [
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI0',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI1',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI2',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI3',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI4',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI00',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI01',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI02',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI03',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI04',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandPluginUI',
+          ],
+          resetMatch: 'match',
+          actionCd: 100,
+          matches:
+            '[text="仅限中国银行信用卡支付"] + [text="dpyo8s1ulmfditgb8ejiv"] + [text="xmdaohehb7wx6hqcb8xft"]',
+        },
+      ],
+    },
+    {
+      key: 78,
+      name: '湖北SKP，火爆，刷新',
+      desc: 'D，260102',
+      rules: [
+        {
+          activityIds: [
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI0',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI1',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI2',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI3',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI4',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI00',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI01',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI02',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI03',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandUI04',
+            'com.tencent.mm.plugin.appbrand.ui.AppBrandPluginUI',
+          ],
+          matches: '[text="活动火爆，当前参与人数过多"] +n [text="刷 新"]',
+          resetMatch: 'match',
+          actionCd: 100,
+        },
+      ],
+    },
+    {
+      key: 79,
+      name: '确定删除聊天记录，清空',
+      desc: 'D，260221',
+      rules: [
+        {
+          resetMatch: 'match',
+          fastQuery: true,
+          activityIds: 'com.tencent.mm.ui.SingleChatInfoUI',
+          matches:
+            '[text^="确定删除" && text*="聊天记录吗？"] <<n * + * [vid="mm_alert_ok_btn"]',
+        },
+      ],
+    },
+    {
+      key: 80,
+      name: '不再关注',
+      desc: 'D，260220',
+      rules: [
+        {
+          resetMatch: 'match',
+          fastQuery: true,
+          activityIds: [
+            'com.tencent.mm.plugin.brandservice.ui.BrandServiceIndexUI',
+            'com.tencent.mm.plugin.flutter.ui.MMFlutterViewActivity',
+            'com.tencent.mm.plugin.profile.ui.ContactInfoUI',
+          ],
+          anyMatches: [
+            '[text^="不再关注" && text$="你将不再收到其下发的消息"] <<n * + * [vid="mm_alert_ok_btn"]',
+            '*[childCount=1] > [text="不再关注"]',
+          ],
+        },
+      ],
+    },
+    {
+      key: 81,
+      name: '不再关注2，',
+      desc: 'D，260220',
+      rules: [
+        {
+          resetMatch: 'match',
+          activityIds: 'com.tencent.mm.plugin.flutter.ui.MMFlutterViewActivity',
+          matches: '[desc="关闭"] [desc="不再关注"]',
+        },
+      ],
+    },
+    {
+      key: 82,
+      name: '清空公众号聊天中的所有内容，清空',
+      desc: '260220,[text="清空"]',
+      rules: [
+        {
+          resetMatch: 'match',
+          fastQuery: true,
+          activityIds:
+            'com.tencent.mm.plugin.profile.ui.newbizinfo.NewBizInfoSettingUI',
+          matches:
+            '[text="将清空公众号聊天中的所有内容"] <<n * + * [vid="mm_alert_ok_btn"]',
+        },
+      ],
+    },
+    {
+      key: 83,
       name: '自动登录该设备',
       desc: '260804',
       rules: [
@@ -2088,20 +2010,6 @@ export default defineGkdApp({
           activityIds: 'com.tencent.mm.plugin.webwx.ui.ExtDeviceWXLoginUI',
           matches:
             'RelativeLayout > TextView[text="登录 Windows 微信"] + CheckBox[desc="同步最近的消息"] + CheckBox[desc="自动登录该设备"] + LinearLayout > Button[clickable=true][visibleToUser=true][text="登录"]',
-        },
-      ],
-    },
-    {
-      key: 88,
-      name: '同程抢单，慎用',
-      desc: 'D，261018',
-      rules: [
-        {
-          activityIds: 'com.tencent.mm.ui.LauncherUI',
-          actionCd: 3000,
-          resetMatch: 'match',
-          matches:
-            'TextView[text*="同程来一个" || text*="收同程广东" || text*="江西五折券"] < * - TextView[text="车头-那年盛夏电影票" || text="hua"] < LinearLayout[childCount=4] <<n RelativeLayout[index=parent.childCount.minus(1)] <n RecyclerView <<n FrameLayout + FrameLayout >n RelativeLayout > Button[text="发送"][clickable=true][visibleToUser=true]',
         },
       ],
     },

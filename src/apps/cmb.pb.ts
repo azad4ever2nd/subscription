@@ -302,20 +302,20 @@ export default defineGkdApp({
     {
       key: 14,
       name: '基金页面下方，添加自选1',
-      desc: '261029，clickable=true',
+      desc: '261103，clickable=true',
       rules: [
         {
           action: 'clickCenter',
-          matchDelay: 3000, //有没有可能，是因为页面没有加载完成，导致的误触，先测试
+          matchDelay: 2000, //有没有可能，是因为页面没有加载完成，导致的误触，先测试
           //处于匹配延迟matchDelay: 1000,关闭测试
-          forcedTime: 3000,
+          forcedTime: 4000,
           actionCd: 2500,
           resetMatch: 'match',
           activityIds:
             'cmb.pb.app.h5container.webviewcontainer.PBWebContainerActivity',
           anyMatches: [
-            'View[id="FundDetailBody"] > View > View[childCount=3] > Button[text="讨论区"] + Button[text="招财号"] + Button[text="自选"][clickable=true][visibleToUser=true]', //测试规则写完整，避免误点
-            'View[childCount=4] > Button[text="招财号"] + @Button[text="自选"][clickable=true][visibleToUser=true] + Button + Button',
+            'View[id="FundDetailBody"] > View > View[childCount=5] > Button[text="讨论区"] + Button[text="招财号"] + @Button[text="自选"][clickable=true][visibleToUser=true] + Button + Button', //261103，测试规则写完整，避免误点
+            'View[childCount=4] > Button + @Button[text="自选"][clickable=true][visibleToUser=true] + Button + Button',
             //'View[id="FundDetailBody"] > View > View > @Button[text="自选"][clickable=true][visibleToUser=true] +n Button[text="定投" || text="购买"]',
             //'WebView > View > View > View > View > Button[text="自选"][clickable=true][visibleToUser=true]',
           ],
@@ -325,7 +325,7 @@ export default defineGkdApp({
     {
       key: 15,
       name: '基金页面下方，添加自选2',
-      desc: '260915，clickable=false',
+      desc: '261103，clickable=false',
       rules: [
         {
           resetMatch: 'match',
@@ -340,8 +340,11 @@ export default defineGkdApp({
           ],
           activityIds:
             'cmb.pb.app.h5container.webviewcontainer.PBWebContainerActivity',
-          anyMatches:
-            'WebView > View > View > View > View > TextView[text="加自选"][clickable=false][visibleToUser=true]',
+          anyMatches: [
+            'View[childCount=5] > Button[text="讨论区"] + Button[text="招财号"] + @Button[text="自选"][clickable=false][visibleToUser=true] + Button + Button',
+            'View[childCount=4] > Button + @Button[text="自选"][clickable=false][visibleToUser=true] + Button + Button',
+            //'WebView > View > View > View > View > TextView[text="加自选"][clickable=false][visibleToUser=true]',
+          ],
         },
       ],
     },
