@@ -1547,7 +1547,7 @@ export default defineGkdApp({
     {
       key: 70,
       name: '活动未开始，我知道了',
-      desc: '261101，添加 红色打卡，宁波，朴朴，动卡空间，内蒙工行，贵阳工行，工行余姚，湘约工行，贵州工行，已参加过',
+      desc: '261103，添加 红色打卡，宁波，朴朴，动卡空间，内蒙工行，贵阳工行，工行余姚，湘约工行，贵州工行，已参加过',
       rules: [
         {
           resetMatch: 'match',
@@ -1568,7 +1568,8 @@ export default defineGkdApp({
           ],
           anyMatches: [
             'WebView > View > TextView[text="立即签到"][clickable=false][visibleToUser=true]',
-            'WebView > View > View > View > View > @TextView[clickable=true][visibleToUser=true] - View > TextView[text="立即前往"]',
+            'View > View > @TextView[clickable=true][visibleToUser=true] - View[clickable=true][visibleToUser=true] > TextView[text="立即前往"]',
+            //'WebView > View > View > View > View > @TextView[clickable=true][visibleToUser=true] - View > TextView[text="立即前往"]',//261103，
             //'View > View > @Image[clickable=false][visibleToUser=true] + View > TextView[text="恭喜您"] +n TextView[text="积分"] + TextView[text^="恭喜您获得" && text*="专属积分奖励"]', //红色火箭签到
             //'View > View > TextView[text="恭喜您"] + * + TextView[text="微信红包"] +2 View > TextView[text="去领取"][clickable=false][visibleToUser=true]', //红色火箭，红包
             //'View > View > TextView[text="您的活动奖励金额为:"] + TextView + View > @TextView[text.length=0][clickable=true][visibleToUser=true] + View > TextView[text^="恭喜您抽中红包！点击领取后，奖励将发放至微信零钱"]', //红色火箭，红包
@@ -1577,6 +1578,7 @@ export default defineGkdApp({
             'TextView[clickable=true][visibleToUser=true] - @TextView[clickable=true][visibleToUser=true] - View >n TextView[text="每天上午9:00开始"]',
             'View > View > TextView[text^="活动将于" && text$="开始"] + TextView[text="确定"][clickable=true][visibleToUser=true]',
             'View > TextView[text^="活动未开始" || text^="已参加过本次活动"] + View > View > Image[clickable=true][visibleToUser=true]',
+            'View > View > @TextView[clickable=true][visibleToUser=true] - View[clickable=true][visibleToUser=true] - View > View > TextView[text="暂未开始"]', //261103，
             'View > TextView[text="Blocked by Sentinel"] + View + TextView[clickable=true][visibleToUser=true]',
             'View > View > @TextView[clickable=true][visibleToUser=true] - View > View >   Image[text="66c29cff8e9f4a2aaf3f1b67b944daac"]',
             'View > View > @TextView[clickable=true][visibleToUser=true] - View > View >   Image[text="2821aa8f32d5477d85db2a4a119d06cd"]',
@@ -1599,6 +1601,7 @@ export default defineGkdApp({
             'View > View > @TextView[clickable=true][visibleToUser=true] -n View >n TextView[text^="您已经参与过了"]',
             'View > View > @TextView[clickable=true][visibleToUser=true] -n View >n TextView[text^="您的抽奖次数不足"]',
             'View > View > @TextView[clickable=true][visibleToUser=true] -n View > TextView[text^="您已经参与过了" || text*="下次活动记得来参加呀"]',
+            'View > View > @Button[text="我知道了"][clickable=true][visibleToUser=true] - View > TextView[text="您的月参与次数已达上限～"]', //261103
             'View > View > TextView[text="每人1次参与机会"] + TextView[text="确定"][clickable=true][visibleToUser=true]',
             'View > View > TextView[text="每人每月1次参与机会"] + TextView[text="确定"][clickable=true][visibleToUser=true]',
             'TextView[text^="已参与"] < View +2 @TextView[clickable=true][visibleToUser=true] - View > TextView[text="确认"]',

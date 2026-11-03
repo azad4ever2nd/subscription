@@ -353,6 +353,19 @@ export default defineGkdApp({
     },
     {
       key: 24,
+      name: '弹窗，该商品已售罄，请明日再来，X掉',
+      desc: '261103',
+      rules: [
+        {
+          resetMatch: 'match',
+          activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
+          matches:
+            'WebView[text="茶影优惠享"] > View > View > View > View[childCount=2] > @View[clickable=true][visibleToUser=true] - View[childCount=1] > View[clickable=true][visibleToUser=true]',
+        },
+      ],
+    },
+    {
+      key: 25,
       name: '开启消息通知',
       desc: '260726',
       rules: [

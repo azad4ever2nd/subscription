@@ -80,12 +80,13 @@ export default defineGkdApp({
     {
       key: 5,
       name: '弹窗，放弃付款，推荐开通花呗',
-      desc: '261014，fastQuery=true,clickable=true,添加 支付宝推荐你，关闭PDD免密付款，添加放弃还款，推荐习惯',
+      desc: '261103，fastQuery=true,clickable=true,添加 支付宝推荐你，关闭PDD免密付款，添加放弃还款，推荐习惯',
       rules: [
         {
           resetMatch: 'match',
           fastQuery: true,
-          actionCd: 200,
+          actionCd: 500,
+          matchTime: 2000,
           forcedTime: 3000,
           activityIds: 'com.alipay.android.msp.ui.views.MspContainerActivity',
           anyMatches: [
@@ -98,6 +99,7 @@ export default defineGkdApp({
             'TextView[text="支付宝推荐你"] <n FrameLayout +n FrameLayout > TextView[text="不感兴趣"][clickable=false][visibleToUser=true]',
             'View > View > TextView[text="支付宝"] + TextView[text="邀请你"] + TextView[clickable=false][visibleToUser=true][text="跳过"]',
             'FrameLayout > TextView[text*="免密快捷支付"] + FrameLayout > CheckBox[clickable=true][checkable=true]',
+            'TextView[text="是否放弃本次付款？"] <<n FrameLayout +n FrameLayout >n @FrameLayout[clickable=true][visibleToUser=true] > TextView[text="放弃"]', //261103
             'TextView[text="是否放弃本次付款？"][id="com.alipay.mobile.antui:id/message"] <<n LinearLayout + LinearLayout > @Button[id="com.alipay.mobile.antui:id/btn_cancel"][text="放弃"][clickable=true][visibleToUser=true] + Button[text="继续付款"][id="com.alipay.mobile.antui:id/btn_ensure"]',
             'TextView[text*="是否放弃付款"][id="com.alipay.mobile.antui:id/message"] <<n LinearLayout  + LinearLayout > @Button[text="放弃"][id="com.alipay.mobile.antui:id/btn_cancel"][clickable=true][visibleToUser=true] + Button[text="继续付款"][id="com.alipay.mobile.antui:id/btn_ensure"]',
           ],

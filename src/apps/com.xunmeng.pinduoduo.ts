@@ -140,7 +140,7 @@ export default defineGkdApp({
     {
       key: 8,
       name: '百亿补贴，无门槛抽奖',
-      desc: '261102，fastQuery=false,clickable=true',
+      desc: '261103，fastQuery=false,clickable=true',
       rules: [
         {
           actionMaximum: 5,
@@ -149,7 +149,7 @@ export default defineGkdApp({
           action: 'clickCenter',
           activityIds: 'com.xunmeng.pinduoduo.activity.NewPageActivity',
           anyMatches: [
-            'View >  TextView[text$="元无门槛券"] + @View[clickable=true][visibleToUser=true] > TextView[text="立即抽奖"]',
+            'View >  TextView[text$="元无门槛券"] + @View[clickable=true][visibleToUser=true] > TextView[text="立即抽奖"][clickable=false][visibleToUser=true]',
             'View >  TextView[text*="点抢最高16元无门槛券"] + @View[clickable=true][visibleToUser=true] > TextView[text="立即抽奖"]',
             'TextView[text="限时抽神券"] -2 TextView[text="无门槛券"] + View >3 TextView[text="立即抽奖"]',
             '[text="限时抽神券"] +n [text="无门槛券"] + * [text="立即抽奖"]',

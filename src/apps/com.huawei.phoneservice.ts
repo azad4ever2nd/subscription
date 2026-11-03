@@ -76,6 +76,8 @@ export default defineGkdApp({
           resetMatch: 'match',
           fastQuery: true,
           activityIds: 'com.huawei.myhw.ui.HwHomeActivity',
+          excludeMatches:
+            'TextView[text="活动报名"] < View +n @CheckBox[text.length=1][clickable=true][visibleToUser=true][checked=false] + View > TextView[text="我已阅读并同意"] + TextView[text="《隐私协议》"]',
           anyMatches: [
             'ViewGroup > TextView[vid="tv_title"][text="恭喜您获得经验值"] +2 LinearLayout > Button[vid="bt_negative"][clickable=true][visibleToUser=true][text="知道了"]',
             '[text="恭喜您获得经验值"] +2 * > [vid="bt_negative"][text="知道了"]',
@@ -95,6 +97,8 @@ export default defineGkdApp({
             'com.huawei.myhw.ui.HwHomeActivity',
             'com.huawei.module.commonwebview.ui.CommonWebviewActivity',
           ],
+          excludeMatches:
+            'TextView[text="活动报名"] < View +n @CheckBox[text.length=1][clickable=true][visibleToUser=true][checked=false] + View > TextView[text="我已阅读并同意"] + TextView[text="《隐私协议》"]', //排除报名窗口
           anyMatches: [
             '[text^="浏览服务频道" || text^="新品发布会" || text^="浏览新品商" ||  text^="精选好物" || text="参与精彩活动" || text$="玩机攻略" || text^="浏览爱车" || text^="逛同城" || text$="看热门" || text^="到店体验华为"] < * + [text="去完成"]',
             'ViewGroup > TextView[text*="会员日福利" || text^="发帖赢" || text^="到店瓜分" || text^="浏览服务频道" || text^="新品发布会" || text^="浏览新品商" || text^="精选好物" || text="参与精彩活动" || text$="玩机攻略" || text^="浏览爱车" || text^="逛同城" || text$="看热门" || text^="到店体验华为"] +2 TextView[text="去完成"]',
@@ -115,6 +119,8 @@ export default defineGkdApp({
             'com.huawei.myhw.ui.HwHomeActivity',
             'com.huawei.module.commonwebview.ui.CommonWebviewActivity',
           ],
+          excludeMatches:
+            'TextView[text="活动报名"] < View +n @CheckBox[text.length=1][clickable=true][visibleToUser=true][checked=false] + View > TextView[text="我已阅读并同意"] + TextView[text="《隐私协议》"]', //排除报名窗口
           anyMatches: [
             'View > TextView[text="领奖励"][clickable=true]',
             'ViewGroup > TextView[clickable=true][vid="tv_tasks_type"][text="领奖励"]',
@@ -131,14 +137,16 @@ export default defineGkdApp({
       desc: '260905，我知道了，按钮id动态，原@* > [id="cxui-button-175" || id="cxui-button-235"] > [text="我知道了"]',
       rules: [
         {
+          resetMatch: 'match',
+          actionCd: 500,
+          excludeMatches:
+            'TextView[text="活动报名"] < View +n @CheckBox[text.length=1][clickable=true][visibleToUser=true][checked=false] + View > TextView[text="我已阅读并同意"] + TextView[text="《隐私协议》"]',
           anyMatches: [
             'View > View > TextView[text="报名成功"] + View > View > TextView[text="我知道了"][clickable=true]',
             '[text="恭喜您获得经验值奖励"] +n * [text="我知道了"]',
             '[text^="恭喜您获取经验值"] +2 @* >3 [text="我知道了"]',
             '[text^="签到成功"] + [text="我知道了"]',
           ],
-          resetMatch: 'match',
-          actionCd: 500,
           activityIds: [
             'com.huawei.module.commonwebview.ui.CommonWebviewActivity',
           ],
@@ -190,6 +198,20 @@ export default defineGkdApp({
             'View[id="popup_absolute"] > @TextView[text.length=1][clickable=true][visibleToUser=true] + View > View > TextView[text="10积分"] + View > TextView[text="查看活动规则"]',
             'View[id="popup_absolute"] > @TextView[text.length=1][clickable=true][visibleToUser=true] + View TextView[text="与奖品擦肩而过"] + View > TextView[text="查看活动规则"]',
           ],
+        },
+      ],
+    },
+    {
+      key: 12,
+      name: '弹窗，活动报名，勾选',
+      desc: '261103',
+      rules: [
+        {
+          resetMatch: 'match',
+          activityIds:
+            'com.huawei.module.commonwebview.ui.CommonWebviewActivity',
+          matches:
+            'TextView[text="活动报名"] < View +n @CheckBox[text.length=1][clickable=true][visibleToUser=true][checked=false] + View > TextView[text="我已阅读并同意"] + TextView[text="《隐私协议》"]',
         },
       ],
     },
