@@ -216,7 +216,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 12,
+      key: 13,
       name: '清除消息中心未读，确定',
       desc: '260205',
       rules: [
@@ -233,7 +233,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 13,
+      key: 14,
       name: '购物页面，返回',
       desc: '261102，新布局',
       rules: [
