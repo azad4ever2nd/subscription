@@ -504,18 +504,21 @@ export default defineGkdApp({
     {
       key: 31,
       name: '即将跳转',
-      desc: '260804，com.tencent.mm.plugin.brandservice.ui.timeline.preload.ui.TmplWebViewMMUI,添加IDS，移动抽奖，动态ID，增加小程序里的跳转，改匹配顺序，尽量从左往右',
+      desc: '261104，com.tencent.mm.plugin.brandservice.ui.timeline.preload.ui.TmplWebViewMMUI,添加IDS，移动抽奖，动态ID，增加小程序里的跳转，改匹配顺序，尽量从左往右',
       rules: [
         {
+          fastQuery: true,
+          actionCd: 800,
           resetMatch: 'match',
+          forcedTime: 3000,
           anyMatches: [
-            '[text^="即将"] <<n  * + * >n [vid="mm_alert_cancel_btn"][text="取消"] +n [vid="mm_alert_ok_btn"][text="确认跳转" || text="允许"]',
+            'TextView[text^="即将跳转到第三方网站"] <<n LinearLayout + LinearLayout > LinearLayout > Button[text="取消"][vid="mm_alert_cancel_btn"] + ImageView + Button[text="确认跳转"][vid="mm_alert_ok_btn"][clickable=true][visibleToUser=true]', //261104
+            'TextView[text^="即将跳转到第三方网站"] <<n LinearLayout + LinearLayout > LinearLayout > Button[text="取消"][vid="mm_alert_cancel_btn"] + ImageView + Button[text="允许"][vid="mm_alert_ok_btn"][clickable=true][visibleToUser=true]', //261104
+            //'[text^="即将"] <<n  * + * >n [vid="mm_alert_cancel_btn"][text="取消"] +n [vid="mm_alert_ok_btn"][text="确认跳转" || text="允许"]',
             '[id="js_minipro_dialog_head"][text="即将打开小程序"] <<n * +n * > [id="js_minipro_dialog_ok"][text="允许"]',
             '[text="get_prize_title.dc05dc4a"] +n * > [text="立即前往"]',
             'Dialog [text*="即将打开第三方"] + * > [text="允许"]',
           ],
-          fastQuery: true,
-          actionCd: 800,
           activityIds: [
             'com.tencent.mm.plugin.webview.ui.tools.CustomSchemeEntryMMWebViewUI',
             'com.tencent.mm.plugin.webview.ui.tools.MMWebViewUI',
@@ -941,13 +944,13 @@ export default defineGkdApp({
     {
       key: 44,
       name: '弹窗，红色火箭',
-      desc: '261027',
+      desc: '261104',
       rules: [
         {
           resetMatch: 'match',
-          matchDelay: 1000,
-          matchTime: 5000,
-          forcedTime: 6000,
+          matchDelay: 2500,
+          matchTime: 3000,
+          forcedTime: 7000,
           activityIds: [
             'com.tencent.mm.plugin.appbrand.ui.AppBrandUI0',
             'com.tencent.mm.plugin.appbrand.ui.AppBrandUI1',
@@ -962,7 +965,7 @@ export default defineGkdApp({
             'com.tencent.mm.plugin.appbrand.ui.AppBrandPluginUI',
           ],
           anyMatches: [
-            'View > View > @Image[clickable=false][visibleToUser=true] + View > TextView[text="恭喜您"] +n TextView[text="积分"] + TextView[text^="恭喜您获得" && text*="专属积分奖励"]', //红色火箭签到
+            //'View > View > @Image[clickable=false][visibleToUser=true] + View > TextView[text="恭喜您"] +n TextView[text="积分"] + TextView[text^="恭喜您获得" && text*="专属积分奖励"]', //红色火箭签到
             'View > View > TextView[text="恭喜您"] + * + TextView[text="微信红包"] +2 View > TextView[text="去领取"][clickable=false][visibleToUser=true]', //红色火箭，红包
             'View > View > TextView[text="您的活动奖励金额为:"] + TextView + View > @TextView[text.length=0][clickable=true][visibleToUser=true] + View > TextView[text^="恭喜您抽中红包！点击领取后，奖励将发放至微信零钱"]', //红色火箭，红包
           ],
@@ -1206,7 +1209,7 @@ export default defineGkdApp({
       rules: [
         {
           resetMatch: 'match',
-          actionCd: 0,
+          actionCd: 300,
           activityIds: [
             'com.tencent.mm.plugin.appbrand.ui.AppBrandUI0',
             'com.tencent.mm.plugin.appbrand.ui.AppBrandUI1',
@@ -1227,6 +1230,7 @@ export default defineGkdApp({
             '@Image[clickable=false][visibleToUser=true] < View -n TextView[text$="积分"] +n TextView[text="去查看"]',
             'TextView[text="去领取"] < FrameLayout <n FrameLayout +2 FrameLayout > FrameLayout > TextView > ImageView[clickable=false][visibleToUser=true]', //恭喜你 抽中了 100积分，去领取，分享好友，一起抽大奖，X掉
             '[text="更多精彩"] + @* +n [text="女职工服务"] +n [text="阵地服务"]',
+            'View > View > @Image[clickable=false][visibleToUser=true] + View > TextView[text="恭喜您"] +n TextView[text="积分"] + TextView[text^="恭喜您获得" && text*="专属积分奖励"]', //红色火箭签到，不用延时匹配
           ],
         },
       ],

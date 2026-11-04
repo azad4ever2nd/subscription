@@ -92,7 +92,7 @@ export default defineGkdApp({
     {
       key: 6,
       name: '弹窗，X掉1',
-      desc: '261005，fastQuery=true，clickable=true',
+      desc: '261104，fastQuery=true，clickable=true',
       rules: [
         {
           fastQuery: true,
@@ -107,6 +107,7 @@ export default defineGkdApp({
             'TextView[text="放弃打款"] <<n ViewGroup + @ViewGroup[clickable=true][visibleToUser=true] > FrameLayout > TextView[text.length=1][clickable=false][visibleToUser=true]',
             'ImageView < @FrameLayout[vid="pdd"][clickable=true][visibleToUser=true] - ViewGroup > TextView[vid="tv_title"][text="可参与的拼单"]', //可参与的拼单，X掉
             '[text="继续编辑"] <<n *[clickable=true] + @*[clickable=true] >n [text="放弃领券"]',
+            '@ImageView[clickable=true] < ViewGroup +3 ViewGroup > FrameLayout > TextView[text="立即领取"][clickable=false][visibleToUser=true]', //收货后弹窗，送权益：近期收货多次，送你先用后付权益"
           ],
         },
       ],

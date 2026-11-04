@@ -467,5 +467,20 @@ export default defineGkdApp({
         },
       ],
     },
+    {
+      key: 30,
+      name: '返回上一级菜单，完成',
+      desc: '261104',
+      rules: [
+        {
+          resetMatch: 'match',
+          actionCd: 2000,
+          activityIds:
+            'com.nantian.iBank.ui.activity.container.ProgramSingleWindowActivity',
+          matches:
+            '@LinearLayout[clickable=false][visibleToUser=true] > View[desc="返回上一级菜单"][clickable=false][visibleToUser=true] + View[clickable=false]',
+        },
+      ],
+    },
   ],
 });

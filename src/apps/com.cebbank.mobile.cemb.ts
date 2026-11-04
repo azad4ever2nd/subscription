@@ -76,7 +76,7 @@ export default defineGkdApp({
     {
       key: 5,
       name: '基金财富月历，每日任务，1个',
-      desc: 'D,260212',
+      desc: 'D，260212',
       rules: [
         {
           matches: '[text="每日"] + [text="阅读产品文章"] +3 TextView',
@@ -127,8 +127,24 @@ export default defineGkdApp({
     },
     {
       key: 8,
+      name: '基金财富月历，每月任务，体验定投',
+      desc: '260814，可不用',
+      rules: [
+        {
+          resetMatch: 'app',
+          actionCd: 3000,
+          actionMaximum: 2,
+          activityIds:
+            'com.cebbank.mobile.cemb.ui.activity.mobilePayment.MobilePaymentWebActivity',
+          matches:
+            'WebView > View > View > View > View > TextView[text^="体验" && text$="定投协议开通流程"] +(5,6) TextView[text.length=0][clickable=false][visibleToUser=true]',
+        },
+      ],
+    },
+    {
+      key: 9,
       name: '基金财富月历，任务完成开心收下',
-      desc: '260928 添加 葫芦抽奖，兑换确认',
+      desc: '先禁用，分类整理光大弹窗，260928 添加 葫芦抽奖，兑换确认',
       rules: [
         {
           anyMatches: [
@@ -150,9 +166,9 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 9,
-      name: '基金财富月历,弹窗2',
-      desc: '251208，添加抽奖兑换弹窗',
+      key: 10,
+      name: '基金财富月历，弹窗2',
+      desc: '先禁用，分类整理光大弹窗，251208，添加抽奖兑换弹窗',
       rules: [
         {
           anyMatches: [
@@ -166,29 +182,12 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 10,
-      name: '基金财富月历兑换，自定义兑换多少金币的',
-      desc: '260401，只需把金币数量改成想兑换的就行。',
-      rules: [
-        {
-          actionMaximum: 1,
-          resetMatch: 'app',
-          activityIds:
-            'com.cebbank.mobile.cemb.ui.activity.mobilePayment.MobilePaymentWebActivity',
-          matches: '[text="20金币"] + @[text="兑换"] + [text="(本月限兑:1次)"]',
-        },
-      ],
-    },
-    {
       key: 11,
-      name: '基金财富节，领取提示',
-      desc: 'D,260123，优先复制券码，然后再关闭',
+      name: '基金财富月历，兑换并抽奖',
+      desc: 'D，251222',
       rules: [
         {
-          anyMatches: [
-            '[text^="兑奖码:"] + * + TextView',
-            '[text="可在首页-[奖品]查看" || text="可在首页-[财气值明细]查看"] + TextView',
-          ],
+          matches: '[text="10金币"] + [text="1次抽奖机会"] +2 *',
           resetMatch: 'match',
           activityIds:
             'com.cebbank.mobile.cemb.ui.activity.mobilePayment.MobilePaymentWebActivity',
@@ -197,20 +196,6 @@ export default defineGkdApp({
     },
     {
       key: 12,
-      name: '基金财富节，完成任务后去领取',
-      desc: 'D,260123，先占位，明天再补规则',
-      rules: [
-        {
-          matches:
-            '[text="可在首页-[奖品]查看" || text="可在首页-[财气值明细]查看"] + TextView',
-          resetMatch: 'match',
-          activityIds:
-            'com.cebbank.mobile.cemb.ui.activity.mobilePayment.MobilePaymentWebActivity',
-        },
-      ],
-    },
-    {
-      key: 13,
       name: '竞猜指数，做任务1',
       desc: '260615',
       rules: [
@@ -225,7 +210,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 14,
+      key: 13,
       name: '竞猜指数，做任务2',
       desc: '260615',
       rules: [
@@ -240,28 +225,46 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 15,
-      name: '添加自选弹窗 ，最多添加20个自选产品，确定',
+      key: 14,
+      name: '弹窗，添加自选，最多添加20个自选产品，确定',
       desc: '260128',
       rules: [
         {
+          fastQuery: true,
+          forcedTime: 3000,
+          resetMatch: 'match',
           anyMatches: [
             '[vid="dialog_tv_title"] +n [vid="dialog_tv_msg"][text="最多添加20个自选产品"] <<n * + * > [vid="dialog_btn_mid"][text="确定"]',
           ],
-          fastQuery: true,
-          resetMatch: 'match',
           activityIds: 'com.cebbank.mobile.cemb.ui.activity.WebActivity',
         },
       ],
     },
     {
-      key: 16,
-      name: '基金财富月历，兑换并抽奖',
-      desc: '251222，D',
+      key: 15,
+      name: '弹窗，占位15，',
+      desc: '251119,D',
       rules: [
         {
-          matches: '[text="10金币"] + [text="1次抽奖机会"] +2 *',
+          forcedTime: 3000,
           resetMatch: 'match',
+          matches: [],
+          activityIds:
+            'com.cebbank.mobile.cemb.ui.activity.mobilePayment.MobilePaymentWebActivity',
+        },
+      ],
+    },
+    {
+      key: 16,
+      name: '弹窗，葫芦开金喜，开心收下 或 X掉',
+      desc: '261104',
+      rules: [
+        {
+          resetMatch: 'match',
+          forcedTime: 3000,
+          anyMatches: [
+            'WebView > View > View > View > TextView[text.length=0][clickable=true][visibleToUser=true]  + TextView[text="可在【金币明细】查看"] + TextView[text.length=0][clickable=true][visibleToUser=true]',
+          ],
           activityIds:
             'com.cebbank.mobile.cemb.ui.activity.mobilePayment.MobilePaymentWebActivity',
         },
@@ -269,72 +272,6 @@ export default defineGkdApp({
     },
     {
       key: 17,
-      name: '基金财富月历，抽奖，谢谢参与',
-      desc: 'D,260423，规则30为主',
-      rules: [
-        {
-          resetMatch: 'match',
-          actionCd: 500,
-          activityIds:
-            'com.cebbank.mobile.cemb.ui.activity.mobilePayment.MobilePaymentWebActivity',
-          matches: '[text="很遗憾，差一点就中奖了"] <n * + *',
-        },
-      ],
-    },
-    {
-      key: 18,
-      name: '抽福袋，收下',
-      desc: '260815，添加 去兑换，完成任务弹窗，clickable=false',
-      rules: [
-        {
-          resetMatch: 'match',
-          activityIds:
-            'com.cebbank.mobile.cemb.ui.activity.mobilePayment.MobilePaymentWebActivity',
-          anyMatches: [
-            'View > View > TextView[text="已成功领取啦"] +n TextView[text="去兑换"] + View > TextView[text.length=1][clickable=false][visibleToUser=true]',
-            'View > View > TextView[text^="您还没有完成任务" || text*="完成任务"] + TextView[text="确定"][clickable=false][visibleToUser=true]',
-            'View > TextView[text="抽福袋攒财气，有机会赢好礼"] + TextView',
-          ],
-        },
-      ],
-    },
-    {
-      key: 19,
-      name: '占位19，恭喜获得微信红包，先复制',
-      desc: 'D，261016',
-      rules: [
-        {
-          resetMatch: 'match',
-          actionCd: 8000,
-          activityIds:
-            'com.cebbank.mobile.cemb.ui.activity.mobilePayment.MobilePaymentWebActivity',
-          anyMatches: [
-            'View > TextView[text="元"] + TextView[text^="兑奖码："] + @TextView[text.length=0][clickable=true][visibleToUser=true] + TextView[text*="光彩礼遇社"]', //26年10月活动布局，text="搜索并关注微信公众号【光彩礼遇社】>点击菜单“领奖入口-南方财富月”>输入兑奖码领取红包"
-            'View > TextView[text^="兑奖码"] + @TextView[clickable=false][visibleToUser=true][text.length=0] + TextView[text*="光彩礼遇社" && text*="输入兑奖码领取红包"]',
-            'TextView[text*="光彩礼遇社" || text^="兑换路径"] - View > TextView[text="兑奖码:"] + TextView[text.length>0] + TextView[text.length=0]',
-            'TextView[text*="元微信红包"] < View + @TextView[clickable=false][visibleToUser=true] + TextView[text*="光彩礼遇社" && text*="输入兑奖码领取红包"]',
-          ],
-        },
-      ],
-    },
-    {
-      key: 20,
-      name: '占位20，恭喜获得微信红包，开心收下',
-      desc: '260622，D',
-      rules: [
-        {
-          activityIds:
-            'com.cebbank.mobile.cemb.ui.activity.mobilePayment.MobilePaymentWebActivity',
-          anyMatches: [
-            'View > TextView[text="元"] + TextView[text^="兑奖码："] + TextView[text.length=0][clickable=true][visibleToUser=true] + TextView[text*="光彩礼遇社"] + TextView[text.length=0][clickable=true][visibleToUser=true]', //26年10月活动布局
-            'View > TextView[text*="光彩礼遇社" && text*="输入兑奖码领取红包"] + @TextView[clickable=false][visibleToUser=true][text.length=0] + TextView[text.length=0]',
-            'TextView[text="兑奖码:"] < View + TextView[text^="兑换路径"] + @TextView + TextView[text="可在首页-[奖品]查看"]',
-          ],
-        },
-      ],
-    },
-    {
-      key: 21,
       name: '弹窗，恭喜获得微信红包，先复制',
       desc: '261029',
       rules: [
@@ -351,13 +288,13 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 22,
+      key: 18,
       name: '弹窗，恭喜获得微信红包，复制完成后，开心收下 ',
       desc: '261029',
       rules: [
         {
           resetMatch: 'match',
-          preKeys: [21],
+          preKeys: [17],
           activityIds:
             'com.cebbank.mobile.cemb.ui.activity.mobilePayment.MobilePaymentWebActivity',
           anyMatches: [
@@ -368,38 +305,8 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 23,
-      name: '权益，立即领取',
-      desc: '260610',
-      rules: [
-        {
-          resetMatch: 'match',
-          activityIds:
-            'com.cebbank.mobile.cemb.ui.activity.mobilePayment.MobilePaymentWebActivity',
-          anyMatches: [
-            'View > View > TextView[text="立即领取"][index=parent.childCount.minus(1)]',
-            'View TextView[text^="剩余"] + TextView[text="立即领取"]',
-          ],
-        },
-      ],
-    },
-    {
-      key: 24,
-      name: '权益详情，立减金，确认领取',
-      desc: '260614',
-      rules: [
-        {
-          resetMatch: 'match',
-          activityIds:
-            'com.cebbank.mobile.cemb.ui.activity.mobilePayment.MobilePaymentWebActivity',
-          matches:
-            'View > TextView[text*="立减金"] +(2,4) View > View > Button[text=" 确认领取"][clickable=true]',
-        },
-      ],
-    },
-    {
-      key: 25,
-      name: '权益，去兑换，X掉',
+      key: 19,
+      name: '弹窗，权益，去兑换，X掉',
       desc: '260907',
       rules: [
         {
@@ -414,50 +321,8 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 26,
-      name: '待领取权益，立减金，立即领取',
-      desc: '260614',
-      rules: [
-        {
-          resetMatch: 'match',
-          activityIds:
-            'com.cebbank.mobile.cemb.ui.activity.mobilePayment.MobilePaymentWebActivity',
-          matches:
-            'View[id="center"] > TextView[text*="立减金"] + TextView[text="立即领取"][clickable=false]',
-        },
-      ],
-    },
-    {
-      key: 27,
-      name: '权益列表 ，立减金，立即领取',
-      desc: '260614',
-      rules: [
-        {
-          resetMatch: 'match',
-          activityIds:
-            'com.cebbank.mobile.cemb.ui.activity.mobilePayment.MobilePaymentWebActivity',
-          matches:
-            'View > View > TextView[text*="立减金"] +3 TextView[text="立即领取"][clickable=false]',
-        },
-      ],
-    },
-    {
-      key: 28,
-      name: '我的权益，待使用，去使用',
-      desc: '260614',
-      rules: [
-        {
-          resetMatch: 'match',
-          activityIds:
-            'com.cebbank.mobile.cemb.ui.activity.mobilePayment.MobilePaymentWebActivity',
-          matches:
-            'View > View > TextView[text*="立减金"] + View + TextView[text="去使用"][clickable=false]',
-        },
-      ],
-    },
-    {
-      key: 29,
-      name: '金知了弹窗',
+      key: 20,
+      name: '弹窗，金知了',
       desc: '',
       rules: [
         {
@@ -470,8 +335,8 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 30,
-      name: '金知了兑换抽奖',
+      key: 21,
+      name: '弹窗，金知了兑换抽奖',
       desc: '260913 添加 差一点就中奖，',
       rules: [
         {
@@ -489,291 +354,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 31,
-      name: '周三10点立即抢购',
-      desc: '251119,D',
-      rules: [
-        {
-          matches:
-            '[text="商品详情"] [text="券包"][index=3] + [text*="立即抢购"]',
-          actionMaximum: 3,
-          resetMatch: 'match',
-          activityIds:
-            'com.cebbank.mobile.cemb.ui.activity.mobilePayment.MobilePaymentWebActivity',
-        },
-      ],
-    },
-    {
-      key: 32,
-      name: '武汉周四1元购',
-      desc: '251218，测试改顺序加条件',
-      rules: [
-        {
-          anyMatches: [
-            '[text="50402410517101596?Expires=1982914597&OSSAccessKeyId=LTAIrtWP6OVJGU8O&Signature=nLNU9WJ6CJB6mpJezAlOZHgXfMM%3D"] +3 [text="50401236411727914?Expires=1982913423&OSSAccessKeyId=LTAIrtWP6OVJGU8O&Signature=hh%2BtccKM77AWHCnPDJ471BiikgM%3D"]',
-            '[text="微信立减券（3*2元）"] +n * >n [text*="立即购买"]',
-            '[text="微信立减券（3*2元）"] +n [text*="立即购买"]',
-            '[text="60854523261609372"] + * > [text!="剩余0%"]',
-          ],
-          resetMatch: 'match',
-          activityIds:
-            'com.cebbank.mobile.cemb.ui.activity.mobilePayment.MobilePaymentWebActivity',
-        },
-      ],
-    },
-    {
-      key: 33,
-      name: '阳光兑换外面等',
-      desc: '251127,D,找有库存的点',
-      rules: [
-        {
-          anyMatches: [
-            '[text="stocked"] + [text$="借记卡"] + [text="微信立减金"] + *',
-            '[text^="今日已领" && text!$="100%"] < * + [text$="借记卡"] + [text="微信立减金"] + *',
-          ],
-          actionMaximum: 1,
-          resetMatch: 'activity',
-          activityIds:
-            'com.cebbank.mobile.cemb.ui.activity.mobilePayment.MobilePaymentWebActivity',
-        },
-      ],
-    },
-    {
-      key: 34,
-      name: '阳光兑换1，确认兑换',
-      desc: '251127，添加 立即兑换',
-      rules: [
-        {
-          anyMatches: [
-            '[text="兑换确认"] +n * > [text="取消"] + [text="确认"]',
-            '[text$="借记卡"] +n * > [text="立即兑换"]',
-          ],
-          resetMatch: 'match',
-          activityIds:
-            'com.cebbank.mobile.cemb.ui.activity.mobilePayment.MobilePaymentWebActivity',
-        },
-      ],
-    },
-    {
-      key: 35,
-      name: '阳光兑换2，先占位',
-      desc: '251127，D,兑换完成，返回',
-      rules: [
-        {
-          action: 'back',
-          matches: '*',
-          resetMatch: 'match',
-          activityIds:
-            'com.cebbank.mobile.cemb.ui.activity.mobilePayment.MobilePaymentWebActivity',
-        },
-      ],
-    },
-    {
-      key: 36,
-      name: '阳光兑换3，',
-      desc: '251127，无商品或机会，返回',
-      rules: [
-        {
-          action: 'back',
-          matches: '[text="本周兑换次数已用完" || text="今日商品已兑完"]',
-          resetMatch: 'match',
-          activityIds:
-            'com.cebbank.mobile.cemb.ui.activity.mobilePayment.MobilePaymentWebActivity',
-        },
-      ],
-    },
-    {
-      key: 37,
-      name: '我已认真阅读并同意以上全部内容',
-      desc: '260616',
-      rules: [
-        {
-          resetMatch: 'match',
-          action: 'clickCenter',
-          activityIds: 'com.cebbank.mobile.cemb.ui.activity.WebActivity',
-          matches:
-            'View > @Image[text="noCheckNew"] + [text="我已认真阅读并同意以上全部内容"]',
-        },
-      ],
-    },
-    {
-      key: 38,
-      name: '我已认真阅读并同意以上全部内容，自主购买',
-      desc: '260616',
-      rules: [
-        {
-          resetMatch: 'match',
-          action: 'clickCenter',
-          activityIds: 'com.cebbank.mobile.cemb.ui.activity.WebActivity',
-          matches:
-            'View > Image[text="checkNew"] + TextView[text="我已认真阅读并同意以上全部内容"] +2 Button[text="自主购买"]',
-        },
-      ],
-    },
-    {
-      key: 39,
-      name: '一键输入',
-      desc: '260616',
-      rules: [
-        {
-          resetMatch: 'match',
-          action: 'clickCenter',
-          activityIds: 'com.cebbank.mobile.cemb.ui.activity.WebActivity',
-          matches:
-            'EditText[text.length=0] < View + View > Button[text="一键输入"][clickable=true]',
-        },
-      ],
-    },
-    {
-      key: 40,
-      name: '一键输入，已阅读并确认继续购买',
-      desc: '260616',
-      rules: [
-        {
-          resetMatch: 'match',
-          preKeys: [39],
-          action: 'clickCenter',
-          activityIds: 'com.cebbank.mobile.cemb.ui.activity.WebActivity',
-          matches:
-            'EditText[text.length>0] < View <n View + View > Button[text="已阅读并确认继续购买"]',
-        },
-      ],
-    },
-    {
-      key: 41,
-      name: '基金定投设置，提交',
-      desc: '261016',
-      rules: [
-        {
-          resetMatch: 'match',
-          action: 'clickCenter',
-          activityIds: 'com.cebbank.mobile.cemb.ui.activity.WebActivity',
-          anyMatches: [
-            'View[text^="基金定投设置"] < ListView +n View > Button[text="提交"]',
-            'TextView[text^="基金定投设置"] <<n View +n View >n Button[text="提交"]',
-          ],
-        },
-      ],
-    },
-    {
-      key: 42,
-      name: '终止定投1',
-      desc: '260621',
-      rules: [
-        {
-          action: 'clickCenter',
-          resetMatch: 'match',
-          activityIds: 'com.cebbank.mobile.cemb.ui.activity.WebActivity',
-          matches:
-            'View > View > View > @Button[text="终止定投"] + Button[text="修改"]',
-        },
-      ],
-    },
-    {
-      key: 43,
-      name: '终止定投2',
-      desc: '260621',
-      rules: [
-        {
-          action: 'clickCenter',
-          resetMatch: 'match',
-          activityIds: 'com.cebbank.mobile.cemb.ui.activity.WebActivity',
-          matches:
-            'View > View > View > TextView[text="确定终止该定投计划吗？"] + Button[text="取消"] + Button[text="确定"]',
-        },
-      ],
-    },
-    {
-      key: 44,
-      name: '终止定投3',
-      desc: '260621',
-      rules: [
-        {
-          action: 'clickCenter',
-          resetMatch: 'match',
-          activityIds: 'com.cebbank.mobile.cemb.ui.activity.WebActivity',
-          matches:
-            'TextView[text="定投关闭"] <2 View + View > View > View > Button[text="下一步"]',
-        },
-      ],
-    },
-    {
-      key: 45,
-      name: '终止定投4',
-      desc: '260621',
-      rules: [
-        {
-          action: 'clickCenter',
-          resetMatch: 'match',
-          activityIds: 'com.cebbank.mobile.cemb.ui.activity.WebActivity',
-          matches:
-            'TextView[text="定投关闭"] <2 View + View > View > View > Button[text="提交"]',
-        },
-      ],
-    },
-    {
-      key: 46,
-      name: '终止定投5,返回 ',
-      desc: '260621',
-      rules: [
-        {
-          resetMatch: 'match',
-          action: 'back',
-          activityIds: 'com.cebbank.mobile.cemb.ui.activity.WebActivity',
-          matches:
-            'View > View > View + TextView[text="关闭成功"] +3 View > Button[text="查看我的持仓"] + Button[text="看看其他产品"]',
-        },
-      ],
-    },
-    {
-      key: 47,
-      name: '自选，删除',
-      desc: '260905',
-      rules: [
-        {
-          resetMatch: 'match',
-          actionCd: 2000,
-          activityIds: 'com.cebbank.mobile.cemb.ui.activity.WebActivity',
-          excludeMatches:
-            'LinearLayout[vid="ll_button_mid"] > View + TextView[text="确定"][vid="dialog_btn_mid"][clickable=true][visibleToUser=true]',
-          matches:
-            'View > View > Image[text="deletesel"][clickable=false][visibleToUser=true]',
-        },
-      ],
-    },
-    {
-      key: 48,
-      name: '弹窗，删除成功，确定',
-      desc: '260905,fastQuery=true,clickable=true',
-      rules: [
-        {
-          resetMatch: 'match',
-          fastQuery: true,
-          action: 'clickCenter',
-          activityIds: 'com.cebbank.mobile.cemb.ui.activity.WebActivity',
-          matches:
-            'LinearLayout[vid="ll_button_mid"] > View + TextView[text="确定"][vid="dialog_btn_mid"][clickable=true][visibleToUser=true]',
-        },
-      ],
-    },
-    {
-      key: 49,
-      name: '我已阅读并确认继续购买',
-      desc: '260616',
-      rules: [
-        {
-          fastQuery: true,
-          action: 'click',
-          resetMatch: 'match',
-          activityIds:
-            'com.cebbank.mobile.cemb.ui.activity.pdf.PdfRenderHalfActivity',
-          matches:
-            'FrameLayout > FrameLayout > TextView[id="com.cebbank.mobile.cemb:id/tv_button"][text="我已阅读并确认继续购买"][clickable=true]',
-        },
-      ],
-    },
-    {
-      key: 50,
+      key: 22,
       name: '金豆抽奖',
       desc: '261101，添加中奖了，差一点就中奖',
       rules: [
@@ -796,18 +377,379 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 51,
-      name: '体验定投',
-      desc: '260814，可不用',
+      key: 23,
+      name: '抽福袋，收下',
+      desc: '260815，添加 去兑换，完成任务弹窗，clickable=false',
       rules: [
         {
+          resetMatch: 'match',
+          activityIds:
+            'com.cebbank.mobile.cemb.ui.activity.mobilePayment.MobilePaymentWebActivity',
+          anyMatches: [
+            'View > View > TextView[text="已成功领取啦"] +n TextView[text="去兑换"] + View > TextView[text.length=1][clickable=false][visibleToUser=true]',
+            'View > View > TextView[text^="您还没有完成任务" || text*="完成任务"] + TextView[text="确定"][clickable=false][visibleToUser=true]',
+            'View > TextView[text="抽福袋攒财气，有机会赢好礼"] + TextView',
+          ],
+        },
+      ],
+    },
+    {
+      key: 24,
+      name: '基金财富月历兑换，自定义兑换多少金币的',
+      desc: 'D，260401，只需把金币数量改成想兑换的就行，放在内存订阅用',
+      rules: [
+        {
+          actionMaximum: 1,
           resetMatch: 'app',
-          actionCd: 3000,
-          actionMaximum: 2,
+          activityIds:
+            'com.cebbank.mobile.cemb.ui.activity.mobilePayment.MobilePaymentWebActivity',
+          matches: '[text="20金币"] + @[text="兑换"] + [text="(本月限兑:1次)"]',
+        },
+      ],
+    },
+
+    {
+      key: 25,
+      name: '权益，立即领取',
+      desc: 'D，260610',
+      rules: [
+        {
+          resetMatch: 'match',
+          activityIds:
+            'com.cebbank.mobile.cemb.ui.activity.mobilePayment.MobilePaymentWebActivity',
+          anyMatches: [
+            'View > View > TextView[text="立即领取"][index=parent.childCount.minus(1)]',
+            'View TextView[text^="剩余"] + TextView[text="立即领取"]',
+          ],
+        },
+      ],
+    },
+    {
+      key: 26,
+      name: '权益详情，立减金，确认领取',
+      desc: 'D，260614',
+      rules: [
+        {
+          resetMatch: 'match',
           activityIds:
             'com.cebbank.mobile.cemb.ui.activity.mobilePayment.MobilePaymentWebActivity',
           matches:
-            'WebView > View > View > View > View > TextView[text^="体验" && text$="定投协议开通流程"] +(5,6) TextView[text.length=0][clickable=false][visibleToUser=true]',
+            'View > TextView[text*="立减金"] +(2,4) View > View > Button[text=" 确认领取"][clickable=true]',
+        },
+      ],
+    },
+    {
+      key: 27,
+      name: '待领取权益，立减金，立即领取',
+      desc: 'D，260614',
+      rules: [
+        {
+          resetMatch: 'match',
+          activityIds:
+            'com.cebbank.mobile.cemb.ui.activity.mobilePayment.MobilePaymentWebActivity',
+          matches:
+            'View[id="center"] > TextView[text*="立减金"] + TextView[text="立即领取"][clickable=false]',
+        },
+      ],
+    },
+    {
+      key: 28,
+      name: '权益列表 ，立减金，立即领取',
+      desc: 'D，260614',
+      rules: [
+        {
+          resetMatch: 'match',
+          activityIds:
+            'com.cebbank.mobile.cemb.ui.activity.mobilePayment.MobilePaymentWebActivity',
+          matches:
+            'View > View > TextView[text*="立减金"] +3 TextView[text="立即领取"][clickable=false]',
+        },
+      ],
+    },
+    {
+      key: 29,
+      name: '我的权益，待使用，去使用',
+      desc: 'D，260614',
+      rules: [
+        {
+          resetMatch: 'match',
+          activityIds:
+            'com.cebbank.mobile.cemb.ui.activity.mobilePayment.MobilePaymentWebActivity',
+          matches:
+            'View > View > TextView[text*="立减金"] + View + TextView[text="去使用"][clickable=false]',
+        },
+      ],
+    },
+    {
+      key: 30,
+      name: '武汉周四1元购',
+      desc: 'D，251218',
+      rules: [
+        {
+          anyMatches: [
+            '[text="50402410517101596?Expires=1982914597&OSSAccessKeyId=LTAIrtWP6OVJGU8O&Signature=nLNU9WJ6CJB6mpJezAlOZHgXfMM%3D"] +3 [text="50401236411727914?Expires=1982913423&OSSAccessKeyId=LTAIrtWP6OVJGU8O&Signature=hh%2BtccKM77AWHCnPDJ471BiikgM%3D"]',
+            '[text="微信立减券（3*2元）"] +n * >n [text*="立即购买"]',
+            '[text="微信立减券（3*2元）"] +n [text*="立即购买"]',
+            '[text="60854523261609372"] + * > [text!="剩余0%"]',
+          ],
+          resetMatch: 'match',
+          activityIds:
+            'com.cebbank.mobile.cemb.ui.activity.mobilePayment.MobilePaymentWebActivity',
+        },
+      ],
+    },
+    {
+      key: 31,
+      name: '阳光兑换外面等',
+      desc: 'D，251127，找有库存的点',
+      rules: [
+        {
+          anyMatches: [
+            '[text="stocked"] + [text$="借记卡"] + [text="微信立减金"] + *',
+            '[text^="今日已领" && text!$="100%"] < * + [text$="借记卡"] + [text="微信立减金"] + *',
+          ],
+          actionMaximum: 1,
+          resetMatch: 'activity',
+          activityIds:
+            'com.cebbank.mobile.cemb.ui.activity.mobilePayment.MobilePaymentWebActivity',
+        },
+      ],
+    },
+    {
+      key: 32,
+      name: '阳光兑换1，确认兑换',
+      desc: '251127，添加 立即兑换',
+      rules: [
+        {
+          anyMatches: [
+            '[text="兑换确认"] +n * > [text="取消"] + [text="确认"]',
+            '[text$="借记卡"] +n * > [text="立即兑换"]',
+          ],
+          resetMatch: 'match',
+          activityIds:
+            'com.cebbank.mobile.cemb.ui.activity.mobilePayment.MobilePaymentWebActivity',
+        },
+      ],
+    },
+    {
+      key: 33,
+      name: '阳光兑换2，先占位',
+      desc: 'D，51127，兑换完成，返回',
+      rules: [
+        {
+          action: 'back',
+          matches: '*',
+          resetMatch: 'match',
+          activityIds:
+            'com.cebbank.mobile.cemb.ui.activity.mobilePayment.MobilePaymentWebActivity',
+        },
+      ],
+    },
+    {
+      key: 34,
+      name: '阳光兑换3，',
+      desc: '251127，无商品或机会，返回',
+      rules: [
+        {
+          action: 'back',
+          matches: '[text="本周兑换次数已用完" || text="今日商品已兑完"]',
+          resetMatch: 'match',
+          activityIds:
+            'com.cebbank.mobile.cemb.ui.activity.mobilePayment.MobilePaymentWebActivity',
+        },
+      ],
+    },
+    {
+      key: 35,
+      name: '我已认真阅读并同意以上全部内容',
+      desc: '260616',
+      rules: [
+        {
+          resetMatch: 'match',
+          action: 'clickCenter',
+          activityIds: 'com.cebbank.mobile.cemb.ui.activity.WebActivity',
+          matches:
+            'View > @Image[text="noCheckNew"] + [text="我已认真阅读并同意以上全部内容"]',
+        },
+      ],
+    },
+    {
+      key: 36,
+      name: '我已认真阅读并同意以上全部内容，自主购买',
+      desc: '261104',
+      rules: [
+        {
+          resetMatch: 'match',
+          action: 'clickCenter',
+          activityIds: 'com.cebbank.mobile.cemb.ui.activity.WebActivity',
+          exclueMatches: [
+            'View > View > TextView[text="请输入定投金额"] + View > TextView[text="确定"]', //避免在输入密码时下方不停的提交
+          ],
+          matches:
+            'View > Image[text="checkNew"] + TextView[text="我已认真阅读并同意以上全部内容"] +2 Button[text="自主购买"]',
+        },
+      ],
+    },
+    {
+      key: 37,
+      name: '一键输入',
+      desc: '260616',
+      rules: [
+        {
+          resetMatch: 'match',
+          action: 'clickCenter',
+          activityIds: 'com.cebbank.mobile.cemb.ui.activity.WebActivity',
+          matches:
+            'EditText[text.length=0] < View + View > Button[text="一键输入"][clickable=true]',
+        },
+      ],
+    },
+    {
+      key: 38,
+      name: '一键输入，已阅读并确认继续购买',
+      desc: '260616',
+      rules: [
+        {
+          resetMatch: 'match',
+          preKeys: [37],
+          action: 'clickCenter',
+          activityIds: 'com.cebbank.mobile.cemb.ui.activity.WebActivity',
+          matches:
+            'EditText[text.length>0] < View <n View + View > Button[text="已阅读并确认继续购买"]',
+        },
+      ],
+    },
+    {
+      key: 39,
+      name: '基金定投设置，提交',
+      desc: '261104',
+      rules: [
+        {
+          resetMatch: 'match',
+          action: 'clickCenter',
+          actionCd: 4000, //增加冷却时间，避免多次
+          activityIds: 'com.cebbank.mobile.cemb.ui.activity.WebActivity',
+          anyMatches: [
+            'View[text^="基金定投设置"] < ListView +n View > Button[text="提交"]',
+            'TextView[text^="基金定投设置"] <<n View +n View >n Button[text="提交"]',
+          ],
+        },
+      ],
+    },
+    {
+      key: 40,
+      name: '终止定投1',
+      desc: '260621',
+      rules: [
+        {
+          action: 'clickCenter',
+          resetMatch: 'match',
+          activityIds: 'com.cebbank.mobile.cemb.ui.activity.WebActivity',
+          matches:
+            'View > View > View > @Button[text="终止定投"] + Button[text="修改"]',
+        },
+      ],
+    },
+    {
+      key: 41,
+      name: '终止定投2',
+      desc: '260621',
+      rules: [
+        {
+          action: 'clickCenter',
+          resetMatch: 'match',
+          activityIds: 'com.cebbank.mobile.cemb.ui.activity.WebActivity',
+          matches:
+            'View > View > View > TextView[text="确定终止该定投计划吗？"] + Button[text="取消"] + Button[text="确定"]',
+        },
+      ],
+    },
+    {
+      key: 42,
+      name: '终止定投3',
+      desc: '260621',
+      rules: [
+        {
+          action: 'clickCenter',
+          resetMatch: 'match',
+          activityIds: 'com.cebbank.mobile.cemb.ui.activity.WebActivity',
+          matches:
+            'TextView[text="定投关闭"] <2 View + View > View > View > Button[text="下一步"]',
+        },
+      ],
+    },
+    {
+      key: 43,
+      name: '终止定投4',
+      desc: '260621',
+      rules: [
+        {
+          action: 'clickCenter',
+          resetMatch: 'match',
+          activityIds: 'com.cebbank.mobile.cemb.ui.activity.WebActivity',
+          matches:
+            'TextView[text="定投关闭"] <2 View + View > View > View > Button[text="提交"]',
+        },
+      ],
+    },
+    {
+      key: 44,
+      name: '终止定投5,返回 ',
+      desc: '260621',
+      rules: [
+        {
+          resetMatch: 'match',
+          action: 'back',
+          activityIds: 'com.cebbank.mobile.cemb.ui.activity.WebActivity',
+          matches:
+            'View > View > View + TextView[text="关闭成功"] +3 View > Button[text="查看我的持仓"] + Button[text="看看其他产品"]',
+        },
+      ],
+    },
+    {
+      key: 45,
+      name: '自选，删除',
+      desc: '260905',
+      rules: [
+        {
+          resetMatch: 'match',
+          actionCd: 2000,
+          activityIds: 'com.cebbank.mobile.cemb.ui.activity.WebActivity',
+          excludeMatches:
+            'LinearLayout[vid="ll_button_mid"] > View + TextView[text="确定"][vid="dialog_btn_mid"][clickable=true][visibleToUser=true]',
+          matches:
+            'View > View > Image[text="deletesel"][clickable=false][visibleToUser=true]',
+        },
+      ],
+    },
+    {
+      key: 46,
+      name: '弹窗，删除成功，确定',
+      desc: '260905,fastQuery=true,clickable=true',
+      rules: [
+        {
+          resetMatch: 'match',
+          fastQuery: true,
+          action: 'clickCenter',
+          activityIds: 'com.cebbank.mobile.cemb.ui.activity.WebActivity',
+          matches:
+            'LinearLayout[vid="ll_button_mid"] > View + TextView[text="确定"][vid="dialog_btn_mid"][clickable=true][visibleToUser=true]',
+        },
+      ],
+    },
+    {
+      key: 47,
+      name: '我已阅读并确认继续购买',
+      desc: '260616',
+      rules: [
+        {
+          fastQuery: true,
+          action: 'click',
+          resetMatch: 'match',
+          activityIds:
+            'com.cebbank.mobile.cemb.ui.activity.pdf.PdfRenderHalfActivity',
+          matches:
+            'FrameLayout > FrameLayout > TextView[id="com.cebbank.mobile.cemb:id/tv_button"][text="我已阅读并确认继续购买"][clickable=true]',
         },
       ],
     },

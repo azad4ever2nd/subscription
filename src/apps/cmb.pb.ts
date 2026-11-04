@@ -140,11 +140,11 @@ export default defineGkdApp({
     },
     {
       key: 8,
-      name: '抽奖领任务页面，加自选 任务，规则1，action=clickCenter',
+      name: '抽奖领任务页面，加自选 任务，规则1，action=clickNode',
       desc: '261016，clickable=true，指定添加数量的',
       rules: [
         {
-          action: 'clickCenter',
+          action: 'clickNode', //261104，局部无障碍
           forcedTime: 3000,
           actionCd: 2000, //延长，考虑到任务时间
           matchDelay: 500, //减小，原800

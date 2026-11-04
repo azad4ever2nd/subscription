@@ -300,7 +300,7 @@ export default defineGkdApp({
     {
       key: 16,
       name: '弹窗，各种弹窗，有名字的按钮',
-      desc: '261031，fastQuery=false，添加 返回会场，邀请你，去抢购，位置权限，不感兴趣，添加到桌面首页，',
+      desc: '261104，fastQuery=false，添加 返回会场，邀请你，去抢购，位置权限，不感兴趣，添加到桌面首页，',
       rules: [
         {
           resetMatch: 'match',
@@ -331,6 +331,7 @@ export default defineGkdApp({
             'View > View > @Button[text="关闭"][clickable=true][visibleToUser=true] +n Button[text="去添加银行卡"]',
             'View > View > Button[text="领奖励"][clickable=true][visibleToUser=true]',
             'View > View > TextView[text*="到支付宝首页"] +n Button[text="关闭"][clickable=true][visibleToUser=true]',
+            'View > View >  @TextView[text="开心收下"][clickable=false][visibleToUser=true] + TextView[text="可在「卡包」查看"]', //261104，支付有礼，TextView[text="团购红包"] + View + TextView[text="无门槛"] + TextView[text="开心收下"]
             '@View[clickable=false][visibleToUser=true] > View > TextView[text*="任务完成"] + TextView[text*="返回领奖"]',
             'View > View > TextView +(3,5) @Button[text="继续退出"][clickable=true][visibleToUser=true] + Button[text="去设置"][clickable=true][visibleToUser=true]',
             'Dialog > View > View > TextView[text="从余额宝-攒着转出"] +(5,7) TextView[text="确认转出"][clickable=true][visibleToUser=true]', //攒着转出到余额宝

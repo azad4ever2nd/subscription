@@ -261,7 +261,7 @@ export default defineGkdApp({
     {
       key: 18,
       name: '弹窗，低碳挑战，领取成功，X掉',
-      desc: '261021',
+      desc: '261104',
       rules: [
         {
           resetMatch: 'match',
@@ -269,6 +269,7 @@ export default defineGkdApp({
           anyMatches: [
             'View > Button[text="查看积分"] + Image[text="close.c2f29ee4"][clickable=true][visibleToUser=true]',
             'View > Button[text="查看积分"] + Image[text="close.c2f29ee4"][clickable=false][visibleToUser=true]',
+            'Dialog > TextView[text="任务领取成功"] + View > Button[text="确认"]', //261104，领取任务
           ],
         },
       ],
