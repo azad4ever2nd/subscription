@@ -66,7 +66,7 @@ export default defineGkdApp({
           action: 'back',
           anyMatches:
             '[text="抢购失败"] + [text="库存不足啦，感谢您的参与，换个商品试试呀"]',
-          actionCd: 900,
+          actionCd: 700,
           resetMatch: 'match',
           activityIds:
             'cmb.pb.app.h5container.webviewcontainer.PBWebContainerActivity',
@@ -81,11 +81,11 @@ export default defineGkdApp({
         {
           action: 'back',
           forcedTime: 2000,
+          actionCd: 700,
           anyMatches: [
-            'TextView[text="卖光了"] < View -n View > TextView[text*="周三5折"][text*="肯德基" || text*="喜茶" || text*="必胜客" || text*="哈根达斯"]',
+            'TextView[text="卖光了"] < View -n View > TextView[text*="周三5折"][text*="肯德基" || text*="喜茶" || text*="必胜客" || text*="哈根达斯"]', //只针对这几个券才会秒返回
             'View > TextView[text*="周三5折"][text*="肯德基" || text*="喜茶" || text*="必胜客" || text*="哈根达斯"] +n View > TextView[text="卖光了"]',
           ],
-          actionCd: 2000,
           activityIds:
             'cmb.pb.app.h5container.webviewcontainer.PBWebContainerActivity',
         },
