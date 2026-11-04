@@ -582,7 +582,7 @@ export default defineGkdApp({
           resetMatch: 'match',
           action: 'clickCenter',
           activityIds: 'com.cebbank.mobile.cemb.ui.activity.WebActivity',
-          exclueMatches: [
+          excludeMatches: [
             'View > View > TextView[text="请输入定投金额"] + View > TextView[text="确定"]', //避免在输入密码时下方不停的提交
           ],
           matches:
