@@ -504,7 +504,7 @@ export default defineGkdApp({
     {
       key: 31,
       name: '即将跳转',
-      desc: '261105，com.tencent.mm.plugin.brandservice.ui.timeline.preload.ui.TmplWebViewMMUI,添加IDS，移动抽奖，动态ID，增加小程序里的跳转，改匹配顺序，尽量从左往右',
+      desc: '261105，添加IDS，移动抽奖，动态ID，增加小程序里的跳转，改匹配顺序，尽量从左往右',
       rules: [
         {
           fastQuery: true,

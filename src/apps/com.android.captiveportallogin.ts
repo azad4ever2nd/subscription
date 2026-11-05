@@ -7,12 +7,13 @@ export default defineGkdApp({
     {
       key: 1,
       name: '登陆',
-      desc: '261016',
+      desc: '261105',
       rules: [
         {
           resetMatch: 'match',
           matchDelay: 1000,
           actionCd: 2000,
+          forcedTime: 3500,
           activityIds: '.CaptivePortalLoginActivity',
           excludeMatches:
             'View[text*="认证成功" || text^="账号已登录"][text!*="请点击登录完成认证"]',
@@ -26,12 +27,13 @@ export default defineGkdApp({
     {
       key: 2,
       name: '星巴克WIFI，连接上网',
-      desc: '261102',
+      desc: '261105',
       rules: [
         {
           resetMatch: 'match',
-          matchDelay: 1000,
+          matchDelay: 800,
           actionCd: 2000,
+          forcedTime: 3500,
           activityIds: '.CaptivePortalLoginActivity',
           matches:
             'CheckBox[checked=true] < View + Button[text*="连接上网"][clickable=true][visibleToUser=true]',
