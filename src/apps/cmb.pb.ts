@@ -85,7 +85,7 @@ export default defineGkdApp({
           anyMatches: [
             'TextView[text="卖光了"] < View -n View > TextView[text*="周三5折"][text*="肯德基" || text*="喜茶" || text*="必胜客" || text*="哈根达斯"]', //只针对这几个券才会秒返回
             'View > TextView[text*="周三5折"][text*="肯德基" || text*="喜茶" || text*="必胜客" || text*="哈根达斯"] +n View > TextView[text="卖光了"]',
-            'View > View > TextView[text="已参与"][clickable=true][visibleToUser=true]', //261105，抽奖任务已参与
+            'View > View > TextView[text="已参与"][visibleToUser=true]', //261105，抽奖任务已参与
           ],
           activityIds:
             'cmb.pb.app.h5container.webviewcontainer.PBWebContainerActivity',
