@@ -254,6 +254,9 @@ export default defineGkdApp({
             'View > View > @TextView[text=""][clickable=true][visibleToUser=true] - View > TextView[text="很遗憾，差一点就中奖了"]', //弹窗，金币抽奖，未中，X掉
             'View > View > @TextView[text=""][clickable=true][visibleToUser=true] - View > TextView[text="恭喜获得"] +n TextView[text=""][index=parent.childCount.minus(1)][clickable=true][visibleToUser=true]', //弹窗，签到成功，X掉
             'View > View > @TextView[text=""][clickable=true][visibleToUser=true] - View > TextView[text*="+"] +   View > TextView[text^="您已完成" && text$="任务"]', //261105，弹窗，完成定投任务，X掉
+            'View > View > TextView[text="本次兑换消耗5知豆，是否兑换？"] + TextView[text="取消"] + TextView[text="是"][clickable=true][visibleToUser=true]', //261105，弹窗，金知了社区，兑换抽奖机会，是
+            'WebView[text="光大银行金知了社区"] > View > View > View > TextView[text="返回去抽奖"][clickable=true][visibleToUser=true]', //261105，弹窗，兑换抽奖机会，返回去抽奖
+            'TextView[text.length=1] < @View[clickable=true][visibleToUser=true] < View + View[id="compntWinningResult1"] > View > TextView[text="差一点就中奖啦"] + TextView[text="继续抽奖"]', //261105，弹窗，金知了社区，抽奖，未中，X掉
           ],
           activityIds:
             'com.cebbank.mobile.cemb.ui.activity.mobilePayment.MobilePaymentWebActivity',

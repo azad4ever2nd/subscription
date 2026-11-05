@@ -435,10 +435,11 @@ export default defineGkdApp({
         {
           resetMatch: 'match',
           fastQuery: true,
-          actionCd: 0,
+          actionCd: 700,
           activityIds: 'com.tencent.mm.ui.LauncherUI',
-          matches:
-            '[text="不显示该聊天?"] <<n * + * [vid="mm_alert_ok_btn"][text="不显示"]',
+          anyMatches:
+            //'FrameLayout > ListView[childCount=4] > TextView[text="标为未读"] + TextView[text="取消置顶"] + @TextView[text="不显示该聊天"][clickable=true][visibleToUser=true] + TextView[text="删除该聊天"]',//弹窗，右键菜单，不显示该聊天
+            'TextView[text="不显示该聊天?"] <<n LinearLayout + LinearLayout > LinearLayout > Button[text="取消"][vid="mm_alert_cancel_btn"] + ImageView + Button[text="不显示"][vid="mm_alert_ok_btn"][clickable=true][visibleToUser=true]', //261105，弹窗，不显示该聊天，取消 or 不显示
         },
       ],
     },

@@ -319,7 +319,7 @@ export default defineGkdApp({
     {
       key: 17,
       name: '弹窗，有名字的按钮',
-      desc: '2601101，添加组队成功，fastQuery=false，clickable=true',
+      desc: '2601105，添加组队成功，fastQuery=false，clickable=true',
       rules: [
         {
           resetMatch: 'match',
@@ -336,9 +336,10 @@ export default defineGkdApp({
             'View > View > View > View > TextView[text^="恭喜提前锁定"] + TextView + TextView[text="开心收下"][clickable=true][visibleToUser=true] + Image[text="webp"][clickable=true][visibleToUser=true]', //恭喜提前锁定限时翻倍券，X掉
             'View > View > View > View > TextView[text^="恭喜提前锁定"] +n TextView[text="开心收下"][clickable=true][visibleToUser=true]', //恭喜提前锁定限时翻倍券，开心收下
             'LinearLayout > TextView[vid="pdd"][text="取消"] +n TextView[clickable=true][visibleToUser=true][vid="pdd"][text="退出"]', //此次评价未完成，退出
-            'View > @Button[text="关闭弹窗"][clickable=true][visibleToUser=true] + View > Button[text="查看订单详情"] - View > TextView[text="开心收下"]', //下单完后弹窗，下单成功，预计4小时内发货，开心收下，查看订单详情
-            'View > @Button[text="关闭弹窗"][clickable=true][visibleToUser=true] + View > TextView[text="开心收下"] + Button[text="查看订单详情"]', //下单完后弹窗，下单成功，预计5小时内发货，开心收下，查看订单详情
-            'View > @Button[text="关闭弹窗"][clickable=true][visibleToUser=true] +n View > TextView[text$="已支付"] + TextView[text*="邀请好友来拼单"]', //下单完后弹窗，还差1人，赶快邀请好友来拼单吧
+            'View > View > @Button[text="关闭弹窗"][clickable=true][visibleToUser=true] + View > Button[text="查看订单详情"] - View > TextView[text="开心收下"]', //下单完后弹窗，下单成功，预计4小时内发货，开心收下，查看订单详情
+            'View > View > @Button[text="关闭弹窗"][clickable=true][visibleToUser=true] + View > TextView[text="开心收下"] + Button[text="查看订单详情"]', //下单完后弹窗，下单成功，预计5小时内发货，开心收下，查看订单详情
+            'View > View > @Button[text="关闭弹窗"][clickable=true][visibleToUser=true] +n View > TextView[text$="已支付"] + TextView[text*="邀请好友来拼单"]', //下单完后弹窗，还差1人，赶快邀请好友来拼单吧
+            'View > View > @Button[text="关闭弹窗"][clickable=true][visibleToUser=true] + View > TextView[text="继续逛逛"] + Button[text="查看订单详情"]', //261105，弹窗，下单成功，预计13小时内发货"
             'WebView > WebView > View > View > View > Button[text="关闭弹窗"][clickable=true][visibleToUser=true]',
           ],
         },
