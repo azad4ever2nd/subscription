@@ -76,7 +76,7 @@ export default defineGkdApp({
     {
       key: 5,
       name: '卖光了',
-      desc: '261021，布局改变',
+      desc: '261105，布局改变，添加抽奖已参与',
       rules: [
         {
           action: 'back',
@@ -85,6 +85,7 @@ export default defineGkdApp({
           anyMatches: [
             'TextView[text="卖光了"] < View -n View > TextView[text*="周三5折"][text*="肯德基" || text*="喜茶" || text*="必胜客" || text*="哈根达斯"]', //只针对这几个券才会秒返回
             'View > TextView[text*="周三5折"][text*="肯德基" || text*="喜茶" || text*="必胜客" || text*="哈根达斯"] +n View > TextView[text="卖光了"]',
+            'View > View > TextView[text="已参与"][clickable=true][visibleToUser=true]', //261105，抽奖任务已参与
           ],
           activityIds:
             'cmb.pb.app.h5container.webviewcontainer.PBWebContainerActivity',
@@ -192,7 +193,7 @@ export default defineGkdApp({
     {
       key: 10,
       name: '抽奖领任务页面，参与抽奖 or 我要抽奖，规则3，action=clickCenter',
-      desc: '261029，clickable=true',
+      desc: '261105，clickable=true，添加砸金蛋',
       rules: [
         {
           forcedTime: 3000,
@@ -204,11 +205,13 @@ export default defineGkdApp({
             'TextView[text="1／1"]',
             '[text="完成1／1"]',
             'TextView[text="生活缴费"][vid="tvMainTitle"]',
+            'View > View > View > @Button[clickable=true][visibleToUser=true] + TextView[text*="恭喜"]', //261105，排除中奖后再继续抽奖
           ],
           anyMatches: [
             'View > View > @View[clickable=true][visibleToUser=true] > TextView[text="参与抽奖"]',
             'View > View > @View[clickable=true][visibleToUser=true] > TextView[text="我要抽奖"]',
             'View > View > TextView[text^="我要" && text$="抽奖"][clickable=true][visibleToUser=true]',
+            'View[id="gold_2"] > View > View > View[childCount=1] > View[childCount=3] > View[index=1] > TextView[text=""][clickable=true][visibleToUser=true]', //261105，砸金蛋，指定砸中间的
           ],
           activityIds: [
             'cmb.pb.app.h5container.webviewcontainer.PBWebContainerActivity',
@@ -359,7 +362,7 @@ export default defineGkdApp({
           forcedTime: 3000,
           activityIds:
             'cmb.pb.app.h5container.webviewcontainer.PBWebContainerActivity',
-          anyMatches: 'TextView[text="添加自选成功"][visibleToUser=true]',
+          anyMatches: ['TextView[text="添加自选成功"][visibleToUser=true]'],
           action: 'back',
         },
       ],
@@ -526,6 +529,7 @@ export default defineGkdApp({
             'View > View > View > @Button[clickable=true][visibleToUser=true] + TextView[text^="恭喜"] +n TextView[text="立即查看"]',
             '@Button + [text*="恭喜"] +n [text="返回"]',
             '@Button + [text^="恭喜"] +n [text="立即查看"]',
+            //'View > View > Button + TextView[text="恭喜您，中奖啦！"] + TextView[text="随机红包"] + TextView[text="可前往\\"卡券\\">\\"现金红包\\"查看"] + TextView[text="炫耀一下"] + TextView[text="立即查看"]',//261105，弹窗，随机红包
           ],
         },
       ],
