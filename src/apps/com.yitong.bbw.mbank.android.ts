@@ -60,7 +60,8 @@ export default defineGkdApp({
           resetMatch: 'match',
           activityIds: 'com.yitong.mobile.biz.h5.container.WebViewActivity',
           matchTime: 3000,
-          forcedTime: 3000,
+          forcedTime: 4000,
+          actionCd: 8000,
           matches:
             'View > View[text="卡号："] +2 TextView[text="复制"][clickable=false][visibleToUser=true]',
           actionMaximum: 1,
@@ -89,7 +90,7 @@ export default defineGkdApp({
         {
           resetMatch: 'match',
           preKeys: [5],
-          actionMaximum: 1,
+          forcedTime: 3000,
           excludeMatches: [
             'View > TextView[text="复制成功"] + View > Button[text="确定"][clickable=true][visibleToUser=true]',
           ],
