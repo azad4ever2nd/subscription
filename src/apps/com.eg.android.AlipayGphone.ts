@@ -980,7 +980,7 @@ export default defineGkdApp({
     {
       key: 43,
       name: '支付有礼，返回会场 or 开心收下',
-      desc: '261025，添加 返回会场',
+      desc: '261105，添加 返回会场',
       rules: [
         {
           resetMatch: 'match',
@@ -989,6 +989,7 @@ export default defineGkdApp({
           anyMatches: [
             '@View[clickable=true][visibleToUser=true] > View > TextView[text="任务完成"] + TextView[text="返回会场" || text="返回领奖>"]', //'@View > View > TextView[text="任务完成"] + TextView[text="返回会场"]',
             'ViewGroup[childCount=5] > ViewGroup > *[desc="你有团购神券待使用"] <<2 ViewGroup +3 ViewGroup[clickable=false][visibleToUser=true] > View[clickable=false][visibleToUser=true]', //弹窗，你有团购神券待使用，X掉，弹窗优先，然后再是返回
+            'ViewGroup > ViewGroup > *[desc="立即使用"] + @ViewGroup[clickable=false][visibleToUser=true] > View', //261105，弹窗，神券，立即使用，X掉
             '@View + ViewGroup *[desc="开心收下"]',
           ],
         },

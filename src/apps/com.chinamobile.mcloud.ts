@@ -14,6 +14,7 @@ export default defineGkdApp({
           resetMatch: 'match',
           matchDelay: 500,
           forcedTime: 3000,
+          actionCd: 8000,
           excludeMatches: [
             'View > View > TextView + TextView[text="去转存"][clickable=true][visibleToUser=true]',
             'View > View > TextView + TextView[text="去上传"][clickable=true][visibleToUser=true]',

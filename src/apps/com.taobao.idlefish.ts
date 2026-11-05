@@ -118,7 +118,7 @@ export default defineGkdApp({
     {
       key: 8,
       name: '弹窗，确定删除本条记录吗？确认',
-      desc: '2600913，添加 删除该条历史',
+      desc: '261105，添加 删除该条历史',
       rules: [
         {
           resetMatch: 'match',
@@ -126,6 +126,7 @@ export default defineGkdApp({
           activityIds:
             'com.idlefish.flutterbridge.flutterboost.boost.FishFlutterBoostActivity',
           anyMatches: [
+            'View > View[childCount=3][desc*="选上拿红包"] > ImageView + ImageView + ImageView[clickable=false][visibleToUser=true]', //261105，弹窗，拿红包，X掉
             'View > View > View > View[desc="删除该条历史？"] + View[desc="取消"] + View[desc="确定"][clickable=false][visibleToUser=true]',
             'View > View > View > ImageView[desc="确定删除本条记录吗？"] > Button[desc="取消"] + Button[desc="确认"][clickable=true][visibleToUser=true]',
           ],
@@ -138,11 +139,11 @@ export default defineGkdApp({
       desc: '251213,增加ids',
       rules: [
         {
-          matches: [
-            '@[vid="goDetail"][text="立即查看"] <<n * + [vid="ivClose"]',
-          ],
           fastQuery: true,
           resetMatch: 'match',
+          anyMatches: [
+            '@[vid="goDetail"][text="立即查看"] <<n * + [vid="ivClose"]',
+          ],
           activityIds:
             'com.idlefish.flutterbridge.flutterboost.boost.FishFlutterBoostActivity',
         },

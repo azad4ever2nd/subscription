@@ -285,5 +285,34 @@ export default defineGkdApp({
         },
       ],
     },
+    {
+      key: 20,
+      name: '弹窗，人脸识别提示，勾选 我已阅读并同意',
+      desc: '261105',
+      rules: [
+        {
+          fastQuery: true,
+          resetMatch: 'match',
+          activityIds: 'com.baidu.idl.face.example.FaceDetectGuideActivity',
+          matches:
+            'LinearLayout > TextView[text="您即将进入人脸识别场景"] +n LinearLayout > CheckBox[vid="cb_protocol"][checked=false][visibleToUser=true][clickable=true]', //261105，弹窗，人脸识别提示，勾选
+        },
+      ],
+    },
+    {
+      key: 21,
+      name: '弹窗，人脸识别提示，勾选 我已阅读并同意后，开始识别',
+      desc: '261105',
+      rules: [
+        {
+          fastQuery: true,
+          resetMatch: 'match',
+          actionCd: 2000,
+          activityIds: 'com.baidu.idl.face.example.FaceDetectGuideActivity',
+          matches:
+            'CheckBox[vid="cb_protocol"][checked=true] < LinearLayout + Button[text="开始识别"][vid="face_detect_guide_agree_btn"][visibleToUser=true][clickable=true]', //261105，弹窗，人脸识别提示，勾选后，开始识别
+        },
+      ],
+    },
   ],
 });

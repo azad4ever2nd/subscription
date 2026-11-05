@@ -242,13 +242,19 @@ export default defineGkdApp({
     },
     {
       key: 15,
-      name: '弹窗，占位15，',
-      desc: '251119,D',
+      name: '弹窗，X掉1',
+      desc: '251105',
       rules: [
         {
           forcedTime: 3000,
           resetMatch: 'match',
-          matches: [],
+          action: 'clickCenter',
+          anyMatches: [
+            'View > View > TextView[text=""][clickable=true][visibleToUser=true] - View > TextView[text="恭喜获得"] +n TextView[text=""][index=parent.childCount.minus(1)][clickable=true][visibleToUser=true]', //弹窗，签到成功，开心收下
+            'View > View > @TextView[text=""][clickable=true][visibleToUser=true] - View > TextView[text="很遗憾，差一点就中奖了"]', //弹窗，金币抽奖，未中，X掉
+            'View > View > @TextView[text=""][clickable=true][visibleToUser=true] - View > TextView[text="恭喜获得"] +n TextView[text=""][index=parent.childCount.minus(1)][clickable=true][visibleToUser=true]', //弹窗，签到成功，X掉
+            'View > View > @TextView[text=""][clickable=true][visibleToUser=true] - View > TextView[text*="+"] +   View > TextView[text^="您已完成" && text$="任务"]', //261105，弹窗，完成定投任务，X掉
+          ],
           activityIds:
             'com.cebbank.mobile.cemb.ui.activity.mobilePayment.MobilePaymentWebActivity',
         },
@@ -262,7 +268,9 @@ export default defineGkdApp({
         {
           resetMatch: 'match',
           forcedTime: 3000,
+          resetMatch: 'match',
           anyMatches: [
+            'View > View > TextView[text="10金币"] + TextView[text="1次抽奖机会"] + TextView[text=""][clickable=true][visibleToUser=true] + TextView[text=""][clickable=true][visibleToUser=true]', //261105，10金币兑换一次抽奖机会，我再想想，兑换并抽奖，
             'WebView > View > View > View > TextView[text.length=0][clickable=true][visibleToUser=true]  + TextView[text="可在【金币明细】查看"] + TextView[text.length=0][clickable=true][visibleToUser=true]',
           ],
           activityIds:

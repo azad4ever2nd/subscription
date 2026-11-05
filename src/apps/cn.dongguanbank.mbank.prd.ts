@@ -194,6 +194,36 @@ export default defineGkdApp({
     },
     {
       key: 13,
+      name: '弹窗，授权，勾选',
+      desc: '261105',
+      rules: [
+        {
+          activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
+          resetMatch: 'match',
+          actionCd: 600,
+          anyMatches: [
+            'View > View > @View[text="未选中，复选框"][clickable=true][visibleToUser=true] + TextView[text^="我已知悉" && text$="不再提醒"]',
+            'View > View > @View[text="未选中，复选框"][clickable=true][visibleToUser=true] + View > TextView[text^="我已阅读并同意"]',
+          ],
+        },
+      ],
+    },
+    {
+      key: 14,
+      name: '弹窗，授权，勾选后，同意',
+      desc: '261105',
+      rules: [
+        {
+          resetMatch: 'match',
+          activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
+          matches:
+            'View > View > Button[text="拒绝"] + @Button[text="同意"][clickable=true][clickable=true][clickable=true] + TextView[text^="备注"]',
+        },
+      ],
+    },
+
+    {
+      key: 15,
       name: '弹窗，协议更新，确定',
       desc: '260831',
       rules: [

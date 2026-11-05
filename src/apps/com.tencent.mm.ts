@@ -504,7 +504,7 @@ export default defineGkdApp({
     {
       key: 31,
       name: '即将跳转',
-      desc: '261104，com.tencent.mm.plugin.brandservice.ui.timeline.preload.ui.TmplWebViewMMUI,添加IDS，移动抽奖，动态ID，增加小程序里的跳转，改匹配顺序，尽量从左往右',
+      desc: '261105，com.tencent.mm.plugin.brandservice.ui.timeline.preload.ui.TmplWebViewMMUI,添加IDS，移动抽奖，动态ID，增加小程序里的跳转，改匹配顺序，尽量从左往右',
       rules: [
         {
           fastQuery: true,
@@ -512,8 +512,10 @@ export default defineGkdApp({
           resetMatch: 'match',
           forcedTime: 3000,
           anyMatches: [
-            'TextView[text^="即将跳转到第三方网站"] <<n LinearLayout + LinearLayout > LinearLayout > Button[text="取消"][vid="mm_alert_cancel_btn"] + ImageView + Button[text="确认跳转"][vid="mm_alert_ok_btn"][clickable=true][visibleToUser=true]', //261104
-            'TextView[text^="即将跳转到第三方网站"] <<n LinearLayout + LinearLayout > LinearLayout > Button[text="取消"][vid="mm_alert_cancel_btn"] + ImageView + Button[text="允许"][vid="mm_alert_ok_btn"][clickable=true][visibleToUser=true]', //261104
+            'TextView[text^="即将跳转到第三方网站"] <<n LinearLayout + LinearLayout > LinearLayout > Button[text="取消"][vid="mm_alert_cancel_btn"] + ImageView + Button[text="确认跳转" || text="允许"][vid="mm_alert_ok_btn"][clickable=true][visibleToUser=true]', //261104，即将跳转
+            'TextView[text^="即将打开"] <<n LinearLayout + LinearLayout > LinearLayout > Button[text="取消"][vid="mm_alert_cancel_btn"] + ImageView + Button[text="允许"][vid="mm_alert_ok_btn"][clickable=true][visibleToUser=true]', //261105，即使打开
+            'TextView[text^="即将离开微信"] <<n LinearLayout + LinearLayout > LinearLayout > Button[text="取消"][vid="mm_alert_cancel_btn"] + ImageView + Button[text="允许"][vid="mm_alert_ok_btn"][clickable=true][visibleToUser=true]', //261105，离开微信
+            //'TextView[text^="即将跳转到第三方网站"] <<n LinearLayout + LinearLayout > LinearLayout > Button[text="取消"][vid="mm_alert_cancel_btn"] + ImageView + Button[text="允许"][vid="mm_alert_ok_btn"][clickable=true][visibleToUser=true]', //261104
             //'[text^="即将"] <<n  * + * >n [vid="mm_alert_cancel_btn"][text="取消"] +n [vid="mm_alert_ok_btn"][text="确认跳转" || text="允许"]',
             '[id="js_minipro_dialog_head"][text="即将打开小程序"] <<n * +n * > [id="js_minipro_dialog_ok"][text="允许"]',
             '[text="get_prize_title.dc05dc4a"] +n * > [text="立即前往"]',
@@ -1205,11 +1207,11 @@ export default defineGkdApp({
     {
       key: 53,
       name: '弹窗，X掉1',
-      desc: '260624',
+      desc: '261105',
       rules: [
         {
           resetMatch: 'match',
-          actionCd: 300,
+          actionCd: 750, //延长，避免深工误触
           activityIds: [
             'com.tencent.mm.plugin.appbrand.ui.AppBrandUI0',
             'com.tencent.mm.plugin.appbrand.ui.AppBrandUI1',

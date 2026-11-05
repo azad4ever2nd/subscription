@@ -289,7 +289,7 @@ export default defineGkdApp({
     {
       key: 16,
       name: '弹窗，X掉4',
-      desc: '261102，fastQuery=false，clickable=true',
+      desc: '261105，fastQuery=false，clickable=true',
       rules: [
         {
           resetMatch: 'match',
@@ -308,8 +308,10 @@ export default defineGkdApp({
             'TextView[text="添加物流助手到桌面"] <<n * + @ViewGroup[clickable=true][visibleToUser=true] ImageView',
             'View  > @Image[text="webp"][clickable=true][visibleToUser=true] -n View >  TextView[text^="好友已加入队伍"]',
             'View > View > View > TextView[text="恭喜获得专属惊喜券"] + TextView[text*="已成功点亮" || text$="明日可继续点亮"] +(3,4)  Image[text="webp"][clickable=true][visibleToUser=true]',
+            'View > View > Image[text="webp"] + @TextView[clickable=true][visibleToUser=true] +n View > TextView[text="售后体验补偿券已到账"]', //261105，弹窗，售后体验补偿券已到账，X掉
+            'View > View > Image[text="webp"] + @TextView[clickable=true][visibleToUser=true] +n View > TextView[text="立即使用"] + TextView[text="可在【我的优惠券】查看"]', //261105，弹窗，售后体验补偿券已到账，可在【我的优惠券】查看，X掉
             'TextView[text="待使用"] <<n ViewGroup + ViewGroup > ImageView[clickable=true][visibleToUser=true]',
-            'TextView[text="先去逛逛"] <<n ViewGroup + ViewGroup > ImageView[clickable=true][visibleToUser=true]',
+            'TextView[text="先去逛逛"] <<n ViewGroup + ViewGroup > ImageView[clickable=true][visibleToUser=true]', //261104，弹窗，仅剩几件，先去逛逛 ，X掉
           ],
         },
       ],

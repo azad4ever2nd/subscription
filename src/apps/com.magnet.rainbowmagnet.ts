@@ -21,5 +21,18 @@ export default defineGkdApp({
         },
       ],
     },
+    {
+      key: 2,
+      name: '弹窗，公告，关闭',
+      desc: '261105',
+      rules: [
+        {
+          resetMatch: 'match',
+          activityIds: '.MainActivity',
+          matches:
+            'View > View[desc*="公告"] > Button[desc="关闭"][clickable=true][visibleToUser=true]',
+        },
+      ],
+    },
   ],
 });
