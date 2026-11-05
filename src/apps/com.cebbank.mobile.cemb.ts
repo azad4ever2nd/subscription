@@ -268,7 +268,6 @@ export default defineGkdApp({
         {
           resetMatch: 'match',
           forcedTime: 3000,
-          resetMatch: 'match',
           anyMatches: [
             'View > View > TextView[text="10金币"] + TextView[text="1次抽奖机会"] + TextView[text=""][clickable=true][visibleToUser=true] + TextView[text=""][clickable=true][visibleToUser=true]', //261105，10金币兑换一次抽奖机会，我再想想，兑换并抽奖，
             'WebView > View > View > View > TextView[text.length=0][clickable=true][visibleToUser=true]  + TextView[text="可在【金币明细】查看"] + TextView[text.length=0][clickable=true][visibleToUser=true]',
