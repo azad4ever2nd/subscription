@@ -538,15 +538,18 @@ export default defineGkdApp({
     {
       key: 26,
       name: '奖品已抢光，返回',
-      desc: '260403',
+      desc: '261106',
       rules: [
         {
-          order: -1,
+          //order: -1,
           action: 'back',
           resetMatch: 'match',
           activityIds:
             'cmb.pb.app.h5container.webviewcontainer.PBWebContainerActivity',
-          anyMatches: '[text="奖品已抢光"]',
+          anyMatches: [
+            'View > View > TextView[text="奖品已抢光"][visibleToUser=true]',
+            '[text="奖品已抢光"]',
+          ],
         },
       ],
     },
