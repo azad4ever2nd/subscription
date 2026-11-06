@@ -413,8 +413,13 @@ export default defineGkdApp({
         {
           resetMatch: 'match',
           activityIds: '.activity.NewPageMaskActivity',
-          matches:
+          anyMatches: [
             'View > View > @Button[text="关闭弹窗"][clickable=true][visibleToUser=true] +n View > TextView[text="开心收下"] + Button[text="查看订单详情"]',
+            'View > View > @Button[text="关闭弹窗"][clickable=true][visibleToUser=true] +n View > Button[text="查看订单详情"]', //261106，弹窗，下单完成后，一键领取
+            'View > View > Image[text="webp"] + @TextView[clickable=true][visibleToUser=true] +n View > TextView[text="售后体验补偿券已到账"]', //261105，弹窗，售后体验补偿券已到账，X掉
+            'View > View > Image[text="webp"] + @TextView[clickable=true][visibleToUser=true] +n View > TextView[text="立即使用"] + TextView[text="可在【我的优惠券】查看"]', //261105，弹窗，售后体验补偿券已到账，可在【我的优惠券】查看，X掉
+            'TextView[text="先去逛逛"] <<n ViewGroup + ViewGroup > ImageView[clickable=true][visibleToUser=true]', //261104，弹窗，仅剩几件，先去逛逛 ，X掉
+          ],
         },
       ],
     },

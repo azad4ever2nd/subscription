@@ -221,11 +221,13 @@ export default defineGkdApp({
     {
       key: 13,
       name: '弹窗，做任务',
-      desc: '261028',
+      desc: '261106，排除转存资源',
       rules: [
         {
           resetMatch: 'match',
           activityIds: '.client.component.web.H5WebViewMainActivity',
+          excludeMatches:
+            'View > View > TextView[text="转存资源签到"] + TextView[text="换一批 >"][clickable=true][visibleToUser=true]',
           anyMatches: [
             'View > View > TextView + TextView[text="去转存"][clickable=true][visibleToUser=true]',
             'View > View > TextView + TextView[text="去上传"][clickable=true][visibleToUser=true]',
@@ -237,18 +239,37 @@ export default defineGkdApp({
     },
     {
       key: 14,
-      name: '占位14',
-      desc: 'D，261024',
+      name: '弹窗，做任务，转存资源签到，点击转存',
+      desc: '261024',
       rules: [
         {
           resetMatch: 'match',
           activityIds: '.client.component.web.H5WebViewMainActivity',
-          anyMatches: [],
+          anyMatches: [
+            'View > View > TextView[text="转存资源签到"] + TextView[text="换一批 >"][clickable=true][visibleToUser=true] +n View > TextView[text="点击转存 >"][clickable=true][visibleToUser=true]',
+          ],
         },
       ],
     },
     {
       key: 15,
+      name: '弹窗，转存资源签到，换一批',
+      desc: '261106，换一批',
+      rules: [
+        {
+          resetMatch: 'match',
+          activityIds: '.client.component.web.H5WebViewMainActivity',
+          excludeMatches: [
+            'View > View > TextView[text="转存资源签到"] + TextView[text="换一批 >"][clickable=true][visibleToUser=true] +n View > TextView[text="点击转存 >"][clickable=true][visibleToUser=true]',
+          ],
+          anyMatches: [
+            'View > View > TextView[text="转存资源签到"] + @TextView[text="换一批 >"][clickable=true][visibleToUser=true] +n View > TextView[text!="点击转存 >"][clickable=true][visibleToUser=true]',
+          ],
+        },
+      ],
+    },
+    {
+      key: 16,
       name: '开启通知',
       desc: '251205',
       rules: [
@@ -263,7 +284,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 16,
+      key: 17,
       name: '弹窗',
       desc: '251118，增加开启通知',
       rules: [
@@ -279,7 +300,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 17,
+      key: 18,
       name: '发现新版本',
       desc: '251208',
       rules: [
@@ -296,7 +317,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 18,
+      key: 19,
       name: '服务通知，X掉',
       desc: '260702',
       rules: [

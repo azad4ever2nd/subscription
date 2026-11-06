@@ -7,14 +7,18 @@ export default defineGkdApp({
     {
       key: 1,
       name: '立即打开',
-      desc: '260917，增加光大，交行，华夏，邮储，交行，小程序跳转，民生，工行，翼支付，浦发，建云闪付，行，农行,原规则[id="app"] >2 [text="立即打开"]',
+      desc: '261106，增加光大，交行，华夏，邮储，交行，小程序跳转，民生，工行，翼支付，浦发，建云闪付，行，农行,原规则[id="app"] >2 [text="立即打开"]',
       rules: [
         {
           resetMatch: 'match',
-          actionCd: 2000,
+          actionCd: 800,
           activityIds: 'com.tencent.mm.plugin.webview.ui.tools.MMWebViewUI',
           anyMatches: [
-            '[text^="即将"] <<n  * + * >n [vid="mm_alert_cancel_btn"][text="取消"] +n [vid="mm_alert_ok_btn"][text="确认跳转" || text="允许"]',
+            'TextView[text^="即将跳转到第三方网站"] <<n LinearLayout + LinearLayout > LinearLayout > Button[text="取消"][vid="mm_alert_cancel_btn"] + ImageView + Button[text="确认跳转" || text="允许"][vid="mm_alert_ok_btn"][clickable=true][visibleToUser=true]', //261104，即将跳转
+            'TextView[text^="即将打开"] <<n LinearLayout + LinearLayout > LinearLayout > Button[text="取消"][vid="mm_alert_cancel_btn"] + ImageView + Button[text="允许"][vid="mm_alert_ok_btn"][clickable=true][visibleToUser=true]', //261105，即使打开
+            'TextView[text^="即将离开微信"] <<n LinearLayout + LinearLayout > LinearLayout > Button[text="取消"][vid="mm_alert_cancel_btn"] + ImageView + Button[text="允许"][vid="mm_alert_ok_btn"][clickable=true][visibleToUser=true]', //261105，离开微信
+            //'[text^="即将"] <<n  * + * >n [vid="mm_alert_cancel_btn"][text="取消"] +n [vid="mm_alert_ok_btn"][text="确认跳转" || text="允许"]',
+            'View > TextView[text^="即将打开"] + View > View[desc="取消"] + @View[desc="打开"][clickable=true][visibleToUser=true] > TextView[text="打开"]', //261106，弹窗，即将打开 “美团外卖丨外卖美食奶茶咖啡水果”小程序
             '[id="js_link_dialog_body"][text*="打开"] + * > [id="js_link_dialog_ok"][text="允许"]',
             '[id="launch-btn" || id="wx-launch-btn"] >n [id="btn_mywechat" || id="wechat-btn" ][text="立即打开"]',
             '[id="wxOpenLunchApp"] [text^="立即打开"] + [id="launch-btn"]',
@@ -416,14 +420,16 @@ export default defineGkdApp({
     {
       key: 25,
       name: '图片，再次保存2',
-      desc: '260728',
+      desc: '261106，添加 跳工行服务',
       rules: [
         {
           resetMatch: 'match',
           fastQuery: true,
           activityIds: 'com.tencent.mm.ui.LauncherUI',
-          matches:
+          anyMatches: [
+            'TextView[text="保存图片"] <n LinearLayout < RecyclerView +n LinearLayout @LinearLayout[clickable=true][visibleToUser=true] TextView[text="工行服务"] + TextView[text="小程序码"]', //261106，长按，跳工行服务
             'RecyclerView > @LinearLayout[clickable=true][visibleToUser=true] > RelativeLayout > LinearLayout > TextView[text="再次保存"]',
+          ],
         },
       ],
     },
@@ -449,9 +455,9 @@ export default defineGkdApp({
       desc: 'D，261018',
       rules: [
         {
-          activityIds: 'com.tencent.mm.ui.LauncherUI',
           actionCd: 3000,
           resetMatch: 'match',
+          activityIds: 'com.tencent.mm.ui.LauncherUI',
           matches:
             'TextView[text*="同程来一个" || text*="收同程广东" || text*="江西五折券"] < * - TextView[text="车头-那年盛夏电影票" || text="hua"] < LinearLayout[childCount=4] <<n RelativeLayout[index=parent.childCount.minus(1)] <n RecyclerView <<n FrameLayout + FrameLayout >n RelativeLayout > Button[text="发送"][clickable=true][visibleToUser=true]',
         },
@@ -471,7 +477,6 @@ export default defineGkdApp({
         },
       ],
     },
-
     {
       key: 29,
       name: '打开红包',
@@ -524,7 +529,7 @@ export default defineGkdApp({
           ],
           activityIds: [
             'com.tencent.mm.plugin.webview.ui.tools.CustomSchemeEntryMMWebViewUI',
-            'com.tencent.mm.plugin.webview.ui.tools.MMWebViewUI',
+            //'com.tencent.mm.plugin.webview.ui.tools.MMWebViewUI',//261106，屏蔽，避免与第一个冲突
             'com.tencent.mm.framework.app.UIPageFragmentActivity',
             'com.tencent.mm.plugin.webview.stub.WebViewStubProxyUI',
             'com.tencent.mm.plugin.appbrand.ui.AppBrandCheckWxaShortLinkUI',
@@ -569,6 +574,9 @@ export default defineGkdApp({
           excludeMatches: [
             'TextView[text="确认支付"][visibleToUser=true]',
             'WebView > View > TextView[text^="总计："] + TextView[text="确认支付"][visibleToUser=true]',
+            'View > View > TextView[text^="服务异常" || text="访问人数过多，请稍后再试" || text="商品已被秒完" || text="商品已售罄"] + TextView[text="我知道了"][visibleToUser=true]',
+            'View > View > TextView[text="抢购订单排队中，请勿关闭页面。"][visibleToUser=true]',
+            'View > View > TextView[text*="抢购订单排队中"][visibleToUser=true]',
           ],
           anyMatches: [
             'View > TextView[text="抢购成功消耗1000积分"] + TextView[text="抢购不成功不消耗积分"] + TextView[text="立即抢购"][visibleToUser=true]',
@@ -587,11 +595,12 @@ export default defineGkdApp({
       rules: [
         {
           resetMatch: 'match',
-          actionCd: 400,
+          actionCd: 500,
           order: -1,
           excludeMatches: [
             'View > View > TextView[text^="服务异常" || text="访问人数过多，请稍后再试" || text="商品已被秒完" || text="商品已售罄"] + TextView[text="我知道了"][visibleToUser=true]',
             'View > View > TextView[text="抢购订单排队中，请勿关闭页面。"][visibleToUser=true]',
+            'View > View > TextView[text*="抢购订单排队中"][visibleToUser=true]',
           ],
           activityIds: [
             'com.tencent.mm.plugin.appbrand.ui.AppBrandUI0',
@@ -623,7 +632,7 @@ export default defineGkdApp({
         {
           resetMatch: 'match',
           order: -2,
-          actionCd: 50,
+          actionCd: 100,
           activityIds: [
             'com.tencent.mm.plugin.appbrand.ui.AppBrandUI0',
             'com.tencent.mm.plugin.appbrand.ui.AppBrandUI1',
@@ -756,7 +765,7 @@ export default defineGkdApp({
     {
       key: 39,
       name: '湘约，1元微信立减金，立即领取',
-      desc: '261029，添加内蒙古',
+      desc: '261106，添加内蒙古',
       rules: [
         {
           resetMatch: 'match',
@@ -779,6 +788,7 @@ export default defineGkdApp({
           anyMatches: [
             'WebView[text*="湘约"] > View > View > TextView[text="￥1"] + TextView[text="微信立减金"] + View > TextView[text="立即领取"][clickable=true][visibleToUser=true]',
             'WebView[text*="内蒙古"] > View > View > TextView[text="￥1"] + TextView[text="微信立减金"] + View > TextView[text="立即领取"][clickable=true][visibleToUser=true]',
+            'WebView > View > View > View > TextView[id="luckydrawBtn_2XVg3mEI"][clickable=true][visibleToUser=true]', //261106，工行宁波，数智感恩月，惠客暖心行
           ],
         },
       ],
@@ -786,7 +796,7 @@ export default defineGkdApp({
     {
       key: 40,
       name: '弹窗，工行相关，X掉2，',
-      desc: '261103，添加 活动未开始，我知道了，红色打卡，宁波，朴朴，动卡空间，内蒙工行，贵阳工行，工行余姚，湘约工行，贵州工行，已参加过',
+      desc: '261106，添加 活动未开始，我知道了，红色打卡，宁波，朴朴，动卡空间，内蒙工行，贵阳工行，工行余姚，湘约工行，贵州工行，已参加过',
       rules: [
         {
           resetMatch: 'match',
@@ -822,6 +832,7 @@ export default defineGkdApp({
             'View > View > @TextView[clickable=true][visibleToUser=true] - View > View >   Image[text="66c29cff8e9f4a2aaf3f1b67b944daac"]',
             'View > View > @TextView[clickable=true][visibleToUser=true] - View > View >   Image[text="2821aa8f32d5477d85db2a4a119d06cd"]',
             'View > @TextView[clickable=true][visibleToUser=true] - View > View > Image[text="ac327e12fc2c48ee92771714b590d29b"]',
+            'View > View > @TextView[text=""][clickable=true][visibleToUser=true] - View > View > Image[text="3f3ab456f637404cab5f6ba7f35c906e"]', //261106，辽宁，红色网点打卡
             'TextView[text="系统繁忙，请稍后再试。"] <<n View + View > @View[clickable=false][visibleToUser=true] > TextView[text="确定"]',
             'View > View > @TextView[clickable=true][visibleToUser=true] -n View > View > TextView[text="恭喜您获得"]',
             'View > View > @TextView[text.length=0][clickable=true][visibleToUser=true] -n View > TextView[text^="请前往“奖品”查看并手动领取至支付宝账户"]',
@@ -859,7 +870,7 @@ export default defineGkdApp({
     {
       key: 41,
       name: '八闽有礼，关闭城市弹窗',
-      desc: '260803',
+      desc: '261106，添加 辽宁',
       rules: [
         {
           resetMatch: 'match',
@@ -877,8 +888,9 @@ export default defineGkdApp({
             'com.tencent.mm.plugin.appbrand.ui.AppBrandUI04',
             'com.tencent.mm.plugin.appbrand.ui.AppBrandPluginUI',
           ],
-          matches:
+          anyMatches: [
             'WebView[text*="八闽有礼"] > View > View > View > View > View > @Image[clickable=true][visibleToUser=true][text="关闭"] + Image[text="地市详情"]',
+          ],
         },
       ],
     },

@@ -123,5 +123,31 @@ export default defineGkdApp({
         },
       ],
     },
+    {
+      key: 9,
+      name: '弹窗，跳转第三方，立即前往',
+      desc: '261106',
+      rules: [
+        {
+          resetMatch: 'match',
+          activityIds: '.activity.web.stage.StageCommonWebActivity',
+          matches:
+            'View > View > TextView[text="稍后查看"] + TextView[text="立即前往"][clickable=true][visibleToUser=true]',
+        },
+      ],
+    },
+    {
+      key: 10,
+      name: '弹窗，立减金领取成功，确定',
+      desc: '261106',
+      rules: [
+        {
+          resetMatch: 'match',
+          activityIds: '.activity.web.stage.StageOutLinkDeprecatedActivity',
+          matches:
+            'WebView > View > TextView[text="领取成功"] + View > TextView[text="确定"][clickable=true][visibleToUser=true]',
+        },
+      ],
+    },
   ],
 });

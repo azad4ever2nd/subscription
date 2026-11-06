@@ -84,7 +84,7 @@ export default defineGkdApp({
     {
       key: 6,
       name: '开启定位',
-      desc: '260928，修复提示BUG，添加ids',
+      desc: '261106，修复提示BUG，添加ids',
       rules: [
         {
           resetMatch: 'match',
@@ -101,7 +101,7 @@ export default defineGkdApp({
           anyMatches: [
             'LinearLayout > TextView[vid="tv_dialog_info"][text*="开启定位服务"] + LinearLayout > @TextView[vid="btn_cancel"][clickable=true][visibleToUser=true][text*="取消" || text="取 消"] + TextView[vid="btn_ok"]',
             'TextView[vid="tv_dialog_title"][text="开启手机定位服务"] < LinearLayout + LinearLayout > TextView[vid="btn_cancel"][clickable=true]',
-            'TextView[vid="tv_dialog_title"][text="开启手机定位服务"] < LinearLayout + LinearLayout > TextView[vid="btn_cancel"][clickable=true]',
+            'LinearLayout > TextView[text="请在手机系统“设置”中开启定位服务"][vid="tv_dialog_info"] + LinearLayout > @TextView[text="取 消"][vid="btn_cancel"][clickable=true][visibleToUser=true] + TextView[text="去开启"][vid="btn_ok"]', //261106，弹窗，开启手机定位服务
           ],
         },
       ],
@@ -254,6 +254,7 @@ export default defineGkdApp({
             'View > TextView[text="谢谢参与"] + TextView[text="知道了"] + Image[text="scMOOk4eCwfO2MXMA57klCN2cRQucR4ZsJPAuCw81thJPT6XbjhgNwMbAPAiq3hLBd4o0iqaRfxjmM16IkusKLl+YfM7Etm+Ty3VgYWWEXAiV2i27uIq4pB4BzRbd4E7E7rliWqX2owOgTfotu7ixoDIHLqtu8gZ0bOGbusuava4MINu6y4yXiB00G3dhaOYZNNnmzbM9KtMQWIKT9PBMB1JSzIwpSFTArSkXlPSt1w3povOcsWaLndLWWEpaCyllKmIs5SPlsLVUDJbinVLm2BtUOytkb0pM7WDP+PVKWG1cGJeAAAAAElFTkSuQmCC"][clickable=false]',
             'WebView[text="幸运扭蛋机"] > View > View > View > TextView[text="您离中奖还差一点点"] + TextView[text="知道了"] + Image[text="scMOOk4eCwfO2MXMA57klCN2cRQucR4ZsJPAuCw81thJPT6XbjhgNwMbAPAiq3hLBd4o0iqaRfxjmM16IkusKLl+YfM7Etm+Ty3VgYWWEXAiV2i27uIq4pB4BzRbd4E7E7rliWqX2owOgTfotu7ixoDIHLqtu8gZ0bOGbusuava4MINu6y4yXiB00G3dhaOYZNNnmzbM9KtMQWIKT9PBMB1JSzIwpSFTArSkXlPSt1w3povOcsWaLndLWWEpaCyllKmIs5SPlsLVUDJbinVLm2BtUOytkb0pM7WDP+PVKWG1cGJeAAAAAElFTkSuQmCC"]',
             'View > View > TextView[text$="立减券"] + TextView[text="去查看"] + TextView[text$="内有效"] + @View[clickable=true][visibleToUser=true] > Image[text="scMOOk4eCwfO2MXMA57klCN2cRQucR4ZsJPAuCw81thJPT6XbjhgNwMbAPAiq3hLBd4o0iqaRfxjmM16IkusKLl+YfM7Etm+Ty3VgYWWEXAiV2i27uIq4pB4BzRbd4E7E7rliWqX2owOgTfotu7ixoDIHLqtu8gZ0bOGbusuava4MINu6y4yXiB00G3dhaOYZNNnmzbM9KtMQWIKT9PBMB1JSzIwpSFTArSkXlPSt1w3povOcsWaLndLWWEpaCyllKmIs5SPlsLVUDJbinVLm2BtUOytkb0pM7WDP+PVKWG1cGJeAAAAAElFTkSuQmCC"]',
+            'View > View > TextView[text="红包"] + TextView[text="开心收下"] +n @View[clickable=true][visibleToUser=true] > Image[text="scMOOk4eCwfO2MXMA57klCN2cRQucR4ZsJPAuCw81thJPT6XbjhgNwMbAPAiq3hLBd4o0iqaRfxjmM16IkusKLl+YfM7Etm+Ty3VgYWWEXAiV2i27uIq4pB4BzRbd4E7E7rliWqX2owOgTfotu7ixoDIHLqtu8gZ0bOGbusuava4MINu6y4yXiB00G3dhaOYZNNnmzbM9KtMQWIKT9PBMB1JSzIwpSFTArSkXlPSt1w3povOcsWaLndLWWEpaCyllKmIs5SPlsLVUDJbinVLm2BtUOytkb0pM7WDP+PVKWG1cGJeAAAAAElFTkSuQmCC"]',
           ],
         },
       ],

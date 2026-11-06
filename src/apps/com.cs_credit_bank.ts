@@ -271,10 +271,11 @@ export default defineGkdApp({
     {
       key: 19,
       name: '广发支付有优惠，去领奖',
-      desc: '261105',
+      desc: '261106',
       rules: [
         {
           resetMatch: 'match',
+          actionCd: 3000,
           excludeMatches:
             'View > View > View[text="领取后可在“我的奖品”查看"] + View > View[clickable=true][visibleToUser=true]',
           activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',

@@ -124,8 +124,8 @@ export default defineGkdApp({
     },
     {
       key: 7,
-      name: '占位7',
-      desc: 'D，fastquery=false,clickable=true',
+      name: '开启拼多多支付宝免密快捷支付，关闭',
+      desc: '261106，fastquery=false,clickable=true',
       rules: [
         {
           resetMatch: 'match',
@@ -133,6 +133,7 @@ export default defineGkdApp({
           fastQuery: true,
           activityIds: 'com.alipay.android.msp.ui.views.MspContainerActivity',
           anyMatches: [
+            'FrameLayout > FrameLayout > TextView + CheckBox[checked=true][visibleToUser=true][clickable=true]', //261106，开启拼多多支付宝免密快捷支付，关闭
             '@TextView[text="放弃"][clickable=false][visibleToUser=true] < FrameLayout + FrameLayout > TextView[text="继续付款"]',
           ],
         },

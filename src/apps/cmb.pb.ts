@@ -112,7 +112,7 @@ export default defineGkdApp({
     {
       key: 7,
       name: '抽奖领任务页面，登陆后参与，click',
-      desc: '261103，clickable=true',
+      desc: '261106，clickable=true',
       rules: [
         {
           resetMatch: 'match',
@@ -122,6 +122,7 @@ export default defineGkdApp({
           action: 'click',
           anyMatches: [
             'View > View > TextView[text="登录后参与"][clickable=true][visibleToUser=true]',
+            'View > View > TextView[text="登录后参与"][clickable=false][visibleToUser=true]',
             'View > @View[clickable=true][visibleToUser=true] > TextView[text^="登录后" && text$="参与"][clickable=false][visibleToUser=true]',
             //'TextView[text="0／1"] <n View + View > Button[text="加自选"][clickable=true][visibleToUser=true]',
             //'TextView[text="完成0／1"] +n View > Button[text="加自选"][clickable=true][visibleToUser=true]',
@@ -788,7 +789,7 @@ export default defineGkdApp({
     {
       key: 40,
       name: '弹窗，指数投资投资，浏览并集卡',
-      desc: '261025，添加 完成，预约成功，开心收下',
+      desc: '261106，添加 完成，预约成功，开心收下',
       rules: [
         {
           resetMatch: 'match',
@@ -801,6 +802,7 @@ export default defineGkdApp({
             'Dialog >n View > TextView[text="开心收下" || text="浏览并集卡"][clickable=true][visibleToUser=true]',
             'View > View > TextView[text="预约成功"] +n Button[text="好的"][clickable=true][visibleToUser=true]',
             'View > View > Button[id="btnFinish"][text="完成"][clickable=true][visibleToUser=true]',
+            'View > View > Button[text="完成"][clickable=true][visibleToUser=true]', //261106，完成
           ],
         },
       ],
