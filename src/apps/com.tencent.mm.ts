@@ -358,14 +358,15 @@ export default defineGkdApp({
     {
       key: 21,
       name: '公众号里跳转小程序',
-      desc: '251221，增加工行',
+      desc: '261106，增加工行',
       rules: [
         {
           resetMatch: 'match',
-          actionCd: 0,
+          actionCd: 100,
           activityIds:
             'com.tencent.mm.plugin.brandservice.ui.timeline.preload.ui.TmplWebViewMMUI',
           anyMatches: [
+            'Dialog > View > TextView[text^="即将打开新的页面"] + View > Button[id="js_link_dialog_cancel"][text="取消"][clickable=true][visibleToUser=true] + Button[id="js_link_dialog_ok"][text="允许"][clickable=true][visibleToUser=true]', //261106，弹窗，公众号里跳转小程序，即将打开
             '[text^="即将"] <<n * + * [vid="mm_alert_cancel_btn"][text="取消"] +n [vid="mm_alert_ok_btn"][text="确认跳转" || text="允许"]',
             '[id="js_link_dialog_body"][text*="打开"] + * > [id="js_link_dialog_ok"][text="允许"]',
             '[text="get_prize_title.dc05dc4a"] +n * > [text="立即前往"]',
@@ -963,9 +964,9 @@ export default defineGkdApp({
       rules: [
         {
           resetMatch: 'match',
-          matchDelay: 2500,
-          matchTime: 3000,
-          forcedTime: 7000,
+          matchDelay: 5000,
+          matchTime: 9000,
+          forcedTime: 10000,
           activityIds: [
             'com.tencent.mm.plugin.appbrand.ui.AppBrandUI0',
             'com.tencent.mm.plugin.appbrand.ui.AppBrandUI1',
