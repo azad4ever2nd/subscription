@@ -80,7 +80,7 @@ export default defineGkdApp({
     {
       key: 5,
       name: '弹窗，放弃付款，推荐开通花呗',
-      desc: '261103，fastQuery=true,clickable=true,添加 支付宝推荐你，关闭PDD免密付款，添加放弃还款，推荐习惯',
+      desc: '261107，fastQuery=true,clickable=true,添加 支付宝推荐你，关闭PDD免密付款，添加放弃还款，推荐习惯',
       rules: [
         {
           resetMatch: 'match',
@@ -102,6 +102,7 @@ export default defineGkdApp({
             'TextView[text="是否放弃本次付款？"] <<n FrameLayout +n FrameLayout >n @FrameLayout[clickable=true][visibleToUser=true] > TextView[text="放弃"]', //261103
             'TextView[text="是否放弃本次付款？"][id="com.alipay.mobile.antui:id/message"] <<n LinearLayout + LinearLayout > @Button[id="com.alipay.mobile.antui:id/btn_cancel"][text="放弃"][clickable=true][visibleToUser=true] + Button[text="继续付款"][id="com.alipay.mobile.antui:id/btn_ensure"]',
             'TextView[text*="是否放弃付款"][id="com.alipay.mobile.antui:id/message"] <<n LinearLayout  + LinearLayout > @Button[text="放弃"][id="com.alipay.mobile.antui:id/btn_cancel"][clickable=true][visibleToUser=true] + Button[text="继续付款"][id="com.alipay.mobile.antui:id/btn_ensure"]',
+            'FrameLayout > FrameLayout > TextView[text="完成"][clickable=false][visibleToUser=true]', //261107，支付完成，完成
           ],
         },
       ],
@@ -371,7 +372,7 @@ export default defineGkdApp({
     {
       key: 17,
       name: '弹窗，各种弹窗，X掉1',
-      desc: '261028，fastQuery=false，添加 神券五六天，签到成功，开通碰一下，推送服务，查询账单，返回领奖，到桌面，银行卡抽奖，升级月利宝',
+      desc: '261107，fastQuery=false，clickable=false，添加 神券五六天，签到成功，开通碰一下，推送服务，查询账单，返回领奖，到桌面，银行卡抽奖，升级月利宝',
       rules: [
         {
           resetMatch: 'match',
@@ -380,20 +381,32 @@ export default defineGkdApp({
           activityIds:
             'com.alipay.mobile.nebulax.xriver.activity.XRiverActivity',
           anyMatches: [
-            'Image < @View[visibleToUser=true] + View Button[text="同意协议并分期"][clickable=true][visibleToUser=true]',
-            '@Image < View + View > TextView[text="开通信用卡借款享一站式服务"]',
-            '@Image[clickable=false][visibleToUser=true] < View + View > Button[text="去看看"]',
-            '@Image[clickable=false][visibleToUser=true] < View + View > TextView[text="去开启"]',
-            '@Image[clickable=false][visibleToUser=true] < View + View > TextView[text="开通信用卡借款享一站式服务"]',
-            '@Image[clickable=false][visibleToUser=true] < View + View > TextView[text^="确认要离开"]',
-            '@Image[clickable=false][visibleToUser=true] < View + View > View > TextView[text="确认要离开吗？"]',
-            '@Image[clickable=true][visibleToUser=true] < View + View Button[text="同意协议并分期"]',
-            '@TextView[clickable=false][visibleToUser=true] - View > Button[text="我知道了"]',
-            '@TextView[clickable=true][visibleToUser=true] - View > TextView[text="体验金领取成功"] +n TextView[text="立即攒下"]',
-            '@TextView[clickable=true][visibleToUser=true] - View > TextView[text="查看可升级产品"]',
-            '@TextView[text=""][clickable=true][visibleToUser=true] < View + Button[text="一键升级"]',
+            'WebView > View > View > TextView[text^="抽奖机会1"] + TextView[clickable=false][visibleToUser=true]',
+            'View > View > View > @Image[clickable=false][visibleToUser=true] + TextView[text^="用碰一下"] +n TextView[text="去申请"]',
+            'View > View > View > @Image[clickable=false][visibleToUser=true] + TextView +n TextView[text="去了解"]',
+            'View > View > @TextView[text=""][clickable=false][visibleToUser=true] + View > TextView[text="立即翻倍"]', //261107，弹窗，立刻翻倍，
+            'View > View > @TextView[text.length=1][clickable=false][visibleToUser=true] + * + Button[text="好的"]',
+            'View > View > @TextView[clickable=false][visibleToUser=true] + TextView[text="请选择你的收货地址"] + TextView[text*="未获取定位" || text*="无法查看附近店铺及服务"]',
+            'View > View > @Image[clickable=false][visibleToUser=true] + TextView[text="邀你开通商家经营码"] +n TextView[text="去开通"]',
+            'View > View  > @TextView[text.length=1][clickable=false][visibleToUser=true][index=0] +n View > View > TextView[text="立即购买¥9.9"]', //9.9购收钱音箱
+            'View > TextView[text="签到成功"] +n TextView[text="去完成"] + TextView[text.length=0][clickable=false][visibleToUser=true]',
+            'View > TextView[text="开启推送服务"] + @View[clickable=false][visibleToUser=true] > TextView[text.length=1]',
+            'View > @TextView[clickable=false][visibleToUser=true] - View > View > View >n TextView[text="已发放至「我的奖励」"]',
+            'View > @TextView[clickable=false][visibleToUser=true] - View > TextView[text*="次抽奖机会！"] + TextView[text="天天来天天抽，抽抽必中"]',
+            'View >  TextView[text="兑换成其他福利"] + TextView[clickable=false][visibleToUser=true]',
+            'TextView[text="立即攒下"] <n View + TextView[text.length=0][clickable=false][visibleToUser=true]',
+            'TextView[text="确认要离开吗？"] < View - View > Image[clickable=false][visibleToUser=true]',
+            'TextView[text="学知识领福利"] <n View + TextView[text="兑换成其他福利"] + TextView[clickable=false][visibleToUser=true]',
             '@View[clickable=false][visibleToUser=true] > Button[text="去看看"][clickable=true][visibleToUser=false]',
+            '@TextView[clickable=false][visibleToUser=true] - View > Button[text="我知道了"]',
+            '@Image[clickable=true][visibleToUser=true] < View + View Button[text="同意协议并分期"]',
             '@Image[clickable=false][visibleToUser=true] < View +n TextView[text^="添加" && text$="桌面小组件"] + View +  Button[text="立即添加"] + Button[text="再想想"]',
+            '@Image[clickable=false][visibleToUser=true] < View + View > View > TextView[text="确认要离开吗？"]',
+            '@Image[clickable=false][visibleToUser=true] < View + View > TextView[text^="确认要离开"]',
+            '@Image[clickable=false][visibleToUser=true] < View + View > TextView[text="开通信用卡借款享一站式服务"]',
+            '@Image[clickable=false][visibleToUser=true] < View + View > TextView[text="去开启"]',
+            '@Image[clickable=false][visibleToUser=true] < View + View > Button[text="去看看"]',
+            '@Image < View + View > TextView[text="开通信用卡借款享一站式服务"]',
           ],
         },
       ],
@@ -401,7 +414,7 @@ export default defineGkdApp({
     {
       key: 18,
       name: '弹窗，各种弹窗，X掉2',
-      desc: '261107，fastQuery=false，添加 神券五六天，签到成功，开通碰一下，推送服务，查询账单，返回领奖，到桌面，银行卡抽奖，升级月利宝',
+      desc: '261107，fastQuery=false，clickable=true，添加 神券五六天，签到成功，开通碰一下，推送服务，查询账单，返回领奖，到桌面，银行卡抽奖，升级月利宝',
       rules: [
         {
           resetMatch: 'match',
@@ -410,30 +423,19 @@ export default defineGkdApp({
           activityIds:
             'com.alipay.mobile.nebulax.xriver.activity.XRiverActivity',
           anyMatches: [
-            'TextView[text="学知识领福利"] <n View + TextView[text="兑换成其他福利"] + TextView[clickable=false][visibleToUser=true]',
-            'TextView[text="确认要离开吗？"] < View - View > Image[clickable=false][visibleToUser=true]',
-            'TextView[text="立即攒下"] <n View + TextView[text.length=0][clickable=false][visibleToUser=true]',
-            'View >  TextView[text="兑换成其他福利"] + TextView[clickable=false][visibleToUser=true]',
-            'View > TextView[text="开启推送服务"] + @View[clickable=false][visibleToUser=true] > TextView[text.length=1]',
-            'View > TextView[text="签到成功"] +n TextView[text="去完成"] + TextView[text.length=0][clickable=false][visibleToUser=true]',
-            'View > View > @Image[clickable=false][visibleToUser=true] + TextView[text="邀你开通商家经营码"] +n TextView[text="去开通"]',
-            'View > View > @TextView[clickable=false][visibleToUser=true] + TextView[text="请选择你的收货地址"] + TextView[text*="未获取定位" || text*="无法查看附近店铺及服务"]',
-            'View > View > @TextView[text.length=1][clickable=false][visibleToUser=true] + * + Button[text="好的"]',
-            'View > View > View > @Image[clickable=false][visibleToUser=true] + TextView +n TextView[text="去了解"]',
-            'View > View > View > @Image[clickable=false][visibleToUser=true] + TextView[text^="用碰一下"] +n TextView[text="去申请"]',
             'View > View > View[text="红包区域"] > View[childCount=3] > @View[clickable=true][visibleToUser=true] > TextView[text^="开抢倒计时" && text$="结束"]',
-            'WebView > View > View > TextView[text^="抽奖机会1"] + TextView[clickable=false][visibleToUser=true]',
-            'View > @TextView[clickable=true][visibleToUser=true] - View > TextView[text*="次抽奖机会！"] + TextView[text="天天来天天抽，抽抽必中"]',
             'View > View > @TextView[text.length=0][clickable=true][visibleToUser=true] -2 View > TextView[text="财运红包"] + View + TextView[text="已发放至「我的奖励」"]',
             'View > View > @TextView[text.length=0][clickable=true][visibleToUser=true] - View > TextView[text="银行卡支付红包"] + View + TextView[text="已发放至「我的奖励」"]',
             'View > View > @TextView[text.length=0][clickable=true][visibleToUser=true] - View > TextView[text="立即翻倍"]',
-            'View > View > @TextView[text=""][clickable=false][visibleToUser=true] + View > TextView[text="立即翻倍"]', //261107，弹窗，立刻翻倍，
-            'View > @TextView[clickable=false][visibleToUser=true] - View > TextView[text*="次抽奖机会！"] + TextView[text="天天来天天抽，抽抽必中"]',
-            'View > View  > @TextView[text.length=1][clickable=false][visibleToUser=true][index=0] +n View > View > TextView[text="立即购买¥9.9"]', //9.9购收钱音箱
             'View > View > @TextView[clickable=true][visibleToUser=true] +2 View > TextView[text="完成得金币，可兑换消费红包当钱花"]', //金币暴涨
-            'View > @TextView[clickable=true][visibleToUser=true] - View > View > TextView[text="已发放至「我的奖励」"]', //获得财运红包
             'View > @TextView[clickable=true][visibleToUser=true] - View > View > View > View > View > TextView[text="已发放至「我的奖励」"]', //恭喜获得攒钱节专属福利，这个顺序必须低于上面的 获得财运红包
-            'View > @TextView[clickable=false][visibleToUser=true] - View > View > View >n TextView[text="已发放至「我的奖励」"]',
+            'View > @TextView[clickable=true][visibleToUser=true] - View > View > TextView[text="已发放至「我的奖励」"]', //获得财运红包
+            'View > @TextView[clickable=true][visibleToUser=true] - View > TextView[text*="次抽奖机会！"] + TextView[text="天天来天天抽，抽抽必中"]',
+            'Image < @View[visibleToUser=true] + View Button[text="同意协议并分期"][clickable=true][visibleToUser=true]',
+            '@TextView[text=""][clickable=true][visibleToUser=true] < View + Button[text="一键升级"]',
+            '@TextView[clickable=true][visibleToUser=true] - View > TextView[text="查看可升级产品"]',
+            '@TextView[clickable=true][visibleToUser=true] - View > TextView[text="体验金领取成功"] +n TextView[text="立即攒下"]',
+            'Image < @View[clickable=true][visibleToUser=true] + TextView + TextView[text="预约单次还"] + TextView[text="预约月月还"]', //261107，弹窗，还款预约，
           ],
         },
       ],

@@ -408,7 +408,7 @@ export default defineGkdApp({
     {
       key: 21,
       name: '弹窗NewPageMaskActivity，X掉1',
-      desc: '261102，fastQuery=false，clickable=true',
+      desc: '261107，fastQuery=false，clickable=true',
       rules: [
         {
           resetMatch: 'match',
@@ -419,6 +419,7 @@ export default defineGkdApp({
             'View > View > Image[text="webp"] + @TextView[clickable=true][visibleToUser=true] +n View > TextView[text="售后体验补偿券已到账"]', //261105，弹窗，售后体验补偿券已到账，X掉
             'View > View > Image[text="webp"] + @TextView[clickable=true][visibleToUser=true] +n View > TextView[text="立即使用"] + TextView[text="可在【我的优惠券】查看"]', //261105，弹窗，售后体验补偿券已到账，可在【我的优惠券】查看，X掉
             'TextView[text="先去逛逛"] <<n ViewGroup + ViewGroup > ImageView[clickable=true][visibleToUser=true]', //261104，弹窗，仅剩几件，先去逛逛 ，X掉
+            'View > View > @Button[text="关闭弹窗"][clickable=true][visibleToUser=true] + View > Button[text="查看订单详情"]', //261107，弹窗，下单完成后，无门槛券领取
           ],
         },
       ],
