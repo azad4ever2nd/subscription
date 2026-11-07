@@ -301,7 +301,7 @@ export default defineGkdApp({
     {
       key: 16,
       name: '弹窗，各种弹窗，有名字的按钮',
-      desc: '261104，fastQuery=false，添加 返回会场，邀请你，去抢购，位置权限，不感兴趣，添加到桌面首页，',
+      desc: '261107，fastQuery=false，添加 返回会场，邀请你，去抢购，位置权限，不感兴趣，添加到桌面首页，',
       rules: [
         {
           resetMatch: 'match',
@@ -361,6 +361,9 @@ export default defineGkdApp({
             'Dialog[text="恭喜获得遇财神支付红包"] > Button[text="关闭"][clickable=true][visibleToUser=true] - View >n View[childCount=2] > Button[text="继续抽奖"] + Button[text="去领取" || text="点我领取"][clickable=true][visibleToUser=true]',
             'Dialog[text="恭喜获得惊喜福利"] > @Button[text="关闭"][clickable=true][visibleToUser=true]',
             'Dialog > View > View >n View[childCount=1] > Image[text="fmt"][clickable=false][visibleToUser=true]', //双11天降消费券
+            '@Button[clickable=true][text="开心收下"] <<n View  + Button[clickable=true][visibleToUser=true][text="关闭"]',
+            'View > TextView[text*="恭喜获得"] + View > View > Button[text="开心收下"][clickable=true][visibleToUser=true]',
+            'View > View > TextView[text=""][clickable=false][visibleToUser=true] + View > TextView[text="开心收下"][clickable=false][visibleToUser=true]', //261107，弹窗，余额宝体验金
           ],
         },
       ],
@@ -398,7 +401,7 @@ export default defineGkdApp({
     {
       key: 18,
       name: '弹窗，各种弹窗，X掉2',
-      desc: '261031，fastQuery=false，添加 神券五六天，签到成功，开通碰一下，推送服务，查询账单，返回领奖，到桌面，银行卡抽奖，升级月利宝',
+      desc: '261107，fastQuery=false，添加 神券五六天，签到成功，开通碰一下，推送服务，查询账单，返回领奖，到桌面，银行卡抽奖，升级月利宝',
       rules: [
         {
           resetMatch: 'match',
@@ -424,6 +427,7 @@ export default defineGkdApp({
             'View > View > @TextView[text.length=0][clickable=true][visibleToUser=true] -2 View > TextView[text="财运红包"] + View + TextView[text="已发放至「我的奖励」"]',
             'View > View > @TextView[text.length=0][clickable=true][visibleToUser=true] - View > TextView[text="银行卡支付红包"] + View + TextView[text="已发放至「我的奖励」"]',
             'View > View > @TextView[text.length=0][clickable=true][visibleToUser=true] - View > TextView[text="立即翻倍"]',
+            'View > View > @TextView[text=""][clickable=false][visibleToUser=true] + View > TextView[text="立即翻倍"]', //261107，弹窗，立刻翻倍，
             'View > @TextView[clickable=false][visibleToUser=true] - View > TextView[text*="次抽奖机会！"] + TextView[text="天天来天天抽，抽抽必中"]',
             'View > View  > @TextView[text.length=1][clickable=false][visibleToUser=true][index=0] +n View > View > TextView[text="立即购买¥9.9"]', //9.9购收钱音箱
             'View > View > @TextView[clickable=true][visibleToUser=true] +2 View > TextView[text="完成得金币，可兑换消费红包当钱花"]', //金币暴涨
@@ -436,7 +440,7 @@ export default defineGkdApp({
     },
     {
       key: 19,
-      name: '中奖了，开心收下',
+      name: '卡包管理 勾选 优酷飞猪话费',
       desc: '261013，新旧版本对于checkbox处理不同，添加 卡包管理 优酷飞猪话费',
       rules: [
         {
@@ -445,8 +449,6 @@ export default defineGkdApp({
           activityIds:
             'com.alipay.mobile.nebulax.xriver.activity.XRiverActivity',
           anyMatches: [
-            '@Button[clickable=true][text="开心收下"] <<n View  + Button[clickable=true][visibleToUser=true][text="关闭"]',
-            'View > TextView[text*="恭喜获得"] + View > View > Button[text="开心收下"][clickable=true][visibleToUser=true]',
             'View[childCount=0] < @CheckBox[checked=false][visibleToUser=true] + View > View > TextView[text="优酷视频"]',
             'View[childCount=0] < @CheckBox[checked=false][visibleToUser=true] + View > View > TextView[text="满200元可用"] +2 TextView[text="话费满减券"]',
             'View[childCount=0] < @CheckBox[checked=false][visibleToUser=true] + View > View > TextView[text="飞猪旅行"]',

@@ -399,6 +399,25 @@ export default defineGkdApp({
     },
     {
       key: 22,
+      name: '弹窗，签到，去抽奖',
+      desc: '261107',
+      rules: [
+        {
+          actionDelay: 1000,
+          resetMatch: 'match',
+          activityIds: [
+            'com.unionpay.liteapp.app.UPLiteAppActivity1',
+            'com.unionpay.liteapp.app.UPLiteAppActivity2',
+            'com.unionpay.liteapp.app.UPLiteAppActivity3',
+            'com.unionpay.liteapp.app.UPLiteAppActivity4',
+          ],
+          matches:
+            'View > View > @Button[text="去抽奖"][clickable=true][visibleToUser=true] + TextView[clickable=false][visibleToUser=true]', //弹窗，签到，去抽奖，最后一个是X掉
+        },
+      ],
+    },
+    {
+      key: 23,
       name: '无界卡每月一次星巴克，去领取',
       desc: '260131',
       rules: [
@@ -412,7 +431,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 23,
+      key: 24,
       name: '加载失败，刷新',
       desc: '260813',
       rules: [

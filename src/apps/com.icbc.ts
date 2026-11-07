@@ -147,7 +147,7 @@ export default defineGkdApp({
     {
       key: 9,
       name: '各种中奖',
-      desc: '261029，添加 勾选，添加未中奖，数字藏品中奖',
+      desc: '261107，添加 勾选，添加未中奖，数字藏品中奖',
       rules: [
         {
           resetMatch: 'match',
@@ -158,6 +158,7 @@ export default defineGkdApp({
             'View > View > @Button[clickable=true][text="关闭"] + TextView[text="恭喜获得"]',
             'TextView[text^="不要灰心" || text="差一点就中奖了"] <n View + View > Image[text="关闭按钮"][clickable=false]',
             'Dialog > TextView[text*="日前领取" || text$="过期未领将失效"] + Button[text="立即领取"]',
+            'Dialog[id="cardGiftModel"] > Image[text="开心收下"][clickable=true][visibleToUser=true]', //261107，北京好物，数字卡片
             'Dialog > View > Button[text="完成"]',
             '[text="微信立减金" || text="支付宝红包"] + [text="立即领取"] + [text="关闭"]',
             'Dialog > View > View > TextView[text="很遗憾，未中奖"] + Image[text="关闭"][clickable=true][visibleToUser=true]',

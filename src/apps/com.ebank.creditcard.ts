@@ -149,5 +149,20 @@ export default defineGkdApp({
         },
       ],
     },
+    {
+      key: 11,
+      name: '弹窗，更新内容，暂不更新',
+      desc: '261107',
+      rules: [
+        {
+          resetMatch: 'match',
+          fastQuery: true,
+          forcedTime: 3000,
+          activityIds: '.loading.LoadingActivity',
+          matches:
+            'LinearLayout > TextView +(2,4) LinearLayout > @TextView[text="暂不更新"][vid="btn_dialog_update_no"][clickable=true][visibleToUser=true] + TextView[text="立即更新"][vid="btn_dialog_update_yes"]',
+        },
+      ],
+    },
   ],
 });

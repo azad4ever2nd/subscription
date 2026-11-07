@@ -640,7 +640,7 @@ export default defineGkdApp({
     {
       key: 42,
       name: '浏览任务完成，返回',
-      desc: '261011，添加新布局，添加权限弹窗，直播间ids',
+      desc: '261107，添加新布局，添加权限弹窗，直播间ids',
       rules: [
         {
           action: 'back',
@@ -655,6 +655,7 @@ export default defineGkdApp({
             '[id="android:id/message"][text*="权限"] <<n * + [id="android:id/buttonPanel"] [id="android:id/button2"][text="否"] + [id="android:id/button1"][text="是"]',
             'View > Image[text="gthEFTB6uRQ36UPWtwD"][clickable=true][visibleToUser=true] + Image[text="uYGtPZQreNFJUHiJFsH0akOlpQOFendaucAAAAASUVORK5CYII="]',
             'View > Image[text="gthEFTB6uRQ36UPWtwD"][visibleToUser=true]',
+            'View > Image[text="countdown-fulfilled-bg.f65a2ea"][visibleToUser=true] + Image',
             'View > Image[text="countdown-fulfilled-bg.f65a2ea"][visibleToUser=true]',
             '[text="Pyi3KQBzgJA1F+Xm7MrWYA0HQqTcq4GrAAAAAASUVORK5CYII="]',
           ],

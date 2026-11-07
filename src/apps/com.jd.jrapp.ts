@@ -158,5 +158,18 @@ export default defineGkdApp({
         },
       ],
     },
+    {
+      key: 12,
+      name: '弹窗，金豆领取成功，X掉',
+      desc: '261107',
+      rules: [
+        {
+          resetMatch: 'match',
+          activityIds: '.bm.jrv8.JRCustomDyPageActivity',
+          matches:
+            'ViewGroup > ViewGroup > ImageView + TextView[text$="京豆领取成功"] + ImageView[clickable=true][visibleToUser=true]',
+        },
+      ],
+    },
   ],
 });

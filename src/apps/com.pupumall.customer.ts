@@ -153,5 +153,20 @@ export default defineGkdApp({
         },
       ],
     },
+
+    {
+      key: 11,
+      name: '勾选 我已阅读并同意',
+      desc: '261107',
+      rules: [
+        {
+          resetMatch: 'match',
+          actionMaximum: 1,
+          activityIds: 'com.pupumall.webview.page.PuPuWebViewActivity',
+          matches:
+            'View > View > @TextView[text=""][clickable=true][visibleToUser=true] + TextView[text="我已阅读并同意"] + View[desc="《朴朴礼品卡章程》"]',
+        },
+      ],
+    },
   ],
 });
