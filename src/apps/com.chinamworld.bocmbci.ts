@@ -97,5 +97,19 @@ export default defineGkdApp({
         },
       ],
     },
+    {
+      key: 7,
+      name: '弹窗，当前不在有效抽奖时间内，确定',
+      desc: '261108',
+      rules: [
+        {
+          resetMatch: 'match',
+          activityIds: 'com.boc.android.foundation.h5.WebViewContainerActivity',
+          anyMatches: [
+            'View > View[text^="您当前不在有效抽奖时间内"] + View > @View[clickable=true][visibleToUser=true] > TextView[text="确定"][clickable=false][visibleToUser=true]', //261108，弹窗，不在有效抽奖时间内，确定
+          ],
+        },
+      ],
+    },
   ],
 });

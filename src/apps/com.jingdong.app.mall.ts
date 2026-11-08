@@ -236,23 +236,11 @@ export default defineGkdApp({
         },
       ],
     },
+
     {
       key: 16,
-      name: '去开启通知，X掉',
-      desc: '260726',
-      rules: [
-        {
-          resetMatch: 'match',
-          activityIds: 'com.jingdong.app.mall.MainFrameActivity',
-          matches:
-            'Button[text="去开启通知"] <n LinearLayout + ImageView[desc="关闭"]',
-        },
-      ],
-    },
-    {
-      key: 17,
       name: '开启通知（物流）',
-      desc: '260726,添加物流，促销，消息通知',
+      desc: '260726，fastQuery=true，添加物流，促销，消息通知，',
       rules: [
         {
           resetMatch: 'match',
@@ -262,6 +250,21 @@ export default defineGkdApp({
             '@[id="com.jd.lib.message.feature:id/h7"] > [id="com.jd.lib.message.feature:id/h6"]',
             'Button[text="去开启通知"] <n LinearLayout + ImageView[desc="关闭"]',
             '[text*="开启消息通知"] <<n * + [desc="关闭"]',
+          ],
+        },
+      ],
+    },
+    {
+      key: 17,
+      name: '去开启通知，X掉',
+      desc: '260726，fastQuery=false',
+      rules: [
+        {
+          resetMatch: 'match',
+          activityIds: 'com.jingdong.app.mall.MainFrameActivity',
+          anyMatches: [
+            'Button[text="去开启通知"] <<n LinearLayout + ImageView[desc="关闭"][clickable=true][visibleToUser=true]', //261108，弹窗，开启消息通知，获取物流进度\n商品降价、优惠福利信息，X掉
+            'Button[text="去开启通知"] <n LinearLayout + ImageView[desc="关闭"]',
           ],
         },
       ],

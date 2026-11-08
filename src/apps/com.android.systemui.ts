@@ -73,5 +73,20 @@ export default defineGkdApp({
         },
       ],
     },
+    {
+      key: 6,
+      name: '通知，TOdo，完成',
+      desc: '261108',
+      rules: [
+        {
+          resetMatch: 'match',
+          actionDelay: 3000,
+          actionCd: 2000,
+          activityIds: 'com.tencent.mm.ui.LauncherUI',
+          matches:
+            'FrameLayout[vid="status_bar_latest_event_content"][clickable=false][visibleToUser=true] > ImageView[vid="app_icon"][desc="To Do"] + LinearLayout > FrameLayout > LinearLayout[vid="actions"] > @TextView[text="完成"][clickable=true][visibleToUser=true] + TextView[text="推迟"]',
+        },
+      ],
+    },
   ],
 });

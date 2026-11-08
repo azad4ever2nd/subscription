@@ -1793,6 +1793,7 @@ export default defineGkdApp({
             'TextView[text^="确认使用1金币"]  <<n  LinearLayout + LinearLayout >n Button[text="确认兑换"][vid="mm_alert_ok_btn"]',
             '[text="确认使用1金币兑换吗？"] <<n * + * >n [vid="mm_alert_ok_btn"][text="确认兑换"]',
             '[text="立即收下"] + @[text="今日24点前可领"]',
+            'View > TextView[text="微信提现免费券"] +(3,4) TextView[text="过期提醒我"][clickable=false][visibleToUser=true]', //261108，从充值里移过来，
             '[text="已收下1"] + [text="7天后可再参与"] <<n * + * >n [desc="关闭-bak"] ',
           ],
         },
