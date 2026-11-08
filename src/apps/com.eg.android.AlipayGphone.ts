@@ -102,7 +102,7 @@ export default defineGkdApp({
             'TextView[text="是否放弃本次付款？"] <<n FrameLayout +n FrameLayout >n @FrameLayout[clickable=true][visibleToUser=true] > TextView[text="放弃"]', //261103
             'TextView[text="是否放弃本次付款？"][id="com.alipay.mobile.antui:id/message"] <<n LinearLayout + LinearLayout > @Button[id="com.alipay.mobile.antui:id/btn_cancel"][text="放弃"][clickable=true][visibleToUser=true] + Button[text="继续付款"][id="com.alipay.mobile.antui:id/btn_ensure"]',
             'TextView[text*="是否放弃付款"][id="com.alipay.mobile.antui:id/message"] <<n LinearLayout  + LinearLayout > @Button[text="放弃"][id="com.alipay.mobile.antui:id/btn_cancel"][clickable=true][visibleToUser=true] + Button[text="继续付款"][id="com.alipay.mobile.antui:id/btn_ensure"]',
-            'FrameLayout > FrameLayout > TextView[text="完成"][clickable=false][visibleToUser=true]', //261107，支付完成，完成
+            //'FrameLayout > FrameLayout > TextView[text="完成"][clickable=false][visibleToUser=true]', //261107，支付完成，完成，不开，避免一些活动跳过
           ],
         },
       ],
