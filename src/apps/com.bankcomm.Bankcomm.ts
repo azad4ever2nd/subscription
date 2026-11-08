@@ -665,15 +665,17 @@ export default defineGkdApp({
     {
       key: 43,
       name: '直播间限时福袋',
-      desc: '260717',
+      desc: '261108',
       rules: [
         {
           resetMatch: 'match',
           actionMaximum: 1,
           activityIds:
             'com.bankcomm.module.biz.bcmvideo.BCMVerticalVideoActivity',
-          matches:
+          anyMatches: [
+            'WebView[text="视频直播"] > View > View > View > Image[text="333_1793956497689"][clickable=true][visibleToUser=true]', //261108，直播间福袋
             'WebView > View > View > @View[clickable=false][visibleToUser=true] > Image[text="0MrX0eS4YNgAAAABJRU5ErkJggg=="] + Image[text^="fudai"]',
+          ],
         },
       ],
     },

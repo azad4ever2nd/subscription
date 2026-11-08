@@ -93,13 +93,15 @@ export default defineGkdApp({
     {
       key: 7,
       name: '弹窗，邀友办卡，X掉',
-      desc: '260831',
+      desc: '261108',
       rules: [
         {
           resetMatch: 'match',
           activityIds: 'com.jd.jrapp.bm.common.web.ui.WebActivity',
-          matches:
+          anyMatches: [
+            'View[childCount=2] > @Image[text="关闭"][clickable=false][visibleToUser=true] + View > Image', //261108，弹窗，话费充值立减50，
             'View > @Image[text="关闭"][clickable=false][visibleToUser=true] + View > Image[text="045b26c3268cb28a.png!q70"]',
+          ],
         },
       ],
     },

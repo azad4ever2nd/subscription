@@ -137,6 +137,19 @@ export default defineGkdApp({
     },
     {
       key: 10,
+      name: '加载失败，返回',
+      desc: '261108',
+      rules: [
+        {
+          resetMatch: 'match',
+          activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
+          matches:
+            'WebView[text="加载失败"] > Image + TextView + Button[text="返回"][clickable=true][visibleToUser=true]', //261108，加载失败，返回，多半是网络问题
+        },
+      ],
+    },
+    {
+      key: 11,
       name: '弹窗，更新，暂不更新',
       desc: '261101',
       rules: [
@@ -150,7 +163,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 11,
+      key: 12,
       name: '弹窗，更新内容，暂不更新',
       desc: '261107',
       rules: [

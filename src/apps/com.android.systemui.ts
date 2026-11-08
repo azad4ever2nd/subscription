@@ -59,5 +59,19 @@ export default defineGkdApp({
         },
       ],
     },
+    {
+      key: 5,
+      name: '通知，To Do，点击',
+      desc: '261107',
+      rules: [
+        {
+          resetMatch: 'match',
+          actionCd: 5000,
+          activityIds: 'com.miui.home.launcher.Launcher',
+          matches:
+            '@FrameLayout[vid="status_bar_latest_event_content"][clickable=false][visibleToUser=true] > ImageView[vid="app_icon"][desc="To Do"] + LinearLayout[vid="notification_main_column"]',
+        },
+      ],
+    },
   ],
 });

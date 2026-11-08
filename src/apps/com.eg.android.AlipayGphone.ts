@@ -957,6 +957,7 @@ export default defineGkdApp({
             'Dialog > View > View > Button[text="关闭"][clickable=true][visibleToUser=true]',
             'TextView[text="去下单"] <n View + Button[clickable=true][visibleToUser=true][text="关闭"]',
             'Dialog > View > View > Button[text="关闭"] - View > View > TextView[text="继续领"]',
+            //'Dialog > View > View > @Button[clickable=true][visibleToUser=true] - View > View > TextView[text="继续领"]',
             'View > View > TextView[text^="已连签" && text$="天"] +n TextView[text="提醒我领积分"] + Image[clickable=false][visibleToUser=true][index=parent.childCount.minus(1)]',
           ],
         },

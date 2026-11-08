@@ -766,7 +766,7 @@ export default defineGkdApp({
     {
       key: 39,
       name: '湘约，1元微信立减金，立即领取',
-      desc: '261106，添加内蒙古',
+      desc: '261108，添加 返回手机银行（工行），内蒙古',
       rules: [
         {
           resetMatch: 'match',
@@ -790,6 +790,8 @@ export default defineGkdApp({
             'WebView[text*="湘约"] > View > View > TextView[text="￥1"] + TextView[text="微信立减金"] + View > TextView[text="立即领取"][clickable=true][visibleToUser=true]',
             'WebView[text*="内蒙古"] > View > View > TextView[text="￥1"] + TextView[text="微信立减金"] + View > TextView[text="立即领取"][clickable=true][visibleToUser=true]',
             'WebView > View > View > View > TextView[id="luckydrawBtn_2XVg3mEI"][clickable=true][visibleToUser=true]', //261106，工行宁波，数智感恩月，惠客暖心行
+            'WebView > TextView[text="请您前往“微信-卡包”查看领券结果"] + Button[text="返回手机银行"][clickable=true][visibleToUser=true]', //261108，工行领取立减后 返回 手机银行
+            'WebView > Button[text="返回手机银行"][clickable=true][visibleToUser=true]', //261108，工行领取立减后 返回 手机银行
           ],
         },
       ],
@@ -1972,8 +1974,8 @@ export default defineGkdApp({
     },
     {
       key: 80,
-      name: '不再关注',
-      desc: 'D，260220',
+      name: '弹窗，不再关注 ，不再关注',
+      desc: 'D，261108',
       rules: [
         {
           resetMatch: 'match',
@@ -1984,8 +1986,8 @@ export default defineGkdApp({
             'com.tencent.mm.plugin.profile.ui.ContactInfoUI',
           ],
           anyMatches: [
-            '[text^="不再关注" && text$="你将不再收到其下发的消息"] <<n * + * [vid="mm_alert_ok_btn"]',
-            '*[childCount=1] > [text="不再关注"]',
+            'TextView[text^="不再关注" && text$="你将不再收到其下发的消息"] <<(4,7) LinearLayout + LinearLayout > LinearLayout > Button[text="不再关注"][vid="mm_alert_ok_btn"][clickable=true][visibleToUser=true]', //261108，弹窗，不再关注，不再关注
+            'FrameLayout > ListView[childCount=1] > TextView[text="不再关注"][clickable=true][visibleToUser=true]', //261108，右键 不再关注
           ],
         },
       ],

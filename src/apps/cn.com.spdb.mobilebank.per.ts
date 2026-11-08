@@ -131,8 +131,10 @@ export default defineGkdApp({
         {
           resetMatch: 'match',
           activityIds: '.activity.web.stage.StageCommonWebActivity',
-          matches:
+          anyMatches: [
             'View > View > TextView[text="稍后查看"] + TextView[text="立即前往"][clickable=true][visibleToUser=true]',
+            'View > View > TextView[text="稍后查看"] + TextView[text="立即前往"][clickable=true][visibleToUser=false]', //261108，弹窗，按钮不可见
+          ],
         },
       ],
     },

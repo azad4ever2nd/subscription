@@ -93,6 +93,7 @@ export default defineGkdApp({
           actionCd: 700,
           activityIds: [
             'com.unionpay.activity.react.UPActivityReactNative',
+            'com.unionpay.liteapp.app.UPLiteAppActivity0',
             'com.unionpay.liteapp.app.UPLiteAppActivity1',
             'com.unionpay.liteapp.app.UPLiteAppActivity2',
             'com.unionpay.liteapp.app.UPLiteAppActivity3',
@@ -117,6 +118,7 @@ export default defineGkdApp({
           matches: ['[text!*="0"][text$="次 抽奖机会"]'],
           resetMatch: 'match',
           activityIds: [
+            'com.unionpay.liteapp.app.UPLiteAppActivity0',
             'com.unionpay.liteapp.app.UPLiteAppActivity1',
             'com.unionpay.liteapp.app.UPLiteAppActivity2',
             'com.unionpay.liteapp.app.UPLiteAppActivity3',
@@ -134,6 +136,7 @@ export default defineGkdApp({
           resetMatch: 'match',
           activityIds: [
             'com.unionpay.activity.react.UPActivityReactNative',
+            'com.unionpay.liteapp.app.UPLiteAppActivity0',
             'com.unionpay.liteapp.app.UPLiteAppActivity1',
             'com.unionpay.liteapp.app.UPLiteAppActivity2',
             'com.unionpay.liteapp.app.UPLiteAppActivity3',
@@ -227,6 +230,7 @@ export default defineGkdApp({
         {
           resetMatch: 'match',
           activityIds: [
+            'com.unionpay.liteapp.app.UPLiteAppActivity0',
             'com.unionpay.liteapp.app.UPLiteAppActivity1',
             'com.unionpay.liteapp.app.UPLiteAppActivity2',
             'com.unionpay.liteapp.app.UPLiteAppActivity3',
@@ -245,6 +249,7 @@ export default defineGkdApp({
           resetMatch: 'match',
           actionCd: 0,
           activityIds: [
+            'com.unionpay.liteapp.app.UPLiteAppActivity0',
             'com.unionpay.liteapp.app.UPLiteAppActivity1',
             'com.unionpay.liteapp.app.UPLiteAppActivity2',
             'com.unionpay.liteapp.app.UPLiteAppActivity3',
@@ -268,6 +273,7 @@ export default defineGkdApp({
           resetMatch: 'match',
           activityIds: [
             'com.unionpay.activity.react.UPActivityReactNative',
+            'com.unionpay.liteapp.app.UPLiteAppActivity0',
             'com.unionpay.liteapp.app.UPLiteAppActivity1',
             'com.unionpay.liteapp.app.UPLiteAppActivity2',
             'com.unionpay.liteapp.app.UPLiteAppActivity3',
@@ -287,6 +293,7 @@ export default defineGkdApp({
           resetMatch: 'match',
           actionCd: 0,
           activityIds: [
+            'com.unionpay.liteapp.app.UPLiteAppActivity0',
             'com.unionpay.liteapp.app.UPLiteAppActivity1',
             'com.unionpay.liteapp.app.UPLiteAppActivity2',
             'com.unionpay.liteapp.app.UPLiteAppActivity3',
@@ -308,6 +315,7 @@ export default defineGkdApp({
         {
           resetMatch: 'match',
           activityIds: [
+            'com.unionpay.liteapp.app.UPLiteAppActivity0',
             'com.unionpay.liteapp.app.UPLiteAppActivity1',
             'com.unionpay.liteapp.app.UPLiteAppActivity2',
             'com.unionpay.liteapp.app.UPLiteAppActivity3',
@@ -327,6 +335,7 @@ export default defineGkdApp({
         {
           resetMatch: 'match',
           activityIds: [
+            'com.unionpay.liteapp.app.UPLiteAppActivity0',
             'com.unionpay.liteapp.app.UPLiteAppActivity1',
             'com.unionpay.liteapp.app.UPLiteAppActivity2',
             'com.unionpay.liteapp.app.UPLiteAppActivity3',
@@ -347,6 +356,7 @@ export default defineGkdApp({
           actionMaximum: 2,
           resetMatch: 'match',
           activityIds: [
+            'com.unionpay.liteapp.app.UPLiteAppActivity0',
             'com.unionpay.liteapp.app.UPLiteAppActivity1',
             'com.unionpay.liteapp.app.UPLiteAppActivity2',
             'com.unionpay.liteapp.app.UPLiteAppActivity3',
@@ -359,19 +369,22 @@ export default defineGkdApp({
     {
       key: 20,
       name: '弹窗，会员惊喜开学季',
-      desc: '260904',
+      desc: '261108，添加 U惠湖北弹窗',
       rules: [
         {
           resetMatch: 'match',
           action: 'clickCenter',
           activityIds: [
+            'com.unionpay.liteapp.app.UPLiteAppActivity0',
             'com.unionpay.liteapp.app.UPLiteAppActivity1',
             'com.unionpay.liteapp.app.UPLiteAppActivity2',
             'com.unionpay.liteapp.app.UPLiteAppActivity3',
             'com.unionpay.liteapp.app.UPLiteAppActivity4',
           ],
-          matches:
+          anyMatches: [
+            'View[id="D3342588-D35A-4ABA-8A58-CB9C46471BA0--1794092452718"] + View[id="DB200B69-C76E-4175-B9A0-1C7F2DFA8F58--1794092452718"] > View > Image[clickable=true][visibleToUser=true]', //261108，U惠湖北 ，滨寿司弹窗
             '@Image[clickable=true][visibleToUser=true] <<n View + View[id="1CEC4277-380E-42E3-BA36-C07721DB1887--1788439106611"]',
+          ],
         },
       ],
     },
@@ -385,6 +398,7 @@ export default defineGkdApp({
           actionDelay: 3000,
           actionCd: 2000,
           activityIds: [
+            'com.unionpay.liteapp.app.UPLiteAppActivity0',
             'com.unionpay.liteapp.app.UPLiteAppActivity1',
             'com.unionpay.liteapp.app.UPLiteAppActivity2',
             'com.unionpay.liteapp.app.UPLiteAppActivity3',
@@ -406,6 +420,7 @@ export default defineGkdApp({
           actionDelay: 1000,
           resetMatch: 'match',
           activityIds: [
+            'com.unionpay.liteapp.app.UPLiteAppActivity0',
             'com.unionpay.liteapp.app.UPLiteAppActivity1',
             'com.unionpay.liteapp.app.UPLiteAppActivity2',
             'com.unionpay.liteapp.app.UPLiteAppActivity3',
