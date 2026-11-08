@@ -75,7 +75,7 @@ export default defineGkdApp({
     },
     {
       key: 6,
-      name: '通知，TOdo，完成',
+      name: '通知，To do，完成',
       desc: '261108',
       rules: [
         {
