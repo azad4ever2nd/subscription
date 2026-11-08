@@ -387,6 +387,7 @@ export default defineGkdApp({
       rules: [
         {
           resetMatch: 'match',
+          actionCd: 15000, //延长冷却时间，避免长期打开
           fastQuery: true,
           activityIds: 'com.qq.e.ads.PortraitADActivity',
           matches:
