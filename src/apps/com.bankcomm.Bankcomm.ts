@@ -639,6 +639,20 @@ export default defineGkdApp({
     },
     {
       key: 42,
+      name: '生活缴费，勾选 我已阅读并同意',
+      desc: '261109',
+      rules: [
+        {
+          resetMatch: 'match',
+          actionCd: 3000,
+          activityIds: 'com.bankcomm.module.biz.webcontainer.BCMHtml5Activity',
+          matches:
+            'WebView[text="缴费信息"] > View > TextView[text="未勾选我已阅读并同意多选框"][clickable=true][visibleToUser=true]', //261109，生活缴费，勾选同意
+        },
+      ],
+    },
+    {
+      key: 43,
       name: '浏览任务完成，返回',
       desc: '261107，添加新布局，添加权限弹窗，直播间ids',
       rules: [
@@ -663,7 +677,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 43,
+      key: 44,
       name: '直播间限时福袋',
       desc: '261108',
       rules: [
@@ -680,7 +694,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 44,
+      key: 45,
       name: '系统定位权限未开启,暂不开启',
       desc: '251207,',
       rules: [
@@ -695,7 +709,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 45,
+      key: 46,
       name: '领券中心，1分购，外面等',
       desc: '2600508，可以指定抢什么券，朴朴，移动，联通，美团，闪购，',
       rules: [
@@ -710,7 +724,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 46,
+      key: 47,
       name: '领券中心，1分购，里面等，立即抢购',
       desc: '260508',
       rules: [
@@ -723,7 +737,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 47,
+      key: 48,
       name: '领券中心，1分购，达到限购次数，返回',
       desc: '260327',
       rules: [
@@ -737,7 +751,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 48,
+      key: 49,
       name: '领券中心，1分购，里面等2',
       desc: '260608，不分品种，无actionMaximum限制',
       rules: [

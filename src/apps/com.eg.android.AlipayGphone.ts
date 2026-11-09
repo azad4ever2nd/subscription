@@ -437,6 +437,7 @@ export default defineGkdApp({
             '@TextView[clickable=true][visibleToUser=true] - View > TextView[text="查看可升级产品"]',
             '@TextView[clickable=true][visibleToUser=true] - View > TextView[text="体验金领取成功"] +n TextView[text="立即攒下"]',
             'Image < @View[clickable=true][visibleToUser=true] + TextView + TextView[text="预约单次还"] + TextView[text="预约月月还"]', //261107，弹窗，还款预约，
+            '@Image[text=""][clickable=true][visibleToUser=true] < View + View > View > TextView[text^="转入余额宝"] +n View > TextView[text="立即转入"]', //261109，弹窗，转入余额宝，X掉
           ],
         },
       ],

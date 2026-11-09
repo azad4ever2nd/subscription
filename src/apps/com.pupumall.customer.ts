@@ -30,7 +30,7 @@ export default defineGkdApp({
           resetMatch: 'match',
           anyMatches: [
             'ViewGroup > TextView[text="尚未开启系统通知"] +(3,4) TextView[vid="btn_close"][text="跳过"][clickable=true][visibleToUser=true]',
-            'ViewGroup > ImageView[vid="iv_ad"] + ImageView[vid="iv_close"][clickable=true][visibleToUser=true]',
+            'ViewGroup > ImageView[vid="iv_ad"] + ImageView[vid="iv_close"][clickable=true][visibleToUser=true]', //261109，弹窗，广告，X掉
             '[vid="iv_ad"] + [vid="iv_close"]',
             '[id="app"] [text^="此图片未加标签"]',
             '[id="J-webglCanvas"] - View >2 Image',

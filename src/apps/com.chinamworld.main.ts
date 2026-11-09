@@ -384,6 +384,8 @@ export default defineGkdApp({
       rules: [
         {
           resetMatch: 'match',
+          actionMaximum: 1,
+          actionCd: 4000,
           activityIds:
             'com.nantian.iBank.ui.activity.container.ProgramSingleWindowActivity',
           excludeMatches:
@@ -401,6 +403,7 @@ export default defineGkdApp({
       rules: [
         {
           resetMatch: 'match',
+          actionCd: 3000,
           activityIds:
             'com.nantian.iBank.ui.activity.container.ProgramSingleWindowActivity',
           anyMatches: [
@@ -474,6 +477,7 @@ export default defineGkdApp({
       rules: [
         {
           resetMatch: 'match',
+          actionCd: 3000,
           activityIds:
             'com.nantian.iBank.ui.activity.container.ProgramSingleWindowActivity',
           matches:
@@ -488,7 +492,7 @@ export default defineGkdApp({
       rules: [
         {
           resetMatch: 'match',
-          actionCd: 2000,
+          actionCd: 5000,
           activityIds:
             'com.nantian.iBank.ui.activity.container.ProgramSingleWindowActivity',
           matches:

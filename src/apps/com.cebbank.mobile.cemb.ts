@@ -243,7 +243,7 @@ export default defineGkdApp({
     {
       key: 15,
       name: '弹窗，X掉1',
-      desc: '251105',
+      desc: '251109',
       rules: [
         {
           forcedTime: 3000,
@@ -257,6 +257,7 @@ export default defineGkdApp({
             'View > View > TextView[text="本次兑换消耗5知豆，是否兑换？"] + TextView[text="取消"] + TextView[text="是"][clickable=true][visibleToUser=true]', //261105，弹窗，金知了社区，兑换抽奖机会，是
             'WebView[text="光大银行金知了社区"] > View > View > View > TextView[text="返回去抽奖"][clickable=true][visibleToUser=true]', //261105，弹窗，兑换抽奖机会，返回去抽奖
             'TextView[text.length=1] < @View[clickable=true][visibleToUser=true] < View + View[id="compntWinningResult1"] > View > TextView[text="差一点就中奖啦"] + TextView[text="继续抽奖"]', //261105，弹窗，金知了社区，抽奖，未中，X掉
+            'TextView[text$="金币"] < View + TextView[text=""][clickable=true][visibleToUser=true] + TextView[text=""][clickable=true][visibleToUser=true]', //261109，弹窗，金币抽奖，中了金币
           ],
           activityIds:
             'com.cebbank.mobile.cemb.ui.activity.mobilePayment.MobilePaymentWebActivity',
