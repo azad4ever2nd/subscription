@@ -377,19 +377,19 @@ export default defineGkdApp({
     },
     {
       key: 22,
-      name: '分享返回微信',
-      desc: '',
+      name: '弹窗，公众号长按微信二维码，菜单，工行服务',
+      desc: '261109',
       rules: [
         {
           resetMatch: 'match',
           fastQuery: true,
-          activityIds: 'com.tencent.mm.ui.transmit.SendAppMessageWrapperUI',
+          activityIds:
+            '.plugin.brandservice.ui.timeline.preload.ui.TmplWebViewMMUI',
           matches:
-            '[vid="mm_alert_ok_btn"][text="留在微信"] -2 [text^="返回"][vid="mm_alert_cancel_btn"]',
+            '@LinearLayout[clickable=false][visibleToUser=true] > TextView[text="前往图中包含的小程序"] + FrameLayout > LinearLayout[childCount=3] > ImageView + TextView[text="工行服务"]', //261109，公众号中微信二维码长按，工行服务
         },
       ],
     },
-
     {
       key: 23,
       name: 'openim字样的联系人或群，点击',
@@ -406,20 +406,6 @@ export default defineGkdApp({
     },
     {
       key: 24,
-      name: '对方还不是你的朋友，点击',
-      desc: '261012',
-      rules: [
-        {
-          resetMatch: 'match',
-          activityIds: '.ui.LauncherUI',
-          actionCd: 2500,
-          matches:
-            'RelativeLayout > LinearLayout > LinearLayout > LinearLayout[desc="提示,对方还不是你的朋友"][clickable=true][visibleToUser=true]',
-        },
-      ],
-    },
-    {
-      key: 25,
       name: '图片，再次保存2',
       desc: '261106，添加 跳工行服务',
       rules: [
@@ -434,6 +420,23 @@ export default defineGkdApp({
         },
       ],
     },
+    {
+      key: 25,
+      name: '对方还不是你的朋友，点击',
+      desc: '261012',
+      rules: [
+        {
+          resetMatch: 'match',
+          activityIds: '.ui.LauncherUI',
+          //actionCd: 2500,
+          anyMatches: [
+            'RelativeLayout > LinearLayout > LinearLayout > LinearLayout[desc="提示,对方还不是你的朋友"][clickable=true][visibleToUser=true]',
+            'TextView[text="保存图片"] <n LinearLayout < RecyclerView +n LinearLayout @LinearLayout[clickable=true][visibleToUser=true] TextView[text="工行服务"] + TextView[text="小程序码"]', //261106，长按，跳工行服务
+          ],
+        },
+      ],
+    },
+
     {
       key: 26,
       name: '不显示该聊天，不显示',
@@ -2045,6 +2048,20 @@ export default defineGkdApp({
           activityIds: '.chatroom.ui.ChatroomInfoUI',
           matches:
             'LinearLayout > RelativeLayout > TextView[text="折叠聊天的消息不再提醒，可在聊天列表下滑找到「折叠的聊天」"] + * + Button[text="我知道了"][clickable=true][visibleToUser=true]', //261109，折叠聊天的消息不再提醒，我知道了
+        },
+      ],
+    },
+    {
+      key: 85,
+      name: '分享返回微信',
+      desc: '',
+      rules: [
+        {
+          resetMatch: 'match',
+          fastQuery: true,
+          activityIds: 'com.tencent.mm.ui.transmit.SendAppMessageWrapperUI',
+          matches:
+            '[vid="mm_alert_ok_btn"][text="留在微信"] -2 [text^="返回"][vid="mm_alert_cancel_btn"]',
         },
       ],
     },
