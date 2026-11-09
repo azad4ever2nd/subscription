@@ -2041,7 +2041,7 @@ export default defineGkdApp({
         {
           resetMatch: 'match',
           fastQuery: true,
-          ationCd: 2000,
+          actionCd: 2000,
           activityIds: '.chatroom.ui.ChatroomInfoUI',
           matches:
             'LinearLayout > RelativeLayout > TextView[text="折叠聊天的消息不再提醒，可在聊天列表下滑找到「折叠的聊天」"] + * + Button[text="我知道了"][clickable=true][visibleToUser=true]', //261109，折叠聊天的消息不再提醒，我知道了
