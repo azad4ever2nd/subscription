@@ -437,7 +437,7 @@ export default defineGkdApp({
     },
     {
       key: 23,
-      name: '占位23，弹窗，因通知关闭，无法接收功能消息，拒绝接收',
+      name: '弹窗，因通知关闭，无法接收功能消息，拒绝接收',
       desc: '261109',
       rules: [
         {

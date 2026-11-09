@@ -13,7 +13,7 @@ export default defineGkdApp({
           resetMatch: 'match',
           matchDelay: 1000,
           actionCd: 2000,
-          forcedTime: 3500,
+          forcedTime: 3000,
           activityIds: '.CaptivePortalLoginActivity',
           excludeMatches:
             'View[text*="认证成功" || text^="账号已登录"][text!*="请点击登录完成认证"]',
@@ -33,7 +33,7 @@ export default defineGkdApp({
           resetMatch: 'match',
           matchDelay: 800,
           actionCd: 2000,
-          forcedTime: 3500,
+          forcedTime: 2000,
           activityIds: '.CaptivePortalLoginActivity',
           matches:
             'CheckBox[checked=true] < View + Button[text*="连接上网"][clickable=true][visibleToUser=true]',
