@@ -469,6 +469,20 @@ export default defineGkdApp({
     },
     {
       key: 30,
+      name: '现金管理类产品，确认购买',
+      desc: '261109',
+      rules: [
+        {
+          resetMatch: 'match',
+          activityIds:
+            'com.nantian.iBank.ui.activity.container.ProgramSingleWindowActivity',
+          matches:
+            'TextView[text*="建信理财龙宝现金管理"] +3 View > View[id="numKeyboard"] > View > TextView[text.length>=4] <<4 View +(10,12) View > TextView[text="确认购买"][clickable=true][visibleToUser=true]', //261109，现金管理类产品，确认购买
+        },
+      ],
+    },
+    {
+      key: 31,
       name: '返回上一级菜单，完成',
       desc: '261104',
       rules: [

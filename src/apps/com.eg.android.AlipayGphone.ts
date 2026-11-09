@@ -372,7 +372,7 @@ export default defineGkdApp({
     {
       key: 17,
       name: '弹窗，各种弹窗，X掉1',
-      desc: '261107，fastQuery=false，clickable=false，添加 神券五六天，签到成功，开通碰一下，推送服务，查询账单，返回领奖，到桌面，银行卡抽奖，升级月利宝',
+      desc: '261109，fastQuery=false，clickable=false，添加 神券五六天，签到成功，开通碰一下，推送服务，查询账单，返回领奖，到桌面，银行卡抽奖，升级月利宝',
       rules: [
         {
           resetMatch: 'match',
@@ -388,6 +388,7 @@ export default defineGkdApp({
             'View > View > @TextView[text.length=1][clickable=false][visibleToUser=true] + * + Button[text="好的"]',
             'View > View > @TextView[clickable=false][visibleToUser=true] + TextView[text="请选择你的收货地址"] + TextView[text*="未获取定位" || text*="无法查看附近店铺及服务"]',
             'View > View > @Image[clickable=false][visibleToUser=true] + TextView[text="邀你开通商家经营码"] +n TextView[text="去开通"]',
+            'View > View > TextView[text="开启系统通知权限"] + TextView + Image[text=""][clickable=false][visibleToUser=true]', //261109，弹窗，开启系统通知权限，不错过水电燃缴费等重要通知，X掉
             'View > View  > @TextView[text.length=1][clickable=false][visibleToUser=true][index=0] +n View > View > TextView[text="立即购买¥9.9"]', //9.9购收钱音箱
             'View > TextView[text="签到成功"] +n TextView[text="去完成"] + TextView[text.length=0][clickable=false][visibleToUser=true]',
             'View > TextView[text="开启推送服务"] + @View[clickable=false][visibleToUser=true] > TextView[text.length=1]',
@@ -721,7 +722,7 @@ export default defineGkdApp({
     {
       key: 33,
       name: '小程序，各种弹窗，X掉1',
-      desc: '261102，fastquery=false,clickable=false,添加 排除误点去使用，明天不断签提醒，签到提醒，做任务领幸运星，领取奖励，排除红包卡券误点，闪购，超级吃货卡体验版，闪购签到，闪购小程序，添加到首页，添加 生活缴费',
+      desc: '261109，fastquery=false,clickable=false,添加 排除误点去使用，明天不断签提醒，签到提醒，做任务领幸运星，领取奖励，排除红包卡券误点，闪购，超级吃货卡体验版，闪购签到，闪购小程序，添加到首页，添加 生活缴费',
       rules: [
         {
           resetMatch: 'match',
@@ -751,6 +752,7 @@ export default defineGkdApp({
             '@TextView[clickable=false][visibleToUser=true] - View >n  TextView[text="下次再来" || text="继续攒星"]',
             '@TextView[clickable=false][visibleToUser=true] < View  + TextView + View > View > View > View > TextView[text="去使用"]',
             'View[childCount=3] > View[childCount=3] > @TextView[clickable=false][visibleToUser=true] -2 View  >n TextView[text="去使用"]', //新版去使用，下方多了一个窗口
+            'View > View > @TextView[id="p-2021006118622831-ors_14"][clickable=false][visibleToUser=true] - View >n TextView[text="去使用"]', //261109，弹窗，购物爆红包，X掉
             'Image[id="meb24ise8obdb"] < View[id^="meb23wkfgkptj"] < View + View > View > Image[clickable=false][visibleToUser=true]',
             'TextView[text="回免单首页看看"][clickable=false][visibleToUser=true] < View + TextView[clickable=false][visibleToUser=true]',
             'TextView[text="立即抽免单"][clickable=false][visibleToUser=true] < View < View + TextView[text.length=0][clickable=false][visibleToUser=true]',

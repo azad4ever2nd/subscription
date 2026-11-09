@@ -21,5 +21,20 @@ export default defineGkdApp({
         },
       ],
     },
+    {
+      key: 2,
+      name: '弹窗，复制链接',
+      desc: '261109',
+      rules: [
+        {
+          resetMatch: 'match',
+          fastQuery: true,
+          actionCd: 5000,
+          activityIds: 'com.see.main.MainActivity',
+          matches:
+            'FrameLayout > ListView > TextView[text="复制链接"][id="android:id/text1"][clickable=true][visibleToUser=true]', //261109，弹窗，复制链接
+        },
+      ],
+    },
   ],
 });

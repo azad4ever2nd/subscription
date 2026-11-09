@@ -389,24 +389,6 @@ export default defineGkdApp({
     },
     {
       key: 20,
-      name: '百亿补贴消费券天天抢，点击领取消费券（激活）',
-      desc: '260911，fastQuery=false，添加 Ids ',
-      rules: [
-        {
-          resetMatch: 'match',
-          activityIds: [
-            'com.xunmeng.pinduoduo.ui.activity.MainFrameActivity',
-            'com.xunmeng.pinduoduo.ui.activity.HomeActivity',
-          ],
-          anyMatches: [
-            'ViewGroup[childCount=3] > ImageView + @ViewGroup[childCount=2][clickable=true] > ViewGroup[childCount=2] > ViewGroup[childCount=3] + ImageView[clickable=false][visibleToUser=true]',
-            'ViewGroup[childCount=3] > ImageView + ViewGroup[childCount=2][clickable=true] > ViewGroup[childCount=2] > ViewGroup[childCount=3] + ImageView[clickable=false][visibleToUser=true]',
-          ],
-        },
-      ],
-    },
-    {
-      key: 21,
       name: '弹窗NewPageMaskActivity，X掉1',
       desc: '261107，fastQuery=false，clickable=true',
       rules: [
@@ -425,7 +407,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 22,
+      key: 21,
       name: '弹窗NewPageMaskActivity，X掉2',
       desc: '261102，fastQuery=false，clickable=false',
       rules: [
@@ -434,6 +416,54 @@ export default defineGkdApp({
           activityIds: '.activity.NewPageMaskActivity',
           matches:
             'View > View > @Button[text="关闭弹窗"][clickable=false][visibleToUser=true] +n View > TextView[text="开心收下"] + Button[text="查看订单详情"]',
+        },
+      ],
+    },
+    {
+      key: 22,
+      name: '弹窗，近期拼单奖励已到账（月卡），X掉',
+      desc: '261109，fastQuery=true,clickable=true',
+      rules: [
+        {
+          resetMatch: 'match',
+          fastQuery: true,
+          activityIds: '.ui.activity.MainFrameActivity',
+          anyMatches: [
+            '@ViewGroup[clickable=true][visibleToUser=true] + ViewGroup >n TextView[text="近期拼单奖励已到账"]', //261109，弹窗，拼单奖励，X掉
+            'TextView[text="拒绝接收"] <<2 @ViewGroup[clickable=true][visibleToUser=true] +2 ViewGroup[clickable=true][visibleToUser=true] >2 TextView[text="允许通知"]', //261109，弹窗，因通知关闭，无法接收功能消息，拒绝接收
+          ],
+        },
+      ],
+    },
+    {
+      key: 23,
+      name: '占位23，弹窗，因通知关闭，无法接收功能消息，拒绝接收',
+      desc: '261109',
+      rules: [
+        {
+          resetMatch: 'match',
+          fastQuery: true,
+          activityIds: '.ui.activity.MainFrameActivity',
+          matches:
+            'TextView[text="拒绝接收"] <<2 @ViewGroup[clickable=true][visibleToUser=true] +2 ViewGroup[clickable=true][visibleToUser=true] >2 TextView[text="允许通知"]', //261109，弹窗，因通知关闭，无法接收功能消息，拒绝接收
+        },
+      ],
+    },
+    {
+      key: 24,
+      name: '百亿补贴消费券天天抢，点击领取消费券（激活）',
+      desc: '260911，fastQuery=false，添加 Ids ',
+      rules: [
+        {
+          resetMatch: 'match',
+          activityIds: [
+            'com.xunmeng.pinduoduo.ui.activity.MainFrameActivity',
+            'com.xunmeng.pinduoduo.ui.activity.HomeActivity',
+          ],
+          anyMatches: [
+            'ViewGroup[childCount=3] > ImageView + @ViewGroup[childCount=2][clickable=true] > ViewGroup[childCount=2] > ViewGroup[childCount=3] + ImageView[clickable=false][visibleToUser=true]',
+            'ViewGroup[childCount=3] > ImageView + ViewGroup[childCount=2][clickable=true] > ViewGroup[childCount=2] > ViewGroup[childCount=3] + ImageView[clickable=false][visibleToUser=true]',
+          ],
         },
       ],
     },
