@@ -593,7 +593,7 @@ export default defineGkdApp({
             'com.alipay.mobile.nebulax.xriver.activity.XRiverActivity',
           anyMatches: [
             'TextView[text^="逛一逛"] +(2,3) View > Button[text="去完成"]', //逛一逛遂骰子次数，去完成
-            'View > View > Button[text="完成"][clickable=true][visibleToUser=true]', //还款成功后
+            'View > View > Button[text="完成-bak"][clickable=true][visibleToUser=true]', //还款成功后
           ],
         },
       ],
@@ -1040,12 +1040,17 @@ export default defineGkdApp({
     {
       key: 46,
       name: '碰一碰，入会并支付',
-      desc: '251228',
+      desc: '261110',
       rules: [
         {
-          anyMatches: ['[vid="main_bt"][text="入会并支付"]'],
           fastQuery: true,
           resetMatch: 'match',
+          actionCd: 2000,
+          anyMatches: [
+            '@Button[text="入会并支付"][vid="main_bt"][clickable=true][visibleToUser=true] - ImageView < RelativeLayout + RelativeLayout > Button[text="直接支付"][vid="second_bt"][clickable=true][visibleToUser=true]', //261110，弹窗，入会并支付
+            '@Button[text="入会并支付"][clickable=true][visibleToUser=true] <n RelativeLayout + RelativeLayout > Button[text="直接支付"][vid="second_bt"][clickable=true][visibleToUser=true]', //261110，弹窗，
+            //'[vid="main_bt"][text="入会并支付"]'，
+          ],
           activityIds: [
             'com.alipay.mobile.nfc.ui.NFCLandingActivity',
             'com.alipay.mobile.quinox.SchemeLauncherActivity',

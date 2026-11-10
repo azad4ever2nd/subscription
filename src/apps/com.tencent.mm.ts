@@ -258,7 +258,7 @@ export default defineGkdApp({
     {
       key: 14,
       name: '弹窗，华夏银行立减金领取',
-      desc: '260904，clickable=true，添加 闲鱼链接，右上角三点菜单',
+      desc: '261110，clickable=true，添加 闲鱼链接，右上角三点菜单',
       rules: [
         {
           resetMatch: 'match',
@@ -266,6 +266,7 @@ export default defineGkdApp({
           activityIds: 'com.tencent.mm.plugin.webview.ui.tools.MMWebViewUI',
           anyMatches: [
             'View > TextView[clickable=true][visibleToUser=true] + View > Button[text="我知道了"][clickable=true][visibleToUser=true]',
+            'WebView[text="中国光大银行"] <<n FrameLayout + FrameLayout >n  ImageView[desc="更多信息"][clickable=true][visibleToUser=true]', //261110，光大银行，右上角三角菜单
             'WebView[text="闲鱼"] <<n * + * [desc="更多信息"]',
           ],
         },
