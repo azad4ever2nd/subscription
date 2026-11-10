@@ -67,13 +67,17 @@ export default defineGkdApp({
       desc: '260306',
       rules: [
         {
-          matches: ['@[vid="iv_close"] + [vid="dlg_title"][text="发现新版本"]'],
+          anyMatches: [
+            'ViewGroup > @ImageView[vid="iv_close"][clickable=true][visibleToUser=true] + TextView[text="发现新版本"][vid="dlg_title"]',
+            '@[vid="iv_close"] + [vid="dlg_title"][text="发现新版本"]',
+          ],
           fastQuery: true,
           resetMatch: 'match',
           activityIds: [
             'com.pikcloud.xpan.xpan.main.activity.XPanSettingActivity',
             'com.pikcloud.xpan.clipboard.ClipboardAddUrlActivity',
             'com.pikcloud.xpan.xpan.translist.LiXianBtSubTasksActivity',
+            'com.pikcloud.xpan.xpan.main.MainTabActivity', //261110，添加ids
           ],
         },
       ],
