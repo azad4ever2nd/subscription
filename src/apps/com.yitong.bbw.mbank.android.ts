@@ -53,18 +53,16 @@ export default defineGkdApp({
     },
     {
       key: 4,
-      name: '立减金兑换，复制',
+      name: '立减金兑换，复制券码',
       desc: '260907',
       rules: [
         {
           resetMatch: 'match',
           activityIds: 'com.yitong.mobile.biz.h5.container.WebViewActivity',
-          matchTime: 3000,
           forcedTime: 4000,
-          actionCd: 8000,
+          actionCd: 5000,
           matches:
             'View > View[text="卡号："] +2 TextView[text="复制"][clickable=false][visibleToUser=true]',
-          actionMaximum: 1,
         },
       ],
     },
@@ -90,7 +88,8 @@ export default defineGkdApp({
         {
           resetMatch: 'match',
           preKeys: [5],
-          forcedTime: 3000,
+          forcedTime: 4000,
+          actionCd: 4000,
           excludeMatches: [
             'View > TextView[text="复制成功"] + View > Button[text="确定"][clickable=true][visibleToUser=true]',
           ],
@@ -102,16 +101,16 @@ export default defineGkdApp({
     },
     {
       key: 7,
-      name: '立减金兑换成功，返回',
-      desc: '261012',
+      name: '兑换好礼，兑换',
+      desc: '260928',
       rules: [
         {
           resetMatch: 'match',
-          action: 'back',
-          actionCd: 1500,
           activityIds: 'com.yitong.mobile.biz.h5.container.WebViewActivity',
-          matches:
-            'WebView[text^="微信立减金2.88元"] > View > TextView[text="交易成功"]',
+          anyMatches: [
+            'WebView[text="兑换好礼"] > @View[clickable=true][visibleToUser=true] > TextView[text="兑换"][clickable=false][visibleToUser=true]', //261110，没有加载完成的样子
+            'WebView[text="兑换好礼"] > @View[clickable=true][visibleToUser=true] > TextView[text^="微信立减金2.88元"] + TextView[text="兑换"]',
+          ],
         },
       ],
     },
@@ -123,24 +122,27 @@ export default defineGkdApp({
         {
           resetMatch: 'match',
           fastQuery: true,
-          actionCd: 1500,
           forcedTime: 3000,
           activityIds: 'com.yitong.mobile.biz.h5.container.WebViewActivity',
-          matches:
+          anyMatches: [
+            'ViewGroup > TextView[text="暂不前往"] + TextView[text="同意前往"][vid="tv_positive"][clickable=true][visibleToUser=true]',
             'ViewGroup > TextView[text="暂不前往"] + TextView[text="同意前往"][clickable=true][visibleToUser=true]',
+          ],
         },
       ],
     },
     {
       key: 9,
-      name: '兑换好礼，兑换',
-      desc: '260928',
+      name: '立减金兑换成功，返回',
+      desc: '261012',
       rules: [
         {
           resetMatch: 'match',
+          actionCd: 1100,
+          action: 'back',
           activityIds: 'com.yitong.mobile.biz.h5.container.WebViewActivity',
           matches:
-            'WebView[text="兑换好礼"] > @View[clickable=true][visibleToUser=true] > TextView[text^="微信立减金2.88元"] + TextView[text="兑换"]',
+            'WebView[text^="微信立减金2.88元"] > View > TextView[text="交易成功"]',
         },
       ],
     },
