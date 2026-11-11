@@ -384,7 +384,9 @@ export default defineGkdApp({
           ],
           anyMatches: [
             'View[id="D3342588-D35A-4ABA-8A58-CB9C46471BA0--1794092452718"] + View[id="DB200B69-C76E-4175-B9A0-1C7F2DFA8F58--1794092452718"] > View > Image[clickable=true][visibleToUser=true]', //261108，U惠湖北 ，滨寿司弹窗
+            'Image < View < View[id="5062BF3A-C7CB-4194-8DA2-45AC2EC3B86D--1794323455653"] + View[id="A8CCDDC8-F139-433E-8BDC-3A399B57065C--1794323455653"] > View > Image[clickable=false][visibleToUser=true]', //261108，U惠湖北 ，三顺烤肉弹窗，布局略有变化
             '@Image[clickable=true][visibleToUser=true] <<n View + View[id="1CEC4277-380E-42E3-BA36-C07721DB1887--1788439106611"]',
+            'Image < View < View + View > View > Image[visibleToUser=true]', //261111，测试改成通用
           ],
         },
       ],

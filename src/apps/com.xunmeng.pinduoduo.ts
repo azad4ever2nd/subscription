@@ -253,7 +253,7 @@ export default defineGkdApp({
             'View > @Image[text="webp"][clickable=false][visibleToUser=true] -n View > TextView[text^="好友已加入队伍"]',
             'View > @View[clickable=false][visibleToUser=true] + TextView[text="进入消费券活动页领券"]',
             //'View > TextView[text="如何解锁?" || text="如何解锁点亮?"] + TextView[clickable=false][text="去首页"]',
-            'View > View > TextView[text="如何解锁?" || text="如何解锁点亮?"] + TextView[text="去首页"] + Image[text="webp"][clickable=false][visibleToUser=true]', //261110，弹窗，把 去 改成 X掉
+            'View > View > TextView[text="如何解锁?" || text="如何解锁点亮?"] + @TextView[text="去首页"][clickable=false] + Image[text="webp"][clickable=false][visibleToUser=true]', //261110，弹窗，把 去 改成 X掉
             'View > TextView[text="解锁消费券"] + TextView + TextView[clickable=false][visibleToUser=true][text="去首页领券"]',
             'View > View > View > TextView[text*="浏览商品10秒"] +n TextView[clickable=false][visibleToUser=true][text^="去看看"]',
             'View > View > View > View > TextView[text^="恭喜提前锁定"] +n TextView[text="开心收下"][clickable=false][visibleToUser=true]',
@@ -282,7 +282,7 @@ export default defineGkdApp({
             'View > @Image[text="webp"] + Image + TextView[text$="后过期"]',
             'View > View > @Image[text="webp"][clickable=false] - View > View > TextView[text$="元"] + TextView[text="无门槛券" || text="专场可用"]',
             'View > View > View > View > TextView[clickable=false][text="开心收下"] + Image[clickable=false][visibleToUser=true][text="webp"]', //提前锁定限时翻倍券， X掉
-            'View > View > View > TextView[text="恭喜获得专属惊喜券"] + TextView[text*="已成功点亮" || text$="明日可继续点亮"] +(3,4)  Image[text="webp"][visibleToUser=true]',
+            'View > View > View > TextView[text="恭喜获得专属惊喜券"] + TextView[text*="已成功点亮" || text$="明日可继续点亮"] +(3,4)  Image[text="webp"][clickable=false][visibleToUser=true]',
           ],
         },
       ],
@@ -313,7 +313,7 @@ export default defineGkdApp({
             'View > View > Image[text="webp"] + @TextView[clickable=true][visibleToUser=true] +n View > TextView[text="立即使用"] + TextView[text="可在【我的优惠券】查看"]', //261105，弹窗，售后体验补偿券已到账，可在【我的优惠券】查看，X掉
             'TextView[text="待使用"] <<n ViewGroup + ViewGroup > ImageView[clickable=true][visibleToUser=true]',
             'TextView[text="先去逛逛"] <<n ViewGroup + ViewGroup > ImageView[clickable=true][visibleToUser=true]', //261104，弹窗，仅剩几件，先去逛逛 ，X掉
-            'View > View > View > TextView[text^="如何解锁" || text="如何解锁点亮?"] + TextView[text="去首页"][clickable=true][visibleToUser=true] + Image[text="webp"][clickable=true][visibleToUser=true]', //261110，弹窗，把原来的 去首页 换成 X掉
+            'View > View > View > TextView[text^="如何解锁" || text="如何解锁点亮?"] + @TextView[text="去首页"][clickable=true][visibleToUser=true] + Image[text="webp"][clickable=true][visibleToUser=true]', //261110，弹窗，把原来的 去首页 换成 X掉
           ],
         },
       ],

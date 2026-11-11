@@ -18,7 +18,7 @@ export default defineGkdApp({
           excludeMatches: [
             'View > View > TextView + TextView[text="去转存"][clickable=true][visibleToUser=true]',
             'View > View > TextView + TextView[text="去上传"][clickable=true][visibleToUser=true]',
-            'View > View > TextView + TextView[text="去体验"][clickable=true][visibleToUser=true]',
+            'View > View > TextView + TextView[text="去体验"][visibleToUser=true]',
             'View > View > TextView[text="返回领奖"][clickable=true][visibleToUser=true]',
             'View > View > TextView[text="活动公告"] + View + Button[text="我知道了"][clickable=true][visibleToUser=true]',
             '[text="我知道了"] <n View + Image[text="+SOMf8vIwWVqABk0AAAAASUVORK5CYII="][clickable=false][visibleToUser=true]',
@@ -267,8 +267,9 @@ export default defineGkdApp({
           anyMatches: [
             'View > View > TextView + TextView[text="去转存"][clickable=true][visibleToUser=true]',
             'View > View > TextView + TextView[text="去上传"][clickable=true][visibleToUser=true]',
-            'View > View > TextView + TextView[text="去体验"][clickable=true][visibleToUser=true]',
+            'View > View > TextView + TextView[text="去体验"][[visibleToUser=true]',
             'View > View > TextView[text="返回领奖"][clickable=true][visibleToUser=true]',
+            'View > View > TextView[text="云端图片"][clickable=true][visibleToUser=true] + TextView[text="本地图片"]', //弹窗，AI消除，云端图片
           ],
         },
       ],

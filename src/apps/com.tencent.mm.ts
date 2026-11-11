@@ -18,7 +18,6 @@ export default defineGkdApp({
             'TextView[text^="即将跳转到第三方网站"] <<n LinearLayout + LinearLayout > LinearLayout > Button[text="取消"][vid="mm_alert_cancel_btn"] + ImageView + Button[text="确认跳转" || text="允许"][vid="mm_alert_ok_btn"][clickable=true][visibleToUser=true]', //261104，即将跳转
             'TextView[text^="即将打开"] <<n LinearLayout + LinearLayout > LinearLayout > Button[text="取消"][vid="mm_alert_cancel_btn"] + ImageView + Button[text="允许"][vid="mm_alert_ok_btn"][clickable=true][visibleToUser=true]', //261105，即使打开
             'TextView[text^="即将离开微信"] <<n LinearLayout + LinearLayout > LinearLayout > Button[text="取消"][vid="mm_alert_cancel_btn"] + ImageView + Button[text="允许"][vid="mm_alert_ok_btn"][clickable=true][visibleToUser=true]', //261105，离开微信
-            //'[text^="即将"] <<n  * + * >n [vid="mm_alert_cancel_btn"][text="取消"] +n [vid="mm_alert_ok_btn"][text="确认跳转" || text="允许"]',
             'View > TextView[text^="即将打开"] + View > View[desc="取消"] + @View[desc="打开"][clickable=true][visibleToUser=true] > TextView[text="打开"]', //261106，弹窗，即将打开 “美团外卖丨外卖美食奶茶咖啡水果”小程序
             '[id="js_link_dialog_body"][text*="打开"] + * > [id="js_link_dialog_ok"][text="允许"]',
             '[id="launch-btn" || id="wx-launch-btn"] >n [id="btn_mywechat" || id="wechat-btn" ][text="立即打开"]',
@@ -969,8 +968,8 @@ export default defineGkdApp({
         {
           resetMatch: 'match',
           matchDelay: 6000,
-          matchTime: 8000,
-          forcedTime: 9000,
+          matchTime: 4000,
+          forcedTime: 10000,
           actionCd: 800,
           activityIds: [
             'com.tencent.mm.plugin.appbrand.ui.AppBrandUI0',
@@ -993,7 +992,6 @@ export default defineGkdApp({
         },
       ],
     },
-
     {
       key: 45,
       name: '阳光兑换外面',

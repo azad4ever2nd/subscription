@@ -6,14 +6,16 @@ export default defineGkdApp({
     {
       key: 1,
       name: '通知权限',
-      desc: '251126',
+      desc: '261111',
       rules: [
         {
-          matches: [
-            '[vid="tvAlertContent"][text*="通知权限"] <<n [vid="alertHeader"] + [vid="horizontalFoot"] [vid="tvCancel"][desc="取消"]',
-          ],
           fastQuery: true,
           resetMatch: 'match',
+          forcedTime: 3000,
+          anyMatches: [
+            'TextView[vid="tvAlertContent"][text*="通知权限"] <  FrameLayout <2  RelativeLayout <2 LinearLayout[vid="alertHeader"] + LinearLayout[vid="horizontalFoot"] > LinearLayout > LinearLayout > @Button[vid="tvCancel"][desc="取消"][clickable=true][visibleToUser=true] + Button[vid="tvConfirm"][desc="去设置"]', //261111，弹窗，通知权限，取消
+            '[vid="tvAlertContent"][text*="通知权限"] <<n [vid="alertHeader"] + [vid="horizontalFoot"] [vid="tvCancel"][desc="取消"]',
+          ],
           activityIds: ['com.pingan.launcher.activity.LauncherActivity'],
         },
       ],

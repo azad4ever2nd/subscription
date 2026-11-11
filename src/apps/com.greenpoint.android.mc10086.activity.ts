@@ -74,6 +74,36 @@ export default defineGkdApp({
     },
     {
       key: 5,
+      name: '签到有礼',
+      desc: 'D,260830',
+      rules: [
+        {
+          resetMatch: 'app',
+          actionMaximum: 1,
+          fastQuery: true,
+          activityIds: 'com.mc10086.cmcc.view.tabs.AppTabFragment',
+          anyMatches:
+            'ViewGroup > TextView[text="签到有礼"][clickable=false][visibleToUser=true]',
+        },
+      ],
+    },
+    {
+      key: 6,
+      name: '跳转 荆楚潮玩',
+      desc: '261111',
+      rules: [
+        {
+          resetMatch: 'app',
+          actionMaximum: 1,
+          fastQuery: true,
+          activityIds: 'com.mc10086.cmcc.view.tabs.AppTabFragment',
+          matches:
+            'LinearLayout > ImageView[vid="native_js10_simple_pic"][clickable=true][visibleToUser=true]',
+        },
+      ],
+    },
+    {
+      key: 7,
       name: '弹窗，签到有礼，X掉',
       desc: '260830',
       rules: [
@@ -85,7 +115,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 6,
+      key: 8,
       name: '获取验证码',
       desc: '',
       rules: [
@@ -98,7 +128,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 7,
+      key: 9,
       name: '兑换成功',
       desc: '261021，添加兑换中，签到成功领奖',
       rules: [
@@ -114,23 +144,9 @@ export default defineGkdApp({
         },
       ],
     },
+
     {
-      key: 8,
-      name: '签到有礼',
-      desc: 'D,260830',
-      rules: [
-        {
-          resetMatch: 'app',
-          actionMaximum: 1,
-          fastQuery: true,
-          activityIds: 'com.mc10086.cmcc.view.tabs.AppTabFragment',
-          anyMatches:
-            'ViewGroup > TextView[text="签到有礼"][clickable=false][visibleToUser=true]',
-        },
-      ],
-    },
-    {
-      key: 9,
+      key: 10,
       name: '签到奖励，X掉',
       desc: '260402',
       rules: [
@@ -143,7 +159,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 10,
+      key: 11,
       name: '立即签到',
       desc: '261026，增加 排除场景',
       rules: [
@@ -162,7 +178,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 11,
+      key: 12,
       name: '88话费，9/30结束',
       desc: '260920',
       rules: [
@@ -175,7 +191,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 12,
+      key: 13,
       name: '弹窗，未中奖，知道了或X掉',
       desc: '260920，添加 刷新重试',
       rules: [
@@ -192,7 +208,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 13,
+      key: 14,
       name: '弹窗，周三活动2，X掉，',
       desc: '260919 fastquery=false,clickable=false',
       rules: [
@@ -205,7 +221,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 14,
+      key: 15,
       name: '弹窗，周三充值日抽奖，开心收下 或 X掉',
       desc: '261021，无文字提示，有ID',
       rules: [
@@ -221,7 +237,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 15,
+      key: 16,
       name: '签到有礼，2元话费券，立即抢',
       desc: '261026',
       rules: [
@@ -230,6 +246,21 @@ export default defineGkdApp({
           activityIds: 'com.cmccit.webview.ac.CommonHtml5Activity',
           matches:
             'View > TextView[text="2元话费券"] + View + TextView[text="立即抢"][clickable=true][visibleToUser=true]',
+        },
+      ],
+    },
+    {
+      key: 17,
+      name: '跳转 移动云盘打卡',
+      desc: '261111',
+      rules: [
+        {
+          resetMatch: 'match',
+          actionMaximum: 2,
+          actionCd: 3000,
+          activityIds: 'com.cmccit.webview.ac.CommonHtml5Activity',
+          matches:
+            'View > @View[clickable=true][visibleToUser=true] > TextView[text="今日签到"][clickable=false][visibleToUser=true]', //261111，移动app跳转移动云盘打卡
         },
       ],
     },

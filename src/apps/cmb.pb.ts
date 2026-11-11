@@ -1057,6 +1057,74 @@ export default defineGkdApp({
     },
     {
       key: 57,
+      name: '指数信号红包，去领取',
+      desc: '261111',
+      rules: [
+        {
+          resetMatch: 'match',
+          forcedTime: 3000,
+          actionCd: 3000,
+          action: 'clickCenter',
+          activityIds:
+            '.app.h5container.webviewcontainer.PBWebContainerActivity',
+          matches:
+            'TextView[text="可领红包 "] - TextView[text="盘中涨跌已超2%"] < View + View > TextView[text=""][clickable=true][visibleToUser=true]', //261111，指数信号红包，去领取',
+        },
+      ],
+    },
+    {
+      key: 58,
+      name: '港股行情宝，参与领取',
+      desc: '261111',
+      rules: [
+        {
+          resetMatch: 'match',
+          forcedTime: 3000,
+          actionCd: 3000,
+          action: 'clickCenter',
+          activityIds:
+            '.app.h5container.webviewcontainer.PBWebContainerActivity',
+          matches:
+            'View > View > TextView[text="当日港股医药盘中涨跌超2%领红包"] + TextView[text="参与领取"][clickable=true][visibleToUser=true]', //261111，港股行情宝，参与领取',
+        },
+      ],
+    },
+    {
+      key: 59,
+      name: '弹窗，港股行情宝，去参与',
+      desc: '',
+      rules: [
+        {
+          resetMatch: 'match',
+          forcedTime: 3000,
+          actionCd: 3000,
+          action: 'clickCenter',
+          activityIds:
+            '.app.h5container.webviewcontainer.PBWebContainerActivity',
+          matches:
+            'Dialog > View > TextView[text="港股医药盘中涨跌超2%"] + View > TextView[text=""][clickable=true][visibleToUser=true]', //261111，弹窗，港股行情宝，去参与',
+        },
+      ],
+    },
+    {
+      key: 60,
+      name: '超额PK赢红包，去看看',
+      desc: '26111',
+      rules: [
+        {
+          resetMatch: 'match',
+          forcedTime: 3000,
+          actionCd: 3000,
+          action: 'clickCenter',
+          activityIds:
+            '.app.h5container.webviewcontainer.PBWebContainerActivity',
+          matches:
+            'View > View > TextView[text="超额PK赢红包"] + TextView + View + Button[text="去看看"][clickable=true][visibleToUser=true]', //261111，
+        },
+      ],
+    },
+    {
+      key: 61,
       name: '开启消息通知',
       desc: '261007,增加IDS',
       rules: [
@@ -1076,7 +1144,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 58,
+      key: 62,
       name: '资讯分享任务，微信好友',
       desc: '260706，clickable=false',
       rules: [
@@ -1092,7 +1160,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 59,
+      key: 63,
       name: '弹窗，月月领好好，继续做任务 或 X掉',
       desc: '260917',
       rules: [
@@ -1110,7 +1178,7 @@ export default defineGkdApp({
     },
 
     {
-      key: 60,
+      key: 64,
       name: '弹窗，荆楚葵花园，协议勾选框',
       desc: '261031，限1',
       rules: [
@@ -1126,7 +1194,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 61,
+      key: 65,
       name: '弹窗，荆楚葵花园，协议勾选框后，同意',
       desc: '261031',
       rules: [
@@ -1142,7 +1210,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 62,
+      key: 66,
       name: '弹窗，荆楚葵花园，领取成功，X掉',
       desc: '261031',
       rules: [

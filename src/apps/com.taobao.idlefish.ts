@@ -72,32 +72,29 @@ export default defineGkdApp({
     },
     {
       key: 5,
-      name: '直播间确认购买',
-      desc: '251202，整合瑞幸，汉堡王',
+      name: '弹窗，闲鱼交易须知，我知道了',
+      desc: '261111',
       rules: [
         {
-          matches: [
-            '[desc^="¥7."] - [desc*="瑞幸-生椰拿铁特惠点单" || desc*="汉堡王代下单汉堡4选1"] <<n * + [desc^="确认购买 7."]',
-          ],
           resetMatch: 'match',
           activityIds:
             'com.idlefish.flutterbridge.flutterboost.boost.FishFlutterBoostTransparencyActivity',
+          matches:
+            'View > View[childCount=3] > @ImageView[clickable=false][visibleToUser=true] + ImageView + View[desc="我知道了"]', //261111，弹窗，闲鱼交易须知，我知道了
         },
       ],
     },
     {
       key: 6,
-      name: '确认购买价格不对，返回',
-      desc: '251228',
+      name: '占位，弹窗',
+      desc: '261111',
       rules: [
         {
-          action: 'back',
-          matches: [
-            '[desc*="瑞幸-生椰拿铁" || desc*="汉堡王代下单汉堡4选1"] <<n * +n [desc^="确认购买 9." || desc^="确认购买 8."]',
-          ],
           resetMatch: 'match',
           activityIds:
             'com.idlefish.flutterbridge.flutterboost.boost.FishFlutterBoostTransparencyActivity',
+          matches:
+            'View > View[childCount=3] > @ImageView[clickable=false][visibleToUser=true] + ImageView + View[desc="我知道了"]', //261111，弹窗，闲鱼交易须知，我知道了
         },
       ],
     },
@@ -330,6 +327,37 @@ export default defineGkdApp({
           resetMatch: 'match',
           activityIds:
             'com.idlefish.flutterbridge.AIOService.ApiService.handlers.cashier.CashierDialogActivity',
+        },
+      ],
+    },
+    {
+      key: 23,
+      name: '占位，直播间确认购买',
+      desc: '251202，整合瑞幸，汉堡王',
+      rules: [
+        {
+          matches: [
+            '[desc^="¥7."] - [desc*="瑞幸-生椰拿铁特惠点单" || desc*="汉堡王代下单汉堡4选1"] <<n * + [desc^="确认购买 7."]',
+          ],
+          resetMatch: 'match',
+          activityIds:
+            'com.idlefish.flutterbridge.flutterboost.boost.FishFlutterBoostTransparencyActivity',
+        },
+      ],
+    },
+    {
+      key: 24,
+      name: '占位，确认购买价格不对，返回',
+      desc: '251228',
+      rules: [
+        {
+          action: 'back',
+          matches: [
+            '[desc*="瑞幸-生椰拿铁" || desc*="汉堡王代下单汉堡4选1"] <<n * +n [desc^="确认购买 9." || desc^="确认购买 8."]',
+          ],
+          resetMatch: 'match',
+          activityIds:
+            'com.idlefish.flutterbridge.flutterboost.boost.FishFlutterBoostTransparencyActivity',
         },
       ],
     },
