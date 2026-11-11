@@ -267,7 +267,7 @@ export default defineGkdApp({
           anyMatches: [
             'View > View > TextView + TextView[text="去转存"][clickable=true][visibleToUser=true]',
             'View > View > TextView + TextView[text="去上传"][clickable=true][visibleToUser=true]',
-            'View > View > TextView + TextView[text="去体验"][[visibleToUser=true]',
+            'View > View > TextView + TextView[text="去体验"][visibleToUser=true]',
             'View > View > TextView[text="返回领奖"][clickable=true][visibleToUser=true]',
             'View > View > TextView[text="云端图片"][clickable=true][visibleToUser=true] + TextView[text="本地图片"]', //弹窗，AI消除，云端图片
           ],
