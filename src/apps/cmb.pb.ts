@@ -49,7 +49,10 @@ export default defineGkdApp({
       rules: [
         {
           action: 'clickCenter',
-          anyMatches: '[text="抢购失败"] +2 * > [text="再试一次"]',
+          anyMatches: [
+            '[text="抢购失败"] +2 * > [text="再试一次"]',
+            '[text="抢购失败"] +n * > [text="再试一次"]',
+          ],
           actionCd: 0,
           resetMatch: 'match',
           activityIds:
@@ -1125,6 +1128,44 @@ export default defineGkdApp({
     },
     {
       key: 61,
+      name: 'KFC卡券，申请获取信息，勾选 同意',
+      desc: '261111',
+      rules: [
+        {
+          resetMatch: 'match',
+          forcedTime: 3000,
+          actionCd: 3000,
+          action: 'clickCenter',
+          activityIds:
+            '.app.h5container.webviewcontainer.PBWebContainerActivity',
+          anyMatches: [
+            'View > TextView[text="肯德基购券"] +3 @Button[text="协议勾选框"][clickable=true][visibleToUser=true] + View[id="protocol"]',
+            'View > TextView[text="肯德基购券"] +n @Button[text="协议勾选框"][clickable=true][visibleToUser=true] + View[id="protocol"]',
+          ],
+        },
+      ],
+    },
+    {
+      key: 62,
+      name: 'KFC卡券，申请获取信息，勾选同意，同意',
+      desc: '261111',
+      rules: [
+        {
+          resetMatch: 'match',
+          forcedTime: 3000,
+          preKeys: [61],
+          action: 'clickCenter',
+          activityIds:
+            '.app.h5container.webviewcontainer.PBWebContainerActivity',
+          anyMatches: [
+            'Button[text="已选定，协议勾选框"][clickable=true][visibleToUser=true] <5 View +2 View > Button[text="拒绝"] + Button[text="同意"][clickable=true][visibleToUser=true]',
+            'Button[text="已选定，协议勾选框"][clickable=true][visibleToUser=true] <n View +n View > Button[text="拒绝"] + Button[text="同意"][clickable=true][visibleToUser=true]',
+          ],
+        },
+      ],
+    },
+    {
+      key: 63,
       name: '开启消息通知',
       desc: '261007,增加IDS',
       rules: [
@@ -1144,7 +1185,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 62,
+      key: 64,
       name: '资讯分享任务，微信好友',
       desc: '260706，clickable=false',
       rules: [
@@ -1160,7 +1201,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 63,
+      key: 65,
       name: '弹窗，月月领好好，继续做任务 或 X掉',
       desc: '260917',
       rules: [
@@ -1178,7 +1219,7 @@ export default defineGkdApp({
     },
 
     {
-      key: 64,
+      key: 66,
       name: '弹窗，荆楚葵花园，协议勾选框',
       desc: '261031，限1',
       rules: [
@@ -1194,7 +1235,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 65,
+      key: 67,
       name: '弹窗，荆楚葵花园，协议勾选框后，同意',
       desc: '261031',
       rules: [
@@ -1210,7 +1251,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 66,
+      key: 68,
       name: '弹窗，荆楚葵花园，领取成功，X掉',
       desc: '261031',
       rules: [
