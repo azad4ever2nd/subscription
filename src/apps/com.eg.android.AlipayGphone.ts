@@ -585,7 +585,7 @@ export default defineGkdApp({
     {
       key: 27,
       name: '逛一逛遂骰子次数，去完成',
-      desc: '261025，添加  完成',
+      desc: '261111，添加  完成',
       rules: [
         {
           resetMatch: 'match',
@@ -593,7 +593,8 @@ export default defineGkdApp({
             'com.alipay.mobile.nebulax.xriver.activity.XRiverActivity',
           anyMatches: [
             'TextView[text^="逛一逛"] +(2,3) View > Button[text="去完成"]', //逛一逛遂骰子次数，去完成
-            'View > View > Button[text="完成-bak"][clickable=true][visibleToUser=true]', //还款成功后
+            'View > View > TextView[text="还款成功"] +(10,13) View > Button[text="完成"][clickable=true][visibleToUser=true]', //261111，还款成功后
+            'View > View > TextView[text="还款成功"] +n View > Button[text="完成"][clickable=true][visibleToUser=true]',
           ],
         },
       ],
