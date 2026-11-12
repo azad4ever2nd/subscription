@@ -368,6 +368,7 @@ export default defineGkdApp({
             'com.tencent.mm.plugin.brandservice.ui.timeline.preload.ui.TmplWebViewMMUI',
           anyMatches: [
             'Dialog > View > TextView[text^="即将打开新的页面"] + View > Button[id="js_link_dialog_cancel"][text="取消"][clickable=true][visibleToUser=true] + Button[id="js_link_dialog_ok"][text="允许"][clickable=true][visibleToUser=true]', //261106，弹窗，公众号里跳转小程序，即将打开
+            'Dialog > View > TextView[text^="即将打开"] +n View > Button[id="js_link_dialog_cancel"][text="取消"][clickable=true][visibleToUser=true] + Button[id="js_link_dialog_ok"][text="允许"][clickable=true][visibleToUser=true]', //26111，公众号里 即将打开公众号 的内容，允许
             'TextView[text^="即将跳转到第三方网站"] <<n LinearLayout + LinearLayout > LinearLayout > Button[text="取消"][vid="mm_alert_cancel_btn"] + ImageView + Button[text="确认跳转" || text="允许"][vid="mm_alert_ok_btn"][clickable=true][visibleToUser=true]', //261104，即将跳转
             //'[text^="即将"] <<n * + * [vid="mm_alert_cancel_btn"][text="取消"] +n [vid="mm_alert_ok_btn"][text="确认跳转" || text="允许"]',
             '[id="js_link_dialog_body"][text*="打开"] + * > [id="js_link_dialog_ok"][text="允许"]',
