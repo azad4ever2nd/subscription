@@ -86,7 +86,6 @@ export default defineGkdApp({
           resetMatch: 'match',
           fastQuery: true,
           actionCd: 500,
-          matchTime: 2000,
           forcedTime: 3000,
           activityIds: 'com.alipay.android.msp.ui.views.MspContainerActivity',
           anyMatches: [
@@ -1174,6 +1173,21 @@ export default defineGkdApp({
           resetMatch: 'match',
           activityIds:
             'com.alipay.mobile.nebulax.xriver.activity.XRiverActivity',
+        },
+      ],
+    },
+    {
+      key: 53,
+      name: '支付成功，完成',
+      desc: '禁用，261112',
+      rules: [
+        {
+          resetMatch: 'match',
+          fastQuery: true,
+          activityIds:
+            'com.alipay.android.phone.businesscommon.ucdp.nfc.activity.NResPageActivity',
+          matches:
+            'TextView[text="支付成功"][id="com.alipay.mobile.ucdp:id/summary_title_view"] <<n ScrollView + LinearLayout > TextView[text="完成"][id="com.alipay.mobile.ucdp:id/bottom_button"][clickable=true][visibleToUser=true]', //261112，碰一碰支付，
         },
       ],
     },

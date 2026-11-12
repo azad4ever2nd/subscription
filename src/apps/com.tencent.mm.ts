@@ -971,8 +971,7 @@ export default defineGkdApp({
         {
           resetMatch: 'match',
           matchDelay: 6000,
-          matchTime: 4000,
-          forcedTime: 10000,
+          forcedTime: 15000,
           actionCd: 800,
           activityIds: [
             'com.tencent.mm.plugin.appbrand.ui.AppBrandUI0',

@@ -52,8 +52,9 @@ export default defineGkdApp({
           anyMatches: [
             '[text="抢购失败"] +2 * > [text="再试一次"]',
             '[text="抢购失败"] +n * > [text="再试一次"]',
+            'TextView[text*="请稍后再试" || text^="活动太火爆了"] < View + TextView[text="刷新页面"][clickable=true][visibleToUser=true]', //261112，活动太火爆了，请稍后再试，刷新页面
           ],
-          actionCd: 0,
+          actionCd: 100,
           resetMatch: 'match',
           activityIds:
             'cmb.pb.app.h5container.webviewcontainer.PBWebContainerActivity',
