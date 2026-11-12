@@ -10,7 +10,7 @@ export default defineGkdApp({
       rules: [
         {
           resetMatch: 'match',
-          matchDelay: 1000,
+          matchDelay: 5000,
           fastQuery: true,
           forcedTime: 3000,
           activityIds: [

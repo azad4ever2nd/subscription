@@ -115,7 +115,7 @@ export default defineGkdApp({
     {
       key: 7,
       name: '弹窗，带排除，X掉2',
-      desc: '261101，fastQuery=true，clickable=false，有排除需求的。排除2个规则冲突轮流查询',
+      desc: '261101，fastQuery=true，clickable=true，有排除需求的。排除2个规则冲突轮流查询',
       rules: [
         {
           actionCd: 500,
@@ -297,8 +297,10 @@ export default defineGkdApp({
           action: 'clickCenter',
           activityIds: 'com.xunmeng.pinduoduo.activity.NewPageActivity',
           anyMatches: [
+            //'View > View > @Image[text="webp"][clickable=true][visibleToUser=true] - View[clickable=true][visibleToUser=true] > TextView[text="确定以团员身份组队"]',//261112，弹窗，确定以团员身份组队
             'ViewGroup[desc="翻转"] <<n FrameLayout + FrameLayout > FrameLayout > @FrameLayout[clickable=true][visibleToUser=true] > ImageView[vid="pdd"]', //261102，新版，评价拍摄，返回
             'TextView[text="此次评价未完成，是否确认退出？"][vid="title"] <<n LinearLayout[vid="pdd"] + View[desc="关闭"][clickable=true][visibleToUser=true]', //261102，新布局，此次评价未完成，是否确认退出？X掉
+            'ImageView[desc="返回"] < @LinearLayout[vid="pdd"][clickable=true][visibleToUser=true] +2 LinearLayout > TextView[text="发表评价"]', //261112，发表评价，返回
             'View > Image + @Image[clickable=true] + View > TextView[text="消费券福袋奖励"] - View > TextView[text$="折"] + TextView[text^="最高减"]',
             '@Image[text="webp"][clickable=true][visibleToUser=true] - View > View > TextView[text$="折"] + TextView[text^="最高减"] + TextView[text="专场可用"]',
             '@Image[text="webp"][clickable=true][visibleToUser=true] - View > View > TextView + TextView[text="无门槛券"]', //弹窗，2元无门槛券

@@ -264,5 +264,32 @@ export default defineGkdApp({
         },
       ],
     },
+    {
+      key: 18,
+      name: '点击打开 中国移动云盘',
+      desc: '261112',
+      rules: [
+        {
+          resetMatch: 'match',
+          activityIds: 'com.cmccit.webview.ac.CommonHtml5Activity',
+          matches:
+            'WebView[text*="中国移动云盘"] > @TextView[text=""][clickable=true][visibleToUser=true] + View > Image[text="button_rt"]',
+        },
+      ],
+    },
+    {
+      key: 19,
+      name: '弹窗，浏览器打开',
+      desc: '261112',
+      rules: [
+        {
+          fastQuery: true,
+          resetMatch: 'match',
+          activityIds: 'com.cmccit.webview.ac.CommonHtml5Activity',
+          matches:
+            'RelativeLayout > Button[text="浏览器打开"][vid="dialog_btn2"][clickable=true][visibleToUser=true]',
+        },
+      ],
+    },
   ],
 });

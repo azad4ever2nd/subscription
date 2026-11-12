@@ -85,6 +85,11 @@ export default defineGkdApp({
           action: 'back',
           forcedTime: 2000,
           actionCd: 700,
+          excludeMatches: [
+            'WebView[text="话题详情页"][visibleToUser=true]', //261112，排除 留言，评论
+            'View > View > TextView[text="最新讨论"][visibleToUser=true]', //261112，排除 留言，评论
+            'View > View > TextView[text="讨论"] + TextView[text="发布"][visibleToUser=true]', //261112，排除 留言，评论
+          ],
           anyMatches: [
             'TextView[text="卖光了"] < View -n View > TextView[text*="周三5折"][text*="肯德基" || text*="喜茶" || text*="必胜客" || text*="哈根达斯"]', //只针对这几个券才会秒返回
             'View > TextView[text*="周三5折"][text*="肯德基" || text*="喜茶" || text*="必胜客" || text*="哈根达斯"] +n View > TextView[text="卖光了"]',

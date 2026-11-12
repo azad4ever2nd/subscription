@@ -742,7 +742,7 @@ export default defineGkdApp({
     {
       key: 38,
       name: '工行武汉云网点打卡1.08元，',
-      desc: '260811，添加 荆州云网点',
+      desc: '261112，添加 荆州云网点',
       rules: [
         {
           resetMatch: 'match',
@@ -762,6 +762,8 @@ export default defineGkdApp({
             'com.tencent.mm.plugin.appbrand.ui.AppBrandPluginUI',
           ],
           anyMatches: [
+            '@Button[text="活动未开始"][clickable=true][visibleToUser=true] <  View - View > View > TextView[text="云网点"] + TextView[text="距本期开始:"] + TextView[text="00"] + TextView[text=":"] + TextView[text="00"] + TextView[text=":"] + TextView[text^="0"]', //261112，倒数10秒前就开始点击
+            //'@Button[text="活动未开始"][clickable=true][visibleToUser=true] <  View - View > View > TextView[text="云网点"] + TextView[text="距本期开始:"] + TextView[text="00"] + TextView[text=":"] + TextView[text="00"] + TextView[text=":"] + TextView[text^="0"] + TextView[text*="云网点打卡"]',//261112，倒数10秒前就开始点击
             'TextView[text="云网点"] <n View <n View + View > Button[text="立即领取"][clickable=true][visibleToUser=true]',
             '[text="1.08元"] + [text="云网点打卡"] <<n * + * > Button[text*="立即领取"]',
           ],
@@ -828,6 +830,7 @@ export default defineGkdApp({
             'View > View > @TextView[clickable=true][visibleToUser=true] - View[clickable=true][visibleToUser=true] > TextView[text="立即前往"]',
             'View > View > TextView[text="活动9:00开始"] + TextView[text="确定"][clickable=true][visibleToUser=true]',
             'View > View > TextView[text^="活动未开始"] +2 @TextView[clickable=true][visibleToUser=true] -  View >n Image[text="60e3f3550c78485a6857ba23"][clickable=true][visibleToUser=true]', //贵州工享有礼
+            'View > View > TextView[text^="活动未开始"] + View > View > Image[text="60e3f3550c78485a6857ba23"][clickable=true][visibleToUser=true]', //261112，弹窗，贵阳工行马上有确幸，活动未开始
             'TextView[clickable=true][visibleToUser=true] - @TextView[clickable=true][visibleToUser=true] - View >n TextView[text="每天上午9:00开始"]',
             'View > View > TextView[text^="活动将于" && text$="开始"] + TextView[text="确定"][clickable=true][visibleToUser=true]',
             'View > TextView[text^="活动未开始" || text^="已参加过本次活动"] + View > View > Image[clickable=true][visibleToUser=true]',
