@@ -45,5 +45,19 @@ export default defineGkdApp({
         },
       ],
     },
+    {
+      key: 4,
+      name: '弹窗，居民医保缴费，今日不再提示，X掉',
+      desc: '261113',
+      rules: [
+        {
+          resetMatch: 'match',
+          fastQuery: true,
+          activityIds: 'com.cqrcb.mainbundle.page.MainActivity',
+          matches:
+            'LinearLayoutCompat > @ImageView[vid="img_close"][clickable=true][visibleToUser=true] - LinearLayoutCompat > TextView[text="今日不再提示"]',
+        },
+      ],
+    },
   ],
 });

@@ -91,15 +91,17 @@ export default defineGkdApp({
     {
       key: 7,
       name: '通知，日历，闹钟，关闭闹钟',
-      desc: '',
+      desc: '261112',
       rules: [
         {
           resetMatch: 'match',
           actionDelay: 5000, //延时5秒
           actionCd: 3000,
           activityIds: 'com.miui.home.launcher.Launcher',
-          matches:
+          anyMatches: [
             'FrameLayout[vid="status_bar_latest_event_content"] > ImageView[vid="app_icon"][desc="日历"] + LinearLayout[vid="notification_main_column"] + TextView[vid="miui_action"][text="关闭闹钟"][clickable=true][visibleToUser=true]',
+            'FrameLayout[vid="status_bar_latest_event_content"] > ImageView[vid="app_icon"][desc="日历"] + LinearLayout[vid="notification_action_list_margin_target"] > FrameLayout[vid="actions_container"] > LinearLayout > TextView[text="关闭闹钟"][clickable=true][visibleToUser=true]', //261113，新布局，关闭闹钟
+          ],
         },
       ],
     },

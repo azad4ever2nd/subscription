@@ -47,6 +47,7 @@ export default defineGkdApp({
           actionCd: 0,
           activityIds: 'com.jd.lib.ttt.page.TTTMultiPageActivity',
           anyMatches: [
+            '@TextView[text="领券抢"][clickable=true][visibleToUser=true] - View > TextView[text^="15" && text*="蛋"] + TextView[text^="券后" && text*=".90"]', //261113，抢蛋
             '@TextView[text="领券抢"][clickable=true][visibleToUser=true] - View > TextView[text="15枚鲜蛋"] + TextView[text^="券后"]',
             'TextView[text^="券后¥"] - TextView[text*="蛋"] - TextView < View + TextView[text="领券抢"][clickable=true]',
             'View > TextView[text*="蛋" && text*="15"] +3  TextView[clickable=true][text="领券抢"]',
@@ -64,6 +65,7 @@ export default defineGkdApp({
           actionCd: 0,
           activityIds: 'com.jd.lib.ttt.page.TTTMultiPageActivity',
           anyMatches: [
+            '@TextView[text="领券抢"][clickable=true][visibleToUser=true] - View > TextView[text^="12" && text*="纸"] + TextView[text^="券后" && text*=".90"]', //261113，抢纸
             '@TextView[text="领券抢"][clickable=true][visibleToUser=true] - View > TextView[text="12卷纸"] + TextView[text^="券后"]',
             'TextView[text^="券后¥"] - TextView[text*="卷纸"] - TextView < View + TextView[text="领券抢"][clickable=true]',
             'View > TextView[text*="纸" && text*="12"] +3  TextView[clickable=true][text="领券抢"]',
@@ -108,11 +110,15 @@ export default defineGkdApp({
       desc: '',
       rules: [
         {
-          matches: ['[vid="a0k"] > * +4 * >2 ImageView'],
+          anyMatches: [
+            'ViewGroup > ViewGroup > ImageView[text="立即抽奖"][clickable=true][visibleToUser=true]', //261113，付款后抽奖
+            '[vid="a0k"] > * +4 * >2 ImageView',
+          ],
           actionMaximum: 1,
           resetMatch: 'activity',
           activityIds: [
             'com.jingdong.app.mall.bundle.cashierfinish.view.CashierUserContentCompleteActivity',
+            '.bundle.cashierfinish.view.CashierUserContentCompletePopActivity',
           ],
         },
       ],

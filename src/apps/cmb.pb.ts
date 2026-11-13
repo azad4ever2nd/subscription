@@ -321,8 +321,8 @@ export default defineGkdApp({
           action: 'clickCenter',
           matchDelay: 2000, //有没有可能，是因为页面没有加载完成，导致的误触，先测试
           //处于匹配延迟matchDelay: 1000,关闭测试
-          forcedTime: 4000,
-          actionCd: 2500,
+          forcedTime: 3000,
+          actionCd: 2000,
           resetMatch: 'match',
           activityIds:
             'cmb.pb.app.h5container.webviewcontainer.PBWebContainerActivity',

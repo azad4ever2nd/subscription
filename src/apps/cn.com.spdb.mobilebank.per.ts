@@ -151,5 +151,19 @@ export default defineGkdApp({
         },
       ],
     },
+    {
+      key: 11,
+      name: '弹窗，灵活+，X掉',
+      desc: '261113',
+      rules: [
+        {
+          resetMatch: 'match',
+          actionDelay: 2000,
+          activityIds: '.activity.MainActivity',
+          matches:
+            'View > View > Image[text="lvTnRzn4UQ5+Voef1UFMVSIAIwAjAAMYARgBGAEYARgBGAEYARjACMAIwAjACMAIwAjAAEYARgBGAEYARgBGAAYwAjACMAIwAjBapv4FzmHxkuOPVpoAAAAASUVORK5CYII="][clickable=true][visibleToUser=true]', //261113，弹窗，灵活+，X掉
+        },
+      ],
+    },
   ],
 });

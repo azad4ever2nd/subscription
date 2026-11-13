@@ -92,15 +92,18 @@ export default defineGkdApp({
     {
       key: 7,
       name: '完成',
-      desc: '261031',
+      desc: '261113',
       rules: [
         {
           resetMatch: 'match',
           fastQuery: true,
           activityIds:
             'com.alipay.mobile.nebulax.xriver.activity.XRiverActivity',
-          matches:
-            'FrameLayout > TextView[text="完成"][id="com.alipay.multiplatform.phone.xriver_integration:id/textView_rightButton1"][clickable=true][visibleToUser=true]',
+          anyMatches: [
+            'WebView > View > TextView[text="申请提交成功"] +n Button[text="立即领取"][clickable=true][visibleToUser=true]', //261113，提交申请后，有优惠领取
+            'TextView[text="申请提交成功"] <<n RelativeLayout + LinearLayout >n FrameLayout > TextView[text="完成"][id="com.alipay.multiplatform.phone.xriver_integration:id/textView_rightButton1"][clickable=true][visibleToUser=true]', //261113，提交申请后，领取优惠后，再完成
+            //'FrameLayout > TextView[text="完成"][id="com.alipay.multiplatform.phone.xriver_integration:id/textView_rightButton1"][clickable=true][visibleToUser=true]',
+          ],
         },
       ],
     },

@@ -302,6 +302,20 @@ export default defineGkdApp({
     },
     {
       key: 21,
+      name: '弹窗，活动已领奖品，X掉',
+      desc: '261113',
+      rules: [
+        {
+          resetMatch: 'match',
+          actionDelay: 3000,
+          activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
+          matches:
+            'View > View > @View[text.length=1][clickable=true][visibleToUser=true] + View[text="活动已领奖品"] + View', //261113，弹窗，活动已领奖品，X掉
+        },
+      ],
+    },
+    {
+      key: 22,
       name: '打开定位，取消',
       desc: '260125',
       rules: [
@@ -318,7 +332,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 22,
+      key: 23,
       name: '弹窗，人脸识别提示，勾选 我已阅读并同意',
       desc: '261105',
       rules: [
@@ -332,7 +346,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 23,
+      key: 24,
       name: '弹窗，人脸识别提示，勾选 我已阅读并同意后，开始识别',
       desc: '261105',
       rules: [

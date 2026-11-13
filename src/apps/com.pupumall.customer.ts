@@ -15,6 +15,7 @@ export default defineGkdApp({
           activityIds: 'com.pupumall.customer.activity.SplashActivity',
           anyMatches: [
             '[vid="tv_update_now"][text="立即更新"] <<n * + [vid="iv_close"]',
+            'LinearLayout > ViewGroup[vid="cl_container"] + ImageView[vid="iv_close"][clickable=true][visibleToUser=true]', //261113，弹窗，更新，X掉
             'FrameLayout > LinearLayout > FrameLayout > LinearLayout > @ImageView[clickable=true][visibleToUser=true][vid="iv_close"] - ViewGroup > TextView[vid="tv_upgrade_now"][text="立即更新"]',
           ],
         },

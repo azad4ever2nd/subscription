@@ -754,6 +754,10 @@ export default defineGkdApp({
             '@TextView[clickable=false][visibleToUser=true] < View  + TextView + View > View > View > View > TextView[text="去使用"]',
             'View[childCount=3] > View[childCount=3] > @TextView[clickable=false][visibleToUser=true] -2 View  >n TextView[text="去使用"]', //新版去使用，下方多了一个窗口
             'View > View > @TextView[id="p-2021006118622831-ors_14"][clickable=false][visibleToUser=true] - View >n TextView[text="去使用"]', //261109，弹窗，购物爆红包，X掉
+            'View > View > @TextView[id="p-2021006118622831-ors_36"][clickable=false][visibleToUser=true] - View >n TextView[text="去使用"]', //261113，弹窗，购物爆红包，X掉
+            //'View > View > @TextView[id="p-2021006118622831-ors_36"][clickable=false][visibleToUser=true] - View > View > TextView[text="去使用"]',//261113，弹窗，购物爆红包，X掉
+            //'TextView[text="去使用"] < View < View + TextView[id="p-2021006118622831-ors_36"][clickable=false][visibleToUser=true]',
+
             'Image[id="meb24ise8obdb"] < View[id^="meb23wkfgkptj"] < View + View > View > Image[clickable=false][visibleToUser=true]',
             'TextView[text="回免单首页看看"][clickable=false][visibleToUser=true] < View + TextView[clickable=false][visibleToUser=true]',
             'TextView[text="立即抽免单"][clickable=false][visibleToUser=true] < View < View + TextView[text.length=0][clickable=false][visibleToUser=true]',
@@ -989,7 +993,7 @@ export default defineGkdApp({
     {
       key: 43,
       name: '支付有礼，返回会场 or 开心收下',
-      desc: '261105，添加 返回会场',
+      desc: '261113，添加 返回会场',
       rules: [
         {
           resetMatch: 'match',
@@ -999,6 +1003,7 @@ export default defineGkdApp({
             '@View[clickable=true][visibleToUser=true] > View > TextView[text="任务完成"] + TextView[text="返回会场" || text="返回领奖>"]', //'@View > View > TextView[text="任务完成"] + TextView[text="返回会场"]',
             'ViewGroup[childCount=5] > ViewGroup > *[desc="你有团购神券待使用"] <<2 ViewGroup +3 ViewGroup[clickable=false][visibleToUser=true] > View[clickable=false][visibleToUser=true]', //弹窗，你有团购神券待使用，X掉，弹窗优先，然后再是返回
             'ViewGroup > ViewGroup > *[desc="立即使用"] + @ViewGroup[clickable=false][visibleToUser=true] > View', //261105，弹窗，神券，立即使用，X掉
+            'ViewGroup[childCount=5] > @ViewGroup[index=parent.childCount.minus(1)] -3 ViewGroup > *[desc="恭喜你获得团购神券"]', //261113，弹窗，恭喜你获得团购神券，X掉
             '@View + ViewGroup *[desc="开心收下"]',
           ],
         },

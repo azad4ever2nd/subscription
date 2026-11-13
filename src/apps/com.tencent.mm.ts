@@ -747,7 +747,7 @@ export default defineGkdApp({
       rules: [
         {
           resetMatch: 'match',
-          actionMaximum: 5,
+          //actionMaximum: 5,//提前点，次数调大，
           actionCd: 0,
           activityIds: [
             'com.tencent.mm.plugin.appbrand.ui.AppBrandUI0',
@@ -766,6 +766,7 @@ export default defineGkdApp({
             '@Button[text="活动未开始"][clickable=true][visibleToUser=true] <  View - View > View > TextView[text="云网点"] + TextView[text="距本期开始:"] + TextView[text="00"] + TextView[text=":"] + TextView[text="00"] + TextView[text=":"] + TextView[text^="0"]', //261112，倒数10秒前就开始点击
             //'@Button[text="活动未开始"][clickable=true][visibleToUser=true] <  View - View > View > TextView[text="云网点"] + TextView[text="距本期开始:"] + TextView[text="00"] + TextView[text=":"] + TextView[text="00"] + TextView[text=":"] + TextView[text^="0"] + TextView[text*="云网点打卡"]',//261112，倒数10秒前就开始点击
             'TextView[text="云网点"] <n View <n View + View > Button[text="立即领取"][clickable=true][visibleToUser=true]',
+            '@Image[text=""][clickable=true][visibleToUser=true] < View < View < View + View[index=parent.childCount.minus(1)] > View > View > TextView[text="活动规则"] + TextView[text="活动名称：云网点体验有礼"]', //261113，咸宁云网点打卡，外面 立即领取 按钮
             '[text="1.08元"] + [text="云网点打卡"] <<n * + * > Button[text*="立即领取"]',
           ],
         },
@@ -828,6 +829,7 @@ export default defineGkdApp({
           ],
           anyMatches: [
             'WebView > View > TextView[text="立即签到"][clickable=false][visibleToUser=true]',
+            'View > TextView[text="Blocked by Sentinel"] + View + TextView[clickable=true][visibleToUser=true]', //261113，弹窗，工行贵阳
             'View > View > @TextView[clickable=true][visibleToUser=true] - View[clickable=true][visibleToUser=true] > TextView[text="立即前往"]',
             'View > View > TextView[text="活动9:00开始"] + TextView[text="确定"][clickable=true][visibleToUser=true]',
             'View > View > TextView[text^="活动未开始"] +2 @TextView[clickable=true][visibleToUser=true] -  View >n Image[text="60e3f3550c78485a6857ba23"][clickable=true][visibleToUser=true]', //贵州工享有礼
@@ -836,7 +838,6 @@ export default defineGkdApp({
             'View > View > TextView[text^="活动将于" && text$="开始"] + TextView[text="确定"][clickable=true][visibleToUser=true]',
             'View > TextView[text^="活动未开始" || text^="已参加过本次活动"] + View > View > Image[clickable=true][visibleToUser=true]',
             'View > View > @TextView[clickable=true][visibleToUser=true] - View[clickable=true][visibleToUser=true] - View > View > TextView[text="暂未开始"]', //261103，
-            'View > TextView[text="Blocked by Sentinel"] + View + TextView[clickable=true][visibleToUser=true]',
             'View > View > @TextView[clickable=true][visibleToUser=true] - View > View >   Image[text="66c29cff8e9f4a2aaf3f1b67b944daac"]',
             'View > View > @TextView[clickable=true][visibleToUser=true] - View > View >   Image[text="2821aa8f32d5477d85db2a4a119d06cd"]',
             'View > @TextView[clickable=true][visibleToUser=true] - View > View > Image[text="ac327e12fc2c48ee92771714b590d29b"]',

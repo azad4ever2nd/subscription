@@ -6,7 +6,7 @@ export default defineGkdApp({
     {
       key: 1,
       name: '积分兑无门槛5元整合版',
-      desc: '261026,',
+      desc: '拆分暂时禁用，261026,',
       rules: [
         {
           actionCd: 10,
@@ -14,11 +14,11 @@ export default defineGkdApp({
           order: -1,
           resetMatch: 'match',
           anyMatches: [
-            'View > View > @Image[text="webp"][clickable=true][visibleToUser=true] + TextView[text="确认消耗"] +n View >  * + TextView[text!="百亿补贴无门槛券"] + TextView', //弹窗，其他类型的券，X掉
+            'TextView[text*="百亿补贴无门槛券" || text$="无门槛券"] <n View + TextView[text="确认兑换"][visibleToUser=true]',
+            'View > View > @Image[text="webp"][visibleToUser=true] + TextView[text="确认消耗"] +n View >  * + TextView[text!="百亿补贴无门槛券"] + TextView', //弹窗，其他类型的券，X掉
+            '@View[childCount=4][visibleToUser=true] > TextView[text="无门槛券"] + View[text="100"] + TextView[text="积分兑换"]',
             'View > View > @Image[text="webp"][clickable=false][visibleToUser=true] + TextView[text="确认消耗"] +n View >  * + TextView[text!="百亿补贴无门槛券"] + TextView', //弹窗，其他类型的券，X掉
-            'View > View > @Image[text="webp"][clickable=true][visibleToUser=true] + TextView[text="积分不足 去获取更多积分吧"]', //积分不足
-            'TextView[text*="百亿补贴无门槛券" || text$="无门槛券"] <n View + TextView[text="确认兑换"][clickable=false][visibleToUser=true]', //弹窗，确认兑换无门槛券
-            '@View[childCount=4] > TextView[text="无门槛券"] + View[text="100"] + TextView[text="积分兑换"]', //兑换无门槛券
+            'View > View > @Image[text="webp"][visibleToUser=true] + TextView[text="积分不足 去获取更多积分吧"]',
           ],
           activityIds: ['com.xunmeng.pinduoduo.activity.NewPageActivity'],
         },
@@ -35,8 +35,9 @@ export default defineGkdApp({
           order: -1,
           resetMatch: 'match',
           anyMatches: [
-            '@View[childCount=4][clickable=true][visibleToUser=true] > TextView[text="无门槛券"] + View[text="100"] + TextView[text="积分兑换"]',
-            '@View[clickable=false][visibleToUser=true][childCount=4] > TextView[text="无门槛券"] +  View[text="100"] +  TextView[text="积分兑换"]',
+            '@View[childCount=4][visibleToUser=true] > TextView[text="无门槛券"] + View[text="100"] + TextView[text="积分兑换"]',
+            //'@View[childCount=4][clickable=false][visibleToUser=true] > TextView[text="无门槛券"] +  View[text="100"] +  TextView[text="积分兑换"]',
+            //'@View[childCount=4] > TextView[text="无门槛券"] + View[text="100"] + TextView[text="积分兑换"]', //兑换无门槛券
           ],
           activityIds: ['com.xunmeng.pinduoduo.activity.NewPageActivity'],
         },
@@ -44,14 +45,14 @@ export default defineGkdApp({
     },
     {
       key: 3,
-      name: '积分兑无门槛券确认兑换',
+      name: '积分兑无门槛券，确认兑换',
       desc: '261007，增加 排除非百亿补贴无门槛券 和 积分不足',
       rules: [
         {
           anyMatches: [
             'TextView[text*="百亿补贴无门槛券" || text$="无门槛券"] <n View + TextView[text="确认兑换"][clickable=false][visibleToUser=true]',
-            'View > View > @Image[text="webp"][clickable=true][visibleToUser=true] + TextView[text="确认消耗"] +n View >  * + TextView[text!="百亿补贴无门槛券"] + TextView',
-            'View > View > @Image[text="webp"][clickable=false][visibleToUser=true] + TextView[text="确认消耗"] +n View >  * + TextView[text!="百亿补贴无门槛券"] + TextView',
+            'View > View > @Image[text="webp"][visibleToUser=true] + TextView[text="确认消耗"] +n View >  * + TextView[text!="百亿补贴无门槛券"] + TextView', //弹窗，其他类型的券，X掉
+            //'View > View > @Image[text="webp"][clickable=false][visibleToUser=true] + TextView[text="确认消耗"] +n View >  * + TextView[text!="百亿补贴无门槛券"] + TextView', //弹窗，其他类型的券，X掉
             'View > View > @Image[text="webp"][clickable=true][visibleToUser=true] + TextView[text="积分不足 去获取更多积分吧"]',
           ],
           actionCd: 0,
@@ -401,11 +402,12 @@ export default defineGkdApp({
           activityIds: '.activity.NewPageMaskActivity',
           anyMatches: [
             'View > View > @Button[text="关闭弹窗"][clickable=true][visibleToUser=true] +n View > TextView[text="开心收下"] + Button[text="查看订单详情"]',
-            'View > View > @Button[text="关闭弹窗"][clickable=true][visibleToUser=true] +n View > Button[text="查看订单详情"]', //261106，弹窗，下单完成后，一键领取
+            'View > View > @Button[text="关闭弹窗"][clickable=true][visibleToUser=true] +n View > Button[text^="查看订单详情"]', //261106，弹窗，下单完成后，一键领取
             'View > View > Image[text="webp"] + @TextView[clickable=true][visibleToUser=true] +n View > TextView[text="售后体验补偿券已到账"]', //261105，弹窗，售后体验补偿券已到账，X掉
             'View > View > Image[text="webp"] + @TextView[clickable=true][visibleToUser=true] +n View > TextView[text="立即使用"] + TextView[text="可在【我的优惠券】查看"]', //261105，弹窗，售后体验补偿券已到账，可在【我的优惠券】查看，X掉
             'TextView[text="先去逛逛"] <<n ViewGroup + ViewGroup > ImageView[clickable=true][visibleToUser=true]', //261104，弹窗，仅剩几件，先去逛逛 ，X掉
             'View > View > @Button[text="关闭弹窗"][clickable=true][visibleToUser=true] + View > Button[text="查看订单详情"]', //261107，弹窗，下单完成后，无门槛券领取
+            'View > View > @Button[text="关闭弹窗"][clickable=true][visibleToUser=true] +(6,9)  Button[text="继续逛逛"] + Button[text^="查看订单详情"]', //261113，弹窗，下单完成后，
           ],
         },
       ],
@@ -434,6 +436,7 @@ export default defineGkdApp({
           activityIds: '.ui.activity.MainFrameActivity',
           anyMatches: [
             '@ViewGroup[clickable=true][visibleToUser=true] + ViewGroup >n TextView[text="近期拼单奖励已到账"]', //261109，弹窗，拼单奖励，X掉
+            'ImageView < ViewGroup < @ViewGroup - ViewGroup TextView[text="月卡体验福利"]', //261113，弹窗，月卡体验福利
             'TextView[text="拒绝接收"] <<2 @ViewGroup[clickable=true][visibleToUser=true] +2 ViewGroup[clickable=true][visibleToUser=true] >2 TextView[text="允许通知"]', //261109，弹窗，因通知关闭，无法接收功能消息，拒绝接收
           ],
         },

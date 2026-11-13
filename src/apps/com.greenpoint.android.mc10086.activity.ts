@@ -291,5 +291,19 @@ export default defineGkdApp({
         },
       ],
     },
+
+    {
+      key: 20,
+      name: '弹窗，签到成功，去使用，X掉',
+      desc: '261113',
+      rules: [
+        {
+          resetMatch: 'match',
+          activityIds: 'com.cmccit.webview.ac.CommonHtml5Activity',
+          matches:
+            'View > View > TextView[text="签到成功"] + TextView[text="恭喜您获得"] + TextView[text="去使用"] + TextView[text=""][clickable=true][visibleToUser=true]', //261113，弹窗，签到成功，流量券去使用，X掉
+        },
+      ],
+    },
   ],
 });
