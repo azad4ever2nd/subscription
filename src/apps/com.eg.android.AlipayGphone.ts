@@ -437,6 +437,9 @@ export default defineGkdApp({
             '@TextView[clickable=true][visibleToUser=true] - View > TextView[text="体验金领取成功"] +n TextView[text="立即攒下"]',
             'Image < @View[clickable=true][visibleToUser=true] + TextView + TextView[text="预约单次还"] + TextView[text="预约月月还"]', //261107，弹窗，还款预约，
             '@Image[text=""][clickable=true][visibleToUser=true] < View + View > View > TextView[text^="转入余额宝"] +n View > TextView[text="立即转入"]', //261109，弹窗，转入余额宝，X掉
+            '@View[clickable=true][visibleToUser=true] > View > TextView[text="领好礼机会+1"] + TextView[text="去查看>"]', //261114，神券做任务
+            'View > View > TextView[text="余额宝体验金"] + TextView[text="开心收下"][clickable=true][visibleToUser=true]', //261114，余额宝体验金，开心收下
+            'Dialog > View > View > @Button[text="关闭"][clickable=true][visibleToUser=true] - View > TextView[text$="到桌面"]', //261114，弹窗，神券，签到，添加到桌面，X掉
           ],
         },
       ],
@@ -966,6 +969,7 @@ export default defineGkdApp({
             'Dialog > View > View > Button[text="关闭"] - View > View > TextView[text="继续领"]',
             //'Dialog > View > View > @Button[clickable=true][visibleToUser=true] - View > View > TextView[text="继续领"]',
             'View > View > TextView[text^="已连签" && text$="天"] +n TextView[text="提醒我领积分"] + Image[clickable=false][visibleToUser=true][index=parent.childCount.minus(1)]',
+            'Dialog > View > View > @Button[text="关闭"][clickable=true][visibleToUser=true] - View > View >  TextView[text="剩余0次"]', //261114，神券签到抽奖
           ],
         },
       ],

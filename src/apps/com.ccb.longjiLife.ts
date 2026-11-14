@@ -49,6 +49,23 @@ export default defineGkdApp({
     },
     {
       key: 4,
+      name: '建行生活授权',
+      desc: '261114',
+      rules: [
+        {
+          resetMatch: 'match',
+          actionCd: 500,
+          activityIds: '.MainActivity',
+          anyMatches: [
+            'View > TextView[text="免责声明"] +(6,9) TextView[text="若未勾选，在15天后再次提示"] + TextView[text="返回"] + TextView[text="我知道了"][clickable=true][visibleToUser=true]', //261114，建行生活授权，我知道了
+            'WebView[text="授权页"] > View > View > CheckBox[checked=false][visibleToUser=true][clickable=true]', //261114，建行生活授权，勾选同意
+            'WebView[text="授权页"] > View > View > CheckBox[checked=true][visibleToUser=true][clickable=true] +2 Button[text="授权并登录"][clickable=true][visibleToUser=true]', //261114，建行生活授权，勾选同意，登录
+          ],
+        },
+      ],
+    },
+    {
+      key: 5,
       name: '0元抢',
       rules: [
         {
@@ -60,7 +77,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 5,
+      key: 6,
       name: '活动太火爆了',
       desc: '',
       rules: [
@@ -73,7 +90,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 6,
+      key: 7,
       name: '优惠券已抢光',
       desc: '',
       rules: [
@@ -86,7 +103,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 7,
+      key: 8,
       name: '已抢光',
       desc: '260831，排除 低碳挑战， [text*="欢乐周末惠"] <<n * +n * > [text="已抢光"]',
       rules: [
@@ -100,7 +117,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 8,
+      key: 9,
       name: '未中奖，弹窗',
       desc: 'D',
       rules: [
@@ -112,7 +129,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 9,
+      key: 10,
       name: '低碳生活，一键收取',
       desc: '261113，增加 弹窗，clickable=true',
       rules: [
@@ -130,7 +147,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 10,
+      key: 11,
       name: '弹窗2',
       desc: '251205,D，匹配规则是图形按钮',
       rules: [
@@ -143,8 +160,8 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 11,
-      name: '占位11，财富会员，中间横幅，社保卡活动',
+      key: 12,
+      name: '占位12，财富会员，中间横幅，社保卡活动',
       desc: 'D，260114，整合12，13，16',
       rules: [
         {
@@ -162,8 +179,8 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 12,
-      name: '占位12，财富会员，中间横幅，社保卡活动，身份信息验证',
+      key: 13,
+      name: '占位13，财富会员，中间横幅，社保卡活动，身份信息验证',
       desc: 'D，261014，冲突14，',
       rules: [
         {
@@ -178,7 +195,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 13,
+      key: 14,
       name: '弹窗，建行社保卡活动，公告，X掉',
       desc: '261016',
       rules: [
@@ -195,7 +212,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 14,
+      key: 15,
       name: '财富会员，中间横幅，社保卡活动，身份信息验证，勾选同意',
       desc: '261016',
       rules: [
@@ -212,7 +229,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 15,
+      key: 16,
       name: '建行社保卡，勾选同意后，立即参与',
       desc: '260806',
       rules: [
@@ -229,7 +246,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 16,
+      key: 17,
       name: '弹窗，建行社保卡活动，好的',
       desc: '261016',
       rules: [
@@ -247,7 +264,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 17,
+      key: 18,
       name: '低碳挑战，领取奖励',
       desc: '261025',
       rules: [
@@ -260,7 +277,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 18,
+      key: 19,
       name: '弹窗，低碳挑战，领取成功，X掉',
       desc: '261104',
       rules: [

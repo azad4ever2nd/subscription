@@ -748,7 +748,7 @@ export default defineGkdApp({
         {
           resetMatch: 'match',
           //actionMaximum: 5,//提前点，次数调大，
-          actionCd: 0,
+          actionCd: 300,
           activityIds: [
             'com.tencent.mm.plugin.appbrand.ui.AppBrandUI0',
             'com.tencent.mm.plugin.appbrand.ui.AppBrandUI1',
@@ -808,7 +808,7 @@ export default defineGkdApp({
     {
       key: 40,
       name: '弹窗，工行相关，X掉2，',
-      desc: '261106，添加 活动未开始，我知道了，红色打卡，宁波，朴朴，动卡空间，内蒙工行，贵阳工行，工行余姚，湘约工行，贵州工行，已参加过',
+      desc: '261114，添加 活动未开始，我知道了，红色打卡，宁波，朴朴，动卡空间，内蒙工行，贵阳工行，工行余姚，湘约工行，贵州工行，已参加过',
       rules: [
         {
           resetMatch: 'match',
@@ -863,6 +863,7 @@ export default defineGkdApp({
             'View > View > @Button[text="我知道了"][clickable=true][visibleToUser=true] - View > TextView[text="您的月参与次数已达上限～"]', //261103
             'View > View > TextView[text="每人1次参与机会"] + TextView[text="确定"][clickable=true][visibleToUser=true]',
             'View > View > TextView[text="每人每月1次参与机会"] + TextView[text="确定"][clickable=true][visibleToUser=true]',
+            'View > TextView[text="超过领取限制"] + View + TextView[clickable=true][visibleToUser=true]', //261114，弹窗，工行贵阳，马上有确幸，X掉
             'TextView[text^="已参与"] < View +2 @TextView[clickable=true][visibleToUser=true] - View > TextView[text="确认"]',
             '@TextView[clickable=true][visibleToUser=true] - TextView[clickable=true][visibleToUser=true] - View >n  TextView[text^="已参与"]',
             'View > View > TextView[text="很遗憾，此次未中奖，感谢您的参与"] + TextView[text="确定"][clickable=true][visibleToUser=true]',

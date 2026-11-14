@@ -214,6 +214,33 @@ export default defineGkdApp({
     },
     {
       key: 15,
+      name: '弹窗，温馨提示，确定',
+      desc: '261114',
+      rules: [
+        {
+          fastQuery: true,
+          resetMatch: 'match',
+          activityIds: 'com.njcb.mobile.h5biz.H5ContainerActivity',
+          matches:
+            'LinearLayout > TextView[text="温馨提示"] + TextView + LinearLayout > TextView[text="确定"][clickable=true][visibleToUser=true]',
+        },
+      ],
+    },
+    {
+      key: 16,
+      name: '我已阅读并同意',
+      desc: '261114',
+      rules: [
+        {
+          resetMatch: 'match',
+          activityIds: 'com.njcb.mobile.h5biz.H5ContainerActivity',
+          matches:
+            'WebView[text="南京银行"] > View > View > Button[text="我已阅读并同意"][clickable=true][visibleToUser=true]',
+        },
+      ],
+    },
+    {
+      key: 17,
       name: '同意授权',
       desc: '251203',
       rules: [
@@ -228,7 +255,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 16,
+      key: 18,
       name: '测额弹窗',
       desc: '260122',
       rules: [

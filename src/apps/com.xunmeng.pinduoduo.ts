@@ -346,6 +346,7 @@ export default defineGkdApp({
             'View > View > @Button[text="关闭弹窗"][clickable=true][visibleToUser=true] +n View > TextView[text$="已支付"] + TextView[text*="邀请好友来拼单"]', //下单完后弹窗，还差1人，赶快邀请好友来拼单吧
             'View > View > @Button[text="关闭弹窗"][clickable=true][visibleToUser=true] + View > TextView[text="继续逛逛"] + Button[text="查看订单详情"]', //261105，弹窗，下单成功，预计13小时内发货"
             'WebView > WebView > View > View > View > Button[text="关闭弹窗"][clickable=true][visibleToUser=true]',
+            'TextView[text^="享折扣立减" && text$="元"] <<n ViewGroup + @ViewGroup[clickable=true][visibleToUser=true] > FrameLayout > TextView[text.length=1]', //261114，弹窗，商品折扣
           ],
         },
       ],

@@ -387,35 +387,39 @@ export default defineGkdApp({
     },
     {
       key: 24,
-      name: '直播间任务，去完成',
-      desc: '260624',
+      name: '直接抽奖大转盘，去完成',
+      desc: '261114',
       rules: [
         {
           resetMatch: 'match',
           actionMaximum: 1,
           activityIds: 'com.bankcomm.module.biz.webcontainer.BCMHtml5Activity',
-          matches:
+          anyMatches: [
+            'View > View > View + TextView[text="1次抽奖机会"] + View > Image[text="去完成"][clickable=true][visibleToUser=true]', //261114，直播间抽奖大转盘，去完成
             'WebView > View > View > View > View > TextView[text="1次抽奖机会"] + View > Image[text="去完成"]',
+          ],
         },
       ],
     },
     {
       key: 25,
-      name: '直播间任务完成，立即领取',
-      desc: '260624',
+      name: '直播抽奖大转盘，任务完成，立即领取',
+      desc: '261114',
       rules: [
         {
           resetMatch: 'match',
           actionMaximum: 1,
           activityIds: 'com.bankcomm.module.biz.webcontainer.BCMHtml5Activity',
-          matches:
+          anyMatches: [
+            'View > View > View + TextView[text="1次抽奖机会"] + View > Image[text="去领奖"][clickable=true][visibleToUser=true]', //261114，直播间抽奖大转盘，去领奖
             'WebView > View > View > View > View > TextView[text="1次抽奖机会"] + View > Image[text="去领奖"]',
+          ],
         },
       ],
     },
     {
       key: 26,
-      name: '直播间任务完成，抽奖弹窗',
+      name: '弹窗，直播抽奖大转盘，抽奖弹窗',
       desc: '260624',
       rules: [
         {
@@ -428,14 +432,16 @@ export default defineGkdApp({
     },
     {
       key: 27,
-      name: '直播间任务完成，抽奖',
-      desc: '260728',
+      name: '直播抽奖大转盘，任务完成，抽奖',
+      desc: '261114',
       rules: [
         {
           resetMatch: 'match',
           activityIds: 'com.bankcomm.module.biz.webcontainer.BCMHtml5Activity',
-          matches:
+          anyMatches: [
+            'View > Image + View + TextView[text="1次"] + TextView[text=""][clickable=true][visibleToUser=true]', //261114，直播间抽奖大转盘，抽奖
             'WebView[text="交通银行"] > View > View > View > View > View > TextView[text="1次"] + TextView[clickable=false][visibleToUser=true][text.length=0]',
+          ],
         },
       ],
     },
