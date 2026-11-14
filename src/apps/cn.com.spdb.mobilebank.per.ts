@@ -96,11 +96,12 @@ export default defineGkdApp({
       rules: [
         {
           resetMatch: 'match',
-          matchTime: 3000,
           forcedTime: 3000,
           actionMaximum: 1,
-          excludeMatches:
+          excludeMatches: [
             'View > View[text^="选择账户"][clickable=true][visibleToUser=true]',
+            'View > View + View > RadioButton[text="活动奖励发放至银行卡"][checked=false][visibleToUser=true][clickable=true]',
+          ],
           activityIds:
             'cn.com.spdb.mobilebank.per.activity.web.stage.StageCommonWebActivity',
           matches:
@@ -110,6 +111,35 @@ export default defineGkdApp({
     },
     {
       key: 8,
+      name: '基金体验金，勾选 活动奖励发放至银行卡',
+      desc: '261114',
+      rules: [
+        {
+          resetMatch: 'match',
+          forcedTime: 3000,
+          activityIds:
+            'cn.com.spdb.mobilebank.per.activity.web.stage.StageCommonWebActivity',
+          matches:
+            'View > View + View > RadioButton[text="活动奖励发放至银行卡"][checked=false][visibleToUser=true][clickable=true]',
+        },
+      ],
+    },
+    {
+      key: 9,
+      name: '基金体验金，勾选活动奖励发放至银行卡，下一步',
+      desc: '261114',
+      rules: [
+        {
+          resetMatch: 'match',
+          forcedTime: 3000,
+          activityIds: '.activity.web.stage.StageCommonWebActivity',
+          matches:
+            'RadioButton[text="活动奖励发放至银行卡"][checked=true][visibleToUser=true][clickable=true] < View <<n View[id="my-scollapse"] +n View > View > Image[text="step-up.208b9bb0"] + Image[text="step-next.fd7e4974"]',
+        },
+      ],
+    },
+    {
+      key: 10,
       name: '弹窗，交易确认，确定',
       desc: '260905',
       rules: [
@@ -124,7 +154,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 9,
+      key: 11,
       name: '弹窗，跳转第三方，立即前往',
       desc: '261106',
       rules: [
@@ -139,7 +169,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 10,
+      key: 12,
       name: '弹窗，立减金领取成功，确定',
       desc: '261106',
       rules: [
@@ -152,7 +182,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 11,
+      key: 13,
       name: '弹窗，灵活+，X掉',
       desc: '261113',
       rules: [
