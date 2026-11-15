@@ -12,7 +12,7 @@ export default defineGkdApp({
         {
           resetMatch: 'match',
           fastQuery: true,
-          actionDelay: 10000, //8秒没人按就稍后提醒
+          actionDelay: 5000, //8秒没人按就稍后提醒
           actionCd: 2000,
           activityIds: '.alerts.AlertActivity',
           anyMatches: [
@@ -30,7 +30,7 @@ export default defineGkdApp({
         {
           resetMatch: 'match',
           fastQuery: true,
-          actionDelay: 8000, //8秒没人按就稍后提醒
+          actionDelay: 5000, //5秒没人按就稍后提醒
           actionCd: 2000,
           activityIds: '.alerts.AlertActivity',
           anyMatches: [

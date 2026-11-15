@@ -96,5 +96,19 @@ export default defineGkdApp({
         },
       ],
     },
+    {
+      key: 6,
+      name: '弹窗，播放卡顿，立即切换',
+      desc: '261115',
+      rules: [
+        {
+          resetMatch: 'match',
+          fastQuery: true,
+          activityIds: 'com.pikcloud.vodplayer.vodmix.MixPlayerActivity',
+          matches:
+            'FrameLayout > ViewGroup > @TextView[vid="toast_text"][text*="播放卡顿" && text*="立即切换"][visibleToUser=true] + LinearLayout[vid="ll_action"]',
+        },
+      ],
+    },
   ],
 });
