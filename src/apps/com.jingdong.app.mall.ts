@@ -99,8 +99,10 @@ export default defineGkdApp({
         {
           resetMatch: 'match',
           activityIds: 'com.jd.lib.ttt.page.TTTMultiPageActivity',
-          matches:
+          anyMatches: [
             'ViewGroup > TextView[text="开心收下"] + @FrameLayout[clickable=true][visibleToUser=true] > ImageView[desc="关闭"]',
+            'FrameLayout > ViewGroup > @FrameLayout[clickable=true][visibleToUser=true] > ImageView[desc="关闭"]', //26115，弹窗，恭喜获得惊喜好券
+          ],
         },
       ],
     },

@@ -861,6 +861,7 @@ export default defineGkdApp({
             'View > View > @TextView[clickable=true][visibleToUser=true] -n View >n TextView[text^="您的抽奖次数不足"]',
             'View > View > @TextView[clickable=true][visibleToUser=true] -n View > TextView[text^="您已经参与过了" || text*="下次活动记得来参加呀"]',
             'View > View > @Button[text="我知道了"][clickable=true][visibleToUser=true] - View > TextView[text="您的月参与次数已达上限～"]', //261103
+            'View > View > @TextView[clickable=true][visibleToUser=true] - TextView - View > TextView[text^="您的抽奖次数已用完"]', //261115，工行苏州，苏州有福
             'View > View > TextView[text="每人1次参与机会"] + TextView[text="确定"][clickable=true][visibleToUser=true]',
             'View > View > TextView[text="每人每月1次参与机会"] + TextView[text="确定"][clickable=true][visibleToUser=true]',
             'View > TextView[text="超过领取限制"] + View + TextView[clickable=true][visibleToUser=true]', //261114，弹窗，工行贵阳，马上有确幸，X掉

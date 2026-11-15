@@ -189,14 +189,14 @@ export default defineGkdApp({
     {
       key: 11,
       name: '弹窗，抽奖很遗憾，X掉',
-      desc: '261021，添加 中奖',
+      desc: '261115，添加 中奖',
       rules: [
         {
           resetMatch: 'match',
           activityIds:
             'com.huawei.module.commonwebview.ui.CommonWebviewActivity',
           anyMatches: [
-            'View[id="popup_absolute"] > @TextView[text.length=1][clickable=true][visibleToUser=true] + View > View > TextView[text="10积分"] + View > TextView[text="查看活动规则"]',
+            'View[id="popup_absolute"] > @TextView[text.length=1][clickable=true][visibleToUser=true] + View > View > TextView[text*="积分"] + View > TextView[text="查看活动规则"]', //261115，签到抽奖，中奖积分，X掉
             'View[id="popup_absolute"] > @TextView[text.length=1][clickable=true][visibleToUser=true] + View TextView[text="与奖品擦肩而过"] + View > TextView[text="查看活动规则"]',
           ],
         },

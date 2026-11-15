@@ -430,6 +430,9 @@ export default defineGkdApp({
             'com.unionpay.liteapp.app.UPLiteAppActivity3',
             'com.unionpay.liteapp.app.UPLiteAppActivity4',
           ],
+          excludeMatches: [
+            'LinearLayout > TextView[vid="tv_dialog_info"][text*="开启定位服务"] + LinearLayout > @TextView[vid="btn_cancel"][clickable=true][visibleToUser=true][text*="取消" || text="取 消"] + TextView[vid="btn_ok"]',
+          ],
           matches:
             'View > View > @Button[text="去抽奖"][clickable=true][visibleToUser=true] + TextView[visibleToUser=true]', //261114，弹窗，签到，去抽奖，最后一个是X掉
         },

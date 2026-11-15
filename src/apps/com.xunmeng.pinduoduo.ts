@@ -102,6 +102,7 @@ export default defineGkdApp({
           action: 'clickCenter',
           activityIds: 'com.xunmeng.pinduoduo.activity.NewPageActivity',
           anyMatches: [
+            'ImageView < ViewGroup < @ViewGroup[clickable=true][visibleToUser=true]  - ViewGroup >n TextView[text="添加物流助手到桌面"]', //261115，弹窗，添加物流助手到桌面，改成fastquery=true
             'TextView[text="继续编辑"] < FrameLayout + @FrameLayout[clickable=true][visibleToUser=true] > TextView[text="放弃打款"]',
             'TextView[text="继续编辑"] < FrameLayout < ViewGroup + @ViewGroup[clickable=true] > FrameLayout > TextView[text="退出"]',
             '[vid="pdd"] < @[vid="pdd"] + [vid="pdd"] > [text="评价拍摄"]', //老版的

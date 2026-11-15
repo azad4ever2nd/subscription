@@ -208,7 +208,7 @@ export default defineGkdApp({
         {
           forcedTime: 3000,
           actionCd: 2000, //延长，考虑到任务时间
-          matchDelay: 500, //减小，原800
+          //matchDelay: 300, //261115，关闭测试，减小，原800
           resetMatch: 'match',
           action: 'clickCenter',
           excludeMatches: [
@@ -368,7 +368,7 @@ export default defineGkdApp({
       rules: [
         {
           resetMatch: 'match',
-          actionCd: 2000, //延长
+          actionCd: 1000, //261115，缩短测试
           forcedTime: 3000,
           activityIds:
             'cmb.pb.app.h5container.webviewcontainer.PBWebContainerActivity',
