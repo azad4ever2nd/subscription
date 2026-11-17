@@ -192,6 +192,7 @@ export default defineGkdApp({
         {
           resetMatch: 'match',
           actionMaximum: 1,
+          forcedTime: 3000,
           activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
           matches:
             'WebView[text="验证身份"] > View > View > View > View[text="短信验证码验证"] + View[clickable=true][visibleToUser=true]',

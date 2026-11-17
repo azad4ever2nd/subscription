@@ -162,6 +162,19 @@ export default defineGkdApp({
     },
     {
       key: 12,
+      name: '弹窗，话费充值券，X掉',
+      desc: '261117',
+      rules: [
+        {
+          resetMatch: 'match',
+          activityIds: '.bm.common.web.ui.WebActivity',
+          matches:
+            'Image < View < View[desc^="话费充值券"] + View[desc="javascript:void(0);"][clickable=true][visibleToUser=true]',
+        },
+      ],
+    },
+    {
+      key: 13,
       name: '弹窗，金豆领取成功，X掉',
       desc: '261107',
       rules: [

@@ -139,9 +139,7 @@ export default defineGkdApp({
           forcedTime: 2000,
           activityIds: 'com.ccb.cloudmerchant.view.WebViewActivity',
           anyMatches: [
-            'View > View > TextView[text$="公告"] + TextView[text.length>1] + TextView[text=""][clickable=true][visibleToUser=true]', //261113，升级公告，X掉
             'WebView[text="低碳生活"] > View > Image[text="oneKey"][visibleToUser=true]',
-            'View > View > TextView[text*="上线通知"] +2 TextView[text.length=0][clickable=true][visibleToUser=true]',
           ],
         },
       ],
@@ -285,6 +283,10 @@ export default defineGkdApp({
           resetMatch: 'match',
           activityIds: 'com.ccb.cloudmerchant.view.WebViewActivity',
           anyMatches: [
+            'View > View > @TextView[text="立即体验"][clickable=true][visibleToUser=true] + CheckBox[checked=true][visibleToUser=true][clickable=true] +n CheckBox[checked=true][visibleToUser=true][clickable=true]', //261117，弹窗，开启低碳之旅，立即体验
+            'View > View > TextView[text*="上线通知"] +2 TextView[text.length=0][clickable=true][visibleToUser=true]',
+            'View > View > TextView[text$="公告"] + TextView[text.length>1] + TextView[text=""][clickable=true][visibleToUser=true]', //261113，升级公告，X掉
+            'View > View > Image - View > TextView[text="龙积分"] + TextView[text^="+"] +  TextView[text="确认领取"][clickable=true][visibleToUser=true]', //261117，弹窗，有龙积分待领取
             'View > Button[text="查看积分"] + Image[text="close.c2f29ee4"][clickable=true][visibleToUser=true]',
             'View > Button[text="查看积分"] + Image[text="close.c2f29ee4"][clickable=false][visibleToUser=true]',
             'Dialog > TextView[text="任务领取成功"] + View > Button[text="确认"]', //261104，领取任务

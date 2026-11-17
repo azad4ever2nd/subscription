@@ -348,6 +348,7 @@ export default defineGkdApp({
             'View > View > @Button[text="关闭弹窗"][clickable=true][visibleToUser=true] + View > TextView[text="继续逛逛"] + Button[text="查看订单详情"]', //261105，弹窗，下单成功，预计13小时内发货"
             'WebView > WebView > View > View > View > Button[text="关闭弹窗"][clickable=true][visibleToUser=true]',
             'TextView[text^="享折扣立减" && text$="元"] <<n ViewGroup + @ViewGroup[clickable=true][visibleToUser=true] > FrameLayout > TextView[text.length=1]', //261114，弹窗，商品折扣
+            'View > View > Button[text="知道了"][clickable=true][visibleToUser=true] + Button[text="关闭按钮"][clickable=true][visibleToUser=true]', //261117，弹窗，百亿补贴，知道了，X掉
           ],
         },
       ],
@@ -397,7 +398,21 @@ export default defineGkdApp({
     {
       key: 20,
       name: '弹窗NewPageMaskActivity，X掉1',
-      desc: '261107，fastQuery=false，clickable=true',
+      desc: '261117，fastQuery=true，clickable=true',
+      rules: [
+        {
+          resetMatch: 'match',
+          fastQuery: true,
+          activityIds: '.activity.NewPageMaskActivity',
+          matches:
+            '@ImageView[clickable=true][visibleToUser=true] < ViewGroup - ViewGroup TextView[text="逛逛别的"]',
+        },
+      ],
+    },
+    {
+      key: 21,
+      name: '弹窗NewPageMaskActivity，X掉2',
+      desc: '261117，fastQuery=false，clickable=true',
       rules: [
         {
           resetMatch: 'match',
@@ -405,6 +420,7 @@ export default defineGkdApp({
           anyMatches: [
             'View > View > @Button[text="关闭弹窗"][clickable=true][visibleToUser=true] +n View > TextView[text="开心收下"] + Button[text="查看订单详情"]',
             'View > View > @Button[text="关闭弹窗"][clickable=true][visibleToUser=true] +n View > Button[text^="查看订单详情"]', //261106，弹窗，下单完成后，一键领取
+            'View > View > @Button[text="关闭弹窗"][clickable=true][visibleToUser=true] +n View > View > TextView[text="继续逛逛"] + Button[text="查看订单详情"]', //261117，弹窗，下完单后提示还差1人拼单
             'View > View > Image[text="webp"] + @TextView[clickable=true][visibleToUser=true] +n View > TextView[text="售后体验补偿券已到账"]', //261105，弹窗，售后体验补偿券已到账，X掉
             'View > View > Image[text="webp"] + @TextView[clickable=true][visibleToUser=true] +n View > TextView[text="立即使用"] + TextView[text="可在【我的优惠券】查看"]', //261105，弹窗，售后体验补偿券已到账，可在【我的优惠券】查看，X掉
             'TextView[text="先去逛逛"] <<n ViewGroup + ViewGroup > ImageView[clickable=true][visibleToUser=true]', //261104，弹窗，仅剩几件，先去逛逛 ，X掉
@@ -415,8 +431,8 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 21,
-      name: '弹窗NewPageMaskActivity，X掉2',
+      key: 22,
+      name: '弹窗NewPageMaskActivity，X掉3',
       desc: '261102，fastQuery=false，clickable=false',
       rules: [
         {
@@ -428,7 +444,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 22,
+      key: 23,
       name: '弹窗，近期拼单奖励已到账（月卡），X掉',
       desc: '261109，fastQuery=true,clickable=true',
       rules: [
@@ -445,7 +461,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 23,
+      key: 24,
       name: '弹窗，因通知关闭，无法接收功能消息，拒绝接收',
       desc: '261109',
       rules: [
@@ -459,7 +475,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 24,
+      key: 25,
       name: '百亿补贴消费券天天抢，点击领取消费券（激活）',
       desc: '260911，fastQuery=false，添加 Ids ',
       rules: [

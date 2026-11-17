@@ -7,7 +7,7 @@ export default defineGkdApp({
     {
       key: 1,
       name: '每日分享指定视频至微信，立即分享',
-      desc: '260831，每个月要更新',
+      desc: '261117，每个月要更新',
       rules: [
         {
           resetMatch: 'app',
@@ -17,8 +17,10 @@ export default defineGkdApp({
             'com.quickjs.android.example.RNFragmentActivity',
             'com.cmvideo.capability.remote_web.WebProcessActivity',
           ],
-          matches:
-            'View > View > View > Image[clickable=false][visibleToUser=true][text="1O7GEIFASA29N"]',
+          anyMatches: [
+            'View > @View[clickable=true][visibleToUser=true] > View > Image[text="1O7HHG101UE5A"]', //261117，每日分享，立即分享，限1次，
+            //'View > View > View > Image[clickable=false][visibleToUser=true][text="1O7GEIFASA29N"]',
+          ],
         },
       ],
     },
@@ -91,7 +93,7 @@ export default defineGkdApp({
     {
       key: 6,
       name: '领2GB日流量，马上领取',
-      desc: '260831，依赖 返回到福利中心',
+      desc: '261117，依赖 返回到福利中心',
       rules: [
         {
           resetMatch: 'app',
@@ -102,8 +104,10 @@ export default defineGkdApp({
             'com.quickjs.android.example.RNFragmentActivity',
             'com.cmvideo.capability.remote_web.WebProcessActivity',
           ],
-          matches:
-            'View > View > View > Image[clickable=false][visibleToUser=true][text="1O7GEIFAUMH91"]',
+          anyMatches: [
+            'View > @View[clickable=true][visibleToUser=true] > View > Image[text="1O7HHG5IBHROR"]', //261117，每日分享后，抽奖  2G流量，立即领取，限1次，
+            //'View > View > View > Image[clickable=false][visibleToUser=true][text="1O7GEIFAUMH91"]',
+          ],
         },
       ],
     },
@@ -120,7 +124,7 @@ export default defineGkdApp({
             'com.quickjs.android.example.RNFragmentActivity',
             'com.cmvideo.capability.remote_web.WebProcessActivity',
           ],
-          matches: [
+          anyMatches: [
             'View[id="verfyDiv"] > @View[id="smsBtn"][clickable=true][desc="获取验证码"] > TextView[text="获取验证码"]',
             'View > TextView[text="获取验证码"][clickable=false][visibleToUser=true]',
           ],
@@ -129,8 +133,8 @@ export default defineGkdApp({
     },
     {
       key: 8,
-      name: '弹窗，恭喜获得2GB通用流量，好的',
-      desc: '261112，添加各种抽奖类的提示，各种弹窗，添加 IDS',
+      name: '弹窗，X掉1',
+      desc: '261117，添加各种抽奖类的提示，各种弹窗，添加 IDS',
       rules: [
         {
           resetMatch: 'match',
@@ -139,33 +143,81 @@ export default defineGkdApp({
             'com.cmvideo.capability.remote_web.WebProcessActivity',
           ],
           anyMatches: [
+            'View > @View[clickable=true][visibleToUser=true] > View > Image[text="1O7HHG1T79J2P"]', //26117，恭喜获得2GB通用流量，我知道了
+            //'View > @View[clickable=true][visibleToUser=true] > View > Image[text="1O7HHG5IBHROR"]',//261117，每日分享后，抽奖  2G流量，立即领取，限1次，
+            //'View > @View[clickable=true][visibleToUser=true] > View > Image[text="1O7HHG101UE5A"]',//261117，每日分享，立即分享，限1次，
+            'View > @View[clickable=true][visibleToUser=true] > View > Image[text="1O7HHG167GVI2"]', //261117，弹窗，打卡成功，我知道了
+            'View > @View[clickable=true][visibleToUser=true] > View > Image[text="1O7HHG1Q01P4R"]', //261117，弹窗，恭喜获得抽奖机会
+            'View > @View[clickable=true][visibleToUser=true] > View > Image[text="1O7HHG1M0QJQI"]', //261117，弹窗，剩余抽奖次数，X掉
+            'View > @View[clickable=true][visibleToUser=true] > View > Image[text="1O7HHG19F1NPU"]', //261117，弹窗，消耗1次抽奖机会，确认
             '@View[clickable=true][visibleToUser=true] > View > View > View > Image[text="1O7GEIFBVUQCO"]', //261112，弹窗，请先完成分享
             '@View[clickable=false][visibleToUser=true] >3 Image[text="1O7GEIFBVUQCO"]', //261109，弹窗，请先完成分享
             '@View[clickable=true][visibleToUser=true] > View > View > View > Image[text="1O7GE17M3SEBP"]', //这个按钮clickable=true是在第5层
             '@View[clickable=true][visibleToUser=true] > View > Image[text="1O7H0ON8UHFGE"]', //累计打卡
-            '@View > View > View > Image[text="1O7GEIFBFRPLK" || text="1O7GEIFC0TJFP" || text="1O7GE0VC9N7O0" || text="1O7GC3SARU1RQ" || text="1O7GDU9N7V7LU" || text="1O7GDU9H2A5TQ" || text="1O7GL9PTD3DCA" || text="1O7GE0VD20609" || text="1O7GEIFC0TJFP" || text="1O7GDU9HAKUMC"]',
-            'View[clickable=true][visibleToUser=true] > View > Image[text="1O7GDU9H0PKEV"]',
-            '@View > View > View > Image[text="1O7GDU9LRD8A8" || text="1O7GDU9LPCKHS" || text="1O7GE0VDLVO51" || text="1O7GEIFC0TJFP"]',
+            //'@View > View > View > Image[text="1O7GEIFBFRPLK" || text="1O7GEIFC0TJFP" || text="1O7GE0VC9N7O0" || text="1O7GC3SARU1RQ" || text="1O7GDU9N7V7LU" || text="1O7GDU9H2A5TQ" || text="1O7GL9PTD3DCA" || text="1O7GE0VD20609" || text="1O7GEIFC0TJFP" || text="1O7GDU9HAKUMC"]',
+            //'View[clickable=true][visibleToUser=true] > View > Image[text="1O7GDU9H0PKEV"]',
+            //'@View > View > View > Image[text="1O7GDU9LRD8A8" || text="1O7GDU9LPCKHS" || text="1O7GE0VDLVO51" || text="1O7GEIFC0TJFP"]',
           ],
         },
       ],
     },
     {
       key: 9,
-      name: '恭喜打卡成功',
+      name: '每日打卡',
       desc: '260622',
       rules: [
         {
           resetMatch: 'match',
           action: 'clickCenter',
+          actionMaximum: 1,
+          preKeys: [7],
           activityIds: 'com.cmvideo.capability.remote_web.WebProcessActivity',
-          matches:
-            'View > View > View > View > View > View[id="cc54b71dca3545fb95c3de42954fa8e2"]',
+          excludeMatches: [],
+          anyMatches: [
+            'View > View > @TextView[text=""][clickable=true][visibleToUser=true] - View >n View[text*="累计打卡"] ', //261117，每日打卡，
+            //'View > View > View > View > View > View[id="cc54b71dca3545fb95c3de42954fa8e2"]',
+          ],
         },
       ],
     },
     {
       key: 10,
+      name: '体育类会员，立即领取',
+      desc: '260622',
+      rules: [
+        {
+          resetMatch: 'match',
+          action: 'clickCenter',
+          actionMaximum: 1,
+          preKeys: [9],
+          activityIds: 'com.cmvideo.capability.remote_web.WebProcessActivity',
+          excludeMatches: [],
+          anyMatches: [
+            'View > @View[clickable=true][visibleToUser=true] > View > Image[text="1O7HHG15B1MLT"]', //261117，体育类会员每日登录活动页面抽奖机会+1，立即领取，限1次，
+          ],
+        },
+      ],
+    },
+    {
+      key: 11,
+      name: '咪咕视频会员，立即领取',
+      desc: '261117',
+      rules: [
+        {
+          resetMatch: 'match',
+          action: 'clickCenter',
+          actionMaximum: 1,
+          preKeys: [10],
+          activityIds: 'com.cmvideo.capability.remote_web.WebProcessActivity',
+          excludeMatches: [],
+          anyMatches: [
+            'View > @View[clickable=true][visibleToUser=true] > View > Image[text="1O7HHG152SEN3"]', //261117，咪咕视频会员每日登录活动页面抽奖机会+1，立即领取，限1次，
+          ],
+        },
+      ],
+    },
+    {
+      key: 12,
       name: '开启推送通知，以后再说',
       desc: '260622',
       rules: [
@@ -180,7 +232,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 11,
+      key: 13,
       name: '广告弹窗',
       desc: '260727',
       rules: [
@@ -198,7 +250,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 12,
+      key: 14,
       name: '更新协议提示',
       desc: '260711,更新协议',
       rules: [
@@ -215,7 +267,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 13,
+      key: 15,
       name: '提示 进群，X掉',
       desc: '260719',
       rules: [
@@ -229,7 +281,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 14,
+      key: 16,
       name: '钻石会员弹窗，X掉',
       desc: '260804',
       rules: [

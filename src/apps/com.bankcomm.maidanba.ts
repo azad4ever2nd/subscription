@@ -176,13 +176,28 @@ export default defineGkdApp({
     },
     {
       key: 13,
+      name: '幸运扭蛋，X掉',
+      desc: '261117',
+      rules: [
+        {
+          resetMatch: 'match',
+          activityIds: '.activity.WebViewActivity',
+          anyMatches: [
+            'TextView - TextView[text="恭喜获得"] < View + View[desc^="action?"] + TextView[clickable=true][visibleToUser=true]', //261117，弹窗，抽奖 立减金
+            'TextView - TextView[text="恭喜获得"] < View + View[desc^="lotteryAction?"] + TextView[clickable=true][visibleToUser=true]', //261117，弹窗，抽奖 积分，
+          ],
+        },
+      ],
+    },
+    {
+      key: 14,
       name: '专属权限弹窗',
       desc: '251127',
       rules: [
         {
+          resetMatch: 'match',
           matches: '[vid="iv_dialog_guide_to_install_close"]',
           fastQuery: true,
-          resetMatch: 'match',
           activityIds: [
             'com.bankcomm.maidanba.creditcardpay.CreditCardListActivity',
           ],

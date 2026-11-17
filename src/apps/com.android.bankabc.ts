@@ -366,6 +366,19 @@ export default defineGkdApp({
     },
     {
       key: 25,
+      name: '温馨提示，我已知晓 去兑换 ，X掉',
+      desc: '261117',
+      rules: [
+        {
+          resetMatch: 'match',
+          activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
+          matches:
+            'WebView[text="茶影优惠享"] View[text=""][childCount=2] > @View[text=""][clickable=true] - View[text=""] > View[text=""]',
+        },
+      ],
+    },
+    {
+      key: 26,
       name: '开启消息通知',
       desc: '260726',
       rules: [

@@ -157,22 +157,6 @@ export default defineGkdApp({
     },
     {
       key: 9,
-      name: '占位9',
-      desc: 'D，fastquery=true,clickable=false',
-      rules: [
-        {
-          resetMatch: 'match',
-          forcedTime: 3000,
-          fastQuery: true,
-          activityIds: 'com.alipay.android.msp.ui.views.MspContainerActivity',
-          anyMatches: [
-            '@TextView[text="放弃"][clickable=false][visibleToUser=true] < FrameLayout + FrameLayout > TextView[text="继续付款"]',
-          ],
-        },
-      ],
-    },
-    {
-      key: 10,
       name: '开启拼多多支付宝免密快捷支付，关闭',
       desc: '261106，fastquery=false,clickable=true',
       rules: [
@@ -185,6 +169,22 @@ export default defineGkdApp({
             'FrameLayout > FrameLayout > TextView + CheckBox[checked=true][visibleToUser=true][clickable=true]', //261106，开启拼多多支付宝免密快捷支付，关闭
             '@TextView[text="放弃"][clickable=false][visibleToUser=true] < FrameLayout + FrameLayout > TextView[text="继续付款"]',
           ],
+        },
+      ],
+    },
+    {
+      key: 10,
+      name: '数币节，立即抢',
+      desc: '261117',
+      rules: [
+        {
+          resetMatch: 'match',
+          forcedTime: 3000,
+          actionCd: 700,
+          activityIds:
+            'com.alipay.mobile.nebulax.xriver.activity.XRiverActivity',
+          matches:
+            'View > View > ListView[text="选择组"] + @View[clickable=true][visibleToUser=true] > TextView[text="立即抢"]', //261117，数币节
         },
       ],
     },
@@ -472,6 +472,7 @@ export default defineGkdApp({
           activityIds:
             'com.alipay.mobile.nebulax.xriver.activity.XRiverActivity',
           anyMatches: [
+            'View > View > Button[text="我知道了"][clickable=true]', //261117，弹窗，数币节
             'View > View > View[text="红包区域"] > View[childCount=3] > @View[clickable=true][visibleToUser=true] > TextView[text^="开抢倒计时" && text$="结束"]',
             'View > View > @TextView[text.length=0][clickable=true][visibleToUser=true] -2 View > TextView[text="财运红包"] + View + TextView[text="已发放至「我的奖励」"]',
             'View > View > @TextView[text.length=0][clickable=true][visibleToUser=true] - View > TextView[text="银行卡支付红包"] + View + TextView[text="已发放至「我的奖励」"]',
@@ -775,7 +776,7 @@ export default defineGkdApp({
     {
       key: 36,
       name: '小程序，各种弹窗，X掉1',
-      desc: '261109，fastquery=false,clickable=false,添加 排除误点去使用，明天不断签提醒，签到提醒，做任务领幸运星，领取奖励，排除红包卡券误点，闪购，超级吃货卡体验版，闪购签到，闪购小程序，添加到首页，添加 生活缴费',
+      desc: '261117，fastquery=false,clickable=false,添加 排除误点去使用，明天不断签提醒，签到提醒，做任务领幸运星，领取奖励，排除红包卡券误点，闪购，超级吃货卡体验版，闪购签到，闪购小程序，添加到首页，添加 生活缴费',
       rules: [
         {
           resetMatch: 'match',
@@ -807,6 +808,7 @@ export default defineGkdApp({
             'View[childCount=3] > View[childCount=3] > @TextView[clickable=false][visibleToUser=true] -2 View  >n TextView[text="去使用"]', //新版去使用，下方多了一个窗口
             'View > View > @TextView[id="p-2021006118622831-ors_14"][clickable=false][visibleToUser=true] - View >n TextView[text="去使用"]', //261109，弹窗，购物爆红包，X掉
             'View > View > @TextView[id="p-2021006118622831-ors_36"][clickable=false][visibleToUser=true] - View >n TextView[text="去使用"]', //261113，弹窗，购物爆红包，X掉
+            'View > View > @TextView[id^="p-2021006118622831-ors"][clickable=false][visibleToUser=true] - View >n TextView[text="去使用"]', //261117，改通用，弹窗，购物爆红包，X掉
             //'View > View > @TextView[id="p-2021006118622831-ors_36"][clickable=false][visibleToUser=true] - View > View > TextView[text="去使用"]',//261113，弹窗，购物爆红包，X掉
             //'TextView[text="去使用"] < View < View + TextView[id="p-2021006118622831-ors_36"][clickable=false][visibleToUser=true]',
             'Image[id="meb24ise8obdb"] < View[id^="meb23wkfgkptj"] < View + View > View > Image[clickable=false][visibleToUser=true]',

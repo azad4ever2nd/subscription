@@ -57,7 +57,7 @@ export default defineGkdApp({
     {
       key: 4,
       name: '基金财富月历，签到成功',
-      desc: '260926，添加 活动到期提醒',
+      desc: 'D，260926，添加 活动到期提醒',
       rules: [
         {
           action: 'clickCenter',
@@ -334,7 +334,7 @@ export default defineGkdApp({
     {
       key: 20,
       name: '弹窗，金知了',
-      desc: '',
+      desc: 'D,',
       rules: [
         {
           matches: ['@View <<4 [id="1104"]'],
@@ -350,13 +350,14 @@ export default defineGkdApp({
       desc: '260913 添加 差一点就中奖，',
       rules: [
         {
+          resetMatch: 'match',
+          forcedTime: 3000,
           anyMatches: [
             'TextView[text="差一点就中奖啦"] <n View < View + View > @View[clickable=false][visibleToUser=true] > TextView[text.length=1]',
             '@TextView[clickable=true][visibleToUser=true] < View + View > View > TextView[text="很遗憾，您未中奖"] +n TextView[text="谢谢参与"]',
             'View > View > View > @TextView[clickable=true][visibleToUser=true] - View > TextView[text="很遗憾，差一点就中奖了"]',
             '[text="返回去抽奖"]',
           ],
-          resetMatch: 'match',
           activityIds:
             'com.cebbank.mobile.cemb.ui.activity.mobilePayment.MobilePaymentWebActivity',
         },
@@ -365,7 +366,7 @@ export default defineGkdApp({
     {
       key: 22,
       name: '抽福袋，收下',
-      desc: '260815，添加 去兑换，完成任务弹窗，clickable=false',
+      desc: 'D，260815，添加 去兑换，完成任务弹窗，clickable=false',
       rules: [
         {
           resetMatch: 'match',

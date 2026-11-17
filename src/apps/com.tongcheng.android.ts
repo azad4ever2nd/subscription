@@ -211,11 +211,48 @@ export default defineGkdApp({
       rules: [
         {
           fastQuery: true,
+          resetMatch: 'match',
           action: 'clickCenter',
           activityIds: 'com.elong.android.flutter.TCELFlutterBoostActivity',
           anyMatches: [
             'LinearLayout > TextView[vid="tv_dialog_title"][text*="定位"] +n LinearLayout > @TextView[vid="btn_dialog_left"][text="稍后开启"][clickable=true][visibleToUser=true] + TextView[text="去设置"][clickable=true]',
           ],
+        },
+      ],
+    },
+    {
+      key: 15,
+      name: '每月17旅行节，直播补贴，领取',
+      desc: '261116',
+      rules: [
+        {
+          forcedTime: 3000,
+          actionCd: 700,
+          resetMatch: 'match',
+          anyMatches: [
+            'ViewGroup[vid="coupon_entry_container"] > ImageView[vid="tv_coupon_title"] + RecyclerView[vid="rv_coupon"] > @FrameLayout[vid="coupon_chip_root"][clickable=true][visibleToUser=true] > LinearLayout  > TextView[vid="tv_coupon_name"][text="17旅行节｜门票7.1折券"]', //261117，直播节入口
+            'ViewGroup[vid="coupon_entry_container"] > ImageView[vid="tv_coupon_title"] + RecyclerView[vid="rv_coupon"] > @FrameLayout[vid="coupon_chip_root"][clickable=true] > LinearLayout  > TextView[vid="tv_coupon_name"][text="17旅行节｜门票7.1折券"]', //261117，直播节入口
+            //'ViewGroup[vid="coupon_entry_container"] > @LinearLayout[vid="tv_coupon_receive"][clickable=true][visibleToUser=true] > TextView[text="领取"]',
+          ],
+          activityIds: ['.module.live.TCLiveRoomActivity'],
+        },
+      ],
+    },
+    {
+      key: 16,
+      name: '直播补贴，门票7.1折券，去领取',
+      desc: '261116',
+      rules: [
+        {
+          actionCd: 300,
+          forcedTime: 3000,
+          resetMatch: 'match',
+          actionMaximum: 5,
+          anyMatches: [
+            'ViewGroup[vid="root"][clickable=true][visibleToUser=true] > TextView[vid="tv_name"][text="17旅行节｜门票7.1折券"] + TextView[vid="tv_rule"] + TextView[vid="tv_action"][text*="去领取"][clickable=true][visibleToUser=true]', //261117，弹窗，直播补贴，门票7.1折券，去领取
+            'ViewGroup[vid="root"] > TextView[vid="tv_name"][text*="17旅行节" && text*="门票7.1折"] + TextView[vid="tv_rule"] + TextView[vid="tv_action"][text*="去领取"][clickable=true]',
+          ],
+          activityIds: ['.module.live.TCLiveRoomActivity'],
         },
       ],
     },
