@@ -195,13 +195,14 @@ export default defineGkdApp({
         {
           resetMatch: 'match',
           actionCd: 7000,
+          forcedTime: 8000,
           activityIds: 'com.tencent.mm.plugin.webview.ui.tools.MMWebViewUI',
           excludeMatches: [
             'WebView > View > TextView[text="金额达标抽好礼"] + TextView[text="达标1万元"] + View > @View[clickable=true] > TextView[text="抽奖"] + View[text!="0次"]',
             'TextView[text="连续达标有豪礼"] +n TextView[text^="绑卡交易满"] + @View[clickable=true] > TextView[text="抽奖"] + View[text!="0次"]',
           ],
           matches:
-            '@Image[clickable=true][visibleToUser=true] < View + [text!="剩余次数：0次" && text^="剩余次数："]',
+            'Image[clickable=true][visibleToUser=true] < @View[clickable=false][visibleToUser=true] + [text!="剩余次数：0次" && text^="剩余次数："]',
         },
       ],
     },
@@ -213,10 +214,12 @@ export default defineGkdApp({
         {
           resetMatch: 'match',
           activityIds: 'com.tencent.mm.plugin.webview.ui.tools.MMWebViewUI',
+          actionCd: 6000,
           anyMatches: [
             'WebView[text="绑卡有礼"] > Dialog > TextView[text="兑换成功"] + View > Button[text="确认"][clickable=true][visibleToUser=true]',
-            'View > @TextView[text="确认"][clickable=true][visibleToUser=true] + TextView[text="请及时兑换，每月15号刷新，过期失效"]',
-            'View[childCount=3] > @[text="确认"] + [text^="请及时兑换，每月15号刷新"]',
+            'View > View[childCount=3] > TextView[text$="碎片"] + @TextView[text="确认"][clickable=true][visibleToUser=true] + TextView[text^="请及时兑换"]', //261118，弹窗，中奖信息，碎片，确认
+            //'View > @TextView[text="确认"][clickable=true][visibleToUser=true] + TextView[text="请及时兑换，每月15号刷新，过期失效"]',
+            //'View[childCount=3] > @[text="确认"] + [text^="请及时兑换，每月15号刷新"]',
             '@[text="确认"] + [text^="请及时兑换，每月15号刷新"]',
           ],
         },

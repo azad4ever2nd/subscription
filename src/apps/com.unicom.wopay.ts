@@ -66,5 +66,19 @@ export default defineGkdApp({
         },
       ],
     },
+    {
+      key: 5,
+      name: '弹窗，协议更新提示，同意',
+      desc: '261118',
+      rules: [
+        {
+          resetMatch: 'match',
+          fastQuery: true,
+          activityIds: '.modules.accountcenter.ui.ChangeAgreementActivity',
+          matches:
+            'LinearLayout > TextView[text="协议更新提示"][vid="wopay_privacy_title_tv"] + ScrollView + LinearLayout > Button[text="暂不使用"] + Button[text="同意"][vid="wopay_privacy_button_agree"]', //261118，协议更新提示，同意
+        },
+      ],
+    },
   ],
 });
