@@ -66,7 +66,7 @@ export default defineGkdApp({
       rules: [
         {
           resetMatch: 'match',
-          actionCd: 5000,
+          actionCd: 3000,
           activityIds: 'com.miui.home.launcher.Launcher',
           matches:
             '@FrameLayout[vid="status_bar_latest_event_content"][clickable=false][visibleToUser=true] > ImageView[vid="app_icon"][desc="To Do"] + LinearLayout[vid="notification_main_column"]',
@@ -80,7 +80,7 @@ export default defineGkdApp({
       rules: [
         {
           resetMatch: 'match',
-          actionDelay: 5000, //延时5秒
+          actionDelay: 3000, //延时5秒
           actionCd: 3000,
           activityIds: 'com.tencent.mm.ui.LauncherUI',
           matches:
@@ -95,7 +95,7 @@ export default defineGkdApp({
       rules: [
         {
           resetMatch: 'match',
-          actionDelay: 5000, //延时5秒
+          actionDelay: 3000, //延时5秒
           actionCd: 3000,
           activityIds: 'com.miui.home.launcher.Launcher',
           anyMatches: [
