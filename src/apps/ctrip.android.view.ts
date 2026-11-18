@@ -150,5 +150,19 @@ export default defineGkdApp({
         },
       ],
     },
+    {
+      key: 11,
+      name: '弹窗，联名卡，立即领取，X掉',
+      desc: '261118',
+      rules: [
+        {
+          resetMatch: 'match',
+          fastQuery: true,
+          activityIds: 'ctrip.android.reactnative.preloadv2.CRNBaseActivityV2',
+          matches:
+            'ViewGroup > ImageView + @ViewGroup[clickable=false][visibleToUser=true] > TextView[text.length=1][clickable=false][visibleToUser=true] < ViewGroup + ViewGroup > ViewGroup > TextView[text="立即领取"]',
+        },
+      ],
+    },
   ],
 });

@@ -574,6 +574,9 @@ export default defineGkdApp({
           forcedTime: 2000,
           activityIds:
             'cmb.pb.app.h5container.webviewcontainer.PBWebContainerActivity',
+          excludeMatches: [
+            'WebView[text="券详情"] > View > View > View > View > TextView[text*="携程支付返现券"][visibleToUser=true]', //261118，排除 携程支付返现券
+          ],
           anyMatches: [
             'TextView[text$="基金体验金"] < View +(1,3) View[id="useBtn"] > Button[text="立即使用"][clickable=true]',
             'WebView[text="券详情"] > View > View > View > View > Button[text="立即使用"][clickable=true][visibleToUser=true]',
