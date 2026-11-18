@@ -134,7 +134,7 @@ export default defineGkdApp({
     {
       key: 8,
       name: '弹窗，X掉1',
-      desc: '261117，添加各种抽奖类的提示，各种弹窗，添加 IDS',
+      desc: '261118，添加各种抽奖类的提示，各种弹窗，添加 IDS',
       rules: [
         {
           resetMatch: 'match',
@@ -143,11 +143,16 @@ export default defineGkdApp({
             'com.cmvideo.capability.remote_web.WebProcessActivity',
           ],
           anyMatches: [
+            '@View[clickable=true][visibleToUser=true] > View > Image[text="1O7HHG1PI8NQ1"]', //261118，弹窗，今日好运已通关，我知道了，
+            '@View[clickable=true][visibleToUser=true] > View > Image[text="1O7HHG1R5GULN"]', //261118，弹窗，仅限会员参与，我知道了，X掉
+            '@View[clickable=true][visibleToUser=true] > View > Image[text="1O7HHG1TQ692O"]', //261117，弹窗，请先完成分享，X掉
+            //'@View[clickable=true][visibleToUser=true] > View > View > View > Image[text="1O7HHG1TQ692O"]',//弹窗，请先完成分享，X掉，5层
             'View > @View[clickable=true][visibleToUser=true] > View > Image[text="1O7HHG1T79J2P"]', //26117，恭喜获得2GB通用流量，我知道了
             //'View > @View[clickable=true][visibleToUser=true] > View > Image[text="1O7HHG5IBHROR"]',//261117，每日分享后，抽奖  2G流量，立即领取，限1次，
             //'View > @View[clickable=true][visibleToUser=true] > View > Image[text="1O7HHG101UE5A"]',//261117，每日分享，立即分享，限1次，
             'View > @View[clickable=true][visibleToUser=true] > View > Image[text="1O7HHG167GVI2"]', //261117，弹窗，打卡成功，我知道了
             'View > @View[clickable=true][visibleToUser=true] > View > Image[text="1O7HHG1Q01P4R"]', //261117，弹窗，恭喜获得抽奖机会
+            '@View[clickable=true][visibleToUser=true] > View > View > View > Image[text="1O7HHG1M0QJQI"]', //弹窗，剩余抽奖次数1，我知道了，换5层按钮
             'View > @View[clickable=true][visibleToUser=true] > View > Image[text="1O7HHG1M0QJQI"]', //261117，弹窗，剩余抽奖次数，X掉
             'View > @View[clickable=true][visibleToUser=true] > View > Image[text="1O7HHG19F1NPU"]', //261117，弹窗，消耗1次抽奖机会，确认
             '@View[clickable=true][visibleToUser=true] > View > View > View > Image[text="1O7GEIFBVUQCO"]', //261112，弹窗，请先完成分享

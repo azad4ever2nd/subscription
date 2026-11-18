@@ -283,9 +283,11 @@ export default defineGkdApp({
       desc: '260615',
       rules: [
         {
-          actionMaximum: 1,
+          actionMaximum: 2,
+          preKeys: [14],
           resetMatch: 'match',
           anyMatches: [
+            'View > View > TextView[text="奖励派送中，稍后送达～"] + TextView[text^="前往微信再浇一次" && text$="赢更多奖励!"] + Image[clickable=true][visibleToUser=true]', //261118，弹窗，浇水成功，前往微信再多浇一次赢更多奖励，去浇水
             '(View > TextView[text^="前往微信再浇一次"] + Image)',
             '[text^="前往微信再浇一次"] + Image',
           ],
@@ -299,14 +301,15 @@ export default defineGkdApp({
     {
       key: 18,
       name: '前往微信再浇一次后，关闭',
-      desc: '260601',
+      desc: '261118',
       rules: [
         {
-          actionMaximum: 1,
+          actionMaximum: 2,
           resetMatch: 'match',
-          preKeys: [13],
+          preKeys: [17],
           activityIds: 'com.tencent.mm.plugin.base.stub.WXBizEntryActivity',
-          matches: '[text^="前往微信再浇一次"] <n * + * > Image',
+          matches:
+            '@Image[text=""][clickable=true][visibleToUser=true] < View - View > TextView[text="奖励派送中，稍后送达～"] + TextView[text^="前往微信再浇一次" && text$="赢更多奖励!"] + Image[clickable=true][visibleToUser=true]', //261118，弹窗，浇水成功，前往微信再多浇一次赢更多奖励，去浇水后，再X掉
         },
       ],
     },

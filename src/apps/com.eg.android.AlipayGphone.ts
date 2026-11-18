@@ -420,7 +420,7 @@ export default defineGkdApp({
     {
       key: 20,
       name: '弹窗，各种弹窗，X掉1',
-      desc: '261109，fastQuery=false，clickable=false，添加 神券五六天，签到成功，开通碰一下，推送服务，查询账单，返回领奖，到桌面，银行卡抽奖，升级月利宝',
+      desc: '261118，fastQuery=false，clickable=false，添加 神券五六天，签到成功，开通碰一下，推送服务，查询账单，返回领奖，到桌面，银行卡抽奖，升级月利宝',
       rules: [
         {
           resetMatch: 'match',
@@ -430,6 +430,7 @@ export default defineGkdApp({
             'com.alipay.mobile.nebulax.xriver.activity.XRiverActivity',
           anyMatches: [
             'WebView > View > View > TextView[text^="抽奖机会1"] + TextView[clickable=false][visibleToUser=true]',
+            'View > View > TextView[text="余额宝体验金"] + TextView[text="开心收下"][clickable=false][visibleToUser=true]', //261118,弹窗，余额宝体验金，开心收下
             'View > View > View > @Image[clickable=false][visibleToUser=true] + TextView[text^="用碰一下"] +n TextView[text="去申请"]',
             'View > View > View > @Image[clickable=false][visibleToUser=true] + TextView +n TextView[text="去了解"]',
             'View > View > @TextView[text=""][clickable=false][visibleToUser=true] + View > TextView[text="立即翻倍"]', //261107，弹窗，立刻翻倍，
@@ -776,7 +777,7 @@ export default defineGkdApp({
     {
       key: 36,
       name: '小程序，各种弹窗，X掉1',
-      desc: '261117，fastquery=false,clickable=false,添加 排除误点去使用，明天不断签提醒，签到提醒，做任务领幸运星，领取奖励，排除红包卡券误点，闪购，超级吃货卡体验版，闪购签到，闪购小程序，添加到首页，添加 生活缴费',
+      desc: '261118，fastquery=false,clickable=false,添加 排除误点去使用，明天不断签提醒，签到提醒，做任务领幸运星，领取奖励，排除红包卡券误点，闪购，超级吃货卡体验版，闪购签到，闪购小程序，添加到首页，添加 生活缴费',
       rules: [
         {
           resetMatch: 'match',
@@ -790,6 +791,7 @@ export default defineGkdApp({
             'com.alipay.mobile.nebulax.xriver.activity.XRiverActivity$App04',
           ],
           anyMatches: [
+            'View > View > View + @View[clickable=false][visibleToUser=true] > TextView[text="登录后可抢红包"]', //261118,弹窗，爆红包可使用，X掉
             'TextView[text="开心收下"] <<n View + View > View > Image[clickable=false][visibleToUser=true]',
             '@Image[clickable=false][visibleToUser=true] < View - View > View > TextView[text="开心收下"]',
             'View > @TextView - View >5 TextView[text="开心收下"]',

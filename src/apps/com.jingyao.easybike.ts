@@ -343,11 +343,14 @@ export default defineGkdApp({
         {
           resetMatch: 'match',
           action: 'clickCenter',
-          matchDelay: 1000,
+          matchDelay: 500,
           forcedTime: 4000,
           activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
-          anyMatches:
+          anyMatches: [
             'View[id="monad-return-ball"] > @View[clickable=true][visibleToUser=true] > TextView[text="奖励金"] - TextView - View > Image[text="c628086d6b3a4923907c57bc4326aa13_mask"]',
+            'View[id="monad-return-ball"] > @View[clickable=true][visibleToUser=true] >  View > Image[text="c628086d6b3a4923907c57bc4326aa13_mask"] < View + TextView[text.length>0] + View > TextView[text="奖励金"]', ////261118，新布局，
+            //'View[id="monad-return-ball"] > @View[clickable=true][visibleToUser=true] >  View > Image[text="c628086d6b3a4923907c57bc4326aa13_mask"] < View +2 View > TextView[text="奖励金"]',//261118，新布局，
+          ],
         },
       ],
     },
@@ -402,11 +405,14 @@ export default defineGkdApp({
           resetMatch: 'match',
           action: 'clickCenter',
           matchDelay: 1000,
-          forcedTime: 4000,
+          forcedTime: 3000, //测试缩短刷新
           activityIds:
             'com.hellobike.moped.platform.offline.web.OhoRealmWebActivity',
-          anyMatches:
+          anyMatches: [
             'View[id="monad-return-ball"] > @View[clickable=true][visibleToUser=true] > TextView[text="奖励金"] - TextView - View > Image[text="c628086d6b3a4923907c57bc4326aa13_mask"]',
+            'View[id="monad-return-ball"] > @View[clickable=true][visibleToUser=true] >  View > Image[text="c628086d6b3a4923907c57bc4326aa13_mask"] < View + TextView[text.length>0] + View > TextView[text="奖励金"]', ////261118，新布局，
+            //'View[id="monad-return-ball"] > @View[clickable=true][visibleToUser=true] >  View > Image[text="c628086d6b3a4923907c57bc4326aa13_mask"] < View +2 View > TextView[text="奖励金"]',//261118，新布局，
+          ],
         },
       ],
     },

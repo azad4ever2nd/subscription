@@ -93,7 +93,7 @@ export default defineGkdApp({
     {
       key: 6,
       name: '弹窗，X掉1',
-      desc: '261104，fastQuery=true，clickable=true',
+      desc: '261118，fastQuery=true，clickable=true',
       rules: [
         {
           fastQuery: true,
@@ -102,6 +102,8 @@ export default defineGkdApp({
           action: 'clickCenter',
           activityIds: 'com.xunmeng.pinduoduo.activity.NewPageActivity',
           anyMatches: [
+            'ImageView < ViewGroup < ViewGroup[clickable=true][visibleToUser=true] - ViewGroup TextView[text="《拼小圈隐私保护说明》"]', //261118，弹窗，开启拼小圈，X掉
+            'ViewGroup > TextView[text="该商品你已达购买上限"] + @ImageView[vid="pdd"][clickable=true][visibleToUser=true] + TextView[text="该商品限购1件，你已购买过1件"]', //261118，弹窗，购买上限 ，X掉
             'ImageView < ViewGroup < @ViewGroup[clickable=true][visibleToUser=true]  - ViewGroup >n TextView[text="添加物流助手到桌面"]', //261115，弹窗，添加物流助手到桌面，改成fastquery=true
             'TextView[text="继续编辑"] < FrameLayout + @FrameLayout[clickable=true][visibleToUser=true] > TextView[text="放弃打款"]',
             'TextView[text="继续编辑"] < FrameLayout < ViewGroup + @ViewGroup[clickable=true] > FrameLayout > TextView[text="退出"]',
@@ -247,6 +249,7 @@ export default defineGkdApp({
           action: 'click',
           activityIds: 'com.xunmeng.pinduoduo.activity.NewPageActivity',
           anyMatches: [
+            'View > View > TextView[text$="秒后过期"] + View + Image[text="webp"][clickable=false][visibleToUser=true]', //261118，恭喜翻倍成功，开心收下
             'TextView[id="sticky_Yf2L"] + View > View > View >  Image[text="800x9999%3E"][clickable=false][visibleToUser=true]',
             'TextView[text="海量商品可用"] - TextView < View +n TextView[index=parent.childCount.minus(1)][clickable=false][visibleToUser=true]',
             'View >  TextView[text*="点抢最高16元无门槛券"] + @View[clickable=false][visibleToUser=true] > TextView[text="立即抽奖"]',
@@ -463,7 +466,7 @@ export default defineGkdApp({
     {
       key: 24,
       name: '弹窗，因通知关闭，无法接收功能消息，拒绝接收',
-      desc: '261109',
+      desc: '261109,fastQuery=true,clickable=true',
       rules: [
         {
           resetMatch: 'match',
@@ -476,6 +479,19 @@ export default defineGkdApp({
     },
     {
       key: 25,
+      name: '弹窗，多多视频送你超值折扣，最高减，X掉',
+      desc: '261118，fastQuery=false,clickable=true',
+      rules: [
+        {
+          resetMatch: 'match',
+          activityIds: '.ui.activity.MainFrameActivity',
+          matches:
+            'ImageView < ViewGroup < @ViewGroup[clickable=true][visibleToUser=true] + ViewGroup TextView[text^="最高减" && text$="元"]', //261118，弹窗，多多视频送你超值折扣，最高减，X掉
+        },
+      ],
+    },
+    {
+      key: 26,
       name: '百亿补贴消费券天天抢，点击领取消费券（激活）',
       desc: '260911，fastQuery=false，添加 Ids ',
       rules: [

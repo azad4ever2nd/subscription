@@ -269,13 +269,31 @@ export default defineGkdApp({
             'View > View > TextView + TextView[text="去上传"][clickable=true][visibleToUser=true]',
             'View > View > TextView + TextView[text="去体验"][visibleToUser=true]',
             'View > View > TextView[text="返回领奖"][clickable=true][visibleToUser=true]',
-            'View > View > TextView[text="云端图片"][clickable=true][visibleToUser=true] + TextView[text="本地图片"]', //弹窗，AI消除，云端图片
+            //'View > View > TextView[text="云端图片"][clickable=true][visibleToUser=true] + TextView[text="本地图片"]', //弹窗，AI消除，云端图片
           ],
         },
       ],
     },
     {
       key: 14,
+      name: '弹窗，AI消除，云端图片',
+      desc: '261118，排除转存资源，限1次',
+      rules: [
+        {
+          resetMatch: 'match',
+          actionCd: 10000,
+          actionMaximum: 1,
+          activityIds: '.client.component.web.H5WebViewMainActivity',
+          excludeMatches:
+            'View > View > TextView[text="转存资源签到"] + TextView[text="换一批 >"][clickable=true][visibleToUser=true]',
+          anyMatches: [
+            'View > View > @TextView[text="云端图片"][clickable=true][visibleToUser=true] + TextView[text="本地图片"]', //弹窗，AI消除，云端图片
+          ],
+        },
+      ],
+    },
+    {
+      key: 15,
       name: '弹窗，做任务，转存资源签到，点击转存',
       desc: '261024',
       rules: [
@@ -290,7 +308,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 15,
+      key: 16,
       name: '弹窗，转存资源签到，换一批',
       desc: '261106，换一批',
       rules: [
@@ -307,7 +325,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 16,
+      key: 17,
       name: '开启通知',
       desc: '251205',
       rules: [
@@ -322,7 +340,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 17,
+      key: 18,
       name: '弹窗',
       desc: '251118，增加开启通知',
       rules: [
@@ -338,7 +356,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 18,
+      key: 19,
       name: '发现新版本',
       desc: '251208',
       rules: [
@@ -355,7 +373,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 19,
+      key: 20,
       name: '服务通知，X掉',
       desc: '260702',
       rules: [

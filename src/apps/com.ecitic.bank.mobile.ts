@@ -170,12 +170,14 @@ export default defineGkdApp({
     {
       key: 11,
       name: '抽奖，弹窗',
-      desc: '251208，D',
+      desc: '261118',
       rules: [
         {
-          matchDelay: 1000,
-          matches: ['Dialog [text="close"]'],
           resetMatch: 'match',
+          anyMatches: [
+            //'Dialog > View > View > Image[text="close"]',//261118，弹窗，抽奖结果，X掉
+            'Dialog > View > View > @View[clickable=true][visibleToUser=true] > Image[text="queRenBtn"]', //261118，弹窗，抽奖结果，开心收下
+          ],
           activityIds: ['com.citic.jk.activity.H5ContainerAty'],
         },
       ],
