@@ -37,17 +37,18 @@ export default defineGkdApp({
     {
       key: 3,
       name: '新版本',
-      desc: '261008',
+      desc: '261119',
       rules: [
         {
-          anyMatches: [
-            'RelativeLayout > TextView[vid="tv_title"][text*="新版本"] + ImageView[vid="tv_cancel"][clickable=true][visibleToUser=true]',
-            '[vid="tv_title"][text*="新版本"] + [vid="tv_cancel"][clickable=true][visibleToUser=true]',
-          ],
           action: 'clickCenter',
           fastQuery: true,
           resetMatch: 'match',
           forcedTime: 3000,
+          anyMatches: [
+            'RelativeLayout > TextView[vid="tv_title"][text*="新版本"] + ImageView[vid="tv_cancel"][clickable=true][visibleToUser=true]',
+            '[vid="tv_title"][text*="新版本"] + [vid="tv_cancel"][clickable=true][visibleToUser=true]',
+            'FrameLayout > ViewGroup > @ImageView[vid="promote_banner_close_2"][clickable=true][visibleToUser=true] + ImageView[vid="promote_banner_img"]', //261119，弹窗，新版本，新布局
+          ],
           activityIds: ['com.wacai365.HomeActivity'],
         },
       ],
@@ -116,13 +117,13 @@ export default defineGkdApp({
       desc: '261001',
       rules: [
         {
-          forcedTime: 5000,
+          forcedTime: 3000,
           actionCd: 500,
+          fastQuery: true,
+          resetMatch: 'match',
           matches: [
             'ViewGroup > ImageView[vid="privilegeClose"][clickable=true][visibleToUser=true]',
           ],
-          fastQuery: true,
-          resetMatch: 'match',
           activityIds: ['com.wacai365.newtrade.TradeActivity'],
         },
       ],

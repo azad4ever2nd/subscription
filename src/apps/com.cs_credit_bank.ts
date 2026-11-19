@@ -40,6 +40,7 @@ export default defineGkdApp({
           matches: ['[vid="cancel"][text="暂不激活"]'],
           actionCd: 100,
           fastQuery: true,
+          forcedTime: 3000,
           resetMatch: 'match',
           activityIds: ['com.mapass.example.activity.MainActivity_'],
         },

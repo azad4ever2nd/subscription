@@ -39,13 +39,17 @@ export default defineGkdApp({
     },
     {
       key: 3,
-      name: '通知提示',
-      desc: '251123',
+      name: '弹窗，打开通知，X掉',
+      desc: '261119',
       rules: [
         {
-          matches: ['[vid="push_dialog"] + [vid="btDismiss"]'],
           fastQuery: true,
           resetMatch: 'match',
+          forcedTime: 3000,
+          matches: [
+            'RelativeLayout > @Button[vid="btDismiss"][clickable=true][visibleToUser=true] - FrameLayout[vid="push_dialog"] > TextView[text^="请打开兴业银行通知"]', //261119，弹窗，打开通知，X掉
+            '[vid="push_dialog"] + [vid="btDismiss"]',
+          ],
           activityIds: ['com.newland.app.ui.home.HomeActivity'],
         },
       ],
