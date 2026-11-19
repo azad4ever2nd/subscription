@@ -134,7 +134,7 @@ export default defineGkdApp({
     {
       key: 8,
       name: '弹窗，X掉1',
-      desc: '261118，添加各种抽奖类的提示，各种弹窗，添加 IDS',
+      desc: '261119，添加各种抽奖类的提示，各种弹窗，添加 IDS',
       rules: [
         {
           resetMatch: 'match',
@@ -147,6 +147,7 @@ export default defineGkdApp({
             '@View[clickable=true][visibleToUser=true] > View > Image[text="1O7HHG1R5GULN"]', //261118，弹窗，仅限会员参与，我知道了，X掉
             '@View[clickable=true][visibleToUser=true] > View > Image[text="1O7HHG1TQ692O"]', //261117，弹窗，请先完成分享，X掉
             //'@View[clickable=true][visibleToUser=true] > View > View > View > Image[text="1O7HHG1TQ692O"]',//弹窗，请先完成分享，X掉，5层
+            '@View[clickable=true][visibleToUser=true] > View > View[clickable=true][visibleToUser=true] > View > Image[text="1O7HHG1T79J2P"]', //26117，恭喜获得2GB通用流量，我知道了,5层
             'View > @View[clickable=true][visibleToUser=true] > View > Image[text="1O7HHG1T79J2P"]', //26117，恭喜获得2GB通用流量，我知道了
             //'View > @View[clickable=true][visibleToUser=true] > View > Image[text="1O7HHG5IBHROR"]',//261117，每日分享后，抽奖  2G流量，立即领取，限1次，
             //'View > @View[clickable=true][visibleToUser=true] > View > Image[text="1O7HHG101UE5A"]',//261117，每日分享，立即分享，限1次，

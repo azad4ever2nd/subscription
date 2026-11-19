@@ -7,15 +7,17 @@ export default defineGkdApp({
     {
       key: 1,
       name: '弹窗，打开通知，X掉',
-      desc: '260911，fastQuery=true,clickable=true',
+      desc: '261119，fastQuery=true,clickable=true',
       rules: [
         {
           resetMatch: 'match',
           fastQuery: true,
           activityIds:
             'com.xingin.authorization.NotificationAuthorizationTranslucentActivity',
-          matches:
+          anyMatches: [
             'FrameLayout > @ImageView[vid="mNegativeImageView"][clickable=true][visibleToUser=true] - LinearLayout > TextView[text^="打开通知"][vid="mDescTextView"] + TextView[text="确认"][vid="mPositiveTextView"]',
+            'TextView[text="打开推送通知"][vid="tv_title"] < LinearLayout + View + LinearLayout > @TextView[text="取消"][vid="tv_cancel"][clickable=true][visibleToUser=true] +2 TextView[text="确认"][vid="btn_confirm"]', //261119，弹窗，打开通知
+          ],
         },
       ],
     },
@@ -30,9 +32,8 @@ export default defineGkdApp({
             '[vid="mDescTextView"] <<n * +n [vid="mNegativeImageView"]',
           ],
           resetMatch: 'match',
-          activityIds: [
+          activityIds:
             'com.xingin.authorization.NotificationAuthorizationTranslucentActivity',
-          ],
         },
       ],
     },
@@ -46,8 +47,9 @@ export default defineGkdApp({
           fastQuery: true,
           activityIds:
             'com.xingin.authorization.NotificationAuthorizationTranslucentActivity',
-          matches:
+          anyMatches: [
             'TextView[vid="tv_title"][text*="发送通知"] < LinearLayout + LinearLayout > TextView[vid="btn_deny"][clickable=true]',
+          ],
         },
       ],
     },
@@ -69,15 +71,16 @@ export default defineGkdApp({
     {
       key: 5,
       name: '关注推送弹窗',
-      desc: '260213',
+      desc: '261119',
       rules: [
         {
+          fastQuery: true,
+          resetMatch: 'match',
           anyMatches: [
+            'TextView[text="打开推送通知"][vid="tv_title"] < LinearLayout + View + LinearLayout > @TextView[text="取消"][vid="tv_cancel"][clickable=true][visibleToUser=true] +2 TextView[text="确认"][vid="btn_confirm"]', //261119，弹窗，打开通知，X掉
             '[vid="guideSnackBar"] [vid="closeButton"]',
             '[vid="guide"] [vid="close"]',
           ],
-          fastQuery: true,
-          resetMatch: 'match',
           activityIds: ['com.xingin.xhs.index.v2.IndexActivityV2'],
         },
       ],

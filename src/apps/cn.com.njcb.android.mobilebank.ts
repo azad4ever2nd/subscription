@@ -153,15 +153,18 @@ export default defineGkdApp({
     },
     {
       key: 11,
-      name: '鑫动好物，今日不再显示，X掉',
-      desc: '260615',
+      name: '弹窗，鑫动好物，今日不再显示，X掉',
+      desc: '2611119',
       rules: [
         {
           resetMatch: 'match',
           action: 'clickCenter',
-          forcedTime: 2000,
+          forcedTime: 3000,
           activityIds: 'com.njcb.mobile.h5biz.H5ContainerActivity',
-          anyMatches: ['[text="今日不再显示"] < * + *[clickable=true]'],
+          anyMatches: [
+            'View > View > @TextView[text=""][clickable=true][visibleToUser=true] - View > TextView[text="今日不再显示"]', //261119，弹窗，今日不再提示，X掉
+            '[text="今日不再显示"] < * + *[clickable=true]',
+          ],
         },
       ],
     },

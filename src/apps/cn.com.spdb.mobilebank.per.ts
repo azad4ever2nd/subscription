@@ -20,11 +20,13 @@ export default defineGkdApp({
     {
       key: 2,
       name: '收藏基金',
-      desc: '260803',
+      desc: '261119',
       rules: [
         {
-          matches:
+          anyMatches: [
             'TextView[text="收藏"] - Image < @View[clickable=false][visibleToUser=true] <2 View + View > Button[text="定投"] + Button[text="购买"]',
+            'View[childCount=3] > @View[clickable=true][index=2][visibleToUser=true] > Image[text=""] + TextView[text="收藏"]', //261119，基金页面，收藏（3个按钮，收藏是第3个）
+          ],
           resetMatch: 'match',
           activityIds:
             'cn.com.spdb.mobilebank.per.activity.web.stage.StageCommonWebActivity',
@@ -170,6 +172,20 @@ export default defineGkdApp({
     },
     {
       key: 12,
+      name: '收藏成功，返回',
+      desc: '261119',
+      rules: [
+        {
+          resetMatch: 'match',
+          action: 'back',
+          activityIds: '.activity.web.stage.StageCommonWebActivity',
+          matches:
+            'View > View > View > Image[text="成功"] + TextView[text="收藏成功！去看看 >"][visibleToUser=true]', //261119，收藏成功，返回
+        },
+      ],
+    },
+    {
+      key: 13,
       name: '弹窗，立减金领取成功，确定',
       desc: '261106',
       rules: [
@@ -182,7 +198,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 13,
+      key: 14,
       name: '弹窗，灵活+，X掉',
       desc: '261113',
       rules: [

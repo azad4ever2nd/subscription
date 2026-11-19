@@ -306,13 +306,14 @@ export default defineGkdApp({
     },
     {
       key: 17,
-      name: '占位19',
-      desc: 'D，',
+      name: '弹窗，碎片兑换好礼，确定',
+      desc: '261119',
       rules: [
         {
+          resetMatch: 'match',
           activityIds: '.plugin.webview.ui.tools.MMWebViewUI',
           anyMatches: [
-            'TextView[text~="我的碎片 X[5-9][0-9]{2,}.\\\\d?"] + TextView[text="碎片记录"] + View > Image[text="100.7398bdef"][clickable=true][visibleToUser=true]',
+            'View > View > TextView[text="取消"] + @TextView[text="确定"][clickable=true][visibleToUser=true] + TextView[text^="请及时兑换" && text$="过期失效"]', //261119，弹窗，碎片兑换好礼，确定
           ],
         },
       ],
@@ -912,13 +913,14 @@ export default defineGkdApp({
     {
       key: 42,
       name: '弹窗，汉运动，券已发放结束，确定',
-      desc: '261028，添加饿了么定位提示',
+      desc: '261119，添加工行天津，饿了么定位提示',
       rules: [
         {
           resetMatch: 'match',
           fastQuery: true,
           actionCd: 500,
           anyMatches: [
+            'TextView[text="活动较为火爆，请稍后重试。"] <<n LinearLayout + LinearLayout > LinearLayout > Button[text="确定"][clickable=true][visibleToUser=true][vid="mm_alert_ok_btn"]', //261119，弹窗，工行天津，
             'TextView[text^="还未到领券时间"] <<n LinearLayout + LinearLayout Button[text="确定"][vid="mm_alert_ok_btn"][clickable=true][visibleToUser=true]',
             'TextView[text="活动火爆,请稍后再试"] <<n LinearLayout + LinearLayout Button[text="确定"][vid="mm_alert_ok_btn"][clickable=true][visibleToUser=true]',
             'TextView[text="您的请求过于频繁，请稍后再试！"] <<n LinearLayout + LinearLayout Button[text="确定"][vid="mm_alert_ok_btn"][clickable=true][visibleToUser=true]',

@@ -315,6 +315,7 @@ export default defineGkdApp({
         {
           resetMatch: 'match',
           activityIds: '.client.component.web.H5WebViewMainActivity',
+          actionCd: 1500,
           excludeMatches: [
             'View > View > TextView[text="转存资源签到"] + TextView[text="换一批 >"][clickable=true][visibleToUser=true] +n View > TextView[text="点击转存 >"][clickable=true][visibleToUser=true]',
           ],

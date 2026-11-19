@@ -326,7 +326,7 @@ export default defineGkdApp({
     {
       key: 18,
       name: '弹窗，各种弹窗，关闭弹窗',
-      desc: '261021，fastQuery=false，添加 神券五六天，签到成功，开通碰一下，推送服务，查询账单，返回领奖，到桌面，银行卡抽奖，升级月利宝',
+      desc: '261119，fastQuery=false',
       rules: [
         {
           resetMatch: 'match',
@@ -337,7 +337,8 @@ export default defineGkdApp({
           anyMatches: [
             'View > View > @Image[text="关闭弹窗"][clickable=false][visibleToUser=true] + Image[text.length=0]',
             'View > View > @Image[text="关闭弹窗"][clickable=true][visibleToUser=true] + Image[clickable=true][visibleToUser=true]',
-            'View > @Image[text="关闭弹窗"] + View > View > TextView[text="立即更换"]',
+            'View > View > @Image[text="关闭弹窗"][clickable=true][visibleToUser=true] + View >n TextView[text="立即更换"]', //261119，弹窗，立即更换，X掉
+            //'View > @Image[text="关闭弹窗"] + View > View > TextView[text="立即更换"]',
             'View > @Image[text="关闭弹窗"][clickable=false][visibleToUser=true] + View > Button',
             'View > @Image[text="关闭弹窗"][clickable=true][visibleToUser=true] +n View > TextView[text="仍要赎回"]',
             'View > @Image[text="关闭弹窗"][clickable=true][visibleToUser=true] + View >n TextView[text="再买一笔"]',
