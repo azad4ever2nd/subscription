@@ -475,6 +475,7 @@ export default defineGkdApp({
             'com.alipay.mobile.nebulax.xriver.activity.XRiverActivity',
           anyMatches: [
             'View > View > Button[text="我知道了"][clickable=true]', //261117，弹窗，数币节
+            'TextView[text="规则"] + View > TextView[text="今天的抽奖次数已用完，明天再来吧"] - View > Image[clickable=true][visibleToUser=true]', //261119，数币节，抽奖弹窗，测试用
             'View > View > View[text="红包区域"] > View[childCount=3] > @View[clickable=true][visibleToUser=true] > TextView[text^="开抢倒计时" && text$="结束"]',
             'View > View > @TextView[text.length=0][clickable=true][visibleToUser=true] -2 View > TextView[text="财运红包"] + View + TextView[text="已发放至「我的奖励」"]',
             'View > View > @TextView[text.length=0][clickable=true][visibleToUser=true] - View > TextView[text="银行卡支付红包"] + View + TextView[text="已发放至「我的奖励」"]',

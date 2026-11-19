@@ -1087,7 +1087,7 @@ export default defineGkdApp({
     {
       key: 58,
       name: '港股行情宝，参与领取',
-      desc: '261111',
+      desc: '261119',
       rules: [
         {
           resetMatch: 'match',
@@ -1096,8 +1096,13 @@ export default defineGkdApp({
           action: 'clickCenter',
           activityIds:
             '.app.h5container.webviewcontainer.PBWebContainerActivity',
-          matches:
+          excludeMatches: [
+            'Dialog > View > TextView[text$="盘中涨跌超2%"] + View > TextView[text=""][clickable=true][visibleToUser=true]', //261119，排除 弹窗
+          ],
+          anyMatches: [
             'View > View > TextView[text="当日港股医药盘中涨跌超2%领红包"] + TextView[text="参与领取"][clickable=true][visibleToUser=true]', //261111，港股行情宝，参与领取',
+            'View > View > TextView[text^="当日" && text$="盘中涨跌超2%领红包"] + TextView[text="参与领取"][clickable=true][visibleToUser=true]', //261119，港股行情宝，参与领取，改通用
+          ],
         },
       ],
     },
@@ -1113,8 +1118,10 @@ export default defineGkdApp({
           action: 'clickCenter',
           activityIds:
             '.app.h5container.webviewcontainer.PBWebContainerActivity',
-          matches:
+          anyMatches: [
             'Dialog > View > TextView[text="港股医药盘中涨跌超2%"] + View > TextView[text=""][clickable=true][visibleToUser=true]', //261111，弹窗，港股行情宝，去参与',
+            'Dialog > View > TextView[text$="盘中涨跌超2%"] + View > TextView[text=""][clickable=true][visibleToUser=true]', //261119，弹窗，港股行情宝，去参与，改通用
+          ],
         },
       ],
     },
