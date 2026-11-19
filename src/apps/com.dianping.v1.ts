@@ -161,13 +161,17 @@ export default defineGkdApp({
     {
       key: 10,
       name: '弹窗，写评论换大餐，X掉 或 去写评价',
-      desc: '260930',
+      desc: '261119',
       rules: [
         {
           action: 'clickCenter',
           resetMatch: 'match',
           forcedTime: 3000,
           activityIds: 'com.dianping.nova.picasso.DPPicassoBoxActivity',
+          excludeMatches: [
+            'FrameLayout > TextView[text="每天首次无需写评价，打卡即得1份免费菜"]', //261119，排除 试吃页面
+            'FrameLayout > TextView[text="到店打卡后体验"]', //261119，排除 试吃页面
+          ],
           anyMatches: [
             'ImageView[clickable=false][visibleToUser=true] < FrameLayout[clickable=true][visibleToUser=true] + ImageView[clickable=true][visibleToUser=true]',
             'ImageView[clickable=false][visibleToUser=true] < @FrameLayout[clickable=true][visibleToUser=true] + ImageView[clickable=true][visibleToUser=true]',
