@@ -234,5 +234,22 @@ export default defineGkdApp({
         },
       ],
     },
+    {
+      key: 15,
+      name: '弹窗，平台加补券，X掉',
+      desc: '261119',
+      rules: [
+        {
+          anyMatches: [
+            'View > View > Image[text="O1CN01zli3jp1P2CwJAXA77_!!6000000001782-2-tps-1180-1420.png_620x10000q95.jpg_"] + View + @View[clickable=true][visibleToUser=true]  > Image[text="O1CN0189ltRX1m133sTGBEJ_!!6000000004893-2-tps-72-72.png_110x10000q95.jpg_"][clickable=false][visibleToUser=true]', //261119，弹窗，平台加补券，X掉
+            'View > View > Image[text^="O1CN01zli3jp1P2CwJAXA77_!!6000000001782-2-tps"] + View + @View[clickable=true][visibleToUser=true]  > Image[text^="O1CN0189ltRX1m133sTGBEJ_!!6000000004893-2-tps"][clickable=false][visibleToUser=true]', //261119，弹窗，平台加补券，X掉，改通用
+          ],
+          resetMatch: 'match',
+          activityIds: [
+            'com.taobao.android.detail.alittdetail.TTDetailActivity',
+          ],
+        },
+      ],
+    },
   ],
 });
