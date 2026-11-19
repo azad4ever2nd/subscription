@@ -11,8 +11,8 @@ export default defineGkdApp({
       rules: [
         {
           resetMatch: 'match',
-          matchDelay: 1000,
-          actionCd: 2000,
+          matchDelay: 700,
+          actionCd: 1500,
           forcedTime: 3000,
           activityIds: '.CaptivePortalLoginActivity',
           excludeMatches:
@@ -32,8 +32,8 @@ export default defineGkdApp({
         {
           resetMatch: 'match',
           matchDelay: 800,
-          actionCd: 2000,
-          forcedTime: 2000,
+          actionCd: 1500,
+          forcedTime: 3000,
           activityIds: '.CaptivePortalLoginActivity',
           matches:
             'CheckBox[checked=true] < View + Button[text*="连接上网"][clickable=true][visibleToUser=true]',
