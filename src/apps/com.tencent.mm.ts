@@ -194,7 +194,7 @@ export default defineGkdApp({
       rules: [
         {
           resetMatch: 'match',
-          actionCd: 7000,
+          actionCd: 7000, //抽奖要6秒，对话框弹出到返回要3秒
           forcedTime: 8000,
           activityIds: 'com.tencent.mm.plugin.webview.ui.tools.MMWebViewUI',
           excludeMatches: [
@@ -214,7 +214,7 @@ export default defineGkdApp({
         {
           resetMatch: 'match',
           activityIds: 'com.tencent.mm.plugin.webview.ui.tools.MMWebViewUI',
-          actionCd: 6000,
+          actionCd: 6000, //抽奖要6秒，对话框弹出到返回要3秒
           anyMatches: [
             'WebView[text="绑卡有礼"] > Dialog > TextView[text="兑换成功"] + View > Button[text="确认"][clickable=true][visibleToUser=true]',
             'View > View[childCount=3] > TextView[text$="碎片"] + @TextView[text="确认"][clickable=true][visibleToUser=true] + TextView[text^="请及时兑换"]', //261118，弹窗，中奖信息，碎片，确认
