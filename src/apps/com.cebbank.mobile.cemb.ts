@@ -195,7 +195,7 @@ export default defineGkdApp({
           actionCd: 2000,
           activityIds: '.ui.activity.mobilePayment.MobilePaymentWebActivity',
           matches:
-            'WebView[text="光大银行金知了社区"] > View > View > TextView[text="社区太火爆了，请您稍后再来"][[visibleToUser=true]]',
+            'WebView[text="光大银行金知了社区"] > View > View > TextView[text="社区太火爆了，请您稍后再来"][visibleToUser=true]',
         },
       ],
     },
