@@ -361,5 +361,31 @@ export default defineGkdApp({
         },
       ],
     },
+    {
+      key: 25,
+      name: '滑块验证',
+      desc: '261119',
+      rules: [
+        {
+          action: 'swipe',
+          resetMatch: 'match',
+          swipeArg: {
+            start: {
+              x: 'left+18',
+              y: 'top+height/2',
+            },
+            end: {
+              x: 'right',
+              y: 'top+height/2',
+            },
+            duration: 1000,
+          },
+          anyMatches: [
+            'TextView[text="通过验证以确保正常访问"] + View > View > View > View',
+          ],
+          activityIds: '.webview.WebHybridActivity',
+        },
+      ],
+    },
   ],
 });

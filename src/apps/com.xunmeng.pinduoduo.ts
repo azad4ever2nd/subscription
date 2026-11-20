@@ -295,12 +295,13 @@ export default defineGkdApp({
     {
       key: 16,
       name: '弹窗，X掉4',
-      desc: '261105，fastQuery=false，clickable=true',
+      desc: '261120，fastQuery=false，clickable=true',
       rules: [
         {
           resetMatch: 'match',
           action: 'clickCenter',
           activityIds: 'com.xunmeng.pinduoduo.activity.NewPageActivity',
+          actionCd: 800, //261120，降低冷却时间测试
           anyMatches: [
             //'View > View > @Image[text="webp"][clickable=true][visibleToUser=true] - View[clickable=true][visibleToUser=true] > TextView[text="确定以团员身份组队"]',//261112，弹窗，确定以团员身份组队
             'ViewGroup[desc="翻转"] <<n FrameLayout + FrameLayout > FrameLayout > @FrameLayout[clickable=true][visibleToUser=true] > ImageView[vid="pdd"]', //261102，新版，评价拍摄，返回
@@ -315,7 +316,8 @@ export default defineGkdApp({
             'TextView[text="添加物流助手到桌面"] < FrameLayout < ViewGroup < ViewGroup < ViewGroup < ViewGroup + ViewGroup[clickable=true][visibleToUser=true] > ViewGroup > ImageView',
             'TextView[text="添加物流助手到桌面"] <<n * + @ViewGroup[clickable=true][visibleToUser=true] ImageView',
             'View  > @Image[text="webp"][clickable=true][visibleToUser=true] -n View >  TextView[text^="好友已加入队伍"]',
-            'View > View > View > TextView[text="恭喜获得专属惊喜券"] + TextView[text*="已成功点亮" || text$="明日可继续点亮"] +(3,4)  Image[text="webp"][clickable=true][visibleToUser=true]',
+            'View > View > View > TextView[text="恭喜获得专属惊喜券"] + TextView[text="已成功点亮，明日可继续点亮"] +(3,4)  Image[text="webp"][clickable=true][visibleToUser=true]', ////261120弹窗，恭喜获得专属惊喜券，已成功点亮，明日可继续点亮，开心收下，X掉
+            'View > View > View > TextView[text="恭喜获得专属惊喜券"] + TextView[text*="已成功点亮" || text$="明日可继续点亮"] +(3,4)  Image[text="webp"][clickable=true][visibleToUser=true]', //弹窗，恭喜获得专属惊喜券，已成功点亮，明日可继续点亮，开心收下，X掉
             'View > View > Image[text="webp"] + @TextView[clickable=true][visibleToUser=true] +n View > TextView[text="售后体验补偿券已到账"]', //261105，弹窗，售后体验补偿券已到账，X掉
             'View > View > Image[text="webp"] + @TextView[clickable=true][visibleToUser=true] +n View > TextView[text="立即使用"] + TextView[text="可在【我的优惠券】查看"]', //261105，弹窗，售后体验补偿券已到账，可在【我的优惠券】查看，X掉
             'TextView[text="待使用"] <<n ViewGroup + ViewGroup > ImageView[clickable=true][visibleToUser=true]',

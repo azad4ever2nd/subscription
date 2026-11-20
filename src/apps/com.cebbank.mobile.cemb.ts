@@ -192,9 +192,10 @@ export default defineGkdApp({
         {
           resetMatch: 'match',
           action: 'back',
+          actionCd: 2000,
           activityIds: '.ui.activity.mobilePayment.MobilePaymentWebActivity',
           matches:
-            'WebView[text="光大银行金知了社区"] > View > View > TextView[text="社区太火爆了，请您稍后再来"]',
+            'WebView[text="光大银行金知了社区"] > View > View > TextView[text="社区太火爆了，请您稍后再来"][[visibleToUser=true]]',
         },
       ],
     },
@@ -247,13 +248,14 @@ export default defineGkdApp({
     {
       key: 15,
       name: '弹窗，X掉1',
-      desc: '251109',
+      desc: '261109',
       rules: [
         {
           forcedTime: 3000,
           resetMatch: 'match',
           action: 'clickCenter',
           anyMatches: [
+            'WebView[text$="品牌月"] > View > View > View > View[childCount=4] > TextView[text=""][clickable=false] + TextView[text=""][clickable=false] + TextView[text=""][clickable=true] + TextView[text=""][clickable=true][visibleToUser=true]', //261120，弹窗，抽奖未中，弹窗全是无文本控件
             'View > View > TextView[text=""][clickable=true][visibleToUser=true] - View > TextView[text="恭喜获得"] +n TextView[text=""][index=parent.childCount.minus(1)][clickable=true][visibleToUser=true]', //弹窗，签到成功，开心收下
             'View > View > @TextView[text=""][clickable=true][visibleToUser=true] - View > TextView[text="很遗憾，差一点就中奖了"]', //弹窗，金币抽奖，未中，X掉
             'View > View > @TextView[text=""][clickable=true][visibleToUser=true] - View > TextView[text="恭喜获得"] +n TextView[text=""][index=parent.childCount.minus(1)][clickable=true][visibleToUser=true]', //弹窗，签到成功，X掉
@@ -297,7 +299,7 @@ export default defineGkdApp({
             'com.cebbank.mobile.cemb.ui.activity.mobilePayment.MobilePaymentWebActivity',
           anyMatches: [
             'View > View[childCount=5] > TextView[text^="恭喜获得" && text*="微信红包"] + TextView + View > TextView[text^="兑奖码:"] + TextView[text.length=0][clickable=true][visibleToUser=true]', //用金币兑换后的弹窗
-            'View > View > TextView[text.length>=1] + TextView[text="元"] + TextView[text^="兑奖码:"] + @TextView[text.length=0][clickable=true][visibleToUser=true] + TextView[text*="光彩礼遇社"] +  TextView[text.length=0][clickable=true][visibleToUser=true]', //抽奖，26年10月活动布局，
+            'View > View > TextView[text.length>=1] + TextView[text="元"] + TextView[text^="兑奖码"] + @TextView[text.length=0][clickable=true][visibleToUser=true] + TextView[text*="光彩礼遇社"] +  TextView[text.length=0][clickable=true][visibleToUser=true]', //抽奖，26年10月活动布局，
           ],
         },
       ],
@@ -314,7 +316,7 @@ export default defineGkdApp({
             'com.cebbank.mobile.cemb.ui.activity.mobilePayment.MobilePaymentWebActivity',
           anyMatches: [
             'View > View[childCount=5] > TextView[text^="恭喜获得" && text*="微信红包"] + TextView +n View > TextView[text^="兑奖码:"] + TextView[text.length=0][clickable=true][visibleToUser=true] <<2 View + TextView[text*="光彩礼遇社"] + TextView[text.length=0][clickable=true][visibleToUser=true]', //用金币兑换后的弹窗
-            'View > View > TextView[text.length>=1] + TextView[text="元"] + TextView[text^="兑奖码:"] + TextView[text.length=0][clickable=true][visibleToUser=true] + TextView[text*="光彩礼遇社"] +  TextView[text.length=0][clickable=true][visibleToUser=true]', //抽奖，26年10月活动布局，
+            'View > View > TextView[text.length>=1] + TextView[text="元"] + TextView[text^="兑奖码"] + TextView[text.length=0][clickable=true][visibleToUser=true] + TextView[text*="光彩礼遇社"] +  TextView[text.length=0][clickable=true][visibleToUser=true]', //抽奖，26年10月活动布局，
           ],
         },
       ],
@@ -359,6 +361,7 @@ export default defineGkdApp({
           resetMatch: 'match',
           forcedTime: 3000,
           anyMatches: [
+            'TextView[text="差一点就中奖啦"] <n View < View + View > @View[clickable=true][visibleToUser=true] > TextView[text.length=1]',
             'TextView[text="差一点就中奖啦"] <n View < View + View > @View[clickable=false][visibleToUser=true] > TextView[text.length=1]',
             '@TextView[clickable=true][visibleToUser=true] < View + View > View > TextView[text="很遗憾，您未中奖"] +n TextView[text="谢谢参与"]',
             'View > View > View > @TextView[clickable=true][visibleToUser=true] - View > TextView[text="很遗憾，差一点就中奖了"]',

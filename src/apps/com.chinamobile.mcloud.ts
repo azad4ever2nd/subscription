@@ -261,6 +261,7 @@ export default defineGkdApp({
       rules: [
         {
           resetMatch: 'match',
+          forcedTime: 3000,
           activityIds: '.client.component.web.H5WebViewMainActivity',
           excludeMatches:
             'View > View > TextView[text="转存资源签到"] + TextView[text="换一批 >"][clickable=true][visibleToUser=true]',

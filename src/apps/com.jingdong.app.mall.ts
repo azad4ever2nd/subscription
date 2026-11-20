@@ -350,9 +350,23 @@ export default defineGkdApp({
       desc: '260118',
       rules: [
         {
+          resetMatch: 'match',
           matches: ['[text="0点01元 已补 9.99元"] <n * + * > [text="去抢购"]'],
           fastQuery: true,
           activityIds: ['com.jingdong.manto.card.MantoLightActivity'],
+        },
+      ],
+    },
+    {
+      key: 24,
+      name: '弹窗，活动太火爆啦，晚点再来吧~，X掉',
+      desc: '261120',
+      rules: [
+        {
+          resetMatch: 'match',
+          activityIds: 'com.jingdong.hybrid.halfsheet.WebHalfSheetActivity',
+          matches:
+            'View > View > TextView[text=""][clickable=true][visibleToUser=true] + TextView[text="活动太火爆啦，晚点再来吧~"]', //261120，弹窗，活动太火爆啦，晚点再来吧~，X掉
         },
       ],
     },

@@ -962,8 +962,9 @@ export default defineGkdApp({
             'com.tencent.mm.plugin.appbrand.ui.AppBrandUI04',
             'com.tencent.mm.plugin.appbrand.ui.AppBrandPluginUI',
           ],
-          actionMaximum: 6,
+          actionMaximum: 3,
           resetMatch: 'match',
+          forcedTime: 3000,
           anyMatches: [
             'View > View > View > Image[text="2c91065213dc4bde8e6f2d41f0c5a5814281953607"][clickable=true][visibleToUser=true]',
             'TextView[text="奖励派送中，稍后送达～"] <n View + View > Image[clickable=true][visibleToUser=true]',
@@ -1253,6 +1254,9 @@ export default defineGkdApp({
             'com.tencent.mm.plugin.appbrand.ui.AppBrandUI03',
             'com.tencent.mm.plugin.appbrand.ui.AppBrandUI04',
             'com.tencent.mm.plugin.appbrand.ui.AppBrandPluginUI',
+          ],
+          excludeMatches: [
+            'View > View > View > TextView[text="抢购攻略"][visibleToUser=true]', //排除 深工抢券时外面误点
           ],
           anyMatches: [
             'View > View > View >  Image + TextView[text="今日不再提醒"] + TextView[text="前往领取"] + Image', //光大小程序弹窗

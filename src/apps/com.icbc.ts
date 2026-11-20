@@ -235,7 +235,7 @@ export default defineGkdApp({
       rules: [
         {
           actionMaximum: 1,
-          resetMatch: 'match',
+          resetMatch: 'app',
           action: 'clickCenter',
           matches:
             'View > Image[text="2c91065213dc4bde8e6f2d41f0c5a5814281953607"][clickable=true][visibleToUser=true]',
@@ -247,7 +247,7 @@ export default defineGkdApp({
     {
       key: 15,
       name: '浇水成功',
-      desc: '',
+      desc: '先禁用，要找出与去微信浇水的不同点',
       rules: [
         {
           matches: ['@Image < * - * > [text="奖励派送中，稍后送达～"]'],
@@ -285,11 +285,12 @@ export default defineGkdApp({
         {
           actionMaximum: 2,
           preKeys: [14],
-          resetMatch: 'match',
+          actionCd: 15000,
+          resetMatch: 'app',
           anyMatches: [
             'View > View > TextView[text="奖励派送中，稍后送达～"] + TextView[text^="前往微信再浇一次" && text$="赢更多奖励!"] + Image[clickable=true][visibleToUser=true]', //261118，弹窗，浇水成功，前往微信再多浇一次赢更多奖励，去浇水
-            '(View > TextView[text^="前往微信再浇一次"] + Image)',
-            '[text^="前往微信再浇一次"] + Image',
+            //'(View > TextView[text^="前往微信再浇一次"] + Image)',
+            //'[text^="前往微信再浇一次"] + Image',
           ],
           activityIds: [
             'com.icbc.activity.web.ICBCWebView',
@@ -306,8 +307,12 @@ export default defineGkdApp({
         {
           actionMaximum: 2,
           resetMatch: 'match',
+          action: 'clickCenter',
           preKeys: [17],
-          activityIds: 'com.tencent.mm.plugin.base.stub.WXBizEntryActivity',
+          activityIds: [
+            'com.icbc.activity.web.ICBCWebView',
+            'com.tencent.mm.plugin.base.stub.WXBizEntryActivity',
+          ],
           matches:
             '@Image[text=""][clickable=true][visibleToUser=true] < View - View > TextView[text="奖励派送中，稍后送达～"] + TextView[text^="前往微信再浇一次" && text$="赢更多奖励!"] + Image[clickable=true][visibleToUser=true]', //261118，弹窗，浇水成功，前往微信再多浇一次赢更多奖励，去浇水后，再X掉
         },

@@ -17,6 +17,9 @@ export default defineGkdApp({
             'com.quickjs.android.example.RNFragmentActivity',
             'com.cmvideo.capability.remote_web.WebProcessActivity',
           ],
+          excludeMatches: [
+            'View > View > [text="短信验证"] + View[id="close"][visibleToUser=true]', //排除 验证码
+          ],
           anyMatches: [
             'View > @View[clickable=true][visibleToUser=true] > View > Image[text="1O7HHG101UE5A"]', //261117，每日分享，立即分享，限1次，
             //'View > View > View > Image[clickable=false][visibleToUser=true][text="1O7GEIFASA29N"]',
@@ -104,6 +107,9 @@ export default defineGkdApp({
             'com.quickjs.android.example.RNFragmentActivity',
             'com.cmvideo.capability.remote_web.WebProcessActivity',
           ],
+          excludeMatches: [
+            'View > View > [text="短信验证"] + View[id="close"][visibleToUser=true]', //排除 验证码
+          ],
           anyMatches: [
             'View > @View[clickable=true][visibleToUser=true] > View > Image[text="1O7HHG5IBHROR"]', //261117，每日分享后，抽奖  2G流量，立即领取，限1次，
             //'View > View > View > Image[clickable=false][visibleToUser=true][text="1O7GEIFAUMH91"]',
@@ -134,15 +140,20 @@ export default defineGkdApp({
     {
       key: 8,
       name: '弹窗，X掉1',
-      desc: '261119，添加各种抽奖类的提示，各种弹窗，添加 IDS',
+      desc: '261120，添加各种抽奖类的提示，各种弹窗，添加 IDS',
       rules: [
         {
           resetMatch: 'match',
+          actionCd: 700,
           activityIds: [
             'com.quickjs.android.example.RNFragmentActivity',
             'com.cmvideo.capability.remote_web.WebProcessActivity',
           ],
           anyMatches: [
+            '@View[clickable=true][visibleToUser=true] > View > View > View > Image[text="1O7HHG1QGLGAT"]', //261120，弹窗，今日活动已参与，X掉，5层
+            '@View[clickable=true][visibleToUser=true] >  View > Image[text="1O7HHG1QGLGAT"]', //261120，弹窗，今日已分享，X掉
+            '@View[clickable=true][visibleToUser=true] > View > View > View > Image[text="1O7HHG1TRK0E6"]', //261120，弹窗，今日已分享，X掉，5层
+            '@View[clickable=true][visibleToUser=true] > View > Image[text="1O7HHG1TRK0E6"]', //261120，弹窗，今日已分享，X掉
             '@View[clickable=true][visibleToUser=true] > View > Image[text="1O7HHG1PI8NQ1"]', //261118，弹窗，今日好运已通关，我知道了，
             '@View[clickable=true][visibleToUser=true] > View > Image[text="1O7HHG1R5GULN"]', //261118，弹窗，仅限会员参与，我知道了，X掉
             '@View[clickable=true][visibleToUser=true] > View > Image[text="1O7HHG1TQ692O"]', //261117，弹窗，请先完成分享，X掉
@@ -170,7 +181,7 @@ export default defineGkdApp({
     {
       key: 9,
       name: '每日打卡',
-      desc: '260622',
+      desc: '261117',
       rules: [
         {
           resetMatch: 'match',
@@ -178,7 +189,9 @@ export default defineGkdApp({
           actionMaximum: 1,
           preKeys: [7],
           activityIds: 'com.cmvideo.capability.remote_web.WebProcessActivity',
-          excludeMatches: [],
+          excludeMatches: [
+            'View > View > [text="短信验证"] + View[id="close"][visibleToUser=true]', //排除 验证码
+          ],
           anyMatches: [
             'View > View > @TextView[text=""][clickable=true][visibleToUser=true] - View >n View[text*="累计打卡"] ', //261117，每日打卡，
             //'View > View > View > View > View > View[id="cc54b71dca3545fb95c3de42954fa8e2"]',
@@ -189,15 +202,18 @@ export default defineGkdApp({
     {
       key: 10,
       name: '体育类会员，立即领取',
-      desc: '260622',
+      desc: '261117',
       rules: [
         {
-          resetMatch: 'match',
-          action: 'clickCenter',
+          resetMatch: 'app',
           actionMaximum: 1,
+          action: 'clickCenter',
+          actionDelay: 3000,
           preKeys: [9],
           activityIds: 'com.cmvideo.capability.remote_web.WebProcessActivity',
-          excludeMatches: [],
+          excludeMatches: [
+            'View > View > [text="短信验证"] + View[id="close"][visibleToUser=true]', //排除 验证码
+          ],
           anyMatches: [
             'View > @View[clickable=true][visibleToUser=true] > View > Image[text="1O7HHG15B1MLT"]', //261117，体育类会员每日登录活动页面抽奖机会+1，立即领取，限1次，
           ],
@@ -210,12 +226,14 @@ export default defineGkdApp({
       desc: '261117',
       rules: [
         {
-          resetMatch: 'match',
-          action: 'clickCenter',
+          resetMatch: 'app',
           actionMaximum: 1,
+          action: 'clickCenter',
           preKeys: [10],
           activityIds: 'com.cmvideo.capability.remote_web.WebProcessActivity',
-          excludeMatches: [],
+          excludeMatches: [
+            'View > View > [text="短信验证"] + View[id="close"][visibleToUser=true]', //排除 验证码
+          ],
           anyMatches: [
             'View > @View[clickable=true][visibleToUser=true] > View > Image[text="1O7HHG152SEN3"]', //261117，咪咕视频会员每日登录活动页面抽奖机会+1，立即领取，限1次，
           ],

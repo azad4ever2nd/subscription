@@ -493,15 +493,16 @@ export default defineGkdApp({
       rules: [
         {
           resetMatch: 'match',
-          matchDelay: 500,
+          matchDelay: 1000,
           actionMaximum: 1,
           forcedTime: 3000,
           action: 'clickCenter',
           activityIds:
             'cmb.pb.app.h5container.webviewcontainer.PBWebContainerActivity',
           anyMatches: [
-            'View > View > Button[text="分享海报"] + Button[text="微信好友"][clickable=true][visibleToUser=true]',
-            'View > View > Button[text="微信好友"][clickable=true][visibleToUser=true]',
+            'View > View[childCount=7] > Button + @Button[text="微信好友"][clickable=true][visibleToUser=true] + Button + Button + Button + Button + Button', //261120，弹窗，分享，微信好友
+            //'View > View > Button[text="分享海报"] + Button[text="微信好友"][clickable=true][visibleToUser=true]',
+            //'View > View > Button[text="微信好友"][clickable=true][visibleToUser=true]',
           ],
         },
       ],
