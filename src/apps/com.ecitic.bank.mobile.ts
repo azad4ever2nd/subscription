@@ -189,7 +189,7 @@ export default defineGkdApp({
       rules: [
         {
           resetMatch: 'app',
-          actionMaximum: 1,
+          actionMaximum: 3,
           activityIds: 'com.citic.jk.activity.H5ContainerAty',
           matches:
             'View[id="DailyCheckIn"] > View > View > View[childCount=1] - View[childCount=2] > TextView[text.length=0][clickable=false][visibleToUser=true]',

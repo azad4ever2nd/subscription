@@ -38,13 +38,15 @@ export default defineGkdApp({
     {
       key: 3,
       name: '弹窗，彩票券待领取，X掉',
-      desc: '261009',
+      desc: '261120',
       rules: [
         {
           resetMatch: 'match',
           activityIds: '.bm.mainbox.main.MainActivity',
-          matches:
+          anyMatches: [
             'View > View[childCount=2] > @TextView[text.length=0][clickable=true][visibleToUser=true] + Button[text*="预计" && text*="立即购买"]',
+            'View > View[id$="MainPagePopupCms"] > Image + TextView[id*="HalfPopupClosed" || text$="MainPagePopupCms"][clickable=true][visibleToUser=true]', //261120，弹窗，有现金已到账，立即领取，X掉
+          ],
         },
       ],
     },
