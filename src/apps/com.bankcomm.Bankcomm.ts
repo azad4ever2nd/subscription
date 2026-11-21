@@ -665,7 +665,7 @@ export default defineGkdApp({
         {
           action: 'back',
           resetMatch: 'match',
-          actionCd: 7000,
+          actionCd: 8000,
           forcedTime: 12000,
           activityIds: [
             'com.bankcomm.module.biz.bcmvideo.BCMVerticalVideoActivity',

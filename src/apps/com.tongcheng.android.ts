@@ -256,5 +256,19 @@ export default defineGkdApp({
         },
       ],
     },
+    {
+      key: 17,
+      name: '弹窗，领取直播间优惠券',
+      desc: '261121',
+      rules: [
+        {
+          resetMatch: 'match',
+          fastQuery: true,
+          activityIds: '.module.live.TCLiveRoomActivity',
+          matches:
+            'TextView[text="立即领取"][vid="receive_btn"] <<n RecyclerView + ImageView[vid="dialog_close"][clickable=true][visibleToUser=true]',
+        },
+      ],
+    },
   ],
 });

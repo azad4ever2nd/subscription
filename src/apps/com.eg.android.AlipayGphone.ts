@@ -128,8 +128,8 @@ export default defineGkdApp({
     },
     {
       key: 8,
-      name: '弹窗，放弃付款，推荐开通花呗',
-      desc: '261107，fastQuery=true,clickable=true,添加 支付宝推荐你，关闭PDD免密付款，添加放弃还款，推荐习惯',
+      name: '弹窗，MspContainerActivity，放弃付款，推荐开通花呗',
+      desc: '261121，fastQuery=true,clickable=true,',
       rules: [
         {
           resetMatch: 'match',
@@ -151,6 +151,7 @@ export default defineGkdApp({
             'TextView[text="是否放弃本次付款？"][id="com.alipay.mobile.antui:id/message"] <<n LinearLayout + LinearLayout > @Button[id="com.alipay.mobile.antui:id/btn_cancel"][text="放弃"][clickable=true][visibleToUser=true] + Button[text="继续付款"][id="com.alipay.mobile.antui:id/btn_ensure"]',
             'TextView[text*="是否放弃付款"][id="com.alipay.mobile.antui:id/message"] <<n LinearLayout  + LinearLayout > @Button[text="放弃"][id="com.alipay.mobile.antui:id/btn_cancel"][clickable=true][visibleToUser=true] + Button[text="继续付款"][id="com.alipay.mobile.antui:id/btn_ensure"]',
             //'FrameLayout > FrameLayout > TextView[text="完成"][clickable=false][visibleToUser=true]', //261107，支付完成，完成，不开，避免一些活动跳过
+            //'TextView[text="转入成功"] <<n ScrollView + FrameLayout >n @FrameLayout[clickable=true][visibleToUser=true] > TextView[text="完成"]',//261121，余额宝转入完成，完成，不开，避免一些活动跳过
           ],
         },
       ],
@@ -174,31 +175,38 @@ export default defineGkdApp({
     },
     {
       key: 10,
-      name: '数币节，立即抢',
-      desc: '261117',
+      name: '弹窗，闪购获取你的位置信息，拒绝',
+      desc: '261121，fastQuery=true,clickable=true，添加 删除卡包券',
       rules: [
         {
+          fastQuery: true,
           resetMatch: 'match',
           forcedTime: 3000,
-          actionCd: 700,
           activityIds:
             'com.alipay.mobile.nebulax.xriver.activity.XRiverActivity',
-          matches:
-            'View > View > ListView[text="选择组"] + @View[clickable=true][visibleToUser=true] > TextView[text="立即抢"]', //261117，数币节
+          anyMatches: [
+            'TextView[text*="您的位置信息" || text*="您的地理位置"] <<n FrameLayout + LinearLayout > @Button[id="com.alipay.mobile.antui:id/btn_cancel"][text="拒绝"][clickable=true][visibleToUser=true] + Button[id="com.alipay.mobile.antui:id/btn_ensure"][text="允许"]',
+            'RelativeLayout > FrameLayout > TextView[text="完成"][id="com.alipay.multiplatform.phone.xriver_integration:id/textView_rightButton1"][clickable=true][visibleToUser=true]',
+            'TextView[text*="优惠券删除无法恢复" && text*="确认删除？"] <<n LinearLayout + LinearLayout > Button[text="取消"][id="com.alipay.mobile.antui:id/btn_cancel"] + Button[text="确认"][id="com.alipay.mobile.antui:id/btn_ensure"][clickable=true][visibleToUser=true]',
+            'TextView[text*="确认删除" || text^="删除后无法恢复"] < ScrollView <n LinearLayout < LinearLayout + LinearLayout > @Button[text="取消"][id="com.alipay.mobile.antui:id/btn_cancel"][clickable=true][visibleToUser=true] + Button[text^="确认"][id="com.alipay.mobile.antui:id/btn_ensure"]',
+          ],
         },
       ],
     },
+
     {
       key: 11,
       name: '会员签到',
-      desc: '260227',
+      desc: '261121',
       rules: [
         {
           anyMatches: [
-            '[text="每日签到"] +2 * [text^="今日签到"]',
+            '@View[clickable=true][visibleToUser=true] > TextView[text="每日签到"] + TextView + View >(4,6) TextView[text^="今日签到+"]', //261121，会员签到
+            '@View[clickable=true][visibleToUser=true] > TextView[text="每日签到"] + TextView + View >n TextView[text^="今日签到+"]', //261121，会员签到
+            //'[text="每日签到"] +2 * [text^="今日签到"]',
             '@View > [text="每日签到"] +n * >n [text^="今日签到+"]',
           ],
-          resetMatch: 'activity',
+          resetMatch: 'match',
           actionCd: 10000,
           activityIds:
             'com.alipay.mobile.nebulax.xriver.activity.XRiverActivity',
@@ -223,6 +231,22 @@ export default defineGkdApp({
     },
     {
       key: 13,
+      name: '数币节，立即抢',
+      desc: '261117',
+      rules: [
+        {
+          resetMatch: 'match',
+          forcedTime: 3000,
+          actionCd: 700,
+          activityIds:
+            'com.alipay.mobile.nebulax.xriver.activity.XRiverActivity',
+          matches:
+            'View > View > ListView[text="选择组"] + @View[clickable=true][visibleToUser=true] > TextView[text="立即抢"]', //261117，数币节
+        },
+      ],
+    },
+    {
+      key: 14,
       name: '还款优惠，下一步去还款',
       desc: '261016，添加 银行卡抽奖',
       rules: [
@@ -239,7 +263,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 14,
+      key: 15,
       name: '转账提示，不再提示',
       desc: '261005，限1',
       rules: [
@@ -252,23 +276,6 @@ export default defineGkdApp({
             'View > Button[text="返回"] +n @CheckBox[checked=false][clickable=true][visibleToUser=true] + TextView[text="本月不再提示"] + Button + Button[text="继续转出"]',
             'View > Button[text="返回"] +n CheckBox[checked=true] +     TextView[text="本月不再提示"] + Button + Button[text="继续转出"]',
             'View > @CheckBox[checked=false] + TextView + Button + Button[clickable=true][visibleToUser=true][text="继续转出"]',
-          ],
-        },
-      ],
-    },
-    {
-      key: 15,
-      name: '弹窗，闪购获取你的位置信息，拒绝',
-      desc: '261102，fastQuery=true,clickable=true，添加 完成',
-      rules: [
-        {
-          fastQuery: true,
-          resetMatch: 'match',
-          activityIds:
-            'com.alipay.mobile.nebulax.xriver.activity.XRiverActivity',
-          anyMatches: [
-            'TextView[text*="您的位置信息" || text*="您的地理位置"] <<n FrameLayout + LinearLayout > @Button[id="com.alipay.mobile.antui:id/btn_cancel"][text="拒绝"][clickable=true][visibleToUser=true] + Button[id="com.alipay.mobile.antui:id/btn_ensure"][text="允许"]',
-            'RelativeLayout > FrameLayout > TextView[text="完成"][id="com.alipay.multiplatform.phone.xriver_integration:id/textView_rightButton1"][clickable=true][visibleToUser=true]',
           ],
         },
       ],
@@ -414,6 +421,10 @@ export default defineGkdApp({
             '@Button[clickable=true][text="开心收下"] <<n View  + Button[clickable=true][visibleToUser=true][text="关闭"]',
             'View > TextView[text*="恭喜获得"] + View > View > Button[text="开心收下"][clickable=true][visibleToUser=true]',
             'View > View > TextView[text=""][clickable=false][visibleToUser=true] + View > TextView[text="开心收下"][clickable=false][visibleToUser=true]', //261107，弹窗，余额宝体验金
+            //'WebView > View > TextView[text="还款成功"] +(10,13) View > Button[text="完成"][clickable=true][visibleToUser=true]',//261121，还款，还款成功，完成
+            //'WebView > View > TextView[text="银行处理中"] +(10,13) View > Button[text="完成"][clickable=true][visibleToUser=true]',//261121，还款，银行处理中，完成
+            //'WebView > View > TextView[text="还款成功"] +n View > Button[text="完成"][clickable=true][visibleToUser=true]',//261121，还款，还款成功，完成
+            //'WebView > View > TextView[text="银行处理中"] +n View > Button[text="完成"][clickable=true][visibleToUser=true]',//261121，还款，银行处理中，完成
           ],
         },
       ],
@@ -493,6 +504,8 @@ export default defineGkdApp({
             '@View[clickable=true][visibleToUser=true] > View > TextView[text="领好礼机会+1"] + TextView[text="去查看>"]', //261114，神券做任务
             'View > View > TextView[text="余额宝体验金"] + TextView[text="开心收下"][clickable=true][visibleToUser=true]', //261114，余额宝体验金，开心收下
             'Dialog > View > View > @Button[text="关闭"][clickable=true][visibleToUser=true] - View > TextView[text$="到桌面"]', //261114，弹窗，神券，签到，添加到桌面，X掉
+            'WebView[text="网商银行"] > View > View > View > @Image[text=""][clickable=true][visibleToUser=true] + View > TextView[text=""][clickable=true][visibleToUser=true]', //261121，弹窗，福利金领取改版啦，X掉
+            'View > View > @Image[text=""][clickable=true][visibleToUser=true] + Button[text="开通享收益升级"][clickable=true][visibleToUser=true]', //261121，弹窗，闲钱收益升级机会，X掉
           ],
         },
       ],
@@ -527,14 +540,16 @@ export default defineGkdApp({
         {
           resetMatch: 'match',
           actionCd: 300,
+          forcedTime: 3000,
           activityIds:
             'com.alipay.mobile.nebulax.xriver.activity.XRiverActivity',
           anyMatches: [
             'Button[clickable=true][text="知道了"] <n View <n View < View + Button[clickable=true][visibleToUser=true][text="关闭"]',
             'Button[text="去完成"] <n View -n TextView[text*="下单"] <n View <n View + Button[clickable=true][visibleToUser=true][text="关闭"]',
             'Button[clickable=true][text="入会领"] < View <n View <n View + Button[clickable=true][visibleToUser=true][text="关闭"]',
-            'TextView[text*="确认删除" || text^="删除后无法恢复"] < ScrollView <n LinearLayout < LinearLayout + LinearLayout > @Button[text="取消"][id="com.alipay.mobile.antui:id/btn_cancel"][clickable=true][visibleToUser=true] + Button[text^="确认"][id="com.alipay.mobile.antui:id/btn_ensure"]',
-            'TextView[text*="优惠券删除无法恢复" && text*="确认删除？"] <<n LinearLayout + LinearLayout > Button[text="取消"][id="com.alipay.mobile.antui:id/btn_cancel"] + Button[text="确认"][id="com.alipay.mobile.antui:id/btn_ensure"][clickable=true][visibleToUser=true]',
+            //规则 加入 15，fastQuery=true
+            //'TextView[text*="确认删除" || text^="删除后无法恢复"] < ScrollView <n LinearLayout < LinearLayout + LinearLayout > @Button[text="取消"][id="com.alipay.mobile.antui:id/btn_cancel"][clickable=true][visibleToUser=true] + Button[text^="确认"][id="com.alipay.mobile.antui:id/btn_ensure"]',
+            //'TextView[text*="优惠券删除无法恢复" && text*="确认删除？"] <<n LinearLayout + LinearLayout > Button[text="取消"][id="com.alipay.mobile.antui:id/btn_cancel"] + Button[text="确认"][id="com.alipay.mobile.antui:id/btn_ensure"][clickable=true][visibleToUser=true]',
           ],
         },
       ],
@@ -648,8 +663,8 @@ export default defineGkdApp({
             'com.alipay.mobile.nebulax.xriver.activity.XRiverActivity',
           anyMatches: [
             'TextView[text^="逛一逛"] +(2,3) View > Button[text="去完成"]', //逛一逛遂骰子次数，去完成
-            'View > View > TextView[text="还款成功"] +(10,13) View > Button[text="完成"][clickable=true][visibleToUser=true]', //261111，还款成功后
-            'View > View > TextView[text="还款成功"] +n View > Button[text="完成"][clickable=true][visibleToUser=true]',
+            //'View > View > TextView[text="还款成功"] +(10,13) View > Button[text="完成"][clickable=true][visibleToUser=true]', //261111，还款成功后
+            //'View > View > TextView[text="还款成功"] +n View > Button[text="完成"][clickable=true][visibleToUser=true]',
           ],
         },
       ],

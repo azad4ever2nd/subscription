@@ -248,7 +248,7 @@ export default defineGkdApp({
           forcedTime: 3000,
           activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
           excludeMatches: [
-            'TextView[text="我的奖励金"] +n View >n View > TextView[text="知道了"][visibleToUser=true]',
+            //'TextView[text="我的奖励金"] +n View >n View > TextView[text="知道了"][visibleToUser=true]',
             //'TextView[text="我的奖励金"] +n View >n View > TextView[text="知道了"][clickable=false][visibleToUser=true]',
           ],
           anyMatches: [
@@ -293,7 +293,7 @@ export default defineGkdApp({
           activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
           excludeMatches: [
             'TextView[text="我的奖励金"] +n View >n View > TextView[text="签到"][visibleToUser=true]',
-            //'TextView[text="我的奖励金"] +n View >n View > @TextView[visibleToUser=true][text.length=0] +n TextView[text="明日再来"][visibleToUser=true]',
+            'TextView[text="我的奖励金"] +n View >n View > @TextView[visibleToUser=true][text.length=0] +n TextView[text="明日再来"][visibleToUser=true]',
             'TextView[text="我的奖励金"] +n View > View > TextView[text="签到"][index=parent.childCount.minus(1)][clickable=false][visibleToUser=true]',
           ],
           anyMatches: [
@@ -448,7 +448,7 @@ export default defineGkdApp({
           activityIds:
             'com.hellobike.moped.platform.offline.web.OhoRealmWebActivity',
           excludeMatches: [
-            'TextView[text="我的奖励金"] +n View >n View > TextView[text="知道了"][visibleToUser=true]',
+            //'TextView[text="我的奖励金"] +n View >n View > TextView[text="知道了"][visibleToUser=true]',
             //'TextView[text="我的奖励金"] +n View >n View > TextView[text="知道了"][clickable=false][visibleToUser=true]',
           ],
           anyMatches: [
@@ -494,7 +494,7 @@ export default defineGkdApp({
             'com.hellobike.moped.platform.offline.web.OhoRealmWebActivity',
           excludeMatches: [
             'TextView[text="我的奖励金"] +n View >n View > TextView[text="签到"][visibleToUser=true]',
-            //'TextView[text="我的奖励金"] +n View >n View > @TextView[visibleToUser=true][text.length=0] +n TextView[text="明日再来"][visibleToUser=true]',
+            'TextView[text="我的奖励金"] +n View >n View > @TextView[visibleToUser=true][text.length=0] +n TextView[text="明日再来"][visibleToUser=true]',
           ],
           anyMatches: [
             'TextView[text="我的奖励金"] +n View >n View > TextView[text="知道了"][clickable=true][visibleToUser=true]',

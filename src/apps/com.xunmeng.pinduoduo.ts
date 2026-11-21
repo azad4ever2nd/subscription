@@ -417,13 +417,15 @@ export default defineGkdApp({
     {
       key: 21,
       name: '弹窗NewPageMaskActivity，X掉2',
-      desc: '261117，fastQuery=false，clickable=true',
+      desc: '261121，fastQuery=false，clickable=true',
       rules: [
         {
           resetMatch: 'match',
           activityIds: '.activity.NewPageMaskActivity',
           anyMatches: [
-            'View > View > @Button[text="关闭弹窗"][clickable=true][visibleToUser=true] +n View > TextView[text="开心收下"] + Button[text="查看订单详情"]',
+            'View > View > @Button[text="关闭弹窗"][clickable=true][visibleToUser=true] +n Button[text^="查看订单详情"]', //261121，弹窗，下单完成后，继续逛逛，查看订单详情，X掉，改通用，
+            //'View > View > @Button[text="关闭弹窗"][clickable=true][visibleToUser=true] +n Button[text="继续逛逛"] + Button[text^="查看订单详情"]'，//261121，弹窗，下单完成后，继续逛逛，查看订单详情，X掉，
+            //'View > View > @Button[text="关闭弹窗"][clickable=true][visibleToUser=true] +n View > TextView[text="开心收下"] + Button[text="查看订单详情"]',
             'View > View > @Button[text="关闭弹窗"][clickable=true][visibleToUser=true] +n View > Button[text^="查看订单详情"]', //261106，弹窗，下单完成后，一键领取
             'View > View > @Button[text="关闭弹窗"][clickable=true][visibleToUser=true] +n View > View > TextView[text="继续逛逛"] + Button[text="查看订单详情"]', //261117，弹窗，下完单后提示还差1人拼单
             'View > View > Image[text="webp"] + @TextView[clickable=true][visibleToUser=true] +n View > TextView[text="售后体验补偿券已到账"]', //261105，弹窗，售后体验补偿券已到账，X掉

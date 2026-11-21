@@ -835,6 +835,8 @@ export default defineGkdApp({
             'WebView > View > TextView[text="立即签到"][clickable=false][visibleToUser=true]',
             'View > TextView[text="Blocked by Sentinel"] + View + TextView[clickable=true][visibleToUser=true]', //261113，弹窗，工行贵阳
             'View > View > @TextView[clickable=true][visibleToUser=true] - View[clickable=true][visibleToUser=true] > TextView[text="立即前往"]',
+            'View > View > @TextView[text=""][clickable=true][visibleToUser=true] - View > TextView[text="前往甬城福利社"]', //261121，工行弹窗，宁波，还未到抽奖时间，X掉
+            //'View > View > @TextView[text=""][clickable=true][visibleToUser=true] -2 View > View > TextView[text="很遗憾，您的抽奖次数已用完"]',//261121，工行弹窗，宁波，很遗憾，您的抽奖次数已用完，X掉
             'View > View > TextView[text="活动9:00开始"] + TextView[text="确定"][clickable=true][visibleToUser=true]',
             'View > View > TextView[text^="活动未开始"] +2 @TextView[clickable=true][visibleToUser=true] -  View >n Image[text="60e3f3550c78485a6857ba23"][clickable=true][visibleToUser=true]', //贵州工享有礼
             'View > View > TextView[text^="活动未开始"] + View > View > Image[text="60e3f3550c78485a6857ba23"][clickable=true][visibleToUser=true]', //261112，弹窗，贵阳工行马上有确幸，活动未开始
@@ -1338,6 +1340,7 @@ export default defineGkdApp({
         {
           resetMatch: 'match',
           actionMaximum: 1,
+          forcedTime: 3000,
           activityIds: [
             'com.tencent.mm.plugin.appbrand.ui.AppBrandUI0',
             'com.tencent.mm.plugin.appbrand.ui.AppBrandUI1',
@@ -1364,6 +1367,7 @@ export default defineGkdApp({
         {
           resetMatch: 'match',
           preKeys: [56],
+          forcedTime: 3000,
           activityIds: [
             'com.tencent.mm.plugin.appbrand.ui.AppBrandUI0',
             'com.tencent.mm.plugin.appbrand.ui.AppBrandUI1',
@@ -1921,7 +1925,16 @@ export default defineGkdApp({
             'com.tencent.mm.plugin.appbrand.ui.AppBrandUI04',
             'com.tencent.mm.plugin.appbrand.ui.AppBrandPluginUI',
           ],
-          matches: '@[text="file-WI7PoWjb8T"] + [text!="今日剩余名额：0名"]',
+          anyMatches: [
+            '@[text="file-WI7PoWjb8T"] + [text!="今日剩余名额：0名"]',
+            //湖北SKP，确认支付，优先测试
+            //order:-1,
+            //actionCd:100,
+            '[text="仅限中国银行信用卡支付"] + [text="dpyo8s1ulmfditgb8ejiv"] + [text="xmdaohehb7wx6hqcb8xft"]',
+            //湖北SKP，火爆，刷新
+            //actionCd:100,
+            '[text="活动火爆，当前参与人数过多"] +n [text="刷 新"]',
+          ],
           resetMatch: 'match',
           actionCd: 0,
         },
@@ -1929,11 +1942,11 @@ export default defineGkdApp({
     },
     {
       key: 77,
-      name: '湖北SKP，确认支付',
-      desc: 'D，260406，优先测试',
+      name: '先收集 完成，测试用',
+      desc: 'D，备用',
       rules: [
         {
-          order: -1,
+          //order: -1,
           activityIds: [
             'com.tencent.mm.plugin.appbrand.ui.AppBrandUI0',
             'com.tencent.mm.plugin.appbrand.ui.AppBrandUI1',
@@ -1949,8 +1962,9 @@ export default defineGkdApp({
           ],
           resetMatch: 'match',
           actionCd: 100,
-          matches:
-            '[text="仅限中国银行信用卡支付"] + [text="dpyo8s1ulmfditgb8ejiv"] + [text="xmdaohehb7wx6hqcb8xft"]',
+          anyMatches: [
+            'TextView[text="缴费成功"] < View + View > View > Button[text="完成"][clickable=true][visibleToUser=true]', //261121，缴费成功，完成
+          ],
         },
       ],
     },
