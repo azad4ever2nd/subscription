@@ -1025,6 +1025,33 @@ export default defineGkdApp({
     },
     {
       key: 46,
+      name: '滑块验证',
+      desc: '261112',
+      rules: [
+        {
+          action: 'swipe',
+          resetMatch: 'match',
+          swipeArg: {
+            start: {
+              x: 'left+18',
+              y: 'bottom-160',
+            },
+            end: {
+              x: 'right',
+              y: 'bottom-160',
+            },
+            duration: 1000,
+          },
+          anyMatches: [
+            'TextView[text="为保障您的正常访问请进行验证"] + TextView[id="captcha-container"]',
+          ],
+          activityIds:
+            'com.alipay.mobile.nebulax.xriver.activity.XRiverTransActivity$Main',
+        },
+      ],
+    },
+    {
+      key: 47,
       name: '支付有礼，返回会场 or 开心收下',
       desc: '261113，添加 返回会场',
       rules: [
@@ -1043,7 +1070,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 47,
+      key: 48,
       name: '弹窗，地理地置权益，，取消',
       desc: '261014，fastQuery=true,添加 地理位置权限',
       rules: [
@@ -1059,7 +1086,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 48,
+      key: 49,
       name: '通知管理，不用',
       desc: '260304',
       rules: [
@@ -1076,7 +1103,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 49,
+      key: 50,
       name: '碰一碰，入会并支付',
       desc: '261110',
       rules: [
@@ -1097,7 +1124,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 50,
+      key: 51,
       name: '添加到首页，取消',
       desc: '261020',
       rules: [
@@ -1115,7 +1142,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 51,
+      key: 52,
       name: '弹窗，团购申请发送消息，取消 或 不再询问',
       desc: '261018,添加 暂不订阅,fastquery=true,clickable=true',
       rules: [
@@ -1133,7 +1160,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 52,
+      key: 53,
       name: '弹窗，开启地理位置权限，X掉',
       desc: '260915',
       rules: [
@@ -1151,7 +1178,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 53,
+      key: 54,
       name: '弹窗，淘票票群聊，X掉',
       desc: '261004',
       rules: [
@@ -1166,7 +1193,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 54,
+      key: 55,
       name: '扣款顺序设置',
       desc: '261013',
       rules: [
@@ -1181,9 +1208,9 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 55,
+      key: 56,
       name: '支付成功，碰一碰，完成',
-      desc: '禁用，261115',
+      desc: 'D，禁用，261115',
       rules: [
         {
           resetMatch: 'match',

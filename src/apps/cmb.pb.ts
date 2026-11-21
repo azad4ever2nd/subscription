@@ -572,7 +572,7 @@ export default defineGkdApp({
           resetMatch: 'match',
           action: 'clickCenter',
           //处于匹配延迟，matchDelay: 500,
-          forcedTime: 2000,
+          forcedTime: 3000,
           activityIds:
             'cmb.pb.app.h5container.webviewcontainer.PBWebContainerActivity',
           excludeMatches: [
