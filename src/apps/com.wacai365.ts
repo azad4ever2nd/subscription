@@ -114,14 +114,15 @@ export default defineGkdApp({
     {
       key: 8,
       name: '开通会员，关闭',
-      desc: '261001',
+      desc: '261121',
       rules: [
         {
           forcedTime: 3000,
-          actionCd: 500,
+          actionCd: 600,
           fastQuery: true,
           resetMatch: 'match',
-          matches: [
+          anyMatches: [
+            'ViewGroup > @ImageView[vid="privilegeClose"][clickable=true][visibleToUser=true] + ImageView[vid="privilegeImage"]', //261121，弹窗，会员，X掉
             'ViewGroup > ImageView[vid="privilegeClose"][clickable=true][visibleToUser=true]',
           ],
           activityIds: ['com.wacai365.newtrade.TradeActivity'],
