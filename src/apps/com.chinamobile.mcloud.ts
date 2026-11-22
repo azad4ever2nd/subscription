@@ -14,7 +14,7 @@ export default defineGkdApp({
           resetMatch: 'match',
           matchDelay: 500,
           forcedTime: 3000,
-          actionCd: 800,
+          actionCd: 1300, //261122,延长
           excludeMatches: [
             'View > View > TextView + TextView[text="去转存"][clickable=true][visibleToUser=true]',
             'View > View > TextView + TextView[text="去上传"][clickable=true][visibleToUser=true]',
@@ -91,7 +91,7 @@ export default defineGkdApp({
       rules: [
         {
           resetMatch: 'match',
-          actionCd: 350,
+          actionCd: 750, //261122,延长
           activityIds:
             'com.chinamobile.mcloud.client.component.web.H5WebViewMainActivity',
           anyMatches: [
@@ -316,7 +316,7 @@ export default defineGkdApp({
         {
           resetMatch: 'match',
           activityIds: '.client.component.web.H5WebViewMainActivity',
-          actionCd: 1500,
+          actionCd: 2000, //261122,延长
           excludeMatches: [
             'View > View > TextView[text="转存资源签到"] + TextView[text="换一批 >"][clickable=true][visibleToUser=true] +n View > TextView[text="点击转存 >"][clickable=true][visibleToUser=true]',
           ],

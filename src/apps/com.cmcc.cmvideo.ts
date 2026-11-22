@@ -10,9 +10,9 @@ export default defineGkdApp({
       desc: '261117，每个月要更新',
       rules: [
         {
-          resetMatch: 'app',
           actionMaximum: 1,
           actionCd: 5000,
+          resetMatch: 'app',
           activityIds: [
             'com.quickjs.android.example.RNFragmentActivity',
             'com.cmvideo.capability.remote_web.WebProcessActivity',
@@ -33,11 +33,11 @@ export default defineGkdApp({
       desc: '260831，依赖 每日分享指定视频至微信，立即分享',
       rules: [
         {
-          resetMatch: 'app',
-          fastQuery: true,
           actionMaximum: 1,
           actionCd: 10000,
           preKeys: [1],
+          resetMatch: 'app',
+          fastQuery: true,
           activityIds: 'com.cmvideo.capability.vod.VodActivity',
           matches:
             'FrameLayout > ViewGroup > ImageView[vid="iv_share_iv"][clickable=true]',

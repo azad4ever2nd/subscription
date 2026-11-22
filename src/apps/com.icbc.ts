@@ -305,10 +305,10 @@ export default defineGkdApp({
       desc: '261118',
       rules: [
         {
-          actionMaximum: 2,
+          preKeys: [17],
           resetMatch: 'match',
           action: 'clickCenter',
-          preKeys: [17],
+          actionCd: 7000,
           activityIds: [
             'com.icbc.activity.web.ICBCWebView',
             'com.tencent.mm.plugin.base.stub.WXBizEntryActivity',

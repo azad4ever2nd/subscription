@@ -164,7 +164,7 @@ export default defineGkdApp({
           activityIds: 'com.citiccard.mobilebank.web.webpage.CommonWebPage',
           resetMatch: 'match',
           action: 'clickCenter',
-          actionCd: 500,
+          actionCd: 1500, //261122，延长
           anyMatches: [
             'TextView[text*="三叶草不足"]  < View <n View + Image[text="wN856FOtsI2bwAAAABJRU5ErkJggg=="][clickable=false][visibleToUser=true]',
             'TextView[text*="三叶草不足"]  < View <n View + Image[text="wN856FOtsI2bwAAAABJRU5ErkJggg=="][clickable=true][visibleToUser=true]',
