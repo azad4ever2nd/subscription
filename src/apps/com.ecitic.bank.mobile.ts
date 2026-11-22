@@ -185,14 +185,16 @@ export default defineGkdApp({
     {
       key: 12,
       name: '财富，签到享好礼，立即签到',
-      desc: '261028',
+      desc: '261122',
       rules: [
         {
           resetMatch: 'app',
-          actionMaximum: 3,
+          actionMaximum: 2,
           activityIds: 'com.citic.jk.activity.H5ContainerAty',
-          matches:
+          anyMatches: [
             'View[id="DailyCheckIn"] > View > View > View[childCount=1] - View[childCount=2] > TextView[text.length=0][clickable=false][visibleToUser=true]',
+            'View[id="DailyCheckIn"] > View > View > View[childCount=2][index=parent.childCount.minus(1)] > TextView[text.length=0][clickable=false][visibleToUser=true]', //261122，签到是最后一个的情况
+          ],
         },
       ],
     },

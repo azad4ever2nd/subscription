@@ -285,7 +285,7 @@ export default defineGkdApp({
         {
           actionMaximum: 2,
           preKeys: [14],
-          actionCd: 15000,
+          actionCd: 30000,
           resetMatch: 'app',
           anyMatches: [
             'View > View > TextView[text="奖励派送中，稍后送达～"] + TextView[text^="前往微信再浇一次" && text$="赢更多奖励!"] + Image[clickable=true][visibleToUser=true]', //261118，弹窗，浇水成功，前往微信再多浇一次赢更多奖励，去浇水

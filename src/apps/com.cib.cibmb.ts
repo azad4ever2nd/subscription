@@ -106,5 +106,19 @@ export default defineGkdApp({
         },
       ],
     },
+    {
+      key: 8,
+      name: '完成任务送抽奖次数，去浏览',
+      desc: '261122',
+      rules: [
+        {
+          resetMatch: 'match',
+          actionCd: 4000,
+          activityIds: 'com.newland.app.webcore.CustomPageFlowActivity',
+          matches:
+            'View > @TextView[text="去浏览"][clickable=true][visibleToUser=true] - View > TextView[text="0/1"]',
+        },
+      ],
+    },
   ],
 });

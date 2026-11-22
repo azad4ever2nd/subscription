@@ -102,7 +102,7 @@ export default defineGkdApp({
           resetMatch: 'app',
           actionMaximum: 1,
           preKeys: [4],
-          forcedTime: 2000,
+          forcedTime: 3000,
           activityIds: [
             'com.quickjs.android.example.RNFragmentActivity',
             'com.cmvideo.capability.remote_web.WebProcessActivity',
@@ -123,9 +123,11 @@ export default defineGkdApp({
       desc: '260831，取消依赖测试，依赖 领2GB日流量，马上领取',
       rules: [
         {
-          actionMaximum: 6,
+          actionMaximum: 3,
           resetMatch: 'match',
           action: 'clickCenter',
+          preKeys: [6],
+          forcedTime: 3000,
           activityIds: [
             'com.quickjs.android.example.RNFragmentActivity',
             'com.cmvideo.capability.remote_web.WebProcessActivity',
@@ -145,6 +147,7 @@ export default defineGkdApp({
         {
           resetMatch: 'match',
           actionCd: 700,
+          forcedTime: 3000,
           activityIds: [
             'com.quickjs.android.example.RNFragmentActivity',
             'com.cmvideo.capability.remote_web.WebProcessActivity',
@@ -194,7 +197,7 @@ export default defineGkdApp({
             'View > View > [text="短信验证"] + View[id="close"][visibleToUser=true]', //排除 验证码
           ],
           anyMatches: [
-            'View > View > @TextView[text=""][clickable=true][visibleToUser=true] - View >n View[text*="累计打卡"] ', //261117，每日打卡，
+            'View > View > @TextView[text=""][clickable=true][visibleToUser=true] - View >n View[text*="累计打卡"]', //261117，每日打卡，
             //'View > View > View > View > View > View[id="cc54b71dca3545fb95c3de42954fa8e2"]',
           ],
         },

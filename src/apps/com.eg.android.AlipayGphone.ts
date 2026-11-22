@@ -140,6 +140,9 @@ export default defineGkdApp({
           anyMatches: [
             'LinearLayout > @Button[text="放弃"][id="com.alipay.mobile.antui:id/btn_cancel"][clickable=true][visibleToUser=true] + Button[text="继续付款"][id="com.alipay.mobile.antui:id/btn_ensure"]',
             'TextView[text="放弃"][clickable=false][visibleToUser=true] < @FrameLayout[clickable=true][visibleToUser=true] + FrameLayout > TextView[text="继续付款"]',
+            'TextView[text="是否放弃本次付款？"][id="com.alipay.mobile.antui:id/message"] <<n LinearLayout + LinearLayout > @Button[id="com.alipay.mobile.antui:id/btn_cancel"][text="放弃"][clickable=true][visibleToUser=true] + Button[text="继续付款"][id="com.alipay.mobile.antui:id/btn_ensure"]',
+            'TextView[text*="是否放弃付款"][id="com.alipay.mobile.antui:id/message"] <<n LinearLayout  + LinearLayout > @Button[text="放弃"][id="com.alipay.mobile.antui:id/btn_cancel"][clickable=true][visibleToUser=true] + Button[text="继续付款"][id="com.alipay.mobile.antui:id/btn_ensure"]',
+            'TextView[text="是否放弃本次付款？"] <<n FrameLayout +n FrameLayout >n @FrameLayout[clickable=true][visibleToUser=true] > TextView[text="放弃"]', //261103
             'TextView[text="开通支付功能"] - FrameLayout > ImageView[index=parent.childCount.minus(1)][clickable=true][visibleToUser=true]',
             'TextView[text="拼多多 推荐你"] <n FrameLayout +n @FrameLayout[checked=false][clickable=true][visibleToUser=true] > TextView[text="关闭"]',
             'TextView[text="支付宝推荐你"] < FrameLayout  +n FrameLayout > TextView[text="关闭"][clickable=false][visibleToUser=true]',
@@ -147,9 +150,6 @@ export default defineGkdApp({
             'TextView[text="支付宝推荐你"] <n FrameLayout +n FrameLayout > TextView[text="不感兴趣"][clickable=false][visibleToUser=true]',
             'View > View > TextView[text="支付宝"] + TextView[text="邀请你"] + TextView[clickable=false][visibleToUser=true][text="跳过"]',
             'FrameLayout > TextView[text*="免密快捷支付"] + FrameLayout > CheckBox[clickable=true][checkable=true]',
-            'TextView[text="是否放弃本次付款？"] <<n FrameLayout +n FrameLayout >n @FrameLayout[clickable=true][visibleToUser=true] > TextView[text="放弃"]', //261103
-            'TextView[text="是否放弃本次付款？"][id="com.alipay.mobile.antui:id/message"] <<n LinearLayout + LinearLayout > @Button[id="com.alipay.mobile.antui:id/btn_cancel"][text="放弃"][clickable=true][visibleToUser=true] + Button[text="继续付款"][id="com.alipay.mobile.antui:id/btn_ensure"]',
-            'TextView[text*="是否放弃付款"][id="com.alipay.mobile.antui:id/message"] <<n LinearLayout  + LinearLayout > @Button[text="放弃"][id="com.alipay.mobile.antui:id/btn_cancel"][clickable=true][visibleToUser=true] + Button[text="继续付款"][id="com.alipay.mobile.antui:id/btn_ensure"]',
             //'FrameLayout > FrameLayout > TextView[text="完成"][clickable=false][visibleToUser=true]', //261107，支付完成，完成，不开，避免一些活动跳过
             //'TextView[text="转入成功"] <<n ScrollView + FrameLayout >n @FrameLayout[clickable=true][visibleToUser=true] > TextView[text="完成"]',//261121，余额宝转入完成，完成，不开，避免一些活动跳过
           ],
@@ -186,8 +186,8 @@ export default defineGkdApp({
             'com.alipay.mobile.nebulax.xriver.activity.XRiverActivity',
           anyMatches: [
             'TextView[text*="您的位置信息" || text*="您的地理位置"] <<n FrameLayout + LinearLayout > @Button[id="com.alipay.mobile.antui:id/btn_cancel"][text="拒绝"][clickable=true][visibleToUser=true] + Button[id="com.alipay.mobile.antui:id/btn_ensure"][text="允许"]',
-            'RelativeLayout > FrameLayout > TextView[text="完成"][id="com.alipay.multiplatform.phone.xriver_integration:id/textView_rightButton1"][clickable=true][visibleToUser=true]',
-            'TextView[text*="优惠券删除无法恢复" && text*="确认删除？"] <<n LinearLayout + LinearLayout > Button[text="取消"][id="com.alipay.mobile.antui:id/btn_cancel"] + Button[text="确认"][id="com.alipay.mobile.antui:id/btn_ensure"][clickable=true][visibleToUser=true]',
+            //'RelativeLayout > FrameLayout > TextView[text="完成"][id="com.alipay.multiplatform.phone.xriver_integration:id/textView_rightButton1"][clickable=true][visibleToUser=true]',
+            'TextView[text*="优惠券删除无法恢复" && text*="确认删除？"] <<n LinearLayout + LinearLayout > @Button[text="取消"][id="com.alipay.mobile.antui:id/btn_cancel"] + Button[text="确认"][id="com.alipay.mobile.antui:id/btn_ensure"][clickable=true][visibleToUser=true]',
             'TextView[text*="确认删除" || text^="删除后无法恢复"] < ScrollView <n LinearLayout < LinearLayout + LinearLayout > @Button[text="取消"][id="com.alipay.mobile.antui:id/btn_cancel"][clickable=true][visibleToUser=true] + Button[text^="确认"][id="com.alipay.mobile.antui:id/btn_ensure"]',
           ],
         },
@@ -197,17 +197,18 @@ export default defineGkdApp({
     {
       key: 11,
       name: '会员签到',
-      desc: '261121',
+      desc: '261122',
       rules: [
         {
           anyMatches: [
+            'View > @View[clickable=true][visibleToUser=true] > TextView[text="每日签到"] +2 View >n TextView[text^="今日签到+"]', //261122，nova7，会员签到
             '@View[clickable=true][visibleToUser=true] > TextView[text="每日签到"] + TextView + View >(4,6) TextView[text^="今日签到+"]', //261121，会员签到
             '@View[clickable=true][visibleToUser=true] > TextView[text="每日签到"] + TextView + View >n TextView[text^="今日签到+"]', //261121，会员签到
             //'[text="每日签到"] +2 * [text^="今日签到"]',
-            '@View > [text="每日签到"] +n * >n [text^="今日签到+"]',
+            //'@View > [text="每日签到"] +n * >n [text^="今日签到+"]',
           ],
           resetMatch: 'match',
-          actionCd: 10000,
+          actionCd: 12000,
           activityIds:
             'com.alipay.mobile.nebulax.xriver.activity.XRiverActivity',
         },
@@ -219,11 +220,13 @@ export default defineGkdApp({
       desc: '260227',
       rules: [
         {
+          resetMatch: 'match',
+          preKeys: [11],
           anyMatches: [
             '[text="赚更多积分"] <<n * -2 [text="每日签到"] <<n * [text^="领取"][text*="积分"]',
-            '[text="我的订单"] <<n * + * >n [text^="领取" && text$="积分"]',
+            'TextView[text="我的订单"] <<n View + View > View > View > View[index=parent.childCount.minus(1)] > TextView[text^="领取" && text$="积分"][clickable=true][visibleToUser=true]', //261122，nova7，领取积分
+            //'[text="我的订单"] <<n * + * >n [text^="领取" && text$="积分"]',
           ],
-          resetMatch: 'match',
           activityIds:
             'com.alipay.mobile.nebulax.xriver.activity.XRiverActivity',
         },
@@ -232,7 +235,7 @@ export default defineGkdApp({
     {
       key: 13,
       name: '数币节，立即抢',
-      desc: '261117',
+      desc: '261122，添加 神券五六天',
       rules: [
         {
           resetMatch: 'match',
@@ -240,8 +243,10 @@ export default defineGkdApp({
           actionCd: 700,
           activityIds:
             'com.alipay.mobile.nebulax.xriver.activity.XRiverActivity',
-          matches:
+          anyMatches: [
+            'View[text="天天省钱"] > View > View[text="场次优惠券"] > View > @Button[text="立即抢"] - View > View[text="10"] + TextView[text="元"] + TextView[text="满20可用"]', //261122，神券五六天，立即抢
             'View > View > ListView[text="选择组"] + @View[clickable=true][visibleToUser=true] > TextView[text="立即抢"]', //261117，数币节
+          ],
         },
       ],
     },

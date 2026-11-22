@@ -105,5 +105,20 @@ export default defineGkdApp({
         },
       ],
     },
+    {
+      key: 8,
+      name: '通知，登录到WLAN网络',
+      desc: '261122',
+      rules: [
+        {
+          resetMatch: 'match',
+          actionDelay: 800, //延时5秒
+          actionCd: 3000,
+          activityIds: 'com.miui.home.launcher.Launcher',
+          matches:
+            '@FrameLayout[clickable=true][visibleToUser=true] > FrameLayout > FrameLayout[vid="status_bar_latest_event_content"] > ImageView[vid="app_icon"][desc="Android 系统"] + LinearLayout[vid="notification_main_column"] > LinearLayout > TextView[text="登录到WLAN网络"][vid="title"]',
+        },
+      ],
+    },
   ],
 });

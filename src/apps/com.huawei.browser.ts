@@ -92,5 +92,20 @@ export default defineGkdApp({
         },
       ],
     },
+    {
+      key: 7,
+      name: '省图登录，短信',
+      desc: '261122',
+      rules: [
+        {
+          actionCd: 3000,
+          resetMatch: 'match',
+          actionMaximum: 2,
+          activityIds: '.customtab.BrowserCustomTabActivity',
+          matches:
+            'WebView[text="认证页面"] > View > View > View > View > View > @View[desc="短信"][clickable=true][visibleToUser=true] > View[text="短信"]',
+        },
+      ],
+    },
   ],
 });
