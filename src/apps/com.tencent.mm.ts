@@ -1743,10 +1743,11 @@ export default defineGkdApp({
     {
       key: 70,
       name: '金币抽提现券1',
-      desc: '251222，添加第一步兑换',
+      desc: '261123，添加第一步兑换',
       rules: [
         {
           resetMatch: 'match',
+          forcedTime: 3000,
           activityIds: [
             'com.tencent.mm.plugin.appbrand.ui.AppBrandUI0',
             'com.tencent.mm.plugin.appbrand.ui.AppBrandUI1',
@@ -1761,7 +1762,8 @@ export default defineGkdApp({
             'com.tencent.mm.plugin.appbrand.ui.AppBrandPluginUI',
           ],
           anyMatches: [
-            '[text="微信提现免费券"] <<n * + * [text="1金币兑换"]',
+            'TextView[text="微信提现免费券"] <<n View + View > View > Image + TextView + TextView[text="1金币兑换"][clickable=false][visibleToUser=true]', //261123，微信提现券，金币兑换
+            //'[text="微信提现免费券"] <<n * + * [text="1金币兑换"]',
             '[text="祝你每天好运气"] +3 * >2 [text="1金币抽提现券"]',
           ],
         },

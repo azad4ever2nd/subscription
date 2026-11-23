@@ -185,18 +185,19 @@ export default defineGkdApp({
     {
       key: 9,
       name: '每日打卡',
-      desc: '261117',
+      desc: '261123',
       rules: [
         {
           resetMatch: 'match',
           action: 'clickCenter',
-          actionMaximum: 1,
+          actionMaximum: 2,
           preKeys: [7],
           activityIds: 'com.cmvideo.capability.remote_web.WebProcessActivity',
           excludeMatches: [
             'View > View > [text="短信验证"] + View[id="close"][visibleToUser=true]', //排除 验证码
           ],
           anyMatches: [
+            'View[id="57a0112aa5f14fb2b34b62395777a1b7"] > View > TextView[text=""][clickable=true][visibleToUser=true]', //261123，打卡
             'View > View > @TextView[text=""][clickable=true][visibleToUser=true] - View >n View[text*="累计打卡"]', //261117，每日打卡，
             //'View > View > View > View > View > View[id="cc54b71dca3545fb95c3de42954fa8e2"]',
           ],

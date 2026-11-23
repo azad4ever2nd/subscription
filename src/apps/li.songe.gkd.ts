@@ -103,9 +103,10 @@ export default defineGkdApp({
           actionCd: 100,
           action: 'clickCenter',
           anyMatches: [
+            'View > View > TextView[text="删除快照"] + ScrollView[text="确定删除当前快照吗?"] + View + @View[clickable=true][visibleToUser=true] > TextView[text="确定"] + Button', //261123，删除快照，确定
             '[text="确定删除当前快照吗?"] +n @View[clickable=true][visibleToUser=true] > TextView[text="确定"]',
           ],
-          activityIds: ['li.songe.gkd.MainActivity'],
+          activityIds: ['li.songe.gkd.MainActivity', 'li.gkd.app.MainActivity'],
         },
       ],
     },

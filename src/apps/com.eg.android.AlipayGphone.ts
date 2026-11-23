@@ -197,10 +197,11 @@ export default defineGkdApp({
     {
       key: 11,
       name: '会员签到',
-      desc: '261122',
+      desc: '261123',
       rules: [
         {
           anyMatches: [
+            'View > @View[clickable=true][visibleToUser=true] > TextView[text="签到领积分"] + TextView[text^="今日签到+"]', //261122，nova7，会员签到，布局有变
             'View > @View[clickable=true][visibleToUser=true] > TextView[text="每日签到"] +2 View >n TextView[text^="今日签到+"]', //261122，nova7，会员签到
             '@View[clickable=true][visibleToUser=true] > TextView[text="每日签到"] + TextView + View >(4,6) TextView[text^="今日签到+"]', //261121，会员签到
             '@View[clickable=true][visibleToUser=true] > TextView[text="每日签到"] + TextView + View >n TextView[text^="今日签到+"]', //261121，会员签到
@@ -217,7 +218,7 @@ export default defineGkdApp({
     {
       key: 12,
       name: '领取积分',
-      desc: '260227',
+      desc: '261123',
       rules: [
         {
           resetMatch: 'match',
@@ -225,6 +226,7 @@ export default defineGkdApp({
           anyMatches: [
             '[text="赚更多积分"] <<n * -2 [text="每日签到"] <<n * [text^="领取"][text*="积分"]',
             'TextView[text="我的订单"] <<n View + View > View > View > View[index=parent.childCount.minus(1)] > TextView[text^="领取" && text$="积分"][clickable=true][visibleToUser=true]', //261122，nova7，领取积分
+            'View > View > View > View[index=parent.childCount.minus(1)] > TextView[text^="领取" && text$="积分"][clickable=true][visibleToUser=true]', //261123，nova7，领取积分，布局有变
             //'[text="我的订单"] <<n * + * >n [text^="领取" && text$="积分"]',
           ],
           activityIds:
@@ -988,7 +990,7 @@ export default defineGkdApp({
     {
       key: 44,
       name: '神券抽奖，立即领取',
-      desc: '260913，添加 继续领，明日再来，关闭',
+      desc: '261123，添加 继续领，明日再来，关闭',
       rules: [
         {
           resetMatch: 'match',
@@ -1004,6 +1006,7 @@ export default defineGkdApp({
             //'Dialog > View > View > @Button[clickable=true][visibleToUser=true] - View > View > TextView[text="继续领"]',
             'View > View > TextView[text^="已连签" && text$="天"] +n TextView[text="提醒我领积分"] + Image[clickable=false][visibleToUser=true][index=parent.childCount.minus(1)]',
             'Dialog > View > View > @Button[text="关闭"][clickable=true][visibleToUser=true] - View > View >  TextView[text="剩余0次"]', //261114，神券签到抽奖
+            'Dialog > View > View > View > TextView[text="同意并加入会员"] -3 View > @View[clickable=true][visibleToUser=true] > Image[text="original"]', //261123，弹窗，入会，X掉
           ],
         },
       ],

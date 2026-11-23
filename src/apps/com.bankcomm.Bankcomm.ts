@@ -37,6 +37,20 @@ export default defineGkdApp({
     },
     {
       key: 3,
+      name: '弹窗，检测到您正在使用网络代理，继续使用',
+      desc: '261123',
+      rules: [
+        {
+          fastQuery: true,
+          resetMatch: 'match',
+          activityIds: 'com.bankcomm.module.biz.webcontainer.BCMHtml5Activity',
+          matches:
+            'TextView[text^="检测到您正在使用网络代理"] < LinearLayout < ScrollView + LinearLayout > LinearLayout > @TextView[text="继续使用"][vid="dialog_bottom_confirm_cancel"][clickable=true][visibleToUser=true] + View + TextView[text="退出应用"][vid="dialog_bottom_confirm_ok"]',
+        },
+      ],
+    },
+    {
+      key: 4,
       name: '最红星期五',
       desc: '260704',
       rules: [
@@ -53,7 +67,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 4,
+      key: 5,
       name: '达美乐50元代金券',
       desc: '260403',
       rules: [
@@ -62,20 +76,6 @@ export default defineGkdApp({
           actionCd: 100,
           activityIds: 'com.bankcomm.module.biz.webcontainer.BCMHtml5Activity',
           matches: '@View [text="达美乐50元代金券"]',
-        },
-      ],
-    },
-    {
-      key: 5,
-      name: '达美乐售罄，返回',
-      desc: '260403，D,先占位',
-      rules: [
-        {
-          resetMatch: 'match',
-          action: 'back',
-          activityIds: 'com.bankcomm.module.biz.webcontainer.BCMHtml5Activity',
-          matches:
-            '[text="达美乐50元代金券"] <<n * + * [id="copy"][text="已售罄"]',
         },
       ],
     },
@@ -263,11 +263,14 @@ export default defineGkdApp({
     {
       key: 16,
       name: '当前奖励已领完',
-      desc: '260209',
+      desc: '261123',
       rules: [
         {
           action: 'back',
-          matches: ['[id="dialogInnerDiv"][text^="当前奖励已领完"]'],
+          anyMatches: [
+            '[id="dialogInnerDiv"][text^="当前奖励已领完"]',
+            //'[text="达美乐50元代金券"] <<n * + * [id="copy"][text="已售罄"]',//261123，达美乐售罄，返回
+          ],
           resetMatch: 'match',
           activityIds: 'com.bankcomm.module.biz.webcontainer.BCMHtml5Activity',
         },
