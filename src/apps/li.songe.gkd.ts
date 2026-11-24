@@ -240,21 +240,7 @@ export default defineGkdApp({
     {
       key: 17,
       name: '弹窗，删除当前快照，确定，新版本用2',
-      desc: '',
-      rules: [
-        {
-          resetMatch: 'match',
-          actionCd: 2000,
-          activityIds: 'li.gkd.app.MainActivity',
-          matches:
-            'View > View[childCount=2] > TextView[text="导入备份"] + TextView[text="导出备份"][clickable=true][visibleToUser=true]',
-        },
-      ],
-    },
-    {
-      key: 18,
-      name: '弹窗，导出备份，新版本用2',
-      desc: '',
+      desc: '261124',
       rules: [
         {
           resetMatch: 'match',
@@ -262,6 +248,20 @@ export default defineGkdApp({
           activityIds: 'li.gkd.app.MainActivity',
           matches:
             'View > View > TextView[text="删除快照"] + ScrollView[text="确定删除当前快照吗?"] + View + @View[clickable=true][visibleToUser=true] > TextView[text="确定"] + Button', //261123，删除快照，确定
+        },
+      ],
+    },
+    {
+      key: 18,
+      name: '弹窗，导出备份，新版本用2',
+      desc: '261124',
+      rules: [
+        {
+          resetMatch: 'match',
+          actionCd: 2000,
+          activityIds: 'li.gkd.app.MainActivity',
+          matches:'View > View[childCount=2] > TextView[text="导入备份"] + TextView[text="导出备份"][clickable=true][visibleToUser=true]',
+
         },
       ],
     },
