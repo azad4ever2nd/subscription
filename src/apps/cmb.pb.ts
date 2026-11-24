@@ -494,8 +494,8 @@ export default defineGkdApp({
         {
           resetMatch: 'match',
           matchDelay: 1000,
-          actionMaximum: 1,
           forcedTime: 3000,
+          actionCd: 6000,
           action: 'clickCenter',
           activityIds:
             'cmb.pb.app.h5container.webviewcontainer.PBWebContainerActivity',
