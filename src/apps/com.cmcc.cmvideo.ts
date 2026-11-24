@@ -142,7 +142,7 @@ export default defineGkdApp({
     {
       key: 8,
       name: '弹窗，X掉1',
-      desc: '261121，添加各种抽奖类的提示，各种弹窗，添加 IDS',
+      desc: '261124，添加各种抽奖类的提示，各种弹窗，添加 IDS',
       rules: [
         {
           resetMatch: 'match',
@@ -154,6 +154,7 @@ export default defineGkdApp({
           ],
           anyMatches: [
             '@View[clickable=true][visibleToUser=true] >  View > Image[text="1O7HHG1PREB4I"]', //261121，弹窗，抽奖次数不足，X掉
+            '@View[clickable=true][visibleToUser=true] > View > Image[text="1O7HHG1QGLGAT"]', //261124，弹窗，今日活动已参与，X掉，3层
             '@View[clickable=true][visibleToUser=true] > View > View > View > Image[text="1O7HHG1QGLGAT"]', //261120，弹窗，今日活动已参与，X掉，5层
             '@View[clickable=true][visibleToUser=true] >  View > Image[text="1O7HHG1QGLGAT"]', //261120，弹窗，今日已分享，X掉
             //'@View[clickable=true][visibleToUser=true] > View > View > View > Image[text="1O7HHG1TRK0E6"]', //261120，弹窗，今日已分享，X掉，5层，发现不行，换3行

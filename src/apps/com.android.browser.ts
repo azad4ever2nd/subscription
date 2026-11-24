@@ -7,16 +7,16 @@ export default defineGkdApp({
     {
       key: 1,
       name: '当前网站请求打开，允许',
-      desc: '26912',
+      desc: '261124',
       rules: [
         {
+          fastQuery: true,
+          forcedTime: 3000,
+          resetMatch: 'match',
           anyMatches: [
             'TextView[vid="message"][text*="打开" || text^="当前网站请求打开"] <<n ScrollView + LinearLayout > [id="android:id/button1"][text="允许"][clickable=true][visibleToUser=true]',
             '[vid="message"][text*="打开" || text^="当前网站请求打开"] <<n * + * > [id="android:id/button1"][text="允许"]',
           ],
-          fastQuery: true,
-          forcedTime: 5000,
-          resetMatch: 'match',
           activityIds: ['com.android.browser.BrowserActivity'],
         },
       ],

@@ -569,6 +569,7 @@ export default defineGkdApp({
         {
           resetMatch: 'match',
           actionCd: 300,
+          forcedTime: 3000,
           activityIds: [
             'com.tencent.mm.plugin.appbrand.ui.AppBrandUI0',
             'com.tencent.mm.plugin.appbrand.ui.AppBrandUI1',
@@ -608,6 +609,7 @@ export default defineGkdApp({
           resetMatch: 'match',
           actionCd: 500,
           order: -1,
+          forcedTime: 3000,
           excludeMatches: [
             'View > View > TextView[text^="服务异常" || text="访问人数过多，请稍后再试" || text="商品已被秒完" || text="商品已售罄"] + TextView[text="我知道了"][visibleToUser=true]',
             'View > View > TextView[text="抢购订单排队中，请勿关闭页面。"][visibleToUser=true]',
@@ -643,6 +645,7 @@ export default defineGkdApp({
         {
           resetMatch: 'match',
           order: -2,
+          forcedTime: 3000,
           actionCd: 100,
           activityIds: [
             'com.tencent.mm.plugin.appbrand.ui.AppBrandUI0',
@@ -672,6 +675,7 @@ export default defineGkdApp({
         {
           resetMatch: 'match',
           action: 'back',
+          forcedTime: 3000,
           matches:
             'View > View > TextView[text="商品已被秒完" || text="商品已售罄"] + TextView[text="我知道了"][visibleToUser=true]',
           activityIds: [
@@ -1239,7 +1243,7 @@ export default defineGkdApp({
     {
       key: 53,
       name: '弹窗，X掉1',
-      desc: '261105',
+      desc: '261124',
       rules: [
         {
           resetMatch: 'match',
@@ -1268,6 +1272,8 @@ export default defineGkdApp({
             'TextView[text="去领取"] < FrameLayout <n FrameLayout +2 FrameLayout > FrameLayout > TextView > ImageView[clickable=false][visibleToUser=true]', //恭喜你 抽中了 100积分，去领取，分享好友，一起抽大奖，X掉
             '[text="更多精彩"] + @* +n [text="女职工服务"] +n [text="阵地服务"]',
             'View > View > @Image[clickable=false][visibleToUser=true] + View > TextView[text="恭喜您"] +n TextView[text="积分"] + TextView[text^="恭喜您获得" && text*="专属积分奖励"]', //红色火箭签到，不用延时匹配
+            'View > View > TextView[text="参与活动须知"] + TextView + TextView[text="我已阅读并同意"][visibleToUser=true]', //261124，弹窗，深工活动
+            'View > View > TextView[text="抱歉，该团购已被删除或下架"] + View > TextView[text="返回"][visibleToUser=true]', //261124，弹窗，返回
           ],
         },
       ],

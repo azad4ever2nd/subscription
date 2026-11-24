@@ -549,13 +549,18 @@ export default defineGkdApp({
     {
       key: 35,
       name: '基金理财操作，第2步，风险提示声明，一键输入，确认',
-      desc: '260721',
+      desc: '261124',
       rules: [
         {
           resetMatch: 'match',
           activityIds: 'com.bankcomm.module.biz.webcontainer.BCMHtml5Activity',
-          matches:
+          excludeMatches: [
+            'LinearLayout[desc="交通银行安全键盘"]', //如果有哪个下一步有冲突，加排除
+          ],
+          anyMatches: [
             'EditText[text.length>0] < View + Button[clickable=true][visibleToUser=true][text="确认"]',
+            'View - EditText[text.length>0] < View + View > Button[text="下一步"][clickable=true][visibleToUser=true]', //261124，理财，一键输入风险声明，下一步
+          ],
         },
       ],
     },
@@ -576,7 +581,7 @@ export default defineGkdApp({
     {
       key: 37,
       name: '理财+，购买，已勾选我已阅读并同意多选框，下一步',
-      desc: '260920，添加 我已阅读',
+      desc: '261124，添加 理财已阅读并同意，我已阅读',
       rules: [
         {
           resetMatch: 'match',
@@ -585,6 +590,7 @@ export default defineGkdApp({
             'WebView[text="购买"] > View > TextView[text="已勾选我已阅读并同意多选框"][visibleToUser=true] +n View > Button[text="下一步"][clickable=true][visibleToUser=true]',
             'WebView[text="购买"] > View > View > TextView[text="已勾选我已阅读并同意多选框"][visibleToUser=true] +n View > Button[text="下一步"][clickable=true][visibleToUser=true]',
             'Dialog > @Button[text="我已阅读"][clickable=true][visibleToUser=true] -n View > TextView[text="活动细则"]',
+            'TextView[text="本人已阅读风险揭示，愿意承担投资风险"] <<n ViewGroup + LinearLayout > TextView[text="不同意"] + TextView[text="已阅读并同意"][vid="tv_bottom_btn_positive"][clickable=true][visibleToUser=true]', //261124，弹窗，理财，已阅读并同意
           ],
         },
       ],
