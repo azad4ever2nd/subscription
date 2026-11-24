@@ -26,6 +26,7 @@ export default defineGkdApp({
         {
           resetMatch: 'match',
           actionCd: 300,
+          forcedTime: 3000,
           activityIds: 'com.ccb.framework.ui.widget.webview.CcbWebViewActivity',
           anyMatches: [
             'WebView[text*="建行社保卡" || text*="社保卡福利日"] > View > View > View > CheckBox[clickable=true][checked=false][visibleToUser=true]',

@@ -76,7 +76,7 @@ export default defineGkdApp({
     },
     {
       key: 5,
-      name: '弹窗，请授权以下权限，稍后再说',
+      name: '弹窗，请授权以下权限，稍后再说1',
       desc: '260913',
       rules: [
         {
@@ -554,8 +554,8 @@ export default defineGkdApp({
     },
     {
       key: 31,
-      name: '拖住滑块，还车',
-      desc: 'D，260916，测试，不建议打开避免误还车',
+      name: '占位31',
+      desc: '禁用',
       rules: [
         {
           resetMatch: 'match',
@@ -576,7 +576,7 @@ export default defineGkdApp({
             'com.hellobike.moped.platform.flutter.activity.OhoRidingBoostActivity',
           ],
           anyMatches:
-            'View > @View[clickable=false][visibleToUser=true] + ImageView +(2,3) View[desc="按住滑块，拖到右边还车"]',
+            'View > @View[clickable=false][visibleToUser=true] + ImageView +(2,3) View[desc="按住滑块，拖到右边还车bak"]',
         },
       ],
     },
@@ -694,6 +694,49 @@ export default defineGkdApp({
           activityIds: 'com.hellobike.platform.scan.v2.NewPlatformScanActivity',
           matches:
             'TextView[text="这不是哈啰的二维码哦"][vid="title_tv"] <<n LinearLayout + LinearLayout > Button[text="知道了"][vid="confirm_btn"][clickable=true][visibleToUser=true]',
+        },
+      ],
+    },
+    {
+      key: 40,
+      name: '弹窗，请授权以下权限，稍后再说2',
+      desc: '261124',
+      rules: [
+        {
+          resetMatch: 'match',
+          fastQuery: true,
+          activityIds:
+            'com.hellobike.moped.platform.flutter.activity.OhoRidingBoostActivity',
+          matches:
+            'TextView[text^="位置权限已关闭，开启后以便您准确查找周围车辆、进行车辆开关锁"][id="android:id/message"] <<n FrameLayout + ScrollView > LinearLayout > Button[text="稍后再说"][id="android:id/button2"][clickable=true][visibleToUser=true]',
+        },
+      ],
+    },
+    {
+      key: 41,
+      name: '拖住滑块，还车',
+      desc: 'D，260916，测试，不建议打开避免误还车',
+      rules: [
+        {
+          resetMatch: 'match',
+          action: 'swipe',
+          swipeArg: {
+            start: {
+              x: 'left+65',
+              y: 'top+height/2',
+            },
+            end: {
+              x: 'right',
+              y: 'top+height/2',
+            },
+            duration: 1000, //滑动时长
+          },
+          activityIds: [
+            'com.hellobike.flutter.platform.android.flutterboost.FlutterHostFragmentActivity',
+            'com.hellobike.moped.platform.flutter.activity.OhoRidingBoostActivity',
+          ],
+          anyMatches:
+            'View > @View[clickable=false][visibleToUser=true] + ImageView +(2,3) View[desc="按住滑块，拖到右边还车"]',
         },
       ],
     },
