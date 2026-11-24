@@ -488,7 +488,7 @@ export default defineGkdApp({
     },
     {
       key: 23,
-      name: '分享到，微信好友',
+      name: '弹窗，分享到，微信好友',
       desc: '261017，clickable=true',
       rules: [
         {
