@@ -260,8 +260,8 @@ export default defineGkdApp({
           resetMatch: 'match',
           actionCd: 2000,
           activityIds: 'li.gkd.app.MainActivity',
-          matches:'View > View[childCount=2] > TextView[text="导入备份"] + TextView[text="导出备份"][clickable=true][visibleToUser=true]',
-
+          matches:
+            'View > View[childCount=2] > TextView[text="导入备份"] + TextView[text="导出备份"][clickable=true][visibleToUser=true]',
         },
       ],
     },
