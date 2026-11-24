@@ -366,7 +366,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 1,
+      key: 25,
       name: '弹窗，更新，X掉',
       desc: '261124',
       rules: [
