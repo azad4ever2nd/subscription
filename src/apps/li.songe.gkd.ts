@@ -103,10 +103,9 @@ export default defineGkdApp({
           actionCd: 100,
           action: 'clickCenter',
           anyMatches: [
-            'View > View > TextView[text="删除快照"] + ScrollView[text="确定删除当前快照吗?"] + View + @View[clickable=true][visibleToUser=true] > TextView[text="确定"] + Button', //261123，删除快照，确定
             '[text="确定删除当前快照吗?"] +n @View[clickable=true][visibleToUser=true] > TextView[text="确定"]',
           ],
-          activityIds: ['li.songe.gkd.MainActivity', 'li.gkd.app.MainActivity'],
+          activityIds: ['li.songe.gkd.MainActivity'],
         },
       ],
     },
@@ -207,6 +206,62 @@ export default defineGkdApp({
           activityIds: '.MainActivity',
           matches:
             '@View[clickable=true][visibleToUser=true] > TextView[text="音量快照" || text="截屏快照" || text="保存提示" || text="清除订阅"] +2 View[checked=true]',
+        },
+      ],
+    },
+    {
+      key: 15,
+      name: '弹窗，查看源码',
+      desc: '261124',
+      rules: [
+        {
+          resetMatch: 'match',
+          actionCd: 2000,
+          activityIds: 'li.gkd.app.MainActivity',
+          matches:
+            'TextView[text="查看源码"] < @View[clickable=true][visibleToUser=true] + View[parent.childCount=2] > TextView[text="订阅设置"]',
+        },
+      ],
+    },
+    {
+      key: 16,
+      name: '弹窗，日志，保存到下载，新版本用2',
+      desc: '261124',
+      rules: [
+        {
+          resetMatch: 'match',
+          actionCd: 2000,
+          activityIds: 'li.gkd.app.MainActivity',
+          matches:
+            'View[childCount=3] > TextView[text="分享"] + TextView[text="保存到下载"][clickable=true][visibleToUser=true] + TextView[text="生成链接"]',
+        },
+      ],
+    },
+    {
+      key: 17,
+      name: '弹窗，删除当前快照，确定，新版本用2',
+      desc: '',
+      rules: [
+        {
+          resetMatch: 'match',
+          actionCd: 2000,
+          activityIds: 'li.gkd.app.MainActivity',
+          matches:
+            'View > View[childCount=2] > TextView[text="导入备份"] + TextView[text="导出备份"][clickable=true][visibleToUser=true]',
+        },
+      ],
+    },
+    {
+      key: 18,
+      name: '弹窗，导出备份，新版本用2',
+      desc: '',
+      rules: [
+        {
+          resetMatch: 'match',
+          actionCd: 2000,
+          activityIds: 'li.gkd.app.MainActivity',
+          matches:
+            'View > View > TextView[text="删除快照"] + ScrollView[text="确定删除当前快照吗?"] + View + @View[clickable=true][visibleToUser=true] > TextView[text="确定"] + Button', //261123，删除快照，确定
         },
       ],
     },

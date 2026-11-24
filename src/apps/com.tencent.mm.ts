@@ -1274,6 +1274,7 @@ export default defineGkdApp({
             'View > View > @Image[clickable=false][visibleToUser=true] + View > TextView[text="恭喜您"] +n TextView[text="积分"] + TextView[text^="恭喜您获得" && text*="专属积分奖励"]', //红色火箭签到，不用延时匹配
             'View > View > TextView[text="参与活动须知"] + TextView + TextView[text="我已阅读并同意"][visibleToUser=true]', //261124，弹窗，深工活动
             'View > View > TextView[text="抱歉，该团购已被删除或下架"] + View > TextView[text="返回"][visibleToUser=true]', //261124，弹窗，返回
+            '@TextView[text.length=1][clickable=false][visibleToUser=true] < View[clickable=true]  < View  - View > View > TextView[text="差一点就中奖啦" ] + TextView[text="继续抽奖"]', //261124，弹窗，金知了社区抽奖，差一点就中奖啦，X掉
           ],
         },
       ],

@@ -14,9 +14,8 @@ export default defineGkdApp({
           forcedTime: 2500,
           fastQuery: true,
           resetMatch: 'match',
-          activityIds: [
+          activityIds:
             'com.yitong.mbank.psbc.module.home.view.activity.MainActivity',
-          ],
         },
       ],
     },
@@ -29,9 +28,8 @@ export default defineGkdApp({
           matches: ['[vid="iv_theme"] + [vid="iv_theme_close_btn"]'],
           fastQuery: true,
           resetMatch: 'match',
-          activityIds: [
+          activityIds:
             'com.yitong.mbank.psbc.module.home.view.activity.MainActivity',
-          ],
         },
       ],
     },
@@ -45,9 +43,8 @@ export default defineGkdApp({
           fastQuery: true,
           actionMaximum: 2,
           resetMatch: 'match',
-          activityIds: [
+          activityIds:
             'com.yitong.mbank.psbc.module.home.view.activity.MainActivity',
-          ],
         },
       ],
     },
@@ -62,9 +59,8 @@ export default defineGkdApp({
           ],
           fastQuery: true,
           resetMatch: 'match',
-          activityIds: [
+          activityIds:
             'com.yitong.mbank.psbc.module.home.view.activity.MainActivity',
-          ],
         },
       ],
     },
@@ -97,7 +93,7 @@ export default defineGkdApp({
           ],
           matchDelay: 2000,
           resetMatch: 'match',
-          activityIds: ['com.alipay.mobile.nebulacore.ui.H5Activity'],
+          activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
         },
       ],
     },
@@ -113,7 +109,7 @@ export default defineGkdApp({
           ],
           fastQuery: true,
           resetMatch: 'match',
-          activityIds: ['com.alipay.mobile.nebulacore.ui.H5Activity'],
+          activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
         },
       ],
     },
@@ -178,7 +174,7 @@ export default defineGkdApp({
     {
       key: 12,
       name: '弹窗，支付有礼，中奖，X掉 或 去领取',
-      desc: '261020',
+      desc: '261124',
       rules: [
         {
           resetMatch: 'match',
@@ -186,6 +182,7 @@ export default defineGkdApp({
           anyMatches: [
             'View > Image + TextView[text*="立减金"] + Image[text="1772245072000n64"][clickable=true] + Image[text="FQCh+AAAAAElFTkSuQmCC"][clickable=true][visibleToUser=true]',
             'View > Image + TextView[text*="立减金"] + @Image[text="1772245072000n64"][clickable=true] + Image[text="FQCh+AAAAAElFTkSuQmCC"][clickable=true][visibleToUser=true]',
+            'View[text="温馨提示"][id="dialogBox"] > View > TextView[text="温馨提示"] + View + @TextView[text="取消，按钮"][clickable=true][visibleToUser=true] + TextView[text="去查看，按钮"]', //261124，弹窗，温馨提示，恭喜您抽中，取消
           ],
         },
       ],
@@ -234,7 +231,36 @@ export default defineGkdApp({
           ],
           actionCd: 500,
           resetMatch: 'match',
-          activityIds: ['com.unionpay.cordova.UPActivityWeb'],
+          activityIds: 'com.unionpay.cordova.UPActivityWeb',
+        },
+      ],
+    },
+    {
+      key: 16,
+      name: '弹窗，个人信息保护指引，勾选  我已仔细阅读并同意',
+      desc: '261124',
+      rules: [
+        {
+          fastQuery: true,
+          resetMatch: 'match',
+          activityIds: '.module.app.view.activity.LauncherActivity',
+          matches:
+            'RelativeLayout > @CheckBox[vid="checkbox"][checked=false][visibleToUser=true][clickable=true] + TextView[vid="tv_privacy"]',
+        },
+      ],
+    },
+    {
+      key: 17,
+      name: '弹窗，个人信息保护指引，勾选我已仔细阅读并同意，同意',
+      desc: '261124',
+      rules: [
+        {
+          fastQuery: true,
+          preKeys: [16],
+          resetMatch: 'match',
+          activityIds: '.module.app.view.activity.LauncherActivity',
+          matches:
+            'TextView[text="个人信息保护指引"][vid="tv_title"] <<n ViewGroup + LinearLayout > TextView[vid="tv_disagree"] + View + TextView[text="同意"][vid="tv_agree"][clickable=true][visibleToUser=true]',
         },
       ],
     },

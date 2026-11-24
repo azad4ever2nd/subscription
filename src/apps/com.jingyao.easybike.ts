@@ -683,5 +683,19 @@ export default defineGkdApp({
         },
       ],
     },
+    {
+      key: 39,
+      name: '弹窗，这不是哈啰的二维码哦，知道了',
+      desc: '261124',
+      rules: [
+        {
+          fastQuery: true,
+          resetMatch: 'match',
+          activityIds: 'com.hellobike.platform.scan.v2.NewPlatformScanActivity',
+          matches:
+            'TextView[text="这不是哈啰的二维码哦"][vid="title_tv"] <<n LinearLayout + LinearLayout > Button[text="知道了"][vid="confirm_btn"][clickable=true][visibleToUser=true]',
+        },
+      ],
+    },
   ],
 });

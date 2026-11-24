@@ -365,5 +365,20 @@ export default defineGkdApp({
         },
       ],
     },
+    {
+      key: 1,
+      name: '弹窗，更新，X掉',
+      desc: '261124',
+      rules: [
+        {
+          resetMatch: 'match',
+          fastQuery: true,
+          forcedTime: 3000,
+          activityIds: '.newconfig.appconstruct.TabsAppHomeActivity',
+          matches:
+            'RelativeLayout > LinearLayout[vid="ll_app_upgrade_content"] + ImageView[vid="iv_close"][clickable=true][visibleToUser=true]',
+        },
+      ],
+    },
   ],
 });
