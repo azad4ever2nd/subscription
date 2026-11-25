@@ -19,6 +19,7 @@ export default defineGkdApp({
             'TextView[text^="即将打开"] <<n LinearLayout + LinearLayout > LinearLayout > Button[text="取消"][vid="mm_alert_cancel_btn"] + ImageView + Button[text="允许"][vid="mm_alert_ok_btn"][clickable=true][visibleToUser=true]', //261105，即使打开
             'TextView[text^="即将离开微信"] <<n LinearLayout + LinearLayout > LinearLayout > Button[text="取消"][vid="mm_alert_cancel_btn"] + ImageView + Button[text="允许"][vid="mm_alert_ok_btn"][clickable=true][visibleToUser=true]', //261105，离开微信
             'View > TextView[text^="即将打开"] + View > View[desc="取消"] + @View[desc="打开"][clickable=true][visibleToUser=true] > TextView[text="打开"]', //261106，弹窗，即将打开 “美团外卖丨外卖美食奶茶咖啡水果”小程序
+            '@LinearLayout[clickable=false][visibleToUser=true] > TextView[text="前往图中包含的小程序"] + FrameLayout > LinearLayout[childCount=3] > ImageView + TextView[text="工行服务"]', //261125，弹窗，工行服务
             '[id="js_link_dialog_body"][text*="打开"] + * > [id="js_link_dialog_ok"][text="允许"]',
             '[id="launch-btn" || id="wx-launch-btn"] >n [id="btn_mywechat" || id="wechat-btn" ][text="立即打开"]',
             '[id="wxOpenLunchApp"] [text^="立即打开"] + [id="launch-btn"]',
@@ -38,12 +39,13 @@ export default defineGkdApp({
     {
       key: 2,
       name: '糖的报单',
-      desc: '261029，添加 光大财富月历红包，华夏已领取已核销，排除中信活动规则，中信活动，中信抽奖，华夏红包领取，继续访问，知道了，是否继续上传',
+      desc: '261125，添加 工行服务，光大财富月历红包，华夏已领取已核销，排除中信活动规则，中信活动，中信抽奖，华夏红包领取，继续访问，知道了，是否继续上传',
       rules: [
         {
           resetMatch: 'match',
           activityIds: 'com.tencent.mm.plugin.webview.ui.tools.MMWebViewUI',
           actionCd: 700,
+          forcedTime: 3000,
           excludeMatches: [
             'View > View > TextView[text="权益领取中，请稍后"][visibleToUser=true]',
             'View > View >  TextView[text="权益领取成功"] +2 Button[text="我知道了"][clickable=true][visibleToUser=true]',
@@ -55,6 +57,7 @@ export default defineGkdApp({
             'View > TextView[text^="微信红包" && text$="元"] +n View > Button[text="立即领取"][clickable=true][visibleToUser=true]',
             '@TextView[clickable=true][visibleToUser=true] - View > TextView[text="谢谢参与"] +n View[desc="我知道了"] > TextView[text="我知道了"]',
             '@TextView[clickable=true][visibleToUser=true] - View > Image[text="80316b63-f34b-4ba7-bc99-527e68bd5cac"] + TextView[text^="恭喜你获得"] +n View[desc="查看我的礼品"] > TextView[text="查看我的礼品"]',
+            '@LinearLayout[clickable=false][visibleToUser=true] > TextView[text="前往图中包含的小程序"] + FrameLayout > LinearLayout[childCount=3] > ImageView + TextView[text="工行服务"]', //261125，弹窗，工行服务
             '@[text="批量上传"] + [text*="知道了"]',
             '[text="操作提示"] + [text="上传成功，是否继续上传？"] + * > [text="取消"]',
             '@[text="继续访问"] +n * > [desc="申请恢复访问"]',
