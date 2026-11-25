@@ -211,12 +211,13 @@ export default defineGkdApp({
     },
     {
       key: 15,
-      name: '弹窗，查看源码',
-      desc: '261124',
+      name: '弹窗，查看源码，新版本用2',
+      desc: '261125',
       rules: [
         {
           resetMatch: 'match',
           actionCd: 2000,
+          //action:'clickCenter',
           activityIds: 'li.gkd.app.MainActivity',
           matches:
             'TextView[text="查看源码"] < @View[clickable=true][visibleToUser=true] + View[parent.childCount=2] > TextView[text="订阅设置"]',
@@ -231,9 +232,10 @@ export default defineGkdApp({
         {
           resetMatch: 'match',
           actionCd: 2000,
+          //action:'clickCenter',
           activityIds: 'li.gkd.app.MainActivity',
           matches:
-            'View[childCount=3] > TextView[text="分享"] + TextView[text="保存到下载"][clickable=true][visibleToUser=true] + TextView[text="生成链接"]',
+            'View[childCount=3] > TextView[text="分享"] + @TextView[text="保存到下载"][clickable=true][visibleToUser=true] + TextView[text="生成链接"]', //261125，弹窗，日志，保存到下载
         },
       ],
     },
@@ -245,6 +247,7 @@ export default defineGkdApp({
         {
           resetMatch: 'match',
           actionCd: 2000,
+          //action:'clickCenter',
           activityIds: 'li.gkd.app.MainActivity',
           matches:
             'View > View > TextView[text="删除快照"] + ScrollView[text="确定删除当前快照吗?"] + View + @View[clickable=true][visibleToUser=true] > TextView[text="确定"] + Button', //261123，删除快照，确定
@@ -259,9 +262,25 @@ export default defineGkdApp({
         {
           resetMatch: 'match',
           actionCd: 2000,
+          //action:'clickCenter',
           activityIds: 'li.gkd.app.MainActivity',
           matches:
-            'View > View[childCount=2] > TextView[text="导入备份"] + TextView[text="导出备份"][clickable=true][visibleToUser=true]',
+            'View > View[childCount=2] > TextView[text="导入备份"] + TextView[text="导出备份"][clickable=true][visibleToUser=true]', //261125，弹窗，导出备份
+        },
+      ],
+    },
+    {
+      key: 19,
+      name: '弹窗，导出备份，保存到下载,新版本用2',
+      desc: '261125',
+      rules: [
+        {
+          resetMatch: 'match',
+          actionCd: 2000,
+          //action:'clickCenter',
+          activityIds: 'li.gkd.app.MainActivity',
+          matches:
+            'View > View > TextView[text="分享"] + TextView[text="保存到下载"][clickable=true][visibleToUser=true]', //261125，弹窗，导出备份，保存到下载
         },
       ],
     },

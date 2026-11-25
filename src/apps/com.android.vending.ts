@@ -27,7 +27,7 @@ export default defineGkdApp({
           resetMatch: 'match',
           activityIds: 'com.google.android.finsky.activities.MainActivity',
           matches:
-            'ComposeView > View > View > View > View + ImageView[desc="重试"] + ImageView[desc="取消"]',
+            'ComposeView > View > View > View > View + ImageView[desc="重试"] + ImageView[desc="取消"][clickable=true][visibleToUser=true]',
         },
       ],
     },
