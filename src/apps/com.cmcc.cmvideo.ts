@@ -169,7 +169,7 @@ export default defineGkdApp({
             //'View > @View[clickable=true][visibleToUser=true] > View > Image[text="1O7HHG101UE5A"]',//261117，每日分享，立即分享，限1次，
             'View > @View[clickable=true][visibleToUser=true] > View > Image[text="1O7HHG167GVI2"]', //261117，弹窗，打卡成功，我知道了
             'View > @View[clickable=true][visibleToUser=true] > View > Image[text="1O7HHG1Q01P4R"]', //261117，弹窗，恭喜获得抽奖机会
-            '@View[clickable=true][visibleToUser=true] > View > View > View > Image[text="1O7HHG1M0QJQI"]', //弹窗，剩余抽奖次数1，我知道了，换5层按钮
+            //'@View[clickable=true][visibleToUser=true] > View > View > View > Image[text="1O7HHG1M0QJQI"]', //弹窗，剩余抽奖次数1，我知道了，换5层按钮
             'View > @View[clickable=true][visibleToUser=true] > View > Image[text="1O7HHG1M0QJQI"]', //261117，弹窗，剩余抽奖次数，X掉
             'View > @View[clickable=true][visibleToUser=true] > View > Image[text="1O7HHG19F1NPU"]', //261117，弹窗，消耗1次抽奖机会，确认
             '@View[clickable=true][visibleToUser=true] > View > View > View > Image[text="1O7GEIFBVUQCO"]', //261112，弹窗，请先完成分享

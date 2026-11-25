@@ -105,7 +105,7 @@ export default defineGkdApp({
     {
       key: 7,
       name: '弹窗，活动公告，我知道了',
-      desc: '260803，添加 抽奖公告',
+      desc: '261125，添加 返回，抽奖公告',
       rules: [
         {
           resetMatch: 'match',
@@ -114,6 +114,7 @@ export default defineGkdApp({
           anyMatches: [
             'View > @Button[clickable=true][text="我知道了"] - View > TextView[text.length=1][clickable=false]',
             'View > View + Button[clickable=true][visibleToUser=true][text="我知道了"]',
+            'View[id="activity-close-dialog"] > View > TextView[text="返回" || text="返 回"][clickable=true][visibleToUser=true]', //261125，弹窗，非受邀客户，返回，View > TextView[text="抱歉，您不是本次活动的受邀客户(MKSN500)"]
           ],
         },
       ],

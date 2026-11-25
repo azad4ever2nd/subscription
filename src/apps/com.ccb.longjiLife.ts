@@ -5,6 +5,20 @@ export default defineGkdApp({
   groups: [
     {
       key: 1,
+      name: '弹窗，更新，X掉 或 暂不升级',
+      desc: '261125',
+      rules: [
+        {
+          fastQuery: true,
+          resetMatch: 'match',
+          activityIds: '.MainActivity',
+          matches:
+            'LinearLayout > @ImageButton[vid="btn_update_download_cancel"][clickable=true][visibleToUser=true] - LinearLayout > LinearLayout > Button[vid="btn_update_cancel"][clickable=true][visibleToUser=true] + Button[vid="btn_update_confirm"]',
+        },
+      ],
+    },
+    {
+      key: 2,
       name: '每日签到，成功了',
       desc: '261029，添加首页签到成功',
       rules: [
@@ -22,7 +36,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 2,
+      key: 3,
       name: '签到成功奖励弹窗，',
       desc: '260915',
       rules: [
@@ -36,7 +50,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 3,
+      key: 4,
       name: '弹窗',
       desc: '251118',
       rules: [
@@ -48,7 +62,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 4,
+      key: 5,
       name: '建行生活授权',
       desc: '261114',
       rules: [
@@ -65,7 +79,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 5,
+      key: 6,
       name: '0元抢',
       rules: [
         {
@@ -77,7 +91,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 6,
+      key: 7,
       name: '活动太火爆了',
       desc: '',
       rules: [
@@ -90,7 +104,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 7,
+      key: 8,
       name: '优惠券已抢光',
       desc: '',
       rules: [
@@ -103,7 +117,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 8,
+      key: 9,
       name: '已抢光',
       desc: '260831，排除 低碳挑战， [text*="欢乐周末惠"] <<n * +n * > [text="已抢光"]',
       rules: [
@@ -117,7 +131,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 9,
+      key: 10,
       name: '未中奖，弹窗',
       desc: 'D',
       rules: [
@@ -129,7 +143,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 10,
+      key: 11,
       name: '低碳生活，一键收取',
       desc: '261113，增加 弹窗，clickable=true',
       rules: [
@@ -145,7 +159,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 11,
+      key: 12,
       name: '弹窗2',
       desc: '251205,D，匹配规则是图形按钮',
       rules: [
@@ -153,25 +167,6 @@ export default defineGkdApp({
           resetMatch: 'match',
           matches:
             '[text="NWJ6tc6mwaKQfgbADXAJPIxaVNUQJguwpoNgAy0x2ew8SgXab+AzNTubJfuAmp7HtQL5K8AARxBdk+5zMOgAAAAASUVORK5CYII="]',
-          activityIds: 'com.ccb.cloudmerchant.view.WebViewActivity',
-        },
-      ],
-    },
-    {
-      key: 12,
-      name: '占位12，财富会员，中间横幅，社保卡活动',
-      desc: 'D，260114，整合12，13，16',
-      rules: [
-        {
-          actionCd: 100,
-          resetMatch: 'match',
-          anyMatches: [
-            '[text="身份信息验证"] +n CheckBox[checked=false]',
-            '[text="身份信息验证"] +n [text="loginBtn.f302f730"]', //规则12
-            '[text*="活动期间每周三15:00起开放报名领券入口"] <<n * + [text="NWJ6tc6mwaKQfgbADXAJPIxaVNUQJguwpoNgAy0x2ew8SgXab+AzNTubJfuAmp7HtQL5K8AARxBdk+5zMOgAAAAASUVORK5CYII="]', //规则 13
-            '[text="温馨提示"] + [text*="报名人数已满" || text="今日报名人数已满，您可下个领券日再来~" || text^="活动期间每周三"] + * > [text="好的"]', //规则 13
-            '[text="温馨提示"] + * > [text="好的"]', //规则12
-          ],
           activityIds: 'com.ccb.cloudmerchant.view.WebViewActivity',
         },
       ],
@@ -187,6 +182,15 @@ export default defineGkdApp({
           anyMatches: [
             'View > TextView[text="身份信息验证"] +n CheckBox[checked=false][visibleToUser=true]',
             '[text="身份信息验证"] +n CheckBox[checked=false]',
+            //规则备份
+            //name: '占位12，财富会员，中间横幅，社保卡活动',
+            //desc: 'D，260114，整合12，13，16',
+            //actionCd: 100,
+            //'[text="身份信息验证"] +n CheckBox[checked=false]',
+            //'[text="身份信息验证"] +n [text="loginBtn.f302f730"]', //规则12
+            //'[text*="活动期间每周三15:00起开放报名领券入口"] <<n * + [text="NWJ6tc6mwaKQfgbADXAJPIxaVNUQJguwpoNgAy0x2ew8SgXab+AzNTubJfuAmp7HtQL5K8AARxBdk+5zMOgAAAAASUVORK5CYII="]', //规则 13
+            //'[text="温馨提示"] + [text*="报名人数已满" || text="今日报名人数已满，您可下个领券日再来~" || text^="活动期间每周三"] + * > [text="好的"]', //规则 13
+            //'[text="温馨提示"] + * > [text="好的"]', //规则12
           ],
           activityIds: 'com.ccb.cloudmerchant.view.WebViewActivity',
         },

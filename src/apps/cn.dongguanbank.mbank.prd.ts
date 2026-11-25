@@ -125,6 +125,7 @@ export default defineGkdApp({
           anyMatches: [
             'View > TextView[text^="活动尚未开始"] + View > Button[text=" 确认"][clickable=true][visibleToUser=true]',
             'View > TextView[text="活动尚未开始\\n"] + View > Button[text=" 确认"][clickable=true][visibleToUser=true]',
+            'View > TextView[text="—温馨提示—"] + TextView[text^="只有特定的用户参加此活动"] + View > Button[text=" 确认"][clickable=true][visibleToUser=true]', //26115，弹窗，特定用户，确认
           ],
         },
       ],

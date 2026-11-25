@@ -255,16 +255,18 @@ export default defineGkdApp({
     {
       key: 14,
       name: '还款优惠，下一步去还款',
-      desc: '261016，添加 银行卡抽奖',
+      desc: '261125，添加 银行卡抽奖',
       rules: [
         {
           resetMatch: 'match',
+          actionCd: 3000, //261125，延长冷却时间
           activityIds:
             'com.alipay.mobile.nebulax.xriver.activity.XRiverActivity',
           anyMatches: [
             '[text="本卡满¥1500.00"] + [text="-¥5.00"] +n * Button[text="下一步去还款"]',
-            'WebView > View > View > TextView[text^="抽奖机会"] + TextView[clickable=false][visibleToUser=true]', //银行卡抽奖，action: 'clickCenter',
-            'WebView > View > View > TextView[text^="抽奖机会"] + TextView[clickable=true][visibleToUser=true]', //银行卡抽奖，action: 'clickCenter',
+            'WebView > View > View > TextView[text^="抽奖机会"] + TextView[visibleToUser=true]', //261125，合并，银行卡抽奖，action: 'clickCenter',
+            //'WebView > View > View > TextView[text^="抽奖机会"] + TextView[clickable=false][visibleToUser=true]', //银行卡抽奖，action: 'clickCenter',
+            //'WebView > View > View > TextView[text^="抽奖机会"] + TextView[clickable=true][visibleToUser=true]', //银行卡抽奖，action: 'clickCenter',
           ],
         },
       ],

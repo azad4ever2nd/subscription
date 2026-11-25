@@ -1243,7 +1243,7 @@ export default defineGkdApp({
     {
       key: 53,
       name: '弹窗，X掉1',
-      desc: '261124',
+      desc: '261125',
       rules: [
         {
           resetMatch: 'match',
@@ -1270,6 +1270,7 @@ export default defineGkdApp({
             '@Image[clickable=false][visibleToUser=true] < View + Image + TextView[text^="恭喜你完成"] + TextView[text="取消"] + TextView[text="查看积分"]', //完成每日登录，获得20积分，取消，查看积分
             '@Image[clickable=false][visibleToUser=true] < View -n TextView[text$="积分"] +n TextView[text="去查看"]',
             'TextView[text="去领取"] < FrameLayout <n FrameLayout +2 FrameLayout > FrameLayout > TextView > ImageView[clickable=false][visibleToUser=true]', //恭喜你 抽中了 100积分，去领取，分享好友，一起抽大奖，X掉
+            'View > @Image[clickable=false][visibleToUser=true] - View > TextView[text="恭喜你"] + TextView[text="抽中了"]', //261125，弹窗，恭喜你 抽中了 50积分，X掉
             '[text="更多精彩"] + @* +n [text="女职工服务"] +n [text="阵地服务"]',
             'View > View > @Image[clickable=false][visibleToUser=true] + View > TextView[text="恭喜您"] +n TextView[text="积分"] + TextView[text^="恭喜您获得" && text*="专属积分奖励"]', //红色火箭签到，不用延时匹配
             'View > View > TextView[text="参与活动须知"] + TextView + TextView[text="我已阅读并同意"][visibleToUser=true]', //261124，弹窗，深工活动
