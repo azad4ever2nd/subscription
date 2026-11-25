@@ -1146,7 +1146,7 @@ export default defineGkdApp({
     {
       key: 61,
       name: 'KFC卡券，申请获取信息，勾选 同意',
-      desc: '261111',
+      desc: '261125，添加必胜客购券',
       rules: [
         {
           resetMatch: 'match',
@@ -1157,7 +1157,10 @@ export default defineGkdApp({
             '.app.h5container.webviewcontainer.PBWebContainerActivity',
           anyMatches: [
             'View > TextView[text="肯德基购券"] +3 @Button[text="协议勾选框"][clickable=true][visibleToUser=true] + View[id="protocol"]',
+            'View > TextView[text="必胜客购券"] +3 @Button[text="协议勾选框"][clickable=true][visibleToUser=true] + View[id="protocol"]', //261125，必胜客购券
+            'View > TextView[text$="购券"] +3 @Button[text="协议勾选框"][clickable=true][visibleToUser=true] + View[id="protocol"]', //261125，改通用
             'View > TextView[text="肯德基购券"] +n @Button[text="协议勾选框"][clickable=true][visibleToUser=true] + View[id="protocol"]',
+            'View > TextView[text="必胜客购券"] +n @Button[text="协议勾选框"][clickable=true][visibleToUser=true] + View[id="protocol"]',
           ],
         },
       ],
