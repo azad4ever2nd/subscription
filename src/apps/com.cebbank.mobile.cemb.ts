@@ -245,13 +245,14 @@ export default defineGkdApp({
     {
       key: 14,
       name: '弹窗，X掉1',
-      desc: '261109',
+      desc: '261126',
       rules: [
         {
           forcedTime: 3000,
           resetMatch: 'match',
           action: 'clickCenter',
           anyMatches: [
+            'View[childCount=1] > View[childCount=1] > View[childCount=2] > TextView[text=""][clickable=true][visibleToUser=true] + TextView[text=""][clickable=true][visibleToUser=true]', //261126，弹窗，温馨提示，月末常规操作
             'WebView[text$="品牌月"] > View > View > View > View[childCount=4] > TextView[text=""][clickable=false] + TextView[text=""][clickable=false] + TextView[text=""][clickable=true] + TextView[text=""][clickable=true][visibleToUser=true]', //261120，弹窗，抽奖未中，弹窗全是无文本控件
             'View > View > TextView[text=""][clickable=true][visibleToUser=true] - View > TextView[text="恭喜获得"] +n TextView[text=""][index=parent.childCount.minus(1)][clickable=true][visibleToUser=true]', //弹窗，签到成功，开心收下
             'View > View > @TextView[text=""][clickable=true][visibleToUser=true] - View > TextView[text="很遗憾，差一点就中奖了"]', //弹窗，金币抽奖，未中，X掉

@@ -120,5 +120,20 @@ export default defineGkdApp({
         },
       ],
     },
+    {
+      key: 9,
+      name: '弹窗，应用敏感行为提醒，知道了',
+      desc: '261126',
+      rules: [
+        {
+          fastQuery: true,
+          actionCd: 3000,
+          resetMatch: 'match',
+          activityIds: '.statusbar.privacy.MiuiPrivacyDialog',
+          matches:
+            'TextView[text="应用敏感行为提醒"][vid="alertTitle"] < FrameLayout + FrameLayout + LinearLayout > LinearLayout > Button[text="知道了"][id="android:id/button2"][clickable=true][visibleToUser=true]',
+        },
+      ],
+    },
   ],
 });

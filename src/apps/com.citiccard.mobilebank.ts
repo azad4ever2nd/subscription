@@ -353,8 +353,8 @@ export default defineGkdApp({
       rules: [
         {
           resetMatch: 'match',
-          matchDelay: 3000,
-          forcedTime: 5000,
+          matchDelay: 2000,
+          forcedTime: 4000,
           fastQuery: true,
           activityIds:
             'com.citiccard.mobilebank.newconfig.appconstruct.TabsAppHomeActivity',

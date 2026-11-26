@@ -202,11 +202,14 @@ export default defineGkdApp({
     {
       key: 13,
       name: '弹窗，签到成功，X掉',
-      desc: '261023',
+      desc: '261126',
       rules: [
         {
           resetMatch: 'match',
           activityIds: 'com.citic.jk.activity.H5ContainerAty',
+          excludeMatches: [
+            'Dialog > View > Image[text="ZXJKZXRR_4ca0b3ca-5725-45f5-a917-c02982304a24_1789379125947"]', //261126，排除 弹窗，补签卡，
+          ],
           matches:
             'Dialog > View > @Image[text="RAszQptmiCmRvNJiA+QAIrgwxo14tFrwANgrygYQnQ7jXvU6OcQFqhpSBJlrsk2wKaRJSJVwHnPRamaZ8x4zrUBOKNyR8h0Ahyh5Y7POAF2VO6IW58AR2i54zP+A6T5HMvkIOb9AAAAAElFTkSuQmCC"][clickable=true][visibleToUser=true] + Image',
         },
