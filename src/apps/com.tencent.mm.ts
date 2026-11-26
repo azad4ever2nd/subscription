@@ -776,9 +776,9 @@ export default defineGkdApp({
           ],
           anyMatches: [
             '@Button[text="活动未开始"][clickable=true][visibleToUser=true] <  View - View > View > TextView[text*="云网点"] + TextView[text="距本期开始:"] + TextView[text="00"] + TextView[text=":"] + TextView[text="00"] + TextView[text=":"] + TextView[text^="0"]', //261112，倒数10秒前就开始点击
-            //'@Button[text="活动未开始"][clickable=true][visibleToUser=true] <  View - View > View > TextView[text="云网点"] + TextView[text="距本期开始:"] + TextView[text="00"] + TextView[text=":"] + TextView[text="00"] + TextView[text=":"] + TextView[text^="0"] + TextView[text*="云网点打卡"]',//261112，倒数10秒前就开始点击
+            //'@Button[text="活动未开始"][clickable=true][visibleToUser=true] <  View - View > View > TextView[text*="云网点"] + TextView[text="距本期开始:"] + TextView[text="00"] + TextView[text=":"] + TextView[text="00"] + TextView[text=":"] + TextView[text^="0"] + TextView[text*="云网点打卡"]',//261112，倒数10秒前就开始点击
             'TextView[text*="云网点"] <n View <n View + View > Button[text="立即领取"][clickable=true][visibleToUser=true]', //通用写法，云网点活动
-            '@Image[text=""][clickable=true][visibleToUser=true] < View < View < View + View[index=parent.childCount.minus(1)] > View > View > TextView[text="活动规则"] + TextView[text="活动名称：云网点体验有礼"]', //261113，咸宁云网点打卡，外面 立即领取 按钮
+            '@Image[text=""][clickable=true][visibleToUser=true] < View < View < View + View[index=parent.childCount.minus(1)] > View > View > TextView[text="活动规则"] + TextView[text*="云网点" || text="活动名称：云网点体验有礼"]', //261113，咸宁云网点打卡，外面 立即领取 按钮
             //'[text="1.00元" || text="1.08元"] + [text*="云网点"] <<n * + * > Button[text*="立即领取"]',//261126，改通用
             //'[text="1.08元"] + [text="云网点打卡"] <<n * + * > Button[text*="立即领取"]',
           ],

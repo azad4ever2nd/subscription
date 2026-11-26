@@ -181,15 +181,17 @@ export default defineGkdApp({
     {
       key: 10,
       name: '弹窗，金知了社区，口令抽奖，确定',
-      desc: '261123',
+      desc: '261126',
       rules: [
         {
           resetMatch: 'match',
           action: 'clickCenter',
           actionCd: 500,
           activityIds: '.ui.activity.mobilePayment.MobilePaymentWebActivity',
-          matches:
+          anyMatches: [
+            'EditText[text.length>1] < View < View + @TextView[text="确定"][clickable=true][visibleToUser=true] +n TextView[text="活动规则"]', //261126，弹窗，输入口令，确定，布局有变
             'View > View > TextView[text="活动规则"] - @TextView[text="确定"][clickable=true][visibleToUser=true] - View > View > EditText[text.length>3]', //261119，弹窗，输入口令后，确定
+          ],
         },
       ],
     },

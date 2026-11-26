@@ -30,5 +30,19 @@ export default defineGkdApp({
         },
       ],
     },
+    {
+      key: 3,
+      name: '弹窗，通知，确定',
+      desc: '261126',
+      rules: [
+        {
+          fastQuery: true,
+          resetMatch: 'match',
+          activityIds: 'com.yitong.mobile.biz.launcher.app.main.MainActivity',
+          matches:
+            'LinearLayout > LinearLayout > TextView[text="查看详情"][vid="gt_gotoDetails"] + TextView[text="确定"][vid="tvNext"][clickable=true][visibleToUser=true]',
+        },
+      ],
+    },
   ],
 });
