@@ -21,13 +21,14 @@ export default defineGkdApp({
     {
       key: 2,
       name: '更新，取消',
-      desc: '261125',
+      desc: '261126',
       rules: [
         {
           resetMatch: 'match',
           activityIds: 'com.google.android.finsky.activities.MainActivity',
+          actionCd: 5000,
           matches:
-            'ComposeView > View > View > View > View + ImageView[desc="重试"] + ImageView[desc="取消"][clickable=true][visibleToUser=true]',
+            'ComposeView > View > View > View > View + ImageView[desc="重试"] + ImageView[desc="取消"][clickable=true][visibleToUser=true]', //261126，我的应用，可用更新列表，
         },
       ],
     },
