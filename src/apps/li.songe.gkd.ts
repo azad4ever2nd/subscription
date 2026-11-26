@@ -212,15 +212,17 @@ export default defineGkdApp({
     {
       key: 15,
       name: '弹窗，查看源码，新版本用2',
-      desc: '261125',
+      desc: '261126',
       rules: [
         {
           resetMatch: 'match',
           actionCd: 2000,
           //action:'clickCenter',
           activityIds: 'li.gkd.app.MainActivity',
-          matches:
+          anyMatches: [
             'TextView[text="查看源码"] < @View[clickable=true][visibleToUser=true] + View[parent.childCount=2] > TextView[text="订阅设置"]',
+            'TextView[text="查看源码"] < @View[clickable=true][visibleToUser=true] + View[parent.childCount=3] > TextView[text="订阅设置"]', //261126，弹窗，3个子菜单
+          ],
         },
       ],
     },
