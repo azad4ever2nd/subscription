@@ -198,7 +198,7 @@ export default defineGkdApp({
     {
       key: 11,
       name: '社区大火爆了，返回',
-      desc: '261123',
+      desc: 'D，261123',
       rules: [
         {
           resetMatch: 'match',
@@ -379,13 +379,14 @@ export default defineGkdApp({
     {
       key: 21,
       name: '弹窗，年终抽奖和福袋，X掉 或开心心下',
-      desc: '261123',
+      desc: '261127',
       rules: [
         {
           resetMatch: 'match',
           activityIds:
             'com.cebbank.mobile.cemb.ui.activity.mobilePayment.MobilePaymentWebActivity',
           anyMatches: [
+            'View > TextView[id="lightBoxAniV2"] + View > TextView[text=""][clickable=true][visibleToUser=true] + TextView[text="可在首页-[明细]查看"] + TextView[text=""][clickable=true][visibleToUser=true]', //261127，弹窗，抽福袋，中福气值，X掉
             'View > View[childCount=4] > TextView[text^="恭喜您获得如下奖励"] + View + TextView[text*="元微信立减金"] + TextView[text="开心收下"][clickable=true][visibleToUser=true]', //261123，年终活动，弹窗，恭喜您获得如下奖励，开心收下，View > Image[text="4b13503a33b44a7fbab52f674bc547da"]
             'View > View > TextView[text="抽福袋攒财气，有机会赢好礼"] + [text=""][clickable=true][visibleToUser=true]', //261123，弹窗，年终有礼，集福袋，开心收下
             //规则备份

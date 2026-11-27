@@ -287,7 +287,7 @@ export default defineGkdApp({
     },
     {
       key: 13,
-      name: '抽奖领任务页面，加自选 任务，规则6，action=clickCenter',
+      name: '抽奖领任务页面，加自选 任务（任务有次数），规则6，action=clickCenter',
       desc: '261016，clickable=true',
       rules: [
         {
@@ -342,7 +342,7 @@ export default defineGkdApp({
       rules: [
         {
           resetMatch: 'match',
-          action: 'click',
+          action: 'clickNoe',
           //处于匹配延迟matchDelay: 1000,关闭测试matchDelay: 1000,
           forcedTime: 3000,
           actionCd: 2000,
@@ -436,7 +436,7 @@ export default defineGkdApp({
           resetMatch: 'match',
           forcedTime: 3000,
           actionMaximum: 1,
-          action: 'click',
+          action: 'clickNode',
           activityIds:
             'cmb.pb.app.h5container.webviewcontainer.PBWebContainerActivity',
           anyMatches: [
@@ -510,12 +510,13 @@ export default defineGkdApp({
     {
       key: 24,
       name: '抽奖领任务页面，我要抽奖1',
-      desc: '260706，clickable=false',
+      desc: '261127，clickable=false',
       rules: [
         {
           resetMatch: 'match',
-          action: 'click',
+          action: 'clickNode', //clickable=false，用clickNode
           forcedTime: 3000,
+          actionCd: 2000,
           activityIds:
             'cmb.pb.app.h5container.webviewcontainer.PBWebContainerActivity',
           anyMatches: [

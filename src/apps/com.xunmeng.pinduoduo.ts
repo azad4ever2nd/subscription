@@ -295,7 +295,7 @@ export default defineGkdApp({
     {
       key: 16,
       name: '弹窗，X掉4',
-      desc: '261120，fastQuery=false，clickable=true',
+      desc: '261127，fastQuery=false，clickable=true',
       rules: [
         {
           resetMatch: 'match',
@@ -303,6 +303,7 @@ export default defineGkdApp({
           activityIds: 'com.xunmeng.pinduoduo.activity.NewPageActivity',
           actionCd: 800, //261120，降低冷却时间测试
           anyMatches: [
+            'View > View > TextView[text="内有效"] + TextView[text="开心收下"][clickable=true][visibleToUser=true] + TextView[text=""][clickable=true][visibleToUser=true]', //261127，弹窗，组队成功，抽中券，开心收下，X掉
             //'View > View > @Image[text="webp"][clickable=true][visibleToUser=true] - View[clickable=true][visibleToUser=true] > TextView[text="确定以团员身份组队"]',//261112，弹窗，确定以团员身份组队
             'ViewGroup[desc="翻转"] <<n FrameLayout + FrameLayout > FrameLayout > @FrameLayout[clickable=true][visibleToUser=true] > ImageView[vid="pdd"]', //261102，新版，评价拍摄，返回
             'TextView[text="此次评价未完成，是否确认退出？"][vid="title"] <<n LinearLayout[vid="pdd"] + View[desc="关闭"][clickable=true][visibleToUser=true]', //261102，新布局，此次评价未完成，是否确认退出？X掉

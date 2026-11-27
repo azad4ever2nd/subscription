@@ -309,7 +309,7 @@ export default defineGkdApp({
       rules: [
         {
           resetMatch: 'match',
-          actionDelay: 3000,
+          actionDelay: 6000, //261127，延长时间
           activityIds: 'com.alipay.mobile.nebulacore.ui.H5Activity',
           matches:
             'View > View > @View[text.length=1][clickable=true][visibleToUser=true] + View[text="活动已领奖品"] + View', //261113，弹窗，活动已领奖品，X掉
