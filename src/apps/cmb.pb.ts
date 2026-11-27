@@ -342,7 +342,7 @@ export default defineGkdApp({
       rules: [
         {
           resetMatch: 'match',
-          action: 'clickNoe',
+          action: 'clickNode',
           //处于匹配延迟matchDelay: 1000,关闭测试matchDelay: 1000,
           forcedTime: 3000,
           actionCd: 2000,
