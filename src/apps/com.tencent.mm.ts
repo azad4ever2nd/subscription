@@ -1979,6 +1979,7 @@ export default defineGkdApp({
           actionCd: 100,
           anyMatches: [
             'TextView[text="缴费成功"] < View + View > View > Button[text="完成"][clickable=true][visibleToUser=true]', //261121，缴费成功，完成
+            'TextView[text="还款成功"] <<n View + View > View > Button[text="完成"][clickable=true][visibleToUser=true]', //261127，还款成功，完成
           ],
         },
       ],

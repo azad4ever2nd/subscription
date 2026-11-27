@@ -151,8 +151,8 @@ export default defineGkdApp({
     },
     {
       key: 8,
-      name: '抽奖领任务页面，加自选 任务，规则1，action=clickNode',
-      desc: '261016，clickable=true，指定添加数量的',
+      name: '抽奖领任务页面，加自选 任务，有数量限制',
+      desc: '261016，clickable=true，clickNode',
       rules: [
         {
           action: 'clickNode', //261104，局部无障碍
@@ -168,6 +168,7 @@ export default defineGkdApp({
           anyMatches: [
             'TextView[text="0／1"] <n View + View > Button[text="加自选"][clickable=true][visibleToUser=true]',
             'TextView[text="0／1"] <n View +n Button[text="加自选"][clickable=true][visibleToUser=true]',
+            'TextView[text="完成0／1"] +n View > Button[text="加自选"][clickable=true][visibleToUser=true]', //来自规则9，
           ],
           activityIds: [
             'cmb.pb.app.h5container.webviewcontainer.PBWebContainerActivity',
@@ -177,8 +178,8 @@ export default defineGkdApp({
     },
     {
       key: 9,
-      name: '抽奖领任务页面，加自选 任务，规则2，action=clickNode',
-      desc: '261016，clickable=true',
+      name: '禁用，，抽奖领任务页面，加自选 任务，规则2，action=clickNode',
+      desc: '261016，clickable=true，整合到规则8',
       rules: [
         {
           action: 'clickNode',
@@ -231,10 +232,14 @@ export default defineGkdApp({
     },
     {
       key: 11,
-      name: '抽奖领任务页面，加自选 任务，规则4，action=clickCenter',
-      desc: '261016，clickable=true',
+      name: '抽奖领任务页面，加自选 任务，规则4',
+      desc: '261127，clickable=true，action=clickCenter',
       rules: [
         {
+          forcedTime: 3000,
+          actionCd: 2000, //延长，考虑到任务时间
+          matchDelay: 500, //减小，原800
+          resetMatch: 'match',
           action: 'clickCenter',
           excludeMatches: [
             'TextView[text="1／1"]',
@@ -245,13 +250,12 @@ export default defineGkdApp({
           ],
           anyMatches: [
             'WebView > View > View > View > View > Button[text="加自选"][clickable=true][visibleToUser=true]',
-            'WebView > View > View > View > Button[text="去加自选"][clickable=true][visibleToUser=true]', //261103，漏的
+            'WebView > View > View > View > Button[text="加自选"][clickable=true][visibleToUser=true]', //来自规则12
+            'WebView > View > View > View > View > Button[text="去添加"][clickable=true][visibleToUser=true]', //261127，新布局
+            'WebView > View > View > View > Button[text="去添加"][clickable=true][visibleToUser=true]', //来自规则 13
+            'WebView > View > View > View > Button[text="去加自选"][clickable=true][visibleToUser=true]', //261103，漏的，来自规则12
             'View > View > Button[text="去加自选"][clickable=true][visibleToUser=true]', //261103，漏的
           ],
-          forcedTime: 3000,
-          actionCd: 2000, //延长，考虑到任务时间
-          matchDelay: 500, //减小，原800
-          resetMatch: 'match',
           activityIds: [
             'cmb.pb.app.h5container.webviewcontainer.PBWebContainerActivity',
           ],
@@ -260,8 +264,8 @@ export default defineGkdApp({
     },
     {
       key: 12,
-      name: '抽奖领任务页面，加自选 任务，规则5，action=clickCenter',
-      desc: '261016，clickable=true',
+      name: '禁用，抽奖领任务页面，加自选 任务，规则5',
+      desc: '261016，clickable=true，action=clickCenter，整合到11',
       rules: [
         {
           action: 'clickNode',
@@ -287,8 +291,8 @@ export default defineGkdApp({
     },
     {
       key: 13,
-      name: '抽奖领任务页面，加自选 任务（任务有次数），规则6，action=clickCenter',
-      desc: '261016，clickable=true',
+      name: '禁用，抽奖领任务页面，加自选 任务（任务有次数），规则6，action=clickCenter',
+      desc: '261016，clickable=true，整合到11',
       rules: [
         {
           action: 'clickCenter',
@@ -1188,15 +1192,16 @@ export default defineGkdApp({
     {
       key: 63,
       name: '开启消息通知',
-      desc: '261007,增加IDS',
+      desc: '261127,增加IDS',
       rules: [
         {
           resetMatch: 'match',
           fastQuery: true,
           matchDelay: 1000,
-          forcedTime: 5000,
+          forcedTime: 3000,
           anyMatches: [
             'FrameLayout > ViewGroup > RelativeLayout > TextView[vid="title"][text="开启消息通知"] + ImageView[vid="close_btn"][clickable=true][visibleToUser=true]',
+            'TextView[text="您已开启消息免打扰，若需正常接收预约通知，请关闭免打扰设置。"] <<n ScrollView + View + LinearLayout > TextView[text="关闭"] + TextView[text="开启"][vid="buttonPositive"][clickable=true][visibleToUser=true]', //261127，弹窗，直播间预约，开启通知，开启
           ],
           activityIds: [
             'cmb.pb.app.mainframe.container.PBMainActivity',

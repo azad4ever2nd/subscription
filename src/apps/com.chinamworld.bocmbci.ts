@@ -111,5 +111,56 @@ export default defineGkdApp({
         },
       ],
     },
+    {
+      key: 8,
+      name: '弹窗，获取个人信息，勾选 同意',
+      desc: '261127',
+      rules: [
+        {
+          resetMatch: 'match',
+          actionMaximum: 1,
+          actionCd: 5000,
+          excludeMatches: [
+            'LinearLayout > LinearLayout > TextView[text="免责声明"][vid="tv_dialog_disclaimer_title"]', //261127，排除 弹窗 免责声明
+          ],
+          activityIds: 'com.boc.android.foundation.h5.WebViewContainerActivity',
+          matches:
+            'View > View > @View[text="未确认"][clickable=true][visibleToUser=true] + View > TextView[text^="我已阅读并同意《对客服务协议》《用户授权协议》。"]',
+        },
+      ],
+    },
+    {
+      key: 9,
+      name: '弹窗，获取个人信息，勾选 同意，允许',
+      desc: '261127',
+      rules: [
+        {
+          resetMatch: 'match',
+          actionCd: 5000,
+          preKeys: [8],
+          excludeMatches: [
+            'LinearLayout > LinearLayout > TextView[text="免责声明"][vid="tv_dialog_disclaimer_title"]', //261127，排除 弹窗 免责声明
+          ],
+          activityIds: 'com.boc.android.foundation.h5.WebViewContainerActivity',
+          matches:
+            'View > View > View > @View[clickable=true][visibleToUser=true] > TextView[text="允许"]',
+        },
+      ],
+    },
+    {
+      key: 10,
+      name: '弹窗，免责声明，我知道了',
+      desc: '261127',
+      rules: [
+        {
+          fastQuery: true,
+          resetMatch: 'match',
+          activityIds:
+            'com.boc.bocsoft.mobile.bocmobile.base.activity.generalcontainer.GeneralCordovaActivity',
+          matches:
+            'LinearLayout > LinearLayout > TextView[text="免责声明"][vid="tv_dialog_disclaimer_title"] +n Button[text="我知道了"][vid="btn_dialog_disclaimer_close"][clickable=true][visibleToUser=true]',
+        },
+      ],
+    },
   ],
 });

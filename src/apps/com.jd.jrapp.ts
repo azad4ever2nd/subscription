@@ -177,6 +177,19 @@ export default defineGkdApp({
     },
     {
       key: 13,
+      name: '弹窗，签到成功，开心收下',
+      desc: '261127',
+      rules: [
+        {
+          resetMatch: 'match',
+          activityIds: '.bm.common.web.ui.WebActivity',
+          matches:
+            'View > View > @TextView[text="开心收下"][clickable=true][visibleToUser=true] + TextView[text="奖励将会在24小时内到账"]',
+        },
+      ],
+    },
+    {
+      key: 14,
       name: '弹窗，金豆领取成功，X掉',
       desc: '261107',
       rules: [

@@ -328,6 +328,20 @@ export default defineGkdApp({
     },
     {
       key: 17,
+      name: '弹窗，领奖详情，我已了解，X掉',
+      desc: '261127',
+      rules: [
+        {
+          resetMatch: 'match',
+          actionCd: 2000,
+          activityIds: '.client.component.web.H5WebViewMainActivity',
+          matches:
+            'Dialog > View > View > TextView[text="我已了解"][clickable=true][visibleToUser=true] + Image[text="wV0oqIyVxieWzUDyqRYK8nxUu51l2VkUYQD+ApgVJy796bcDAAAAAElFTkSuQmCC"][clickable=true][visibleToUser=true]', //261127，弹窗，领奖详情，我已了解，X掉
+        },
+      ],
+    },
+    {
+      key: 18,
       name: '开启通知',
       desc: '251205',
       rules: [
@@ -342,7 +356,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 18,
+      key: 19,
       name: '弹窗',
       desc: '251118，增加开启通知',
       rules: [
@@ -358,7 +372,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 19,
+      key: 20,
       name: '发现新版本',
       desc: '251208',
       rules: [
@@ -375,7 +389,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 20,
+      key: 21,
       name: '服务通知，X掉',
       desc: '260702',
       rules: [
