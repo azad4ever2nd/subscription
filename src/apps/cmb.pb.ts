@@ -1291,5 +1291,57 @@ export default defineGkdApp({
         },
       ],
     },
+    {
+      key: 69,
+      name: '弹窗，朝朝宝活动，抽奖，X掉',
+      desc: '261128',
+      rules: [
+        {
+          resetMatch: 'match',
+          forcedTime: 3000,
+          actionCd: 2000,
+          action: 'clickCenter',
+          activityIds: 'com.pb.tpstore.PBAppletWebViewActivity',
+          anyMatches: [
+            'Dialog[text="朝朝宝送您 体验金"] > Button[text="关闭中奖弹窗"][clickable=true][visibleToUser=true]', //261128，弹窗，朝朝宝活动，X掉
+            'Dialog[text="朝朝宝送您 现金红包"] > Button[text="关闭中奖弹窗"][clickable=true][visibleToUser=true]', //261128，弹窗，朝朝宝活动，X掉
+          ],
+        },
+      ],
+    },
+    {
+      key: 70,
+      name: '占位，朝朝宝活动，',
+      desc: '261128',
+      rules: [
+        {
+          resetMatch: 'match',
+          forcedTime: 3000,
+          actionCd: 3000,
+          action: 'clickCenter',
+          excludeMatches: ['Dialog[text^="朝朝宝送您"]'],
+          activityIds: 'com.pb.tpstore.PBAppletWebViewActivity',
+          matches:
+            'View > View > Image[text="浏览活钱专区"] + View + Button[text="去领好礼"][clickable=true][visibleToUser=true]',
+        },
+      ],
+    },
+    {
+      key: 71,
+      name: '朝朝宝活动，去领好礼',
+      desc: '261128',
+      rules: [
+        {
+          resetMatch: 'match',
+          forcedTime: 3000,
+          actionCd: 3000,
+          action: 'clickCenter',
+          excludeMatches: ['Dialog[text^="朝朝宝送您"]'],
+          activityIds: 'com.pb.tpstore.PBAppletWebViewActivity',
+          matches:
+            'View > View > Image[text="浏览活钱专区"] + View + Button[text="去领好礼"][clickable=true][visibleToUser=true]',
+        },
+      ],
+    },
   ],
 });

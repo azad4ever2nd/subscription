@@ -56,98 +56,114 @@ export default defineGkdApp({
       rules: [
         {
           resetMatch: 'match',
-          actionCd: 0,
+          actionCd: 100,
           activityIds: 'com.bankcomm.module.biz.webcontainer.BCMHtml5Activity',
           anyMatches: [
             'WebView > View > View > View > View > Button[id="copy"][clickable=true][visibleToUser=true][text=" 立即购买"]',
             'View > View > Button[id="copy"][clickable=true][visibleToUser=true]',
             '@[id="copy"][text*="立即购买"] <<2 * - * [text="最红星期五"]',
+            //备份规则，规则5
+            //name: '达美乐50元代金券',
+            //desc: '260403',
+            //actionCd: 100,
+            //activityIds: 'com.bankcomm.module.biz.webcontainer.BCMHtml5Activity',
+            //matches: '@View [text="达美乐50元代金券"]',
           ],
         },
       ],
     },
     {
       key: 5,
-      name: '达美乐50元代金券',
-      desc: '260403',
+      name: '领券中心,智能推荐',
+      desc: '261128，更新布局，想抢指定第几个就把第1个 +n 换成 加几，[clickable=true][visibleToUser=true]指定领第3个index=2',
       rules: [
         {
+          actionMaximum: 2,
+          actionCd: 300,
           resetMatch: 'match',
-          actionCd: 100,
           activityIds: 'com.bankcomm.module.biz.webcontainer.BCMHtml5Activity',
-          matches: '@View [text="达美乐50元代金券"]',
+          anyMatches: [
+            'View > View > TextView[text="智能推荐"] +n View > View > Image[text="立即领取"][clickable=true]', //261128，智能推荐
+            //'Image[text="ACIM_20260428000123_20260428125008205"] <<n View + View > View[index=1 || index=2] >n Image[text="立即领取"]',
+          ],
         },
       ],
     },
     {
       key: 6,
-      name: '领券中心,精选推荐',
-      desc: '260803，[clickable=true][visibleToUser=true]指定领第3个index=2',
+      name: '占位，领券中心,信用卡专享好券，刷卡金',
+      desc: '261128，更新布局，想抢指定第几个就把第1个 +n 换成 加几，[clickable=true][visibleToUser=true]',
       rules: [
         {
-          actionMaximum: 2,
-          actionCd: 0,
           resetMatch: 'match',
+          actionCd: 200,
+          order: -30,
+          actionMaximum: 10,
+          forcedTime: 2000,
           activityIds: 'com.bankcomm.module.biz.webcontainer.BCMHtml5Activity',
-          matches:
-            'Image[text="ACIM_20260428000123_20260428125008205"] <<n View + View > View[index=1 || index=2] >n Image[text="立即领取"]',
+          anyMatches: [
+            'View > View > TextView[text="信用卡"] + TextView[text="刷卡金"] + View >  View > View > Image[text="立即领取"][clickable=true]', //261128，
+            'View > View > TextView[text="信用卡"] + TextView[text="刷卡金"] +n View >  View > View > Image[text="立即领取"]', //261128
+            'Image[text="ACIM_20260728000180_20260728174629048"] <<n View + View > View[index=0] Image[text="立即领取"][clickable=true]',
+            'Image[text="ACIM_20260728000180_20260728174629048"] <<n View +n View > View[index=0] Image[text="立即领取"]',
+          ],
         },
       ],
     },
     {
       key: 7,
-      name: '领券中心,信用卡专享好券，刷卡金',
-      desc: '260917，[clickable=true][visibleToUser=true]',
+      name: '领券中心,信用卡专享好券，还款红包',
+      desc: '261128，更新布局，',
       rules: [
         {
           resetMatch: 'match',
-          actionCd: 0,
+          actionCd: 200,
           order: -30,
-          matchDelay: 1000,
-          actionMaximum: 10,
           forcedTime: 2000,
+          actionMaximum: 3,
           activityIds: 'com.bankcomm.module.biz.webcontainer.BCMHtml5Activity',
           anyMatches: [
-            'Image[text="ACIM_20260728000180_20260728174629048"] <<n View + View > View[index=0] Image[text="立即领取"][clickable=true]',
-            'Image[text="ACIM_20260728000180_20260728174629048"] <<n View + View > View[index=0] Image[text="立即领取"]',
+            'View > View > TextView[text="信用卡"] + TextView[text="专享好券"] + View >  View > View > Image[text="立即领取"][clickable=true]', //261128，布局有变，[clickable=true][visibleToUser=true]
+            'View > View > TextView[text="信用卡"] + TextView[text="专享好券"] +n View >  View > View > Image[text="立即领取"]', //261128，布局有变，[clickable=true][visibleToUser=true]
+            //'TextView[text="专享好券"] - TextView[text="信用卡"] < View + View > View > View > Image[text="立即领取"]',
+            //'View > View > TextView[text="信用卡"] + TextView[text="专享好券"] + View > View > View > Image[text="立即领取"]',
+            //'View > View > TextView[text="信用卡"] + TextView[text="专享好券"] + View >n Image[text="立即领取"]',
+            //'Image[text="ACIM_20260728000180_20260728174629048"] <<n View + View > View[index=1] Image[text="立即领取"]',
           ],
         },
       ],
     },
     {
       key: 8,
-      name: '领券中心,信用卡专享好券，还款红包',
-      desc: '261020，布局更新',
+      name: '领券中心，线上外卖 ，立即领取',
+      desc: '261128',
       rules: [
         {
           resetMatch: 'match',
-          actionCd: 0,
-          forcedTime: 2000,
-          actionMaximum: 3,
+          actionCd: 300,
+          actionMaximum: 2,
           activityIds: 'com.bankcomm.module.biz.webcontainer.BCMHtml5Activity',
           anyMatches: [
-            'TextView[text="专享好券"] - TextView[text="信用卡"] < View + View > View > View > Image[text="立即领取"]',
-            'View > View > TextView[text="信用卡"] + TextView[text="专享好券"] + View > View > View > Image[text="立即领取"]',
-            'View > View > TextView[text="信用卡"] + TextView[text="专享好券"] + View >n Image[text="立即领取"]',
-            'Image[text="ACIM_20260728000180_20260728174629048"] <<n View + View > View[index=1] Image[text="立即领取"]',
+            'View > View > TextView[text="线上外卖"] + TextView[text="随心订"] +n View > View > Image[text="立即领取"][clickable=true]',
           ],
         },
       ],
     },
     {
       key: 9,
-      name: '领券中心,领更多品牌商户券，智能推荐',
-      desc: '261014，更新布局，想抢指定第几个就把第1个 +n 换成 加几',
+      name: '领券中心,领更多品牌商户券，',
+      desc: '261128，更新布局，想抢指定第几个就把第1个 +n 换成 加几',
       rules: [
         {
           actionMaximum: 2,
-          actionCd: 0,
+          actionCd: 300,
           resetMatch: 'match',
           activityIds: 'com.bankcomm.module.biz.webcontainer.BCMHtml5Activity',
           anyMatches: [
-            'View > View > TextView[text="智能推荐"] +n View > View > Image[text="立即领取"][clickable=true]',
-            'View > View > TextView[text="智能推荐"] +n View >n Image[text="立即领取"][clickable=true]',
-            'Image[text="ACIM_20260729000087_20260729163354230"] < View +n TextView[clickable=true]',
+            'View > View > TextView[text="领更多"] + TextView[text="品牌商户券"] +n @View[clickable=true] > Image[text^="ACIM_2026"]', //261128，品牌商户券，去查看
+            //'View > View > TextView[text="智能推荐"] +n View > View > Image[text="立即领取"][clickable=true]',
+            //'View > View > TextView[text="智能推荐"] +n View >n Image[text="立即领取"][clickable=true]',
+            //'Image[text="ACIM_20260729000087_20260729163354230"] < View +n TextView[clickable=true]',
           ],
         },
       ],
@@ -155,11 +171,11 @@ export default defineGkdApp({
     {
       key: 10,
       name: '领券中心,甄选购物',
-      desc: '261014，更新布局，想抢指定第几个就把第1个 +n 换成 加几',
+      desc: '261128，更新布局，想抢指定第几个就把第1个 +n 换成 加几',
       rules: [
         {
           actionMaximum: 2,
-          actionCd: 0,
+          actionCd: 300,
           resetMatch: 'match',
           activityIds: 'com.bankcomm.module.biz.webcontainer.BCMHtml5Activity',
           anyMatches: [
@@ -173,11 +189,11 @@ export default defineGkdApp({
     {
       key: 11,
       name: '领券中心,优选美食',
-      desc: '261014，更新布局，想抢指定第几个就把第1个 +n 换成 加几',
+      desc: '261128，更新布局，想抢指定第几个就把第1个 +n 换成 加几',
       rules: [
         {
           actionMaximum: 1,
-          actionCd: 0,
+          actionCd: 300,
           resetMatch: 'match',
           activityIds: 'com.bankcomm.module.biz.webcontainer.BCMHtml5Activity',
           anyMatches: [
@@ -191,11 +207,12 @@ export default defineGkdApp({
     {
       key: 12,
       name: '领券中心，品质商超，扫一扫门店享优惠，暂时指定领第2张index=1',
-      desc: '261014，更新布局，想抢指定第几个就把第1个 +n 换成 加几',
+      desc: '261128，更新布局，想抢指定第几个就把第1个 +n 换成 加几',
       rules: [
         {
           actionMaximum: 1,
           resetMatch: 'match',
+          actionCd: 300,
           activityIds: 'com.bankcomm.module.biz.webcontainer.BCMHtml5Activity',
           anyMatches: [
             'View > View > TextView[text="品质商超"] + TextView[text="扫一扫 门店享优惠"] +n View > View > Image[text="立即领取"][clickable=true]',
@@ -208,12 +225,12 @@ export default defineGkdApp({
     {
       key: 13,
       name: '领券中心，郊游通勤 低碳出行，火车票-3，index=1',
-      desc: '261014，更新布局',
+      desc: '261128，更新布局',
       rules: [
         {
           actionMaximum: 1,
           resetMatch: 'match',
-          actionCd: 0,
+          actionCd: 300,
           activityIds: 'com.bankcomm.module.biz.webcontainer.BCMHtml5Activity',
           anyMatches: [
             'View > View > TextView[text="郊游通勤"] + TextView[text="低碳出行"] +n View > View > Image[text="立即领取"][clickable=true]',
@@ -226,13 +243,13 @@ export default defineGkdApp({
     {
       key: 14,
       name: '领券中心，校园洗衣',
-      desc: '261014，更新布局',
+      desc: '261128，更新布局',
       rules: [
         {
           actionMaximum: 1,
           resetMatch: 'match',
           action: 'clickCenter',
-          actionCd: 0,
+          actionCd: 300,
           activityIds: 'com.bankcomm.module.biz.webcontainer.BCMHtml5Activity',
           anyMatches: [
             'View > View > TextView[text="校园洗衣"] + TextView[text="省时省力"] +n View > View > Image[text="立即领取"][clickable=true]',
@@ -245,12 +262,12 @@ export default defineGkdApp({
     {
       key: 15,
       name: '领券中心，娱乐影音',
-      desc: '261014，更新布局',
+      desc: '261128，更新布局',
       rules: [
         {
           actionMaximum: 1,
           resetMatch: 'match',
-          actionCd: 0,
+          actionCd: 300,
           activityIds: 'com.bankcomm.module.biz.webcontainer.BCMHtml5Activity',
           anyMatches: [
             'View > View > TextView[text="娱乐影音"] + View > View > View > Image[text="立即领取"][clickable=true]',
