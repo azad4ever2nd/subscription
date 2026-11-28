@@ -192,7 +192,9 @@ export default defineGkdApp({
           resetMatch: 'match',
           action: 'clickCenter',
           actionMaximum: 2,
-          preKeys: [7],
+          preKeys: [12],
+          actionDelay: 3000,
+          actionCd: 7000,
           activityIds: 'com.cmvideo.capability.remote_web.WebProcessActivity',
           excludeMatches: [
             'View > View > [text="短信验证"] + View[id="close"][visibleToUser=true]', //排除 验证码
@@ -215,7 +217,7 @@ export default defineGkdApp({
           actionMaximum: 1,
           action: 'clickCenter',
           actionDelay: 3000,
-          preKeys: [9],
+          preKeys: [7],
           activityIds: 'com.cmvideo.capability.remote_web.WebProcessActivity',
           excludeMatches: [
             'View > View > [text="短信验证"] + View[id="close"][visibleToUser=true]', //排除 验证码
@@ -235,6 +237,7 @@ export default defineGkdApp({
           resetMatch: 'app',
           actionMaximum: 1,
           action: 'clickCenter',
+          actionDelay: 3000,
           preKeys: [10],
           activityIds: 'com.cmvideo.capability.remote_web.WebProcessActivity',
           excludeMatches: [
@@ -248,6 +251,23 @@ export default defineGkdApp({
     },
     {
       key: 12,
+      name: '荆楚潮玩，立即抽奖',
+      desc: '261128',
+      rules: [
+        {
+          resetMatch: 'app',
+          actionMaximum: 1,
+          action: 'clickCenter',
+          actionDelay: 2000,
+          preKeys: [11],
+          activityIds: 'com.cmvideo.capability.remote_web.WebProcessActivity',
+          matches:
+            '@View[clickable=true][visibleToUser=true] > View > Image[text="1O7HHG13B68B3"]',
+        },
+      ],
+    },
+    {
+      key: 13,
       name: '开启推送通知，以后再说',
       desc: '260622',
       rules: [
@@ -262,7 +282,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 13,
+      key: 14,
       name: '广告弹窗',
       desc: '260727',
       rules: [
@@ -280,7 +300,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 14,
+      key: 15,
       name: '更新协议提示',
       desc: '260711,更新协议',
       rules: [
@@ -297,7 +317,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 15,
+      key: 16,
       name: '提示 进群，X掉',
       desc: '260719',
       rules: [
@@ -311,7 +331,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 16,
+      key: 17,
       name: '钻石会员弹窗，X掉',
       desc: '260804',
       rules: [

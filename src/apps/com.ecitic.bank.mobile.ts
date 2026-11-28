@@ -6,25 +6,6 @@ export default defineGkdApp({
   groups: [
     {
       key: 1,
-      name: '签到',
-      desc: '260730，签到改版，[text="会员签到"] [text="立即签到"]',
-      rules: [
-        {
-          resetMatch: 'match',
-          actionMaximum: 4,
-          action: 'clickCenter',
-          activityIds: 'com.ecitic.bank.mobile.ui.MainActivity',
-          anyMatches: [
-            'View > View > View > View > View > View > Button[text="立即签到"][clickable=true][visibleToUser=true]',
-            'View > TextView[text="会员专属活动1"] + View >10 Button[text="立即签到1"][clickable=true][visibleToUser=true]',
-            'View > View > TextView[text="会员专属活动1"] + Image',
-            '[text="去签到，按钮1"]',
-          ],
-        },
-      ],
-    },
-    {
-      key: 2,
       name: '开启消息通知',
       desc: '260830，',
       rules: [
@@ -41,7 +22,55 @@ export default defineGkdApp({
       ],
     },
     {
+      key: 2,
+      name: '新版签到，点击Image后 跳转到 会员签到 页面',
+      desc: '261128',
+      rules: [
+        {
+          resetMatch: 'app',
+          actionMaximum: 1,
+          activityIds: '.ui.MainActivity',
+          matches:
+            'View > Image + View[childCount=2] > TextView[text="会员专属活动"] + Image[clickable=true][visibleToUser=true]', //261128，布局有变，要从这跳到签到页面点击 立即签到
+        },
+      ],
+    },
+    {
       key: 3,
+      name: '会员签到，立即签到',
+      desc: '261128',
+      rules: [
+        {
+          resetMatch: 'match',
+          preKeys: [2],
+          actionCd: 3000,
+          activityIds: '.ui.webview.CordovaExternalWebViewActivity',
+          matches:
+            'View > View > TextView + Button[text="立即签到"][index=parent.childCount.minus(1)][clickable=true][visibleToUser=true]', //261128，会员签到，点击签到
+        },
+      ],
+    },
+    {
+      key: 4,
+      name: '老版签到',
+      desc: '暂时禁用，等恢复布局再修改，260730，签到改版，[text="会员签到"] [text="立即签到"]',
+      rules: [
+        {
+          resetMatch: 'match',
+          actionMaximum: 2,
+          action: 'clickCenter',
+          activityIds: 'com.ecitic.bank.mobile.ui.MainActivity',
+          anyMatches: [
+            'View > View > View > View > View > View > Button[text="立即签到"][clickable=true][visibleToUser=true]',
+            //'View > TextView[text="会员专属活动1"] + View >10 Button[text="立即签到1"][clickable=true][visibleToUser=true]',
+            //'View > View > TextView[text="会员专属活动1"] + Image',
+            //'[text="去签到，按钮1"]',
+          ],
+        },
+      ],
+    },
+    {
+      key: 5,
       name: '弹窗2',
       desc: '260831',
       rules: [
@@ -55,7 +84,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 4,
+      key: 6,
       name: '浏览任务完成，点击返回',
       desc: '260522',
       rules: [
@@ -71,7 +100,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 5,
+      key: 7,
       name: '财富周游记，',
       desc: '251210，抽奖完成',
       rules: [
@@ -89,7 +118,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 6,
+      key: 8,
       name: '新版签到',
       desc: '260503，D',
       rules: [
@@ -103,7 +132,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 7,
+      key: 9,
       name: '弹窗，活动公告，我知道了',
       desc: '261125，添加 返回，抽奖公告',
       rules: [
@@ -120,7 +149,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 8,
+      key: 10,
       name: '恭喜中奖，确定',
       desc: '260806，添加领取成功',
       rules: [
@@ -136,7 +165,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 9,
+      key: 11,
       name: '红会员一万达标抢券',
       desc: '260917，限1次',
       rules: [
@@ -153,7 +182,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 10,
+      key: 12,
       name: '红会员一万达标抢券2',
       desc: '260917，不限',
       rules: [
@@ -169,7 +198,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 11,
+      key: 13,
       name: '抽奖，弹窗',
       desc: '261118',
       rules: [
@@ -184,7 +213,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 12,
+      key: 14,
       name: '财富，签到享好礼，立即签到',
       desc: '261122',
       rules: [
@@ -200,7 +229,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 13,
+      key: 15,
       name: '弹窗，签到成功，X掉',
       desc: '261126',
       rules: [

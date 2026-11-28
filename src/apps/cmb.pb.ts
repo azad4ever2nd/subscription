@@ -178,7 +178,7 @@ export default defineGkdApp({
     },
     {
       key: 9,
-      name: '禁用，，抽奖领任务页面，加自选 任务，规则2，action=clickNode',
+      name: '禁用，抽奖领任务页面，加自选 任务，规则2，action=clickNode',
       desc: '261016，clickable=true，整合到规则8',
       rules: [
         {

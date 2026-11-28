@@ -263,7 +263,7 @@ export default defineGkdApp({
       rules: [
         {
           resetMatch: 'match',
-          actionCd: 2000,
+          //actionCd: 2000,
           //action:'clickCenter',
           activityIds: 'li.gkd.app.MainActivity',
           matches:
@@ -278,11 +278,26 @@ export default defineGkdApp({
       rules: [
         {
           resetMatch: 'match',
-          actionCd: 2000,
+          //actionCd: 2000,
           //action:'clickCenter',
           activityIds: 'li.gkd.app.MainActivity',
           matches:
             'View > View > TextView[text="分享"] + TextView[text="保存到下载"][clickable=true][visibleToUser=true]', //261125，弹窗，导出备份，保存到下载
+        },
+      ],
+    },
+    {
+      key: 20,
+      name: '弹窗，删除规则，取消 或 确定',
+      desc: '261128',
+      rules: [
+        {
+          resetMatch: 'match',
+          activityIds: 'li.gkd.app.MainActivity',
+          anyMatches: [
+            'View > TextView[text="删除规则"] + ScrollView + View + @View[clickable=true][visibleToUser=true] > TextView[text="确定"] + Button', //261128，弹窗，删除规则，取消 或 确定
+            'View > TextView[text="删除规则"] + ScrollView + @View[clickable=true][visibleToUser=true] > TextView[text="取消"] + Button', //261128，弹窗，删除规则，取消 或 确定
+          ],
         },
       ],
     },
